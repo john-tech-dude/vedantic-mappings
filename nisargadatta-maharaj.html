@@ -1,0 +1,2802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A verified cartography of Sri Nisargadatta Maharaj's non-dual teaching: the seven stages from mistaken identity to the Absolute, with direct quotes, practice guidance, and scholarly annotations." />
+<title>Nisargadatta Maharaj — A Verified Cartography of the Non-Dual Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS  —  Premium Easing & Motion
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --bg:        #faf7f2;
+  --bg2:       #f2ece0;
+  --bg3:       #e8dfc8;
+  --surface:   #ffffff;
+  --surface2:  #f7f2e8;
+
+  --ink:       #0e1a2a;
+  --ink2:      #1a2d4d;
+  --stone:     #6b7f94;
+  --stone-light: #9aafbf;
+
+  --gold:       #b5822a;
+  --gold-light: #d4a44a;
+  --gold-deep:  #8a5e1a;
+  --gold-glow:  rgba(181,130,42,0.18);
+  --sun-glow:   rgba(181,130,42,0.28);
+
+  --s1: #7c6fa0;
+  --s2: #4a7fa5;
+  --s3: #c0622a;
+  --s4: #4a8a72;
+  --s5: #5a7ca8;
+  --s6: #8a5c9a;
+  --s7: #b5822a;
+
+  --border:        rgba(181,130,42,0.14);
+  --border-strong: rgba(181,130,42,0.32);
+  --border-subtle: rgba(181,130,42,0.07);
+  --border-medium: rgba(181,130,42,0.20);
+
+  --shadow:      0 2px 24px rgba(60,30,0,0.09);
+  --shadow-deep: 0 8px 40px rgba(60,30,0,0.13);
+  --shadow-gold: 0 0 40px rgba(181,130,42,0.16);
+
+  --sidebar-width:     272px;
+  --sidebar-collapsed: 0px;
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+
+  --hero-bg: radial-gradient(ellipse 100% 90% at 50% 30%, #ede3cc 0%, #d9c99a 45%, #c4a869 75%, #7a5a22 100%);
+  --grain-opacity: 0.025;
+  --pullquote-bg: linear-gradient(135deg, #f5efe3 0%, #ede3cc 100%);
+  --mountain-fill: rgba(181,130,42,0.05);
+  --ring-color: rgba(122,90,42,0.22);
+
+  /* Premium easing */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-elastic:   cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth:    cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-dramatic:  cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+[data-theme="dark"] {
+  --bg:        #0c0f16;
+  --bg2:       #0f1420;
+  --bg3:       #141b28;
+  --surface:   #131924;
+  --surface2:  #0f1420;
+
+  --ink:       #e8e0d0;
+  --ink2:      #c8bea8;
+  --stone:     #7a8a9a;
+  --stone-light: #9aafbf;
+
+  --gold:       #d4a44a;
+  --gold-light: #e8c478;
+  --gold-deep:  #b5822a;
+  --gold-glow:  rgba(212,164,74,0.14);
+  --sun-glow:   rgba(212,164,74,0.24);
+
+  --s1: #9a8fc0;
+  --s2: #6aaac8;
+  --s3: #d4844a;
+  --s4: #6aaa92;
+  --s5: #7a9cc8;
+  --s6: #aa7cc8;
+  --s7: #d4a44a;
+
+  --border:        rgba(212,164,74,0.12);
+  --border-strong: rgba(212,164,74,0.28);
+  --border-subtle: rgba(212,164,74,0.07);
+  --border-medium: rgba(212,164,74,0.20);
+
+  --shadow:      0 2px 24px rgba(0,0,0,0.36);
+  --shadow-deep: 0 8px 40px rgba(0,0,0,0.44);
+  --shadow-gold: 0 0 40px rgba(212,164,74,0.12);
+
+  --hero-bg: radial-gradient(ellipse 80% 70% at 50% 40%, #2a2010 0%, #1a1408 50%, #080604 100%);
+  --grain-opacity: 0.045;
+  --pullquote-bg: linear-gradient(135deg, #131924 0%, #0f1420 100%);
+  --mountain-fill: rgba(212,164,74,0.05);
+  --ring-color: rgba(200,169,110,0.10);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+  cursor: default;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--grain-opacity);
+  animation: grainShift 8s steps(10) infinite;
+}
+
+@keyframes grainShift {
+  0%, 100% { transform: translate(0,0); }
+  10% { transform: translate(-2%,-2%); }
+  20% { transform: translate(2%,1%); }
+  30% { transform: translate(-1%,2%); }
+  40% { transform: translate(1%,-1%); }
+  50% { transform: translate(-2%,1%); }
+  60% { transform: translate(2%,-2%); }
+  70% { transform: translate(-1%,-1%); }
+  80% { transform: translate(1%,2%); }
+  90% { transform: translate(-2%,-1%); }
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+  border-radius: 2px;
+}
+::selection { background: rgba(181,130,42,0.22); color: var(--ink); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CUSTOM CURSOR GLOW  (desktop only)
+   ═══════════════════════════════════════════════════════════ */
+@media (pointer: fine) {
+  .cursor-glow {
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    mix-blend-mode: screen;
+  }
+  body:hover .cursor-glow { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   KEYFRAMES  —  Premium Motion Library
+   ═══════════════════════════════════════════════════════════ */
+@keyframes mandalaRotate { to { transform: rotate(360deg); } }
+@keyframes breathe {
+  0%,100% { transform: scale(1); box-shadow: 0 0 40px var(--gold-glow); }
+  50%      { transform: scale(1.04); box-shadow: 0 0 64px var(--gold-glow); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes hero-rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes hero-clip {
+  from { clip-path: inset(100% 0 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@keyframes scroll-bounce{0%,100%{transform:scaleY(1);opacity:1;}50%{transform:scaleY(.5);opacity:.3;}}
+@keyframes ripple-out{0%{opacity:.7;transform:scale(1);}100%{opacity:0;transform:scale(4.5);}}
+@keyframes emblem-rotate{to{transform:rotate(360deg);}}
+@keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow);}50%{box-shadow:0 0 35px 12px var(--sun-glow);}}
+@keyframes gradientShift {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+@keyframes glowPulse {
+  0%,100% { filter: drop-shadow(0 0 4px var(--gold)); }
+  50%     { filter: drop-shadow(0 0 16px var(--gold-light)); }
+}
+@keyframes borderGlow {
+  0%,100% { border-color: var(--border-subtle); }
+  50%     { border-color: var(--gold); }
+}
+@keyframes ambientDrift {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.55; }
+  33%     { transform: translate(2%,-1%) scale(1.02); opacity: 0.75; }
+  66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.45; }
+}
+@keyframes para-breathe-outer  { 0%,100% { transform: translate(-50%,-50%) scale(1);    } 50% { transform: translate(-50%,-50%) scale(1.015); } }
+@keyframes para-breathe-middle { 0%,100% { transform: translate(-50%,-50%) scale(1);    } 50% { transform: translate(-50%,-50%) scale(1.025); } }
+@keyframes para-breathe-inner  { 0%,100% { transform: translate(-50%,-50%) scale(1);    } 50% { transform: translate(-50%,-50%) scale(1.035); } }
+@keyframes para-breathe-center {
+  0%,100% { transform: translate(-50%,-50%) scale(1);    box-shadow: 0 0 20px var(--gold-glow); }
+  50%     { transform: translate(-50%,-50%) scale(1.08); box-shadow: 0 0 36px var(--gold-glow); }
+}
+@keyframes stage7-arrival {
+  0%   { opacity: 0; transform: translateX(-30px) scale(0.97); }
+  60%  { opacity: 1; transform: translateX(4px) scale(1.005); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes goldShimmerText {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes lineReveal {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes diamondReveal {
+  from { opacity: 0; transform: rotate(45deg) scale(0); }
+  to   { opacity: 1; transform: rotate(45deg) scale(1); }
+}
+@keyframes textRevealUp {
+  from { opacity: 0; transform: translateY(110%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes cursorPulse {
+  0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+  50%     { transform: translate(-50%,-50%) scale(1.15); opacity: 0.3; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SIDEBAR  —  Premium Slide & Glow
+   ═══════════════════════════════════════════════════════════ */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  z-index: 1000;
+  transition: width 0.55s var(--ease-out-expo), transform 0.55s var(--ease-out-expo);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.sidebar.collapsed { width: 0; transform: translateX(-100%); }
+
+.sidebar-toggle {
+  position: fixed;
+  top: 1rem; left: 1rem;
+  width: 42px; height: 42px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transition: all 0.35s var(--ease-out-expo);
+  z-index: 1010;
+  box-shadow: var(--shadow);
+}
+.sidebar-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.1); }
+
+.sidebar-header {
+  padding: 4.5rem 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.sidebar-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+}
+.sidebar-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.82rem;
+  color: var(--stone);
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.sidebar-nav { padding: 1rem 0; overflow-y: auto; flex: 1; }
+.sidebar-nav-section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem 0.4rem;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 1.5rem;
+  color: var(--stone);
+  text-decoration: none;
+  transition: all 0.3s var(--ease-out-expo);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  gap: 0.75rem;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+.sidebar-nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.8rem; }
+.sidebar-nav-item.active {
+  color: var(--gold-light);
+  background: rgba(181,130,42,0.08);
+  border-left-color: var(--gold);
+  font-weight: 500;
+}
+.sidebar-nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+}
+.sidebar-nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 16px; text-align: center; }
+.stage-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  flex-shrink: 0;
+  color: #fff;
+  transition: transform 0.3s var(--ease-elastic);
+}
+.sidebar-nav-item:hover .stage-num-badge { transform: scale(1.2); }
+
+.sidebar-progress {
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+.sidebar-progress-bar {
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+.sidebar-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light), var(--gold), var(--gold-deep));
+  background-size: 200% 100%;
+  width: 0%;
+  transition: width 0.4s var(--ease-out-expo);
+  animation: gradientShift 3s ease infinite;
+}
+.sidebar-progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN CONTENT
+   ═══════════════════════════════════════════════════════════ */
+.main-content {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.55s var(--ease-out-expo);
+  min-height: 100vh;
+}
+.sidebar.collapsed + .main-content { margin-left: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   THEME TOGGLE  —  Premium Morph
+   ═══════════════════════════════════════════════════════════ */
+.theme-toggle {
+  position: fixed;
+  bottom: 1.75rem; right: 1.75rem;
+  z-index: 1000;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border-medium);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.45s var(--ease-elastic);
+  box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); box-shadow: 0 0 30px var(--gold-glow); }
+.theme-toggle:active { transform: scale(0.95); }
+.theme-toggle-icon {
+  position: absolute;
+  transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+}
+[data-theme="light"] .theme-toggle-icon-sun  { opacity: 1; transform: scale(1); }
+[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"]  .theme-toggle-icon-sun  { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"]  .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  bottom: 1.75rem; right: 5.5rem;
+  z-index: 1000;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--stone);
+  font-size: 1.1rem;
+  transition: all 0.4s var(--ease-out-expo);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.9);
+}
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); box-shadow: var(--shadow-gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   SACRED GEOMETRY
+   ═══════════════════════════════════════════════════════════ */
+.sacred-geometry{position:relative; width:100%; height:auto;}
+.sacred-mandala{animation:mandala-rotate 60s linear infinite;}
+@keyframes mandala-rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO  —  Cinematic Parallax & Reveal
+   ═══════════════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem 6rem;
+  text-align: center;
+  background: var(--hero-bg);
+  perspective: 1200px;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 20% 40%, rgba(181,130,42,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 55% at 80% 60%, rgba(181,130,42,0.05) 0%, transparent 70%);
+  animation: ambientDrift 18s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="light"] .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181,130,42,0.035) 29px),
+    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181,130,42,0.025) 29px);
+  pointer-events: none;
+}
+
+.hero-mountain{
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:120%; height:52%;
+  background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%);
+  clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);
+  opacity:.12; will-change:transform;
+}
+
+.mandala-ring{
+  position:absolute; top:50%; left:50%; border-radius:50%;
+  border:1px solid var(--ring-color); transform:translate(-50%,-50%);
+  pointer-events:none; will-change:transform;
+}
+.mandala-ring:nth-child(1){width:260px;height:260px;}
+.mandala-ring:nth-child(2){width:400px;height:400px;}
+.mandala-ring:nth-child(3){width:560px;height:560px;}
+.mandala-ring:nth-child(4){width:740px;height:740px;}
+
+.hero-ripple{
+  position:absolute; top:50%; left:50%; border-radius:50%;
+  border:1px solid var(--ring-color); pointer-events:none;
+  animation:ripple-out 9s ease-out infinite; will-change:transform,opacity;
+}
+.hero-ripple:nth-child(5){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:0s;}
+.hero-ripple:nth-child(6){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:3s;}
+
+/* ── HERO EMBLEM ── */
+.hero-emblem{width:72px; height:72px; margin:0 auto 2rem; position:relative; opacity:1; z-index:3;}
+.hero-emblem-circle{
+  position:absolute; inset:0; border-radius:50%;
+  border:1px solid var(--gold-deep); opacity:.6;
+  animation:emblem-rotate 30s linear infinite;
+}
+.hero-emblem-circle2{
+  position:absolute; inset:12px; border-radius:50%;
+  border:1px solid var(--gold); opacity:.4;
+  animation:emblem-rotate 20s linear infinite reverse;
+}
+.hero-emblem-dot{
+  position:absolute; inset:26px; border-radius:50%;
+  background:radial-gradient(circle,var(--gold-light),var(--gold));
+  box-shadow:0 0 20px 5px var(--sun-glow);
+  animation:emblem-pulse 4s ease-in-out infinite;
+}
+
+/* ── HERO TYPE HIERARCHY ── */
+.hero-eyemark {
+  font-family: 'Cinzel', serif;
+  font-size: 0.63rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-deep);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-subtitle-top {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--stone);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  color: var(--ink);
+  text-shadow: 0 2px 40px rgba(181,130,42,0.2);
+  opacity: 0;
+  margin-bottom: 0.2em;
+  position: relative;
+  z-index: 3;
+}
+[data-theme="dark"] .hero-title {
+  color: var(--gold-light);
+  text-shadow: 0 0 80px rgba(212,164,74,0.3);
+}
+.hero-epithet {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  color: var(--gold-deep);
+  letter-spacing: 0.12em;
+  opacity: 0;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto 2.5rem;
+  width: fit-content;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-divider-line    { width: 70px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep)); }
+.hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); }
+.hero-divider-diamond {
+  width: 7px; height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px var(--sun-glow);
+}
+.hero-quote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--ink2);
+  max-width: 570px;
+  margin: 0 auto 0.7rem;
+  line-height: 1.85;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-quote-attr {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 3;
+}
+.hero-dates {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  color: var(--stone);
+  letter-spacing: 0.18em;
+  opacity: 0;
+  position: relative;
+  z-index: 3;
+}
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.hero-scroll-cue span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.5em;
+  color: var(--stone);
+  text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px; height: 36px;
+  background: linear-gradient(180deg, var(--gold-deep), transparent);
+  animation: scroll-bounce 2.5s ease-in-out infinite;
+}
+
+/* Staggered hero animation delays */
+.hero-eyemark{animation:hero-rise 1.1s .3s forwards;}
+.hero-label{animation:hero-rise 1.1s .9s forwards;}
+.hero-subtitle-top{animation:hero-rise 1.1s 1.1s forwards;}
+.hero-title{animation:hero-rise 1.3s 1.3s forwards;}
+.hero-epithet{animation:hero-rise 1.1s 1.6s forwards;}
+.hero-divider{animation:hero-rise 1.1s 1.8s forwards;}
+.hero-quote{animation:hero-rise 1.1s 2s forwards;}
+.hero-quote-attr{animation:hero-rise 1.1s 2.2s forwards;}
+.hero-dates{animation:hero-rise 1.1s 2.4s forwards;}
+.hero-scroll-cue{animation:hero-rise 1.1s 2.8s forwards;}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION SHARED
+   ═══════════════════════════════════════════════════════════ */
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.section-header p { color: var(--stone); font-size: 1rem; max-width: 580px; margin: 0 auto; line-height: 1.6; }
+.section-separator {
+  width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  margin: 0 auto 20px;
+  position: relative;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.8s var(--ease-out-expo);
+}
+.section-separator.visible { opacity: 1; transform: scaleX(1); }
+.section-separator::after {
+  content: '✦';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  color: var(--gold);
+  font-size: 0.72rem;
+  background: var(--bg);
+  padding: 0 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TEXT REVEAL SYSTEM  —  Premium Line-by-Line
+   ═══════════════════════════════════════════════════════════ */
+.text-reveal {
+  overflow: hidden;
+  display: block;
+}
+.text-reveal-inner {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1s var(--ease-out-expo);
+}
+.visible .text-reveal-inner {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLE OF CONTENTS
+   ═══════════════════════════════════════════════════════════ */
+.toc-section { padding: 96px 24px; max-width: 900px; margin: 0 auto; }
+.toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 36px; }
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--stone);
+  font-size: 0.92rem;
+  transition: all 0.45s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+.toc-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transition: transform 0.35s var(--ease-out-expo);
+}
+.toc-item:hover { border-color: var(--border-medium); color: var(--ink); transform: translateY(-4px); box-shadow: var(--shadow-gold), 0 12px 36px rgba(181,130,42,0.12); }
+.toc-item:hover::before { transform: scaleY(1); }
+.toc-item .num {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem;
+  font-family: 'Cinzel', serif;
+  flex-shrink: 0;
+  font-weight: 600;
+  transition: transform 0.35s var(--ease-elastic);
+}
+.toc-item:hover .num { transform: scale(1.12); }
+
+/* Stage-colored TOC badges */
+.toc-item:nth-child(1) .num { background: rgba(124,111,160,0.12); color: var(--s1); }
+.toc-item:nth-child(2) .num { background: rgba(74,127,165,0.12); color: var(--s2); }
+.toc-item:nth-child(3) .num { background: rgba(192,98,42,0.12); color: var(--s3); }
+.toc-item:nth-child(4) .num { background: rgba(74,138,114,0.12); color: var(--s4); }
+.toc-item:nth-child(5) .num { background: rgba(90,124,168,0.12); color: var(--s5); }
+.toc-item:nth-child(6) .num { background: rgba(138,92,154,0.12); color: var(--s6); }
+.toc-item:nth-child(7) .num { background: rgba(181,130,42,0.12); color: var(--s7); border: 1px solid rgba(181,130,42,0.3); }
+.toc-item:nth-child(8) .num { background: rgba(181,130,42,0.07); color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   PULLQUOTE
+   ═══════════════════════════════════════════════════════════ */
+.pullquote-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--pullquote-bg);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.pullquote-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-55%);
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%);
+  pointer-events: none;
+  animation: breathe 10s ease-in-out infinite;
+}
+.pullquote { max-width: 680px; margin: 0 auto; position: relative; padding-top: 2rem; }
+.pullquote-mark {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9rem;
+  color: var(--gold);
+  opacity: 0.08;
+  line-height: 0.8;
+  margin-bottom: -2rem;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+}
+.pullquote-text {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.65rem);
+  color: var(--ink);
+  line-height: 1.68;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+
+/* ═══════════════════════════════════════════════════════════
+   LINEAGE
+   ═══════════════════════════════════════════════════════════ */
+.lineage-section { padding: 96px 24px; max-width: 1100px; margin: 0 auto; }
+.lineage-tree { position: relative; padding: 36px 0; }
+.lineage-node { display: flex; flex-direction: column; align-items: center; }
+
+.lineage-root {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-lg);
+  padding: 36px 44px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 72px;
+  position: relative;
+  box-shadow: var(--shadow-gold);
+  transition: all 0.5s var(--ease-out-expo);
+  transform-style: preserve-3d;
+}
+.lineage-root:hover { transform: translateY(-6px); box-shadow: 0 12px 48px var(--gold-glow), 0 16px 56px rgba(181,130,42,0.14); }
+.lineage-root::after {
+  content: '';
+  position: absolute;
+  bottom: -72px; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 72px;
+  background: linear-gradient(to bottom, var(--gold-light), transparent);
+}
+.lineage-root h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; color: var(--gold); margin-bottom: 6px; font-weight: 500; }
+.lineage-root .years { font-size: 0.72rem; color: var(--stone); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; font-family: 'Cinzel', serif; }
+.lineage-root p { font-size: 0.98rem; color: var(--stone); line-height: 1.72; }
+
+.lineage-branch {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+.lineage-branch::before {
+  content: '';
+  position: absolute;
+  top: -36px; left: 50%;
+  transform: translateX(-50%);
+  width: 55%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
+}
+
+.lineage-leaf {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  text-align: center;
+  transition: all 0.5s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+.lineage-leaf::before { content: ''; position: absolute; top: -28px; left: 50%; transform: translateX(-50%); width: 1px; height: 28px; background: var(--gold); opacity: 0.45; }
+.lineage-leaf::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); opacity: 0; transition: opacity 0.4s ease; }
+.lineage-leaf:hover { border-color: var(--gold); transform: translateY(-6px); box-shadow: var(--shadow-gold), 0 12px 40px rgba(181,130,42,0.12); }
+.lineage-leaf:hover::after { opacity: 1; }
+.lineage-leaf h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 5px; font-weight: 500; }
+.lineage-leaf .years { font-size: 0.68rem; color: var(--stone); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; font-family: 'Cinzel', serif; }
+.lineage-leaf p { font-size: 0.92rem; color: var(--stone); line-height: 1.65; }
+
+/* ═══════════════════════════════════════════════════════════
+   STAGES / TIMELINE  —  Premium 3D Cards & Draw
+   ═══════════════════════════════════════════════════════════ */
+.stages-section {
+  padding: 96px 24px;
+  background: linear-gradient(180deg, var(--bg2) 0%, var(--surface) 50%, var(--bg2) 100%);
+}
+.stages-container { max-width: 1040px; margin: 0 auto; }
+
+.path-timeline { position: relative; padding-left: 66px; }
+.path-timeline::before {
+  content: '';
+  position: absolute;
+  left: 26px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    var(--s1) 0%, var(--s2) 17%,
+    var(--s3) 34%, var(--s4) 50%,
+    var(--s5) 66%, var(--s6) 82%,
+    var(--s7) 100%);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+/* SVG draw overlay for timeline */
+.timeline-draw {
+  position: absolute;
+  left: 26px; top: 0;
+  width: 2px; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.timeline-draw line {
+  transition: stroke-dashoffset 0.1s linear;
+}
+.timeline-draw line {
+  stroke: var(--gold-light);
+  stroke-width: 2;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.stage-card {
+  position: relative;
+  margin-bottom: 52px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  transition: all 0.55s var(--ease-out-expo);
+  opacity: 0;
+  transform: translateX(-30px);
+  backdrop-filter: blur(6px);
+  perspective: 1000px;
+}
+.stage-card.visible { opacity: 1; transform: translateX(0); }
+.stage-card:last-child { margin-bottom: 0; }
+.stage-card:hover { border-color: var(--border-medium); transform: translateY(-4px); box-shadow: var(--shadow-deep), 0 18px 52px rgba(181,130,42,0.10); }
+
+/* Stage 7 — special gold arrival treatment */
+.stage-card[data-stage="7"] {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+.stage-card[data-stage="7"].visible {
+  animation: stage7-arrival 1s var(--ease-out-expo) forwards;
+  opacity: 1; transform: translateX(0);
+}
+.stage-card[data-stage="7"]:hover {
+  box-shadow: 0 0 72px var(--gold-glow), 0 18px 56px rgba(181,130,42,0.18);
+}
+
+/* Gradient border shimmer on hover */
+.stage-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, var(--gold) 50%, transparent 60%);
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease, background-position 1s ease;
+  pointer-events: none;
+}
+.stage-card:hover::after { opacity: 0.5; background-position: 100% 100%; }
+
+.stage-marker {
+  position: absolute;
+  left: -54px; top: 40px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  z-index: 2;
+  transition: all 0.35s var(--ease-elastic);
+}
+.stage-card:hover .stage-marker { transform: scale(1.35); }
+
+/* Per-stage marker colors */
+.stage-card[data-stage="1"] .stage-marker { background: var(--s1); box-shadow: 0 0 0 2px var(--s1), 0 0 16px rgba(124,111,160,0.4); }
+.stage-card[data-stage="2"] .stage-marker { background: var(--s2); box-shadow: 0 0 0 2px var(--s2), 0 0 16px rgba(74,127,165,0.4); }
+.stage-card[data-stage="3"] .stage-marker { background: var(--s3); box-shadow: 0 0 0 2px var(--s3), 0 0 16px rgba(192,98,42,0.4); }
+.stage-card[data-stage="4"] .stage-marker { background: var(--s4); box-shadow: 0 0 0 2px var(--s4), 0 0 16px rgba(74,138,114,0.4); }
+.stage-card[data-stage="5"] .stage-marker { background: var(--s5); box-shadow: 0 0 0 2px var(--s5), 0 0 16px rgba(90,124,168,0.4); }
+.stage-card[data-stage="6"] .stage-marker { background: var(--s6); box-shadow: 0 0 0 2px var(--s6), 0 0 16px rgba(138,92,154,0.4); }
+.stage-card[data-stage="7"] .stage-marker { background: var(--s7); box-shadow: 0 0 0 2px var(--s7), 0 0 24px rgba(181,130,42,0.6); animation: glowPulse 2s ease-in-out infinite; }
+
+.stage-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  font-family: 'Cinzel', serif;
+  transition: all 0.35s var(--ease-elastic);
+}
+.stage-card:hover .stage-number { transform: scale(1.1); }
+
+.stage-card[data-stage="1"] .stage-number { background: rgba(124,111,160,0.12); color: var(--s1); }
+.stage-card[data-stage="2"] .stage-number { background: rgba(74,127,165,0.12); color: var(--s2); }
+.stage-card[data-stage="3"] .stage-number { background: rgba(192,98,42,0.12); color: var(--s3); }
+.stage-card[data-stage="4"] .stage-number { background: rgba(74,138,114,0.12); color: var(--s4); }
+.stage-card[data-stage="5"] .stage-number { background: rgba(90,124,168,0.12); color: var(--s5); }
+.stage-card[data-stage="6"] .stage-number { background: rgba(138,92,154,0.12); color: var(--s6); }
+.stage-card[data-stage="7"] .stage-number { background: rgba(181,130,42,0.14); color: var(--s7); border: 1px solid rgba(181,130,42,0.4); }
+.stage-card#common-misunderstandings .stage-number { background: rgba(181,130,42,0.08); color: var(--gold); border: 1px solid var(--gold); font-size: 1rem; }
+
+.stage-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 500; margin-bottom: 8px; }
+.stage-card[data-stage="1"] h3 { color: var(--s1); }
+.stage-card[data-stage="2"] h3 { color: var(--s2); }
+.stage-card[data-stage="3"] h3 { color: var(--s3); }
+.stage-card[data-stage="4"] h3 { color: var(--s4); }
+.stage-card[data-stage="5"] h3 { color: var(--s5); }
+.stage-card[data-stage="6"] h3 { color: var(--s6); }
+.stage-card[data-stage="7"] h3 {
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmerText 4s ease-in-out infinite;
+}
+.stage-card#common-misunderstandings h3 { color: var(--gold); }
+
+.stage-subtitle { font-size: 0.72rem; color: var(--stone-light); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 22px; font-family: 'Cinzel', serif; }
+.stage-card p { color: var(--stone); font-size: 1rem; line-height: 1.8; margin-bottom: 22px; }
+
+.stage-quote {
+  background: var(--surface2);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 22px 26px;
+  margin: 22px 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease;
+}
+.stage-quote::before { content: '"'; position: absolute; top: -8px; left: 10px; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--gold); opacity: 0.10; line-height: 1; }
+.stage-quote:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+.stage-card[data-stage="1"] .stage-quote { border-left-color: var(--s1); }
+.stage-card[data-stage="2"] .stage-quote { border-left-color: var(--s2); }
+.stage-card[data-stage="3"] .stage-quote { border-left-color: var(--s3); }
+.stage-card[data-stage="4"] .stage-quote { border-left-color: var(--s4); }
+.stage-card[data-stage="5"] .stage-quote { border-left-color: var(--s5); }
+.stage-card[data-stage="6"] .stage-quote { border-left-color: var(--s6); }
+.stage-card[data-stage="7"] .stage-quote { border-left-color: var(--s7); }
+
+.stage-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-style: italic; color: var(--ink); margin-bottom: 10px; line-height: 1.62; position: relative; z-index: 1; }
+.stage-quote cite { font-size: 0.75rem; color: var(--stone); font-style: normal; letter-spacing: 0.5px; font-family: 'Cinzel', serif; }
+
+/* ═══════════════════════════════════════════════════════════
+   COMMON MISUNDERSTANDINGS
+   ═══════════════════════════════════════════════════════════ */
+.misunderstanding-toggle {
+  background: transparent;
+  border: 1px solid var(--gold);
+  border-radius: 40px;
+  padding: 6px 18px;
+  color: var(--gold);
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.35s var(--ease-out-expo);
+}
+.misunderstanding-toggle:hover {
+  background: var(--gold-glow);
+  box-shadow: 0 0 24px var(--gold-glow);
+  transform: translateY(-2px);
+}
+
+.misunderstanding-table {
+  display: none;
+  overflow-x: auto;
+  margin-top: 16px;
+  animation: fadeInUp 0.5s var(--ease-out-expo);
+}
+.misunderstanding-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--surface2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.misunderstanding-table thead {
+  background: linear-gradient(135deg, rgba(181,130,42,0.08), rgba(181,130,42,0.02));
+  border-bottom: 1px solid var(--gold);
+}
+.misunderstanding-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+.misunderstanding-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--stone);
+  line-height: 1.7;
+}
+.misunderstanding-table tr:last-child td {
+  border-bottom: none;
+}
+.misunderstanding-table tr:hover td {
+  background: rgba(181,130,42,0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INFOBOX
+   ═══════════════════════════════════════════════════════════ */
+.infobox {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.6rem 1.85rem;
+  margin: 1.5rem 0;
+  transition: all 0.4s var(--ease-out-expo);
+}
+.infobox:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+.infobox-title { font-family: 'Cinzel', serif; font-size: 0.57rem; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.9rem; }
+.infobox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.7rem; margin-top: 1rem; }
+.infobox-item { display: flex; flex-direction: column; gap: 0.18rem; }
+.infobox-item-label { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; }
+.infobox-item-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--ink); }
+
+/* ═══════════════════════════════════════════════════════════
+   OBSTACLES
+   ═══════════════════════════════════════════════════════════ */
+.obstacles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin-top: 36px; }
+
+.obstacle-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s var(--ease-out-expo);
+  opacity: 0;
+  transform: translateY(30px);
+}
+.obstacle-card.visible { opacity: 1; transform: translateY(0); }
+.obstacle-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; transition: height 0.35s var(--ease-out-expo); }
+.obstacle-card:hover::before { height: 5px; }
+.obstacle-card:nth-child(1)::before { background: linear-gradient(90deg, var(--s1), transparent); }
+.obstacle-card:nth-child(2)::before { background: linear-gradient(90deg, var(--s2), transparent); }
+.obstacle-card:nth-child(3)::before { background: linear-gradient(90deg, var(--s3), transparent); }
+.obstacle-card:hover { transform: translateY(-4px); border-color: var(--border-medium); box-shadow: var(--shadow-deep), 0 18px 52px rgba(181,130,42,0.10); }
+.obstacle-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; font-size: 1.4rem; transition: transform 0.35s var(--ease-elastic); }
+.obstacle-card:hover .obstacle-icon { transform: scale(1.15); }
+.obstacle-card:nth-child(1) .obstacle-icon { background: rgba(124,111,160,0.10); }
+.obstacle-card:nth-child(2) .obstacle-icon { background: rgba(74,127,165,0.10); }
+.obstacle-card:nth-child(3) .obstacle-icon { background: rgba(192,98,42,0.10); }
+.obstacle-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin-bottom: 14px; }
+.obstacle-card p { font-size: 0.93rem; color: var(--stone); line-height: 1.72; margin-bottom: 18px; }
+
+/* ═══════════════════════════════════════════════════════════
+   STATES
+   ═══════════════════════════════════════════════════════════ */
+.states-diagram { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 44px 0; }
+
+.state-box {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.5s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.state-box.visible { opacity: 1; transform: translateY(0); }
+.state-box:hover { transform: translateY(-4px); border-color: var(--border-medium); box-shadow: var(--shadow-deep), 0 12px 40px rgba(181,130,42,0.10); }
+.state-icon { width: 52px; height: 52px; margin: 0 auto 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; transition: transform 0.35s var(--ease-elastic); }
+.state-box:hover .state-icon { transform: scale(1.18) rotate(8deg); }
+.state-box:nth-child(1) .state-icon { background: rgba(181,130,42,0.10); }
+.state-box:nth-child(2) .state-icon { background: rgba(138,92,154,0.10); }
+.state-box:nth-child(3) .state-icon { background: rgba(74,127,165,0.10); }
+.state-box:nth-child(4) .state-icon { background: rgba(181,130,42,0.12); border: 1px solid rgba(181,130,42,0.32); animation: breathe 3s ease-in-out infinite; }
+.state-box h5 { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 500; margin-bottom: 5px; color: var(--ink); }
+.state-box .sanskrit { font-size: 0.66rem; color: var(--stone); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; font-family: 'Cinzel', serif; }
+.state-box p { font-size: 0.88rem; color: var(--stone); line-height: 1.6; }
+.state-box.turiya { border-color: var(--gold); box-shadow: var(--shadow-gold); }
+.state-box.turiya::before { content: ''; position: absolute; inset: -2px; border: 1px solid var(--gold); border-radius: calc(var(--radius-md) + 2px); opacity: 0.28; animation: borderGlow 3s ease-in-out infinite; }
+.state-box.turiya h5 { color: var(--gold); }
+
+.states-arrow { text-align: center; margin: 28px 0; color: var(--stone); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Cinzel', serif; }
+
+/* ═══════════════════════════════════════════════════════════
+   DISTINCTION DIAGRAM
+   ═══════════════════════════════════════════════════════════ */
+.distinction-diagram { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: center; margin: 56px 0; }
+
+.distinction-left, .distinction-right {
+  background: var(--surface2);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  transition: all 0.45s var(--ease-out-expo);
+  transform-style: preserve-3d;
+}
+.distinction-left  { border-right: none; border-radius: var(--radius-lg) 0 0 var(--radius-lg); border-color: var(--s2); }
+.distinction-right { border-left: none;  border-radius: 0 var(--radius-lg) var(--radius-lg) 0; border-color: var(--s6); }
+.distinction-left:hover, .distinction-right:hover { transform: translateY(-4px); box-shadow: var(--shadow-deep); }
+
+.distinction-center {
+  width: 84px; height: 84px;
+  background: var(--surface);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+  z-index: 2;
+  box-shadow: 0 0 44px var(--gold-glow), inset 0 0 28px var(--gold-glow);
+  position: relative;
+  animation: breathe 4s ease-in-out infinite;
+  transition: transform 0.4s var(--ease-elastic);
+}
+.distinction-center:hover { transform: scale(1.1); }
+.distinction-center::before { content: ''; position: absolute; inset: -9px; border: 1px solid var(--gold); border-radius: 50%; opacity: 0.28; animation: mandalaRotate 20s linear infinite; }
+
+.distinction-left h4  { font-family: 'Cormorant Garamond', serif; font-size: 1.42rem; color: var(--s2); margin-bottom: 8px; font-weight: 500; }
+.distinction-right h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.42rem; color: var(--s6); margin-bottom: 8px; font-weight: 500; }
+.distinction-left .label, .distinction-right .label { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 2px; color: var(--stone); margin-bottom: 22px; font-family: 'Cinzel', serif; }
+.distinction-left ul, .distinction-right ul { list-style: none; padding: 0; }
+.distinction-left ul li, .distinction-right ul li {
+  font-size: 0.9rem;
+  color: var(--stone);
+  padding: 9px 0 9px 22px;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.25s var(--ease-out-expo);
+}
+.distinction-left ul li:last-child, .distinction-right ul li:last-child { border-bottom: none; }
+.distinction-left ul li::before  { content: ''; position: absolute; left: 0; top: 15px; width: 7px; height: 7px; border-radius: 50%; background: var(--s2); }
+.distinction-right ul li::before { content: ''; position: absolute; left: 0; top: 15px; width: 7px; height: 7px; border-radius: 50%; background: var(--s6); }
+.distinction-left ul li:hover, .distinction-right ul li:hover { color: var(--ink); background: var(--surface); border-radius: 5px; padding-left: 26px; }
+
+/* ═══════════════════════════════════════════════════════════
+   I AM DIAGRAM
+   ═══════════════════════════════════════════════════════════ */
+.iam-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 36px 0;
+  padding: 36px;
+  background: var(--surface2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+.iam-diagram::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, var(--gold-glow), transparent 70%); opacity: 0.28; }
+.iam-core {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: rgba(181,130,42,0.10);
+  border: 2px solid var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  color: var(--gold);
+  box-shadow: 0 0 56px var(--gold-glow);
+  animation: breathe 4s ease-in-out infinite;
+  position: relative; z-index: 1;
+  transition: transform 0.4s var(--ease-elastic);
+}
+.iam-core:hover { transform: scale(1.08); }
+.iam-qualifiers { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 18px; position: relative; z-index: 1; }
+.iam-qualifier {
+  padding: 9px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 100px;
+  font-size: 0.88rem;
+  color: var(--stone);
+  transition: all 0.35s var(--ease-out-expo);
+}
+.iam-qualifier:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.iam-qualifier.strikethrough { text-decoration: line-through; opacity: 0.48; border-color: var(--s1); background: rgba(124,111,160,0.08); }
+.iam-arrow { font-size: 22px; color: var(--gold); margin: 6px 0; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; }
+.iam-pure { font-family: 'Cormorant Garamond', serif; font-size: 1.32rem; font-style: italic; color: var(--gold); margin-top: 10px; position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════════════════════════
+   PARA DIAGRAM — CONCENTRIC CIRCLES
+   ═══════════════════════════════════════════════════════════ */
+.para-diagram { position: relative; width: 100%; max-width: 440px; margin: 60px auto 44px; aspect-ratio: 1; overflow: visible; }
+
+.para-circle {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+.para-outer  { width: 100%; height: 100%; border: 1px solid var(--border-medium); animation: para-breathe-outer 8s ease-in-out infinite; z-index: 1; }
+.para-middle { width: 70%;  height: 70%;  border: 1px solid var(--s2); animation: para-breathe-middle 6s ease-in-out infinite 0.5s; z-index: 2; }
+.para-inner  { width: 42%;  height: 42%;  border: 1px solid var(--gold-light); box-shadow: 0 0 36px var(--gold-glow), inset 0 0 18px var(--gold-glow); animation: para-breathe-inner 4s ease-in-out infinite 1s; z-index: 3; }
+.para-center {
+  width: 18%; height: 18%;
+  background: radial-gradient(circle at 35% 35%, var(--gold-light), var(--gold-deep));
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 0 18px var(--gold-glow), 0 0 36px rgba(181,130,42,0.18);
+  animation: para-breathe-center 3s ease-in-out infinite 1.5s;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 4; padding: 6px;
+  transition: all 0.4s var(--ease-elastic);
+}
+.para-center span { font-size: 0.38rem; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'Cinzel', serif; font-weight: 600; line-height: 1.3; text-align: center; }
+.para-center:hover { transform: translate(-50%,-50%) scale(1.25); box-shadow: 0 0 48px var(--gold-glow), 0 0 80px rgba(181,130,42,0.32); }
+
+.para-label { position: absolute; font-family: 'Cinzel', serif; font-size: 0.58rem; color: var(--stone); text-align: center; line-height: 1.35; letter-spacing: 0.4px; pointer-events: none; display: flex; flex-direction: column; align-items: center; white-space: nowrap; }
+.para-label-outer  { top: -32px; left: 50%; transform: translateX(-50%); color: var(--stone); }
+.para-label-middle { top: 50%; left: 100%; transform: translateY(-50%) translateX(8px); color: var(--s2); }
+.para-label-inner  { top: 50%; right: 100%; transform: translateY(-50%) translateX(-8px); color: var(--gold-light); }
+
+/* ═══════════════════════════════════════════════════════════
+   MAYA
+   ═══════════════════════════════════════════════════════════ */
+.maya-section { padding: 40px 24px; text-align: center; }
+.maya-diagram { display: flex; align-items: center; justify-content: center; gap: 20px; margin: 36px 0; flex-wrap: wrap; }
+.maya-node { padding: 18px 28px; border-radius: var(--radius-md); font-size: 0.92rem; transition: all 0.4s var(--ease-out-expo); }
+.maya-node:hover { transform: translateY(-4px); box-shadow: var(--shadow-deep); }
+.maya-node.absolute    { background: var(--surface2); border: 2px solid var(--gold-light); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; }
+.maya-node.consciousness { background: rgba(74,127,165,0.10); border: 1px solid var(--s2); color: var(--s2); }
+.maya-node.world         { background: rgba(192,98,42,0.10);   border: 1px solid var(--s3); color: var(--s3); }
+.maya-arrow { color: var(--stone); font-size: 18px; position: relative; transition: transform 0.3s ease; }
+.maya-arrow:hover { transform: scaleX(1.2); }
+.maya-arrow span { display: block; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; font-family: 'Cinzel', serif; color: var(--stone-light); }
+
+/* ═══════════════════════════════════════════════════════════
+   LOVE SECTION
+   ═══════════════════════════════════════════════════════════ */
+.love-section {
+  padding: 96px 24px;
+  background: linear-gradient(180deg, var(--bg2) 0%, rgba(181,130,42,0.03) 50%, var(--bg2) 100%);
+  text-align: center;
+}
+.love-container { max-width: 780px; margin: 0 auto; }
+
+.love-central-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.15rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.52;
+  color: var(--ink);
+  margin: 52px auto 48px;
+  max-width: 640px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 1s var(--ease-out-expo);
+}
+.love-central-quote.visible { opacity: 1; transform: translateY(0); }
+
+.love-rubric {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 48px 0;
+  background: var(--surface);
+}
+.love-rubric-col {
+  padding: 32px 28px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.8s var(--ease-out-expo);
+}
+.love-rubric-col.visible { opacity: 1; transform: translateY(0); }
+.love-rubric-col:hover { background: var(--surface2); }
+.love-rubric-divider { width: 1px; height: 80%; background: var(--border); flex-shrink: 0; }
+.love-rubric-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+.love-rubric-text { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); line-height: 1.55; }
+.love-rubric-sub { font-size: 0.82rem; color: var(--stone); margin-top: 8px; line-height: 1.5; }
+
+.love-attributes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 44px; }
+.love-attr {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: all 0.45s var(--ease-out-expo);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.love-attr.visible { opacity: 1; transform: translateY(0); }
+.love-attr:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+.love-attr h5 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 10px; font-family: 'Cinzel', serif; }
+.love-attr p { font-size: 0.92rem; color: var(--stone); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════════════
+   LIBERATION
+   ═══════════════════════════════════════════════════════════ */
+.liberation-section {
+  padding: 128px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.liberation-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 640px; height: 640px;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 60%);
+  opacity: 0.55;
+  pointer-events: none;
+  animation: breathe 8s ease-in-out infinite;
+}
+.liberation-container { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
+.liberation-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 28px;
+  position: relative;
+  display: inline-block;
+}
+.liberation-section h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 64px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.liberation-section p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 18px; }
+.liberation-final {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 2.8vw, 1.72rem);
+  font-style: italic;
+  color: var(--ink);
+  margin-top: 44px;
+  padding: 36px;
+  background: var(--surface);
+  border: 2px solid var(--gold-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-gold);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s var(--ease-out-expo);
+}
+.liberation-final:hover { transform: translateY(-4px); box-shadow: 0 16px 56px var(--gold-glow), 0 20px 72px rgba(181,130,42,0.16); }
+.liberation-final::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(212,164,74,0.07), transparent); animation: shimmer 4s ease-in-out infinite; }
+
+.liberation-section sup {
+  color: var(--gold);
+  font-size: 0.7em;
+  vertical-align: super;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   KOSHAS
+   ═══════════════════════════════════════════════════════════ */
+.koshas-diagram { display: flex; flex-direction: column; align-items: center; gap: 5px; margin: 36px 0; }
+.kosha-layer { width: 100%; padding: 16px 22px; border-radius: var(--radius-sm); text-align: center; font-size: 0.92rem; transition: all 0.35s var(--ease-out-expo); position: relative; cursor: pointer; }
+.kosha-layer:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.kosha-layer .sanskrit { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.65; margin-left: 6px; font-family: 'Cinzel', serif; }
+.kosha-header { display: flex; align-items: center; justify-content: center; gap: 6px; }
+.kosha-header::after { content: '▼'; font-size: 0.65rem; margin-left: 6px; opacity: 0.45; transition: transform 0.35s var(--ease-out-expo); }
+.kosha-layer.active .kosha-header::after { transform: rotate(180deg); opacity: 0.9; }
+.kosha-explanation { display: none; padding: 14px; margin-top: 10px; background: var(--surface); border-radius: var(--radius-sm); border-left: 3px solid var(--gold-light); text-align: left; }
+.kosha-explanation.active { display: block; animation: fadeInUp 0.35s var(--ease-out-expo); }
+.kosha-layer.active { box-shadow: var(--shadow-gold), 0 6px 28px rgba(181,130,42,0.10); border: 1px solid var(--gold); }
+.kosha-1 { background: rgba(124,111,160,0.10); color: var(--s1); width: 100%; }
+.kosha-2 { background: rgba(74,127,165,0.10); color: var(--s2); width: 90%; }
+.kosha-3 { background: rgba(181,130,42,0.10); color: var(--gold); width: 80%; }
+.kosha-4 { background: rgba(74,138,114,0.10); color: var(--s4); width: 70%; }
+.kosha-5 { background: rgba(74,127,165,0.08); color: var(--s2); width: 60%; }
+.kosha-sanskrit { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--gold); margin-bottom: 6px; }
+.kosha-definition { font-size: 0.88rem; color: var(--stone); line-height: 1.6; margin-bottom: 6px; }
+.kosha-upanishad { font-size: 0.72rem; color: var(--stone); font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 0.3em; }
+.kosha-label { text-align: center; font-size: 0.78rem; color: var(--stone); margin-top: 18px; font-style: italic; }
+
+/* ═══════════════════════════════════════════════════════════
+   NOTE BOX
+   ═══════════════════════════════════════════════════════════ */
+.note-box {
+  background: rgba(181,130,42,0.07);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  margin: 26px 0;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.35s var(--ease-out-expo);
+}
+.note-box:hover { transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+.note-box .icon { font-size: 22px; flex-shrink: 0; }
+.note-box p { font-size: 0.92rem; color: var(--stone); line-height: 1.72; margin: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   GLOSSARY — with search
+   ═══════════════════════════════════════════════════════════ */
+.glossary-section {
+  padding: 80px 24px;
+  max-width: 940px;
+  margin: 0 auto 60px;
+}
+.glossary-search-wrap { position: relative; max-width: 360px; margin: 0 auto 32px; }
+.glossary-search {
+  width: 100%;
+  padding: 0.75rem 3rem 0.75rem 2.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 100px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+  transition: all 0.35s var(--ease-out-expo);
+}
+.glossary-search:focus { border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-glow); }
+.glossary-search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--stone); font-size: 0.9rem; pointer-events: none; }
+.glossary-no-results { text-align: center; color: var(--stone); font-style: italic; padding: 2rem; display: none; }
+.glossary-clear {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--stone);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s var(--ease-out-expo);
+}
+.glossary-clear.visible { opacity: 1; pointer-events: all; }
+.glossary-clear:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.glossary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.glossary-item {
+  padding: 22px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gold);
+  transition: all 0.35s var(--ease-out-expo);
+  cursor: default;
+  transform-style: preserve-3d;
+}
+.glossary-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-deep); border-left-width: 5px; }
+.glossary-item h5 { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; color: var(--ink); margin-bottom: 5px; font-weight: 500; }
+.glossary-item .sanskrit { font-size: 0.66rem; color: var(--stone); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-family: 'Cinzel', serif; }
+.glossary-item p { font-size: 0.83rem; color: var(--stone); line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════════════
+   PRACTICE
+   ═══════════════════════════════════════════════════════════ */
+.practice-section { padding: 80px 24px; max-width: 880px; margin: 0 auto; }
+.practice-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(248px, 1fr)); gap: 22px; margin-top: 36px; }
+.practice-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  transition: all 0.45s var(--ease-out-expo);
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+}
+.practice-card.visible { opacity: 1; transform: translateY(0); }
+.practice-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow-gold), 0 12px 40px rgba(181,130,42,0.12); }
+.practice-card .step { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 14px; font-family: 'Cinzel', serif; }
+.practice-card h5 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin-bottom: 14px; }
+.practice-card p { font-size: 0.92rem; color: var(--stone); line-height: 1.72; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER — Elevated
+   ═══════════════════════════════════════════════════════════ */
+.footer {
+  padding: 72px 24px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+}
+.footer-inner { max-width: 920px; margin: 0 auto; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-col-title { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.32em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.footer-col p, .footer-col li { font-size: 0.88rem; color: var(--stone); line-height: 1.85; list-style: none; }
+.footer-col ul { padding: 0; }
+.footer-col a { color: var(--gold); text-decoration: none; opacity: 0.75; transition: opacity 0.2s ease, color 0.2s ease; }
+.footer-col a:hover { opacity: 1; color: var(--gold-light); }
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--stone); font-style: italic; }
+.footer-bottom-copy { font-family: 'Cinzel', serif; font-size: 0.54rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL ANIMATIONS  —  Premium Stagger System
+   ═══════════════════════════════════════════════════════════ */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.slide-in-left  { opacity: 0; transform: translateX(-60px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.slide-in-left.visible  { opacity: 1; transform: translateX(0); }
+.slide-in-right { opacity: 0; transform: translateX(60px);  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.slide-in-right.visible { opacity: 1; transform: translateX(0); }
+
+.stagger-children > *:nth-child(1) { transition-delay: 0.10s; }
+.stagger-children > *:nth-child(2) { transition-delay: 0.20s; }
+.stagger-children > *:nth-child(3) { transition-delay: 0.30s; }
+.stagger-children > *:nth-child(4) { transition-delay: 0.40s; }
+.stagger-children > *:nth-child(5) { transition-delay: 0.50s; }
+.stagger-children > *:nth-child(6) { transition-delay: 0.60s; }
+.stagger-children > *:nth-child(7) { transition-delay: 0.70s; }
+.stagger-children > *:nth-child(8) { transition-delay: 0.80s; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 1000px) {
+  .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.4s var(--ease-out-expo); }
+  .sidebar:not(.collapsed) { transform: translateX(0); width: 260px; }
+  .sidebar.collapsed { transform: translateX(-100%); }
+  .main-content { margin-left: 0 !important; }
+  .cursor-glow { display: none; }
+}
+@media (max-width: 768px) {
+  .states-diagram { grid-template-columns: 1fr 1fr; }
+  .distinction-diagram { grid-template-columns: 1fr; gap: 20px; }
+  .distinction-left, .distinction-right { border-radius: var(--radius-lg); border: 1px solid var(--border-medium); }
+  .distinction-center { margin: 0 auto; }
+  .path-timeline { padding-left: 36px; }
+  .stage-marker { left: -32px; }
+  .timeline-draw { left: 26px; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .love-rubric { grid-template-columns: 1fr; }
+  .love-rubric-divider { width: 80%; height: 1px; margin: 0 auto; }
+  .misunderstanding-table table { font-size: 0.82rem; }
+  .misunderstanding-table th, .misunderstanding-table td { padding: 10px 12px; }
+}
+@media (max-width: 500px) {
+  .toc-grid, .practice-cards, .glossary-grid { grid-template-columns: 1fr; }
+  .states-diagram { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fade-in, .slide-in-left, .slide-in-right, .stage-card, .obstacle-card, .state-box, .practice-card, .love-attr, .love-rubric-col, .love-central-quote {
+    opacity: 1 !important; transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════ */
+.mt-22 { margin-top: 22px; }
+.mt-26 { margin-top: 26px; }
+.mt-40 { margin-top: 40px; }
+.mt-56 { margin-top: 56px; }
+.mt-1 { margin-top: 1rem; }
+.mt-sm { margin-top: 0.5rem; }
+.mt-0-75 { margin-top: 0.75rem; }
+.my-26 { margin: 26px 0; }
+.max-w-700 { max-width: 700px; margin-left: auto; margin-right: auto; }
+.absolute-full { position: absolute; inset: 0; z-index: 1; }
+.absolute-left-26 { position: absolute; left: 26px; top: 0; pointer-events: none; }
+
+.stage-badge-s1 { background: var(--s1); }
+.stage-badge-s2 { background: var(--s2); }
+.stage-badge-s3 { background: var(--s3); }
+.stage-badge-s4 { background: var(--s4); }
+.stage-badge-s5 { background: var(--s5); }
+.stage-badge-s6 { background: var(--s6); }
+.stage-badge-s7 { background: var(--s7); }
+
+.infobox-text { font-size: 0.88rem; color: var(--stone); line-height: 1.72; margin-bottom: 14px; }
+.infobox-desc { font-size: 0.88rem; color: var(--stone); line-height: 1.72; }
+.small-label { font-size: 0.75rem; color: var(--stone); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 18px; font-family: 'Cinzel', serif; position: relative; z-index: 1; }
+.kosha-label { font-size: 0.78rem; color: var(--stone); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 18px; text-align: center; font-family: 'Cinzel', serif; }
+.obstacle-context { font-size: 0.87rem; color: var(--stone); margin-top: 14px; line-height: 1.65; }
+.text-ink { color: var(--ink); }
+.text-xl { font-size: 1.2rem; }
+.distinction-label { display: block; font-size: 0.45rem; letter-spacing: 1px; margin-top: 4px; }
+.maya-note { font-size: 0.88rem; color: var(--stone); margin-top: 18px; font-style: italic; }
+.text-center { text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">Nisargadatta Maharaj</div>
+    <div class="sidebar-subtitle">A Verified Cartography</div>
+  </div>
+  <div class="sidebar-nav">
+    <div class="sidebar-nav-section-title">Navigation</div>
+    <a href="#hero" class="sidebar-nav-item active">
+      <span class="sidebar-nav-item-icon">✦</span>
+      <span>Overview</span>
+    </a>
+    <a href="#lineage" class="sidebar-nav-item">
+      <span class="sidebar-nav-item-icon">⊙</span>
+      <span>Lineage</span>
+    </a>
+    <div class="sidebar-nav-section-title mt-sm">Seven Stages</div>
+    <a href="#stage1" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s1">I</span>
+      <span>Mistaken Identity</span>
+    </a>
+    <a href="#stage2" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s2">II</span>
+      <span>Nisarga Yoga</span>
+    </a>
+    <a href="#stage3" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s3">III</span>
+      <span>Three Obstacles</span>
+    </a>
+    <a href="#stage4" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s4">IV</span>
+      <span>States &amp; Turiya</span>
+    </a>
+    <a href="#stage5" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s5">V</span>
+      <span>The Distinction</span>
+    </a>
+    <a href="#stage6" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s6">VI</span>
+      <span>Parabrahman</span>
+    </a>
+    <a href="#stage7" class="sidebar-nav-item">
+      <span class="stage-num-badge stage-badge-s7">VII</span>
+      <span>Love &amp; Liberation</span>
+    </a>
+    <div class="sidebar-nav-section-title mt-sm">Reference</div>
+    <a href="#glossary" class="sidebar-nav-item">
+      <span class="sidebar-nav-item-icon">📖</span>
+      <span>Glossary</span>
+    </a>
+    <a href="#practice" class="sidebar-nav-item">
+      <span class="sidebar-nav-item-icon">☸</span>
+      <span>Practice Guide</span>
+    </a>
+  </div>
+  <div class="sidebar-progress">
+    <div class="sidebar-progress-bar">
+      <div class="sidebar-progress-fill" id="progressFill"></div>
+    </div>
+    <div class="sidebar-progress-text">
+      <span id="progressPercent">0%</span>
+      <span>Reading</span>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content">
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+</button>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <!-- Sacred geometry background -->
+  <svg class="sacred-geometry absolute-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="sacred-mandala">
+      <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
+      <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
+      <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+    </g>
+  </svg>
+
+  <div class="hero-mountain" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+
+  <p class="hero-eyemark">Verified Cartography of the Non-Dual Path</p>
+  <div class="hero-emblem" aria-hidden="true">
+    <div class="hero-emblem-circle"></div>
+    <div class="hero-emblem-circle2"></div>
+    <div class="hero-emblem-dot"></div>
+  </div>
+  <p class="hero-label">A Living Recognition</p>
+  <p class="hero-subtitle-top">The Guru of Mumbai</p>
+  <h1 class="hero-title">Nisargadatta Maharaj</h1>
+  <p class="hero-epithet">The Guru of Mumbai &nbsp;·&nbsp; The Lion of Vedanta</p>
+  <div class="hero-divider" aria-hidden="true">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"The knowledge 'I am' is the link between the Absolute and the relative."</p>
+  <p class="hero-quote-attr">— Nisargadatta Maharaj &nbsp;·&nbsp; I Am That</p>
+  <p class="hero-dates">1897, Bombay &nbsp;—&nbsp; 1981, Mumbai</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button" aria-label="Scroll to table of contents"><span>Explore</span><div class="scroll-line" aria-hidden="true"></div></div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<section class="toc-section" id="toc">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Seven Stages of Realization</span></span></h2>
+    <p>A complete map from mistaken identity to the Absolute — with direct quotes, Vedantic context, and practice guidance</p>
+  </div>
+  <div class="toc-grid stagger-children">
+    <a href="#stage1" class="toc-item fade-in"><span class="num">I</span> Mistaken Identity — The Vyakti</a>
+    <a href="#stage2" class="toc-item fade-in"><span class="num">II</span> Nisarga Yoga — Abide in "I Am"</a>
+    <a href="#stage3" class="toc-item fade-in"><span class="num">III</span> The Three Obstacles</a>
+    <a href="#stage4" class="toc-item fade-in"><span class="num">IV</span> The Four States &amp; Turiya</a>
+    <a href="#stage5" class="toc-item fade-in"><span class="num">V</span> Consciousness vs. Awareness</a>
+    <a href="#stage6" class="toc-item fade-in"><span class="num">VI</span> Parabrahman — The Absolute</a>
+    <a href="#stage7" class="toc-item fade-in"><span class="num">VII</span> Love &amp; Liberation</a>
+    <a href="#glossary" class="toc-item fade-in"><span class="num">★</span> Glossary of Key Terms</a>
+  </div>
+</section>
+
+<!-- PULLQUOTE -->
+<div class="pullquote-section">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <span class="pullquote-mark">"</span>
+    <p class="pullquote-text">Wisdom tells me I am nothing. Love tells me I am everything. Between the two, my life flows.</p>
+    <p class="pullquote-attr">— Nisargadatta Maharaj &nbsp;·&nbsp; I Am That (1973)</p>
+  </div>
+</div>
+
+<!-- LINEAGE -->
+<section class="lineage-section" id="lineage">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Origin &amp; Lineage</span></span></h2>
+    <p>The Inchegiri Sampradaya — Navnath Lineage of the Nine Masters</p>
+  </div>
+  <div class="lineage-tree">
+    <div class="lineage-node">
+      <div class="lineage-root fade-in">
+        <h3>Sri Siddharameshwar Maharaj</h3>
+        <div class="years">1888 – 1936</div>
+        <p>"You are not what you take yourself to be." His single instruction to Nisargadatta: <em>abide in the sense of "I Am."</em> Within three years, by his disciple's own testimony, the work was complete. Nisargadatta would later say: <em>"As a result of faith and earnest application, I realised my self within three years."</em></p>
+        <div class="infobox mt-1">
+          <div class="infobox-title">Inchegiri Sampradaya</div>
+          <p class="infobox-desc">A lineage within the broader Nath tradition tracing to the Navnath — nine masters revered across India. Unlike Shankara's Advaita, which emphasizes scriptural analysis, this tradition focuses on the direct experience of consciousness itself. The method is deceptively simple: find the sense of "I Am" and abide in it until it reveals its source.</p>
+        </div>
+      </div>
+    </div>
+    <div class="lineage-branch stagger-children">
+      <div class="lineage-leaf fade-in">
+        <h4>Nisargadatta Maharaj</h4>
+        <div class="years">1897 – 1981</div>
+        <p>Ordinary householder and beedi-shop owner until age 36. His realisation came through three years of practice following his guru's single instruction. He taught from his humble Khetwadi flat in Mumbai for forty years, attracting Western seekers in the 1970s who helped publish his teachings globally.</p>
+      </div>
+      <div class="lineage-leaf fade-in">
+        <h4>I Am That</h4>
+        <div class="years">1973</div>
+        <p>Translated by Maurice Frydman, a Polish engineer who became Nisargadatta's devoted disciple. The conversations were recorded between 1972–73 in Khetwadi and published by Chetana Pvt. Ltd., Bombay — never since out of print, recognised worldwide as one of the most potent Advaita texts in English.</p>
+      </div>
+      <div class="lineage-leaf fade-in">
+        <h4>Key Transmitters</h4>
+        <div class="years">20th Century</div>
+        <p><strong>Ramesh Balsekar</strong> — bridged the teaching with Western psychology. <strong>Jean Dunn</strong> — preserved the final-period talks in <em>Prior to Consciousness</em>. <strong>Robert Powell</strong> — created accessible Western introductions. <strong>Stephen Wolinsky</strong> — integrated the direct pointing with clinical practice.</p>
+      </div>
+    </div>
+  </div>
+  <div class="stage-quote mt-56 max-w-700">
+    <p>"My Guru told me: you are the Parabrahman. The words he gave me touched me very deeply. I abided in one thing only: the words of my Guru are the truth."</p>
+    <cite>— Nisargadatta Maharaj, on Siddharameshwar</cite>
+  </div>
+</section>
+
+<!-- STAGES SECTION -->
+<section class="stages-section" id="stages">
+  <div class="stages-container">
+    <div class="section-header">
+      <div class="section-separator"></div>
+      <h2><span class="text-reveal"><span class="text-reveal-inner">The Seven Stages of Realization</span></span></h2>
+      <p>From the prison of personhood to the freedom of the Absolute</p>
+    </div>
+    <div class="path-timeline">
+      <svg class="timeline-draw absolute-left-26" width="2" height="100%" viewBox="0 0 2 1000" preserveAspectRatio="none">
+        <line x1="1" y1="0" x2="1" y2="1000" stroke="var(--gold-light)" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000" />
+      </svg>
+
+      <!-- STAGE 1 -->
+      <div class="stage-card" data-stage="1" id="stage1">
+        <div class="stage-marker"></div>
+        <div class="stage-number">I</div>
+        <h3>The Starting Condition</h3>
+        <div class="stage-subtitle">Mistaken Identity — The Vyakti</div>
+        <p>The ordinary human takes itself to be a body-mind organism — a <em>vyakti</em>, a person with a name, biography, desires and fears. This identification is the root of all suffering. It is not a moral failing but an innocent error of attention: awareness has forgotten its own nature by becoming absorbed in its content.</p>
+        <div class="my-26">
+          <p class="kosha-label">The Five Sheaths (Koshas) — All Appearances in Consciousness</p>
+          <div class="koshas-diagram">
+            <div class="kosha-layer kosha-1" onclick="toggleKosha(1)">
+              <div class="kosha-header">Physical Body <span class="sanskrit">Annamaya</span></div>
+              <div class="kosha-explanation" id="kosha-1">
+                <div class="kosha-sanskrit">Annamaya Kosha</div>
+                <div class="kosha-definition">The food sheath — the physical body, the outermost of the five sheaths. Made of food and sustained by food, it is the gross form that the mistake "I am this body" superimposes upon awareness.</div>
+                <div class="kosha-upanishad">Taittiriya Upanishad 2.1–2</div>
+              </div>
+            </div>
+            <div class="kosha-layer kosha-2" onclick="toggleKosha(2)">
+              <div class="kosha-header">Vital Energy <span class="sanskrit">Pranamaya</span></div>
+              <div class="kosha-explanation" id="kosha-2">
+                <div class="kosha-sanskrit">Pranamaya Kosha</div>
+                <div class="kosha-definition">The energy sheath — the vital breath (prana) animating the body. Contains the five physiological functions. Still an object in awareness.</div>
+                <div class="kosha-upanishad">Taittiriya Upanishad 2.2–3</div>
+              </div>
+            </div>
+            <div class="kosha-layer kosha-3" onclick="toggleKosha(3)">
+              <div class="kosha-header">Mental <span class="sanskrit">Manomaya</span></div>
+              <div class="kosha-explanation" id="kosha-3">
+                <div class="kosha-sanskrit">Manomaya Kosha</div>
+                <div class="kosha-definition">The mental sheath — the mind, emotions, and thinking faculty. The arena where the ego-sense (ahamkara) operates. Processes sensory input and generates desires.</div>
+                <div class="kosha-upanishad">Taittiriya Upanishad 2.4–5</div>
+              </div>
+            </div>
+            <div class="kosha-layer kosha-4" onclick="toggleKosha(4)">
+              <div class="kosha-header">Intellect <span class="sanskrit">Vijnanamaya</span></div>
+              <div class="kosha-explanation" id="kosha-4">
+                <div class="kosha-sanskrit">Vijnanamaya Kosha</div>
+                <div class="kosha-definition">The intellectual sheath — the intellect and higher mind. Contains the ego-sense and the capacity for discrimination (viveka). Not yet the Self.</div>
+                <div class="kosha-upanishad">Taittiriya Upanishad 2.6–7</div>
+              </div>
+            </div>
+            <div class="kosha-layer kosha-5" onclick="toggleKosha(5)">
+              <div class="kosha-header">Bliss <span class="sanskrit">Anandamaya</span></div>
+              <div class="kosha-explanation" id="kosha-5">
+                <div class="kosha-sanskrit">Anandamaya Kosha</div>
+                <div class="kosha-definition">The bliss sheath — the subtle layer of peace experienced in deep meditation or deep sleep. Closer to the Self but still an appearance, not the ultimate reality.</div>
+                <div class="kosha-upanishad">Taittiriya Upanishad 2.8</div>
+              </div>
+            </div>
+          </div>
+          <p class="kosha-label">Each layer is peeled back in inquiry. None is the Self.</p>
+        </div>
+        <div class="stage-quote">
+          <p>"As long as you identify with the body-mind you are conditioned. Once you stabilize in the knowledge 'I am' unconditionally you are free."</p>
+          <cite>— Nisargadatta Maharaj</cite>
+        </div>
+        <div class="infobox mt-22">
+          <div class="infobox-title">The Taittiriya Upanishad · Kosha Doctrine in Nisargadatta's Teaching</div>
+          <p class="infobox-text">For Ramana Maharshi the koshas veil the Self. For Nisargadatta they are objects <em>appearing within</em> consciousness — not layers hiding awareness, but contents within it. This subtle distinction reflects the unique radicalism of his teaching: consciousness itself (the "I Am") is still an appearance, however subtle. The Self is prior to even the sense of being.</p>
+          <div class="infobox-grid">
+            <div class="infobox-item"><span class="infobox-item-label">Traditional View</span><span class="infobox-item-value">Koshas veil the Self</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Nisargadatta's View</span><span class="infobox-item-value">Koshas appear in consciousness</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Consciousness</span><span class="infobox-item-value">Also an appearance</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">The Self</span><span class="infobox-item-value">Prior to consciousness</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 2 -->
+      <div class="stage-card" data-stage="2" id="stage2">
+        <div class="stage-marker"></div>
+        <div class="stage-number">II</div>
+        <h3>The Core Practice</h3>
+        <div class="stage-subtitle">Nisarga Yoga — Abide in "I Am"</div>
+        <p>The pivot of the entire teaching. Locate the bare sense of existing — <em>"I Am"</em> — before any qualifier such as "I am this body" or "I am unhappy." This is <strong>Nisarga Yoga</strong>, the yoga of the natural state. It is not concentration or effort — it is the effortless recognition of what is always already present.</p>
+        <p>Nisargadatta identifies this "I Am" with <strong>Ishwara</strong> — God, the creative principle, the source of the entire universe. To abide in pure "I Am-ness" is to worship God directly, without intermediary.</p>
+        <div class="iam-diagram">
+          <p class="small-label">Stripping Away the Qualifiers</p>
+          <div class="iam-qualifiers">
+            <span class="iam-qualifier strikethrough">I am this body</span>
+            <span class="iam-qualifier strikethrough">I am unhappy</span>
+            <span class="iam-qualifier strikethrough">I am a person</span>
+            <span class="iam-qualifier strikethrough">I am the mind</span>
+            <span class="iam-qualifier strikethrough">I am the doer</span>
+          </div>
+          <div class="iam-arrow">↓</div>
+          <div class="iam-core">I Am</div>
+          <div class="iam-pure">Pure Beingness — Ishwara — God</div>
+        </div>
+        <div class="note-box">
+          <span class="icon">⚠</span>
+          <p>This "I Am" is <strong>not a mantra</strong> to repeat mechanically. It is the actual, living recognition of existence prior to thought. Maharaj called it <em>beingness</em> — the first arising, the primordial sense of presence.</p>
+        </div>
+        <div class="infobox mt-22">
+          <div class="infobox-title">Nisarga Yoga vs. Traditional Vedanta Paths</div>
+          <p class="infobox-text">Ramana Maharshi's Self-Enquiry traces the "I"-thought to its source. Nisargadatta's method abides in the sense of "I Am" itself until it reveals what is prior. Both point to the same reality, but the emphasis differs: Ramana investigates the thinker; Nisargadatta investigates beingness.</p>
+          <div class="infobox-grid">
+            <div class="infobox-item"><span class="infobox-item-label">Ramana's Method</span><span class="infobox-item-value">Trace "I" to source</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Nisargadatta's Method</span><span class="infobox-item-value">Abide in "I Am"</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Traditional Jnana</span><span class="infobox-item-value">Scriptural study</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Nisarga Yoga</span><span class="infobox-item-value">Direct experience</span></div>
+          </div>
+        </div>
+        <div class="stage-quote">
+          <p>"The 'I am' is the beginning and the end of knowledge. Be attentive to the 'I am', once you understand it, you are apart from it."</p>
+          <cite>— Nisargadatta Maharaj</cite>
+        </div>
+      </div>
+
+      <!-- STAGE 3 -->
+      <div class="stage-card" data-stage="3" id="stage3">
+        <div class="stage-marker"></div>
+        <div class="stage-number">III</div>
+        <h3>The Three Obstacles</h3>
+        <div class="stage-subtitle">What Blocks the Path</div>
+        <p>Three fundamental errors sustain the illusion of separation. Each must be seen through directly, not merely understood intellectually.</p>
+        <div class="obstacles-grid stagger-children mt-26" id="obstacles">
+          <div class="obstacle-card fade-in">
+            <div class="obstacle-icon">🧼</div>
+            <h4>Obstacle A: Body Identification</h4>
+            <p>Mistaking the body for the self is the foundational error. The body is an object perceived within consciousness — it is not the perceiver. It arises in awareness; awareness does not arise in it.</p>
+            <p class="obstacle-context"><strong class="text-ink">Vedantic context:</strong> The Chandogya Upanishad's "Tat Tvam Asi" — You Are That — points to identity not with the body but with the universal. The Taittiriya's kosha analysis shows the five sheaths are all objects in consciousness, not the knowing subject.</p>
+          </div>
+          <div class="obstacle-card fade-in">
+            <div class="obstacle-icon">💭</div>
+            <h4>Obstacle B: Mind &amp; Concepts</h4>
+            <p>The mind generates concepts — including spiritual concepts. Even "non-duality" and "the Absolute" are mental constructs. Every concept must ultimately be relinquished.</p>
+            <p class="obstacle-context"><strong class="text-ink">Vedantic context:</strong> The Brihadaranyaka Upanishad's "neti, neti" — not this, not this — negates all objects to arrive at the irreducible witness. Nisargadatta's method is the experiential equivalent: abide in beingness until all that is not-Self drops.</p>
+          </div>
+          <div class="obstacle-card fade-in">
+            <div class="obstacle-icon">🎭</div>
+            <h4>Obstacle C: Sense of Doership</h4>
+            <p>The belief "I act, I choose, I achieve" sustains the illusion of a separate self. Actions happen through the body-mind; there is no independent doer standing behind them.</p>
+            <p class="obstacle-context"><strong class="text-ink">Vedantic context:</strong> The Bhagavad Gita's teaching of actionless action — yoga as skill in action — points to the same truth. When doership dissolves, actions happen but there is no actor claiming them.</p>
+          </div>
+        </div>
+        <div class="stage-quote">
+          <p>"The very idea that you are the body is ridiculous. Consciousness is experiencing its manifestation."</p>
+          <cite>— Nisargadatta Maharaj, Consciousness and the Absolute</cite>
+        </div>
+      </div>
+
+      <!-- STAGE 4 -->
+      <div class="stage-card" data-stage="4" id="stage4">
+        <div class="stage-marker"></div>
+        <div class="stage-number">IV</div>
+        <h3>The States of Consciousness</h3>
+        <div class="stage-subtitle">The Three States &amp; the Fourth — Turiya</div>
+        <p>Rooted in the Mandukya Upanishad, Nisargadatta maps experience across four dimensions. All three ordinary states come and go, but awareness — the witness — persists. In deep sleep, consciousness is suspended, yet Nisargadatta taught: <em>"I am aware that I am unconscious."</em></p>
+        <div class="states-diagram stagger-children" id="states">
+          <div class="state-box fade-in">
+            <div class="state-icon">☀</div>
+            <h5>Waking</h5><div class="sanskrit">Jagrat</div>
+            <p>The world of objects, names, and forms. The realm of the vyakti.</p>
+          </div>
+          <div class="state-box fade-in">
+            <div class="state-icon">🌙</div>
+            <h5>Dreaming</h5><div class="sanskrit">Svapna</div>
+            <p>Subtle world of mind-created imagery. Also an appearance.</p>
+          </div>
+          <div class="state-box fade-in">
+            <div class="state-icon">🌑</div>
+            <h5>Deep Sleep</h5><div class="sanskrit">Sushupti</div>
+            <p>Consciousness suspended. Yet "I am aware that I am unconscious."</p>
+          </div>
+          <div class="state-box turiya fade-in">
+            <div class="state-icon">⭐</div>
+            <h5>Turiya</h5><div class="sanskrit">The Fourth</div>
+            <p>Not a state. The unchanging awareness that contains all three.</p>
+          </div>
+        </div>
+        <div class="states-arrow">All three states are contained within, and witnessed by, Turiya</div>
+        <div class="stage-quote">
+          <p>"The three states of waking, dreaming and sleeping are not me, and I am not in them. Consciousness is an itching rash that makes you scratch. Of course, you cannot step out of consciousness — yet, suddenly, you are free."</p>
+          <cite>— I Am That</cite>
+        </div>
+        <div class="infobox mt-22">
+          <div class="infobox-title">Mandukya Upanishad · The Four States</div>
+          <p class="infobox-text">The Mandukya — twelve verses only — is the most concentrated exposition of consciousness in the Vedantic canon. Nisargadatta adds a radical distinction: consciousness (which contains the three states) is still an appearance. Awareness — that which knows consciousness — is prior to all states and is the true Self.</p>
+          <div class="infobox-grid">
+            <div class="infobox-item"><span class="infobox-item-label">Ramana's View</span><span class="infobox-item-value">Turiya is the Self</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Nisargadatta's View</span><span class="infobox-item-value">Awareness beyond Turiya</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Consciousness</span><span class="infobox-item-value">Contains the 3 states</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Awareness</span><span class="infobox-item-value">Prior to consciousness</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 5 -->
+      <div class="stage-card" data-stage="5" id="stage5">
+        <div class="stage-marker"></div>
+        <div class="stage-number">V</div>
+        <h3>The Critical Distinction</h3>
+        <div class="stage-subtitle">Consciousness (Chit) vs. Pure Awareness</div>
+        <p>This is Nisargadatta's most radical and commonly misunderstood teaching. He makes a hard distinction between two levels that are often conflated in other traditions.</p>
+        <div class="distinction-diagram" id="distinction">
+          <div class="distinction-left slide-in-left">
+            <h4>Consciousness</h4>
+            <div class="label">Chit / "I Am-ness"</div>
+            <ul>
+              <li>The sense of being, knowingness</li>
+              <li>Ishwara, the creator-principle</li>
+              <li>The universe itself</li>
+              <li>Luminous, vast, impersonal</li>
+              <li><strong>Still an appearance</strong></li>
+              <li>Arose; will cease at death</li>
+              <li>Depends on the five elements</li>
+              <li><strong>Not the ultimate</strong></li>
+            </ul>
+          </div>
+          <div class="distinction-center">
+            <span class="text-xl">⟷</span>
+            <span class="distinction-label">not the same</span>
+          </div>
+          <div class="distinction-right slide-in-right">
+            <h4>Pure Awareness</h4>
+            <div class="label">The Absolute / Parabrahman</div>
+            <ul>
+              <li>That in which consciousness appears</li>
+              <li>No qualities, no "I Am"</li>
+              <li>Prior to being and non-being</li>
+              <li>Never born, never dies</li>
+              <li><strong>Your true nature</strong></li>
+              <li>Independent of all conditions</li>
+              <li>No consciousness of itself</li>
+              <li><strong>The ultimate</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="stage-quote">
+          <p>"The entire universe exists only in consciousness (Chidakash), while the Jnani has his abode in the Absolute (Paramakash). In the Absolute there is no consciousness of 'I am.'"</p>
+          <cite>— Nisargadatta Maharaj</cite>
+        </div>
+        <div class="infobox mt-22">
+          <div class="infobox-title">Nisargadatta's Radical Distinction</div>
+          <p class="infobox-desc">While traditional Advaita identifies the Self with pure consciousness (Chit), Nisargadatta insists that consciousness itself — the "I Am" — is still an appearance. The true Self is prior to consciousness, prior to being, prior to the very sense of existence. He arrived at this not through philosophy but through direct experience following his guru's instruction.</p>
+        </div>
+      </div>
+
+      <!-- STAGE 6 -->
+      <div class="stage-card" data-stage="6" id="stage6">
+        <div class="stage-marker"></div>
+        <div class="stage-number">VI</div>
+        <h3>The Ultimate</h3>
+        <div class="stage-subtitle">Parabrahman — Prior to "I Am"</div>
+        <p>Beyond consciousness, beyond the witness, beyond even the primordial sense of being — this is the Absolute: <strong>Parabrahman</strong>. No quality can be attributed to it. It is neither conscious nor unconscious, neither being nor non-being. It is not a state you enter; it is what you are when all appearances subside.</p>
+        <div class="para-diagram">
+          <div class="para-circle para-outer">
+            <span class="para-label para-label-outer">Maya — The<br>Phenomenal Universe</span>
+          </div>
+          <div class="para-circle para-middle">
+            <span class="para-label para-label-middle">Spontaneous Arising<br>of Consciousness</span>
+          </div>
+          <div class="para-circle para-inner">
+            <span class="para-label para-label-inner">The Witness<br>That Remains</span>
+          </div>
+          <div class="para-circle para-center">
+            <span>The Absolute<br>— You —</span>
+          </div>
+        </div>
+        <div class="maya-section">
+          <p class="small-label">The Mechanism of Maya</p>
+          <div class="maya-diagram">
+            <div class="maya-node absolute">Parabrahman</div>
+            <div class="maya-arrow">→<span>forgets itself</span></div>
+            <div class="maya-node consciousness">Consciousness<br>"I Am" arises</div>
+            <div class="maya-arrow">→<span>projects</span></div>
+            <div class="maya-node world">The Entire<br>Phenomenal Universe</div>
+          </div>
+          <p class="maya-note">Maya is not a trick or punishment. It is simply the Absolute apparently forgetting itself through the mechanism of consciousness.</p>
+        </div>
+        <div class="stage-quote">
+          <p>"Remain focused on the 'I am' till it goes into oblivion — then the eternal is, the Absolute is, Parabrahman is."</p>
+          <cite>— Nisargadatta, compiled by Nic Higham</cite>
+        </div>
+        <div class="infobox mt-22">
+          <div class="infobox-title">Parabrahman in Vedanta · Beyond Brahman</div>
+          <p class="infobox-desc">In traditional Advaita, Brahman is the ultimate reality — pure consciousness. Nisargadatta's Parabrahman goes beyond even this. Consciousness itself is an appearance. The Absolute — Parabrahman — is prior to consciousness, prior to being. This is "neti, neti" carried to its ultimate conclusion.</p>
+          <div class="infobox-grid">
+            <div class="infobox-item"><span class="infobox-item-label">Traditional Vedanta</span><span class="infobox-item-value">Self = Brahman</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Nisargadatta's Teaching</span><span class="infobox-item-value">Beyond Brahman</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Brahman</span><span class="infobox-item-value">Pure consciousness</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Parabrahman</span><span class="infobox-item-value">Prior to consciousness</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAGE 7 — GOLD ARRIVAL -->
+      <div class="stage-card" data-stage="7" id="stage7">
+        <div class="stage-marker"></div>
+        <div class="stage-number">VII</div>
+        <h3>Love &amp; Liberation</h3>
+        <div class="stage-subtitle">The Fruit — The Jnani</div>
+        <p>The <em>jnani</em> appears to live normally. The body continues, words arise, activities happen. But there is no person behind it. The jnani does not claim liberation — liberation is simply the absence of the claim to bondage.</p>
+        <p>And at the level of pure "I Am-ness" — where the illusion of separation begins to lift — what remains is unconditional love. Not an emotion arising in a person, but the very substance of consciousness itself.</p>
+        <div class="stage-quote">
+          <p>"You are already That. The seeker is the sought. The perceiver is the perceived. There is no gap."</p>
+          <cite>— Nisargadatta Maharaj</cite>
+        </div>
+        <div class="infobox mt-22">
+          <div class="infobox-title">The Jnani in Vedanta · Jivanmukti</div>
+          <p class="infobox-desc">The concept of the jnani — one who has realised the Self — appears throughout Vedantic literature as the <em>jivanmukta</em> (liberated while living). Nisargadatta's jnani is unique: not only has the person-sense dissolved, but even the sense "I Am" has been transcended. The jnani abides as Parabrahman — prior to consciousness itself — while appearing to live an ordinary human life.</p>
+          <div class="infobox-grid">
+            <div class="infobox-item"><span class="infobox-item-label">Traditional Jnani</span><span class="infobox-item-value">Realised as Brahman</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Nisargadatta's Jnani</span><span class="infobox-item-value">Beyond Brahman</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Jivanmukti</span><span class="infobox-item-value">Liberated while living</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Natural State</span><span class="infobox-item-value">No claim to liberation</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMON MISUNDERSTANDINGS -->
+      <div class="stage-card mt-40" data-stage="7" id="common-misunderstandings">
+        <div class="stage-marker"></div>
+        <div class="stage-number">★</div>
+        <h3>Common Misunderstandings</h3>
+        <div class="stage-subtitle">Frequent traps on the path</div>
+        <button class="misunderstanding-toggle" aria-label="Toggle table">Show Clarifications ▼</button>
+        <div class="misunderstanding-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Misunderstanding</th>
+                <th>Clarification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"Do nothing" means be passive</td>
+                <td>The seed is intense, devoted attention to "I Am"; the fruit is effortlessness.</td>
+              </tr>
+              <tr>
+                <td>Consciousness is the ultimate</td>
+                <td>No — even "I Am" is an appearance. Parabrahman is prior.</td>
+              </tr>
+              <tr>
+                <td>The teaching dismisses love</td>
+                <td>Love is the very substance of consciousness when separation dissolves.</td>
+              </tr>
+              <tr>
+                <td>Nisargadatta rejected practice</td>
+                <td>He practiced devotedly for three years before stabilization.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOVE SECTION -->
+<section class="love-section" id="love">
+  <div class="love-container">
+    <div class="section-header">
+      <div class="section-separator"></div>
+      <h2><span class="text-reveal"><span class="text-reveal-inner">Love as the Nature of the Absolute</span></span></h2>
+      <p>Often overlooked in intellectual treatments of Nisargadatta's teaching, yet central to what he lived</p>
+    </div>
+
+    <div class="love-central-quote fade-in">
+      Love is not selective. Desire is selective. When the centre of selfishness collapses, love for all beings arises naturally — not as a practice but as one's actual nature.
+    </div>
+
+    <div class="stage-quote max-w-700">
+      <p>"Life is love and love is life. What keeps the body together but love? What is desire, but love of the self? What is fear but the urge to protect? And what is knowledge but the love of truth?"</p>
+      <cite>— Nisargadatta Maharaj</cite>
+    </div>
+
+    <div class="love-unified fade-in">
+      <p>Wisdom says I am nothing—no qualities, no person, no centre. Love says I am everything—the consciousness in you is the same as in all. Between these two truths, life flows.</p>
+      <p>This love is not an emotion arising in a person; it is the very substance of consciousness when separation is seen through. Desire is selective, but love embraces all without distinction—in love there are no strangers. It requires no effort because it is not an achievement; it is simply what remains when the illusion of the separate self dissolves.</p>
+      <p>The consciousness in you and the consciousness in me, apparently two, are really one. Their seeking of unity is love. The love of the self in you is for the self in all—the two are one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LIBERATION -->
+<section class="liberation-section" id="liberation">
+  <div class="liberation-container">
+    <h2 class="fade-in"><span class="text-reveal"><span class="text-reveal-inner">Liberation in This Life</span></span></h2>
+    <p class="fade-in">This is not a permanent altered state to be defended. It is recognition of what always already is — the Absolute was never bound, never born, never in question. What changed is only the mistake: the error of identification has been seen through.</p>
+    <p class="fade-in">Nisargadatta himself died of throat cancer in 1981, continuing to teach from his sickbed.<sup title="Prior to Consciousness, ed. Jean Dunn, Chapter 'Last Days'">[1]</sup> He did not present death as a problem — the body's dissolution was simply the return of an appearance to its source.</p>
+    <div class="liberation-final fade-in">
+      "When you know you are nothing, you are everything. That is the only thing to know."
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section class="glossary-section" id="glossary">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Key Terms Glossary</span></span></h2>
+    <p>Sanskrit and technical terms used throughout this cartography</p>
+  </div>
+  <div class="glossary-search-wrap">
+    <span class="glossary-search-icon">🔍</span>
+    <input type="text" class="glossary-search" id="glossarySearch" placeholder="Search terms…" autocomplete="off" />
+    <button class="glossary-clear" id="glossaryClear" aria-label="Clear search">✕</button>
+  </div>
+  <p class="glossary-no-results" id="glossaryNoResults">No matching terms found.</p>
+  <div class="glossary-grid stagger-children" id="glossaryGrid">
+    <div class="glossary-item fade-in" data-terms="parabrahman absolute">
+      <h5>Parabrahman</h5><div class="sanskrit">The Absolute</div>
+      <p>That which is prior to consciousness, prior to "I Am." The ultimate reality without qualities, without being or non-being.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="ishwara god creator">
+      <h5>Ishwara</h5><div class="sanskrit">God / The Creator</div>
+      <p>Identified by Nisargadatta with the "I Am" itself. The creative principle, the source of the universe. Still an appearance on the Absolute.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="vyakti person individual ego">
+      <h5>Vyakti</h5><div class="sanskrit">The Apparent Person</div>
+      <p>The ordinary human identified with body-mind. The starting condition of mistaken identity. The "personal" that is the prison.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="jnani knower realised liberation">
+      <h5>Jnani</h5><div class="sanskrit">The One Who Knows</div>
+      <p>One who has realised the Absolute. Appears to live normally but with no person behind the living. Does not claim liberation.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="turiya fourth awareness witness">
+      <h5>Turiya</h5><div class="sanskrit">The Fourth</div>
+      <p>Not a state but the unchanging awareness that witnesses and contains waking, dreaming, and deep sleep. The silent background.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="maya illusion world appearance">
+      <h5>Maya</h5><div class="sanskrit">Illusion</div>
+      <p>Not a trick or punishment. The spontaneous appearance of the phenomenal universe on the Absolute. The mechanism of apparent forgetting.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="nisarga yoga natural practice">
+      <h5>Nisarga Yoga</h5><div class="sanskrit">The Yoga of the Natural State</div>
+      <p>The practice of abiding in the bare "I Am" without qualifiers. Effortless recognition of what is always already present.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="koshas sheaths body layers">
+      <h5>Koshas</h5><div class="sanskrit">The Five Sheaths</div>
+      <p>Annamaya, Pranamaya, Manomaya, Vijnanamaya, Anandamaya. All appearances in consciousness, not the Self.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="chit chidakash consciousness knowing">
+      <h5>Chit / Chidakash</h5><div class="sanskrit">Consciousness-Space</div>
+      <p>The field of knowingness in which the entire universe exists. The "I Am-ness." Still an appearance, not the ultimate.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="paramakash absolute space jnani">
+      <h5>Paramakash</h5><div class="sanskrit">The Absolute Space</div>
+      <p>The abode of the Jnani. Prior to consciousness. In the Absolute there is no consciousness of "I am."</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="jiva soul individual doer">
+      <h5>Jiva</h5><div class="sanskrit">The Individual Soul</div>
+      <p>The false idea of a separate doer arising from wrong identification with the body-mind. Only Ishwara is doing anything.</p>
+    </div>
+    <div class="glossary-item fade-in" data-terms="gunas qualities nature sattva rajas tamas">
+      <h5>Gunas</h5><div class="sanskrit">The Three Qualities</div>
+      <p>Sattva (clarity), Rajas (activity), Tamas (inertia). The qualities of nature upon which consciousness depends. When they are gone, the "I Am" goes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice-section" id="practice">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">How to Practice</span></span></h2>
+    <p>A practical guide to Nisarga Yoga</p>
+  </div>
+  <div class="practice-cards stagger-children">
+    <div class="practice-card fade-in">
+      <div class="step">Step 1</div>
+      <h5>Locate the "I Am"</h5>
+      <p>Find the bare sense of existing — not "I am this body" or "I am happy" — just the raw fact of being. This is the gateway.</p>
+    </div>
+    <div class="practice-card fade-in">
+      <div class="step">Step 2</div>
+      <h5>Abide Without Effort</h5>
+      <p>Do not concentrate or strain. Simply rest in the recognition of "I Am." It is effortless because it is already here — you are not creating it.</p>
+    </div>
+    <div class="practice-card fade-in">
+      <div class="step">Step 3</div>
+      <h5>Watch Qualifiers Arise</h5>
+      <p>Notice how the mind adds qualifiers: "I am tired," "I am the body." See these as overlays. Return to the pure "I Am" beneath them.</p>
+    </div>
+    <div class="practice-card fade-in">
+      <div class="step">Step 4</div>
+      <h5>See Through the Obstacles</h5>
+      <p>When body-identification, conceptual thinking, or the sense of doership arise, do not fight them. See them as appearances in the "I Am."</p>
+    </div>
+    <div class="practice-card fade-in">
+      <div class="step">Step 5</div>
+      <h5>Let the "I Am" Dissolve</h5>
+      <p>Eventually, even the "I Am" is seen as an appearance. It drops away by itself. What remains is the Absolute — Parabrahman. You are That.</p>
+    </div>
+    <div class="practice-card fade-in">
+      <div class="step">Final</div>
+      <h5>Nothing Was Ever Done</h5>
+      <p>Nisargadatta reached that perspective through three years of devoted practice. The "do nothing" is the fruit, not the seed. The seed is: attend to the "I Am" with your whole being, until it reveals what is prior to itself.</p>
+    </div>
+  </div>
+  <div class="stage-quote mt-56 max-w-700">
+    <p>"Just 'TO BE' and to remain steady with the awareness 'I AM' is the beginning and end of spiritual practice."</p>
+    <cite>— Nisargadatta Maharaj</cite>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-col-title">The Teacher</div>
+        <p>Sri Nisargadatta Maharaj<br>17 April 1897 – 8 September 1981<br>Mumbai, India</p>
+        <p class="mt-0-75">Guru: Sri Siddharameshwar Maharaj<br>Lineage: Inchegiri Sampradaya<br>Navnath tradition</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Primary Sources</div>
+        <ul>
+          <li><a href="https://www.amazon.com/I-Am-That-Nisargadatta-Maharaj/dp/0893860468" target="_blank" rel="noopener">I Am That</a> — trans. Maurice Frydman (1973)</li>
+          <li><a href="https://www.amazon.com/Prior-Consciousness-Talks-Nisargadatta-Maharaj/dp/0893860247" target="_blank" rel="noopener">Prior to Consciousness</a> — ed. Jean Dunn</li>
+          <li><a href="https://www.amazon.com/Seeds-Consciousness-Wisdom-Nisargadatta-Maharaj/dp/0893860255" target="_blank" rel="noopener">Seeds of Consciousness</a> — ed. Jean Dunn</li>
+          <li><a href="https://www.northatlanticbooks.com/shop/the-nectar-of-immortality/" target="_blank" rel="noopener">The Nectar of Immortality</a></li>
+          <li><a href="https://www.amazon.com/Essential-Nisargadatta-Roy-Melvyn/dp/1501037013" target="_blank" rel="noopener">The Essential Nisargadatta</a></li>
+          <li><a href="https://pdfcoffee.com/the-core-of-sri-nisargadatta-maharajx27s-teaching-pdf-free.html" target="_blank" rel="noopener">The Core of His Teaching</a> — Pradeep Apte</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Scholarly Notes</div>
+        <p>Biographical dates and direct quotes verified against <a href="https://www.amazon.com/I-Am-That-Nisargadatta-Maharaj/dp/0893860468" target="_blank" rel="noopener"><em>I Am That</em></a> (Chetana, 1973), Jean Dunn's biographical writings, and the <a href="https://archive.org/details/the-encyclopedia-of-indian-philosophies" target="_blank" rel="noopener">Encyclopedia of Indian Philosophies</a>.</p>
+        <p class="mt-0-75">Vedantic cross-references drawn from the <a href="https://www.advaita-vedanta.org/avhp/upanishad.html" target="_blank" rel="noopener">Upanishadic canon</a> and <a href="https://en.wikipedia.org/wiki/Advaita_Vedanta" target="_blank" rel="noopener">Shankara's Advaita Vedanta tradition</a>. Compiled by <a href="https://nisargayoga.org/about-nic-higham/" target="_blank" rel="noopener">Nic Higham</a>.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-bottom-name">Sri Nisargadatta Maharaj &nbsp;·&nbsp; Inchegiri Sampradaya</span>
+      <span class="footer-bottom-copy">A Verified Cartography &nbsp;·&nbsp; For Educational Use</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- .main-content -->
+
+<script>
+(function() {
+  'use strict';
+
+  /* ── SIDEBAR ── */
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  let isCollapsed = window.innerWidth <= 1000;
+
+  function setSidebarState(collapsed) {
+    isCollapsed = collapsed;
+    sidebar.classList.toggle('collapsed', isCollapsed);
+  }
+  setSidebarState(isCollapsed);
+
+  sidebarToggle.addEventListener('click', () => setSidebarState(!isCollapsed));
+
+  window.addEventListener('resize', () => {
+    const shouldBe = window.innerWidth <= 1000;
+    if (shouldBe !== isCollapsed) setSidebarState(shouldBe);
+  }, { passive: true });
+
+  /* ── READING PROGRESS ── */
+  const progressFill = document.getElementById('progressFill');
+  const progressPercent = document.getElementById('progressPercent');
+  const backToTop = document.getElementById('backToTop');
+
+  function updateProgress() {
+    const dh = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = dh > 0 ? Math.min(100, Math.max(0, (window.scrollY / dh) * 100)) : 0;
+    if (progressFill) progressFill.style.width = pct + '%';
+    if (progressPercent) progressPercent.textContent = Math.round(pct) + '%';
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6);
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  /* ── TIMELINE DRAW ANIMATION ── */
+  const timelineLine = document.querySelector('.timeline-draw line');
+  if (timelineLine) {
+    const timelineContainer = document.querySelector('.path-timeline');
+    const updateTimeline = () => {
+      const rect = timelineContainer.getBoundingClientRect();
+      const scrollProgress = Math.min(1, Math.max(0, (window.scrollY - rect.top + window.innerHeight/2) / (rect.height)));
+      const dashoffset = 1000 * (1 - scrollProgress);
+      timelineLine.style.strokeDashoffset = dashoffset;
+    };
+    window.addEventListener('scroll', updateTimeline, { passive: true });
+    updateTimeline();
+  }
+
+  /* ── ACTIVE NAV ── */
+  const sections = document.querySelectorAll('section[id], header[id], div.stage-card[id]');
+  const navItems = document.querySelectorAll('.sidebar-nav-item');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(item => {
+          item.classList.toggle('active', item.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '-5% 0px -65% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  /* ── COMMON MISUNDERSTANDINGS TOGGLE ── */
+  document.querySelector('.misunderstanding-toggle')?.addEventListener('click', function() {
+    const table = document.querySelector('.misunderstanding-table');
+    if (table) {
+      const isVisible = table.style.display !== 'none';
+      table.style.display = isVisible ? 'none' : 'block';
+      this.textContent = isVisible ? 'Show Clarifications ▼' : 'Hide Clarifications ▲';
+    }
+  });
+
+  /* ── SCROLL ANIMATIONS ── */
+  const animObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .section-separator').forEach(el => animObserver.observe(el));
+
+  const stageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.stage-card, .obstacle-card, .state-box, .practice-card, .love-attr, .love-rubric-col, .love-central-quote').forEach(el => stageObserver.observe(el));
+
+  /* ── TEXT REVEAL ── */
+  const textRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        textRevealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.text-reveal').forEach(el => textRevealObserver.observe(el));
+
+  /* ── THEME TOGGLE ── */
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  (function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) html.setAttribute('data-theme', 'dark');
+  })();
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  /* ── SMOOTH SCROLL ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* ── KOSHA TOGGLE ── */
+  window.toggleKosha = function(id) {
+    const el = document.getElementById('kosha-' + id);
+    const layer = el.closest('.kosha-layer');
+    const isOpen = el.classList.contains('active');
+
+    document.querySelectorAll('.kosha-explanation').forEach(e => e.classList.remove('active'));
+    document.querySelectorAll('.kosha-layer').forEach(l => l.classList.remove('active'));
+
+    if (!isOpen) {
+      el.classList.add('active');
+      layer.classList.add('active');
+    }
+  };
+
+  /* ── GLOSSARY SEARCH ── */
+  const searchInput = document.getElementById('glossarySearch');
+  const clearButton = document.getElementById('glossaryClear');
+  const glossaryItems = document.querySelectorAll('#glossaryGrid .glossary-item');
+  const noResults = document.getElementById('glossaryNoResults');
+
+  // Helper function to normalize diacritics
+  function normalizeDiacritics(str) {
+    return str
+      .toLowerCase()
+      .replace(/[ā]/g, 'a')
+      .replace(/[ī]/g, 'i')
+      .replace(/[ū]/g, 'u')
+      .replace(/[ṛ]/g, 'r')
+      .replace(/[ṝ]/g, 'r')
+      .replace(/[ḷ]/g, 'l')
+      .replace(/[ḹ]/g, 'l')
+      .replace(/[ṅ]/g, 'n')
+      .replace(/[ñ]/g, 'n')
+      .replace(/[ṭ]/g, 't')
+      .replace(/[ḍ]/g, 'd')
+      .replace(/[ṇ]/g, 'n')
+      .replace(/[ṁ]/g, 'm')
+      .replace(/[ṃ]/g, 'm')
+      .replace(/[ś]/g, 's')
+      .replace(/[ṣ]/g, 's')
+      .replace(/[ḥ]/g, 'h')
+      .replace(/[ḵ]/g, 'k')
+      .replace(/[ṟ]/g, 'r');
+  }
+
+  if (searchInput) {
+    // Update clear button visibility on input
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value;
+      clearButton.classList.toggle('visible', q.length > 0);
+
+      // Normalized search
+      const normalizedQuery = normalizeDiacritics(q.trim());
+      let count = 0;
+
+      glossaryItems.forEach(item => {
+        const text = (item.textContent + ' ' + (item.dataset.terms || ''));
+        const normalizedText = normalizeDiacritics(text);
+        const show = !normalizedQuery || normalizedText.includes(normalizedQuery);
+        item.style.display = show ? '' : 'none';
+        if (show) count++;
+      });
+
+      if (noResults) noResults.style.display = count === 0 ? 'block' : 'none';
+    });
+
+    // Clear button functionality
+    if (clearButton) {
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+        searchInput.focus();
+      });
+    }
+  }
+
+  /* ── MOBILE SWIPE ── */
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (diff > 55 && touchStartX < 30 && isCollapsed) setSidebarState(false);
+    if (diff < -55 && !isCollapsed) setSidebarState(true);
+  }, { passive: true });
+
+  /* ── PREMIUM: CURSOR GLOW ── */
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+    let mx = 0, my = 0, cx = 0, cy = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+    function animateCursor() {
+      cx += (mx - cx) * 0.08;
+      cy += (my - cy) * 0.08;
+      cursorGlow.style.left = cx + 'px';
+      cursorGlow.style.top = cy + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+  }
+
+  /* ── PREMIUM: HERO PARALLAX ── */
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  if (parallaxElements.length) {
+    window.addEventListener('scroll', () => {
+      const sy = window.scrollY;
+      parallaxElements.forEach(el => {
+        const rate = parseFloat(el.dataset.parallax) || 0.1;
+        el.style.transform = `translateY(${sy * rate}px)`;
+      });
+    }, { passive: true });
+  }
+
+  /* ── PREMIUM: 3D TILT ON CARDS ── */
+  function addTilt(el) {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const dx = (x - cx) / cx;
+      const dy = (y - cy) / cy;
+      el.style.transform = `perspective(1000px) rotateY(${dx * 4}deg) rotateX(${-dy * 4}deg) translateY(-6px) scale(1.01)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+    });
+  }
+
+  document.querySelectorAll('.stage-card, .lineage-root, .lineage-leaf, .obstacle-card, .practice-card, .glossary-item, .love-attr').forEach(addTilt);
+
+})();
+</script>
+</body>
+</html>

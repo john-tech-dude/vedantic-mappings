@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vedantic Mappings — Non-Dual Cartographies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* Page-specific styles for index landing page */
+:root {
+  --bg:#faf6ef; --bg2:#f2ece0; --bg3:#e8dfc8;
+  --surface:#ffffff; --surface2:#f7f2e8;
+  --ink:#1c150a; --ink2:#3d2e18; --ink3:#6b5540;
+  --stone:#8a7460; --stone-light:#b09a80;
+  --gold:#b5853a; --gold-light:#d4a84b; --gold-deep:#8a6020;
+  --gold-glow:rgba(181,133,58,0.16);
+  --crimson:#7a2d2d; --saffron:#c05820;
+  --border:rgba(181,133,58,0.18); --border-strong:rgba(181,133,58,0.35);
+  --shadow:0 2px 24px rgba(60,30,0,0.10);
+  --hero-bg:radial-gradient(ellipse 90% 80% at 50% 35%,#f5e8c8 0%,#e8d5a0 40%,#c8a860 70%,#8a6020 100%);
+  --mountain-fill:#c8a860; --ring-color:rgba(181,133,58,0.22);
+  --sun-glow:rgba(181,133,58,0.35);
+  --pullquote-bg:linear-gradient(135deg,#f5edd8 0%,#ede0c0 100%);
+  --grain-opacity:0.025;
+  --text-primary:#1c150a; --text-secondary:#4a3820; --text-muted:#6b5540;
+  --sidebar-width:280px; --sidebar-collapsed-width:0px;
+}
+[data-theme="dark"] {
+  --bg:#100c06; --bg2:#140e08; --bg3:#1a1208;
+  --surface:#1a1208; --surface2:#140e08;
+  --ink:#f5f0e8; --ink2:#e8dcc8; --ink3:#c8b898;
+  --stone:#8a7d6b; --stone-light:#bfb5a4;
+  --gold:#c8a96e; --gold-light:#e8d5a3; --gold-deep:#9a7a45;
+  --gold-glow:rgba(200,169,110,0.10);
+  --crimson:#7a2d2d; --saffron:#d4722a;
+  --border:rgba(200,169,110,0.12); --border-strong:rgba(200,169,110,0.28);
+  --hero-bg:radial-gradient(ellipse 80% 70% at 50% 40%,#2d1f0e 0%,#110c06 60%,#0a0704 100%);
+  --mountain-fill:#c14410; --ring-color:rgba(200,169,110,0.10);
+  --sun-glow:rgba(200,169,110,0.4);
+  --pullquote-bg:linear-gradient(135deg,#1a1208 0%,#110c06 100%);
+  --grain-opacity:0.045;
+  --text-primary:#f5f0e8; --text-secondary:#e0d4b8; --text-muted:#a89880;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Crimson Pro','Cormorant Garamond',Georgia,serif;background:var(--bg);color:var(--text-primary);overflow-x:hidden;font-size:18px;line-height:1.75;transition:background .5s,color .5s;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:var(--grain-opacity);}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--gold-deep);border-radius:3px;}
+
+/* COLLAPSIBLE SIDEBAR NAVIGATION */
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:var(--sidebar-width);background:var(--surface);border-right:1px solid var(--border);z-index:1000;transition:width .4s cubic-bezier(.34,1.56,.64,1),transform .4s cubic-bezier(.34,1.56,.64,1);overflow:hidden;}
+.sidebar.collapsed{width:var(--sidebar-collapsed-width);border:none;transform:translateX(-100%);}
+.sidebar-collapse-indicator{position:fixed;top:50%;left:0;transform:translateY(-50%);width:8px;height:60px;background:var(--border);border-radius:0 4px 4px 0;cursor:pointer;z-index:999;transition:all .3s;opacity:.6;}
+.sidebar-collapse-indicator:hover{width:12px;background:var(--gold-deep);opacity:1;}
+.sidebar-collapse-indicator::before{content:'';position:absolute;right:2px;top:50%;transform:translateY(-50%);width:4px;height:4px;background:var(--gold-deep);border-radius:50%;box-shadow:0 8px 0 var(--gold-deep),0 -8px 0 var(--gold-deep);}
+.sidebar:not(.collapsed) .sidebar-collapse-indicator{display:none;}
+.sidebar-toggle{position:fixed;top:1rem;left:calc(var(--sidebar-collapsed-width) + 1rem);width:36px;height:36px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all .3s;z-index:1001;box-shadow:0 2px 8px var(--gold-glow);}
+.sidebar-toggle.expanded{left:calc(var(--sidebar-width) + 1rem);}
+.sidebar:not(.collapsed)~.main-content .sidebar-toggle{left:calc(var(--sidebar-width) + 1rem);}
+.sidebar-toggle:hover{background:var(--gold-glow);border-color:var(--gold);transform:scale(1.05);}
+.sidebar-header{padding:1.5rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid var(--border);min-height:70px;}
+.sidebar-logo{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px var(--gold-glow);}
+.sidebar-logo-inner{width:16px;height:16px;border-radius:50%;background:var(--surface);transition:transform 30s linear infinite;animation:logo-rotate 20s linear infinite;}
+@keyframes logo-rotate{to{transform:rotate(360deg);}}
+.sidebar-title{font-family:'Cinzel',serif;font-size:.85rem;font-weight:500;color:var(--ink2);letter-spacing:.1em;white-space:nowrap;opacity:1;transition:opacity .3s;}
+.sidebar.collapsed .sidebar-title{opacity:0;pointer-events:none;}
+.sidebar-nav{padding:1.5rem 0;overflow-y:auto;flex:1;}
+.sidebar-nav-section{margin-bottom:1.5rem;}
+.sidebar-nav-section-header{display:flex;align-items:center;padding:.5rem 1.5rem;cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none;}
+.sidebar-nav-section-header:hover{background:var(--surface2);}
+.sidebar-nav-section-title{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:var(--gold-deep);text-transform:uppercase;flex:1;}
+.sidebar-nav-section-arrow{width:12px;height:12px;transition:transform .3s;opacity:.5;color:var(--stone);}
+.sidebar-nav-section.expanded .sidebar-nav-section-arrow{transform:rotate(180deg);}
+.sidebar.collapsed .sidebar-nav-section-header{justify-content:center;padding:.5rem 0;}
+.sidebar.collapsed .sidebar-nav-section-title{display:none;}
+.sidebar.collapsed .sidebar-nav-section-arrow{display:none;}
+.sidebar-nav-subsection{padding:0 .75rem;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.sidebar-nav-section.expanded+.sidebar-nav-subsection{max-height:500px;}
+.sidebar-nav-item{display:flex;align-items:center;padding:.5rem 1.5rem .5rem 2rem;color:var(--text-secondary);text-decoration:none;transition:all .2s;position:relative;white-space:nowrap;font-size:.82rem;border-radius:4px;margin:.25rem 0;}
+.sidebar-nav-item:hover{background:var(--surface2);color:var(--gold);transform:translateX(2px);}
+.sidebar-nav-item.active{color:var(--gold);background:var(--gold-glow);font-weight:500;}
+.sidebar-nav-item.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);border-radius:0 2px 2px 0;}
+.sidebar-nav-item-icon{width:14px;height:14px;margin-right:.6rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--stone);transition:color .2s;font-size:.75rem;}
+.sidebar-nav-item:hover .sidebar-nav-item-icon,.sidebar-nav-item.active .sidebar-nav-item-icon{color:var(--gold);}
+.sidebar.collapsed .sidebar-nav-item{justify-content:center;padding:.5rem 0;margin:.25rem 0;}
+.sidebar.collapsed .sidebar-nav-item-icon{margin-right:0;}
+.sidebar.collapsed .sidebar-nav-item-text{opacity:0;width:0;overflow:hidden;}
+.sidebar.collapsed .sidebar-nav-subsection{display:none;}
+.sidebar-progress{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;border-top:1px solid var(--border);}
+.sidebar-progress-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:.75rem;}
+.sidebar-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;transition:width .3s;}
+.sidebar-progress-text{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;color:var(--stone);text-transform:uppercase;display:flex;justify-content:space-between;transition:opacity .3s;}
+.sidebar.collapsed .sidebar-progress-text{opacity:0;}
+.main-content{margin-left:0;min-height:100vh;}
+
+/* SACRED GEOMETRY SVG */
+.sacred-geometry{position:relative;width:100%;height:auto;}
+.sacred-mandala{animation:mandala-rotate 60s linear infinite;}
+@keyframes mandala-rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.sacred-yantra{animation:yantra-pulse 8s ease-in-out infinite;}
+@keyframes yantra-pulse{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.02);}}
+.sacred-spiral{animation:spiral-draw 20s linear infinite;transform-origin:center;}
+@keyframes spiral-draw{0%{transform:rotate(0deg);opacity:.6;}100%{transform:rotate(360deg);opacity:.6;}}
+.sacred-lotus{animation:lotus-bloom 12s ease-in-out infinite;}
+@keyframes lotus-bloom{0%,100%{transform:scale(1);opacity:.8;}50%{transform:scale(1.05);opacity:1;}}
+.svg-ornament{fill:none;stroke:var(--gold);stroke-width:.5;opacity:.3;}
+[data-theme="dark"] .svg-ornament{stroke:var(--gold-light);opacity:.2;}
+.sacred-divider{background:linear-gradient(180deg,transparent,var(--bg2),transparent);margin:0;padding:4rem 2rem;text-align:center;}
+.sacred-geometry-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+
+/* SCROLL-TRIGGERED ANIMATIONS */
+.scroll-reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.scroll-reveal.revealed{opacity:1;transform:translateY(0);}
+.scroll-scale{transform:scale(0.9);transition:transform 0.6s ease;}
+.scroll-scale.revealed{transform:scale(1);}
+.scroll-fade-left{opacity:0;transform:translateX(-60px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.scroll-fade-left.revealed{opacity:1;transform:translateX(0);}
+.scroll-fade-right{opacity:0;transform:translateX(60px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.scroll-fade-right.revealed{opacity:1;transform:translateX(0);}
+.scroll-fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.scroll-fade-up.revealed{opacity:1;transform:translateY(0);}
+.stagger-children>*{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.stagger-children.revealed>*{opacity:1;transform:translateY(0);}
+.delay-1{transition-delay:0.1s;}
+.delay-2{transition-delay:0.2s;}
+.delay-3{transition-delay:0.3s;}
+.delay-4{transition-delay:0.4s;}
+.delay-5{transition-delay:0.5s;}
+.delay-6{transition-delay:0.6s;}
+.svg-center{transform-origin:center;}
+.svg-rotate-60{animation-duration:60s;}
+.svg-rotate-20{animation-duration:20s;}
+.svg-pulse-8{animation-duration:8s;}
+
+/* THEME TOGGLE */
+.theme-toggle{position:fixed;bottom:2rem;right:2rem;z-index:1000;width:52px;height:52px;background:var(--surface);border:2px solid var(--border-strong);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;transition:all .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 4px 20px var(--gold-glow),0 2px 8px rgba(0,0,0,.1);}
+.theme-toggle:hover{transform:scale(1.08) translateY(-2px);border-color:var(--gold);box-shadow:0 8px 32px var(--gold-glow),0 4px 16px rgba(0,0,0,.15);}
+.theme-toggle:active{transform:scale(0.95);}
+.theme-toggle-icon{transition:transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;}
+[data-theme="dark"] .theme-toggle{background:var(--surface2);}
+[data-theme="light"] .theme-toggle-icon-sun{opacity:1;transform:rotate(0deg);}
+[data-theme="light"] .theme-toggle-icon-moon{opacity:0;transform:rotate(-90deg) scale(0.5);}
+[data-theme="dark"] .theme-toggle-icon-sun{opacity:0;transform:rotate(90deg) scale(0.5);}
+[data-theme="dark"] .theme-toggle-icon-moon{opacity:1;transform:rotate(0deg);}
+.theme-toggle-icon{position:absolute;display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--gold);}
+.toggle-tooltip{position:fixed;bottom:2rem;right:5.5rem;z-index:1000;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;color:var(--stone);text-transform:uppercase;opacity:0;transition:opacity .3s ease;pointer-events:none;background:var(--surface);padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;white-space:nowrap;}
+.theme-toggle:hover+.toggle-tooltip{opacity:.7;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);}
+[data-theme="light"] .hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,133,58,.04) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,133,58,.03) 29px);pointer-events:none;}
+.hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12;}
+.mandala-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandala-breathe 12s ease-in-out infinite;}
+.mandala-ring:nth-child(1){width:260px;height:260px;animation-delay:0s;}
+.mandala-ring:nth-child(2){width:400px;height:400px;animation-delay:1.5s;animation-duration:14s;}
+.mandala-ring:nth-child(3){width:560px;height:560px;animation-delay:3s;animation-duration:16s;}
+.mandala-ring:nth-child(4){width:740px;height:740px;animation-delay:4.5s;animation-duration:18s;}
+@keyframes mandala-breathe{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.015);}}
+.hero-ripple{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);pointer-events:none;animation:ripple-out 9s ease-out infinite;}
+.hero-ripple:nth-child(5){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:0s;}
+.hero-ripple:nth-child(6){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:3s;}
+.hero-ripple:nth-child(7){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:6s;}
+@keyframes ripple-out{0%{opacity:.7;transform:scale(1);}100%{opacity:0;transform:scale(4.5);}}
+.hero-emblem{width:72px;height:72px;margin:0 auto 2rem;position:relative;opacity:0;animation:hero-rise 1.1s .6s forwards;z-index:2;}
+.hero-emblem-circle{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-deep);opacity:.6;animation:emblem-rotate 30s linear infinite;}
+.hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblem-rotate 20s linear infinite reverse;}
+.hero-emblem-dot{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle,var(--gold-light),var(--gold));box-shadow:0 0 20px 5px var(--sun-glow);animation:emblem-pulse 4s ease-in-out infinite;}
+@keyframes emblem-rotate{to{transform:rotate(360deg);}}
+@keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow);}50%{box-shadow:0 0 35px 12px var(--sun-glow);}}
+.hero-eyemark{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:hero-rise 1.1s .3s forwards;position:relative;z-index:2;}
+.hero-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);margin-bottom:.5rem;opacity:0;animation:hero-rise 1.1s .9s forwards;position:relative;z-index:2;}
+.hero-subtitle-top{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--stone);letter-spacing:.08em;margin-bottom:.8rem;opacity:0;animation:hero-rise 1.1s 1.1s forwards;position:relative;z-index:2;}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:500;letter-spacing:.06em;line-height:1.05;opacity:0;animation:hero-rise 1.3s 1.3s forwards;margin-bottom:.2em;position:relative;z-index:2;}
+[data-theme="light"] .hero-title{color:var(--ink);text-shadow:0 2px 40px rgba(181,133,58,.2);}
+[data-theme="dark"] .hero-title{color:var(--gold-light);text-shadow:0 0 80px rgba(200,169,110,.3);}
+.hero-epithet{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-deep);letter-spacing:.12em;opacity:0;animation:hero-rise 1.1s 1.6s forwards;margin-bottom:2.5rem;position:relative;z-index:2;}
+.hero-divider{display:flex;align-items:center;gap:1.5rem;margin:0 auto 2.5rem;width:fit-content;opacity:0;animation:hero-rise 1.1s 1.8s forwards;position:relative;z-index:2;}
+.hero-divider-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep));}
+.hero-divider-line:last-child{background:linear-gradient(90deg,var(--gold-deep),transparent);}
+.hero-divider-diamond{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--sun-glow);}
+@keyframes hero-rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+/* CARTOGRAPHIES SECTION */
+.cartographies-section{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2rem;}
+.cartographies-container{max-width:1200px;margin:0 auto;}
+.section-numeral{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:1rem;}
+.section-numeral::after{content:'';flex:1;max-width:50px;height:1px;background:var(--gold-deep);opacity:.3;}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;color:var(--ink2);letter-spacing:.04em;margin-bottom:.35em;line-height:1.2;}
+[data-theme="dark"] .section-title{color:var(--gold-light);}
+.section-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--stone);margin-bottom:3rem;letter-spacing:.04em;}
+
+/* CARDS GRID */
+.cartographies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:1.5px;background:var(--border);border:1px solid var(--border);margin:2.5rem 0;}
+.cartography-card{background:var(--surface);padding:3rem 2.5rem;transition:background .4s,transform .3s;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;}
+.cartography-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),transparent);opacity:0;transition:opacity .3s;}
+.cartography-card:hover::before{opacity:1;}
+.cartography-card:hover{background:var(--surface2);transform:translateY(-2px);}
+[data-theme="dark"] .cartography-card{background:#0f0b07;}
+[data-theme="dark"] .cartography-card:hover{background:#1a1208;}
+.cartography-number{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.4em;color:var(--gold-deep);margin-bottom:.6rem;display:block;}
+.cartography-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink2);margin-bottom:.2rem;}
+[data-theme="dark"] .cartography-title{color:var(--gold-light);}
+.cartography-subtitle{font-family:'Cinzel',serif;font-size:.65rem;color:var(--stone);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;}
+.cartography-description{color:var(--text-muted);font-size:1rem;line-height:1.7;margin-bottom:2rem;}
+.cartography-meta{display:flex;gap:1.5rem;font-size:.75rem;color:var(--stone);padding-top:1.5rem;border-top:1px solid var(--border);letter-spacing:.15em;text-transform:uppercase;}
+.cartography-meta span{display:flex;align-items:center;gap:.4rem;}
+.cartography-meta span::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;}
+
+/* FOOTER */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 2rem;text-align:center;}
+.footer-emblem{width:36px;height:36px;margin:0 auto 1.5rem;position:relative;}
+.footer-emblem-outer{position:absolute;inset:0;border-radius:50%;border:1px solid var(--border-strong);}
+.footer-emblem-inner{position:absolute;inset:8px;border-radius:50%;border:1px solid var(--border);}
+.footer-name{font-family:'Cinzel',serif;font-size:.92rem;letter-spacing:.2em;color:var(--gold);margin-bottom:.5rem;}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--stone);font-size:.95rem;margin-bottom:2rem;}
+.footer-links{display:flex;justify-content:center;gap:2rem;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem;}
+.footer-links a{color:var(--stone);text-decoration:none;transition:color .3s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-credit{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.3em;color:var(--stone);text-transform:uppercase;opacity:.4;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sidebar{position:fixed;transform:translateX(-100%);transition:transform .3s ease;}
+  .sidebar.mobile-open{transform:translateX(0);}
+  .sidebar.collapsed{transform:translateX(-100%);}
+  .sidebar.collapsed.mobile-open{transform:translateX(0);}
+  .sidebar-collapse-indicator{display:none;}
+  .main-content{margin-left:0;}
+  .sidebar.collapsed+.main-content{margin-left:0;}
+  .sidebar-toggle{display:none;}
+}
+@media(max-width:700px){
+  .cartographies-grid{grid-template-columns:1fr;}
+  .cartography-card{padding:2rem 1.75rem;}
+  .cartography-title{font-size:1.3rem;}
+  .hero-title{font-size:2.5rem;}
+  .cartography-meta{flex-direction:column;gap:1rem;}
+}
+</style>
+</head>
+<body>
+<!-- MAIN CONTENT -->
+<div class="main-content">
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+<span class="toggle-tooltip">Toggle Light/Dark Mode</span>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-mountain"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <p class="hero-eyemark">Verified Cartographies of the Non-Dual Path</p>
+  <div class="hero-emblem">
+    <div class="hero-emblem-circle"></div>
+    <div class="hero-emblem-circle2"></div>
+    <div class="hero-emblem-dot"></div>
+  </div>
+  <p class="hero-label">Three Complete Maps</p>
+  <p class="hero-subtitle-top">To the Self and Beyond</p>
+  <h1 class="hero-title">Vedantic Mappings</h1>
+  <p class="hero-epithet">Ramana Maharshi · Nisargadatta Maharaj · The Vedantic Messiah</p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+</header>
+
+<!-- CARTOGRAPHIES SECTION -->
+<section class="cartographies-section scroll-reveal" id="cartographies">
+  <div class="cartographies-container">
+    <div class="section-numeral scroll-fade-up delay-1">The Cartographies</div>
+    <h2 class="section-title scroll-fade-up delay-2">Three Paths to<br>the Absolute</h2>
+    <p class="section-subtitle scroll-fade-up delay-3">Complete maps from mistaken identity to liberation, grounded in the Vedantic tradition</p>
+    
+    <div class="cartographies-grid scroll-reveal delay-4">
+      <a href="ramana-maharshi.html" class="cartography-card scroll-fade-up delay-5">
+        <span class="cartography-number">I</span>
+        <h3 class="cartography-title">Ramana Maharshi</h3>
+        <p class="cartography-subtitle">The Sage of Arunachala</p>
+        <p class="cartography-description">A comprehensive cartography of Self-enquiry (Atma Vichara) — from the 1896 death experience that became liberation, through the seven stages of realization, to the practice of abiding as the Self. Grounded in the Upanishadic tradition and the Advaita Vedanta of Adi Shankaracharya.</p>
+        <div class="cartography-meta">
+          <span>1879 – 1950</span>
+          <span>Tiruvannamalai</span>
+          <span>Advaita Vedanta</span>
+        </div>
+      </a>
+
+      <a href="nisargadatta-maharaj.html" class="cartography-card scroll-fade-up delay-6">
+        <span class="cartography-number">II</span>
+        <h3 class="cartography-title">Nisargadatta Maharaj</h3>
+        <p class="cartography-subtitle">The Inchegiri Sampradaya</p>
+        <p class="cartography-description">A complete mapping of the radical teaching on the distinction between consciousness and pure awareness. From the starting condition of mistaken identity through the seven stages to the Absolute (Parabrahman) — prior to the "I Am" itself. Rooted in the Navnath lineage and the teachings of Sri Siddharameshwar Maharaj.</p>
+        <div class="cartography-meta">
+          <span>1897 – 1981</span>
+          <span>Mumbai</span>
+          <span>Inchegiri Sampradaya</span>
+        </div>
+      </a>
+
+      <a href="messiah-threshold.html" class="cartography-card scroll-fade-up delay-7">
+        <span class="cartography-number">III</span>
+        <h3 class="cartography-title">The Vedantic Messiah</h3>
+        <p class="cartography-subtitle">Gospel & Upanishad</p>
+        <p class="cartography-description">A contemplative exploration of the Gospel of Jesus and the non-dual wisdom of the Upanishads. Five pages mapping the resonances between Christian mysticism and Advaita Vedanta — from the Kingdom within to the art of holy negation. Not a merger, but an illumination of shadows.</p>
+        <div class="cartography-meta">
+          <span>Contemplative</span>
+          <span>Comparative</span>
+          <span>Christian · Vedantic</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer scroll-fade-up delay-6">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Verified Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="ramana-maharshi.html">Ramana Maharshi</a>
+    <a href="nisargadatta-maharaj.html">Nisargadatta Maharaj</a>
+    <a href="messiah-threshold.html">The Vedantic Messiah</a>
+  </div>
+  <div class="footer-credit">Researched & Composed</div>
+</footer>
+</div>
+
+<script>
+/* THEME TOGGLE */
+/* THEME TOGGLE */
+const toggle=document.getElementById('themeToggle');
+const html=document.documentElement;
+
+function toggleTheme() {
+  const isDark=html.getAttribute('data-theme')==='dark';
+  const newTheme=isDark?'light':'dark';
+  html.setAttribute('data-theme',newTheme);
+  localStorage.setItem('theme',newTheme);
+}
+
+toggle.addEventListener('click',toggleTheme);
+
+// Load saved theme or detect preference
+(function initTheme(){
+  const saved=localStorage.getItem('theme');
+  if(saved==='light'||saved==='dark'){
+    html.setAttribute('data-theme',saved);
+  }else if(window.matchMedia&&(window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    html.setAttribute('data-theme','dark');
+  }
+})();
+
+/* SCROLL-TRIGGERED ANIMATIONS */
+const scrollRevealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('revealed');
+      if(entry.target.classList.contains('stagger-children')){
+        Array.from(entry.target.children).forEach((child,i)=>{
+          setTimeout(()=>{
+            child.style.opacity='1';
+            child.style.transform='translateY(0)';
+          },i*100);
+        });
+      }
+    }
+  });
+},{threshold:.15,rootMargin:'0px 0px -100px 0px'});
+
+document.querySelectorAll('.scroll-reveal, .scroll-scale, .scroll-fade-left, .scroll-fade-right, .scroll-fade-up, .stagger-children').forEach(el=>{
+  scrollRevealObserver.observe(el);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ramana Maharshi — Traditional Cartography of the Non-Dual Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+  --bg:#faf6ef; --bg2:#f2ece0; --bg3:#e8dfc8;
+  --surface:#ffffff; --surface2:#f7f2e8;
+  --ink:#1c150a; --ink2:#3d2e18; --ink3:#6b5540;
+  --stone:#5a4a34; --stone-light:#b09a80;
+  --gold:#7a5a2a; --gold-light:#d4a84b; --gold-deep:#5a3a15;
+  --gold-glow:rgba(122,90,42,0.16);
+  --crimson:#7a2d2d; --saffron:#c05820;
+  --border:rgba(122,90,42,0.18); --border-strong:rgba(122,90,42,0.35);
+  --shadow:0 2px 24px rgba(60,30,0,0.10);
+  --hero-bg:radial-gradient(ellipse 90% 80% at 50% 35%,#f5e8c8 0%,#e8d5a0 40%,#c8a860 70%,#8a6020 100%);
+  --mountain-fill:#c8a860; --ring-color:rgba(122,90,42,0.22);
+  --sun-glow:rgba(122,90,42,0.35);
+  --pullquote-bg:linear-gradient(135deg,#f5edd8 0%,#ede0c0 100%);
+  --grain-opacity:0.025;
+  --text-primary:#1c150a; --text-secondary:#3d2e18; --text-muted:#5a4a34;
+  --sidebar-width:260px;
+  /* NEW: reading progress top bar */
+  --progress-bar-height:3px;
+}
+[data-theme="dark"] {
+  --bg:#100c06; --bg2:#140e08; --bg3:#1a1208;
+  --surface:#1a1208; --surface2:#140e08;
+  --ink:#f5f0e8; --ink2:#e8dcc8; --ink3:#c8b898;
+  --stone:#c8b898; --stone-light:#bfb5a4;
+  --gold:#c8a96e; --gold-light:#e8d5a3; --gold-deep:#9a7a45;
+  --gold-glow:rgba(200,169,110,0.10);
+  --crimson:#7a2d2d; --saffron:#d4722a;
+  --border:rgba(200,169,110,0.12); --border-strong:rgba(200,169,110,0.28);
+  --hero-bg:radial-gradient(ellipse 80% 70% at 50% 40%,#2d1f0e 0%,#110c06 60%,#0a0704 100%);
+  --mountain-fill:#c14410; --ring-color:rgba(200,169,110,0.10);
+  --sun-glow:rgba(200,169,110,0.4);
+  --pullquote-bg:linear-gradient(135deg,#1a1208 0%,#110c06 100%);
+  --grain-opacity:0.045;
+  --text-primary:#f5f0e8; --text-secondary:#e0d4b8; --text-muted:#c8b898;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Crimson Pro','Cormorant Garamond',Georgia,serif;
+  background:var(--bg); color:var(--text-primary);
+  overflow-x:hidden; font-size:19px; line-height:1.8;
+  transition:background .5s,color .5s;
+}
+
+body::before{
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:var(--grain-opacity);
+}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px;}
+
+/* ===== TOP PROGRESS BAR ===== */
+#topProgress{
+  position:fixed; top:0; left:0; z-index:2000;
+  height:var(--progress-bar-height);
+  width:0%; background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-light));
+  transition:width .12s linear;
+  pointer-events:none;
+}
+
+/* ===== FOOTNOTE TOOLTIPS ===== */
+sup[data-fn]{
+  font-size:.65em; vertical-align:super; color:var(--gold);
+  cursor:pointer; text-decoration:none; margin-left:2px;
+  position:relative; display:inline-block;
+}
+sup[data-fn]:hover{color:var(--gold-light);}
+.fn-tooltip{
+  position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%);
+  width:260px; background:var(--surface); border:1px solid var(--border-strong);
+  border-radius:4px; padding:.75rem 1rem;
+  font-family:'Crimson Pro',serif; font-size:.78rem; line-height:1.6;
+  color:var(--text-secondary); font-style:normal;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  opacity:0; pointer-events:none;
+  transition:opacity .2s ease;
+  z-index:500;
+  white-space:normal;
+}
+.fn-tooltip::after{
+  content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+  border:5px solid transparent; border-top-color:var(--border-strong);
+}
+sup[data-fn]:hover .fn-tooltip,
+sup[data-fn]:focus .fn-tooltip{opacity:1;}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--gold-deep);border-radius:3px;}
+
+/* ===== SKIP LINK ===== */
+.skip-link{
+  position:absolute; top:-100px; left:1rem; z-index:10000;
+  background:var(--surface); color:var(--gold); padding:.75rem 1.5rem;
+  border:2px solid var(--gold); border-radius:4px; font-family:'Cinzel',serif;
+  font-size:.75rem; letter-spacing:.15em; text-transform:uppercase;
+  transition:top .3s;
+}
+.skip-link:focus{top:1rem;}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle{
+  position:fixed; bottom:2rem; right:2rem; z-index:1000;
+  width:52px; height:52px; background:var(--surface);
+  border:2px solid var(--border-strong); border-radius:50%; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .4s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 4px 20px var(--gold-glow),0 2px 8px rgba(0,0,0,.1);
+}
+.theme-toggle:hover{transform:scale(1.08) translateY(-2px); border-color:var(--gold); box-shadow:0 8px 32px var(--gold-glow),0 4px 16px rgba(0,0,0,.15);}
+.theme-toggle:active{transform:scale(0.95);}
+.theme-toggle svg{width:24px; height:24px; fill:none; stroke:var(--gold); stroke-width:2; transition:all .4s;}
+[data-theme="light"] .icon-sun{opacity:1; transform:rotate(0deg);}
+[data-theme="light"] .icon-moon{opacity:0; transform:rotate(-90deg) scale(0.5);}
+[data-theme="dark"] .icon-sun{opacity:0; transform:rotate(90deg) scale(0.5);}
+[data-theme="dark"] .icon-moon{opacity:1; transform:rotate(0deg);}
+.icon-sun,.icon-moon{position:absolute; transition:all .4s cubic-bezier(.34,1.56,.64,1);}
+.toggle-tooltip{
+  position:fixed; bottom:2rem; right:5.5rem; z-index:1000;
+  font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.2em;
+  color:var(--stone); text-transform:uppercase; opacity:0;
+  transition:opacity .3s ease; pointer-events:none;
+  background:var(--surface); padding:.4rem .8rem;
+  border:1px solid var(--border); border-radius:6px; white-space:nowrap;
+}
+.theme-toggle:hover+.toggle-tooltip,.theme-toggle:focus+.toggle-tooltip{opacity:.7;}
+
+/* ===== READING INFO BAR ===== */
+.reading-info{
+  position:fixed; top:3px; right:1rem; z-index:1999;
+  font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.2em;
+  color:var(--stone); text-transform:uppercase;
+  background:var(--surface); padding:.3rem .7rem;
+  border:1px solid var(--border); border-radius:0 0 6px 6px;
+  opacity:0; transition:opacity .3s;
+}
+.reading-info.visible{opacity:1;}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed; top:0; left:0; height:100vh; width:260px;
+  background:var(--surface); border-right:1px solid var(--border); z-index:100;
+  transition:transform .3s ease;
+  overflow:hidden; display:flex; flex-direction:column;
+}
+.sidebar.collapsed{transform:translateX(-100%);}
+
+/* Mobile backdrop */
+.sidebar-backdrop{
+  display:none; position:fixed; inset:0; z-index:99;
+  background:rgba(0,0,0,.5); backdrop-filter:blur(2px);
+  opacity:0; transition:opacity .3s;
+}
+.sidebar-backdrop.visible{opacity:1;}
+
+.sidebar-toggle{
+  position:fixed; top:1rem; left:1rem; width:42px; height:42px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; cursor:pointer; display:flex; align-items:center;
+  justify-content:center; color:var(--gold); transition:all .2s ease;
+  z-index:1010; box-shadow:var(--shadow);
+}
+.sidebar-toggle:hover{background:var(--gold-glow); border-color:var(--gold); transform:scale(1.05);}
+.sidebar-header{
+  padding:1.5rem; display:flex; align-items:center; gap:1rem;
+  border-bottom:1px solid var(--border); min-height:70px;
+  background:var(--bg2); flex-shrink:0; position:relative;
+}
+.sidebar-logo{
+  width:32px; height:32px; border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  box-shadow:0 2px 8px var(--gold-glow);
+}
+.sidebar-logo-inner{width:16px; height:16px; border-radius:50%; background:var(--surface); animation:logo-rotate 20s linear infinite;}
+@keyframes logo-rotate{to{transform:rotate(360deg);}}
+.sidebar-title{font-family:'Cinzel',serif; font-size:.85rem; font-weight:500; color:var(--ink2); letter-spacing:.1em; white-space:nowrap;}
+.sidebar-close-btn{
+  position:absolute; right:1rem; top:50%; transform:translateY(-50%);
+  width:32px; height:32px; border:1px solid var(--border);
+  background:var(--surface); border-radius:8px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--stone); transition:all .2s ease;
+}
+.sidebar-close-btn:hover{background:var(--gold-glow); border-color:var(--gold); color:var(--gold); transform:translateY(-50%) scale(1.05);}
+
+.sidebar-nav{padding:1.5rem 0; overflow-y:auto; flex:1;}
+.sidebar-nav-section{margin-bottom:1.5rem;}
+.sidebar-nav-section-title{
+  font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.25em;
+  color:var(--gold-deep); text-transform:uppercase; padding:0 1.5rem;
+  margin-bottom:.75rem; white-space:nowrap;
+}
+.sidebar-nav-item{
+  display:flex; align-items:center; padding:.75rem 1.5rem;
+  color:var(--text-secondary); text-decoration:none; transition:all .2s;
+  position:relative; white-space:nowrap;
+}
+.sidebar-nav-item:hover{background:var(--gold-glow); color:var(--gold);}
+.sidebar-nav-item.active{color:var(--gold); background:var(--gold-glow);}
+.sidebar-nav-item.active::before{content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--gold);}
+.sidebar-nav-item-icon{width:20px; height:20px; margin-right:1rem; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--stone); transition:color .2s;}
+.sidebar-nav-item:hover .sidebar-nav-item-icon,.sidebar-nav-item.active .sidebar-nav-item-icon{color:var(--gold);}
+.sidebar-nav-item-text{font-family:'Cormorant Garamond',serif; font-size:.95rem; letter-spacing:.05em; color:var(--stone);}
+
+.sidebar-progress{padding:1.5rem; border-top:1px solid var(--border); flex-shrink:0;}
+.sidebar-progress-bar{height:3px; background:var(--border); border-radius:2px; overflow:hidden; margin-bottom:.75rem;}
+.sidebar-progress-fill{height:100%; background:linear-gradient(90deg,var(--gold),var(--gold-light)); width:0%; transition:width .3s;}
+.sidebar-progress-text{font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.15em; color:var(--stone); text-transform:uppercase; display:flex; justify-content:space-between;}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top{
+  position:fixed; bottom:1.75rem; right:5.5rem; z-index:1000;
+  width:44px; height:44px; border-radius:50%;
+  background:var(--surface); border:1px solid var(--border);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  color:var(--stone); font-size:1.1rem;
+  transition:all .4s cubic-bezier(.25,1,.5,1); box-shadow:var(--shadow);
+  opacity:0; pointer-events:none; transform:translateY(12px) scale(.9);
+}
+.back-to-top.visible{opacity:1; pointer-events:all; transform:translateY(0) scale(1);}
+.back-to-top:hover{color:var(--gold); border-color:var(--gold); transform:translateY(-3px) scale(1.08);}
+
+/* ===== MAIN CONTENT ===== */
+.main-content{
+  margin-left:260px;
+  transition:margin-left .3s ease;
+  min-height:100vh;
+  position:relative;
+  z-index:1;
+}
+.sidebar.collapsed~.main-content{margin-left:0;}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; position:relative;
+  overflow:hidden; padding:5rem 2rem 6rem; text-align:center;
+  background:var(--hero-bg);
+}
+[data-theme="light"] .hero::after{
+  content:''; position:absolute; inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,133,58,.04) 29px),
+              repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,133,58,.03) 29px);
+  pointer-events:none;
+}
+
+/* Improved Arunachala mountain SVG in hero */
+.hero-mountain-svg{
+  position:absolute; bottom:0; left:0; width:100%; pointer-events:none;
+  transform:translateY(var(--parallax-y,0)); will-change:transform;
+  transition:transform .05s linear;
+}
+
+.mandala-ring{
+  position:absolute; top:50%; left:50%; border-radius:50%;
+  border:1px solid var(--ring-color); transform:translate(-50%,-50%);
+  pointer-events:none; will-change:transform;
+}
+.mandala-ring:nth-child(1){width:260px;height:260px;}
+.mandala-ring:nth-child(2){width:400px;height:400px;}
+.mandala-ring:nth-child(3){width:560px;height:560px;}
+.mandala-ring:nth-child(4){width:740px;height:740px;}
+.hero-ripple{
+  position:absolute; top:50%; left:50%; border-radius:50%;
+  border:1px solid var(--ring-color); pointer-events:none;
+  animation:ripple-out 9s ease-out infinite; will-change:transform,opacity;
+}
+.hero-ripple:nth-child(5){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:0s;}
+.hero-ripple:nth-child(6){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:3s;}
+.hero-ripple:nth-child(7){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:6s;}
+@keyframes ripple-out{0%{opacity:.7;transform:scale(1);}100%{opacity:0;transform:scale(4.5);}}
+
+.hero-emblem{width:72px; height:72px; margin:0 auto 2rem; position:relative; opacity:1; z-index:3;}
+.hero-emblem-circle{position:absolute; inset:0; border-radius:50%; border:1px solid var(--gold-deep); opacity:.6; animation:emblem-rotate 30s linear infinite;}
+.hero-emblem-circle2{position:absolute; inset:12px; border-radius:50%; border:1px solid var(--gold); opacity:.4; animation:emblem-rotate 20s linear infinite reverse;}
+.hero-emblem-dot{position:absolute; inset:26px; border-radius:50%; background:radial-gradient(circle,var(--gold-light),var(--gold)); box-shadow:0 0 20px 5px var(--sun-glow); animation:emblem-pulse 4s ease-in-out infinite;}
+@keyframes emblem-rotate{to{transform:rotate(360deg);}}
+@keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow);}50%{box-shadow:0 0 35px 12px var(--sun-glow);}}
+
+.hero-eyemark{font-family:'Cinzel',serif; font-size:.63rem; letter-spacing:.5em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:2rem; opacity:1; position:relative; z-index:3;}
+.hero-label{font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.5em; color:var(--gold-deep); margin-bottom:.5rem; opacity:1; position:relative; z-index:3;}
+.hero-subtitle-top{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--stone); letter-spacing:.08em; margin-bottom:.8rem; opacity:1; position:relative; z-index:3;}
+.hero-title{font-family:'Cinzel',serif; font-size:clamp(2.8rem,7vw,5.8rem); font-weight:500; letter-spacing:.06em; line-height:1.05; opacity:1; margin-bottom:.2em; position:relative; z-index:3;}
+[data-theme="light"] .hero-title{color:var(--ink);text-shadow:0 2px 40px rgba(181,133,58,.2);}
+[data-theme="dark"] .hero-title{color:var(--gold-light);text-shadow:0 0 80px rgba(200,169,110,.3);}
+
+.hero-epithet{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1rem,2.5vw,1.35rem); color:var(--gold-deep); letter-spacing:.12em; opacity:1; margin-bottom:2.5rem; position:relative; z-index:3;}
+.hero-divider{display:flex; align-items:center; gap:1.5rem; margin:0 auto 2.5rem; width:fit-content; opacity:1; position:relative; z-index:3;}
+.hero-divider-line{width:70px; height:1px; background:linear-gradient(90deg,transparent,var(--gold-deep));}
+.hero-divider-line:last-child{background:linear-gradient(90deg,var(--gold-deep),transparent);}
+.hero-divider-diamond{width:7px; height:7px; background:var(--gold); transform:rotate(45deg); box-shadow:0 0 8px var(--sun-glow);}
+.hero-quote{font-family:'IM Fell English',serif; font-style:italic; font-size:clamp(1rem,2.2vw,1.2rem); color:var(--text-secondary); max-width:570px; margin:0 auto .7rem; line-height:1.85; opacity:1; position:relative; z-index:3;}
+.hero-quote-attr{font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.35em; color:var(--stone); text-transform:uppercase; opacity:1; margin-bottom:1.5rem; position:relative; z-index:3;}
+
+/* READING TIME BADGE — new */
+.hero-reading-badge{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:rgba(122,90,42,.1); border:1px solid var(--border);
+  border-radius:20px; padding:.4rem 1rem; margin-bottom:2rem;
+  font-family:'Cinzel',serif; font-size:.56rem; letter-spacing:.3em;
+  color:var(--stone); text-transform:uppercase; position:relative; z-index:3;
+}
+.hero-reading-badge::before{content:'◈'; color:var(--gold); font-size:.7rem;}
+
+.hero-dates{font-family:'Cormorant Garamond',serif; font-size:.9rem; color:var(--stone); letter-spacing:.18em; opacity:1; position:relative; z-index:3;}
+.hero-scroll-cue{position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem; opacity:1; cursor:pointer; z-index:3;}
+.hero-scroll-cue span{font-family:'Cinzel',serif; font-size:.52rem; letter-spacing:.5em; color:var(--stone); text-transform:uppercase;}
+.scroll-line{width:1px; height:36px; background:linear-gradient(180deg,var(--gold-deep),transparent); animation:scroll-bounce 2.5s ease-in-out infinite;}
+@keyframes scroll-bounce{0%,100%{transform:scaleY(1);opacity:1;}50%{transform:scaleY(.5);opacity:.3;}}
+
+/* staggered reveal */
+@keyframes hero-rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.hero-emblem{animation:hero-rise 1.1s .6s both;}
+.hero-eyemark{animation:hero-rise 1.1s .3s both;}
+.hero-label{animation:hero-rise 1.1s .9s both;}
+.hero-subtitle-top{animation:hero-rise 1.1s 1.1s both;}
+.hero-title{animation:hero-rise 1.3s 1.3s both;}
+.hero-epithet{animation:hero-rise 1.1s 1.6s both;}
+.hero-divider{animation:hero-rise 1.1s 1.8s both;}
+.hero-quote{animation:hero-rise 1.1s 2s both;}
+.hero-quote-attr{animation:hero-rise 1.1s 2.2s both;}
+.hero-reading-badge{animation:hero-rise 1.1s 2.4s both;}
+.hero-dates{animation:hero-rise 1.1s 2.6s both;}
+.hero-scroll-cue{animation:hero-rise 1.1s 2.9s both;}
+
+/* ===== SACRED GEOMETRY ===== */
+.sacred-geometry{position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none;}
+.sacred-mandala{animation:mandala-rotate 60s linear infinite;}
+@keyframes mandala-rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+/* ===== VEDANTA MARQUEE ===== */
+.vedanta-banner{
+  background:var(--bg2); border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border); padding:1.75rem 0; overflow:hidden; position:relative;
+}
+.vedanta-banner::before{content:''; position:absolute; left:0; right:0; top:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:.4;}
+.vedanta-scroll{display:flex; align-items:center; gap:2rem; animation:scroll-marquee 30s linear infinite; white-space:nowrap; width:max-content;}
+.vedanta-scroll-item{font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.28em; color:var(--stone); text-transform:uppercase; flex-shrink:0;}
+.vedanta-scroll-diamond{color:var(--gold-deep); font-size:.45rem; opacity:.6;}
+@keyframes scroll-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ===== SECTIONS ===== */
+section{padding:5.5rem 2rem; position:relative; transition:background-color .5s;}
+.container{max-width:900px; margin:0 auto;}
+.container-wide{max-width:1100px; margin:0 auto;}
+
+.section-numeral{font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.5em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:.75rem; display:flex; align-items:center; gap:1rem;}
+.section-numeral::after{content:''; flex:1; max-width:50px; height:1px; background:var(--gold-deep); opacity:.3;}
+.section-title{font-family:'Cinzel',serif; font-size:clamp(1.6rem,4vw,2.5rem); font-weight:400; color:var(--ink2); letter-spacing:.04em; margin-bottom:.35em; line-height:1.2;}
+[data-theme="dark"] .section-title{color:var(--gold-light);}
+.section-subtitle{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--stone); margin-bottom:3rem; letter-spacing:.04em;}
+
+/* ===== ORIGIN ===== */
+.origin-section{background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+.death-experience-card{background:linear-gradient(135deg,rgba(122,45,45,.07),rgba(181,133,58,.04)); border:1px solid rgba(122,45,45,.2); border-radius:2px; padding:2.5rem; margin:3rem 0; position:relative;}
+[data-theme="dark"] .death-experience-card{background:linear-gradient(135deg,rgba(122,45,45,.12),rgba(200,169,110,.05)); border-color:rgba(122,45,45,.3);}
+.death-experience-card::before{content:'✦'; position:absolute; top:-.7rem; left:50%; transform:translateX(-50%); color:var(--crimson); font-size:1.1rem; background:var(--bg); padding:0 .6rem;}
+
+/* ===== LINEAGE TIMELINE ===== */
+.lineage-timeline{margin-top:3rem; position:relative;}
+.lineage-timeline::before{content:''; position:absolute; left:28px; top:0; bottom:0; width:1px; background:linear-gradient(180deg,var(--gold-deep),var(--border)); opacity:.6;}
+.lineage-node{display:grid; grid-template-columns:56px 1fr; gap:0 1.5rem; margin-bottom:2.5rem; position:relative;}
+.lineage-node-marker{width:56px; height:56px; border-radius:50%; border:2px solid var(--gold-deep); background:var(--surface); display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; z-index:1; transition:all .4s; cursor:default;}
+.lineage-node:hover .lineage-node-marker{background:var(--gold-glow); border-color:var(--gold); box-shadow:0 0 20px var(--gold-glow);}
+.lineage-node-symbol{font-family:'Cinzel',serif; font-size:.7rem; color:var(--gold-deep); font-weight:600;}
+.lineage-node-body{padding-top:.3rem;}
+.lineage-node-role{font-family:'Cinzel',serif; font-size:.56rem; letter-spacing:.4em; color:var(--gold-deep); margin-bottom:.3rem; display:block; text-transform:uppercase;}
+.lineage-node-name{font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink2); margin-bottom:.15rem;}
+[data-theme="dark"] .lineage-node-name{color:var(--gold-light);}
+.lineage-node-dates{font-family:'Cinzel',serif; font-size:.55rem; color:var(--stone); letter-spacing:.2em; margin-bottom:.6rem; display:block;}
+.lineage-node-body p{color:var(--text-muted); font-size:.97rem; line-height:1.75;}
+
+/* ===== ROOTS ===== */
+.roots-section{background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+
+.upanishad-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.5px; background:var(--border); border:1px solid var(--border); margin:2.5rem 0;}
+.upanishad-card{background:var(--surface); padding:2rem 1.75rem; transition:background .35s,transform .3s; position:relative; overflow:hidden;}
+.upanishad-card::before{content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--gold),transparent); opacity:0; transition:opacity .3s;}
+.upanishad-card:hover::before{opacity:1;}
+.upanishad-card:hover{background:var(--surface2);}
+[data-theme="dark"] .upanishad-card{background:#0f0b07;}
+[data-theme="dark"] .upanishad-card:hover{background:#1a1208;}
+.upanishad-name{font-family:'Cinzel',serif; font-size:.75rem; letter-spacing:.18em; color:var(--gold); margin-bottom:.3rem;}
+.upanishad-lineage{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.88rem; color:var(--stone); margin-bottom:.6rem;}
+.upanishad-connection{font-family:'Cinzel',serif; font-size:.52rem; letter-spacing:.3em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:.6rem;}
+.upanishad-card p{color:var(--text-muted); font-size:.93rem; line-height:1.7;}
+
+.mahavakya-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5px; background:var(--border); border:1px solid var(--border); margin:2rem 0;}
+.mahavakya-item{background:var(--surface); padding:1.5rem 1.75rem; text-align:center; transition:background .3s;}
+.mahavakya-item:hover{background:var(--surface2);}
+[data-theme="dark"] .mahavakya-item{background:#110c06;}
+[data-theme="dark"] .mahavakya-item:hover{background:#1a1208;}
+.mahavakya-sanskrit{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold); display:block; margin-bottom:.3rem;}
+.mahavakya-translation{font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.25em; color:var(--stone); text-transform:uppercase; display:block; margin-bottom:.6rem;}
+.mahavakya-source{color:var(--text-muted); font-size:.87rem;}
+
+/* ===== EXTERNAL LINKS ===== */
+a.external-link{color:var(--gold); text-decoration:none; border-bottom:1px dashed var(--border-strong); transition:all .2s;}
+a.external-link:hover{color:var(--gold-light); border-bottom-color:var(--gold);}
+
+/* ===== PULLQUOTE ===== */
+.arunachala-section{position:relative; overflow:hidden; background:var(--pullquote-bg); padding:6rem 2rem; text-align:center; border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+.arunachala-glow{position:absolute; top:50%; left:50%; transform:translate(-50%,-60%); width:700px; height:700px; background:radial-gradient(ellipse,var(--gold-glow) 0%,transparent 65%); pointer-events:none;}
+.pullquote{max-width:700px; margin:0 auto; position:relative;}
+.pullquote-mark{font-family:'Cormorant Garamond',serif; font-size:7rem; color:var(--border-strong); line-height:0; position:absolute; top:3rem; left:50%; transform:translateX(-50%); user-select:none;}
+.pullquote-text{font-family:'IM Fell English',serif; font-style:italic; font-size:clamp(1.15rem,3vw,1.7rem); color:var(--text-primary); line-height:1.65; margin:0 auto 1.5rem; position:relative;}
+.pullquote-attr{font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.4em; color:var(--stone); text-transform:uppercase;}
+
+/* ===== STAGES ===== */
+.stages-section{background:var(--bg);}
+.stage-item{display:grid; grid-template-columns:auto 1fr; gap:0 2.5rem; position:relative; margin-bottom:3rem;}
+.stage-item::before{content:''; position:absolute; left:calc(58px / 2); top:60px; bottom:0; width:1px; background:linear-gradient(180deg,var(--border-strong),var(--border));}
+.stage-item:last-child::before{display:none;}
+.stage-number-outer{width:58px; height:58px; border:1px solid var(--border-strong); border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--surface); transition:all .4s; flex-shrink:0; cursor:pointer;}
+.stage-item:hover .stage-number-outer{border-color:var(--gold); background:var(--gold-glow); box-shadow:0 0 24px var(--gold-glow);}
+.stage-number-inner{font-family:'Cinzel',serif; font-size:.88rem; color:var(--gold-deep); font-weight:600;}
+.stage-body{padding-bottom:1rem;}
+.stage-label{font-family:'Cinzel',serif; font-size:.56rem; letter-spacing:.45em; color:var(--saffron); text-transform:uppercase; margin-bottom:.4rem; margin-top:.5rem;}
+.stage-title{font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,1.9rem); color:var(--ink2); margin-bottom:.9rem; line-height:1.2;}
+[data-theme="dark"] .stage-title{color:var(--gold-light);}
+.stage-body p{color:var(--text-muted); font-size:1rem; line-height:1.85; margin-bottom:1rem;}
+.stage-body em{color:var(--text-secondary); font-style:italic;}
+.stage-quote{border-left:2px solid var(--gold-deep); padding-left:1.5rem; margin:1.5rem 0; font-family:'IM Fell English',serif; font-style:italic; color:var(--text-secondary); font-size:1.05rem; line-height:1.7;}
+.stage-quote cite{display:block; margin-top:.5rem; font-family:'Cinzel',serif; font-style:normal; font-size:.55rem; letter-spacing:.25em; color:var(--stone); text-transform:uppercase;}
+
+/* ===== INFOBOX & WARNING ===== */
+.infobox{background:var(--surface2); border:1px solid var(--border); border-radius:2px; padding:1.75rem 2rem; margin:1.5rem 0;}
+[data-theme="dark"] .infobox{background:rgba(200,169,110,.04); border-color:rgba(200,169,110,.12);}
+.infobox-title{font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.4em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:1rem;}
+.infobox-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:.75rem;}
+.infobox-item{display:flex; flex-direction:column; gap:.2rem;}
+.infobox-item-label{font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.3em; color:var(--stone); text-transform:uppercase;}
+.infobox-item-value{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--text-primary);}
+
+.warning-box{border:1px solid rgba(192,88,32,.25); background:rgba(192,88,32,.06); padding:1.25rem 1.5rem; display:flex; gap:1rem; align-items:flex-start; margin:1.5rem 0; border-radius:2px;}
+.warning-icon{color:var(--saffron); font-size:.95rem; flex-shrink:0; margin-top:.15rem;}
+.warning-box p{color:var(--text-muted); font-size:.95rem; line-height:1.7;}
+
+/* ===== STRIP FLOW ===== */
+.strip-flow{display:flex; flex-direction:column; align-items:center; gap:0; margin:1.5rem 0;}
+.strip-item{text-align:center; padding:.7rem 2rem; border:1px solid var(--border); background:var(--surface); color:var(--text-muted); font-size:.97rem; width:100%; max-width:380px; font-family:'Cormorant Garamond',serif; transition:all .3s;}
+[data-theme="dark"] .strip-item{background:rgba(200,169,110,.02);}
+.strip-item.fading{opacity:.4; color:var(--stone); text-decoration:line-through; text-decoration-color:var(--border-strong);}
+.strip-item.final{background:var(--gold-glow); border-color:var(--gold-deep); color:var(--ink2); font-size:1.05rem; font-style:italic; opacity:1; text-decoration:none;}
+.strip-item.final.glow{border-color:var(--gold); box-shadow:0 0 20px var(--gold-glow);}
+[data-theme="dark"] .strip-item.final{color:var(--gold-light);}
+.strip-arrow{color:var(--border-strong); font-size:.7rem; padding:.05rem;}
+
+/* ===== STATES GRID ===== */
+.states-grid{display:grid; grid-template-columns:repeat(2,1fr) 1fr; gap:1.5px; background:var(--border); border:1px solid var(--border); margin:2rem 0;}
+.state-card{background:var(--surface); padding:2rem 1.5rem; text-align:center; transition:background .3s;}
+[data-theme="dark"] .state-card{background:#0d0a06;}
+.state-card.turiya{grid-column:1 / -1; background:var(--surface2); border-top:1px solid var(--border-strong);}
+[data-theme="dark"] .state-card.turiya{background:rgba(200,169,110,.04);}
+.state-icon{font-size:1.4rem; margin-bottom:.7rem;}
+.state-name{font-family:'Cinzel',serif; font-size:.7rem; letter-spacing:.25em; color:var(--gold-deep); margin-bottom:.2rem;}
+.state-sanskrit{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--stone); font-size:.88rem; margin-bottom:.7rem;}
+.state-desc{color:var(--text-muted); font-size:.92rem; line-height:1.65;}
+
+/* ===== VEILS GRID ===== */
+.veils-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:var(--border); border:1px solid var(--border); margin:2rem 0;}
+.veil-card{background:var(--surface); padding:2rem 1.5rem; text-align:center; transition:background .3s;}
+[data-theme="dark"] .veil-card{background:#0d0a06;}
+.veil-icon{font-size:1.4rem; margin-bottom:.7rem;}
+.veil-name{font-family:'Cinzel',serif; font-size:.7rem; letter-spacing:.25em; color:var(--gold-deep); margin-bottom:.2rem;}
+.veil-sanskrit{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--stone); font-size:.88rem; margin-bottom:.7rem;}
+.veil-desc{color:var(--text-muted); font-size:.92rem; line-height:1.65;}
+.veil-practice{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink2); font-size:.87rem; margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border);}
+[data-theme="dark"] .veil-practice{color:var(--gold-light);}
+.stage-closing-quote{font-size:.92rem;color:var(--text-muted);font-style:italic;}
+
+/* ===== DISTINCTION TABLE ===== */
+.distinction-table{display:grid; grid-template-columns:1fr auto 1fr; gap:0; margin:2rem 0; border:1px solid var(--border);}
+.dist-col{padding:2rem; background:var(--surface);}
+.dist-col.right{background:var(--surface2);}
+[data-theme="dark"] .dist-col{background:rgba(200,169,110,.02);}
+[data-theme="dark"] .dist-col.right{background:rgba(200,169,110,.06);}
+.dist-col-header{font-family:'Cinzel',serif; font-size:.58rem; letter-spacing:.4em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:1rem; padding-bottom:.75rem; border-bottom:1px solid var(--border);}
+.dist-col-title{font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink2); margin-bottom:1.25rem;}
+[data-theme="dark"] .dist-col-title{color:var(--gold-light);}
+.dist-item{font-size:.92rem; color:var(--text-muted); padding:.38rem 0; border-bottom:1px solid var(--border); line-height:1.6;}
+.dist-arrow{display:flex; align-items:center; justify-content:center; padding:1.5rem; font-size:1.4rem; color:var(--gold-deep); background:var(--surface2); border-left:1px solid var(--border); border-right:1px solid var(--border);}
+[data-theme="dark"] .dist-arrow{background:rgba(200,169,110,.03);}
+
+/* ===== PRACTICE — INTERACTIVE MEDITATION ===== */
+.practice-section{background:var(--bg2);}
+
+/* Guided meditation widget */
+.meditation-widget{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:2px; padding:2.5rem; margin:2rem 0;
+  text-align:center;
+}
+.meditation-widget-title{font-family:'Cinzel',serif; font-size:.65rem; letter-spacing:.4em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:1.5rem;}
+.meditation-steps-indicator{display:flex; justify-content:center; gap:.5rem; margin-bottom:2rem;}
+.med-dot{width:8px; height:8px; border-radius:50%; background:var(--border); transition:all .4s; cursor:pointer;}
+.med-dot.active{background:var(--gold); transform:scale(1.3);}
+.med-dot.done{background:var(--gold-deep);}
+.meditation-step-text{
+  font-family:'IM Fell English',serif; font-style:italic;
+  font-size:1.15rem; color:var(--text-secondary); line-height:1.8;
+  max-width:520px; margin:0 auto 1.5rem; min-height:80px;
+  display:flex; align-items:center; justify-content:center;
+  transition:opacity .5s;
+}
+.meditation-step-label{font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.35em; color:var(--gold-deep); text-transform:uppercase; margin-bottom:1rem;}
+
+/* Timer ring */
+.timer-ring-container{position:relative; width:120px; height:120px; margin:0 auto 1.5rem;}
+.timer-ring-svg{transform:rotate(-90deg);}
+.timer-ring-track{fill:none; stroke:var(--border); stroke-width:3;}
+.timer-ring-fill{fill:none; stroke:var(--gold); stroke-width:3; stroke-linecap:round; transition:stroke-dashoffset .5s linear;}
+.timer-display{
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+}
+.timer-num{font-family:'Cinzel',serif; font-size:1.6rem; color:var(--ink2); line-height:1;}
+[data-theme="dark"] .timer-num{color:var(--gold-light);}
+.timer-label{font-family:'Cinzel',serif; font-size:.45rem; letter-spacing:.3em; color:var(--stone); text-transform:uppercase; margin-top:.2rem;}
+
+.meditation-controls{display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;}
+.med-btn{
+  font-family:'Cinzel',serif; font-size:.6rem; letter-spacing:.25em;
+  text-transform:uppercase; padding:.75rem 1.5rem;
+  border:1px solid var(--border-strong); background:var(--surface);
+  color:var(--gold-deep); cursor:pointer; transition:all .3s;
+  border-radius:2px;
+}
+.med-btn:hover{background:var(--gold-glow); border-color:var(--gold);}
+.med-btn.primary{background:var(--gold-glow); border-color:var(--gold);}
+.med-btn:disabled{opacity:.4; cursor:not-allowed;}
+
+/* Duration selector */
+.duration-selector{display:flex; justify-content:center; gap:.5rem; margin-bottom:1.5rem;}
+.dur-btn{font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; padding:.4rem .9rem; border:1px solid var(--border); background:transparent; color:var(--stone); cursor:pointer; border-radius:20px; transition:all .25s;}
+.dur-btn.active{background:var(--gold-glow); border-color:var(--gold); color:var(--gold);}
+
+.practice-step{display:grid; grid-template-columns:72px 1fr; gap:0; border-bottom:1px solid var(--border); padding:2rem 0; transition:background .3s;}
+.practice-step:hover{background:var(--gold-glow);}
+.practice-step:last-child{border-bottom:none;}
+.practice-step-number{font-family:'Cinzel',serif; font-size:2rem; color:var(--border-strong); font-weight:600; align-self:flex-start; padding-top:.2rem; transition:color .3s;}
+.practice-step:hover .practice-step-number{color:var(--gold);}
+.practice-step-title{font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--ink2); margin-bottom:.5rem;}
+[data-theme="dark"] .practice-step-title{color:var(--gold-light);}
+.practice-step p{color:var(--text-muted); font-size:.99rem; line-height:1.8;}
+
+/* ===== TRANSMISSION ===== */
+.transmission-section{background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+.transmission-figure{background:var(--surface2); border:1px solid var(--border); padding:3rem 2rem; margin:2rem 0; border-radius:2px;}
+.transmission-figure-name{font-family:'Cinzel',serif; font-size:1.2rem; letter-spacing:.08em; color:var(--gold); margin-bottom:.3rem;}
+.transmission-figure-dates{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--stone); margin-bottom:1.5rem;}
+.transmission-figure p{color:var(--text-muted); line-height:1.9; margin-bottom:1rem;}
+.transmission-figure p:last-child{margin-bottom:0;}
+
+/* ===== WORKS ===== */
+.works-section{background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+.works-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1.5px; background:var(--border); margin-top:2rem; border:1px solid var(--border);}
+.work-card{background:var(--surface); padding:1.75rem 1.5rem; transition:background .3s,transform .3s;}
+.work-card:hover{background:var(--surface2); transform:translateY(-2px);}
+[data-theme="dark"] .work-card{background:#0f0b07;}
+[data-theme="dark"] .work-card:hover{background:#1a1208;}
+.work-card-title{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.08rem; color:var(--ink2); margin-bottom:.35rem;}
+[data-theme="dark"] .work-card-title{color:var(--gold-light);}
+.work-card-year{font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.3em; color:var(--stone); margin-bottom:.7rem;}
+.work-card p{color:var(--text-muted); font-size:.89rem; line-height:1.65;}
+
+/* ===== GLOSSARY WITH SEARCH ===== */
+.glossary-section{background:var(--bg); border-top:1px solid var(--border);}
+
+.glossary-search-bar{
+  position:relative; max-width:420px; margin:0 auto 2rem;
+}
+.glossary-search-bar input{
+  width:100%; padding:.9rem 1.2rem .9rem 3rem;
+  background:var(--surface); border:1px solid var(--border-strong);
+  font-family:'Crimson Pro',serif; font-size:1rem; color:var(--text-primary);
+  border-radius:2px; transition:border-color .2s, box-shadow .2s;
+  outline:none;
+}
+.glossary-search-bar input:focus{border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-glow);}
+.glossary-search-bar input::placeholder{color:var(--stone); opacity:.7;}
+.glossary-search-icon{
+  position:absolute; left:1rem; top:50%; transform:translateY(-50%);
+  color:var(--stone); font-size:1rem; pointer-events:none;
+}
+.glossary-search-count{
+  font-family:'Cinzel',serif; font-size:.55rem; letter-spacing:.25em;
+  color:var(--stone); text-transform:uppercase; text-align:center;
+  margin-bottom:1rem; transition:opacity .3s;
+}
+
+.glossary-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5px; background:var(--border); border:1px solid var(--border); margin-top:2rem;}
+.glossary-item{background:var(--surface); padding:1.75rem; transition:background .3s, opacity .3s; position:relative;}
+.glossary-item:hover{background:var(--surface2);}
+.glossary-item.hidden{display:none;}
+[data-theme="dark"] .glossary-item{background:#0a0703;}
+[data-theme="dark"] .glossary-item:hover{background:#111007;}
+.glossary-term{font-family:'Cinzel',serif; font-size:.76rem; letter-spacing:.15em; color:var(--gold); margin-bottom:.2rem;}
+.glossary-term mark{background:var(--gold-glow); color:var(--gold); border-radius:2px; padding:0 2px;}
+.glossary-sanskrit{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.87rem; color:var(--stone); margin-bottom:.7rem;}
+.glossary-def{color:var(--text-muted); font-size:.93rem; line-height:1.7;}
+
+/* no results state */
+.glossary-empty{display:none; text-align:center; padding:3rem; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--stone); font-size:1.1rem; grid-column:1/-1;}
+
+/* ===== HR ORNAMENT ===== */
+.hr-ornament{display:flex; align-items:center; justify-content:center; gap:1rem; margin:3rem auto; max-width:300px;}
+.hr-ornament-line{flex:1; height:1px; background:var(--border);}
+.hr-ornament-mark{width:5px; height:5px; background:var(--gold-deep); transform:rotate(45deg);}
+
+/* ===== TABLE OF CONTENTS ===== */
+.toc-section{padding:6rem 1.5rem; max-width:56.25rem; margin:0 auto;}
+.toc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(14.375rem,1fr)); gap:1rem; margin-top:2.25rem;}
+.toc-item{display:flex; align-items:center; gap:14px; padding:1.125rem 1.375rem; background:var(--surface); border:1px solid var(--border); border-radius:14px; text-decoration:none; color:var(--stone); font-size:.94rem; transition:all .45s cubic-bezier(.25,1,.5,1); position:relative; overflow:hidden;}
+.toc-item::before{content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--gold); transform:scaleY(0); transition:transform .35s cubic-bezier(.25,1,.5,1);}
+.toc-item:hover{border-color:var(--border-strong); color:var(--text-primary); transform:translateY(-4px) scale(1.02); box-shadow:0 0 40px var(--gold-glow);}
+.toc-item:hover::before{transform:scaleY(1);}
+.toc-item .num{width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.78rem; font-family:'Cinzel',serif; flex-shrink:0; font-weight:600; transition:transform .35s cubic-bezier(.68,-.55,.265,1.55);}
+.toc-item:hover .num{transform:scale(1.12) rotate(5deg);}
+.toc-item:nth-child(1) .num{background:rgba(181,133,58,.08); color:var(--gold);}
+.toc-item:nth-child(2) .num{background:rgba(181,133,58,.10); color:var(--gold);}
+.toc-item:nth-child(3) .num{background:rgba(181,133,58,.12); color:var(--gold);}
+.toc-item:nth-child(4) .num{background:rgba(181,133,58,.14); color:var(--gold-light);}
+.toc-item:nth-child(5) .num{background:rgba(181,133,58,.16); color:var(--gold-light);}
+.toc-item:nth-child(6) .num{background:rgba(181,133,58,.18); color:var(--gold-light);}
+.toc-item:nth-child(7) .num{background:rgba(181,133,58,.20); color:var(--gold); border:1px solid rgba(181,133,58,.3);}
+.toc-item:nth-child(8) .num{background:rgba(181,133,58,.06); color:var(--gold-deep);}
+
+/* ===== SECTION SHARED ===== */
+.section-header{text-align:center; margin-bottom:3.5rem;}
+.section-header h2{font-family:'Cormorant Garamond',serif; font-size:clamp(1.75rem,4vw,2.75rem); font-weight:400; color:var(--text-primary); margin-bottom:.875rem;}
+.section-header p{color:var(--stone); font-size:1rem; max-width:36.25rem; margin:0 auto; line-height:1.65;}
+.section-separator{width:48px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent); margin:0 auto 1.25rem; position:relative;}
+.section-separator::after{content:'✦'; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); color:var(--gold); font-size:.72rem; background:var(--bg); padding:0 6px;}
+
+/* ===== REVEAL / FADE ===== */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .85s cubic-bezier(.25,.46,.45,.94), transform .85s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1; transform:translateY(0);}
+.fade-in{opacity:0; transform:translateY(10px); transition:opacity .9s cubic-bezier(.25,1,.5,1), transform .9s cubic-bezier(.25,1,.5,1);}
+.fade-in.visible{opacity:1; transform:translateY(0);}
+.stagger-children > *:nth-child(1){transition-delay:.10s;}
+.stagger-children > *:nth-child(2){transition-delay:.20s;}
+.stagger-children > *:nth-child(3){transition-delay:.30s;}
+.stagger-children > *:nth-child(4){transition-delay:.40s;}
+.stagger-children > *:nth-child(5){transition-delay:.50s;}
+.stagger-children > *:nth-child(6){transition-delay:.60s;}
+.stagger-children > *:nth-child(7){transition-delay:.70s;}
+.stagger-children > *:nth-child(8){transition-delay:.80s;}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 80px 24px 32px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 64px;
+  margin-bottom: 48px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  color: var(--stone);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.footer-method {
+  font-size: 0.85rem;
+  color: var(--stone-light);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav a {
+  font-size: 0.85rem;
+  color: var(--stone);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+.footer-resources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-resources-list li {
+  font-size: 0.85rem;
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.resource-author {
+  font-weight: 500;
+  color: var(--stone-light);
+}
+
+.footer-resources-list em {
+  font-style: italic;
+  color: var(--stone);
+}
+
+.footer-resources-more {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.footer-resources-more:hover {
+  border-bottom-color: var(--gold);
+}
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--stone);
+  font-style: italic;
+}
+
+.footer-brand-tagline {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: var(--stone-light);
+}
+
+.footer-legal-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-legal-nav a {
+  font-size: 0.75rem;
+  color: var(--stone-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal-nav a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* UTILITY */
+.absolute-full{position:absolute; inset:0; z-index:1;}
+.editorial-note{text-align:center; max-width:600px; margin:2rem auto; font-size:.92rem; color:var(--stone); line-height:1.65;}
+.death-text{color:var(--text-secondary); line-height:1.9; margin-bottom:1rem;}
+.death-text-last{color:var(--text-secondary); line-height:1.9;}
+.section-title-lg{font-size:1.6rem;}
+.section-title-md{font-size:1.5rem;}
+.section-title-sm{font-size:1.4rem; margin-bottom:1.5rem;}
+.muted-text{color:var(--text-muted); line-height:1.9; margin-bottom:1.25rem;}
+.muted-text-compact{color:var(--text-muted); line-height:1.85; margin-bottom:1.5rem;}
+.muted-text-simple{color:var(--text-muted); line-height:1.9;}
+.mb-2rem{margin-bottom:2rem;} .mt-2rem{margin-top:2rem;} .mt-3rem{margin-top:3rem;}
+.border-none{border-bottom:none;}
+.practice-step-icon{font-size:1.8rem; color:var(--border-strong);}
+.arunachala-section-padding{padding:8rem 2rem;}
+.mt-0-75rem{margin-top:.75rem;}
+.text-ink2{color:var(--ink2);}
+.editorial-box{margin-bottom:2rem; padding:1.5rem; border-left:3px solid var(--gold); background:var(--surface2); border-radius:2px;}
+.editorial-box-text{color:var(--text-muted); line-height:1.85; margin:0; font-style:italic;}
+.muted-text-2rem{color:var(--text-muted); line-height:1.9; margin-bottom:2rem;}
+.sources-section{padding:3rem 2rem; max-width:800px; margin:0 auto; border-top:1px solid var(--border);}
+.sources-title{font-family:'Cinzel',serif; font-size:1.3rem; color:var(--gold-deep); margin-bottom:1.5rem; text-align:center;}
+.sources-body{font-family:'Cormorant Garamond',serif; color:var(--text-muted); line-height:1.75; font-size:.97rem;}
+.source-item{margin-bottom:.5rem;}
+.source-note{margin-top:1.5rem; font-size:.9rem; color:var(--stone);}
+.ul-mt-0-5{margin-top:.5rem;}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
+  .sacred-mandala,.hero-ripple,.vedanta-scroll,.sidebar-logo,.hero-emblem,.scroll-line{animation:none;}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+  .sidebar{position:fixed; z-index:150; transform:translateX(-100%); transition:transform .3s ease; width:260px;}
+  .sidebar.mobile-open{transform:translateX(0);}
+  .sidebar-backdrop{display:block;}
+  .main-content{margin-left:0;}
+}
+@media(max-width:900px){
+  .sidebar{position:fixed; z-index:150; transform:translateX(-100%);}
+  .sidebar.mobile-open{transform:translateX(0);}
+  .sidebar-backdrop{display:block;}
+  .main-content{margin-left:0;}
+  .back-to-top{right:2rem; bottom:2rem;}
+}
+@media(max-width:700px){
+  .distinction-table{grid-template-columns:1fr;}
+  .dist-arrow{display:none;}
+  .states-grid{grid-template-columns:1fr 1fr;}
+  .state-card.turiya{grid-column:1 / -1;}
+  .veils-grid{grid-template-columns:1fr;}
+  .lineage-timeline::before{left:22px;}
+  .lineage-node{grid-template-columns:44px 1fr;}
+  .lineage-node-marker{width:44px; height:44px;}
+  .stage-item{gap:0 1.5rem;}
+  .stage-number-outer{width:44px; height:44px;}
+  .stage-item::before{left:calc(44px / 2);}
+  .mahavakya-row{grid-template-columns:1fr 1fr;}
+  .resource-list{grid-template-columns:1fr;}
+  .glossary-grid{grid-template-columns:1fr;}
+  .works-grid{grid-template-columns:1fr 1fr;}
+  section{padding:3.5rem 1.25rem;}
+  .hero{padding:4rem 1rem 5rem;}
+  .transmission-figure{padding:2rem 1.5rem;}
+}
+@media(max-width:480px){
+  .states-grid,.mahavakya-row,.works-grid,.distinction-table{grid-template-columns:1fr;}
+  .state-card.turiya{grid-column:1;}
+  .veils-grid{grid-template-columns:1fr;}
+  .toc-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<a href="#origin" class="skip-link">Skip to Content</a>
+
+<!-- TOP PROGRESS BAR -->
+<div id="topProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Reading progress"></div>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+<nav class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="sidebar-header">
+    <div class="sidebar-logo" aria-hidden="true"><div class="sidebar-logo-inner"></div></div>
+    <span class="sidebar-title">Ramana Maharshi</span>
+    <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close navigation">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="sidebar-nav">
+    <div class="sidebar-nav-section">
+      <div class="sidebar-nav-section-title">Primary</div>
+      <a href="#hero" class="sidebar-nav-item active" aria-current="page">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">✦</span>
+        <span class="sidebar-nav-item-text">Home</span>
+      </a>
+      <a href="#origin" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">⊙</span>
+        <span class="sidebar-nav-item-text">Origin &amp; Awakening</span>
+      </a>
+      <a href="#transmission" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">☸</span>
+        <span class="sidebar-nav-item-text">Teachers &amp; Lineage</span>
+      </a>
+      <a href="#roots" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">☷</span>
+        <span class="sidebar-nav-item-text">Vedantic Roots</span>
+      </a>
+    </div>
+    <div class="sidebar-nav-section">
+      <div class="sidebar-nav-section-title">Teaching</div>
+      <a href="#stages" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">☰</span>
+        <span class="sidebar-nav-item-text">Seven Stages</span>
+      </a>
+      <a href="#practice" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">🕉</span>
+        <span class="sidebar-nav-item-text">Practice Guide</span>
+      </a>
+      <a href="#works" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">📚</span>
+        <span class="sidebar-nav-item-text">Works &amp; Texts</span>
+      </a>
+    </div>
+    <div class="sidebar-nav-section">
+      <div class="sidebar-nav-section-title">Resources</div>
+      <a href="#glossary" class="sidebar-nav-item">
+        <span class="sidebar-nav-item-icon" aria-hidden="true">📖</span>
+        <span class="sidebar-nav-item-text">Glossary</span>
+      </a>
+    </div>
+  </div>
+  <div class="sidebar-progress">
+    <div class="sidebar-progress-bar">
+      <div class="sidebar-progress-fill" id="progressFill" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="sidebar-progress-text">
+      <span id="progressPercent">0%</span><span>Reading</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-content">
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+</button>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+<span class="toggle-tooltip" aria-hidden="true">Toggle Light/Dark</span>
+
+<div class="reading-info" id="readingInfo" aria-hidden="true">
+  <span id="readingTimeLeft">~35 min read</span>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="hero">
+  <svg class="sacred-geometry" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="sacred-mandala">
+      <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
+      <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
+      <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+    </g>
+  </svg>
+
+  <!-- Improved Arunachala mountain SVG -->
+  <svg class="hero-mountain-svg" id="heroMountain" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="mtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="var(--mountain-fill)" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="var(--mountain-fill)" stop-opacity="0.04"/>
+      </linearGradient>
+      <linearGradient id="mtnGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="var(--gold-deep)" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="var(--gold-deep)" stop-opacity="0.02"/>
+      </linearGradient>
+    </defs>
+    <!-- Back ridge -->
+    <path d="M0,320 L120,240 L220,200 L340,170 L460,150 L560,120 L640,90 L720,50 L800,90 L880,120 L980,150 L1100,170 L1220,200 L1340,240 L1440,320 Z" fill="url(#mtnGrad)"/>
+    <!-- Main Arunachala silhouette — asymmetric, sacred hill shape -->
+    <path d="M0,320 L180,280 L300,260 L420,240 L520,220 L610,195 L660,175 L700,155 L720,130 L740,110 L760,130 L780,155 L820,175 L870,195 L960,220 L1060,240 L1180,260 L1300,280 L1440,320 Z" fill="url(#mtnGrad2)"/>
+    <!-- Subtle temple spire suggestion at summit -->
+    <path d="M718,108 L720,88 L722,108 Z" fill="var(--gold)" opacity="0.25"/>
+  </svg>
+
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+
+  <p class="hero-eyemark">Traditional Cartography of the Non-Dual Path</p>
+  <div class="hero-emblem" aria-hidden="true">
+    <div class="hero-emblem-circle"></div>
+    <div class="hero-emblem-circle2"></div>
+    <div class="hero-emblem-dot"></div>
+  </div>
+  <p class="hero-label">A Living Recognition</p>
+  <p class="hero-subtitle-top">The Sage of Arunachala</p>
+  <h1 class="hero-title">Ramana Maharshi</h1>
+  <p class="hero-epithet">Bhagavan · The Great Master · Sri Ramana</p>
+  <div class="hero-divider" aria-hidden="true">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"The Guru is none other than the Self."</p>
+  <p class="hero-quote-attr">— Ramana Maharshi, Talks with Sri Ramana Maharshi <sup data-fn="1">
+    [1]<span class="fn-tooltip">Talks with Sri Ramana Maharshi, Ramanasramam, Tiruvannamalai — the largest single record of Ramana's spoken teaching, compiled by Munagala Venkataramiah across three volumes (1935–39).</span>
+  </sup></p>
+  <div class="hero-reading-badge" aria-label="Estimated reading time: 35 minutes">◈ ~35 min read · 8 sections</div>
+  <p class="hero-dates">30 December 1879, Tiruchuzhi &nbsp;—&nbsp; 14 April 1950, Tiruvannamalai</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button" aria-label="Scroll to table of contents"><span>Explore</span><div class="scroll-line" aria-hidden="true"></div></div>
+</header>
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<section class="toc-section" id="toc">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2>The Complete Path to Self-Realization</h2>
+    <p>From the awakening at Arunachala to the natural state of the Self — with direct quotes, Vedantic context, and practice guidance</p>
+  </div>
+  <div class="reveal editorial-note">
+    <p><em>Editorial Note: This guide presents Ramana Maharshi's teaching as a traditional cartography of the non-dual path, drawing from established Vedantic sources and recorded conversations. While care has been taken to represent the teachings accurately, readers are encouraged to verify with primary sources and use their own discernment.</em></p>
+  </div>
+  <div class="toc-grid stagger-children">
+    <a href="#origin" class="toc-item fade-in"><span class="num">I</span> Origin &amp; Awakening</a>
+    <a href="#transmission" class="toc-item fade-in"><span class="num">II</span> Teachers &amp; Lineage</a>
+    <a href="#roots" class="toc-item fade-in"><span class="num">III</span> Vedantic Roots</a>
+    <a href="#stages" class="toc-item fade-in"><span class="num">IV</span> Seven Stages</a>
+    <a href="#practice" class="toc-item fade-in"><span class="num">V</span> Practice Guide</a>
+    <a href="#works" class="toc-item fade-in"><span class="num">VI</span> Works &amp; Texts</a>
+    <a href="#glossary" class="toc-item fade-in"><span class="num">VII</span> Glossary</a>
+    <a href="#footer" class="toc-item fade-in"><span class="num">★</span> Resources &amp; Archives</a>
+  </div>
+</section>
+
+<!-- VEDANTA MARQUEE -->
+<div class="vedanta-banner" aria-label="Vedantic lineage timeline">
+  <div class="vedanta-scroll">
+    <span class="vedanta-scroll-item">Rig Veda · c. 1500 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Brihadaranyaka Upanishad · c. 900 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Chandogya Upanishad · c. 800 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Mandukya Upanishad · c. 700 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Bhagavad Gita · c. 400 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Adi Shankaracharya · 788–820 CE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Ramana Maharshi · 1879–1950</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Papaji (H.W.L. Poonja) · 1910–1997</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Rig Veda · c. 1500 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Brihadaranyaka Upanishad · c. 900 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Chandogya Upanishad · c. 800 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Mandukya Upanishad · c. 700 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Bhagavad Gita · c. 400 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Adi Shankaracharya · 788–820 CE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Ramana Maharshi · 1879–1950</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+    <span class="vedanta-scroll-item">Papaji (H.W.L. Poonja) · 1910–1997</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
+  </div>
+</div>
+
+<!-- ===== ORIGIN ===== -->
+<section class="origin-section" id="origin" role="region" aria-labelledby="origin-heading">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-numeral">Origin &amp; Awakening</div>
+      <h2 class="section-title" id="origin-heading">The Death Experience<br>That Became Liberation</h2>
+      <p class="section-subtitle">Madurai, 1896 — A boy of sixteen confronted death and found the Self</p>
+    </div>
+    <div class="death-experience-card reveal">
+      <p class="death-text">In July 1896, sixteen-year-old Venkataraman Iyer sat alone in his uncle's house in Madurai when a sudden, overwhelming fear of death seized him. Rather than flee the feeling, he lay down, stiffened his body like a corpse, held his breath, and asked with absolute clarity: <em class="text-ink2">if the body dies, what am I?</em></p>
+      <p class="death-text">In that investigation he saw that the body could die — but the witnessing awareness remained untouched. Something deeper, prior, and self-luminous remained. The entire event lasted perhaps twenty minutes. In those minutes he had what he would later call the direct recognition of the Self: not an intellectual conclusion, but an immediate, irreversible realization. He would later observe that this experience precisely mirrored what the sages of the Upanishads had been pointing toward for millennia — the recognition the Mandukya calls <span class="sanskrit-term" title="The unchanging awareness underlying and witnessing waking, dreaming, and deep sleep. Not a fourth state in sequence — the substratum in which all states appear. Gaudapada's Karika demonstrates that Turiya alone is real; the other three states are like dream appearances within it.">Turiya</span> and the Brihadaranyaka calls the indestructible witness.</p>
+      <p class="death-text-last">Compelled by an inner force he could not explain, he left everything within weeks and arrived at the sacred hill of Arunachala. He never left. For 54 years, until his death in 1950, the sage of Arunachala taught from that mountain — transmitting what the Upanishads called <em>Atmavidya</em>, the knowledge of the Self, mostly in silence.</p>
+    </div>
+    <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
+    <div class="reveal">
+      <div class="section-numeral">Context</div>
+      <h3 class="section-title section-title-lg">Arunachala as Guru</h3>
+      <p class="muted-text">Unlike most sages in the Hindu tradition, Ramana had no human guru. He considered the sacred hill of Arunachala — revered in the Shaivite tradition as a physical manifestation of Lord Shiva — to be his guru. This is not unusual in the broader Vedantic understanding: the Brihadaranyaka Upanishad teaches that the Self itself is the only true teacher, and the outer guru simply confirms what the inner guru already knows.</p>
+      <p class="muted-text-simple">He never initiated a formal lineage, never declared a successor, and consistently deflected the role of teacher, pointing instead to the silent Self within every seeker. His teaching was not the transmission of a doctrine but an invitation to look directly at the source of the "I" — the very enquiry the Upanishadic sages encoded in the Mahavakyas.</p>
+    </div>
+
+    <!-- LINEAGE TIMELINE — improved from grid -->
+    <div class="lineage-timeline reveal">
+      <div class="lineage-node">
+        <div class="lineage-node-marker"><span class="lineage-node-symbol">☸</span></div>
+        <div class="lineage-node-body">
+          <span class="lineage-node-role">The Sage</span>
+          <div class="lineage-node-name">Ramana Maharshi</div>
+          <span class="lineage-node-dates">1879 – 1950 · Tiruvannamalai</span>
+          <p>Born Venkataraman Iyer. Realized at 16 with no formal instruction. Spent 54 years at Arunachala transmitting Self-knowledge through silence, gaze, and speech. His teaching was the direct pointing to the ever-present Self.</p>
+        </div>
+      </div>
+      <div class="lineage-node">
+        <div class="lineage-node-marker"><span class="lineage-node-symbol">⛰</span></div>
+        <div class="lineage-node-body">
+          <span class="lineage-node-role">The Guru</span>
+          <div class="lineage-node-name">Arunachala Hill</div>
+          <span class="lineage-node-dates">Tiruvannamalai, Tamil Nadu</span>
+          <p>The sacred mountain Ramana called his guru — the very form of Lord Shiva as <em>Jyotirlinga</em>, the pillar of light. He circumambulated it barefoot and composed five hymns in its honour. The mountain itself became the teaching.</p>
+        </div>
+      </div>
+      <div class="lineage-node">
+        <div class="lineage-node-marker"><span class="lineage-node-symbol">✍</span></div>
+        <div class="lineage-node-body">
+          <span class="lineage-node-role">Primary Devotee</span>
+          <div class="lineage-node-name">Ganapati Muni</div>
+          <span class="lineage-node-dates">1878 – 1936 · Sanskrit Scholar</span>
+          <p>Sanskrit scholar and poet who gave Ramana his name "Bhagavan Sri Ramana Maharshi." His questions produced the Sri Ramana Gita — cast in Sanskrit in the form of the Bhagavad Gita. Established Ramana's teachings in philosophical form.</p>
+        </div>
+      </div>
+      <div class="lineage-node">
+        <div class="lineage-node-marker"><span class="lineage-node-symbol">✦</span></div>
+        <div class="lineage-node-body">
+          <span class="lineage-node-role">Primary Devotee</span>
+          <div class="lineage-node-name">Paul Brunton</div>
+          <span class="lineage-node-dates">1898 – 1981 · British Writer</span>
+          <p>Whose 1934 book <em>A Search in Secret India</em> introduced Ramana to the Western world. His writings drew thousands of seekers to Arunachala, becoming the primary gateway for Western consciousness to Ramana's teaching.</p>
+        </div>
+      </div>
+      <div class="lineage-node">
+        <div class="lineage-node-marker"><span class="lineage-node-symbol">◈</span></div>
+        <div class="lineage-node-body">
+          <span class="lineage-node-role">Primary Devotee</span>
+          <div class="lineage-node-name">Sadhu Om</div>
+          <span class="lineage-node-dates">1923 – 1985 · Devotee &amp; Poet</span>
+          <p>Close disciple and poet-devotee. His <em>Path of Sri Ramana</em> remains the most precise exposition of <span class="sanskrit-term" title="The sustained investigation of the "I"-sense to discover its source. The experiential implementation of the Mahavakyas. Not a verbal question but a direct looking at the witness of all experience — the reversal of attention from objects back to its own ground.">Atma Vichara</span> available — rigorous commentary grounded in lived practice. The definitive guide to practice.</p>
+        </div>
+      </div>
+      <div class="lineage-node">
+        <div class="lineage-node-marker"><span class="lineage-node-symbol">📚</span></div>
+        <div class="lineage-node-body">
+          <span class="lineage-node-role">Living Authority</span>
+          <div class="lineage-node-name">David Godman</div>
+          <span class="lineage-node-dates">Contemporary · Scholar &amp; Custodian</span>
+          <p>The foremost living authority and scholarly custodian of Ramana's teaching. His editorial work on <em>Be As You Are</em> brought the teaching to global audiences with precision and authenticity. Maintains the Ramana archive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULLQUOTE 1 -->
+<div class="arunachala-section">
+  <div class="arunachala-glow" aria-hidden="true"></div>
+  <div class="pullquote reveal">
+    <div class="pullquote-mark" aria-hidden="true">"</div>
+    <p class="pullquote-text">Of all the thoughts that rise in the mind, the thought 'I' is the first thought. Enquire into the nature of the 'I'. This is Self-enquiry.</p>
+    <p class="pullquote-attr">— Ramana Maharshi · Who Am I? (Nan Yar, 1902)</p>
+  </div>
+</div>
+
+<!-- ===== TRANSMISSION ===== -->
+<section class="transmission-section" id="transmission" role="region" aria-labelledby="transmission-heading">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-numeral">The Transmission Line</div>
+      <h2 class="section-title" id="transmission-heading">Teachers &amp; Living Lineage</h2>
+      <p class="section-subtitle">How Ramana's teaching continues through his direct disciples and their students</p>
+    </div>
+    <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
+    <div class="reveal mb-2rem">
+      <p class="muted-text-simple">Ramana Maharshi never established a formal monastic order or declared a successor. Yet his teaching has naturally transmitted through those who sat in his presence and were fundamentally transformed. These figures function not as gurus in the conventional, hierarchical sense, but as powerful pointers — directly transmitting the same Recognition that Ramana embodied. The teaching moves not through institutional channels but through the transmission of direct realization from one to another.</p>
+    </div>
+    <div class="reveal editorial-box">
+      <p class="editorial-box-text"><strong>Editorial Note:</strong> The following teachers are presented as examples of how Ramana's teaching has naturally continued. Ramana did not authorize any formal lineage or declare a successor. Readers should use discernment in evaluating any teacher — the true teacher is the Self within.</p>
+    </div>
+
+    <div class="transmission-figure reveal">
+      <div class="transmission-figure-name">Papaji (Sri H.W.L. Poonja)</div>
+      <div class="transmission-figure-dates">1910 – 1997 · Lucknow, India</div>
+      <p>The most celebrated direct disciple. A military officer and spiritual seeker who came to Arunachala and sat before Ramana. In a single glance, Ramana's presence dissolved his seeking. Papaji spent 13 years with Ramana, absorbing the teaching through proximity and silence. After Ramana's death, he became the principal living embodiment of this recognition. His teaching was characterized by the directness of Ramana combined with active engagement with seekers — he became known as the "Lightning Guru" for the way his presence would trigger sudden awakenings.</p>
+      <p>Key teaching: <em>"The guru's grace is like the sun — it is always shining. The question is only whether you open your door."</em> Papaji established the <span class="sanskrit-term" title="Direct association with one established in Truth. The transmission of realization from presence to presence. For Papaji and his lineage, Satsang became the primary teaching modality — the gathering of seekers in the field of a realized master's silence.">Satsang</span> (gathering of truth) tradition in the West through Rishikesh and later through thousands of seekers he directly initiated into freedom.</p>
+      <div class="warning-box">
+        <span class="warning-icon" aria-hidden="true">⚠</span>
+        <p><strong>Important Note:</strong> Papaji's lineage — including teachers like Mooji, Gangaji, and others — continues the direct transmission of Ramana's pointing. However, seekers should always verify the authenticity and integrity of any teacher through their own recognition, not through institutional lineage.</p>
+      </div>
+    </div>
+
+    <div class="transmission-figure reveal">
+      <div class="transmission-figure-name">Annamalai Swami</div>
+      <div class="transmission-figure-dates">1906 – 1995 · Arunachala, India</div>
+      <p>Served Ramana for 23 years as his personal attendant and was fully liberated in his presence. After Ramana's death, lived in a cave on Arunachala for 45 years in complete solitude and silence. Unlike Papaji, he did not teach openly, yet those who sat with him experienced the transmission directly. His presence was an embodiment of <em>sahaja samadhi</em> — natural, unbroken abidance as the Self.</p>
+      <p><strong>Key texts:</strong> <em>Final Talks with Sri Annamalai Swami</em> — recorded conversations revealing the depths of his realization and his understanding of the practice.</p>
+    </div>
+
+    <div class="transmission-figure reveal">
+      <div class="transmission-figure-name">Sri Lakshman Swamy</div>
+      <div class="transmission-figure-dates">1914 – 2005 · Arunachala &amp; Bangalore</div>
+      <p>Though he met Ramana only once briefly, Lakshman Swamy's realization was a direct fruit of Ramana's teaching transmitted through the Vedantic lineage. He spent 12 years in complete silence on Arunachala and later taught a refined synthesis of Ramana's Self-enquiry with detailed maps of the inner stages of realization. His teaching bridges the mystical and philosophical aspects of <span class="sanskrit-term" title="The philosophical position that reality is non-dual: Brahman alone exists; the apparent multiplicity of individuals and world is a superimposition. Ramana pointed to the direct experience of non-duality as more fundamental than any philosophical position about it.">Advaita</span>.</p>
+      <p><strong>Key texts:</strong> <em>The Truth Revealed</em> — the most complete map of the seven inner stages of realization rooted in Ramana's teaching.</p>
+    </div>
+
+    <div class="transmission-figure reveal">
+      <div class="transmission-figure-name">Living Authority: David Godman</div>
+      <div class="transmission-figure-dates">Contemporary · Muruganar's Successor</div>
+      <p>As the editor of Ramana's words and primary custodian of the authentic teaching in contemporary times, Godman's work ensures the transmission continues with scholarly precision. Through his books, recordings, and preservation of the original sources, the teaching remains uncorrupted and accessible.</p>
+      <p><strong>Key texts:</strong> <em>Be As You Are</em>, <em>The Essential Teachings</em>, <em>The Ramana Maharshi Symposium</em> — definitive scholarly works.</p>
+    </div>
+
+    <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
+    <div class="reveal mt-2rem">
+      <h3 class="section-title section-title-sm">Key Principle: The Teaching vs. The Teacher</h3>
+      <p class="muted-text">Ramana himself was clear on this point: "The guru is not different from yourself. There is only one Self. The guru alone exists. The guru is the Self alone. There is no difference between the guru and the Self."<sup data-fn="2">[2]<span class="fn-tooltip">Talks with Sri Ramana Maharshi, Chapter 351, "The Self and the Guru." Ramana returns to this theme repeatedly — the teacher's function is to point back to the Self already present in the seeker.</span></sup> The transmission, therefore, is not from one person to another, but a recognition of what already is.</p>
+      <p class="muted-text-simple">The test of any teacher is: does their presence point you back to the Self? Do they diminish your sense of seeking or increase it? Ramana taught that the best teacher is the one who renders themselves unnecessary — who points you so clearly to the Self that you no longer need any external reference.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VEDANTIC ROOTS ===== -->
+<section class="roots-section" id="roots" role="region" aria-labelledby="roots-heading">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-numeral">Ancient Origins</div>
+      <h2 class="section-title" id="roots-heading">Vedantic &amp; Upanishadic Roots</h2>
+      <p class="section-subtitle">Ramana did not invent his teaching — he recovered it from its source and made it available again in living form</p>
+    </div>
+    <div class="reveal">
+      <p class="muted-text">Ramana Maharshi's teaching belongs squarely within the tradition of Advaita Vedanta — the non-dual philosophy derived from the Upanishads. He never claimed originality. His contribution was the directness and purity with which he pointed to what the ancient texts encoded in philosophical language: that consciousness itself, the witness behind all experience, is the one undivided reality.</p>
+      <p class="muted-text-2rem">The method of Self-enquiry he taught — turning attention toward the source of the "I"-sense — is an experiential enactment of the Mahavakyas (the "great sayings" of the Upanishads). Where the Upanishadic sages declared the identity of Self and Absolute in language, Ramana pointed to the immediate, felt recognition of that identity as the heart of the path itself.</p>
+    </div>
+    <div class="reveal">
+      <div class="section-numeral">The Four Great Sayings</div>
+      <h3 class="section-title section-title-md">The Mahavakyas — Upanishadic Foundation</h3>
+      <p class="muted-text-compact">These four declarations from the principal Upanishads form the doctrinal spine of Advaita Vedanta. Ramana's entire teaching is an experiential unpacking of them — not as philosophical propositions to be argued, but as pointers to be verified in direct experience.</p>
+    </div>
+    <div class="mahavakya-row reveal">
+      <div class="mahavakya-item">
+        <span class="mahavakya-sanskrit">Prajnanam Brahma</span>
+        <span class="mahavakya-translation">Consciousness is <span class="sanskrit-term" title="The ultimate reality underlying all appearances. Not a god external to the world but the ground of all being — pure, self-luminous, infinite. Shankara's Advaita: Brahman alone is real; the world as a separate entity is superimposed upon it by maya.">Brahman</span></span>
+        <div class="mahavakya-source">Aitareya Upanishad · Rig Veda · The ultimate reality is pure knowing — not a god outside, but the very act of awareness itself.</div>
+      </div>
+      <div class="mahavakya-item">
+        <span class="mahavakya-sanskrit">Aham Brahmasmi</span>
+        <span class="mahavakya-translation">I am Brahman</span>
+        <div class="mahavakya-source">Brihadaranyaka Upanishad · Yajur Veda · The individual "I" — traced to its source — is identical with the Absolute. Ramana's central implication in experiential form.</div>
+      </div>
+      <div class="mahavakya-item">
+        <span class="mahavakya-sanskrit">Tat Tvam Asi</span>
+        <span class="mahavakya-translation">That thou art</span>
+        <div class="mahavakya-source">Chandogya Upanishad · Sama Veda · Declared by Uddalaka to his son nine times in succession: the ultimate reality and your deepest nature are not two things.</div>
+      </div>
+      <div class="mahavakya-item">
+        <span class="mahavakya-sanskrit">Ayam Atma Brahma</span>
+        <span class="mahavakya-translation">This Self is Brahman</span>
+        <div class="mahavakya-source">Mandukya Upanishad · Atharva Veda · The Self witnessed across all four states — waking, dreaming, deep sleep, and Turiya — is none other than the Absolute.</div>
+      </div>
+    </div>
+
+    <div class="reveal mt-3rem">
+      <div class="section-numeral">Source Texts</div>
+      <h3 class="section-title section-title-md">The Upanishads Behind the Teaching</h3>
+      <p class="muted-text-compact">Ramana was deeply familiar with the Upanishadic literature — not from book-learning alone, but from the recognition that his own 1896 experience confirmed precisely what the ancient rishis had described. He frequently cited these texts and encouraged devotees to study them alongside practice.</p>
+    </div>
+    <div class="upanishad-grid reveal">
+      <div class="upanishad-card">
+        <div class="upanishad-name">Mandukya Upanishad</div>
+        <div class="upanishad-lineage">Atharva Veda · 12 verses</div>
+        <div class="upanishad-connection">Connects to Stage IV — The Four States</div>
+        <p>The briefest and most concentrated of all Upanishads. Its twelve verses establish the four states of consciousness — waking, dreaming, deep sleep, and Turiya — and identify the witnessing Self with Brahman. Ramana's entire analysis of consciousness across states is rooted here.</p>
+      </div>
+      <div class="upanishad-card">
+        <div class="upanishad-name">Brihadaranyaka Upanishad</div>
+        <div class="upanishad-lineage">Yajur Veda · Oldest Upanishad</div>
+        <div class="upanishad-connection">Connects to Stage V — Self and Non-Self</div>
+        <p>The oldest and longest Upanishad, containing the foundational dialogues of Yajnavalkya — including the celebrated <span class="sanskrit-term" title="Yajnavalkya's method of negation: systematically excluding every object, quality, and description that can be perceived or conceived — until the irreducible witness remains. The philosophical precursor to Ramana's self-enquiry.">"Neti, neti"</span> (not this, not this). Ramana's distinction between the "I"-thought and pure awareness is the experiential form of Yajnavalkya's teaching.</p>
+      </div>
+      <div class="upanishad-card">
+        <div class="upanishad-name">Chandogya Upanishad</div>
+        <div class="upanishad-lineage">Sama Veda · Tat Tvam Asi</div>
+        <div class="upanishad-connection">Connects to Stage II — Self-Enquiry as Method</div>
+        <p>Contains Uddalaka's teaching to his son: "Tat tvam asi — That thou art," delivered nine times in succession. Ramana's method of returning to the "I"-sense again and again is the direct experiential implementation of this instruction.</p>
+      </div>
+      <div class="upanishad-card">
+        <div class="upanishad-name">Kena Upanishad</div>
+        <div class="upanishad-lineage">Sama Veda · "By whom?"</div>
+        <div class="upanishad-connection">Connects to Stage II — The Witness Behind Knowing</div>
+        <p>Opens with: "By whom is the mind directed?" — the exact structure of Ramana's self-enquiry. The Kena is the oldest textual formulation of the method Ramana revived in experiential form.</p>
+      </div>
+      <div class="upanishad-card">
+        <div class="upanishad-name">Mundaka Upanishad</div>
+        <div class="upanishad-lineage">Atharva Veda · Two Birds</div>
+        <div class="upanishad-connection">Connects to Stage I — <span class="sanskrit-term" title="The apparent individual — the person with a name and history. The Chandogya's "Tat Tvam Asi" is specifically addressed to the jiva: it declares that this apparently limited soul is identical with Brahman.">Jiva</span> &amp; Atman</div>
+        <p>Contains the parable of two birds: one eats the fruits (the individual soul), the other simply watches (the witness-Self). This image of the uninvolved witness is central to Ramana's description of the jnani.</p>
+      </div>
+      <div class="upanishad-card">
+        <div class="upanishad-name">Taittiriya Upanishad</div>
+        <div class="upanishad-lineage">Yajur Veda · Five Sheaths</div>
+        <div class="upanishad-connection">Connects to Stage I — The Five Koshas</div>
+        <p>Establishes the doctrine of the pancha kosha — the five sheaths through which the true Self appears veiled. Ramana accepted this framework but pushed past it: the Self is not behind them; it is the awareness in which they arise.</p>
+      </div>
+    </div>
+
+    <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
+    <div class="reveal">
+      <div class="section-numeral">Philosophical Lineage</div>
+      <h3 class="section-title section-title-md">Adi Shankaracharya &amp; the Advaita Tradition</h3>
+      <p class="muted-text">Ramana's teaching is unmistakably within the Advaita Vedanta tradition systematized by Adi Shankaracharya (788–820 CE). Shankara's pivotal contribution was his interpretation of the Prasthanatrayi, demonstrating their convergent teaching: the non-dual identity of <span class="sanskrit-term" title="Pure consciousness, eternal and unchanging, which is the true nature of every being. Identical with Brahman. The Upanishads demonstrate this identity through the Mahavakyas; Ramana made it the object of direct experiential verification.">Atman</span> and Brahman. However, Ramana simplified Shankara's elaborate philosophical apparatus into a single direct inquiry: find the source of the "I."</p>
+      <blockquote class="stage-quote">
+        "The conclusion of the Vedas is that Brahman alone exists as the one undivided reality. There is no world apart from it; there is no second thing. This is what the Upanishads declare in a hundred different ways. Self-enquiry is the direct means to verify this."<sup data-fn="3">[3]<span class="fn-tooltip">Talks with Sri Ramana Maharshi, Chapter 13, "The Nature of the Self" — Ramana here paraphrases the convergent position of the principal Upanishads as understood by Shankara's Advaita.</span></sup>
+        <cite>— Ramana Maharshi, in dialogue</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- PULLQUOTE 2 -->
+<div class="arunachala-section">
+  <div class="arunachala-glow" aria-hidden="true"></div>
+  <div class="pullquote reveal">
+    <div class="pullquote-mark" aria-hidden="true">"</div>
+    <p class="pullquote-text">There is no greater mystery than this — that we, being Reality ourselves, seek to gain Reality. We think something hides it. That is the only obstacle.</p>
+    <p class="pullquote-attr">— Ramana Maharshi</p>
+  </div>
+</div>
+
+<!-- ===== SEVEN STAGES ===== -->
+<section class="stages-section" id="stages" role="region" aria-labelledby="stages-heading">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-numeral">The Map</div>
+      <h2 class="section-title" id="stages-heading">The Seven Stages<br>of Realization</h2>
+      <p class="section-subtitle">A complete cartography from mistaken identity to the Self, grounded in Vedantic analysis</p>
+    </div>
+    <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
+
+    <!-- Stage I -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">I</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Starting Condition</div>
+        <h3 class="stage-title">Mistaken Identity — The Jiva</h3>
+        <p>The ordinary human being takes itself to be a person: a body with a name, a history, desires, and fears. This is the <em>jiva</em> — the individual soul apparently confined within the body-mind. The Taittiriya Upanishad describes this through the doctrine of the five koshas (sheaths) — through which the true Self appears veiled. For Ramana, as for the Upanishads, the root of all suffering is this one misidentification: the assumption that one is the body-mind rather than the awareness in which the body-mind appears.</p>
+        <div class="infobox">
+          <div class="infobox-title">The Five Sheaths (Koshas) · Taittiriya Upanishad — All Appearances in Awareness</div>
+          <div class="infobox-grid">
+            <div class="infobox-item"><span class="infobox-item-label">Annamaya</span><span class="infobox-item-value">Physical Body</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Pranamaya</span><span class="infobox-item-value">Vital Energy</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Manomaya</span><span class="infobox-item-value">Mind</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Vijnanamaya</span><span class="infobox-item-value">Intellect</span></div>
+            <div class="infobox-item"><span class="infobox-item-label">Anandamaya</span><span class="infobox-item-value">Bliss Sheath</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage II -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">II</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Core Practice</div>
+        <h3 class="stage-title">Atma Vichara — Self-Enquiry</h3>
+        <p>The pivot of the entire teaching. Ramana taught one central practice, which he called <em>Atma Vichara</em>: trace the sense of "I" back to its source. Rather than asking "Who am I?" as a verbal question, the practice is the direct, sustained investigation of the feeling "I" — turning attention to attention itself. The "I"-thought is always the first thought; trace it to its source and the mind subsides into pure awareness — the Turiya of the Mandukya, the witness of the Brihadaranyaka.</p>
+        <div class="strip-flow">
+          <div class="strip-item fading">I am this body</div><div class="strip-arrow" aria-hidden="true">↓</div>
+          <div class="strip-item fading">I am the thoughts</div><div class="strip-arrow" aria-hidden="true">↓</div>
+          <div class="strip-item fading">I am the person named ___</div><div class="strip-arrow" aria-hidden="true">↓</div>
+          <div class="strip-item fading">I am the doer</div><div class="strip-arrow" aria-hidden="true">↓</div>
+          <div class="strip-item final">Who is aware of all this? — I</div><div class="strip-arrow" aria-hidden="true">↓</div>
+          <div class="strip-item final glow">Pure Self-Luminous Awareness — Aham Brahmasmi</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage III -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">III</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Obstacles</div>
+        <h3 class="stage-title">The Three Veils</h3>
+        <p>Three fundamental errors sustain the experience of separation. Shankara's Advaita names the cosmic version of this veiling <em><span class="sanskrit-term" title="The superimposition of names and forms upon the formless Brahman. Shankara's central philosophical contribution. Maya has two powers: avarana (veiling the Self) and vikshepa (projecting an apparent world). Self-enquiry undoes both simultaneously.">maya</span></em> — the superimposition of apparent multiplicity on the non-dual ground of Brahman. Ramana translates this into the personal: the same veiling operates within each seeker as body-identification, mind-attachment, and the sense of doership. They need not be destroyed — only seen through.</p>
+        <div class="veils-grid">
+          <div class="veil-card">
+            <div class="veil-icon" aria-hidden="true">◈</div>
+            <div class="veil-name">Body-Identification</div>
+            <div class="veil-sanskrit">Dehatma-buddhi · "I am the body"</div>
+            <div class="veil-desc">The primal error: taking the physical form to be the Self. The body is born, grows, ages, dies — yet the awareness that knows "this is my body" remains unchanged throughout. Ramana would ask: "The body is insentient — can it say 'I'? Who is the one who claims the body?"</div>
+            <div class="veil-practice">Practice: Inquire "To whom does this body belong?" — the answer "to me" reveals the I-thought; trace it further.</div>
+          </div>
+          <div class="veil-card">
+            <div class="veil-icon" aria-hidden="true">◇</div>
+            <div class="veil-name">Mind-Attachment</div>
+            <div class="veil-sanskrit">Manas-abhimana · "I am my thoughts"</div>
+            <div class="veil-desc">The subtler error: taking the stream of mentation to be the Self. Thoughts arise and pass like clouds in the sky, yet awareness itself remains untouched. The thought "I am sad" is known; who knows it? The thinker is itself a thought — the first thought, from which all others spring.</div>
+            <div class="veil-practice">Practice: Watch thoughts without identification — they are objects in awareness, not awareness itself. Who is the witness?</div>
+          </div>
+          <div class="veil-card">
+            <div class="veil-icon" aria-hidden="true">◆</div>
+            <div class="veil-name">Sense of Doership</div>
+            <div class="veil-sanskrit">Kartritva-buddhi · "I am the doer"</div>
+            <div class="veil-desc">The most persistent error: taking action and volition to be the Self. "I did this," "I achieved that" — yet all action happens in awareness. Ramana taught that the sense of doership dissolves when the source of the "I" is found. The doer is a concept; the Self merely witnesses.</div>
+            <div class="veil-practice">Practice: Before any action, pause and ask "Who is the one who will do this?" — watch the doer-thought arise and dissolve.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage IV -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">IV</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Four States · Mandukya Upanishad</div>
+        <h3 class="stage-title">Waking, Dreaming, Sleep<br>&amp; the Witness — Turiya</h3>
+        <p>The Mandukya Upanishad — just twelve verses — is the concentrated source of Ramana's analysis of consciousness across states. Ramana applied it directly: the first three states come and go; Turiya is not a state at all but the unchanging awareness that witnesses and contains all three.</p>
+        <div class="states-grid">
+          <div class="state-card"><div class="state-icon" aria-hidden="true">☀</div><div class="state-name">Waking</div><div class="state-sanskrit">Jagrat · Vaishvanara</div><div class="state-desc">The waking world of gross objects. The self appears as a person amid other persons and things. The realm of ordinary experience and apparent separation.</div></div>
+          <div class="state-card"><div class="state-icon" aria-hidden="true">☽</div><div class="state-name">Dreaming</div><div class="state-sanskrit">Svapna · Taijasa</div><div class="state-desc">Mind-created world of subtle images. The dreamer appears just as real to itself as the waker. Also an appearance in awareness — also witnessed.</div></div>
+          <div class="state-card"><div class="state-icon" aria-hidden="true">◉</div><div class="state-name">Deep Sleep</div><div class="state-sanskrit">Sushupti · Prajna</div><div class="state-desc">Consciousness apparently suspended — yet the awareness that knows "I slept deeply and knew nothing" was present throughout, unbroken.</div></div>
+          <div class="state-card turiya"><div class="state-icon" aria-hidden="true">✦</div><div class="state-name">Turiya — The Fourth</div><div class="state-sanskrit">Mandukya Upanishad: not a state — the background of all states · "Ayam Atma Brahma"</div><div class="state-desc">The unchanging, self-luminous awareness in which the three states appear and disappear. This is the Self — always present, never born, never modified. Ramana identified Turiya with the Heart (<span class="sanskrit-term" title="Not the physical heart but the spiritual centre — the place from which the "I"-sense arises, the seat of the Self. The cave of the heart as the dwelling of Brahman appears in the Chandogya and Brihadaranyaka. Ramana located it experientially slightly to the right of centre in the chest.">Hridayam</span>) — the spiritual centre from which the "I"-sense arises.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage V -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">V</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Critical Distinction</div>
+        <h3 class="stage-title">Mind vs. Self —<br>The "I"-Thought &amp; Pure Awareness</h3>
+        <p>The Brihadaranyaka Upanishad's sage Yajnavalkya employs "neti, neti" — not this, not this — stripping away every object and quality until the irreducible witness remains. Ramana operationalized this as the distinction between the <em>ahamkara</em> (the "I"-thought) and the pure awareness that is the Self.</p>
+        <div class="distinction-table">
+          <div class="dist-col">
+            <div class="dist-col-header">The "I"-Thought / Mind</div>
+            <div class="dist-col-title"><span class="sanskrit-term" title="The root thought "I am this body" from which all other thoughts arise. The ego is not the Self — it is the first and primary thought, mistaking awareness for a limited object. Dissolved by sustained self-enquiry.">Ahamkara</span> · The Ego-Sense</div>
+            <div class="dist-item">The first thought to arise in waking</div>
+            <div class="dist-item">Source of all other thoughts</div>
+            <div class="dist-item">Appears in and disappears with states</div>
+            <div class="dist-item">Borrows its light from the Self</div>
+            <div class="dist-item">Subject to memory, fear, desire</div>
+            <div class="dist-item">Dissolved by sustained self-enquiry</div>
+          </div>
+          <div class="dist-arrow" aria-hidden="true">→</div>
+          <div class="dist-col right">
+            <div class="dist-col-header">Pure Awareness · The Self</div>
+            <div class="dist-col-title">Atman · Brahman · Turiya</div>
+            <div class="dist-item">Self-luminous — not lit by anything</div>
+            <div class="dist-item">Witness of all three states</div>
+            <div class="dist-item">Changeless — never modified</div>
+            <div class="dist-item">Prior to subject and object</div>
+            <div class="dist-item">Not a state to be achieved — always present</div>
+            <div class="dist-item">Your own nature — you already are This</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage VI -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">VI</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Role of Grace</div>
+        <h3 class="stage-title"><span class="sanskrit-term" title="Ramana's primary teaching mode, with deep precedent in the Dakshinamurti Stotra — Shankara's hymn to Shiva as the silent teacher. Many seekers experienced a direct transmission of stillness simply by sitting in Ramana's presence: mouna diksha.">Mouna</span> &amp; Grace —<br>Silent Transmission</h3>
+        <p>Ramana's most striking teaching modality was silence — <em>mouna</em>. Many seekers sat in his presence for hours and reported that their questions dissolved, their minds became still, and a profound peace arose without any technique. This is what Ramana called <em>mouna diksha</em> — initiation through silence.</p>
+        <p>Grace, Ramana consistently taught, is not something external bestowed by a guru onto a separate seeker. The Mundaka Upanishad states it precisely: "This Self is not attained through study, nor through intellect, nor through much hearing. By whom the Self chooses — by that one alone is it attained."</p>
+      </div>
+    </div>
+
+    <!-- Stage VII -->
+    <div class="stage-item reveal">
+      <div class="stage-marker"><div class="stage-number-outer"><span class="stage-number-inner">VII</span></div></div>
+      <div class="stage-body">
+        <div class="stage-label">The Fruit</div>
+        <h3 class="stage-title">The <span class="sanskrit-term" title="One in whom the recognition of the Self is stable and irreversible. The Bhagavad Gita's sthitaprajna (Ch. 2) and the Upanishadic jivanmukta. Appears to live normally — but without a personal "I" claiming ownership of actions or experiences.">Jnani</span> — Liberation<br>in the Midst of Life</h3>
+        <p>The one who has recognized the Self — the <em>jnani</em> — appears to live an ordinary life. The body continues, words arise, meals are eaten. But there is no one behind the appearance claiming ownership. Ramana exemplified this: he cooked food for devotees, walked around the mountain, answered questions, and finally died of cancer with full conscious awareness and complete equanimity.</p>
+        <blockquote class="stage-quote">"Realization is not something to be gained afresh. It is already there. All that is necessary is to get rid of the thought 'I have not realized.' Stillness or peace is Realization."<sup data-fn="4">[4]<span class="fn-tooltip">Talks with Sri Ramana Maharshi, Chapter 30, "Realization." Ramana returns to this theme constantly — the sense of being unrealized is itself an obstacle, not the truth of one's condition.</span></sup><cite>— Talks with Sri Ramana Maharshi</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRACTICE ===== -->
+<section class="practice-section" id="practice" role="region" aria-labelledby="practice-heading">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-numeral">The Method</div>
+      <h2 class="section-title" id="practice-heading">How to Practice<br>Self-Enquiry</h2>
+      <p class="section-subtitle">A practical guide to Atma Vichara — the direct path as Ramana taught it</p>
+    </div>
+
+    <!-- INTERACTIVE MEDITATION WIDGET -->
+    <div class="meditation-widget reveal" id="meditationWidget" role="region" aria-labelledby="med-title">
+      <div class="meditation-widget-title" id="med-title">Guided Self-Enquiry · Interactive Practice Session</div>
+
+      <div class="duration-selector" role="group" aria-label="Session duration">
+        <button class="dur-btn active" data-dur="300" onclick="setDuration(300,this)">5 min</button>
+        <button class="dur-btn" data-dur="600" onclick="setDuration(600,this)">10 min</button>
+        <button class="dur-btn" data-dur="900" onclick="setDuration(900,this)">15 min</button>
+        <button class="dur-btn" data-dur="1200" onclick="setDuration(1200,this)">20 min</button>
+      </div>
+
+      <div class="meditation-steps-indicator" role="list" aria-label="Practice steps">
+        <div class="med-dot active" role="listitem" aria-label="Step 1" onclick="goToStep(0)"></div>
+        <div class="med-dot" role="listitem" aria-label="Step 2" onclick="goToStep(1)"></div>
+        <div class="med-dot" role="listitem" aria-label="Step 3" onclick="goToStep(2)"></div>
+        <div class="med-dot" role="listitem" aria-label="Step 4" onclick="goToStep(3)"></div>
+        <div class="med-dot" role="listitem" aria-label="Step 5" onclick="goToStep(4)"></div>
+        <div class="med-dot" role="listitem" aria-label="Step 6" onclick="goToStep(5)"></div>
+      </div>
+
+      <div class="meditation-step-label" id="medStepLabel">Step 1 of 6</div>
+      <div class="meditation-step-text" id="medStepText" aria-live="polite">
+        Settle the body. Sit comfortably, spine upright, hands resting. Let the eyes soften or close. Simply arrive here, in this moment, as you are.
+      </div>
+
+      <div class="timer-ring-container" aria-hidden="true">
+        <svg class="timer-ring-svg" width="120" height="120" viewBox="0 0 120 120">
+          <circle class="timer-ring-track" cx="60" cy="60" r="52"/>
+          <circle class="timer-ring-fill" id="timerRingFill" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="0"/>
+        </svg>
+        <div class="timer-display">
+          <span class="timer-num" id="timerNum">5:00</span>
+          <span class="timer-label" id="timerLabel">remaining</span>
+        </div>
+      </div>
+
+      <div class="meditation-controls">
+        <button class="med-btn" onclick="prevStep()" id="prevBtn" aria-label="Previous step" disabled>← Back</button>
+        <button class="med-btn primary" onclick="toggleTimer()" id="timerBtn" aria-label="Start timer">Begin</button>
+        <button class="med-btn" onclick="nextStep()" id="nextBtn" aria-label="Next step">Next →</button>
+      </div>
+    </div>
+
+    <div class="hr-ornament" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
+
+    <div>
+      <div class="practice-step reveal">
+        <div class="practice-step-number">1</div>
+        <div class="practice-step-content">
+          <div class="practice-step-title">Find the Sense of "I"</div>
+          <p>Sit quietly. Before any thought arises — before "I am tired," "I am happy," "I am the body" — there is a bare, raw sense of existing. That bare "I am" prior to all qualifiers is where the enquiry begins. It is not a thought about existence, but the actual felt sense of being present.</p>
+        </div>
+      </div>
+      <div class="practice-step reveal">
+        <div class="practice-step-number">2</div>
+        <div class="practice-step-content">
+          <div class="practice-step-title">Turn Attention Toward the "I"</div>
+          <p>Instead of following thoughts outward into objects, gently turn attention inward — not toward any thought, but toward the very sense of "I" itself. The Kena Upanishad describes the paradox: you cannot see the seer with the eye, yet the seer is not absent. Simply look at the "I." Try to find the one who is looking. This reversal of attention is the entire method.</p>
+        </div>
+      </div>
+      <div class="practice-step reveal">
+        <div class="practice-step-number">3</div>
+        <div class="practice-step-content">
+          <div class="practice-step-title">Notice the Thoughts That Arise</div>
+          <p>The mind will generate thoughts — plans, memories, even philosophical questions about the practice itself. When a thought arises, gently ask: "To whom does this thought arise? To me. Then who am I?" Return to the sense of "I." It is not a battle with thoughts; it is a gentle, persistent return to the witness.</p>
+        </div>
+      </div>
+      <div class="practice-step reveal">
+        <div class="practice-step-number">4</div>
+        <div class="practice-step-content">
+          <div class="practice-step-title">Allow the Mind to Subside</div>
+          <p>When attention rests steadily on the "I"-sense rather than its objects, the mind naturally subsides. Thoughts lose their urgency; stillness opens. The Mandukya Upanishad calls this the approach to Turiya — the recognition of the witnessing awareness present all along beneath the surface of the three ordinary states.</p>
+        </div>
+      </div>
+      <div class="practice-step reveal">
+        <div class="practice-step-number">5</div>
+        <div class="practice-step-content">
+          <div class="practice-step-title">Surrender as Complement</div>
+          <p>For those whose temperament is devotional, Ramana offered complete surrender of the ego-sense to God. The Bhagavad Gita, Chapter 18, concludes: "Abandon all dharmas and take refuge in Me alone." Ramana taught that self-enquiry and surrender are two faces of the same movement — both dissolve the ego-sense and both arrive at the same recognition of the Self as Brahman.</p>
+        </div>
+      </div>
+      <div class="practice-step reveal border-none">
+        <div class="practice-step-number practice-step-icon">✦</div>
+        <div class="practice-step-content">
+          <div class="practice-step-title">The Final Understanding</div>
+          <p>There is nothing to gain, nothing to achieve, no distance to travel. The Chandogya Upanishad's "Tat Tvam Asi — That thou art" was never a future promise but a present fact. The Self is already what you are. The effort of self-enquiry is not an effort to become something — it is the gradual dissolution of the habit of appearing to be something else.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section id="works" class="works-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-numeral">Primary Sources</div>
+      <h2 class="section-title">The Works of<br>Ramana Maharshi</h2>
+      <p class="section-subtitle">The Collected Works and their context in the Vedantic tradition</p>
+    </div>
+    <div class="works-grid reveal">
+      <div class="work-card"><div class="work-card-title">Nan Yar? — Who Am I?</div><div class="work-card-year">1902 · Tamil Prose</div><p>The foundational text — answers given in writing to devotee Sivaprakasam Pillai. The clearest single statement of Ramana's core method. <a href="https://www.gururamana.org/Teachings/who_am_I.pdf" class="external-link" target="_blank" rel="noopener">Available online</a></p></div>
+      <div class="work-card"><div class="work-card-title">Vicharasangraham — Self-Enquiry</div><div class="work-card-year">1901–02 · Tamil Prose</div><p>The companion to Who Am I? — answers to Gambhiram Seshayya. Together these two form the only prose works Ramana composed in his own hand.</p></div>
+      <div class="work-card"><div class="work-card-title">Ulladu Narpadu — Reality in Forty Verses</div><div class="work-card-year">1928 · Tamil Verse</div><p>The deepest philosophical work. Forty verses on the nature of reality — his closest engagement with the Upanishadic tradition in his own words.</p></div>
+      <div class="work-card"><div class="work-card-title">Upadesa Saram — Essence of Instruction</div><div class="work-card-year">1927 · Sanskrit &amp; Tamil Verse</div><p>Thirty Sanskrit verses condensing the essence of all sadhana across the three paths — jnana, bhakti, and karma. One of Ramana's most-chanted texts.</p></div>
+      <div class="work-card"><div class="work-card-title">Five Hymns to Arunachala</div><div class="work-card-year">1914–1918 · Tamil Verse</div><p>Devotional poetry to the sacred mountain-guru. The most direct window into Ramana's personal relationship with Arunachala and the bhakti face of his non-dual teaching.</p></div>
+      <div class="work-card"><div class="work-card-title">Sri Ramana Gita</div><div class="work-card-year">1917 · Ganapati Muni</div><p>Dialogues between Ramana and Ganapati Muni, cast in Sanskrit in the form of the Bhagavad Gita — a precise record of the teaching in that critical period.</p></div>
+      <div class="work-card"><div class="work-card-title">Talks with Sri Ramana Maharshi</div><div class="work-card-year">1935–39 · Munagala Venkataramiah</div><p>Three volumes of daily conversations. The richest single record of Ramana's spontaneous teaching. <a href="https://www.ramakrishna.org/ramana-maharshi-teachings/books/" class="external-link" target="_blank" rel="noopener">Official archives</a></p></div>
+      <div class="work-card"><div class="work-card-title">Be As You Are</div><div class="work-card-year">1985 · Ed. David Godman</div><p>The finest thematic anthology. The ideal first book and a reliable scholarly resource. <a href="https://www.davidgodman.org/" class="external-link" target="_blank" rel="noopener">Godman's site</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GLOSSARY WITH LIVE SEARCH ===== -->
+<section class="glossary-section" id="glossary" role="region" aria-labelledby="glossary-heading">
+  <div class="container-wide">
+    <div class="container reveal">
+      <div class="section-numeral">Key Terms</div>
+      <h2 class="section-title" id="glossary-heading">Glossary</h2>
+      <p class="section-subtitle">Sanskrit and technical terms — with their Vedantic context and Upanishadic sources</p>
+    </div>
+
+    <!-- SEARCH BAR — new -->
+    <div class="container">
+      <div class="glossary-search-bar reveal">
+        <span class="glossary-search-icon" aria-hidden="true">⊙</span>
+        <input type="search" id="glossarySearch" placeholder="Search terms, definitions, Upanishads…" aria-label="Search glossary" autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="glossary-search-count" id="glossaryCount" aria-live="polite" aria-atomic="true">17 terms</div>
+    </div>
+
+    <div class="glossary-grid reveal" id="glossaryGrid">
+      <div class="glossary-item" data-term="atman self consciousness brihadaranyaka chandogya mandukya"><div class="glossary-term">Atman</div><div class="glossary-sanskrit">The Self · Brihadaranyaka, Chandogya, Mandukya</div><div class="glossary-def">Pure consciousness, eternal and unchanging, which is the true nature of every being. Identical with Brahman. The Upanishads demonstrate this identity through the Mahavakyas; Ramana made it the object of direct experiential verification.</div></div>
+      <div class="glossary-item" data-term="brahman absolute reality shankara advaita"><div class="glossary-term">Brahman</div><div class="glossary-sanskrit">The Absolute · All Principal Upanishads</div><div class="glossary-def">The ultimate reality underlying all appearances. Not a god external to the world but the ground of all being — pure, self-luminous, infinite. Shankara's Advaita: Brahman alone is real; the world as a separate entity is superimposed upon it by maya.</div></div>
+      <div class="glossary-item" data-term="atma vichara self enquiry i ramana method practice"><div class="glossary-term">Atma Vichara</div><div class="glossary-sanskrit">Self-Enquiry · Ramana's primary method</div><div class="glossary-def">The sustained investigation of the "I"-sense to discover its source. The experiential implementation of the Mahavakyas. Not a verbal question but a direct looking at the witness of all experience — the reversal of attention from objects back to its own ground.</div></div>
+      <div class="glossary-item" data-term="ahamkara ego i thought ego sense mind"><div class="glossary-term">Ahamkara</div><div class="glossary-sanskrit">The "I"-thought · Ego-sense · Sankhya &amp; Vedanta</div><div class="glossary-def">The root thought "I am this body" from which all other thoughts arise. The ego is not the Self — it is the first and primary thought, mistaking awareness for a limited object. Dissolved by sustained self-enquiry.</div></div>
+      <div class="glossary-item" data-term="jiva individual soul chandogya brihadaranyaka person"><div class="glossary-term">Jiva</div><div class="glossary-sanskrit">The Individual Soul · Chandogya, Brihadaranyaka</div><div class="glossary-def">The apparent individual — the person with a name and history. The Chandogya's "Tat Tvam Asi" is specifically addressed to the jiva: it declares that this apparently limited soul is identical with Brahman.</div></div>
+      <div class="glossary-item" data-term="jnani knowledge wise realized liberation sthitaprajna"><div class="glossary-term">Jnani</div><div class="glossary-sanskrit">The One Who Knows · Jnana = Knowledge</div><div class="glossary-def">One in whom the recognition of the Self is stable and irreversible. The Bhagavad Gita's sthitaprajna (Ch. 2) and the Upanishadic jivanmukta. Appears to live normally — but without a personal "I" claiming ownership of actions or experiences.</div></div>
+      <div class="glossary-item" data-term="turiya fourth state mandukya awareness witness"><div class="glossary-term">Turiya</div><div class="glossary-sanskrit">The Fourth · Mandukya Upanishad</div><div class="glossary-def">The unchanging awareness underlying and witnessing waking, dreaming, and deep sleep. Not a fourth state in sequence — the substratum in which all states appear. Gaudapada's Karika demonstrates that Turiya alone is real; the other three states are like dream appearances within it.</div></div>
+      <div class="glossary-item" data-term="hridayam heart spiritual centre ramana"><div class="glossary-term">Hridayam</div><div class="glossary-sanskrit">The Heart · Ramana's specific contribution</div><div class="glossary-def">Not the physical heart but the spiritual centre — the place from which the "I"-sense arises, the seat of the Self. The cave of the heart as the dwelling of Brahman appears in the Chandogya and Brihadaranyaka. Ramana located it experientially slightly to the right of centre in the chest.</div></div>
+      <div class="glossary-item" data-term="mouna silence dakshinamurti transmission diksha"><div class="glossary-term">Mouna</div><div class="glossary-sanskrit">Silence · Dakshinamurti Tradition</div><div class="glossary-def">Ramana's primary teaching mode, with deep precedent in the Dakshinamurti Stotra — Shankara's hymn to Shiva as the silent teacher. Many seekers experienced a direct transmission of stillness simply by sitting in Ramana's presence: mouna diksha.</div></div>
+      <div class="glossary-item" data-term="prapatti surrender bhakti gita ego god"><div class="glossary-term">Prapatti</div><div class="glossary-sanskrit">Surrender · Bhagavad Gita Ch. 18</div><div class="glossary-def">Complete surrender of the ego-sense to God or the Guru. For Ramana, surrender and self-enquiry are two faces of the same coin — both dissolve the separate-self illusion. The Gita's final instruction: "Abandon all dharmas and take refuge in Me alone."</div></div>
+      <div class="glossary-item" data-term="moksha liberation freedom bondage vedanta"><div class="glossary-term">Moksha</div><div class="glossary-sanskrit">Liberation · All Vedantic texts</div><div class="glossary-def">Release from the cycle of suffering caused by mistaken identification. For Ramana — and for Shankara — not a future attainment but the recognition of what is already the case. Bondage was always imaginary: a superimposition on the ever-free Brahman.</div></div>
+      <div class="glossary-item" data-term="maya illusion shankara appearance multiplicity veiling"><div class="glossary-term">Maya</div><div class="glossary-sanskrit">Appearance of Multiplicity · Shankara's Advaita</div><div class="glossary-def">The superimposition of names and forms upon the formless Brahman. Shankara's central philosophical contribution. Maya has two powers: avarana (veiling the Self) and vikshepa (projecting an apparent world). Self-enquiry undoes both simultaneously.</div></div>
+      <div class="glossary-item" data-term="neti not this yajnavalkya brihadaranyaka negation method"><div class="glossary-term">Neti, Neti</div><div class="glossary-sanskrit">"Not this, not this" · Brihadaranyaka 3.9.26</div><div class="glossary-def">Yajnavalkya's method of negation: systematically excluding every object, quality, and description that can be perceived or conceived — until the irreducible witness remains. The philosophical precursor to Ramana's self-enquiry.</div></div>
+      <div class="glossary-item" data-term="vasanas impressions habit tendencies yoga vasishtha ego fuel"><div class="glossary-term">Vasanas</div><div class="glossary-sanskrit">Mental Impressions · Yoga Vasishtha</div><div class="glossary-def">Deep habitual tendencies accumulated through lifetimes of identification with the body-mind. The Yoga Vasishtha explains that vasanas are the fuel of the ego. Self-enquiry and surrender both gradually attenuate them, allowing the natural stillness of the Self to shine through.</div></div>
+      <div class="glossary-item" data-term="jivanmukta liberation living liberated free"><div class="glossary-term">Jivanmukta</div><div class="glossary-sanskrit">Liberated While Living · Yoga Vasishtha</div><div class="glossary-def">One who has recognized the Self and is liberated even while the body continues to function — acting in the world without being bound by it, like a fan still spinning after the power is cut. Ramana was universally recognized as the living demonstration of this state.</div></div>
+      <div class="glossary-item" data-term="advaita non dual shankara vedanta reality one"><div class="glossary-term">Advaita</div><div class="glossary-sanskrit">"Non-dual" · Shankara's Vedantic school</div><div class="glossary-def">The philosophical position that reality is non-dual: Brahman alone exists; the apparent multiplicity of individuals and world is a superimposition. Ramana pointed to the direct experience of non-duality as more fundamental than any philosophical position about it.</div></div>
+      <div class="glossary-item" data-term="satsang company truth gathering teacher transmission papaji"><div class="glossary-term">Satsang</div><div class="glossary-sanskrit">Company of Truth · Association with the Real</div><div class="glossary-def">Direct association with one established in Truth. The transmission of realization from presence to presence. For Papaji and his lineage, Satsang became the primary teaching modality — the gathering of seekers in the field of a realized master's silence.</div></div>
+
+      <div class="glossary-empty" id="glossaryEmpty" aria-live="polite">No terms match your search. Try a different word.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL PULLQUOTE -->
+<div class="arunachala-section arunachala-section-padding">
+  <div class="arunachala-glow" aria-hidden="true"></div>
+  <div class="pullquote reveal">
+    <div class="pullquote-mark" aria-hidden="true">"</div>
+    <p class="pullquote-text">Your own Self-Realization is the greatest service you can render the world.</p>
+    <p class="pullquote-attr">— Ramana Maharshi · Tiruvannamalai · 1879–1950</p>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<section class="sources-section">
+  <h3 class="sources-title">Sources</h3>
+  <div class="sources-body">
+    <p class="source-item"><sup>[1]</sup> <em>Talks with Sri Ramana Maharshi</em>, Ramanasramam, Tiruvannamalai</p>
+    <p class="source-item"><sup>[2]</sup> <em>Talks with Sri Ramana Maharshi</em>, Chapter 351, "The Self and the Guru"</p>
+    <p class="source-item"><sup>[3]</sup> <em>Talks with Sri Ramana Maharshi</em>, Chapter 13, "The Nature of the Self"</p>
+    <p class="source-item"><sup>[4]</sup> <em>Talks with Sri Ramana Maharshi</em>, Chapter 30, "Realization"</p>
+    <p class="source-note"><em>Additional scholarly references:</em> David Godman's editorial works; <em>Who Am I?</em> by Ramana Maharshi; Upanishad translations by Swami Nikhilananda and Eknath Easwaran.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="footer">
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-col footer-col-about">
+        <h4 class="footer-col-title">About</h4>
+        <p class="footer-description">Sri Ramana Maharshi — the sage of Arunachala who taught the direct path of Self-enquiry. A traditional cartography of the non-dual path.</p>
+        <p class="footer-method">Biographical details and direct quotes verified against primary sources and official ashram records. Advaita Vedanta tradition.</p>
+      </div>
+
+      <div class="footer-col footer-col-nav">
+        <h4 class="footer-col-title">Navigation</h4>
+        <nav class="footer-nav">
+          <a href="#origin">Origin & Awakening</a>
+          <a href="#roots">Vedantic Roots</a>
+          <a href="#stages">Seven Stages</a>
+          <a href="#practice">Practice Guide</a>
+          <a href="#glossary">Glossary</a>
+        </nav>
+      </div>
+
+      <div class="footer-col footer-col-resources">
+        <h4 class="footer-col-title">Essential Reading</h4>
+        <ul class="footer-resources-list">
+          <li><span class="resource-author">Ramana Maharshi</span> — <em>Who Am I?</em> (1902)</li>
+          <li><span class="resource-author">Ramana Maharshi</span> — <em>Self-Enquiry</em> (1902)</li>
+          <li><span class="resource-author">David Godman</span> — <em>Be As You Are</em> (1985)</li>
+          <li><span class="resource-author">Sadhu Om</span> — <em>The Path of Sri Ramana</em></li>
+          <li><span class="resource-author">Venkataramiah</span> — <em>Talks with Sri Ramana Maharshi</em></li>
+        </ul>
+        <a href="#works" class="footer-resources-more">View complete bibliography →</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <span class="footer-brand-name">Sri Ramana Maharshi</span>
+        <span class="footer-brand-tagline">Advaita Vedanta · Traditional Cartography</span>
+      </div>
+      <div class="footer-legal">
+        <span class="footer-copyright">© 2024 Vedantic Mappings</span>
+        <nav class="footer-legal-nav">
+          <a href="https://www.arunachala-ramana.org/" target="_blank" rel="noopener">Sri Ramanasramam</a>
+          <a href="https://www.davidgodman.org/" target="_blank" rel="noopener">David Godman Archives</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /main-content -->
+
+<script>
+/* ===== SIDEBAR ===== */
+const sidebar=document.getElementById('sidebar');
+const sidebarToggle=document.getElementById('sidebarToggle');
+const sidebarCloseBtn=document.getElementById('sidebarCloseBtn');
+const sidebarBackdrop=document.getElementById('sidebarBackdrop');
+const isMobile=()=>window.innerWidth<=1100;
+
+function closeSidebar(){sidebar.classList.add('collapsed');sidebar.classList.remove('mobile-open');sidebarBackdrop.classList.remove('visible');sidebarToggle.setAttribute('aria-expanded','false');}
+function openSidebar(){if(isMobile()){sidebar.classList.remove('collapsed');sidebar.classList.add('mobile-open');sidebarBackdrop.classList.add('visible');}else{sidebar.classList.remove('collapsed');}sidebarToggle.setAttribute('aria-expanded','true');}
+function toggleSidebar(){sidebar.classList.contains('collapsed')||(!isMobile()&&!sidebar.classList.contains('mobile-open'))?openSidebar():closeSidebar();}
+
+sidebarToggle.addEventListener('click',toggleSidebar);
+sidebarCloseBtn.addEventListener('click',closeSidebar);
+sidebarBackdrop.addEventListener('click',closeSidebar);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!sidebar.classList.contains('collapsed'))closeSidebar();});
+
+(function initSidebar(){if(isMobile()){closeSidebar();}else{openSidebar();}})();
+let resizeT;window.addEventListener('resize',()=>{clearTimeout(resizeT);resizeT=setTimeout(()=>{if(isMobile())closeSidebar();else openSidebar();},150);});
+
+/* ===== PROGRESS BAR (TOP + SIDEBAR) ===== */
+const topProgress=document.getElementById('topProgress');
+const progressFill=document.getElementById('progressFill');
+const progressPercent=document.getElementById('progressPercent');
+const backToTop=document.getElementById('backToTop');
+const readingInfo=document.getElementById('readingInfo');
+const readingTimeLeft=document.getElementById('readingTimeLeft');
+const TOTAL_WORDS=5600;
+const WPM=200;
+let ticking=false;
+
+window.addEventListener('scroll',()=>{
+  if(ticking)return;
+  ticking=true;
+  requestAnimationFrame(()=>{
+    const dH=document.documentElement.scrollHeight-window.innerHeight;
+    const pct=Math.min(100,Math.round((window.scrollY/dH)*100));
+    topProgress.style.width=pct+'%';
+    topProgress.setAttribute('aria-valuenow',pct);
+    progressFill.style.width=pct+'%';
+    progressPercent.textContent=pct+'%';
+    backToTop.classList.toggle('visible',window.scrollY>window.innerHeight*.6);
+    readingInfo.classList.toggle('visible',window.scrollY>200);
+    const wordsRead=Math.round((pct/100)*TOTAL_WORDS);
+    const minsLeft=Math.max(1,Math.round((TOTAL_WORDS-wordsRead)/WPM));
+    readingTimeLeft.textContent=minsLeft<=1?'Almost done':'~'+minsLeft+' min left';
+    ticking=false;
+  });
+});
+
+/* ===== ACTIVE NAV ===== */
+const sections=document.querySelectorAll('section[id],header[id]');
+const navItems=document.querySelectorAll('.sidebar-nav-item');
+try{
+  const navObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){navItems.forEach(i=>{i.classList.remove('active');i.removeAttribute('aria-current');if(i.getAttribute('href')==='#'+e.target.id){i.classList.add('active');i.setAttribute('aria-current','page');}});}});
+  },{threshold:.25});
+  sections.forEach(s=>navObs.observe(s));
+}catch(e){}
+
+/* ===== THEME TOGGLE ===== */
+const themeToggle=document.getElementById('themeToggle');
+const html=document.documentElement;
+themeToggle.addEventListener('click',()=>{
+  const t=html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme',t);
+  try{localStorage.setItem('theme',t);}catch(e){}
+});
+(function(){try{const s=localStorage.getItem('theme');if(s==='light'||s==='dark'){html.setAttribute('data-theme',s);}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){html.setAttribute('data-theme','dark');}}catch(e){}})();
+
+/* ===== HERO PARALLAX ===== */
+const heroMountain=document.getElementById('heroMountain');
+if(heroMountain&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  window.addEventListener('scroll',()=>{
+    const y=window.scrollY;
+    if(y<window.innerHeight){heroMountain.style.setProperty('--parallax-y',(-y*.15)+'px');}
+  },{passive:true});
+}
+
+/* ===== SCROLL REVEAL ===== */
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),60);revealObs.unobserve(e.target);}});
+},{threshold:.07,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal,.fade-in').forEach(el=>revealObs.observe(el));
+document.querySelectorAll('.glossary-grid,.works-grid,.upanishad-grid,.mahavakya-row,.lineage-timeline').forEach(grid=>{
+  Array.from(grid.children).forEach((child,i)=>{child.classList.add('reveal');child.style.transitionDelay=(i*45)+'ms';revealObs.observe(child);});
+});
+
+/* ===== GLOSSARY LIVE SEARCH ===== */
+const glossarySearch=document.getElementById('glossarySearch');
+const glossaryItems=Array.from(document.querySelectorAll('.glossary-item'));
+const glossaryCount=document.getElementById('glossaryCount');
+const glossaryEmpty=document.getElementById('glossaryEmpty');
+
+function highlightTerm(text,q){
+  if(!q)return text;
+  const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return text.replace(re,'<mark>$1</mark>');
+}
+
+glossarySearch&&glossarySearch.addEventListener('input',function(){
+  const q=this.value.trim().toLowerCase();
+  let visible=0;
+  glossaryItems.forEach(item=>{
+    const term=item.querySelector('.glossary-term');
+    const def=item.querySelector('.glossary-def');
+    const keywords=(item.dataset.term||'')+(term?term.textContent:'')+' '+(def?def.textContent:'');
+    const match=!q||keywords.toLowerCase().includes(q);
+    item.classList.toggle('hidden',!match);
+    if(match){
+      visible++;
+      if(term)term.innerHTML=highlightTerm(term.textContent,q);
+    }else{
+      if(term)term.innerHTML=term.textContent;
+    }
+  });
+  glossaryCount.textContent=q?(visible+' of '+glossaryItems.length+' terms shown'):(glossaryItems.length+' terms');
+  glossaryEmpty.style.display=visible===0?'block':'none';
+});
+
+/* ===== MEDITATION WIDGET ===== */
+const medSteps=[
+  {label:'Step 1 of 6 · Settling',text:'Settle the body. Sit comfortably, spine upright, hands resting. Let the eyes soften or close. Simply arrive here, in this moment, as you are.'},
+  {label:'Step 2 of 6 · Finding the "I"',text:'Before any thought arises, there is a bare sense of existing. Notice that raw "I am" — prior to "I am happy," "I am thinking." Simply be aware of being aware.'},
+  {label:'Step 3 of 6 · Turning Inward',text:'Instead of following thoughts outward, gently turn attention back toward the very sense of "I" itself. Who is aware? Try to find the one who is looking. This reversal is the entire method.'},
+  {label:'Step 4 of 6 · Witnessing Thoughts',text:'When a thought arises, ask quietly: "To whom does this arise?" — "To me." — "Then who am I?" Return to the sense of I. Not a battle — a gentle return to the witness.'},
+  {label:'Step 5 of 6 · Stillness',text:'As attention rests on the "I"-sense rather than its objects, the mind naturally subsides. Let stillness deepen. This is the approach to Turiya — the awareness present all along.'},
+  {label:'Step 6 of 6 · Rest as the Self',text:'There is nothing to gain, nowhere to go. The Self is already what you are. Rest as that. "Stillness or peace is Realization." — Ramana Maharshi.'}
+];
+let medStep=0,timerInterval=null,timerSecs=300,totalSecs=300,timerRunning=false;
+const medStepLabel=document.getElementById('medStepLabel');
+const medStepText=document.getElementById('medStepText');
+const timerNum=document.getElementById('timerNum');
+const timerLabel=document.getElementById('timerLabel');
+const timerRingFill=document.getElementById('timerRingFill');
+const timerBtn=document.getElementById('timerBtn');
+const prevBtn=document.getElementById('prevBtn');
+const nextBtn=document.getElementById('nextBtn');
+const dots=document.querySelectorAll('.med-dot');
+const CIRC=326.7;
+
+function setDuration(secs,btn){
+  totalSecs=secs;timerSecs=secs;
+  clearInterval(timerInterval);timerRunning=false;
+  timerBtn.textContent='Begin';timerLabel.textContent='remaining';
+  updateTimerDisplay();
+  document.querySelectorAll('.dur-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function updateTimerDisplay(){
+  const m=Math.floor(timerSecs/60),s=timerSecs%60;
+  timerNum.textContent=m+':'+(s<10?'0':'')+s;
+  const off=CIRC*(1-timerSecs/totalSecs);
+  timerRingFill.style.strokeDashoffset=off;
+}
+function toggleTimer(){
+  if(timerSecs===0){timerSecs=totalSecs;timerRunning=false;timerBtn.textContent='Begin';timerLabel.textContent='remaining';updateTimerDisplay();return;}
+  timerRunning=!timerRunning;
+  timerBtn.textContent=timerRunning?'Pause':'Resume';
+  if(timerRunning){
+    timerInterval=setInterval(()=>{
+      timerSecs--;updateTimerDisplay();
+      if(timerSecs<=0){clearInterval(timerInterval);timerRunning=false;timerBtn.textContent='Restart';timerLabel.textContent='complete';}
+    },1000);
+  }else{clearInterval(timerInterval);}
+}
+function goToStep(i){
+  medStep=Math.max(0,Math.min(5,i));
+  medStepLabel.textContent=medSteps[medStep].label;
+  medStepText.style.opacity='0';
+  setTimeout(()=>{medStepText.textContent=medSteps[medStep].text;medStepText.style.opacity='1';},250);
+  dots.forEach((d,idx)=>{d.classList.toggle('active',idx===medStep);d.classList.toggle('done',idx<medStep);});
+  prevBtn.disabled=medStep===0;
+  nextBtn.disabled=medStep===5;
+  nextBtn.textContent=medStep===5?'✦ Done':'Next →';
+}
+function prevStep(){goToStep(medStep-1);}
+function nextStep(){goToStep(medStep+1);}
+updateTimerDisplay();
+
+/* ===== REDUCED MOTION ===== */
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.querySelectorAll('.fade-in,.reveal').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
+  document.querySelectorAll('.sacred-mandala,.hero-ripple,.vedanta-scroll,.sidebar-logo,.scroll-line').forEach(el=>el.style.animation='none');
+}
+
+/* ===== PAUSE ANIMATIONS WHEN HIDDEN ===== */
+document.addEventListener('visibilitychange',()=>{
+  const els=document.querySelectorAll('.sacred-mandala,.hero-ripple,.vedanta-scroll');
+  els.forEach(el=>el.style.animationPlayState=document.hidden?'paused':'running');
+});
+</script>
+</body>
+</html>

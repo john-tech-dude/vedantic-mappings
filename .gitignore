@@ -1,0 +1,8 @@
+# Utility scripts
+push_v1.py
+
+# macOS
+.DS_Store
+
+# Backup files
+*.backup
