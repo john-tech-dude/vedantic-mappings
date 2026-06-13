@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Gaudapada — The architect of Ajāta Vāda (non‑origination). A complete cartography of his teaching: the four states of consciousness, the doctrine that nothing is ever born, and his influence on Shankara and Advaita Vedanta." />
+<title>Gaudapada — The Preceptor of <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">Non‑Origination</span></title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS — unified with Taoism & Vedantic Messiah
+   ═══════════════════════════════════════════════════════════ */
+:root {
+  --bg:        #faf7f2;
+  --bg2:       #f2ece0;
+  --bg3:       #e8dfc8;
+  --surface:   #ffffff;
+  --surface2:  #f7f2e8;
+  --ink:       #0e1a2a;
+  --ink2:      #1a2d4d;
+  --stone:     #6b7f94;
+  --stone-light: #9aafbf;
+  --gold: #9a7a3a;
+  --gold-light: #b8964a;
+  --gold-deep: #7a5a22;
+  --gold-glow: rgba(160,120,32,0.08);
+  --sun-glow: rgba(160,120,32,0.2);
+  --s1: #7c6fa0;
+  --s2: #4a7fa5;
+  --s3: #c0622a;
+  --s4: #4a8a72;
+  --s5: #5a7ca8;
+  --s6: #8a5c9a;
+  --s7: #b5822a;
+  --border:        rgba(181,130,42,0.14);
+  --border-strong: rgba(181,130,42,0.32);
+  --border-subtle: rgba(181,130,42,0.07);
+  --border-medium: rgba(181,130,42,0.20);
+  --shadow:      0 2px 24px rgba(60,30,0,0.09);
+  --shadow-deep: 0 8px 40px rgba(60,30,0,0.13);
+  --shadow-gold: 0 0 40px rgba(181,130,42,0.16);
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+  --grain-opacity: 0.025;
+  --pullquote-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+  --mountain-fill: rgba(181,130,42,0.05);
+  --ring-color: rgba(122,90,42,0.22);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth:    cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+[data-theme="dark"] {
+  --bg:        #0c0f14;
+  --bg2:       #12161c;
+  --bg3:       #151920;
+  --surface:   #181c23;
+  --surface2:  #21262e;
+  --ink:       #eef2f8;
+  --ink2:      #9aaebf;
+  --stone:     #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold:       #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep:  #b8960c;
+  --gold-glow:  rgba(212, 175, 55, 0.08);
+  --sun-glow:   rgba(212, 175, 55, 0.18);
+  --s1: #9a8fc0;
+  --s2: #6aaac8;
+  --s3: #d4844a;
+  --s4: #6aaa92;
+  --s5: #7a9cc8;
+  --s6: #aa7cc8;
+  --s7: #d4af37;
+  --border:        rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+  --border-medium: rgba(255, 255, 255, 0.08);
+  --shadow:      0 2px 24px rgba(0,0,0,0.36);
+  --shadow-deep: 0 8px 40px rgba(0,0,0,0.44);
+  --shadow-gold: 0 0 40px rgba(212, 175, 55, 0.08);
+  --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+  --grain-opacity: 0.045;
+  --pullquote-bg: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+  --mountain-fill: rgba(212, 175, 55, 0.05);
+  --ring-color: rgba(212, 175, 55, 0.10);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+  cursor: default;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--grain-opacity);
+  animation: grainShift 8s steps(10) infinite;
+}
+@keyframes grainShift {
+  0%,100% { transform: translate(0,0); }
+  10% { transform: translate(-2%,-2%); }
+  20% { transform: translate(2%,1%); }
+  30% { transform: translate(-1%,2%); }
+  40% { transform: translate(1%,-1%); }
+  50% { transform: translate(-2%,1%); }
+  60% { transform: translate(2%,-2%); }
+  70% { transform: translate(-1%,-1%); }
+  80% { transform: translate(1%,2%); }
+  90% { transform: translate(-2%,-1%); }
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+  border-radius: 2px;
+}
+::selection { background: rgba(181,130,42,0.22); color: var(--ink); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* cursor glow */
+@media (pointer: fine) {
+  .cursor-glow {
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    mix-blend-mode: screen;
+  }
+  body:hover .cursor-glow { opacity: 1; }
+}
+/* keyframes */
+@keyframes mandalaRotate { to { transform: rotate(360deg); } }
+@keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes hero-rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes scroll-bounce{0%,100%{transform:scaleY(1);opacity:1;}50%{transform:scaleY(.5);opacity:.3;}}
+@keyframes ripple-out{0%{opacity:.7;transform:scale(1);}100%{opacity:0;transform:scale(4.5);}}
+@keyframes emblem-rotate{to{transform:rotate(360deg);}}
+@keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow);}50%{box-shadow:0 0 35px 12px var(--sun-glow);}}
+@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes glowPulse { 0%,100% { filter: drop-shadow(0 0 4px var(--gold)); } 50% { filter: drop-shadow(0 0 16px var(--gold-light)); } }
+@keyframes borderGlow { 0%,100% { border-color: var(--border-subtle); } 50% { border-color: var(--gold); } }
+@keyframes ambientDrift { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.55; } 33% { transform: translate(2%,-1%) scale(1.02); opacity: 0.75; } 66% { transform: translate(-1%,2%) scale(0.98); opacity: 0.45; } }
+@keyframes para-breathe-outer { 0%,100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.015); } }
+@keyframes para-breathe-middle { 0%,100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.025); } }
+@keyframes para-breathe-inner { 0%,100% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.035); } }
+@keyframes para-breathe-center { 0%,100% { transform: translate(-50%,-50%) scale(1); box-shadow: 0 0 20px var(--gold-glow); } 50% { transform: translate(-50%,-50%) scale(1.08); box-shadow: 0 0 36px var(--gold-glow); } }
+@keyframes stage7-arrival { 0% { opacity: 0; transform: translateX(-30px) scale(0.97); } 60% { opacity: 1; transform: translateX(4px) scale(1.005); } 100% { opacity: 1; transform: translateX(0) scale(1); } }
+@keyframes goldShimmerText { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes lineReveal { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes diamondReveal { from { opacity: 0; transform: rotate(45deg) scale(0); } to { opacity: 1; transform: rotate(45deg) scale(1); } }
+@keyframes textRevealUp { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cursorPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; } 50% { transform: translate(-50%,-50%) scale(1.15); opacity: 0.3; } }
+
+/* Navigation Compass */
+.nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+.nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 240px; }
+.nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+.nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+.nav-item.active { color: var(--gold-light); background: rgba(154,122,58,0.08); border-left-color: var(--gold); font-weight: 500; }
+.nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
+.nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+/* Theme Toggle */
+.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+.theme-toggle:active { transform: scale(0.95); }
+.theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+[data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+/* Back to Top */
+.back-to-top { position: fixed; bottom: 1.5rem; right: 5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+/* Sacred Geometry & Hero */
+.sacred-geometry{position:relative; width:100%; height:auto;}
+.sacred-geometry.absolute-full{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+.sacred-mandala{animation:mandala-rotate 60s linear infinite;}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem 6rem;
+  text-align: center;
+  background: var(--hero-bg);
+  width: 100%;
+}
+.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 45% at 20% 40%, rgba(181,130,42,0.07) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 80% 60%, rgba(181,130,42,0.05) 0%, transparent 70%); animation: ambientDrift 18s ease-in-out infinite; pointer-events: none; z-index: 1; }
+[data-theme="light"] .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181,130,42,0.035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181,130,42,0.025) 29px); pointer-events: none; }
+.hero-mountain { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:120%; height:52%; background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%); clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%); opacity:.12; }
+.mandala-ring { position:absolute; top:50%; left:50%; border-radius:50%; border:1px solid var(--ring-color); transform:translate(-50%,-50%); pointer-events:none; }
+.mandala-ring:nth-child(1){width:260px;height:260px;}
+.mandala-ring:nth-child(2){width:400px;height:400px;}
+.mandala-ring:nth-child(3){width:560px;height:560px;}
+.mandala-ring:nth-child(4){width:740px;height:740px;}
+.hero-ripple { position:absolute; top:50%; left:50%; border-radius:50%; border:1px solid var(--ring-color); pointer-events:none; animation:ripple-out 9s ease-out infinite; will-change:transform,opacity; }
+.hero-ripple:nth-child(5){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:0s;}
+.hero-ripple:nth-child(6){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:3s;}
+.hero-emblem{width:72px; height:72px; margin:0 auto 2rem; position:relative; opacity:1; z-index:3;}
+.hero-emblem-circle{position:absolute; inset:0; border-radius:50%; border:1px solid var(--gold-deep); opacity:.6; animation:emblem-rotate 30s linear infinite;}
+.hero-emblem-circle2{position:absolute; inset:12px; border-radius:50%; border:1px solid var(--gold); opacity:.4; animation:emblem-rotate 20s linear infinite reverse;}
+.hero-emblem-dot{position:absolute; inset:26px; border-radius:50%; background:radial-gradient(circle,var(--gold-light),var(--gold)); box-shadow:0 0 20px 5px var(--sun-glow); animation:emblem-pulse 4s ease-in-out infinite;}
+.hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.5em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 2rem; opacity: 0; position: relative; z-index: 3; animation:hero-rise 1.1s .3s forwards; }
+.hero-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--gold-deep); margin-bottom: 0.5rem; opacity: 0; position: relative; z-index: 3; animation:hero-rise 1.1s .9s forwards; }
+.hero-subtitle-top { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--stone); letter-spacing: 0.08em; margin-bottom: 0.8rem; opacity: 0; position: relative; z-index: 3; animation:hero-rise 1.1s 1.1s forwards; }
+.hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.05; color: var(--ink); text-shadow: 0 2px 40px rgba(181,130,42,0.2); opacity: 0; margin-bottom: 0.2em; position: relative; z-index: 3; animation:hero-rise 1.3s 1.3s forwards; }
+[data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(212,164,74,0.3); }
+.hero-epithet { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1rem, 2.5vw, 1.35rem); color: var(--gold-deep); letter-spacing: 0.12em; opacity: 0; margin-bottom: 2.5rem; position: relative; z-index: 3; animation:hero-rise 1.1s 1.6s forwards; }
+.hero-divider { display: flex; align-items: center; gap: 1.5rem; margin: 0 auto 2.5rem; width: fit-content; opacity: 0; position: relative; z-index: 3; animation:hero-rise 1.1s 1.8s forwards; }
+.hero-divider-line { width: 70px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep)); }
+.hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); }
+.hero-divider-diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); }
+.hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--ink2); max-width: 570px; margin: 0 auto 0.7rem; line-height: 1.85; opacity: 0; position: relative; z-index: 3; animation:hero-rise 1.1s 2s forwards; }
+.hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.35em; color: var(--stone); text-transform: uppercase; opacity: 0; margin-bottom: 3.5rem; position: relative; z-index: 3; animation:hero-rise 1.1s 2.2s forwards; }
+.hero-dates { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--stone); letter-spacing: 0.18em; opacity: 0; position: relative; z-index: 3; animation:hero-rise 1.1s 2.4s forwards; }
+.hero-scroll-cue { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; cursor: pointer; z-index: 3; animation:hero-rise 1.1s 2.8s forwards; }
+.hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.5em; color: var(--stone); text-transform: uppercase; }
+.scroll-line { width: 1px; height: 36px; background: linear-gradient(180deg, var(--gold-deep), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+/* Sections */
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 400; color: var(--ink); margin-bottom: 14px; }
+.section-header p { color: var(--stone); font-size: 1rem; max-width: 580px; margin: 0 auto; line-height: 1.6; }
+.section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); margin: 0 auto 20px; position: relative; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
+.section-separator.visible { opacity: 1; transform: scaleX(1); }
+.section-separator::after { content: '✦'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: var(--gold); font-size: 0.72rem; background: var(--bg); padding: 0 6px; }
+/* TOC Styles */
+.toc-item { display: flex; align-items: center; gap: 14px; padding: 18px 22px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-decoration: none; color: var(--stone); transition: all 0.3s var(--ease-out-expo); }
+.toc-item:hover { background: var(--surface2); border-color: var(--border-medium); transform: translateY(-2px); box-shadow: var(--shadow); }
+.toc-item .num { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.85rem; flex-shrink: 0; }
+.toc-item:nth-child(1) .num { background: rgba(124,111,160,0.12); color: var(--s1); }
+.toc-item:nth-child(2) .num { background: rgba(74,127,165,0.12); color: var(--s2); }
+.toc-item:nth-child(3) .num { background: rgba(192,98,42,0.12); color: var(--s3); }
+.toc-item:nth-child(4) .num { background: rgba(74,138,114,0.12); color: var(--s4); }
+.toc-item:nth-child(5) .num { background: rgba(90,124,168,0.12); color: var(--s5); }
+.toc-item:nth-child(6) .num { background: rgba(138,92,154,0.12); color: var(--s6); }
+
+.text-reveal { overflow: hidden; display: block; }
+.text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
+.visible .text-reveal-inner { transform: translateY(0); }
+
+.content-section { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
+.content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+.content-essay blockquote { border-left: 3px solid var(--gold); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+.content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold); opacity: 0.10; line-height: 1; }
+.content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+.content-essay ul { margin: 1.5rem 0; padding-left: 0; list-style: none; }
+.content-essay ul li { padding: 0.85rem 0 0.85rem 2rem; position: relative; color: var(--stone); line-height: 1.75; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay ul li:last-child { border-bottom: none; }
+.content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--gold); opacity: 0.6; }
+.content-essay ul li strong { color: var(--ink); font-weight: 500; }
+.stage-quote { background: var(--surface2); border-left: 3px solid var(--gold); padding: 1.5rem; margin: 1.5rem 0; }
+.stage-quote p { color: var(--stone); line-height: 1.7; font-style: italic; margin-bottom: 0.5rem; }
+.stage-quote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; font-style: normal; }
+.states-diagram { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0; }
+.state-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+.state-box.highlight { border: 2px solid var(--gold); }
+.toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 36px; }
+.styled-list { list-style: none; padding-left: 0; }
+.styled-list li { padding: 0.85rem 0 0.85rem 2rem; position: relative; border-bottom: 1px solid var(--border-subtle); }
+.styled-list li:last-child { border-bottom: none; }
+.styled-list li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--gold); opacity: 0.6; }
+.styled-list li strong { color: var(--ink); font-weight: 500; }
+
+/* ===== CARD-BASED LAYOUT FOR SACRED TEXTS ===== */
+.sacred-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5px;
+  margin: 2.5rem 0;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.sacred-card {
+  background: var(--surface);
+  padding: 2rem 1.75rem;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .sacred-card {
+  background: #0f0c07;
+}
+
+.sacred-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sacred-card:hover::before {
+  opacity: 1;
+}
+
+.sacred-card:hover {
+  background: var(--surface2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+[data-theme="dark"] .sacred-card:hover {
+  background: #1a1208;
+}
+
+.sacred-card-sanskrit {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.sacred-card-translation {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: var(--stone);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.sacred-card-source {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sanskrit-term { position: relative; display: inline-block; cursor: help; }
+.sanskrit-term::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); transition: width 0.4s cubic-bezier(0.22,1,0.36,1); }
+.sanskrit-term:hover::after { width: 100%; }
+
+.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.scripture-panel { background: var(--surface); padding: 32px; }
+.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+.scripture-panel:hover { background: var(--surface2); }
+
+.pullquote-section { position: relative; overflow: hidden; background: var(--pullquote-bg); padding: 6rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 600px; height: 600px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+.pullquote { max-width: 680px; margin: 0 auto; position: relative; padding-top: 2rem; }
+.pullquote-mark { display: block; font-family: 'Cormorant Garamond', serif; font-size: 9rem; color: var(--gold); opacity: 0.08; line-height: 0.8; margin-bottom: -2rem; text-align: center; user-select: none; }
+.pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.1rem, 3vw, 1.65rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+.pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+
+/* Footer */
+.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2rem 3rem; text-align: center; }
+.footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+.footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 0.5rem; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+.footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+.footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+.footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+
+/* Chapter Navigation (used between Advaita pages) */
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-link:hover { color: var(--gold); }
+.chapter-sep { color: var(--gold-deep); opacity: 0.3; }
+.chapter-link.active { color: var(--gold); font-weight: 500; }
+
+/* Scroll animations */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) { 
+  .nav-menu { min-width: 180px; } 
+  .back-to-top { right: 1.5rem; bottom: 5rem; } 
+  .footer-links { gap: 1.5rem; } 
+  .scripture-panels { grid-template-columns: 1fr; } 
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); } 
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .fade-in { opacity: 1 !important; transform: none !important; } }
+
+/* Premium cross-tradition resonances callout */
+.resonance-callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface2);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+}
+.resonance-callout .label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.resonance-callout p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--stone);
+}
+/* ── Tooltip styles (from Vedantic Messiah) ─────────────────── */
+.sanskrit-term,.biblical-ref{
+  cursor:help;
+  border-bottom:1px dotted var(--gold-deep);
+  text-decoration:none;
+}
+.sanskrit-term:hover,.biblical-ref:hover{
+  color:var(--gold);
+  border-bottom-color:var(--gold);
+}
+.tooltip-note { font-size: 0.7rem; color: var(--stone); text-align: center; margin-bottom: 1.5rem; }
+</style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/i2llmY8PbAFBCt3t1DqCEfBufIQYDN4vaOh51g1GjSCMHKC528bJf23Dy8lN6Aqeu4w8htKdN7-ODnBfYrMdFoFF319gKmuggxgJzPgI9p3RqhpDyAt1tcNPZua44uMBEtScNTZj1b5YUr4sQ4LS9zyGADedkpgoPVDFRQoyI9W6U_a6X8JHo63o5hPWc3-hzPU98pZylW28e2nCUTBYrdLFGrRVqCxnI_Qydu96crxCu_US2J494yBd6cnp437dlKdXUBJsQjtd3bCyCVYfraEF36F8bXSTiPm6u1F4R0SV6KzpRAgYryk0hUeXn_7FVAZ2vAX-FnZpm0wDt-J97VCxYV2PEMbZzqvol-b31j9sB1nE50xq7rHRKbw7TTRJjldrYsPT6Dumprfz03LFAbaqK7em2imwYoSxrnkdQlCIomYelHhgx-Yp6CMyvfls1GsWbQDyAE1KwN-sKcf0Gd_O7chsgLX2Q0fr8G-WJU6kLEIYDVmzOLABuX9q3K5jQIQVZhser1wH2nyU4fJbe8MBjcDfz3fTqzh4HXqUbaqUQt8wec1BEkfhD3eVoHvxZ7DRpdmod14Kdznod4pXkk_6xbTtxJJ6nnMpdav0Dw75j8n8nDNh1fwIDlbBfQpm0pXfsOnpmk5yeJLGBRuj0Eia5LHjWFmX9_5yke2ATfA81AsyDd67i4upG9s-q9bllUAsqxtFzwMZ8xXLBEzZLXISKeLObqSVEmQjhDstfGuO51ieSeXYSG6jsSTibzjx5BgHd-M9RFOgv5fhv4Fov6xZu_kv_t6uXPU0gTCLSQCGDap01VneS1p260asriXLCck9GVkEKod2GmK_ZWdYeBTwBHuLGCyK8sUNQKz5B0s_UJLUJdnutTupO46yrN22LKNYFZkkwQgFElpPXx6K62G4ON6FG0Mjq0YQTrpgNt5Tlntq5Z6Lh8QGc2dPdMUoahrDh8N9ornRWR6cgw15dSzM6-5dSVcSzTT_cAYJ6RixOInkA572-DTNCfJ5cFkwGqoIJn7LDGocwEsoP_MVaJvgjFjVzrCCSUfk0Nn2z9KIL4tZSZw'></script><script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/dP6C6hiquEX1xOpAGTdcvTG1GpurrwpZBUUvYMRp46O-H4RRk_fSbBWZFmaVA5ZR_oZ9JMrSZAI1LaDGXDs6Un86uEBMGeghLe2qHhaf8Z4MNvQoBmtWkbXdWs2RV0GpwOJP3yZeOTIdsNSXG59ecBh8ywZYfGBhV7bI6klFsL7DA6Y75YAdQIzqjGNla0neBQCWOwDdCoV_opqubTUlBCuKDdziKnISDQIloSY7IZaOpbcNKLdzLI9GrIo2vTkiMdf1KA8vpFxgDxDV1gCzdtEhUJmOPPv_AChS0WAc9HBGNkvbS6oUTlX3MyLXOf66LiKE4xjLiNSkwmkJGp1pcT5dP5LhzdPWT9NdffDXevdchwu93KZ1MdOofj3gzYsot7BsuVuppuvShFtJ0KWXsju54xpreSd8CjaeHioVMBXOIq4cL10UFeFdkPjcQYxvP3vrbbQRg1rJhb8s3h10JZzW3PKqA-Mup3ELFuRk-WohxcSj8Iy7wTLk-NtiO-fc848TkaIuyvj8vrJzmIgsiaNfu3WVhx3zVHuGvghhKyY4eKf0jpkR0Geaip_KOUO9O7cqQ1Sfsx3VLCw4LL0Hxmu73En2RvCiN5YxUsluae18EfF6QCi3fRf5Xq_jpA9Xgc549VTZSzM5FgHmkOVqEzqL-74XaVkhbB7ruqq1EkOVRQz9dxJfuphnnI_EciUuCfIDRPwuygtX5EzVTLdYcSzs4I_grpSpVLgd7EbpNaN-swHSgqAvPvFX-8pjJ7DARpkc61g9lMfyGrkBggQCECxZ_lKlxVfkLvp2Ec5GJSG73M6nXTKGb186LhUt_GwoT_Un_jRzu2uZOxi8GWYCSMiyleTF2-lAgI8bSWDvZNe3aa_ky844XP7kyAe-sp_359ubz_zdJu_C7MQw5SQHPtvGeg_qnA6TJmtQLd6lT61uGsRx5jXW8CTfGZ4mdHkVP_2uXTRgU4-pJcCnf1y7K5cyEOYySc2OPOfLIljU8wUyXV19sqapMubcCvEgiqhhmvFKNQ8iNv8K25sgeKLPoK25jrzQ52P3rok'></script><base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Navigation Compass -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">The Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Advaita Vedanta</div>
+    <a href="gaudapada.html" class="nav-item active"><span class="nav-item-icon">🕉</span><span>Gaudapada</span></a>
+    <a href="adi-shankara.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Adi Shankara</span></a>
+    <a href="ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
+    <a href="nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Comparative</div>
+    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Taoism</div>
+    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>The Unnamed Way</span></a>
+  </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <svg class="sacred-geometry absolute-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="sacred-mandala">
+      <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
+      <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
+      <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+    </g>
+  </svg>
+  <div class="hero-mountain" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+  <p class="hero-eyemark">The Architect of <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">Ajāta Vāda</span></p>
+  <div class="hero-emblem" aria-hidden="true">
+    <div class="hero-emblem-circle"></div>
+    <div class="hero-emblem-circle2"></div>
+    <div class="hero-emblem-dot"></div>
+  </div>
+  <p class="hero-label">The Preceptor of <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">Non‑Origination</span></p>
+  <p class="hero-subtitle-top">Author of the <span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Māṇḍūkya Kārikā</span></p>
+  <h1 class="hero-title">Gaudapada</h1>
+  <p class="hero-epithet">The Grand‑Teacher of Shankara · The Voice of Ajata</p>
+  <div class="hero-divider" aria-hidden="true">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"That which is non‑existent at the beginning and in the end is also non‑existent in the middle. It is like a mirage in the desert."</p>
+  <p class="hero-quote-attr">— Gaudapada, <span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Māṇḍūkya Kārikā</span> 4.31<a class="biblical-ref" data-reference="Mandukya Karika 4.31" title="Gaudapada: That which is non-existent at the beginning and in the end is also non-existent in the middle">[1]</a></p>
+  <p class="hero-dates">c. 6th–7th century CE · Ancient India</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button"><span>Explore</span><div class="scroll-line"></div></div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<section class="toc-section" id="toc" style="padding: 80px 24px; max-width: 900px; margin: 0 auto;">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Core Teachings of Gaudapada</span></span></h2>
+    <p>The four chapters of the Kārikā · The doctrine that nothing is ever born</p>
+  </div>
+  <div class="toc-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 36px;">
+    <a href="#ajata" class="toc-item fade-in"><span class="num">I</span> <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">Ajāta Vāda</span> · Non‑Origination</a>
+    <a href="#states" class="toc-item fade-in"><span class="num">II</span> The Four States of Consciousness</a>
+    <a href="#no-duality" class="toc-item fade-in"><span class="num">III</span> No Duality, No Creation</a>
+    <a href="#lineage" class="toc-item fade-in"><span class="num">★</span> Lineage &amp; Influence · <span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span></a>
+    <a href="#practice" class="toc-item fade-in"><span class="num">☸</span> Practice · Asparśa Yoga</a>
+    <a href="#sources" class="toc-item fade-in"><span class="num">📖</span> Key Verses &amp; Sources</a>
+  </div>
+</section>
+
+<!-- PULLQUOTE: GAUDAPADA'S RADICAL STATEMENT -->
+<div class="pullquote-section">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <span class="pullquote-mark">"</span>
+    <p class="pullquote-text">No jiva is ever born. No cause exists for anything that appears. The highest truth is that nothing is ever born.</p>
+    <p class="pullquote-attr">— Gaudapada, <span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Māṇḍūkya Kārikā</span> 3.15<a class="biblical-ref" data-reference="Mandukya Karika 3.15" title="Gaudapada: No jiva is ever born. No cause exists for anything that appears">[2]</a></p>
+  </div>
+</div>
+
+
+
+<!-- SECTION 1: AJĀTA VĀDA -->
+<section class="content-section fade-in" id="ajata">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Ajāta Vāda</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Doctrine of Non‑Origination</span></span></h2>
+    <p>Nothing ever arises; the world is an illusion like a dream</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="content-introduction">Gaudapada’s most radical and enduring contribution to Advaita Vedanta is the teaching of <strong><span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created"><span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">ajāta vāda</span></span></strong> – the doctrine that nothing whatsoever is ever born, created, or originated. He declares: <em>“There is no birth, no destruction, no one in bondage, no seeker of liberation, and no one liberated. This is the highest truth.”</em> (<span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 2.32)<a class="biblical-ref" data-reference="Mandukya Karika 2.32" title="Gaudapada: There is no birth, no destruction, no bondage, no seeker, no liberation">[3]</a>.</p>
+    <p>The entire phenomenal universe – all names, forms, objects, and even the sense of a separate self – is a superimposition, like a rope mistaken for a snake, or a dream seen by a sleeping mind. Just as a dream has no independent reality apart from the dreamer, so the waking world has no reality apart from pure consciousness, <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>. Gaudapada uses the analogy of a mirage: water that appears in the desert never actually exists. Similarly, the world appears but never truly arises.</p>
+    <p>This teaching is not nihilism. It is the recognition that the only reality is the formless, unchanging awareness in which all appearances come and go. The world is not false in the sense of being utterly non‑existent, but it is not real in the sense of being self‑subsistent. It is <em><span class="sanskrit-term" title="Different from both real and unreal; indescribable">sad-asad-vilakṣaṇa</span></em> – different from both real and unreal, like a dream.</p>
+    <blockquote>
+      <p>“There is no dissolution, no origination, no one in bondage, no one striving for liberation, and no one liberated. This is the highest truth.”</p>
+      <cite>— Māṇḍūkya Kārikā 2.32</cite>
+    </blockquote>
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">The Dream Analogy</div>
+        <p class="scripture-panel-text">“As a dream city is seen by the mind but has no reality, so the world is perceived by the mind but has no substantial existence.”</p>
+        <p class="scripture-panel-ref"><span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 4.56<a class="biblical-ref" data-reference="Mandukya Karika 4.56" title="Gaudapada: As a dream city is seen by the mind but has no reality">[4]</a></p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">The Mirage</div>
+        <p class="scripture-panel-text">“That which is non‑existent at the beginning and at the end is also non‑existent in the middle. It is like a mirage in the desert.”</p>
+        <p class="scripture-panel-ref"><span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 4.31<a class="biblical-ref" data-reference="Mandukya Karika 4.31" title="Gaudapada: That which is non-existent at the beginning and in the end">[1]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: THE FOUR STATES OF CONSCIOUSNESS -->
+<section class="content-section fade-in" id="states">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Consciousness</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Four States of Consciousness</span></span></h2>
+    <p>Waking, Dreaming, Deep Sleep, and the Fourth (Turiya)</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>Gaudapada’s commentary on the <strong><span class="sanskrit-term" title="The shortest of the principal Upanishads; twelve verses on OM and the four states">Māṇḍūkya Upaniṣad</span></strong> (the shortest of the principal Upaniṣads, only twelve verses) is the first systematic exposition of the four states of consciousness. He shows that all three ordinary states – waking (<em><span class="sanskrit-term" title="The waking state of consciousness">jāgrat</span></em>), dreaming (<em><span class="sanskrit-term" title="The dream state of consciousness">svapna</span></em>), and deep sleep (<em><span class="sanskrit-term" title="Deep sleep; the state of unconsciousness without dreams">suṣupti</span></em>) – are appearances within the single, unchanging awareness that is <strong><span class="sanskrit-term" title="The Fourth; pure consciousness beyond the three states">Turiya</span></strong> (the “fourth”).</p>
+    <p>Turiya is not a fourth state in sequence; it is the substratum that underlies and witnesses the other three. It is pure consciousness without any object, the Self that never comes and goes. Gaudapada identifies this <span class="sanskrit-term" title="The Fourth; pure consciousness beyond the three states">Turiya</span> with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>, the absolute reality. The realisation of <span class="sanskrit-term" title="The Fourth; pure consciousness beyond the three states">Turiya</span> is the direct recognition that one is never born, never dies, and never touched by the events of the world.</p>
+    <div class="states-diagram" style="display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin: 2rem 0;">
+      <div class="state-box" style="background: var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem; text-align:center;">
+        <span class="state-icon">☀</span><h5>Waking</h5><div class="sanskrit">Jāgrat</div><p>Objects, gross world</p>
+      </div>
+      <div class="state-box" style="background: var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem; text-align:center;">
+        <span class="state-icon">🌙</span><h5>Dreaming</h5><div class="sanskrit">Svapna</div><p>Subtle mind‑images</p>
+      </div>
+      <div class="state-box" style="background: var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem; text-align:center;">
+        <span class="state-icon">🌑</span><h5>Deep Sleep</h5><div class="sanskrit">Suṣupti</div><p>No objects, potential seed</p>
+      </div>
+      <div class="state-box" style="background: var(--surface); border:2px solid var(--gold); border-radius:12px; padding:1.5rem; text-align:center;">
+        <span class="state-icon">⭐</span><h5>Turiya</h5><div class="sanskrit">The Fourth</div><p>Pure consciousness, the witness</p>
+      </div>
+    </div>
+    <blockquote>
+      <p>“Turiya is not that which is conscious of the internal world, nor that which is conscious of the external world, nor that which is conscious of both, nor that which is a mass of consciousness. It is not consciousness, nor unconsciousness. It is unseen, beyond empirical dealings, unthinkable, and indescribable. It is the essence of the knowledge of the Self, the ground of all phenomena.”</p>
+      <cite>— Māṇḍūkya Upaniṣad 7 (Gaudapada’s gloss)</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- SECTION 3: NO DUALITY, NO CREATION -->
+<section class="content-section fade-in" id="no-duality">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Non‑Duality</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">No Duality, No Creation</span></span></h2>
+    <p>The refutation of cause and effect</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>Gaudapada dedicates the fourth chapter of his Kārikā, the <em><span class="sanskrit-term" title="The Extinction of the Fire-brand; the fourth chapter of the Mandukya Karika">Alātaśānti</span></em> (the “Extinction of the Fire‑brand”), to a thorough refutation of causality. He uses the famous analogy of a fire‑brand (<em>alāta</em>) swung in a circle: it appears to produce a circle of fire, but no circle is ever actually created. Similarly, consciousness appears to produce the world of cause and effect, but in truth nothing is ever produced.</p>
+    <p>He shows that the very concept of causation is a mental projection. If the world is an illusion, then there is no real creator, no real creation, and no real dissolution. The only reality is the non‑dual <span class="sanskrit-term" title="The individual self; the true consciousness within">Self</span>, which is free from all attributes and all relationships. This is the highest teaching of Advaita: <strong><span class="sanskrit-term" title="Non-duality; the teaching that Atman and Brahman are one">advaita</span></strong> means not‑two; there is no second thing. Therefore, there can be no birth of a second thing.</p>
+    <blockquote>
+      <p>“The fire‑brand when it is moving produces the illusion of a straight line, a circle, a curve, etc. Similarly, consciousness appears to generate the manifold universe through its own movement. But when the movement ceases, the illusion disappears. The Self alone remains.”</p>
+      <cite>— <span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 4.47–48<a class="biblical-ref" data-reference="Mandukya Karika 4.47-48" title="Gaudapada: The fire-brand when moving produces the illusion of lines and circles">[5]</a></cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- SECTION 4: LINEAGE & ASHTAVAKRA -->
+<section class="content-section fade-in" id="lineage">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Lineage</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Ancient Preceptors</span></span></h2>
+    <p>From <span class="sanskrit-term" title="The divine sage and devotee; teacher of the Bhakti path">Nārada</span> to Gaudapada to Shankara – and the voice of <span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span></p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>Gaudapada stands in a lineage that traces back to the mythical sages <span class="sanskrit-term" title="The divine sage and devotee; teacher of the Bhakti path">Nārada</span> and <span class="sanskrit-term" title="One of the four Kumaras; a mind-born son of Brahma">Sanatsujāta</span>, but his direct teacher is said to be <span class="sanskrit-term" title="The son of Vyasa; a perfected sage who taught the Bhagavata Purana">Śuka</span>, the son of <span class="sanskrit-term" title="The compiler of the Vedas and author of the Mahabharata">Vyāsa</span>. He is the first historical teacher to have written a systematic exposition of Advaita in the Sanskrit language. His disciple <span class="sanskrit-term" title="Gaudapada's disciple; the guru of Adi Shankara">Govinda Bhagavatpāda</span> was the guru of Adi Shankara, making Gaudapada the <strong><span class="sanskrit-term" title="The grand-teacher; the guru's guru">parama-guru</span></strong> (grand‑teacher) of the entire classical Advaita tradition.</p>
+    <p>Even before Gaudapada, the radical non‑dual teaching appears in the <strong><em><span class="sanskrit-term" title="The Song of <span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span>; a radical non-dual text">Aṣṭāvakra Gītā</span></em></strong>, a short but fierce dialogue between the sage <span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span> and King <span class="sanskrit-term" title="The king of Mithila; a realized soul and student of Ashtavakra">Janaka</span>. Gaudapada’s <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">ajāta vāda</span> echoes the same uncompromising voice:</p>
+    <blockquote>
+      <p>“You are one, pure, and spotless. You are the witness of all, free from the taint of desire. You are untouched by the world, like space. You are the Self that has never been born and never dies.”</p>
+      <cite>— <span class="sanskrit-term" title="The Song of Ashtavakra; a radical non-dual text">Aṣṭāvakra Gītā</span> 2.6<a class="biblical-ref" data-reference="Ashtavakra Gita 2.6" title="Ashtavakra: You are one, pure, and spotless; the witness of all">[6]</a></cite>
+    </blockquote>
+    <p><span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span>’s teaching – “The world is unreal, you are pure <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">awareness</span>” – is the very same that Gaudapada systematised and that Shankara later defended. Though the Aṣṭāvakra Gītā is difficult to date, its content is a pure expression of <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">ajāta vāda</span>, and it stands as a parallel stream of the same living wisdom.</p>
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label"><span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span> to <span class="sanskrit-term" title="The king of Mithila; a realized soul and student of Ashtavakra">Janaka</span></div>
+        <p class="scripture-panel-text">“You are not the body. You have no caste, no creed, no family. You are pure consciousness. You are the witness of all things. You are without fear and without desire. You are the Self, eternal and free.”</p>
+        <p class="scripture-panel-ref"><span class="sanskrit-term" title="The Song of Ashtavakra; a radical non-dual text">Aṣṭāvakra Gītā</span> 1.3–4<a class="biblical-ref" data-reference="Ashtavakra Gita 1.3-4" title="Ashtavakra: You are not the body; you are pure consciousness">[7]</a></p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Gaudapada’s Root</div>
+        <p class="scripture-panel-text">“The highest truth is that there is no creation, no dissolution, no bondage, no striving for liberation, and no liberated. Only the Self is.”</p>
+        <p class="scripture-panel-ref"><span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 2.32<a class="biblical-ref" data-reference="Mandukya Karika 2.32" title="Gaudapada: The highest truth is that there is no creation, no dissolution">[3]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: ASPARŚA YOGA – PRACTICE OF NON‑CONTACT -->
+<section class="content-section fade-in" id="practice">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Practice</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner"><span class="sanskrit-term" title="The yoga of non-contact; abiding in consciousness without touching objects">Asparśa Yoga</span> · The Yoga of Non‑Contact</span></span></h2>
+    <p>Resting in consciousness without touching any object</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>Gaudapada’s method of practice is called <strong><span class="sanskrit-term" title="The yoga of non-contact; abiding in consciousness without touching objects">asparśa yoga</span></strong> – the yoga of non‑contact. It is the direct abidance in <span class="sanskrit-term" title="The Fourth; pure consciousness beyond the three states">Turiya</span>, the witness consciousness, without engaging with the objects of the mind. This is not a technique of concentration, but a recognition that the mind itself is an appearance within awareness. By not contacting any thought, desire, or perception, the mind dissolves into its source.</p>
+    <p>He contrasts this with other yogas that involve effort, breath control, or meditation on forms. Asparśa yoga is the natural, effortless resting in one’s own true nature. It is identical to Ramana Maharshi’s <span class="sanskrit-term" title="Atma Vichara; the practice of tracing the I-thought to its source">Self‑enquiry</span> when pursued to its source: the enquiry “Who am I?” eventually leads to the realisation that there is no “I” apart from pure <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">awareness</span>.</p>
+    <p>As Gaudapada says in <span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 3.46<a class="biblical-ref" data-reference="Mandukya Karika 3.46" title="Gaudapada: The mind is not to be brought to stillness by force">[8]</a>: <em>“The mind is not to be brought to a state of stillness by force. It is to be understood. When the mind is seen as nothing but consciousness, it becomes still on its own.”</em></p>
+    <div class="stage-quote" style="background: var(--surface2); border-left:3px solid var(--gold); padding:1.5rem; margin:1.5rem 0;">
+      <p>“The wise man, having realised that the Self is the only reality, abides in the Self and does not return to the false perception of the world. He is like the fire‑brand that has ceased moving – only light remains.”</p>
+      <cite>— <span class="sanskrit-term" title="Gaudapada's seminal commentary on the Mandukya Upanishad; the foundational text of Ajata Vada">Kārikā</span> 4.58<a class="biblical-ref" data-reference="Mandukya Karika 4.58" title="Gaudapada: The wise man abides in the Self and does not return to false perception">[9]</a></cite>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: KEY VERSES -->
+<section class="content-section fade-in" id="sources">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Primary Source</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Selected Verses from the Māṇḍūkya Kārikā</span></span></h2>
+    <p>The foundational text of Ajāta Vāda</p>
+  </div>
+  <div class="content-essay fade-in">
+    <div class="sacred-cards-grid fade-in">
+      <div class="sacred-card">
+        <div class="sacred-card-sanskrit">Kārikā 1.17</div>
+        <div class="sacred-card-translation">“When the mind is controlled, it becomes free from all desires and remains in its own essence, which is pure consciousness.”</div>
+        <div class="sacred-card-source">Mind Control</div>
+      </div>
+      <div class="sacred-card">
+        <div class="sacred-card-sanskrit">Kārikā 2.6</div>
+        <div class="sacred-card-translation">“The Self is not anything that has a beginning or an end. It is eternal, unchanging, and free from all modifications.”</div>
+        <div class="sacred-card-source">Eternal Self</div>
+      </div>
+      <div class="sacred-card">
+        <div class="sacred-card-sanskrit">Kārikā 3.15</div>
+        <div class="sacred-card-translation">“No jiva is ever born. No cause exists for anything that appears. The highest truth is that nothing is ever born.”</div>
+        <div class="sacred-card-source">Ajāta Vāda</div>
+      </div>
+      <div class="sacred-card">
+        <div class="sacred-card-sanskrit">Kārikā 4.28</div>
+        <div class="sacred-card-translation">“Just as space is not really divided by pots and jars, so the Self is not really divided by the bodies. The divisions are illusory.”</div>
+        <div class="sacred-card-source">Space Analogy</div>
+      </div>
+      <div class="sacred-card">
+        <div class="sacred-card-sanskrit">Kārikā 4.73</div>
+        <div class="sacred-card-translation">“The one who realises that all this is <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>, that there is no second thing, becomes <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span> and is free from all fear.”</div>
+        <div class="sacred-card-source">Non-Duality</div>
+      </div>
+    </div>
+    <p>The entire Kārikā is a masterpiece of logical analysis and direct pointing. It is said that Shankara wrote a commentary on it, thereby cementing it as a central text of Advaita Vedanta.</p>
+  </div>
+</section>
+
+
+
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">Continue to the next cartography: Adi Shankara, the great disciple of Gaudapada’s lineage.</p>
+    <p class="pullquote-attr"><a href="adi-shankara.html">→ Adi Shankara · The Great Expositor</a></p>
+  </div>
+</div>
+
+<!-- CHAPTER NAVIGATION -->
+<div class="chapter-nav">
+  <a href="../index.html" class="chapter-link">⌂ Home</a>
+  <span class="chapter-sep">🕉</span>
+  <a href="gaudapada.html" class="chapter-link active">Gaudapada</a>
+  <span class="chapter-sep">🕉</span>
+  <a href="adi-shankara.html" class="chapter-link">Adi Shankara</a>
+  <span class="chapter-sep">🕉</span>
+  <a href="ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
+  <span class="chapter-sep">🕉</span>
+  <a href="nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="gaudapada.html">Advaita Vedanta</a>
+    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+  </div>
+  <div class="footer-credit">Researched &amp; Composed</div>
+  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+      }
+    });
+  }
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') setTheme(saved);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+    else setTheme('light');
+  }
+  initTheme();
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+  const backToTop = document.getElementById('backToTop');
+  function updateBackToTop() {
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+  }
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+  if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in, .section-separator, .toc-item').forEach(el => observer.observe(el));
+  const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); textObserver.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+    let mx=0,my=0,cx=0,cy=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; }, { passive: true });
+    function animateCursor() { cx+=(mx-cx)*0.08; cy+=(my-cy)*0.08; cursorGlow.style.left=cx+'px'; cursorGlow.style.top=cy+'px'; requestAnimationFrame(animateCursor); }
+    animateCursor();
+  }
+})();
+</script>
+</body>
+</html>

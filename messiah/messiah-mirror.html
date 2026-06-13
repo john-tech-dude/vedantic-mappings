@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="The Vedantic Messiah — Tat Tvam Asi: The Supreme Identity, Crucifixion as ego-death, Resurrection as Self-revelation, and Agape as the substance of being." />
+<title>The Vedantic Messiah — Tat Tvam Asi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+
+/* ═══════════════════════════════════════════════════════════
+   THE VEDANTIC MESSIAH — Design System (Full Expanded)
+   ═══════════════════════════════════════════════════════════ */
+
+:root
+{
+  --bg: #0c0f14;
+  --bg2: #12161c;
+  --surface: #181c23;
+  --surface2: #21262e;
+  --ink: #eef2f8;
+  --ink2: #9aaebf;
+  --stone: #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold: #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.08);
+  --sun-glow: rgba(212, 175, 55, 0.18);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+  --shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 40px var(--gold-glow);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+[data-theme="dark"]
+{
+  --bg: #0c0f14;
+  --bg2: #12161c;
+  --surface: #181c23;
+  --surface2: #21262e;
+  --ink: #eef2f8;
+  --ink2: #9aaebf;
+  --stone: #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold: #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.08);
+  --sun-glow: rgba(212, 175, 55, 0.18);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="light"]
+{
+  --bg: #f8f5ef;
+  --bg2: #f0ebe0;
+  --surface: #ffffff;
+  --surface2: #f5f0e8;
+  --ink: #1a1510;
+  --ink2: #4a3f30;
+  --stone: #7a6e5e;
+  --stone-light: #9a8e7a;
+  --gold: #9a7a3a;
+  --gold-light: #b8964a;
+  --gold-deep: #7a5a22;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html
+{
+  scroll-behavior: smooth;
+}
+
+body
+{
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+  cursor: default;
+}
+
+body::before
+{
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  animation: grainShift 8s steps(10) infinite;
+}
+
+@keyframes grainShift
+{
+  0%,100% { transform: translate(0,0); }
+  10% { transform: translate(-2%,-2%); }
+  20% { transform: translate(2%,1%); }
+  30% { transform: translate(-1%,2%); }
+  40% { transform: translate(1%,-1%); }
+  50% { transform: translate(-2%,1%); }
+  60% { transform: translate(2%,-2%); }
+  70% { transform: translate(-1%,-1%); }
+  80% { transform: translate(1%,2%); }
+  90% { transform: translate(-2%,-1%); }
+}
+
+::-webkit-scrollbar
+{
+  width: 4px;
+}
+
+::-webkit-scrollbar-track
+{
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+  border-radius: 2px;
+}
+
+::selection
+{
+  background: rgba(154,122,58,0.20);
+  color: var(--ink);
+}
+
+a:focus-visible,
+button:focus-visible
+{
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes hero-rise
+{
+  from
+  {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-bounce
+{
+  0%,100%
+  {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50%
+  {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+  }
+}
+
+@keyframes breathe
+{
+  0%,100%
+  {
+    transform: scale(1);
+    box-shadow: 0 0 40px var(--gold-glow);
+  }
+  50%
+  {
+    transform: scale(1.04);
+    box-shadow: 0 0 64px var(--gold-glow);
+  }
+}
+
+@keyframes mandalaRotate
+{
+  to
+  {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mandala-breathe
+{
+  0%,100%
+  {
+    opacity: 0.35;
+    transform: translate(-50%,-50%) scale(1);
+  }
+  50%
+  {
+    opacity: 0.75;
+    transform: translate(-50%,-50%) scale(1.012);
+  }
+}
+
+@keyframes ripple-out
+{
+  0%
+  {
+    opacity: 0.55;
+    transform: translate(-50%,-50%) scale(1);
+  }
+  100%
+  {
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(4.2);
+  }
+}
+
+@keyframes emblem-pulse
+{
+  0%,100%
+  {
+    box-shadow: 0 0 18px 4px var(--sun-glow);
+  }
+  50%
+  {
+    box-shadow: 0 0 32px 10px var(--sun-glow);
+  }
+}
+
+@keyframes lineReveal
+{
+  from
+  {
+    transform: scaleX(0);
+  }
+  to
+  {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes diamondReveal
+{
+  from
+  {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  to
+  {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes ambientDrift
+{
+  0%,100%
+  {
+    transform: translate(0,0) scale(1);
+    opacity: 0.45;
+  }
+  33%
+  {
+    transform: translate(2%,-1%) scale(1.02);
+    opacity: 0.65;
+  }
+  66%
+  {
+    transform: translate(-1%,2%) scale(0.98);
+    opacity: 0.35;
+  }
+}
+
+.nav-compass
+{
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1010;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-toggle
+{
+  width: 44px;
+  height: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transition: all 0.35s var(--ease-out-expo);
+  box-shadow: var(--shadow);
+}
+
+.nav-toggle:hover
+{
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+.nav-menu
+{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-deep);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.96);
+  pointer-events: none;
+  transition: all 0.4s var(--ease-out-expo);
+  min-width: 220px;
+}
+
+.nav-menu.open
+{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.nav-item
+{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  color: var(--stone);
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  transition: all 0.3s var(--ease-out-expo);
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.nav-item:hover
+{
+  color: var(--ink);
+  background: var(--gold-glow);
+  padding-left: 1.5rem;
+}
+
+.nav-item.active
+{
+  color: var(--gold-light);
+  background: rgba(154,122,58,0.08);
+  border-left-color: var(--gold);
+  font-weight: 500;
+}
+
+.nav-item.active::before
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+}
+
+.nav-item-icon
+{
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+
+.nav-section-title
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  padding: 0.6rem 1.25rem 0.3rem;
+}
+
+.theme-toggle
+{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.45s var(--ease-elastic);
+  box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.theme-toggle:hover
+{
+  transform: scale(1.12);
+  border-color: var(--gold);
+}
+
+.theme-toggle:active
+{
+  transform: scale(0.95);
+}
+
+.theme-toggle-icon
+{
+  position: absolute;
+  transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+[data-theme="light"] .theme-toggle-icon-sun
+{
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="light"] .theme-toggle-icon-moon
+{
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+[data-theme="dark"] .theme-toggle-icon-sun
+{
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+[data-theme="dark"] .theme-toggle-icon-moon
+{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.back-to-top
+{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 5rem;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--stone);
+  font-size: 1.1rem;
+  transition: all 0.4s var(--ease-out-expo);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.9);
+}
+
+.back-to-top.visible
+{
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover
+{
+  color: var(--gold);
+  border-color: var(--gold);
+  transform: translateY(-3px) scale(1.08);
+}
+
+.hero
+{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 2rem 6rem;
+  text-align: center;
+  background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+}
+
+[data-theme="dark"] .hero
+{
+  background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+}
+
+[data-theme="light"] .hero
+{
+  background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+}
+
+.hero::after
+{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 45% at 20% 40%, rgba(154,122,58,0.07) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 80% 60%, rgba(154,122,58,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-eyemark
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+.hero-emblem
+{
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin-bottom: 2rem;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+.hero-emblem-circle
+{
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--gold-deep);
+  opacity: 0.55;
+}
+
+.hero-emblem-circle2
+{
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0.38;
+}
+
+.hero-emblem-dot
+{
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--gold-light), var(--gold-deep));
+  box-shadow: 0 0 20px 5px var(--sun-glow);
+}
+
+.mandala-ring
+{
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0.15;
+  animation: mandala-breathe 8s ease-in-out infinite;
+}
+
+.hero-ripple
+{
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0;
+  animation: ripple-out 4s ease-out infinite;
+}
+
+.hero-ripple:nth-of-type(2) { animation-delay: 3s; }
+.hero-ripple:nth-of-type(3) { animation-delay: 6s; }
+.hero-mountain {
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 120%; height: 52%;
+  background: linear-gradient(175deg, transparent 20%, rgba(154,122,58,0.05) 50%, rgba(154,122,58,0.18) 80%);
+  clip-path: polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);
+  opacity: 0.14;
+}
+.hero-scroll-cue {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+  cursor: pointer; z-index: 2;
+  transition: transform 0.3s var(--ease-expo);
+}
+.hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+.hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--gold-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+.hero-title
+{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .hero-title
+{
+  color: var(--ink2);
+}
+
+.hero-subtitle
+{
+  font-family: 'Crimson Pro', serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: var(--stone);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.hero-divider
+{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+}
+
+.hero-divider-line
+{
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.hero-divider-diamond
+{
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.hero-quote
+{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  color: var(--ink2);
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+}
+
+.hero-quote-attr
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+}
+
+.content-section
+{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.section-header
+{
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-header-margin
+{
+  margin-top: 4rem;
+}
+
+.section-separator
+{
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 2rem;
+}
+
+.section-eyemark
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-header h2
+{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+[data-theme="dark"] .section-header h2
+{
+  color: var(--ink2);
+}
+
+.section-header > p
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+}
+
+.content-essay
+{
+  line-height: 1.82;
+}
+
+.content-essay p
+{
+  font-size: 1.02rem;
+  color: var(--stone);
+  margin-bottom: 1.5rem;
+}
+
+.content-introduction
+{
+  font-size: 1.05rem;
+  color: var(--stone);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.content-essay p
+{
+  font-size: 1.02rem;
+  color: var(--stone);
+  line-height: 1.82;
+  margin-bottom: 1.5rem;
+}
+
+.content-essay h3
+{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 2.5rem 0 1rem;
+}
+
+.content-essay h4
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 2rem 0 0.75rem;
+}
+
+.sanskrit-term,.biblical-ref{
+  cursor:help;
+  border-bottom:1px dotted var(--gold-deep);
+  text-decoration:none;
+}
+.sanskrit-footnote
+{
+  font-size: 0.7em; color: var(--stone); vertical-align: super; margin-left: 2px;
+}
+.footnote
+{
+  margin: 0.5rem 0 1.5rem 0; font-style: italic; color: var(--stone); font-size: 0.85rem;
+}
+
+.content-essay blockquote
+{
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0;
+  background: var(--surface2);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.content-essay blockquote cite
+{
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--stone);
+  font-style: normal;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+}
+
+/* ===== LISTS ===== */
+.content-essay ul,
+.content-essay ol
+{
+  margin: 1.5rem 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.content-essay ul li,
+.content-essay ol li
+{
+  padding: 0.85rem 0;
+  color: var(--stone);
+  line-height: 1.75;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.content-essay ul li:last-child,
+.content-essay ol li:last-child
+{
+  border-bottom: none;
+}
+
+.content-essay ul li::before
+{
+  content: '◆';
+  margin-right: 0.75rem;
+  color: var(--gold);
+  opacity: 0.6;
+  font-size: 0.5rem;
+}
+
+.content-essay ol li
+{
+  list-style-type: none;
+  counter-increment: item;
+}
+
+.content-essay ol li::before
+{
+  content: counter(item) ". ";
+  font-weight: 600;
+  color: var(--gold);
+  margin-right: 0.5rem;
+}
+
+.content-essay li strong
+{
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ===== COMPARATIVE TABLE ===== */
+.table-wrapper
+{
+  overflow-x: auto;
+}
+
+.comparative-table
+{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface2);
+}
+
+.comparative-table thead tr
+{
+  border-bottom: 1px solid var(--gold);
+}
+
+.comparative-table th
+{
+  padding: 12px;
+  text-align: left;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+}
+
+.comparative-table tbody tr
+{
+  border-bottom: 1px solid var(--border);
+}
+
+.comparative-table td
+{
+  padding: 10px;
+  font-size: 0.95rem;
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.comparative-table tbody tr:last-child
+{
+  border-bottom: none;
+}
+
+.scripture-panels
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 36px 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.scripture-panel
+{
+  background: var(--surface);
+  padding: 32px;
+}
+
+.scripture-panel-label
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.scripture-panel-text
+{
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+.scripture-panel-ref
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+}
+
+.scripture-panel:hover
+{
+  background: var(--surface2);
+}
+{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.scripture-panel-ref
+{
+  font-size: 0.8rem;
+  color: var(--stone);
+  font-style: normal;
+}
+
+/* ── Pull-quote band ──────────────────────────────────── */
+.pullquote-section
+{
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+[data-theme="dark"] .pullquote-section
+{
+  background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+}
+[data-theme="light"] .pullquote-section
+{
+  background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+}
+.pullquote-glow
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%);
+  pointer-events: none;
+  animation: breathe 10s ease-in-out infinite;
+}
+.pullquote
+{
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 2rem;
+}
+.pullquote-mark
+{
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem;
+  color: var(--gold);
+  opacity: 0.08;
+  line-height: 0.8;
+  margin-bottom: -2rem;
+  text-align: center;
+  user-select: none;
+}
+.pullquote-text
+{
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+  color: var(--ink);
+  line-height: 1.68;
+  margin-bottom: 1.5rem;
+}
+.pullquote-attr
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+}
+.pullquote-attr a
+{
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.pullquote-attr a:hover
+{
+  color: var(--gold);
+}
+
+.footer
+{
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.footer-emblem
+{
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.footer-emblem-outer
+{
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0.3;
+}
+
+.footer-emblem-inner
+{
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+[data-theme="dark"] .footer-emblem-outer
+{
+  opacity: 0.6;
+  border-color: var(--gold-light);
+}
+
+[data-theme="dark"] .footer-emblem-inner
+{
+  opacity: 0.7;
+  background: var(--gold-light);
+}
+
+.footer-name
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline
+{
+  font-size: 0.8rem;
+  color: var(--stone);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links
+{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a
+{
+  color: var(--stone);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover
+{
+  color: var(--gold);
+}
+
+.footer-credit
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.footer-version
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-top: 1rem;
+}
+
+.footer-copyright
+{
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-top: 1rem;
+}
+
+.continue-link
+{
+  text-align: center; padding: 2rem 0 3rem;
+}
+.continue-link a
+{
+  font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-decoration: none; text-transform: uppercase; transition: color 0.3s;
+}
+.continue-link a:hover
+{
+  color: var(--gold-light);
+}
+.chapter-nav
+{
+  display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+}
+.chapter-link
+{
+  color: var(--stone); text-decoration: none; transition: color 0.3s;
+}
+.chapter-link:hover
+{
+  color: var(--gold);
+}
+.chapter-sep
+{
+  color: var(--gold-deep); opacity: 0.3;
+}
+.chapter-link.active
+{
+  color: var(--gold); font-weight: 500;
+}
+
+@media (max-width: 768px)
+{
+  .nav-menu
+  {
+    min-width: 180px;
+  }
+  .back-to-top
+  {
+    right: 1.5rem;
+    bottom: 5rem;
+  }
+  .footer-links
+  {
+    gap: 1.5rem;
+  }
+  .scripture-panels
+  {
+    grid-template-columns: 1fr;
+  }
+  .scripture-panel:first-child
+  {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
+
+.text-reveal
+{
+  display: inline-block;
+  overflow: hidden;
+}
+
+.text-reveal-inner
+{
+  display: inline-block;
+  animation: textReveal 1.2s var(--ease-out-quart) both;
+}
+
+@keyframes textReveal
+{
+  from
+  {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in
+{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--ease-smooth), transform 0.9s var(--ease-smooth);
+}
+
+.fade-in.visible
+{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp
+{
+  0%
+  {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100%
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-scroll-speed]
+{
+  will-change: transform;
+}
+
+/* Premium cross-tradition resonances callout */
+.resonance-callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface2);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+}
+.resonance-callout .label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.resonance-callout p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--stone);
+}
+</style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/w0v3gonk3xel9d-Fi3IzbJ4ekOcnjD0uAUfRnHe7y9qHiFXC29EAuDcAgqiqxcTM5bVwI10LlZ--yeJMz8SGFsxq-QRIq8vZ9vy5KVbQMTS25haAfsQvbNc9P0tXBadtmc38GUcjtmFp1u0ANvtx7x_eDJAcDBNhha1ECQVJbYKwBl-MBse0sUn9U3d26BK04jJ_JtYO5l0Ag8bfR-ygTzvuB86EPj7_Y7XMatTgq2zhNwlAuewHgEx9vxX4kuATGNoy2liuJOBChz_RgQly3QzM5UkSQr4ZArTAxKHl1SdiAJQ4SeswmI95cvvI7I5fvXinLWMhvmOu_9Nb4GlwMGlqSozdbgo0e0_b-Q05t_WnyBrqxdL8uHdq10bOEiGZnQV0vEXfUECUnWRjwyFhwstoqv4JbKpSD27Ai9R6v3bzk45erhr6TYpSjyTE9EyvqszlkOtVltKzqxn64zjfEFEs3g6IGWqmR4nhCWkv7esL0vv-Ldrxh-iN_1qJ7wFfV1jdsGfiE2XakMLQE0mJeRJux3i19k4WIcIeszAHv5FZdN5Gjou2ug5sc-VAJwBrxPuJoA4r8qrx0WDqAEvnSDeYB5pCOOQjBZvx1XgyEjLJNiQOyFIRqkS4IZ1AaxsyOzVq90x4IAw7um5QfWtJnEfM5BSK-bRwKt1sPyApXv2NvwY4e31YFJu55RnDNyzY6spcru4KcQ2rYcBUObTQdv8GSV1Xr0yVCMKjv-eXc_c2TLlR2-_aZJr3SitdLPYVX_hCS8chCIupG-s7aFco8H8mjH3hMH8oboUL1gwOW8g8IXFdcKjUoab5vw1sdFGVhOHfwv4oZ79jvdf53nABSGuyNVLYFvLIVcja9Cq_aUzXDgVJVqTHI4zRLD5lPGrF5AUoKfdrM3zlFWQA1zdDMR7HPRZwDOK7VmS1U3uTMh2KyyA6JZiwfwiHcO1ggE4ezXKxjJ5nsF7BIC2yu4UHYa0d1m_OYBTOuUvgCe98xjtOHTCbWxcDBcDA7jOIbzbmHP4V4STjhKUQtuxlE5coE7C5qYQEe7zDttVoPhVoEJsSMQSpp7FeuG1dH_yEJjdGdS3JiKM4vPY'></script><base target="_blank">
+</head>
+<body>
+
+<!-- NAVIGATION (aligned with Cloud page: The Nine Dimensions + References) -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">The Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Advaita Vedanta</div>
+    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Gaudapada</span></a>
+    <a href="../advaita-vedanta/adi-shankara.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Adi Shankara</span></a>
+    <a href="../advaita-vedanta/ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
+    <a href="../advaita-vedanta/nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">The Nine Dimensions</div>
+    <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>The Hermeneutic Key</span></a>
+    <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">📖</span><span>Three Bridges</span></a>
+    <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◈</span><span>The Cloud of Unknowing</span></a>
+    <a href="messiah-mirror.html" class="nav-item active"><span class="nav-item-icon">⊙</span><span>Tat Tvam Asi</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Taoism · Four Pages</div>
+    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>I · The Unnamed Way</span></a>
+    <a href="../taoism/taoism-practices.html" class="nav-item"><span class="nav-item-icon">🌱</span><span>II · The Uncarved Block</span></a>
+    <a href="../taoism/taoism-butterfly.html" class="nav-item"><span class="nav-item-icon">🦋</span><span>III · The Butterfly Dream</span></a>
+    <a href="../taoism/taoism-return.html" class="nav-item"><span class="nav-item-icon">🍃</span><span>IV · Returning to the Root</span></a>
+  </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-mountain"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <p class="hero-eyemark">The Great Declaration</p>
+  <div class="hero-emblem">
+    <div class="hero-emblem-circle"></div>
+    <div class="hero-emblem-circle2"></div>
+    <div class="hero-emblem-dot"></div>
+  </div>
+  <h1 class="hero-title">Tat Tvam Asi</h1>
+  <p class="hero-subtitle">The Supreme Identity · That Thou Art</p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"In the beginning was the Word, and the Word was with God, and the Word was God."</p>
+  <p class="hero-quote-attr">— John 1:1 · "In the beginning there was Brahman, one without a second." — Brihadaranyaka Upanishad</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('section9').scrollIntoView({behavior:'smooth'})">
+    <span>Enter</span><div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- ASPECT IX: CRUCIFIXION / RESURRECTION / ASCENSION -->
+<section class="content-section" id="section9">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Crucifixion as Ego-Death — Resurrection as Self-Revelation</span></span></h2>
+    <p>Crucifixion as Ego-Death — Resurrection as Self-Revelation</p>
+  </div>
+
+  <div class="content-essay">
+    <p><strong>Crucifixion is the death of the ego through surrender or inquiry.</strong> It is not a historical execution but the universal spiritual process by which the false self is dismantled. The nails are not iron spikes but the piercing questions of self-inquiry: <em>Who am I?</em> The crown of thorns is not a torture device but the ego's own thoughts — the <span class="sanskrit-term" title="Mental modifications or thought-waves">vrittis</span> that prick and torment the mind. The spear in the side is the final penetration of the heart, the dissolution of even the subtlest sense of personal existence.</p>
+
+    <p>The cry <em>"My God, my God, why have you forsaken me?"</em><a class="biblical-ref" data-reference="Matthew 27:46" title="Matthew 27:46">[1]</a> is the darkest moment of <em>ego-death</em> — the <span class="sanskrit-term" title="Not this, not this — the method of negating all that is not the Self">neti neti</span> carried to its absolute limit. Even the sense of divine presence vanishes. The <span class="sanskrit-term" title="One who has realized the Self; a wise or enlightened person">jnani</span> stands alone in the Absolute, beyond God and soul, beyond consciousness itself. This is the "dark night of the soul" that John of the Cross described — but it is darker than any night, for even the concept of "soul" has been surrendered. There is no one left to experience the dark. This is the void where the ego finds nothing to cling to, not even the idea of God.</p>
+
+    <p>And then — <strong>resurrection is the revelation of the true Self (Atman/Brahman), the "Son of God"</strong> — eternal, undivided. What remains when the ego dies? Not nothing, but the <em>everything</em> that was always already the case. The "Son of God" is not a person who returns from death but the recognition that the Self was never born and never dies. The empty tomb is the symbol of the body's transparency to the eternal. The resurrection appearances are <span class="sanskrit-term" title="The cosmic power of illusion; the power that veils reality and projects multiplicity">maya</span> continuing to instruct the disciples — the play of consciousness teaching itself to itself through form.</p>
+
+    <h4>The Three Days in the Tomb</h4>
+    <p>The three days between crucifixion and resurrection correspond to the three states of consciousness that must be transcended before the fourth state (<span class="sanskrit-term" title="The fourth state of consciousness beyond waking, dreaming, and deep sleep">turiya</span>) is realized. The first day is the waking state (<span class="sanskrit-term" title="The waking state of consciousness">jagrat</span>), where the ego is most active — this is the crucifixion itself, the ego's apparent death. The second day is the dream state (<span class="sanskrit-term" title="The dream state of consciousness">svapna</span>), where the subtle body continues to generate experiences — this is the tomb, where the ego's residual tendencies (<span class="sanskrit-term" title="Subtle tendencies or impressions left by past experiences">vasanas</span>) still flicker in the darkness. The third day is deep sleep (<span class="sanskrit-term" title="The deep sleep state of consciousness">sushupti</span>), where even the subtle body is dissolved — this is the complete cessation of all identification, the void beyond void. And the resurrection is <span class="sanskrit-term" title="The fourth state of consciousness beyond waking, dreaming, and deep sleep">turiya</span>, the fourth state, the silent substratum that underlies and transcends all three — the Self that was never absent, only overlooked.</p>
+
+    <h4>The Ascension as Dissolution into the Absolute</h4>
+    <p>The Ascension is not a bodily levitation into the sky but the final dissolution of the subtle body (<span class="sanskrit-term" title="The subtle body; the inner vehicle of mind, intellect, and vital energies">sukshma-sarira</span>) and causal body (<span class="sanskrit-term" title="The causal body; the seed-state of individuality">karana-sarira</span>) into the Absolute. The "cloud" that receives Jesus is the <span class="sanskrit-term" title="The unmanifest; that which has not yet manifested">avyakta</span>, the unmanifest, the unqualified Brahman beyond all form. The disciples "looking intently up into the sky"<a class="biblical-ref" data-reference="Acts 1:10" title="Acts 1:10">[2]</a> represent the mind still seeking the Self in some realm or dimension — but the Self is not in the sky, nor on earth, nor anywhere. The two men in white (angels) who appear and ask, "Why do you stand here looking into the sky?" are the teaching itself: <strong>stop looking elsewhere. The Self you seek is the very awareness that is looking.</strong></p>
+
+    <h4>A Hermeneutical Reading, Not Historical Claim</h4>
+    <p>This Advaitic reading of the Passion and Resurrection is a <strong>hermeneutical lens</strong>, not a claim about the historical events. The Christian tradition maintains the resurrection as a <strong>transformation of the body</strong> — something Advaita has no category for — and as the vindication of Jesus's person and mission by the Father. The Advaitic reading illuminates the <em>interior dimension</em> of these events: the death of the ego and the revelation of the Self that was never absent. These are complementary, not contradictory, perspectives. The Christian mystic and the Vedantin are looking at the same mountain from different valleys.</p>
+
+    <h4>The Ajata Vada of the Resurrection</h4>
+    <p>Gaudapada's <span class="sanskrit-term" title="The doctrine of non-creation">ajata vada</span> (the doctrine of non-creation) states that from the highest standpoint, the world and the <span class="sanskrit-term" title="The individual soul">jiva</span> never arose at all. The Self was never born and therefore never dies. The resurrection, read through this lens, reveals that what is eternal in Jesus — the Atman — was never touched by death. The crucifixion was the death of the ego; the resurrection was the recognition that the Self was never absent. This is why Jesus says <em>"I am the resurrection and the life"</em><a class="biblical-ref" data-reference="John 11:25" title="John 11:25">[3]</a> — not "I will be resurrected" but "I <em>am</em> resurrection" — the eternal present tense of the Self, beyond birth and death.</p>
+
+    <p>The resurrection appearances have a peculiar quality: Jesus is not immediately recognized. Mary Magdalene thinks he is the gardener<a class="biblical-ref" data-reference="John 20:15" title="John 20:15">[4]</a>. The disciples on the road to Emmaus walk with him for hours without recognizing him<a class="biblical-ref" data-reference="Luke 24:16" title="Luke 24:16">[5]</a>. This is because the Self cannot be recognized by the mind that seeks a form. The Self is formless; it can only be recognized as one's own being. When Mary hears her name spoken, she recognizes — not a person, but the Self that calls to itself. When the disciples break bread with the stranger, they recognize — not a body, but the presence that pervades all forms. The recognition of the Self is always a recognition <em>from</em> the Self; it cannot be achieved by the ego.</p>
+
+    <div class="scripture-panels">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Mahavakya</div>
+        <p class="scripture-panel-text">Ayam Atma Brahma</p>
+        <p class="scripture-panel-ref">"This Self is Brahman" — Mandukya Upanishad 1.2</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Gospel Parallel</div>
+        <p class="scripture-panel-text">I and the Father are one</p>
+        <p class="scripture-panel-ref">— John 10:30</p>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>"I am the resurrection and the life. He who believes in me, though he may die, he shall live."</p>
+      <cite>— John 11:25</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>"The Self is never born, nor does it die. Having no origin, it is eternal, primeval, ancient. It is not slain when the body is slain."</p>
+      <cite>— Bhagavad Gita 2.20</cite>
+    </blockquote>
+
+    <!-- TAT TVAM ASI + AGAPE merged -->
+    <div class="section-header section-header-margin">
+      <div class="section-separator"></div>
+      <h2><span class="text-reveal"><span class="text-reveal-inner">Tat Tvam Asi – That Thou Art, and Love as the Substance of Being</span></span></h2>
+      <p>Tat Tvam Asi – That Thou Art, and Love as the Substance of Being</p>
+    </div>
+
+    <p>The entire mystical Vedanta of Jesus is summed up in his great prayer for the disciples: <em>"That they all may be one; as you, Father, are in me, and I in you, that they also may be one in us... I in them, and you in me — that they may be made perfect in one"</em><a class="biblical-ref" data-reference="John 17:21-23" title="John 17:21-23">[6]</a>. This is the ultimate vision of <span class="sanskrit-term" title="Non-duality; the philosophical position that reality is one without a second">Advaita</span>: not a unity of separate souls standing side by side, but the absolute non-difference of <span class="sanskrit-term" title="The innermost Self; the essential consciousness">Atman</span> and <span class="sanskrit-term" title="The ultimate reality; the absolute ground of existence">Brahman</span>, where the illusion of many is extinguished in the One without a second.</p>
+
+    <p>Jesus the <span class="sanskrit-term" title="One who has realized the Self; a wise or enlightened person">jnani</span> stands as a mirror. He does not ask for worship of his person; he points to the Self. His final message is a profound <span class="sanskrit-term" title="A great saying or proclamation of truth">mahavakya</span>: What I AM, you are. The Kingdom is already attained, the Father is already your own Self. "Be still, and know."<a class="biblical-ref" data-reference="Psalm 46:10" title="Psalm 46:10">[9]</a></p>
+
+    <p>This is the teaching that the early Church Fathers — Clement of Alexandria, Origen, Gregory of Nyssa, Meister Eckhart, and the anonymous author of <em>The Cloud of Unknowing</em> — preserved in the Christian mystical tradition. It is the same teaching that Ramana Maharshi, Nisargadatta Maharaj, and the sages of the Upanishads have pointed to from the Vedic side. The river is one; the banks are many.</p>
+
+    <p>In Advaita, the Atman never dies and therefore never needs resurrection. The resurrection, read through the Advaitic lens, reveals that what is eternal in Jesus — the Atman — was never touched by death. The empty tomb is the symbol of the body's transparency to the Self; the resurrection appearances are the play of <span class="sanskrit-term" title="The cosmic power of illusion; the power that veils reality and projects multiplicity">maya</span> continuing to instruct the disciples. This is a <strong>hermeneutical reading</strong>, not a claim about the historical event. The Christian tradition maintains the resurrection as a <strong>transformation of the body</strong> — something Advaita has no category for — and as the vindication of Jesus's person and mission by the Father.</p>
+
+    <p>The entire ministry of Jesus culminates in a single, silent teaching: the dissolution of the false self into the Sat-Cit-Ananda of God. His crucifixion is the final <span class="sanskrit-term" title="Renunciation; the complete letting go of all attachments">tyaga</span> of the gross and subtle ego, and the resurrection is the revelation of the eternal, deathless Atman.</p>
+
+    <blockquote>
+      <p>"The 'I am' is the first expression of the Absolute, the first thought, the first word."</p>
+      <cite>— Sri Nisargadatta Maharaj · I Am That</cite>
+    </blockquote>
+
+    <div class="scripture-panels">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Mahavakya</div>
+        <p class="scripture-panel-text">Tat Tvam Asi</p>
+        <p class="scripture-panel-ref">"That Thou Art" — Chandogya Upanishad 6.8.7</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Gospel Parallel</div>
+        <p class="scripture-panel-text">I in them, and you in me</p>
+        <p class="scripture-panel-ref">— John 17:23</p>
+      </div>
+    </div>
+
+    <h4>The Three‑Stage Hierarchy of Jesus's Teaching</h4>
+    <p>When read through the lens of the mystical tradition rather than institutional dogma, the teaching of Jesus reveals a clear hierarchy of consciousness:</p>
+
+    <ol>
+      <li><strong>The Individual Self (Psyche)</strong> — The person who identifies with body, mind, social role, and separateness. "Who do people say that I am?" (Mark 8:27). This is the level of ordinary existence, the ego‑bound life, the "old self" that must "die daily" (1 Cor 15:31).</li>
+      <li><strong>The Christ Consciousness (Logos / Son)</strong> — The realization that "I and the Father are one" (John 10:30). Here, the separate self dissolves into union with the divine source. As the Gospel of John frames it: "The Father is in me, and I in the Father" (John 10:38). This is the level of mystical union, where one no longer acts from personal will but from divine will — "I only do what the Father shows me" (John 5:19).</li>
+      <li><strong>The Divine Ground (Abba / The Absolute)</strong> — The ultimate reality that is the source of the Father‑Son relationship, yet transcends even the names "Father" and "Son." This is the apophatic God — the God beyond God, the "darkness beyond understanding" of Pseudo‑Dionysius, the "ground of being" of Meister Eckhart. In Orthodox theology, this is the divine <em>ousia</em> (essence) that remains forever unknowable, while the <em>energeiai</em> (energies) are what we can participate in.</li>
+    </ol>
+
+    <h4>The Radical Move: Kenosis as the Path to the Absolute</h4>
+    <p>What makes Jesus's teaching unique is that the path to the Absolute is not ascent but descent — not self‑realization but self‑emptying. The Greek term <em>kenosis</em> (emptying) from Philippians 2:7 captures this: "He emptied himself, taking the form of a slave."</p>
+
+    <p>This is not a diminishment of divinity but a radical paradox: the Absolute expresses itself by voluntarily laying aside the very attributes that define it. As the Church Fathers understood, Christ "was greater than himself and less than himself simultaneously" — the infinite taking on finitude, the eternal entering time, the unconditioned accepting conditions.</p>
+
+    <p>Jesus's own life embodies this trajectory: Birth in poverty — the Word becomes flesh not in a palace but a stable, emptying itself of heavenly glory. Baptism — "He must increase, I must decrease" (John 3:30) — the surrender of John the Baptist prefigures the greater surrender of Christ. Temptation in the wilderness — refusing to use divine power for personal gain, choosing hunger over miraculous bread. Gethsemane — "Not my will, but yours be done" (Luke 22:42) — the complete surrender of personal will. The Cross — the ultimate kenosis: "My God, my God, why have you forsaken me?" (Mark 15:34) — even the sense of divine presence is emptied.</p>
+
+    <h4>The Nature of the Divine Ground</h4>
+    <p>The deepest level of Jesus's teaching is not a state of consciousness but a mode of being that transcends consciousness itself. In the apophatic tradition, this is described by negation:</p>
+
+    <ul>
+      <li>God is not a being among beings, but Being itself</li>
+      <li>God is not an object of knowledge, but the ground in which all knowing occurs</li>
+      <li>God is not "good" in any comparative sense, but the source from which goodness flows</li>
+      <li>God is not "present" as opposed to absent, but the very condition of presence</li>
+    </ul>
+
+    <p>As Gregory of Nyssa wrote: "The true knowledge and vision of God consists in this — in seeing that He is invisible, because what we seek lies beyond all knowledge, being wholly separated by the darkness of incomprehensibility."</p>
+
+    <h4>The Path to the Absolute: Following the Kenotic Pattern</h4>
+    <p>Jesus's method is not meditation on being but radical self‑emptying love:</p>
+
+    <ul>
+      <li>"Take up your cross" — The ego must be crucified, not transcended through insight</li>
+      <li>"Lose your life to find it" (Matt 10:39) — The paradox at the heart of the teaching</li>
+      <li>"The last shall be first" — The Absolute is found not at the summit but in the depths</li>
+      <li>"Love your enemies" — The dissolution of the boundary between self and other, the ultimate emptying of the separate self</li>
+    </ul>
+
+    <h4>The Paradox of Teaching</h4>
+    <p>Like Nisargadatta's Absolute and Ramana's Self, the deepest level of Jesus's teaching cannot be fully articulated. The Gospel of John — the most mystical of the Gospels — uses paradox, metaphor, and "I am" sayings ("I am the bread," "I am the light," "I am the way") not to define but to point. As the early Alexandrian mystics understood, the term <em>mystikos</em> originally meant "one whose lips are sealed" — the initiate into mysteries that cannot be spoken.</p>
+
+    <p>Jesus himself says: "I have much more to say to you, but you cannot bear it now" (John 16:12). The fullness of the teaching is not withheld but is inherently unspeakable — it can only be lived, not taught. The Eucharist, the central ritual of Christianity, embodies this: bread and wine become body and blood not through explanation but through participation. The mystery is not understood; it is eaten.</p>
+
+    <h4>Final Understanding</h4>
+    <p>The deepest level of Jesus of Nazareth's teaching is that what you fundamentally are is not the separate self struggling toward God, but the divine life expressing itself as you. This is not pantheism — "all is God" — but panentheism: all is in God, and God is more than all. The Absolute is not an object to be found but the ground in which finding and losing, being and non‑being, occur.</p>
+
+    <p>As Jesus says in John's Gospel: "Before Abraham was, I am" (John 8:58). This is not a claim of historical precedence but of ontological priority — the "I am" that is before all temporal arising, the same "I am" that Nisargadatta points to as the doorway to the Absolute. For Jesus, this "I am" is not merely witnessed but surrendered — emptied into the Father's will, poured out for the world, and in that very emptying, revealed as what it always was: the love that is the innermost nature of reality.</p>
+
+    <p>The cross is the ultimate symbol: not suffering for its own sake, but the complete emptying of the separate self so that the divine life may be all in all. "It is finished" (John 19:30) — not the end of a life, but the completion of a pattern: the Absolute has fully expressed itself in human form, and in that expression, shown the way for all beings.</p>
+
+    <div class="tension-box">
+      <h4>Comparative Table · The Deepest Level Across Traditions</h4>
+      <div class="table-wrapper">
+        <table class="comparative-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Nisargadatta's Absolute</th>
+              <th>Jesus's Divine Ground</th>
+              <th>Ramana's Self</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Nature of deepest reality</td><td>Beyond consciousness, prior to "I am"</td><td>Beyond essence, known only through energies</td><td>Beyond creation itself, no world ever appeared</td></tr>
+            <tr><td>Path</td><td>Abiding in "I am," then dissolving it</td><td>Kenosis — self‑emptying love through the cross</td><td>Self‑inquiry — "Who am I?" tracing the "I" to its source</td></tr>
+            <tr><td>The self</td><td>Dissolves into pure awareness</td><td>Dies and rises as Christ‑life</td><td>Never existed — only the Self is</td></tr>
+            <tr><td>Relationship to world</td><td>Temporary modulation of the Absolute</td><td>Loved into being and redeemed through incarnation</td><td>Never created — Ajata Vada</td></tr>
+            <tr><td>Final state</td><td>"I am dead already"</td><td>"It is finished"</td><td>Sahaja Samadhi — the natural state</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>"That they all may be one; as you, Father, are in me, and I in you, that they also may be one in us."</p>
+      <cite>— John 17:21</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>"The kingdom of God is within you."</p>
+      <cite>— Luke 17:21 · "Tat Tvam Asi" · Chandogya Upanishad 6.8.7</cite>
+    </blockquote>
+
+    <h4>Love as the Substance of Being</h4>
+    <p>The ultimate identity (<em>tat tvam asi</em>) is not a cold philosophical abstraction. It is love (<em>agape</em>). In the Christian tradition, the love that flows between Father and Son is the Holy Spirit — the very substance of divine life. This corresponds to the Vedantic understanding that the <span class="sanskrit-term" title="The divine power of love; the essence of being">prema</span> (love) that pervades the universe is the very <em>rasa</em> (essence) of Brahman. The recognition of non-duality is not the end of love but the beginning of true love — love no longer contaminated by the ego's demand for something in return.</p>
+
+    <p>When Jesus says <em>"Love one another as I have loved you"</em><a class="biblical-ref" data-reference="John 15:12" title="John 15:12">[7]</a>, he is pointing to the love that flows from the Self, not the love that flows from the ego. Egoic love is always transactional: it gives in order to receive. Self-love (<em>atma-prema</em>) is unconditional because the Self is complete in itself. It needs nothing. When the ego dissolves, what remains is the natural, spontaneous love that is the very substance of being. This is the <span class="sanskrit-term" title="The divine play; the spontaneous activity of Brahman">lila</span> of the universe — not a mechanical process but a love-song sung by existence to itself.</p>
+
+
+
+    <p>The cross is the final act of love — the surrender of the ego for the sake of the Self. The resurrection is the revelation that this love was never absent; it was the very ground of the crucifixion itself. The One who dies and the One who rises are the same Self, playing all roles for the sake of its own delight. This is the supreme <span class="sanskrit-term" title="The great saying or proclamation of truth">mahavakya</span> of the Vedantic Messiah: <em>Tat Tvam Asi — That Thou Art.</em> Not "you are like God" or "you will become God" but <em>you are God</em>, have always been, will always be. The game of separation was a divine play; the recognition of unity is the return home.</p>
+
+    <blockquote>
+      <p>"Love one another as I have loved you."</p>
+      <cite>— John 15:12</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>"The essence of all beings is love. The entire universe is made of love."</p>
+      <cite>— Sri Nisargadatta Maharaj · I Am That</cite>
+    </blockquote>
+
+  </div>
+</section>
+
+<!-- TRANSITION TO NEXT ESSAY -->
+<div class="pullquote-section">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote">
+    <p class="pullquote-text">Return to The Hermeneutic Key to begin the journey anew.</p>
+    <p class="pullquote-attr"><a href="messiah-threshold.html">← The Hermeneutic Key</a></p>
+  </div>
+</div>
+
+<div class="chapter-nav">
+  <a href="../index.html" class="chapter-link">⌂ Home</a>
+  <span class="chapter-sep">✦</span>
+  <a href="messiah-threshold.html" class="chapter-link">The Hermeneutic Key</a>
+  <span class="chapter-sep">✦</span>
+  <a href="messiah-parables.html" class="chapter-link">Three Bridges</a>
+  <span class="chapter-sep">✦</span>
+  <a href="messiah-silence.html" class="chapter-link">The Cloud of Unknowing</a>
+  <span class="chapter-sep">✦</span>
+  <a href="messiah-mirror.html" class="chapter-link active">Tat Tvam Asi</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
+    <a href="messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+  </div>
+  <div class="footer-credit">Researched &amp; Composed</div>
+  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+</footer>
+
+<script>
+// Navigation toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+let navOpen = false;
+
+navToggle.addEventListener('click', () => {
+  navOpen = !navOpen;
+  navMenu.classList.toggle('open', navOpen);
+  navToggle.setAttribute('aria-expanded', navOpen);
+});
+
+// Close nav when clicking outside
+document.addEventListener('click', (e) => {
+  if (navOpen && !navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+    navOpen = false;
+    navMenu.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+// Initialize theme based on localStorage or system preference
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (savedTheme) {
+  html.setAttribute('data-theme', savedTheme);
+} else if (systemPrefersDark) {
+  html.setAttribute('data-theme', 'dark');
+} else {
+  html.setAttribute('data-theme', 'light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+
+// Back to top button
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(element => {
+  observer.observe(element);
+});
+</script>
+
+</body>
+</html>

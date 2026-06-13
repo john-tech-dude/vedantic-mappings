@@ -1,22 +1,32 @@
 # Vedantic Mappings
 
-Verified Cartographies of the Non-Dual Path
+Cartographies of the Non-Dual Path
 
-This project contains comprehensive, single-page HTML cartographies documenting the teachings of two great sages of the Advaita Vedanta tradition: Ramana Maharshi and Nisargadatta Maharaj. Each cartography provides a complete map from mistaken identity to liberation, grounded in scriptural sources and presented with scholarly precision.
+This project contains comprehensive, single-page HTML cartographies documenting the teachings of Ramana Maharshi, Nisargadatta Maharaj, The Vedantic Messiah, and Taoism. Each cartography provides a complete map from mistaken identity to liberation, grounded in scriptural sources and presented with scholarly precision.
 
 ## 📁 Project Structure
 
 ```
 vedantic-mappings/
 ├── index.html                      # Navigation landing page
-├── ramana-maharshi.html           # Ramana Maharshi cartography
-├── nisargadatta-maharaj.html     # Nisargadatta Maharaj cartography
-├── messiah-mirror.html            # Messiah mirror cartography
-├── messiah-parables.html          # Messiah parables cartography
-├── messiah-silence.html           # Messiah silence cartography
-├── messiah-threshold.html         # Messiah threshold cartography
-├── vedanta-messiah.html          # Vedanta Messiah cartography
-└── README.md                      # This file
+├── README.md                       # This file
+├── .gitignore                      # Git configuration
+├── advaita-vedanta/                # Advaita Vedanta series
+│   ├── gaudapada.html              # Gaudapada (lineage predecessor)
+│   ├── adi-shankara.html           # Adi Shankara (lineage predecessor)
+│   ├── ramana-maharshi.html        # Ramana Maharshi cartography
+│   └── nisargadatta-maharaj.html   # Nisargadatta Maharaj cartography
+├── messiah/                         # Messiah series
+│   ├── messiah-threshold.html       # Hermeneutic Key (primary entry)
+│   ├── messiah-parables.html        # Three Bridges
+│   ├── messiah-silence.html         # The Cloud of Unknowing
+│   └── messiah-mirror.html          # Tat Tvam Asi
+│   (vedanta-messiah.html → archived in /archive/ as legacy monolithic 9-aspect version)
+└── taoism/                          # Taoism series
+    ├── taoism-threshold.html        # The Unnamed Way
+    ├── taoism-practices.html         # The Uncarved Block
+    ├── taoism-butterfly.html        # The Butterfly Dream
+    └── taoism-return.html           # Returning to the Root
 ```
 
 ## 🌐 Usage
@@ -25,9 +35,7 @@ vedantic-mappings/
 
 1. **Start Here**: Open `index.html` in any modern web browser
 2. **Navigate**: Click on either cartography card to explore
-3. **Direct Access**: You can also open individual HTML files directly:
-   - `ramana-maharshi.html` — Ramana Maharshi's teaching
-   - `nisargadatta-maharaj.html` — Nisargadatta Maharaj's teaching
+3. **Direct Access**: You can also open individual HTML files directly
 
 ### Features
 
@@ -104,6 +112,55 @@ vedantic-mappings/
 
 ---
 
+### III. The Vedantic Messiah — Gospel & Upanishad
+
+**Teaching**: Non-Dual Metaphysics in Christian Mysticism
+
+**Key Features**:
+- Nine dimensions mapping Gospel events to Vedantic concepts
+- Hermeneutical key for interpreting Jesus through Advaita
+- Three bridges between Christian and Vedantic understanding
+- The Cloud of Unknowing as apophatic practice
+- Tat Tvam Asi as the supreme identity
+- Biblical timeline with scriptural citations
+- Comparative glossary of terms
+
+**Primary Sources Documented**:
+- Gospel narratives (Matthew, Mark, Luke, John)
+- Pauline epistles
+- Upanishadic traditions (Chandogya, Brihadaranyaka, Mandukya)
+- Christian mystical tradition
+
+---
+
+### IV. Taoism — The Unnamed Way
+
+**Teaching**: Apophatic Taoist Philosophy
+
+**Lineage**: Lao Tzu (Tao Te Ching) and Zhuangzi
+
+**Series Structure** (four interconnected pages):
+1. **The Unnamed Way** - Apophatic threshold and the Tao that cannot be named
+2. **The Uncarved Block** - Wu wei, Te, and the practice of simplicity
+3. **The Butterfly Dream** - Zhuangzi's radical epistemology and identity collapse
+4. **Returning to the Root** - Death of ego, sage characteristics, and final recognition
+
+**Key Features**:
+- Complete Tao Te Ching interpretation in apophatic context
+- Zhuangzi's parables as non-dual teaching method
+- Chinese term tooltips with elegant styling
+- Comparative analysis with Advaita and Christian mysticism
+- Four-page series with chapter navigation
+- Tao Te Ching chapter references throughout
+
+**Primary Sources Documented**:
+- Tao Te Ching (Lao Tzu)
+- Zhuangzi (Chuang Tzu)
+- I Ching (Book of Changes)
+- Comparative connections to Advaita Vedanta and Christian mysticism
+
+---
+
 ## 🎨 Design & Technical Details
 
 ### Typography
@@ -162,7 +219,12 @@ vedantic-mappings/
 
 ## ✨ Recent Enhancements
 
-### Navigation & UX Improvements
+### Navigation Unification (2026)
+- All cartographies now use the consistent floating **nav-compass** (hamburger + dropdown) instead of legacy sidebars. This applies to Ramana Maharshi and Nisargadatta Maharaj (the last two holdouts). Full internal section jumps + cross-series links in every nav.
+- Footers and chapter navigation standardized for better interlinking between the four maps.
+- Design tokens on the two main Advaita pages harmonized toward the polished Taoism/Messiah set for visual cohesion.
+
+### Previous Navigation & UX Improvements
 - Fixed sidebar navigation to be fully accessible from left side of screen
 - Added responsive collapse indicator on mobile devices
 - Improved progress bar tracking

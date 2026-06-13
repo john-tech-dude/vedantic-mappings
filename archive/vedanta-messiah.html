@@ -173,8 +173,8 @@ body {
   top: 0; left: 0; right: 0;
   z-index: 1000;
   background: rgba(13, 10, 20, 0.88);
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-nav);
   padding: 0 2rem;
   display: flex;
@@ -263,6 +263,7 @@ body {
   inset: 0;
   z-index: 999;
   background: rgba(13, 10, 20, 0.96);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
@@ -306,6 +307,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 .theme-toggle:hover {
@@ -318,84 +320,7 @@ body {
   fill: currentColor;
 }
 
-/* ══════════ SIDEBAR NAVIGATION ══════════ */
-.sidebar {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  height: calc(100vh - 60px);
-  width: 260px;
-  background: var(--bg-surface);
-  border-right: 1px solid var(--border-subtle);
-  z-index: 100;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar.collapsed {
-  transform: translateX(-100%);
-}
-
-.sidebar-toggle {
-  position: fixed;
-  top: 80px;
-  left: 24px;
-  width: 40px;
-  height: 40px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  transition: all 0.2s ease, opacity 0.3s ease;
-  z-index: 900;
-  box-shadow: var(--shadow-card);
-}
-
-.sidebar-toggle:hover {
-  background: var(--gold-glow);
-  border-color: var(--gold);
-  transform: scale(1.05);
-}
-
-.sidebar-header {
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid var(--border-subtle);
-  min-height: 70px;
-  background: var(--bg-deep);
-  flex-shrink: 0;
-  position: relative;
-}
-
-.sidebar-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg-deep);
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.sidebar-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  letter-spacing: 0.1em;
-  white-space: nowrap;
-}
+/* (old sidebar + toggle CSS removed - unified nav-compass now in use) */
 
 .sidebar-close-btn {
   position: absolute;
@@ -762,17 +687,15 @@ header.hero {
   margin-bottom: 10px;
   transition: var(--transition);
 }
+.node .sanskrit-term,.biblical-ref{
+  cursor:help;
+  border-bottom:1px dotted var(--gold-deep);
+  text-decoration:none;
+}
 .node .sanskrit-term {
-  color: var(--sanskrit);
   font-style: italic;
   letter-spacing: 0.02em;
-  cursor: help;
-  border-bottom: 1px dotted transparent;
   transition: var(--transition);
-}
-.node .sanskrit-term:hover {
-  border-bottom-color: var(--sanskrit);
-  color: var(--gold-light);
 }
 
 .note {
@@ -1239,25 +1162,19 @@ header.hero {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ══════════ FOOTER ══════════ */
-.site-footer {
-  text-align: center;
-  padding: 3rem 2rem 2rem;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  border-top: 1px solid var(--border-subtle);
-  margin-top: 2rem;
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-}
-.site-footer .footer-om {
-  font-size: 2rem;
-  color: var(--om);
-  opacity: 0.5;
-  display: block;
-  margin-bottom: 0.6rem;
-}
+/* FOOTER */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 2rem;text-align:center;}
+.footer-emblem{width:36px;height:36px;margin:0 auto 1.5rem;position:relative;}
+.footer-emblem-outer{position:absolute;inset:0;border-radius:50%;border:1px solid var(--border-strong);}
+.footer-emblem-inner{position:absolute;inset:8px;border-radius:50%;border:1px solid var(--border);}
+[data-theme="dark"] .footer-emblem-outer{border-color:var(--gold);}
+[data-theme="dark"] .footer-emblem-inner{border-color:var(--gold-light);}
+.footer-name{font-family:'Cinzel',serif;font-size:.92rem;letter-spacing:.2em;color:var(--gold);margin-bottom:.5rem;}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--stone);font-size:.95rem;margin-bottom:2rem;}
+.footer-links{display:flex;justify-content:center;gap:2rem;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem;}
+.footer-links a{color:var(--stone);text-decoration:none;transition:color .3s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-credit{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.3em;color:var(--stone);text-transform:uppercase;opacity:.4;}
 
 /* ══════════ BACK TO TOP ══════════ */
 .back-to-top {
@@ -1491,7 +1408,7 @@ header.hero {
 .focus-mode .section-map,
 .focus-mode .theme-toggle,
 .focus-mode .back-to-top,
-.focus-mode .site-footer,
+.focus-mode .footer,
 .focus-mode .legend,
 .focus-mode .glossary-section,
 .focus-mode #further-reading,
@@ -1633,127 +1550,52 @@ header.hero {
 </head>
 <body>
 
-<!-- ══════════ NAVIGATION ══════════ -->
-<nav class="top-nav" id="topNav">
-  <div class="nav-brand" onclick="scrollToTop()">
-    <span class="om-symbol">ॐ</span> The Non-Dual Gospel
-  </div>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
+<!-- NAVIGATION COMPASS (unified with the rest of the site) -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
-</nav>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">The Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <div class="nav-divider"></div>
 
-<div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <a href="#hero" data-mobile-link>Home</a>
-  <a href="#introduction" data-mobile-link>Introduction</a>
-  <div class="mobile-nav-group">
-    <span class="mobile-nav-group-label">The Nine Aspects</span>
-    <a href="#section1" data-mobile-link>I. Father as Brahman</a>
-    <a href="#section2" data-mobile-link>II. Son of Man as Ego</a>
-    <a href="#section3" data-mobile-link>III. Atman as I AM</a>
-    <a href="#section4" data-mobile-link>IV. Kingdom Within</a>
-    <a href="#section5" data-mobile-link>V. Cross as Ego-Death</a>
-    <a href="#section6" data-mobile-link>VI. Holy Spirit</a>
-    <a href="#section7" data-mobile-link>VII. Transfiguration</a>
-    <a href="#section8" data-mobile-link>VIII. Crucifixion & Ascension</a>
-    <a href="#section9" data-mobile-link>IX. Tat Tvam Asi</a>
-  </div>
-  <a href="#conclusion-rest" data-mobile-link>The Resting Place</a>
-</div>
+    <div class="nav-section-title">This Framing (9 Aspects)</div>
+    <a href="#hero" class="nav-item active"><span class="nav-item-icon">◈</span><span>Introduction</span></a>
+    <a href="#section1" class="nav-item"><span class="nav-item-icon">I</span><span>Father as Nirguna Brahman</span></a>
+    <a href="#section2" class="nav-item"><span class="nav-item-icon">II</span><span>Son of Man as Ego</span></a>
+    <a href="#section3" class="nav-item"><span class="nav-item-icon">III</span><span>Atman as the I AM</span></a>
+    <a href="#section4" class="nav-item"><span class="nav-item-icon">IV</span><span>Kingdom of God Within</span></a>
+    <a href="#section5" class="nav-item"><span class="nav-item-icon">V</span><span>Cross as Ego-Death</span></a>
+    <a href="#section6" class="nav-item"><span class="nav-item-icon">VI</span><span>Holy Spirit as Shakti</span></a>
+    <a href="#section7" class="nav-item"><span class="nav-item-icon">VII</span><span>Transfiguration &amp; Jnana</span></a>
+    <a href="#section8" class="nav-item"><span class="nav-item-icon">VIII</span><span>Crucifixion, Resurrection, Ascension</span></a>
+    <a href="#section9" class="nav-item"><span class="nav-item-icon">IX</span><span>Tat Tvam Asi — Agape</span></a>
+    <a href="#conclusion-rest" class="nav-item"><span class="nav-item-icon">◉</span><span>The Resting Place</span></a>
 
-<!-- ══════════ SIDEBAR TABLE OF CONTENTS ══════════ -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">ॐ</div>
-    <div class="sidebar-title">Contents</div>
-    <button class="sidebar-close-btn" id="sidebarClose" aria-label="Close sidebar">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-    </button>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="sidebar-nav-section">
-      <a href="#introduction" class="sidebar-nav-item" data-sidebar-link data-section="introduction">
-        <span class="sidebar-nav-item-icon">◈</span>
-        <span class="sidebar-nav-item-text">Introduction</span>
-      </a>
-    </div>
-    <div class="sidebar-nav-section">
-      <div class="sidebar-nav-section-title">The Nine Aspects</div>
-      <a href="#section1" class="sidebar-nav-item" data-sidebar-link data-section="section1">
-        <span class="sidebar-nav-item-icon">I</span>
-        <span class="sidebar-nav-item-text">The Father as Nirguna Brahman</span>
-      </a>
-      <a href="#section2" class="sidebar-nav-item" data-sidebar-link data-section="section2">
-        <span class="sidebar-nav-item-icon">II</span>
-        <span class="sidebar-nav-item-text">The Son of Man as the Ego</span>
-      </a>
-      <a href="#section3" class="sidebar-nav-item" data-sidebar-link data-section="section3">
-        <span class="sidebar-nav-item-icon">III</span>
-        <span class="sidebar-nav-item-text">Atman as the Universal I AM</span>
-      </a>
-      <a href="#section4" class="sidebar-nav-item" data-sidebar-link data-section="section4">
-        <span class="sidebar-nav-item-icon">IV</span>
-        <span class="sidebar-nav-item-text">The Kingdom of God Within</span>
-      </a>
-      <a href="#section5" class="sidebar-nav-item" data-sidebar-link data-section="section5">
-        <span class="sidebar-nav-item-icon">V</span>
-        <span class="sidebar-nav-item-text">The Cross as Destruction of Ahamkara</span>
-      </a>
-      <a href="#section6" class="sidebar-nav-item" data-sidebar-link data-section="section6">
-        <span class="sidebar-nav-item-icon">VI</span>
-        <span class="sidebar-nav-item-text">The Holy Spirit as Shakti</span>
-      </a>
-      <a href="#section7" class="sidebar-nav-item" data-sidebar-link data-section="section7">
-        <span class="sidebar-nav-item-icon">VII</span>
-        <span class="sidebar-nav-item-text">The Transfiguration and Jnana Yoga</span>
-      </a>
-      <a href="#section8" class="sidebar-nav-item" data-sidebar-link data-section="section8">
-        <span class="sidebar-nav-item-icon">VIII</span>
-        <span class="sidebar-nav-item-text">Crucifixion, Resurrection, and Ascension</span>
-      </a>
-      <a href="#section9" class="sidebar-nav-item" data-sidebar-link data-section="section9">
-        <span class="sidebar-nav-item-icon">IX</span>
-        <span class="sidebar-nav-item-text">Tat Tvam Asi – Agape – The Supreme Identity</span>
-      </a>
-    </div>
-    <div class="sidebar-nav-section">
-      <div class="sidebar-nav-section-title">Appendix</div>
-      <a href="#conclusion-rest" class="sidebar-nav-item" data-sidebar-link data-section="conclusion-rest">
-        <span class="sidebar-nav-item-icon">◉</span>
-        <span class="sidebar-nav-item-text">The Resting Place</span>
-      </a>
-      <a href="#glossary" class="sidebar-nav-item" data-sidebar-link data-section="glossary">
-        <span class="sidebar-nav-item-icon">◉</span>
-        <span class="sidebar-nav-item-text">Glossary</span>
-      </a>
-      <a href="#further-reading" class="sidebar-nav-item" data-sidebar-link data-section="further-reading">
-        <span class="sidebar-nav-item-icon">◉</span>
-        <span class="sidebar-nav-item-text">Further Reading</span>
-      </a>
-    </div>
-  </nav>
-  <div class="sidebar-progress">
-    <div class="sidebar-progress-bar">
-      <div class="sidebar-progress-fill" id="sidebarProgressFill"></div>
-    </div>
-    <div class="sidebar-progress-text">
-      <span>Reading</span>
-      <span id="sidebarProgressPercent">0%</span>
-    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Main Vedantic Messiah Series</div>
+    <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>The Hermeneutic Key</span></a>
+    <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">📖</span><span>Three Bridges</span></a>
+    <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◈</span><span>The Cloud of Unknowing</span></a>
+    <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>Tat Tvam Asi</span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Advaita Vedanta</div>
+    <a href="../advaita-vedanta/ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
+    <a href="../advaita-vedanta/nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
+
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Taoism</div>
+    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>The Unnamed Way</span></a>
   </div>
 </div>
 
-<button class="sidebar-toggle" id="sidebarToggle" aria-label="Open table of contents">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
 </button>
-
-<!-- ══════════ THEME TOGGLE ══════════ -->
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  </svg>
-  <span id="toggle-text">Light</span>
-</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
 <!-- ══════════ HERO ══════════ -->
 <div class="main-content">
@@ -2486,7 +2328,7 @@ header.hero {
       <span class="definition">Knowledge; direct, intuitive wisdom of one's true nature as Brahman.</span>
     </div>
     <div class="glossary-item">
-      <span class="term">Karana-sarira</span>
+      <span class="term">Karana Sharira</span>
       <span class="definition">The causal body; the seed-state of individuality, the repository of tendencies and impressions.</span>
     </div>
     <div class="glossary-item">
@@ -2522,7 +2364,7 @@ header.hero {
       <span class="definition">The witness; the observing consciousness that remains untouched by all experiences.</span>
     </div>
     <div class="glossary-item">
-      <span class="term">Sukshma-sarira</span>
+      <span class="term">Sukshma Sharira</span>
       <span class="definition">The subtle body; the inner vehicle of mind, intellect, and vital energies.</span>
     </div>
     <div class="glossary-item">
@@ -2568,14 +2410,19 @@ header.hero {
   </ul>
 </div>
 
-<!-- ══════════ FOOTER ══════════ -->
-<footer class="site-footer">
-  <span class="footer-om">ॐ</span>
-  <p>The Non-Dual Gospel — A Contemplative Exegesis</p>
-  <p style="font-size:0.75rem;margin-top:0.3rem;">
-    Dedicated to the earnest seeker who looks beyond names and forms
-    to the one Light that shines in every heart.
-  </p>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="../advaita-vedanta/ramana-maharshi.html">Ramana Maharshi</a>
+    <a href="../advaita-vedanta/nisargadatta-maharaj.html">Nisargadatta Maharaj</a>
+    <a href="messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+  </div>
+  <div class="footer-credit">Researched & Composed</div>
 </footer>
 </div>
 

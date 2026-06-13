@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Taoism — Returning to the Root. The eternal Tao, death of the ego, the sage abiding in the natural state, and the final recognition of non‑duality." />
+<title>Taoism · Returning to the Root — The Eternal Tao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================
+   TAOISM — RETURNING TO THE ROOT (Final Recognition)
+   Styled identically to Vedantic Messiah series
+   ===================================================== */
+
+:root {
+  --bg: #0c0f14;
+  --bg2: #12161c;
+  --surface: #181c23;
+  --surface2: #21262e;
+  --ink: #eef2f8;
+  --ink2: #9aaebf;
+  --stone: #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold: #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.08);
+  --sun-glow: rgba(212, 175, 55, 0.18);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.03);
+  --shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 40px var(--gold-glow);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+[data-theme="dark"] {
+  --bg: #0c0f14;
+  --bg2: #12161c;
+  --surface: #181c23;
+  --surface2: #21262e;
+  --ink: #eef2f8;
+  --ink2: #9aaebf;
+  --stone: #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold: #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+}
+
+[data-theme="light"] {
+  --bg: #f8f5ef;
+  --bg2: #f0ebe0;
+  --surface: #ffffff;
+  --surface2: #f5f0e8;
+  --ink: #1a1510;
+  --ink2: #4a3f30;
+  --stone: #7a6e5e;
+  --stone-light: #9a8e7a;
+  --gold: #9a7a3a;
+  --gold-light: #b8964a;
+  --gold-deep: #7a5a22;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+  border-radius: 2px;
+}
+
+::selection { background: rgba(154,122,58,0.20); color: var(--ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-bounce {
+  0%,100% { opacity: 1; transform: scaleY(1); }
+  50%     { opacity: 0.3; transform: scaleY(0.5); }
+}
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.04); }
+}
+@keyframes mandalaRotate { to { transform: rotate(360deg); } }
+@keyframes mandala-breathe {
+  0%,100% { opacity: 0.35; transform: translate(-50%,-50%) scale(1); }
+  50%     { opacity: 0.75; transform: translate(-50%,-50%) scale(1.012); }
+}
+@keyframes ripple-out {
+  0%   { opacity: 0.55; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0;    transform: translate(-50%,-50%) scale(4.2); }
+}
+@keyframes emblem-pulse {
+  0%,100% { box-shadow: 0 0 18px 4px var(--sun-glow); }
+  50%     { box-shadow: 0 0 32px 10px var(--sun-glow); }
+}
+@keyframes lineReveal {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes diamondReveal {
+  from { opacity: 0; transform: rotate(45deg) scale(0); }
+  to   { opacity: 1; transform: rotate(45deg) scale(1); }
+}
+@keyframes ambientDrift {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; }
+  33%     { transform: translate(2%,-1%) scale(1.02); opacity: 0.65; }
+  66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.35; }
+}
+
+@keyframes yinYangSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes yinYangFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes qiPulse {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.28; }
+}
+
+@keyframes emblemGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.12)); }
+  50% { filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.22)); }
+}
+
+/* Navigation Compass */
+.nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+.nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 240px; }
+.nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+.nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+.nav-item.active { color: var(--gold-light); background: rgba(154,122,58,0.08); border-left-color: var(--gold); font-weight: 500; }
+.nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
+.nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+/* Theme Toggle */
+.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+.theme-toggle:active { transform: scale(0.95); }
+.theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+[data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+/* Back to Top */
+.back-to-top { position: fixed; bottom: 1.5rem; right: 5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; background: radial-gradient(ellipse 100% 90% at 50% 30%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+[data-theme="dark"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 30%, var(--bg2) 0%, var(--bg) 40%, #0a0d12 70%, var(--bg) 100%); }
+[data-theme="light"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 30%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 20% 40%, rgba(154,122,58,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 55% at 80% 60%, rgba(154,122,58,0.05) 0%, transparent 70%);
+  animation: ambientDrift 18s ease-in-out infinite;
+  pointer-events: none; z-index: 1;
+}
+.hero-mountain {
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 120%; height: 52%;
+  background: linear-gradient(175deg, transparent 20%, rgba(154,122,58,0.05) 50%, rgba(154,122,58,0.18) 80%);
+  clip-path: polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);
+  opacity: 0.14;
+}
+.mandala-ring {
+  position: absolute; top: 50%; left: 50%;
+  border-radius: 50%; border: 1px solid var(--gold);
+  transform: translate(-50%,-50%); pointer-events: none;
+  animation: mandala-breathe 12s ease-in-out infinite;
+}
+.mandala-ring:nth-of-type(1) { width: 240px; height: 240px; opacity: 0.18; }
+.mandala-ring:nth-of-type(2) { width: 380px; height: 380px; opacity: 0.12; animation-delay: 1.5s; animation-duration: 14s; }
+.mandala-ring:nth-of-type(3) { width: 540px; height: 540px; opacity: 0.08; animation-delay: 3s; animation-duration: 16s; }
+.mandala-ring:nth-of-type(4) { width: 720px; height: 720px; opacity: 0.05; animation-delay: 4.5s; animation-duration: 18s; }
+.hero-ripple {
+  position: absolute; top: 50%; left: 50%;
+  width: 180px; height: 180px; border-radius: 50%;
+  border: 1px solid var(--gold); transform: translate(-50%,-50%);
+  pointer-events: none; animation: ripple-out 9s ease-out infinite;
+}
+.hero-ripple:nth-of-type(2) { animation-delay: 3s; }
+.hero-ripple:nth-of-type(3) { animation-delay: 6s; }
+
+.hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+
+/* ===== PREMIUM YIN-YANG EMBLEM ===== */
+.hero-emblem {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, emblemGlow 5s ease-in-out infinite;
+}
+.hero-emblem svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: yinYangFloat 5s ease-in-out infinite;
+}
+.hero-emblem .yy-spin {
+  transform-origin: 100px 100px;
+  animation: yinYangSpin 90s linear infinite;
+}
+.hero-emblem .yy-qi {
+  animation: qiPulse 7s ease-in-out infinite;
+}
+
+/* Light mode: darken yinyang SVG for visibility */
+[data-theme="light"] .hero-emblem svg circle,
+[data-theme="light"] .hero-emblem svg line,
+[data-theme="light"] .hero-emblem svg path {
+  opacity: 1 !important;
+}
+[data-theme="light"] .hero-emblem svg circle[stroke*="url"] {
+  opacity: 0.9 !important;
+}
+[data-theme="light"] .hero-emblem svg g[stroke*="#d4af37"] {
+  opacity: 0.8 !important;
+}
+/* ==================================== */
+
+.hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(154,122,58,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+[data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196,160,96,0.25); }
+.hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--gold-deep); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+.hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 580px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
+[data-theme="dark"] .hero-quote { color: var(--stone-light); }
+.hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone-light); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; }
+.hero-divider {
+  display: flex; align-items: center; gap: 1.25rem;
+  margin: 0 auto 2.5rem; width: fit-content;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+  position: relative; z-index: 2;
+}
+.hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
+.hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); transform-origin: right; }
+.hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+.hero-scroll-cue {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+  cursor: pointer; z-index: 2;
+  transition: transform 0.3s var(--ease-expo);
+}
+.hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+.hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--gold-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+/* Sections */
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; }
+.section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
+.section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
+
+.section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); margin: 0 auto 20px; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
+.section-separator.visible { opacity: 1; transform: scaleX(1); }
+.section-separator::after { content: '✦'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: var(--gold); font-size: 0.72rem; background: var(--bg); padding: 0 6px; }
+
+.text-reveal { overflow: hidden; display: block; }
+.text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
+.visible .text-reveal-inner { transform: translateY(0); }
+
+.content-section { padding: 80px 24px; max-width: 780px; margin: 0 auto; }
+.content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+.content-essay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
+.content-essay h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.75rem; }
+.content-essay blockquote { border-left: 3px solid var(--gold); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+.content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold); opacity: 0.10; line-height: 1; }
+.content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+
+.chinese-term, .sanskrit-term, .biblical-ref {
+  cursor: help;
+  border-bottom: 1px dotted var(--gold-deep);
+  text-decoration: none;
+}
+
+.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.scripture-panel { background: var(--surface); padding: 32px; }
+.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+.scripture-panel:hover { background: var(--surface2); }
+
+.pullquote-section { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+[data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%); }
+[data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+.pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+@keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+.pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
+.pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+.pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+.pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.pullquote-attr a:hover { color: var(--gold); }
+
+.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+.footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+.footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+.footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+.footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+.footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-link:hover { color: var(--gold); }
+.chapter-sep { color: var(--gold-deep); opacity: 0.3; }
+.chapter-link.active { color: var(--gold); font-weight: 500; }
+
+
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) { 
+  .nav-menu { min-width: 180px; } 
+  .back-to-top { right: 1.5rem; bottom: 5rem; } 
+  .footer-links { gap: 1.5rem; } 
+  .scripture-panels { grid-template-columns: 1fr; } 
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); } 
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .fade-in { opacity: 1 !important; transform: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION COMPASS (same as previous pages) -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">The Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Advaita Vedanta</div>
+    <a href="../advaita-vedanta/ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
+    <a href="../advaita-vedanta/nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Comparative</div>
+    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Taoism · Four Pages</div>
+    <a href="taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>I · The Unnamed Way</span></a>
+    <a href="taoism-practices.html" class="nav-item"><span class="nav-item-icon">🌱</span><span>II · The Uncarved Block</span></a>
+    <a href="taoism-butterfly.html" class="nav-item"><span class="nav-item-icon">🦋</span><span>III · The Butterfly Dream</span></a>
+    <a href="taoism-return.html" class="nav-item active"><span class="nav-item-icon">🍃</span><span>IV · Returning to the Root</span></a>
+  </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-mountain"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <p class="hero-eyemark">Returning to the Root</p>
+  <div class="hero-emblem">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="yyGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <radialGradient id="yangGrad" cx="60%" cy="30%" r="55%">
+          <stop offset="0%" stop-color="#e6c86e" stop-opacity="0.14"/>
+          <stop offset="60%" stop-color="#d4af37" stop-opacity="0.06"/>
+          <stop offset="100%" stop-color="#b8960c" stop-opacity="0.02"/>
+        </radialGradient>
+        <radialGradient id="yinGrad" cx="40%" cy="70%" r="55%">
+          <stop offset="0%" stop-color="#b8960c" stop-opacity="0.10"/>
+          <stop offset="60%" stop-color="#d4af37" stop-opacity="0.04"/>
+          <stop offset="100%" stop-color="#b8960c" stop-opacity="0.01"/>
+        </radialGradient>
+        <linearGradient id="yyStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b8960c" stop-opacity="0.85"/>
+          <stop offset="50%" stop-color="#d4af37" stop-opacity="0.65"/>
+          <stop offset="100%" stop-color="#e6c86e" stop-opacity="0.45"/>
+        </linearGradient>
+      </defs>
+
+      <circle cx="100" cy="100" r="97" fill="none" stroke="url(#yyStroke)" stroke-width="0.4" opacity="0.25"/>
+
+      <g stroke="#d4af37" stroke-width="1" opacity="0.18" stroke-linecap="round">
+        <line x1="100" y1="1" x2="100" y2="8"/>
+        <line x1="100" y1="199" x2="100" y2="192"/>
+        <line x1="1" y1="100" x2="8" y2="100"/>
+        <line x1="199" y1="100" x2="192" y2="100"/>
+      </g>
+
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#d4af37" stroke-width="0.7" opacity="0.45"/>
+      <circle cx="100" cy="100" r="84" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.2"/>
+
+      <g class="yy-spin">
+        <path d="M 100,10
+                 A 90,90 0 0,1 100,190
+                 A 45,45 0 0,0 100,100
+                 A 45,45 0 0,1 100,10
+                 Z"
+              fill="url(#yangGrad)" stroke="#d4af37" stroke-width="0.8" opacity="0.65"/>
+
+        <path d="M 100,10
+                 A 45,45 0 0,0 100,100
+                 A 45,45 0 0,1 100,190
+                 A 90,90 0 0,0 100,10
+                 Z"
+              fill="url(#yinGrad)" stroke="#d4af37" stroke-width="0.8" opacity="0.65"/>
+
+        <circle cx="100" cy="145" r="11" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="100" cy="145" r="4.5" fill="#d4af37" opacity="0.35" filter="url(#yyGlow)"/>
+
+        <circle cx="100" cy="55" r="11" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.4"/>
+        <circle cx="100" cy="55" r="4.5" fill="#e6c86e" opacity="0.45" filter="url(#yyGlow)"/>
+      </g>
+
+      <circle cx="100" cy="100" r="3.5" fill="#e6c86e" opacity="0.5" filter="url(#yyGlow)"/>
+      <circle cx="100" cy="100" r="1.5" fill="#fff" opacity="0.3"/>
+
+      <g class="yy-qi" stroke="#d4af37" stroke-width="0.35" fill="none" stroke-linecap="round">
+        <path d="M100,2 Q138,45 100,100 Q62,155 100,198"/>
+        <path d="M2,100 Q45,62 100,100 Q155,138 198,100"/>
+      </g>
+
+      <circle cx="100" cy="100" r="20" fill="none" stroke="#d4af37" stroke-width="0.25" opacity="0.1"/>
+    </svg>
+  </div>
+  <!-- END YIN-YANG EMBLEM -->
+  <h1 class="hero-title">Returning to the Root</h1>
+  <p class="hero-subtitle">The Eternal Tao · The Sage · The Natural State</p>
+  <p class="hero-quote">"Returning to the root is stillness. Stillness is returning to the mandate. The mandate is the eternal. Knowing the eternal is illumination."</p>
+  <p class="hero-quote-attr">— Tao Te Ching, Chapter 16</p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <div class="hero-scroll-cue" onclick="document.getElementById('introduction').scrollIntoView({behavior:'smooth'})">
+    <span>Enter</span><div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- INTRODUCTION: THE ETERNAL TAO -->
+<section class="content-section fade-in" id="intro">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Eternal Tao</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">That Which Never Arrives nor Departs</span></span></h2>
+    <p>The Ground of All Being</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The Tao that can be named is not the eternal Tao. Yet the eternal Tao is not a distant abstraction. It is the very ground of your awareness right now — the silent, unchanging presence that witnesses every thought, every sensation, every dream. To “return to the root” is to cease identifying with the transient waves of experience and to abide as the ocean itself.</p>
+
+    <p>Lao Tzu describes this return in Chapter 16: “Empty the self completely; embrace perfect peace. The ten thousand things rise and fall while the Self watches their return. They grow and flourish, then return to the root. Returning to the root is stillness. Stillness is returning to the mandate. The mandate is the eternal. Knowing the eternal is illumination.”</p>
+
+    <p>This is the Taoist equivalent of the Advaitin recognition of the Self (<em>Atman</em>) as eternal, birthless, deathless, and of the Christian teaching that “Before Abraham was, I AM.” The eternal Tao is not a being among beings; it is the being of all beings. To know it is not to acquire new information but to recognize what has always been the case: you are not the body, not the mind, not the personality — you are the root itself.</p>
+
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Tao Te Ching · Chapter 16</div>
+        <p class="scripture-panel-text">“Empty the self completely; embrace perfect peace. The ten thousand things rise and fall while the Self watches their return. Returning to the root is stillness.”</p>
+        <p class="scripture-panel-ref">— Lao Tzu</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">John 8:58 · Advaita Reading</div>
+        <p class="scripture-panel-text">“Before Abraham was, I AM.” — The eternal witness that never became a person and never will cease.</p>
+        <p class="scripture-panel-ref">— Gospel of John</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESSAY: THE DEATH OF THE EGO (WU WO) -->
+<section class="content-section fade-in" id="ego-death">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Death of the Ego</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Wu Wo · No‑Self</span></span></h2>
+    <p>The Root of All Suffering</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>In Taoism, the root of suffering is not sin, ignorance, or karma — it is the false sense of a separate self (<span class="chinese-term" title="No‑self; the absence of a fixed ego">wu wo</span>, 無我). The ego is the “carved block” — a limited, defended, grasping identity that believes it must protect itself, accumulate possessions, and control outcomes. The sage, by contrast, has “returned to the uncarved block” — the self that is no‑self.</p>
+
+    <p>Zhuangzi describes this as the “death of the heart‑mind” — not the annihilation of awareness, but the dissolution of the false sense of a separate subject. When the ego dies, what remains is not a blank void but the luminous, responsive, effortless presence of the Tao itself. This is the “natural state” (<em>sahaja</em> in Advaita) and the “new creation” in Christianity.</p>
+
+    <p>Lao Tzu says: “The reason I have great trouble is that I have a self. If I have no self, what trouble do I have?” (Tao Te Ching, Chapter 13). This is the same teaching as the Buddha’s <em>anatta</em> (no‑self) and Ramana Maharshi’s “Who am I?” inquiry. The ego is not a real entity; it is a habit of identification. When that habit dissolves, the root is revealed.</p>
+
+    <blockquote>
+      <p>“The reason I have great trouble is that I have a self. If I have no self, what trouble do I have?”</p>
+      <cite>— Tao Te Ching, Chapter 13</cite>
+    </blockquote>
+    <blockquote>
+      <p>“He who knows others is wise; he who knows himself is enlightened. He who conquers others has strength; he who conquers himself has power.”</p>
+      <cite>— Tao Te Ching, Chapter 33</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PULLQUOTE: THE RETURN -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">“All things under heaven are born of being. Being is born of non‑being.”</p>
+    <p class="pullquote-attr">— Tao Te Ching, Chapter 40 · The Root of All</p>
+  </div>
+</div>
+
+<!-- ESSAY: THE SAGE — ONE WHO ABIDES IN THE TAO -->
+<section class="content-section fade-in" id="sage">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Sage</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The One Who Does Not Dwell</span></span></h2>
+    <p>Characteristics of the Awakened Being</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>The Taoist sage is not a superhuman or a miracle‑worker. She is utterly ordinary — except that she has no ego. She acts without striving, speaks without intention, and responds to each situation without premeditation. She is not trying to be good; she is good because the Tao flows through her without obstruction.</p>
+
+    <p>Lao Tzu lists the marks of the sage: “He does not show off, therefore he shines. He does not assert, therefore he is acknowledged. He does not boast, therefore he is given credit. He does not compete, therefore no one can compete with him.” (Chapter 22). This is the Taoist equivalent of the Sermon on the Mount’s Beatitudes — the paradox that the last shall be first, the meek shall inherit the earth.</p>
+
+    <p>The sage is not a recluse. The Tao Te Ching was written for rulers, not monks. The sage governs a state by wu wei: she sets an example of simplicity, humility, and compassion, and the people naturally align with the Tao. “When the work is done and the task accomplished, the people say: ‘We did it ourselves.’” (Chapter 17).</p>
+
+    <p>In this, the Taoist sage mirrors the Christian ideal of the servant‑leader and the Advaitin ideal of the <em>sthitaprajña</em> (one of steady wisdom). All traditions agree: the awakened being is not a special person; she is a person who has ceased to be special in any egoic sense. She is like water — soft, yielding, invisible — yet capable of wearing away stone.</p>
+
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Tao Te Ching · Chapter 22</div>
+        <p class="scripture-panel-text">“He does not show off, therefore he shines. He does not assert, therefore he is acknowledged. He does not boast, therefore he is given credit. He does not compete, therefore no one can compete with him.”</p>
+        <p class="scripture-panel-ref">— Lao Tzu</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Matthew 5:5</div>
+        <p class="scripture-panel-text">“Blessed are the meek, for they shall inherit the earth.” — Jesus, Sermon on the Mount</p>
+        <p class="scripture-panel-ref">— Gospel of Matthew</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESSAY: SAHAJA — THE NATURAL STATE -->
+<section class="content-section fade-in" id="sahaja">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Natural State</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Ziran · Sahaja · Suchness</span></span></h2>
+    <p>The Unforced Expression of the Tao</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>The final recognition in Taoism is <span class="chinese-term" title="Spontaneity; naturalness; suchness">ziran</span> (自然) — the state of being “self‑so,” not forced, not contrived, not striving. It is the Taoist equivalent of the Advaitin <em>sahaja</em> (the natural state) and the Zen “things as they are.” Ziran is not something you attain; it is what remains when you stop trying to become something else.</p>
+
+
+
+    <p>Nisargadatta Maharaj said: “The natural state is not something to be achieved. It is what you are when you are not seeking.” Lao Tzu says the same in Chapter 25: “The Tao models itself on ziran — it is that which is so of itself.” The sage does not imitate anyone; she is simply what she is, responding to each moment as the moment requires. No effort, no pretense, no agenda.</p>
+
+    <p>This is the recognition that the seeker is the sought, the path is the destination, and the return to the root is not a movement in space or time — it is the simple, immediate, undeniable fact that you are already the Tao. The only obstacle is the belief that you are not. That belief dissolves in the light of self‑inquiry, the fasting of the heart‑mind, or the grace of the teaching.</p>
+
+    <blockquote>
+      <p>“The Tao does nothing, and yet nothing is left undone. If rulers could hold to the Tao, the ten thousand things would transform themselves.”</p>
+      <cite>— Tao Te Ching, Chapter 37</cite>
+    </blockquote>
+    <blockquote>
+      <p>“The natural state is when the mind is at ease, not grasping, not rejecting — like the sky reflecting all things without effort.”</p>
+      <cite>— Adapted from Zhuangzi</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- COMPARATIVE RECAP: THE FOUR STAGES OF TAOIST REALIZATION -->
+<section class="content-section fade-in" id="recap">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Journey Completed</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">From the Unnamed Way to the Root</span></span></h2>
+    <p>Recapitulation of the Four Taoist Cartographies</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>The four pages of the Taoist cartography trace a complete path from the threshold of apophatic negation to the final recognition of the natural state:</p>
+
+    <ul style="margin: 1rem 0 1.5rem 2rem; color: var(--stone);">
+      <li><strong>I · The Unnamed Way:</strong> The Tao that cannot be named — the apophatic threshold that shatters all conceptual grasping. The recognition that the Absolute is beyond all names, forms, and attributes.</li>
+      <li><strong>II · The Uncarved Block:</strong> The practice of wu wei (effortless action), te (virtue), and the three treasures. The cultivation of the natural qualities that arise when the ego subsides.</li>
+      <li><strong>III · The Butterfly Dream:</strong> The radical non‑duality of Zhuangzi — the collapse of self and other, the pivot of the Tao, the equality of all things, and the fasting of the heart‑mind.</li>
+      <li><strong>IV · Returning to the Root:</strong> The final recognition: abiding as the eternal Tao, the death of the ego, the sage’s effortless life, and the natural state (ziran / sahaja) that was never lost and never needs to be gained.</li>
+    </ul>
+
+    <p>These four stages are not linear steps; they are simultaneous dimensions of a single awakening. One who truly knows the unnamed way already abides in the root. One who practices the uncarved block is already dreaming the butterfly. The cartography is a finger pointing at the moon — not the moon itself. The final teaching of Taoism is that there is no final teaching: the Tao that can be told is not the eternal Tao.</p>
+
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Tao Te Ching · Chapter 1</div>
+        <p class="scripture-panel-text">“The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name.”</p>
+        <p class="scripture-panel-ref">— Lao Tzu</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Ramana Maharshi</div>
+        <p class="scripture-panel-text">“The Self is always attained. It is not something new to be reached. You are the Self already.”</p>
+        <p class="scripture-panel-ref">— Talks with Sri Ramana Maharshi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL PULLQUOTE: RETURN TO THE SOURCE -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">“The Tao is hidden by partial understanding. Words are hidden by flowery rhetoric. Therefore the sage abides in the undivided, not in the distinctions. He uses the light that comes from the Tao itself — the light that sees all things as one.”</p>
+    <p class="pullquote-attr">— Zhuangzi, Chapter 2 · The Pivot of the Tao</p>
+  </div>
+</div>
+
+<!-- TRANSITION BACK TO INDEX -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">This completes the Taoist cartography. Explore the other non‑dual maps: Ramana Maharshi, Nisargadatta Maharaj, and the Vedantic Messiah — each a different mirror for the same recognition.</p>
+    <p class="pullquote-attr"><a href="../index.html">→ Return to All Cartographies</a></p>
+  </div>
+</div>
+
+<!-- CHAPTER NAVIGATION -->
+<div class="chapter-nav">
+  <a href="../index.html" class="chapter-link">⌂ Home</a>
+  <span class="chapter-sep">☯</span>
+  <a href="taoism-threshold.html" class="chapter-link">I · The Unnamed Way</a>
+  <span class="chapter-sep">☯</span>
+  <a href="taoism-practices.html" class="chapter-link">II · The Uncarved Block</a>
+  <span class="chapter-sep">☯</span>
+  <a href="taoism-butterfly.html" class="chapter-link">III · The Butterfly Dream</a>
+  <span class="chapter-sep">☯</span>
+  <a href="taoism-return.html" class="chapter-link active">IV · Returning to the Root</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non‑Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
+    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="taoism-threshold.html">Taoism · The Unnamed Way</a>
+  </div>
+  <div class="footer-credit">Researched &amp; Composed</div>
+  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+      }
+    });
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      setTheme(saved);
+      return;
+    }
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  initTheme();
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+
+  const backToTop = document.getElementById('backToTop');
+  function updateProgress() {
+    if (backToTop) {
+      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+    }
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+
+  const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        textObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (diff > 55 && touchStartX < 30 && navMenu) navMenu.classList.add('open');
+    if (diff < -55 && navMenu) navMenu.classList.remove('open');
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

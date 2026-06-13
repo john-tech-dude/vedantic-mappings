@@ -1,261 +1,1152 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Vedantic Mappings — Verified cartographies of the non-dual path: Advaita Vedanta, The Vedantic Messiah, and Taoism · The Unnamed Way. Three complete maps from mistaken identity to liberation." />
 <title>Vedantic Mappings — Non-Dual Cartographies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
 <style>
-/* Page-specific styles for index landing page */
+/* =====================================================
+   VEDANTIC MAPPINGS — LANDING PAGE v4
+   2x2 Grid · Premium Styling · Elegant Animations
+   ===================================================== */
+
 :root {
-  --bg:#faf6ef; --bg2:#f2ece0; --bg3:#e8dfc8;
-  --surface:#ffffff; --surface2:#f7f2e8;
-  --ink:#1c150a; --ink2:#3d2e18; --ink3:#6b5540;
-  --stone:#8a7460; --stone-light:#b09a80;
-  --gold:#b5853a; --gold-light:#d4a84b; --gold-deep:#8a6020;
-  --gold-glow:rgba(181,133,58,0.16);
-  --crimson:#7a2d2d; --saffron:#c05820;
-  --border:rgba(181,133,58,0.18); --border-strong:rgba(181,133,58,0.35);
-  --shadow:0 2px 24px rgba(60,30,0,0.10);
-  --hero-bg:radial-gradient(ellipse 90% 80% at 50% 35%,#f5e8c8 0%,#e8d5a0 40%,#c8a860 70%,#8a6020 100%);
-  --mountain-fill:#c8a860; --ring-color:rgba(181,133,58,0.22);
-  --sun-glow:rgba(181,133,58,0.35);
-  --pullquote-bg:linear-gradient(135deg,#f5edd8 0%,#ede0c0 100%);
-  --grain-opacity:0.025;
-  --text-primary:#1c150a; --text-secondary:#4a3820; --text-muted:#6b5540;
-  --sidebar-width:280px; --sidebar-collapsed-width:0px;
+  /* Canonical tokens harmonized with the cartography pages (Taoism/Messiah v3) */
+  --bg: #0c0f14;
+  --bg2: #12161c;
+  --bg3: #151920;
+  --surface: #181c23;
+  --surface2: #21262e;
+  --ink: #eef2f8;
+  --ink2: #9aaebf;
+  --ink3: #7c8ea0;
+  --stone: #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold: #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.08);
+  --gold-glow-strong: rgba(212, 175, 55, 0.2);
+  --border: rgba(200, 169, 110, 0.12);
+  --border-strong: rgba(200, 169, 110, 0.28);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 32px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 28px var(--gold-glow);
+  --hero-bg: radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+  --mountain-fill: #c14410;
+  --ring-color: rgba(200, 169, 110, 0.10);
+  --sun-glow: rgba(200, 169, 110, 0.4);
+  --grain-opacity: 0.045;
+  --text-primary: #eef2f8;
+  --text-secondary: #e0d4b8;
+  --text-muted: #a89880;
+  --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 [data-theme="dark"] {
-  --bg:#100c06; --bg2:#140e08; --bg3:#1a1208;
-  --surface:#1a1208; --surface2:#140e08;
-  --ink:#f5f0e8; --ink2:#e8dcc8; --ink3:#c8b898;
-  --stone:#8a7d6b; --stone-light:#bfb5a4;
-  --gold:#c8a96e; --gold-light:#e8d5a3; --gold-deep:#9a7a45;
-  --gold-glow:rgba(200,169,110,0.10);
-  --crimson:#7a2d2d; --saffron:#d4722a;
-  --border:rgba(200,169,110,0.12); --border-strong:rgba(200,169,110,0.28);
-  --hero-bg:radial-gradient(ellipse 80% 70% at 50% 40%,#2d1f0e 0%,#110c06 60%,#0a0704 100%);
-  --mountain-fill:#c14410; --ring-color:rgba(200,169,110,0.10);
-  --sun-glow:rgba(200,169,110,0.4);
-  --pullquote-bg:linear-gradient(135deg,#1a1208 0%,#110c06 100%);
-  --grain-opacity:0.045;
-  --text-primary:#f5f0e8; --text-secondary:#e0d4b8; --text-muted:#a89880;
+  --bg: #0c0f14;
+  --bg2: #12161c;
+  --bg3: #151920;
+  --surface: #181c23;
+  --surface2: #21262e;
+  --ink: #eef2f8;
+  --ink2: #9aaebf;
+  --ink3: #7c8ea0;
+  --stone: #7c8ea0;
+  --stone-light: #9eb0c0;
+  --gold: #d4af37;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.08);
+  --gold-glow-strong: rgba(212, 175, 55, 0.2);
+  --border: rgba(200, 169, 110, 0.12);
+  --border-strong: rgba(200, 169, 110, 0.28);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 32px rgba(0, 0, 0, 0.5);
+  --hero-bg: radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+  --mountain-fill: #c14410;
+  --ring-color: rgba(200, 169, 110, 0.10);
+  --sun-glow: rgba(200, 169, 110, 0.4);
+  --grain-opacity: 0.045;
+  --text-primary: #eef2f8;
+  --text-secondary: #e0d4b8;
+  --text-muted: #a89880;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Crimson Pro','Cormorant Garamond',Georgia,serif;background:var(--bg);color:var(--text-primary);overflow-x:hidden;font-size:18px;line-height:1.75;transition:background .5s,color .5s;}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:var(--grain-opacity);}
-::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--gold-deep);border-radius:3px;}
 
-/* COLLAPSIBLE SIDEBAR NAVIGATION */
-.sidebar{position:fixed;top:0;left:0;height:100vh;width:var(--sidebar-width);background:var(--surface);border-right:1px solid var(--border);z-index:1000;transition:width .4s cubic-bezier(.34,1.56,.64,1),transform .4s cubic-bezier(.34,1.56,.64,1);overflow:hidden;}
-.sidebar.collapsed{width:var(--sidebar-collapsed-width);border:none;transform:translateX(-100%);}
-.sidebar-collapse-indicator{position:fixed;top:50%;left:0;transform:translateY(-50%);width:8px;height:60px;background:var(--border);border-radius:0 4px 4px 0;cursor:pointer;z-index:999;transition:all .3s;opacity:.6;}
-.sidebar-collapse-indicator:hover{width:12px;background:var(--gold-deep);opacity:1;}
-.sidebar-collapse-indicator::before{content:'';position:absolute;right:2px;top:50%;transform:translateY(-50%);width:4px;height:4px;background:var(--gold-deep);border-radius:50%;box-shadow:0 8px 0 var(--gold-deep),0 -8px 0 var(--gold-deep);}
-.sidebar:not(.collapsed) .sidebar-collapse-indicator{display:none;}
-.sidebar-toggle{position:fixed;top:1rem;left:calc(var(--sidebar-collapsed-width) + 1rem);width:36px;height:36px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all .3s;z-index:1001;box-shadow:0 2px 8px var(--gold-glow);}
-.sidebar-toggle.expanded{left:calc(var(--sidebar-width) + 1rem);}
-.sidebar:not(.collapsed)~.main-content .sidebar-toggle{left:calc(var(--sidebar-width) + 1rem);}
-.sidebar-toggle:hover{background:var(--gold-glow);border-color:var(--gold);transform:scale(1.05);}
-.sidebar-header{padding:1.5rem;display:flex;align-items:center;gap:1rem;border-bottom:1px solid var(--border);min-height:70px;}
-.sidebar-logo{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px var(--gold-glow);}
-.sidebar-logo-inner{width:16px;height:16px;border-radius:50%;background:var(--surface);transition:transform 30s linear infinite;animation:logo-rotate 20s linear infinite;}
-@keyframes logo-rotate{to{transform:rotate(360deg);}}
-.sidebar-title{font-family:'Cinzel',serif;font-size:.85rem;font-weight:500;color:var(--ink2);letter-spacing:.1em;white-space:nowrap;opacity:1;transition:opacity .3s;}
-.sidebar.collapsed .sidebar-title{opacity:0;pointer-events:none;}
-.sidebar-nav{padding:1.5rem 0;overflow-y:auto;flex:1;}
-.sidebar-nav-section{margin-bottom:1.5rem;}
-.sidebar-nav-section-header{display:flex;align-items:center;padding:.5rem 1.5rem;cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none;}
-.sidebar-nav-section-header:hover{background:var(--surface2);}
-.sidebar-nav-section-title{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;color:var(--gold-deep);text-transform:uppercase;flex:1;}
-.sidebar-nav-section-arrow{width:12px;height:12px;transition:transform .3s;opacity:.5;color:var(--stone);}
-.sidebar-nav-section.expanded .sidebar-nav-section-arrow{transform:rotate(180deg);}
-.sidebar.collapsed .sidebar-nav-section-header{justify-content:center;padding:.5rem 0;}
-.sidebar.collapsed .sidebar-nav-section-title{display:none;}
-.sidebar.collapsed .sidebar-nav-section-arrow{display:none;}
-.sidebar-nav-subsection{padding:0 .75rem;max-height:0;overflow:hidden;transition:max-height .3s ease;}
-.sidebar-nav-section.expanded+.sidebar-nav-subsection{max-height:500px;}
-.sidebar-nav-item{display:flex;align-items:center;padding:.5rem 1.5rem .5rem 2rem;color:var(--text-secondary);text-decoration:none;transition:all .2s;position:relative;white-space:nowrap;font-size:.82rem;border-radius:4px;margin:.25rem 0;}
-.sidebar-nav-item:hover{background:var(--surface2);color:var(--gold);transform:translateX(2px);}
-.sidebar-nav-item.active{color:var(--gold);background:var(--gold-glow);font-weight:500;}
-.sidebar-nav-item.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);border-radius:0 2px 2px 0;}
-.sidebar-nav-item-icon{width:14px;height:14px;margin-right:.6rem;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--stone);transition:color .2s;font-size:.75rem;}
-.sidebar-nav-item:hover .sidebar-nav-item-icon,.sidebar-nav-item.active .sidebar-nav-item-icon{color:var(--gold);}
-.sidebar.collapsed .sidebar-nav-item{justify-content:center;padding:.5rem 0;margin:.25rem 0;}
-.sidebar.collapsed .sidebar-nav-item-icon{margin-right:0;}
-.sidebar.collapsed .sidebar-nav-item-text{opacity:0;width:0;overflow:hidden;}
-.sidebar.collapsed .sidebar-nav-subsection{display:none;}
-.sidebar-progress{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;border-top:1px solid var(--border);}
-.sidebar-progress-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:.75rem;}
-.sidebar-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;transition:width .3s;}
-.sidebar-progress-text{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.15em;color:var(--stone);text-transform:uppercase;display:flex;justify-content:space-between;transition:opacity .3s;}
-.sidebar.collapsed .sidebar-progress-text{opacity:0;}
-.main-content{margin-left:0;min-height:100vh;}
+[data-theme="light"] {
+  --bg: #faf6ef;
+  --bg2: #f2ece0;
+  --bg3: #e8dfc8;
+  --surface: #ffffff;
+  --surface2: #f7f2e8;
+  --ink: #1c150a;
+  --ink2: #3d2e18;
+  --ink3: #6b5540;
+  --stone: #8a7460;
+  --stone-light: #b09a80;
+  --gold: #b5853a;
+  --gold-light: #d4a84b;
+  --gold-deep: #8a6020;
+  --gold-glow: rgba(181, 133, 58, 0.12);
+  --gold-glow-strong: rgba(181, 133, 58, 0.25);
+  --border: rgba(181, 133, 58, 0.18);
+  --border-strong: rgba(181, 133, 58, 0.35);
+  --shadow-sm: 0 4px 12px rgba(60, 30, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(60, 30, 0, 0.1);
+  --shadow-lg: 0 20px 32px rgba(60, 30, 0, 0.12);
+  --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+  --mountain-fill: #c8a860;
+  --ring-color: rgba(181, 133, 58, 0.22);
+  --sun-glow: rgba(181, 133, 58, 0.35);
+  --grain-opacity: 0.025;
+  --text-primary: #1c150a;
+  --text-secondary: #4a3820;
+  --text-muted: #6b5540;
+}
 
-/* SACRED GEOMETRY SVG */
-.sacred-geometry{position:relative;width:100%;height:auto;}
-.sacred-mandala{animation:mandala-rotate 60s linear infinite;}
-@keyframes mandala-rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-.sacred-yantra{animation:yantra-pulse 8s ease-in-out infinite;}
-@keyframes yantra-pulse{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.02);}}
-.sacred-spiral{animation:spiral-draw 20s linear infinite;transform-origin:center;}
-@keyframes spiral-draw{0%{transform:rotate(0deg);opacity:.6;}100%{transform:rotate(360deg);opacity:.6;}}
-.sacred-lotus{animation:lotus-bloom 12s ease-in-out infinite;}
-@keyframes lotus-bloom{0%,100%{transform:scale(1);opacity:.8;}50%{transform:scale(1.05);opacity:1;}}
-.svg-ornament{fill:none;stroke:var(--gold);stroke-width:.5;opacity:.3;}
-[data-theme="dark"] .svg-ornament{stroke:var(--gold-light);opacity:.2;}
-.sacred-divider{background:linear-gradient(180deg,transparent,var(--bg2),transparent);margin:0;padding:4rem 2rem;text-align:center;}
-.sacred-geometry-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* SCROLL-TRIGGERED ANIMATIONS */
-.scroll-reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
-.scroll-reveal.revealed{opacity:1;transform:translateY(0);}
-.scroll-scale{transform:scale(0.9);transition:transform 0.6s ease;}
-.scroll-scale.revealed{transform:scale(1);}
-.scroll-fade-left{opacity:0;transform:translateX(-60px);transition:opacity 0.8s ease,transform 0.8s ease;}
-.scroll-fade-left.revealed{opacity:1;transform:translateX(0);}
-.scroll-fade-right{opacity:0;transform:translateX(60px);transition:opacity 0.8s ease,transform 0.8s ease;}
-.scroll-fade-right.revealed{opacity:1;transform:translateX(0);}
-.scroll-fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.scroll-fade-up.revealed{opacity:1;transform:translateY(0);}
-.stagger-children>*{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease;}
-.stagger-children.revealed>*{opacity:1;transform:translateY(0);}
-.delay-1{transition-delay:0.1s;}
-.delay-2{transition-delay:0.2s;}
-.delay-3{transition-delay:0.3s;}
-.delay-4{transition-delay:0.4s;}
-.delay-5{transition-delay:0.5s;}
-.delay-6{transition-delay:0.6s;}
-.svg-center{transform-origin:center;}
-.svg-rotate-60{animation-duration:60s;}
-.svg-rotate-20{animation-duration:20s;}
-.svg-pulse-8{animation-duration:8s;}
+html {
+  scroll-behavior: smooth;
+}
 
-/* THEME TOGGLE */
-.theme-toggle{position:fixed;bottom:2rem;right:2rem;z-index:1000;width:52px;height:52px;background:var(--surface);border:2px solid var(--border-strong);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;transition:all .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 4px 20px var(--gold-glow),0 2px 8px rgba(0,0,0,.1);}
-.theme-toggle:hover{transform:scale(1.08) translateY(-2px);border-color:var(--gold);box-shadow:0 8px 32px var(--gold-glow),0 4px 16px rgba(0,0,0,.15);}
-.theme-toggle:active{transform:scale(0.95);}
-.theme-toggle-icon{transition:transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;}
-[data-theme="dark"] .theme-toggle{background:var(--surface2);}
-[data-theme="light"] .theme-toggle-icon-sun{opacity:1;transform:rotate(0deg);}
-[data-theme="light"] .theme-toggle-icon-moon{opacity:0;transform:rotate(-90deg) scale(0.5);}
-[data-theme="dark"] .theme-toggle-icon-sun{opacity:0;transform:rotate(90deg) scale(0.5);}
-[data-theme="dark"] .theme-toggle-icon-moon{opacity:1;transform:rotate(0deg);}
-.theme-toggle-icon{position:absolute;display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--gold);}
-.toggle-tooltip{position:fixed;bottom:2rem;right:5.5rem;z-index:1000;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;color:var(--stone);text-transform:uppercase;opacity:0;transition:opacity .3s ease;pointer-events:none;background:var(--surface);padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;white-space:nowrap;}
-.theme-toggle:hover+.toggle-tooltip{opacity:.7;}
+body {
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.75;
+  transition: background 0.5s, color 0.5s;
+}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);}
-[data-theme="light"] .hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,133,58,.04) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,133,58,.03) 29px);pointer-events:none;}
-.hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12;}
-.mandala-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandala-breathe 12s ease-in-out infinite;}
-.mandala-ring:nth-child(1){width:260px;height:260px;animation-delay:0s;}
-.mandala-ring:nth-child(2){width:400px;height:400px;animation-delay:1.5s;animation-duration:14s;}
-.mandala-ring:nth-child(3){width:560px;height:560px;animation-delay:3s;animation-duration:16s;}
-.mandala-ring:nth-child(4){width:740px;height:740px;animation-delay:4.5s;animation-duration:18s;}
-@keyframes mandala-breathe{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.015);}}
-.hero-ripple{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);pointer-events:none;animation:ripple-out 9s ease-out infinite;}
-.hero-ripple:nth-child(5){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:0s;}
-.hero-ripple:nth-child(6){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:3s;}
-.hero-ripple:nth-child(7){width:200px;height:200px;margin:-100px 0 0 -100px;animation-delay:6s;}
-@keyframes ripple-out{0%{opacity:.7;transform:scale(1);}100%{opacity:0;transform:scale(4.5);}}
-.hero-emblem{width:72px;height:72px;margin:0 auto 2rem;position:relative;opacity:0;animation:hero-rise 1.1s .6s forwards;z-index:2;}
-.hero-emblem-circle{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-deep);opacity:.6;animation:emblem-rotate 30s linear infinite;}
-.hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblem-rotate 20s linear infinite reverse;}
-.hero-emblem-dot{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle,var(--gold-light),var(--gold));box-shadow:0 0 20px 5px var(--sun-glow);animation:emblem-pulse 4s ease-in-out infinite;}
-@keyframes emblem-rotate{to{transform:rotate(360deg);}}
-@keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow);}50%{box-shadow:0 0 35px 12px var(--sun-glow);}}
-.hero-eyemark{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:hero-rise 1.1s .3s forwards;position:relative;z-index:2;}
-.hero-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);margin-bottom:.5rem;opacity:0;animation:hero-rise 1.1s .9s forwards;position:relative;z-index:2;}
-.hero-subtitle-top{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--stone);letter-spacing:.08em;margin-bottom:.8rem;opacity:0;animation:hero-rise 1.1s 1.1s forwards;position:relative;z-index:2;}
-.hero-title{font-family:'Cinzel',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:500;letter-spacing:.06em;line-height:1.05;opacity:0;animation:hero-rise 1.3s 1.3s forwards;margin-bottom:.2em;position:relative;z-index:2;}
-[data-theme="light"] .hero-title{color:var(--ink);text-shadow:0 2px 40px rgba(181,133,58,.2);}
-[data-theme="dark"] .hero-title{color:var(--gold-light);text-shadow:0 0 80px rgba(200,169,110,.3);}
-.hero-epithet{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-deep);letter-spacing:.12em;opacity:0;animation:hero-rise 1.1s 1.6s forwards;margin-bottom:2.5rem;position:relative;z-index:2;}
-.hero-divider{display:flex;align-items:center;gap:1.5rem;margin:0 auto 2.5rem;width:fit-content;opacity:0;animation:hero-rise 1.1s 1.8s forwards;position:relative;z-index:2;}
-.hero-divider-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep));}
-.hero-divider-line:last-child{background:linear-gradient(90deg,var(--gold-deep),transparent);}
-.hero-divider-diamond{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--sun-glow);}
-@keyframes hero-rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--grain-opacity);
+}
 
-/* CARTOGRAPHIES SECTION */
-.cartographies-section{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 2rem;}
-.cartographies-container{max-width:1200px;margin:0 auto;}
-.section-numeral{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:1rem;}
-.section-numeral::after{content:'';flex:1;max-width:50px;height:1px;background:var(--gold-deep);opacity:.3;}
-.section-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;color:var(--ink2);letter-spacing:.04em;margin-bottom:.35em;line-height:1.2;}
-[data-theme="dark"] .section-title{color:var(--gold-light);}
-.section-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--stone);margin-bottom:3rem;letter-spacing:.04em;}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-deep);
+  border-radius: 3px;
+}
 
-/* CARDS GRID */
-.cartographies-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:1.5px;background:var(--border);border:1px solid var(--border);margin:2.5rem 0;}
-.cartography-card{background:var(--surface);padding:3rem 2.5rem;transition:background .4s,transform .3s;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;}
-.cartography-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),transparent);opacity:0;transition:opacity .3s;}
-.cartography-card:hover::before{opacity:1;}
-.cartography-card:hover{background:var(--surface2);transform:translateY(-2px);}
-[data-theme="dark"] .cartography-card{background:#0f0b07;}
-[data-theme="dark"] .cartography-card:hover{background:#1a1208;}
-.cartography-number{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.4em;color:var(--gold-deep);margin-bottom:.6rem;display:block;}
-.cartography-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ink2);margin-bottom:.2rem;}
-[data-theme="dark"] .cartography-title{color:var(--gold-light);}
-.cartography-subtitle{font-family:'Cinzel',serif;font-size:.65rem;color:var(--stone);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;}
-.cartography-description{color:var(--text-muted);font-size:1rem;line-height:1.7;margin-bottom:2rem;}
-.cartography-meta{display:flex;gap:1.5rem;font-size:.75rem;color:var(--stone);padding-top:1.5rem;border-top:1px solid var(--border);letter-spacing:.15em;text-transform:uppercase;}
-.cartography-meta span{display:flex;align-items:center;gap:.4rem;}
-.cartography-meta span::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;}
+::selection {
+  background: rgba(181, 133, 58, 0.25);
+  color: var(--ink);
+}
+
+/* ── Tooltip styles (from Vedantic Messiah) ─────────────────── */
+.sanskrit-term,.biblical-ref{
+  cursor:help;
+  border-bottom:1px dotted var(--gold-deep);
+  text-decoration:none;
+}
+.sanskrit-term:hover,.biblical-ref:hover{
+  color:var(--gold);
+  border-bottom-color:var(--gold);
+}
+.tooltip-note { font-size: 0.7rem; color: var(--stone); text-align: center; margin-bottom: 1.5rem; }
+
+
+/* THEME TOGGLE – Premium */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 54px;
+  height: 54px;
+  background: var(--surface);
+  border: 2px solid var(--border-strong);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-md), var(--shadow-gold);
+  backdrop-filter: blur(2px);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 0 28px var(--gold-glow-strong);
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  color: var(--gold);
+}
+
+[data-theme="light"] .theme-toggle-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+[data-theme="light"] .theme-toggle-icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+[data-theme="dark"] .theme-toggle-icon-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+[data-theme="dark"] .theme-toggle-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.toggle-tooltip {
+  position: fixed;
+  bottom: 2rem;
+  right: 5.8rem;
+  z-index: 1000;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  background: var(--surface);
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.theme-toggle:hover + .toggle-tooltip {
+  opacity: 0.85;
+}
+
+/* HERO SECTION – Elegant */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem 7rem;
+  text-align: center;
+  background: var(--hero-bg);
+}
+
+[data-theme="light"] .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181, 133, 58, 0.04) 29px),
+              repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 133, 58, 0.03) 29px);
+  pointer-events: none;
+}
+
+.hero-mountain {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 52%;
+  background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(181, 133, 58, 0.3) 80%);
+  clip-path: polygon(0% 100%, 8% 85%, 15% 78%, 20% 65%, 25% 55%, 30% 48%, 35% 40%, 38% 32%, 42% 22%, 45% 14%, 48% 8%, 50% 0%, 52% 8%, 55% 14%, 58% 22%, 62% 32%, 65% 40%, 70% 48%, 75% 55%, 80% 65%, 85% 72%, 92% 82%, 100% 100%);
+  opacity: 0.12;
+}
+
+.mandala-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid var(--ring-color);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: mandalaBreathe 12s ease-in-out infinite;
+}
+
+.mandala-ring:nth-child(1) { width: 260px; height: 260px; animation-delay: 0s; }
+.mandala-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 1.5s; animation-duration: 14s; }
+.mandala-ring:nth-child(3) { width: 560px; height: 560px; animation-delay: 3s; animation-duration: 16s; }
+.mandala-ring:nth-child(4) { width: 740px; height: 740px; animation-delay: 4.5s; animation-duration: 18s; }
+
+@keyframes mandalaBreathe {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.02); }
+}
+
+.hero-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid var(--ring-color);
+  pointer-events: none;
+  animation: rippleOut 9s ease-out infinite;
+}
+
+.hero-ripple:nth-child(5) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 0s; }
+.hero-ripple:nth-child(6) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 3s; }
+.hero-ripple:nth-child(7) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 6s; }
+
+@keyframes rippleOut {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(4.5); }
+}
+
+.hero-emblem {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  position: relative;
+  opacity: 0;
+  animation: heroRise 1.2s 0.5s forwards;
+  z-index: 2;
+}
+
+.hero-emblem-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--gold-deep);
+  opacity: 0.6;
+  animation: emblemRotate 30s linear infinite;
+}
+
+.hero-emblem-circle2 {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0.4;
+  animation: emblemRotate 20s linear infinite reverse;
+}
+
+.hero-emblem-dot {
+  position: absolute;
+  inset: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-light), var(--gold));
+  box-shadow: 0 0 20px 5px var(--sun-glow);
+  animation: emblemPulse 4s ease-in-out infinite;
+}
+
+@keyframes emblemRotate { to { transform: rotate(360deg); } }
+@keyframes emblemPulse {
+  0%, 100% { box-shadow: 0 0 20px 5px var(--sun-glow); }
+  50% { box-shadow: 0 0 35px 12px var(--sun-glow); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 40px var(--gold-glow); }
+  50% { transform: scale(1.04); box-shadow: 0 0 64px var(--gold-glow); }
+}
+
+.hero-eyemark {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: heroRise 1.2s 0.2s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-deep);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: heroRise 1.2s 0.8s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle-top {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--stone);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: heroRise 1.2s 1s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  opacity: 0;
+  animation: heroRise 1.4s 1.2s forwards;
+  margin-bottom: 0.2em;
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme="light"] .hero-title {
+  color: var(--ink);
+  text-shadow: 0 2px 40px rgba(181, 133, 58, 0.2);
+}
+[data-theme="dark"] .hero-title {
+  color: var(--gold-light);
+  text-shadow: 0 0 80px rgba(200, 169, 110, 0.3);
+}
+
+.hero-epithet {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  color: var(--gold-deep);
+  letter-spacing: 0.12em;
+  opacity: 0;
+  animation: heroRise 1.2s 1.5s forwards;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  opacity: 0;
+  animation: heroRise 1.2s 1.8s forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-divider-line {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-deep));
+}
+.hero-divider-line:last-child {
+  background: linear-gradient(90deg, var(--gold-deep), transparent);
+}
+.hero-divider-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px var(--sun-glow);
+}
+
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* INTRODUCTION SECTION (new) */
+.content-section {
+  padding: 80px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-eyemark {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.section-header p {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 12px;
+}
+
+.content-introduction {
+  font-size: 1.05rem;
+  color: var(--stone);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.content-essay p {
+  font-size: 1.02rem;
+  color: var(--stone);
+  line-height: 1.82;
+  margin-bottom: 1.5rem;
+}
+
+.content-essay blockquote {
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin: 1.5rem 0;
+  background: var(--surface2);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.68;
+  position: relative;
+}
+
+.content-essay blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  opacity: 0.10;
+  line-height: 1;
+}
+
+.content-essay blockquote cite {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+  margin-top: 12px;
+  font-style: normal;
+}
+
+.scripture-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 36px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.scripture-panel {
+  background: var(--surface);
+  padding: 32px;
+}
+
+.scripture-panel-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.scripture-panel-text {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+.scripture-panel-ref {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--stone-light);
+  text-transform: uppercase;
+}
+
+.scripture-panel:hover {
+  background: var(--surface2);
+}
+
+@media (max-width: 768px) {
+  .scripture-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARTOGRAPHIES SECTION – 2x2 Grid Premium */
+.cartographies-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 6rem 2rem;
+}
+
+.cartographies-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-numeral {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-numeral::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--gold-deep);
+  opacity: 0.3;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--ink2);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35em;
+  line-height: 1.2;
+}
+
+[data-theme="dark"] .section-title {
+  color: var(--gold-light);
+}
+
+.section-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--stone);
+  margin-bottom: 3.5rem;
+  letter-spacing: 0.04em;
+}
+
+/* 2x2 Grid – Fixed Columns */
+.cartographies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 2.5rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+/* Premium Card Styling */
+.cartography-card {
+  background: var(--surface);
+  padding: 3rem 2.5rem;
+  transition: all 0.5s var(--transition-smooth);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(0px);
+}
+
+/* Decorative corner accent */
+.cartography-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at bottom right, var(--gold-glow), transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.cartography-card:hover::after {
+  opacity: 1;
+}
+
+/* Left border glow on hover */
+.cartography-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cartography-card:hover::before {
+  opacity: 1;
+}
+
+.cartography-card:hover {
+  background: var(--surface2);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+[data-theme="dark"] .cartography-card {
+  background: var(--surface2);
+}
+[data-theme="dark"] .cartography-card:hover {
+  background: var(--surface);
+}
+
+.cartography-number {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-deep);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.cartography-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--ink2);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .cartography-title {
+  color: var(--gold-light);
+}
+
+.cartography-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: var(--stone);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px dashed var(--border);
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.cartography-description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.cartography-meta {
+  display: flex;
+  gap: 1.8rem;
+  font-size: 0.7rem;
+  color: var(--stone);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+
+.cartography-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cartography-meta span::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* CTA Button – Elegant */
+.cta-section {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  padding: 0.9rem 2.5rem;
+  border: 1.5px solid var(--gold);
+  border-radius: 40px;
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: transparent;
+  backdrop-filter: blur(2px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold-glow-strong), transparent);
+  transition: left 0.6s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold-light);
+  transform: translateY(-3px);
+  letter-spacing: 0.35em;
+  box-shadow: 0 12px 24px rgba(181, 133, 58, 0.2);
+}
 
 /* FOOTER */
-.footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 2rem;text-align:center;}
-.footer-emblem{width:36px;height:36px;margin:0 auto 1.5rem;position:relative;}
-.footer-emblem-outer{position:absolute;inset:0;border-radius:50%;border:1px solid var(--border-strong);}
-.footer-emblem-inner{position:absolute;inset:8px;border-radius:50%;border:1px solid var(--border);}
-.footer-name{font-family:'Cinzel',serif;font-size:.92rem;letter-spacing:.2em;color:var(--gold);margin-bottom:.5rem;}
-.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--stone);font-size:.95rem;margin-bottom:2rem;}
-.footer-links{display:flex;justify-content:center;gap:2rem;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:2rem;}
-.footer-links a{color:var(--stone);text-decoration:none;transition:color .3s;}
-.footer-links a:hover{color:var(--gold);}
-.footer-credit{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.3em;color:var(--stone);text-transform:uppercase;opacity:.4;}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .sidebar{position:fixed;transform:translateX(-100%);transition:transform .3s ease;}
-  .sidebar.mobile-open{transform:translateX(0);}
-  .sidebar.collapsed{transform:translateX(-100%);}
-  .sidebar.collapsed.mobile-open{transform:translateX(0);}
-  .sidebar-collapse-indicator{display:none;}
-  .main-content{margin-left:0;}
-  .sidebar.collapsed+.main-content{margin-left:0;}
-  .sidebar-toggle{display:none;}
+.footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
 }
-@media(max-width:700px){
-  .cartographies-grid{grid-template-columns:1fr;}
-  .cartography-card{padding:2rem 1.75rem;}
-  .cartography-title{font-size:1.3rem;}
-  .hero-title{font-size:2.5rem;}
-  .cartography-meta{flex-direction:column;gap:1rem;}
+
+.footer-emblem {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.footer-emblem-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+}
+
+.footer-emblem-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .footer-emblem-outer {
+  border-color: var(--gold);
+}
+
+[data-theme="dark"] .footer-emblem-inner {
+  border-color: var(--gold-light);
+}
+
+.footer-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--stone);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--stone);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-credit {
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.footer-version {
+  font-family: 'Cinzel', serif;
+  font-size: 0.45rem;
+  letter-spacing: 0.2em;
+  color: var(--stone);
+  margin-top: 1rem;
+  opacity: 0.35;
+}
+
+.footer-copyright {
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  color: var(--stone);
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-top: 1rem;
+}
+
+/* SCROLL REVEAL ANIMATIONS */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+.scroll-fade-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay Classes */
+.delay-1 { transition-delay: 0.05s; }
+.delay-2 { transition-delay: 0.1s; }
+.delay-3 { transition-delay: 0.15s; }
+.delay-4 { transition-delay: 0.2s; }
+.delay-5 { transition-delay: 0.3s; }
+.delay-6 { transition-delay: 0.4s; }
+.delay-7 { transition-delay: 0.5s; }
+.delay-8 { transition-delay: 0.6s; }
+
+/* RESPONSIVE: Stack to 1 column on mobile */
+@media (max-width: 800px) {
+  .cartographies-grid {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    border-radius: 16px;
+  }
+  .cartography-card {
+    padding: 2rem 1.75rem;
+  }
+  .cartography-title {
+    font-size: 1.4rem;
+  }
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  .hero-epithet {
+    font-size: 0.85rem;
+  }
+  .cartography-meta {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .hero-divider-line {
+    width: 40px;
+  }
+  .cta-button {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.6rem;
+  }
+  .content-section {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cartographies-section {
+    padding: 3rem 1rem;
+  }
+  .hero {
+    padding: 4rem 1rem 5rem;
+  }
+  .content-section {
+    padding: 40px 16px;
+  }
+}
+
+/* ── Pull-quote band ──────────────────────────────────── */
+.pullquote-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--hero-bg);
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.pullquote-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%);
+  pointer-events: none;
+  animation: breathe 10s ease-in-out infinite;
+}
+.pullquote {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 2rem;
+}
+.pullquote-text {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+  color: var(--text-primary);
+  line-height: 1.68;
+  margin-bottom: 1.5rem;
+}
+.pullquote-attr {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.pullquote-attr a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.pullquote-attr a:hover {
+  color: var(--gold);
+}
+
+/* Premium cross-tradition resonances callout */
+.resonance-callout {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface2);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+}
+.resonance-callout .label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.resonance-callout p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--stone);
 }
 </style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/mXctQoIumsDZUjdUxtdg9fwDfbjOGwLyRTPZD4fL3ErwjXf2ekzHOXnu3ONM5_JG2a4Ea8Fz-yOmSnF7QLFhiEpJbr32VuzkYYspUXgL9twVuT7ViSkpI_VcDBapa0C4ww55D0mY825_8v-l_MC-EV4TkoXX1liG71DEQQM0G3p9DupUB4RTvieQ_IDMQcco0Rn3JVROrdsAl2C1kdrkifzATj8R0Qjy7Q4YrO7G0Ml7jB8UC9EHugIDrisYXOxShpx_jnTSv-ncaxC4NxrORS-DEzBlTtNl7eKnfeGYCIL-qTHxfPlMhCIFxK41YSH5wQ97aTKZJhAoTbntmybw51kh0SJJ84XKj3GU50xTEVTeJP6MR5XQJaTGP0O3dhLffe2p2PpY1XCrUxPTSL5F0Yiz323UdPLxZTLOvlHpoblnU8v5ywgq-k7KQg6XBSCOdBrjlgZvhkivOVTRlMn87ikBQPBO3dZqrtZtdykNGSwDbiZb8OiiOIZXHwbd9zxG73td9Tc7N-IRpCh1qEHkJyWl2P2WfzAqQ9ab87PgH5MAjJaXXFAEIRGRxp-31GHcfmsaMj728iALAwLzWjNoJ5g2Idl8CTlLNIC7W36e3XHOEDSTvM0P_kA_gL_4HOxTSt6gpj0ND70OaFnkFFaYQQ0kYex8X1Hov47YtVLL5HeQk21G6euoxC__e3g8YagdPIBkVYlHn8lztnGy1ZboDoCiKAFdT6IiT3v_qA4lm8X-9rocnHqUZXaIYxpyUxRYctbxbVJl3Wxp5UiNcemfsOwBTuf1PzbqJ5QEY6IWg2My3YpjfrNiDqiTwU1HvluBC1ql4_DgiX_8AAT80Hgr8SrfvO7bLV-S6YAD5biF5MIZxiPPJ3JWwHy13jS6AgXBeTGWxijMx2KnYzhj4wrlGXgfjz1T3GTwNJGPkxF9aGf3WzJy9hhNGLDuMcbcBtcOdBdE_DJbW7Poj6-9jNSBshKezkMgQF8EhRaIO4wi7A8gWKXj7DEC-rXp4vxEK1zwP0yrl2JYOHLdzonpoxej0Crl'></script><base target="_blank">
 </head>
 <body>
-<!-- MAIN CONTENT -->
-<div class="main-content">
+
 <!-- THEME TOGGLE -->
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
   <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
   <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
 </button>
-<span class="toggle-tooltip">Toggle Light/Dark Mode</span>
+<span class="toggle-tooltip">Light / Dark</span>
 
 <!-- HERO -->
 <header class="hero" id="hero">
   <div class="hero-mountain"></div>
-  <div class="mandala-ring"></div><div class="mandala-ring"></div>
-  <div class="mandala-ring"></div><div class="mandala-ring"></div>
-  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <div class="mandala-ring"></div>
+  <div class="mandala-ring"></div>
+  <div class="mandala-ring"></div>
+  <div class="mandala-ring"></div>
+  <div class="hero-ripple"></div>
+  <div class="hero-ripple"></div>
+  <div class="hero-ripple"></div>
+  
   <p class="hero-eyemark">Verified Cartographies of the Non-Dual Path</p>
   <div class="hero-emblem">
     <div class="hero-emblem-circle"></div>
@@ -265,7 +1156,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <p class="hero-label">Three Complete Maps</p>
   <p class="hero-subtitle-top">To the Self and Beyond</p>
   <h1 class="hero-title">Vedantic Mappings</h1>
-  <p class="hero-epithet">Ramana Maharshi · Nisargadatta Maharaj · The Vedantic Messiah</p>
+  <p class="hero-epithet">Advaita Vedanta · The Vedantic Messiah · Taoism · The Unnamed Way</p>
   <div class="hero-divider">
     <div class="hero-divider-line"></div>
     <div class="hero-divider-diamond"></div>
@@ -273,19 +1164,57 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </div>
 </header>
 
-<!-- CARTOGRAPHIES SECTION -->
+<!-- ★ NEW INTRODUCTION SECTION ★ -->
+<section class="content-section fade-in" id="introduction">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">What Is This Place?</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Cartographies of the Non‑Dual Path</span></span></h2>
+    <p>Vedanta · Maps · The Unnameable</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="content-introduction"><strong><span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Vedanta</span></strong> (from the Sanskrit <em>veda</em> – knowledge, <em>anta</em> – end) is the philosophical culmination of the ancient Upanishads. It teaches that the individual self (<strong><span class="sanskrit-term" title="The individual self or soul; the true consciousness within every being">Atman</span></strong>) is ultimately identical with the absolute reality (<strong><span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span></strong>). This is non‑duality (<strong><span class="sanskrit-term" title="Non-duality; the teaching that Atman and Brahman are one">Advaita</span></strong>): not one‑ness as a number, but the recognition that separation was never real.</p>
+
+    <p>Why <strong>“cartography”</strong>? Because every spiritual tradition, every realized master, every scripture is a <em>map</em> – not the territory itself. The territory is the Self, the Absolute, the Tao. It cannot be drawn, described, or captured. But a good map, drawn from authentic experience, can orient the seeker and reveal the pitfalls of the journey. The three cartographies presented here — <span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta — the non-dual metaphysics within Christian mysticism">The Vedantic Messiah</span>, and <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi — the Way that cannot be named">Taoism · The Unnamed Way</span> – are not competitors. They are different paths up the same mountain, each with its own language, its own silences, and its own unique precision.</p>
+
+    <p>These pages are not scholarly dissertations. They are <strong>contemplative tools</strong>, compiled from primary sources (interviews, recorded talks, authorised transcripts) and arranged as practical guides. Sanskrit and Chinese terms have tooltip definitions on hover. The goal is not to “believe” but to <em>see</em> – to verify for yourself whether the pointer is true. As Ramana Maharshi said: “The Self is the only Guru. All outer gurus merely point back to that inner Guru.”</p>
+
+    <p class="content-introduction">Nisargadatta Maharaj said: <em>“Give up all questions except one: 'Who am I?' After all, the only fact you are sure of is that you are. The 'I am' is certain. The 'I am this' is not.”</em> — <strong>I Am That</strong></p>
+
+    <div class="scripture-panels fade-in" style="margin-top: 2rem;">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">The Invitation</div>
+        <p class="scripture-panel-text">“You are already That. The seeker is the sought. The perceiver is the perceived. There is no gap.”</p>
+        <p class="scripture-panel-ref">— Nisargadatta Maharaj</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">The Method</div>
+        <p class="scripture-panel-text">“The Tao that can be spoken is not the eternal Tao. The name that can be named is not the eternal name.”</p>
+        <p class="scripture-panel-ref">— Lao Tzu, Tao Te Ching, Chapter 1</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="resonance-callout">
+    <div class="label">Parallels in the other maps</div>
+    <p>The Vedantic foundation — Gaudapada's <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">ajāta vāda</span> that nothing is ever born<a class="biblical-ref" data-reference="Gaudapada Karika 2.32" title="Gaudapada: Nothing is ever born — the unborn has no birth">[5]</a>, Shankara's <span class="sanskrit-term" title="The great sayings of the Upanishads declaring the identity of Atman and Brahman">mahāvākyas</span> declaring the identity of <span class="sanskrit-term" title="The individual self; the true consciousness within">Atman</span> and <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span><a class="biblical-ref" data-reference="Chandogya Upanishad 6.8.7" title="Chandogya Upanishad: Tat Tvam Asi — Thou art That">[6]</a>, Ramana's <span class="sanskrit-term" title="Atma Vichara; the practice of tracing the I-thought to its source">self-enquiry</span> that dissolves the "I"-thought<a class="biblical-ref" data-reference="Who Am I? Inquiry" title="Ramana Maharshi: Who Am I? — the direct path of self-enquiry">[7]</a>, and Nisargadatta's abiding in the "I Am" until it reveals the <span class="sanskrit-term" title="Parabrahman; the ultimate reality prior to all manifestation">Absolute</span> prior to all<a class="biblical-ref" data-reference="I Am That, Dialogue 51" title="Nisargadatta: Abide in the I Am to know what is prior to consciousness">[8]</a> — establishes the direct path to non-dual recognition. The Vedantic Messiah reads the Gospel's "I AM" sayings and "Tat Tvam Asi" prayer as the same eternal identity: Jesus points to the Self that was never separate from the Father. Taoism completes the arc with the nameless Tao that cannot be spoken, the butterfly dream that dissolves all distinction between self and other, and the return to the uncarved block where effort and doership cease. All four maps describe one movement: from the illusion of the person to the recognition that the seeker is the sought. Resonances with Gnostic and Kabbalistic traditions (forthcoming 4-section Gnostic cartography and Kabbalah parallels) extend the same non-dual recognition.</p>
+  </div>
+</section>
+
+<!-- CARTOGRAPHIES SECTION – 2x2 GRID -->
 <section class="cartographies-section scroll-reveal" id="cartographies">
   <div class="cartographies-container">
     <div class="section-numeral scroll-fade-up delay-1">The Cartographies</div>
     <h2 class="section-title scroll-fade-up delay-2">Three Paths to<br>the Absolute</h2>
-    <p class="section-subtitle scroll-fade-up delay-3">Complete maps from mistaken identity to liberation, grounded in the Vedantic tradition</p>
+    <p class="section-subtitle scroll-fade-up delay-3">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions — Advaita Vedanta, The Vedantic Messiah, and Taoism · The Unnamed Way.</p>
     
     <div class="cartographies-grid scroll-reveal delay-4">
-      <a href="ramana-maharshi.html" class="cartography-card scroll-fade-up delay-5">
+      <!-- CARD 1: RAMANA MAHARSHI (Top Left) -->
+      <a href="advaita-vedanta/ramana-maharshi.html" class="cartography-card scroll-fade-up delay-5">
         <span class="cartography-number">I</span>
         <h3 class="cartography-title">Ramana Maharshi</h3>
         <p class="cartography-subtitle">The Sage of Arunachala</p>
-        <p class="cartography-description">A comprehensive cartography of Self-enquiry (Atma Vichara) — from the 1896 death experience that became liberation, through the seven stages of realization, to the practice of abiding as the Self. Grounded in the Upanishadic tradition and the Advaita Vedanta of Adi Shankaracharya.</p>
+        <p class="cartography-description">A comprehensive cartography of Self-enquiry (Atma Vichara) — from the 1896 death experience that became liberation, through the seven stages of realization, to the practice of abiding as the Self. Grounded in the Upanishadic tradition and Advaita Vedanta.</p>
         <div class="cartography-meta">
           <span>1879 – 1950</span>
           <span>Tiruvannamalai</span>
@@ -293,11 +1222,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         </div>
       </a>
 
-      <a href="nisargadatta-maharaj.html" class="cartography-card scroll-fade-up delay-6">
+      <!-- CARD 2: NISARGADATTA MAHARAJ (Top Right) -->
+      <a href="advaita-vedanta/nisargadatta-maharaj.html" class="cartography-card scroll-fade-up delay-6">
         <span class="cartography-number">II</span>
         <h3 class="cartography-title">Nisargadatta Maharaj</h3>
         <p class="cartography-subtitle">The Inchegiri Sampradaya</p>
-        <p class="cartography-description">A complete mapping of the radical teaching on the distinction between consciousness and pure awareness. From the starting condition of mistaken identity through the seven stages to the Absolute (Parabrahman) — prior to the "I Am" itself. Rooted in the Navnath lineage and the teachings of Sri Siddharameshwar Maharaj.</p>
+        <p class="cartography-description">A complete mapping of the radical teaching on the distinction between consciousness and pure awareness. From mistaken identity through the seven stages to the Absolute (Parabrahman) — prior to the "I Am" itself. Rooted in the Navnath lineage.</p>
         <div class="cartography-meta">
           <span>1897 – 1981</span>
           <span>Mumbai</span>
@@ -305,80 +1235,127 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         </div>
       </a>
 
-      <a href="messiah-threshold.html" class="cartography-card scroll-fade-up delay-7">
+      <!-- CARD 3: THE VEDANTIC MESSIAH (Bottom Left) -->
+      <a href="messiah/messiah-threshold.html" class="cartography-card scroll-fade-up delay-7">
         <span class="cartography-number">III</span>
         <h3 class="cartography-title">The Vedantic Messiah</h3>
         <p class="cartography-subtitle">Gospel & Upanishad</p>
-        <p class="cartography-description">A contemplative exploration of the Gospel of Jesus and the non-dual wisdom of the Upanishads. Five pages mapping the resonances between Christian mysticism and Advaita Vedanta — from the Kingdom within to the art of holy negation. Not a merger, but an illumination of shadows.</p>
+        <p class="cartography-description">A contemplative exploration of the Gospel of Jesus and the non-dual wisdom of the Upanishads. Five pages mapping resonances between Christian mysticism and Advaita — from the Kingdom within to the art of holy negation. Not a merger, but illumination.</p>
         <div class="cartography-meta">
           <span>Contemplative</span>
           <span>Comparative</span>
           <span>Christian · Vedantic</span>
         </div>
       </a>
+
+      <!-- CARD 4: LAO TZU · TAOISM (Bottom Right) -->
+      <a href="taoism/taoism-threshold.html" class="cartography-card scroll-fade-up delay-8">
+        <span class="cartography-number">IV</span>
+        <h3 class="cartography-title">Lao Tzu · Taoism</h3>
+        <p class="cartography-subtitle">The Uncarved Block & The Way</p>
+        <p class="cartography-description">A complete apophatic cartography from the Tao Te Ching and Zhuangzi. The Tao that cannot be named, the practice of wu wei (effortless action), and the recognition that the ten thousand things and the self are one root — a parallel non‑dual path.</p>
+        <div class="cartography-meta">
+          <span>6th–4th c. BCE</span>
+          <span>Ancient China</span>
+          <span>Taoism · Philosophical</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer scroll-fade-up delay-6">
-  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-  <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Verified Cartographies of the Non-Dual Path</div>
-  <div class="footer-links">
-    <a href="ramana-maharshi.html">Ramana Maharshi</a>
-    <a href="nisargadatta-maharaj.html">Nisargadatta Maharaj</a>
-    <a href="messiah-threshold.html">The Vedantic Messiah</a>
+<!-- CALL TO ACTION -->
+<div class="pullquote-section scroll-fade-up delay-6">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote">
+    <p class="pullquote-text">The journey from mistaken identity to liberation begins with a single step into the mystery of being.</p>
+    <p class="pullquote-attr"><a href="advaita-vedanta/ramana-maharshi.html">Begin Your Journey →</a></p>
   </div>
-  <div class="footer-credit">Researched & Composed</div>
-</footer>
 </div>
 
+<!-- FOOTER -->
+<footer class="footer scroll-fade-up delay-7">
+  <div class="footer-emblem">
+    <div class="footer-emblem-outer"></div>
+    <div class="footer-emblem-inner"></div>
+  </div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="index.html">⌂ Vedantic Mappings</a>
+    <a href="advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
+    <a href="messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+  </div>
+  <div class="footer-credit">Researched & Composed</div>
+  <div class="footer-version">Last updated: 11 June 2026 · Three cartographies</div>
+  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+</footer>
+
 <script>
-/* THEME TOGGLE */
-/* THEME TOGGLE */
-const toggle=document.getElementById('themeToggle');
-const html=document.documentElement;
+(function() {
+  'use strict';
 
-function toggleTheme() {
-  const isDark=html.getAttribute('data-theme')==='dark';
-  const newTheme=isDark?'light':'dark';
-  html.setAttribute('data-theme',newTheme);
-  localStorage.setItem('theme',newTheme);
-}
+  // Theme Toggle
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
 
-toggle.addEventListener('click',toggleTheme);
-
-// Load saved theme or detect preference
-(function initTheme(){
-  const saved=localStorage.getItem('theme');
-  if(saved==='light'||saved==='dark'){
-    html.setAttribute('data-theme',saved);
-  }else if(window.matchMedia&&(window.matchMedia('(prefers-color-scheme: dark)').matches)){
-    html.setAttribute('data-theme','dark');
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }
-})();
 
-/* SCROLL-TRIGGERED ANIMATIONS */
-const scrollRevealObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('revealed');
-      if(entry.target.classList.contains('stagger-children')){
-        Array.from(entry.target.children).forEach((child,i)=>{
-          setTimeout(()=>{
-            child.style.opacity='1';
-            child.style.transform='translateY(0)';
-          },i*100);
-        });
-      }
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      setTheme(saved);
+      return;
     }
-  });
-},{threshold:.15,rootMargin:'0px 0px -100px 0px'});
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  initTheme();
 
-document.querySelectorAll('.scroll-reveal, .scroll-scale, .scroll-fade-left, .scroll-fade-right, .scroll-fade-up, .stagger-children').forEach(el=>{
-  scrollRevealObserver.observe(el);
-});
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+
+  // Scroll‑triggered Reveal Animations
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        scrollObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.scroll-reveal, .scroll-fade-up').forEach(el => {
+    scrollObserver.observe(el);
+  });
+
+  // Additional observer for .fade-in (introduction section)
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in, .section-separator, .text-reveal').forEach(el => fadeObserver.observe(el));
+
+  // text-reveal inner handling
+  const textRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        textRevealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.text-reveal').forEach(el => textRevealObserver.observe(el));
+})();
 </script>
 </body>
 </html>
