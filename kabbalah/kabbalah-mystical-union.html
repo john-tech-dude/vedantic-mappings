@@ -28,6 +28,10 @@
   --gold-deep: #a08840;
   --gold-glow: rgba(196, 168, 85, 0.08);
   --sun-glow: rgba(196, 168, 85, 0.18);
+  --copper: #b87333;
+  --copper-light: #cd7f32;
+  --copper-deep: #8b4513;
+  --copper-glow: rgba(184, 115, 51, 0.12);
   --indigo: #5a6a9a;
   --indigo-light: #7a8aba;
   --indigo-glow: rgba(90, 106, 154, 0.12);
@@ -65,6 +69,9 @@
   --gold-deep: #6a5820;
   --gold-glow: rgba(138, 112, 48, 0.08);
   --sun-glow: rgba(138, 112, 48, 0.15);
+  --copper: #8b4513;
+  --copper-light: #a0522d;
+  --copper-deep: #6b3410;
   --border: rgba(0, 0, 0, 0.06);
   --border-strong: rgba(0, 0, 0, 0.12);
   --border-subtle: rgba(0, 0, 0, 0.03);
@@ -327,8 +334,10 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
 .footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
 .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
-[data-theme="dark"] .footer-emblem-outer { border-color: var(--indigo); }
-[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+[data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
+[data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
 .footer-name { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
 .footer-tagline { font-family: var(--font-body); font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
 .footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }

@@ -138,14 +138,28 @@ body::before {
 ::selection { background: rgba(181,130,42,0.22); color: var(--ink); }
 
 /* ── Tooltip styles (from Vedantic Messiah) ─────────────────── */
-.sanskrit-term,.biblical-ref{
-  cursor:help;
-  border-bottom:1px dotted var(--gold-deep);
-  text-decoration:none;
+.sanskrit-term, .biblical-ref {
+  cursor: help;
+  border-bottom: 1px dotted var(--gold);
+  text-decoration: none;
+  color: var(--gold-light);
+  font-weight: 400;
+  transition: all 0.3s var(--ease-smooth);
 }
-.sanskrit-term:hover,.biblical-ref:hover{
-  color:var(--gold);
-  border-bottom-color:var(--gold);
+.sanskrit-term:hover, .biblical-ref:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold-deep);
+}
+
+[data-theme="light"] .sanskrit-term,
+[data-theme="light"] .biblical-ref {
+  border-bottom-color: var(--copper);
+  color: var(--copper-light);
+}
+[data-theme="light"] .sanskrit-term:hover,
+[data-theme="light"] .biblical-ref:hover {
+  color: var(--copper);
+  border-bottom-color: var(--copper-deep);
 }
 .tooltip-note { font-size: 0.7rem; color: var(--stone); text-align: center; margin-bottom: 1.5rem; }
 
@@ -194,7 +208,7 @@ a:focus-visible, button:focus-visible {
 @keyframes lineReveal { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes diamondReveal { from { opacity: 0; transform: rotate(45deg) scale(0); } to { opacity: 1; transform: rotate(45deg) scale(1); } }
 @keyframes textRevealUp { from { opacity: 0; transform: translateY(110%); } to { opacity: 1; transform: translateY(0); } }
-@keyframes cursorPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+@keyframes cursorPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; } 50% { transform: translate(-50%,-50%) scale(1.15); opacity: 0.3; } }
 
 /* Sacred mandala animation for hero SVG */
 .sacred-mandala { animation: mandalaRotate 60s linear infinite; transform-origin: center; }
@@ -387,10 +401,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .stage-quote { background: var(--surface2); border-left: 3px solid var(--gold); padding: 1.5rem; margin: 1.5rem 0; }
 .stage-quote p { color: var(--stone); line-height: 1.7; font-style: italic; margin-bottom: 0.5rem; }
 .stage-quote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; font-style: normal; }
-
-.sanskrit-term { position: relative; display: inline-block; cursor: help; }
-.sanskrit-term::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); transition: width 0.4s cubic-bezier(0.22,1,0.36,1); }
-.sanskrit-term:hover::after { width: 100%; }
 
 .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
 .scripture-panel { background: var(--surface); padding: 32px; }

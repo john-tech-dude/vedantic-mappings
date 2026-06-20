@@ -28,6 +28,10 @@
   --gold-deep: #a08840;
   --gold-glow: rgba(196, 168, 85, 0.08);
   --sun-glow: rgba(196, 168, 85, 0.18);
+  --copper: #b87333;
+  --copper-light: #cd7f32;
+  --copper-deep: #8b4513;
+  --copper-glow: rgba(184, 115, 51, 0.12);
   --indigo: #5a6a9a;
   --indigo-light: #7a8aba;
   --indigo-glow: rgba(90, 106, 154, 0.12);
@@ -56,6 +60,10 @@
   --gold: #c4a855;
   --gold-light: #e0c878;
   --gold-deep: #a08840;
+  --copper: #b87333;
+  --copper-light: #cd7f32;
+  --copper-deep: #8b4513;
+  --copper-glow: rgba(184, 115, 51, 0.12);
 }
 
 [data-theme="light"] {
@@ -70,6 +78,9 @@
   --gold: #8a7030;
   --gold-light: #a08840;
   --gold-deep: #6a5820;
+  --copper: #8b4513;
+  --copper-light: #a0522d;
+  --copper-deep: #6b3410;
   --border: rgba(0, 0, 0, 0.06);
   --border-strong: rgba(0, 0, 0, 0.12);
 }
@@ -308,8 +319,28 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 
 .hebrew-term, .sanskrit-term, .biblical-ref {
   cursor: help;
-  border-bottom: 1px dotted var(--indigo);
+  border-bottom: 1px dotted var(--gold);
   text-decoration: none;
+  color: var(--gold-light);
+  font-weight: 400;
+  transition: all 0.3s var(--ease-smooth);
+}
+.hebrew-term:hover, .sanskrit-term:hover, .biblical-ref:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold-deep);
+}
+
+[data-theme="light"] .hebrew-term,
+[data-theme="light"] .sanskrit-term,
+[data-theme="light"] .biblical-ref {
+  border-bottom-color: var(--copper);
+  color: var(--copper-light);
+}
+[data-theme="light"] .hebrew-term:hover,
+[data-theme="light"] .sanskrit-term:hover,
+[data-theme="light"] .biblical-ref:hover {
+  color: var(--copper);
+  border-bottom-color: var(--copper-deep);
 }
 
 .comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
@@ -420,6 +451,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
 [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
 [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+[data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
+[data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
 .footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
 .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
 .footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }

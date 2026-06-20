@@ -148,10 +148,27 @@
 
         .sanskrit-term, .biblical-ref {
             cursor: help;
-            border-bottom: 1px dotted var(--gold-deep);
+            border-bottom: 1px dotted var(--gold);
             text-decoration: none;
+            color: var(--gold-light);
+            font-weight: 400;
+            transition: all 0.3s var(--ease-smooth);
         }
-        .sanskrit-term:hover, .biblical-ref:hover { color: var(--gold); border-bottom-color: var(--gold); }
+        .sanskrit-term:hover, .biblical-ref:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold-deep);
+        }
+
+        [data-theme="light"] .sanskrit-term,
+        [data-theme="light"] .biblical-ref {
+            border-bottom-color: var(--copper);
+            color: var(--copper-light);
+        }
+        [data-theme="light"] .sanskrit-term:hover,
+        [data-theme="light"] .biblical-ref:hover {
+            color: var(--copper);
+            border-bottom-color: var(--copper-deep);
+        }
         .tooltip-note { font-size: 0.7rem; color: var(--stone); text-align: center; margin-bottom: 1.5rem; }
 
         /* ----- Navigation ----- */

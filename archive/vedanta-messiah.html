@@ -694,10 +694,28 @@ header.hero {
   margin-bottom: 10px;
   transition: var(--transition);
 }
-.node .sanskrit-term,.biblical-ref{
-  cursor:help;
-  border-bottom:1px dotted var(--gold-deep);
-  text-decoration:none;
+.node .sanskrit-term, .node .biblical-ref {
+  cursor: help;
+  border-bottom: 1px dotted var(--gold);
+  text-decoration: none;
+  color: var(--gold-light);
+  font-weight: 400;
+  transition: all 0.3s var(--ease-smooth);
+}
+.node .sanskrit-term:hover, .node .biblical-ref:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold-deep);
+}
+
+[data-theme="light"] .node .sanskrit-term,
+[data-theme="light"] .node .biblical-ref {
+  border-bottom-color: var(--copper);
+  color: var(--copper-light);
+}
+[data-theme="light"] .node .sanskrit-term:hover,
+[data-theme="light"] .node .biblical-ref:hover {
+  color: var(--copper);
+  border-bottom-color: var(--copper-deep);
 }
 .node .sanskrit-term {
   font-style: italic;
