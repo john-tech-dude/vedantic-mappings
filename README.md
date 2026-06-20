@@ -2,7 +2,7 @@
 
 Cartographies of the Non-Dual Path
 
-This project contains comprehensive, single-page HTML cartographies documenting the teachings of Ramana Maharshi, Nisargadatta Maharaj, The Vedantic Messiah, and Taoism. Each cartography provides a complete map from mistaken identity to liberation, grounded in scriptural sources and presented with scholarly precision.
+This project contains comprehensive, single-page HTML cartographies documenting the teachings of Advaita Vedanta, The Vedantic Messiah, Kabbalah, and Taoism. Each cartography provides a complete map from mistaken identity to liberation, grounded in scriptural sources and presented with scholarly precision.
 
 ## 📁 Project Structure
 
@@ -27,6 +27,11 @@ vedantic-mappings/
 │   ├── taoism-practices.html         # The Uncarved Block
 │   ├── taoism-butterfly.html        # The Butterfly Dream
 │   └── taoism-return.html           # Returning to the Root
+├── kabbalah/                        # Kabbalah series
+│   ├── kabbalah-sefer-yetzirah.html # The Book of Creation
+│   ├── kabbalah-zohar.html          # The Book of Splendor
+│   ├── kabbalah-luria.html          # Isaac Luria
+│   └── kabbalah-baal-shem-tov.html  # The Baal Shem Tov
 ├── archive/                         # Archived content
 │   ├── vedanta-messiah.html         # Legacy monolithic 9-aspect version
 │   └── TODO-nav-compass-refactor.md # Completed refactoring documentation
@@ -138,7 +143,38 @@ vedantic-mappings/
 
 ---
 
-### IV. Taoism — The Unnamed Way
+### IV. Kabbalah — The Tree of Life
+
+**Teaching**: Jewish Mysticism and the Sefirot
+
+**Lineage**: Sefer Yetzirah, Zohar, Isaac Luria, and Hasidic tradition
+
+**Series Structure** (four interconnected pages):
+1. **The Book of Creation** - Sefer Yetzirah, the 32 paths of wisdom, and the architecture of creation
+2. **The Book of Splendor** - The Zohar, the Shekhinah, and the hidden face of the Torah
+3. **Isaac Luria** - Tzimtzum, Shevirat HaKelim, and Tikkun (the cosmic repair)
+4. **The Baal Shem Tov** - Hasidic mysticism and the democratization of Kabbalah
+
+**Key Features**:
+- Complete mapping of the ten sefirot and their relationships
+- The three mothers (Aleph, Mem, Shin) and the twenty-two Hebrew letters
+- Tzimtzum (divine contraction) and the creation of the void
+- Shevirat HaKelim (breaking of the vessels) and the fallen sparks
+- Tikkun (repair) as human participation in cosmic restoration
+- Comparative analysis with Advaita Vedanta, Christian mysticism, and Taoism
+- Hebrew term tooltips with elegant styling
+- Four-page series with chapter navigation
+
+**Primary Sources Documented**:
+- Sefer Yetzirah (Book of Creation)
+- Zohar (Book of Splendor)
+- Etz Chaim (Tree of Life) by Chaim Vital
+- Hasidic teachings of the Baal Shem Tov
+- Comparative connections to other mystical traditions
+
+---
+
+### V. Taoism — The Unnamed Way
 
 **Teaching**: Apophatic Taoist Philosophy
 
@@ -224,10 +260,20 @@ vedantic-mappings/
 
 ## ✨ Recent Enhancements
 
+### Kabbalah Series Addition (2026)
+- Added complete Kabbalah cartography as the fourth major series
+- Four interconnected pages: Sefer Yetzirah (Book of Creation), Zohar (Book of Splendor), Isaac Luria (The Lion of Safed), and Baal Shem Tov (Hasidic mysticism)
+- Comprehensive mapping of the ten sefirot, Tzimtzum (divine contraction), Shevirat HaKelim (breaking of the vessels), and Tikkun (cosmic repair)
+- Hebrew term tooltips with elegant styling
+- Comparative analysis with Advaita Vedanta, Christian mysticism, and Taoism
+- Updated index.html to reflect four complete cartographies
+- Standardized footer links across all pages to include Kabbalah
+
 ### Navigation Unification (2026)
-- All cartographies now use the consistent floating **nav-compass** (hamburger + dropdown) instead of legacy sidebars. This applies to Ramana Maharshi and Nisargadatta Maharaj (the last two holdouts). Full internal section jumps + cross-series links in every nav.
+- All cartographies now use the consistent floating **nav-compass** (hamburger + dropdown) instead of legacy sidebars. This applies to Ramana Maharshi, Nisargadatta Maharaj, and Adyashanti Comparison.
+- Full internal section jumps + cross-series links in every nav.
 - Footers and chapter navigation standardized for better interlinking between the four maps.
-- Design tokens on the two main Advaita pages harmonized toward the polished Taoism/Messiah set for visual cohesion.
+- Design tokens on the main Advaita pages harmonized toward the polished Taoism/Messiah/Kabbalah set for visual cohesion.
 
 ### Previous Navigation & UX Improvements
 - Fixed sidebar navigation to be fully accessible from left side of screen
