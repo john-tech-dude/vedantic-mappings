@@ -11,12 +11,13 @@
 <style>
 /* =====================================================
    TAOISM — THE UNNAMED WAY (Threshold Page)
-   Styled identically to Vedantic Messiah series
+   Refined Edition — Systematic Improvements
    ===================================================== */
 
 :root {
   --bg: #0c0f14;
   --bg2: #12161c;
+  --bg3: #0a0c10;
   --surface: #181c23;
   --surface2: #21262e;
   --ink: #eef2f8;
@@ -41,23 +42,10 @@
   --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-[data-theme="dark"] {
-  --bg: #0c0f14;
-  --bg2: #12161c;
-  --surface: #181c23;
-  --surface2: #21262e;
-  --ink: #eef2f8;
-  --ink2: #9aaebf;
-  --stone: #7c8ea0;
-  --stone-light: #9eb0c0;
-  --gold: #d4af37;
-  --gold-light: #e6c86e;
-  --gold-deep: #b8960c;
-}
-
 [data-theme="light"] {
   --bg: #f8f5ef;
   --bg2: #f0ebe0;
+  --bg3: #e8e2d5;
   --surface: #ffffff;
   --surface2: #f5f0e8;
   --ink: #1a1510;
@@ -69,6 +57,9 @@
   --gold-deep: #7a5a22;
   --border: rgba(0, 0, 0, 0.08);
   --border-strong: rgba(0, 0, 0, 0.15);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --gold-glow: rgba(154, 122, 58, 0.08);
+  --sun-glow: rgba(154, 122, 58, 0.18);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -103,39 +94,52 @@ body::before {
 ::selection { background: rgba(154,122,58,0.20); color: var(--ink); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
 
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes scroll-bounce {
   0%,100% { opacity: 1; transform: scaleY(1); }
   50%     { opacity: 0.3; transform: scaleY(0.5); }
 }
+
 @keyframes breathe {
   0%,100% { transform: scale(1); }
   50%     { transform: scale(1.04); }
 }
+
 @keyframes mandalaRotate { to { transform: rotate(360deg); } }
+
 @keyframes mandala-breathe {
   0%,100% { opacity: 0.35; transform: translate(-50%,-50%) scale(1); }
   50%     { opacity: 0.75; transform: translate(-50%,-50%) scale(1.012); }
 }
+
 @keyframes ripple-out {
   0%   { opacity: 0.55; transform: translate(-50%,-50%) scale(1); }
   100% { opacity: 0;    transform: translate(-50%,-50%) scale(4.2); }
 }
+
 @keyframes emblem-pulse {
   0%,100% { box-shadow: 0 0 18px 4px var(--sun-glow); }
   50%     { box-shadow: 0 0 32px 10px var(--sun-glow); }
 }
+
 @keyframes lineReveal {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
 }
+
 @keyframes diamondReveal {
   from { opacity: 0; transform: rotate(45deg) scale(0); }
   to   { opacity: 1; transform: rotate(45deg) scale(1); }
 }
+
 @keyframes ambientDrift {
   0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; }
   33%     { transform: translate(2%,-1%) scale(1.02); opacity: 0.65; }
@@ -162,7 +166,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   50% { filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.22)); }
 }
 
-/* Navigation Compass */
+@keyframes diagramDraw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes diagramFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   NAVIGATION COMPASS
+   ===================================================== */
+
 .nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
 .nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
 .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
@@ -175,7 +192,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
 .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
 
-/* Theme Toggle */
+/* =====================================================
+   THEME TOGGLE
+   ===================================================== */
+
 .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
 .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
 .theme-toggle:active { transform: scale(0.95); }
@@ -185,15 +205,22 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
 [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
 
-/* Back to Top */
-.back-to-top { position: fixed; bottom: 1.5rem; right: 5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+/* =====================================================
+   BACK TO TOP
+   ===================================================== */
+
+.back-to-top { position: fixed; bottom: 5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
 .back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
 .back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
 
-/* Hero */
-.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; background: radial-gradient(ellipse 100% 90% at 50% 30%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; }
 [data-theme="dark"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 30%, var(--bg2) 0%, var(--bg) 40%, #0a0d12 70%, var(--bg) 100%); }
 [data-theme="light"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 30%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+
 .hero::after {
   content: ''; position: absolute; inset: 0;
   background:
@@ -202,6 +229,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   animation: ambientDrift 18s ease-in-out infinite;
   pointer-events: none; z-index: 1;
 }
+
 .hero-mountain {
   position: absolute; bottom: 0; left: 50%;
   transform: translateX(-50%); width: 120%; height: 52%;
@@ -209,6 +237,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   clip-path: polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);
   opacity: 0.14;
 }
+
 .mandala-ring {
   position: absolute; top: 50%; left: 50%;
   border-radius: 50%; border: 1px solid var(--gold);
@@ -219,6 +248,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 .mandala-ring:nth-of-type(2) { width: 380px; height: 380px; opacity: 0.12; animation-delay: 1.5s; animation-duration: 14s; }
 .mandala-ring:nth-of-type(3) { width: 540px; height: 540px; opacity: 0.08; animation-delay: 3s; animation-duration: 16s; }
 .mandala-ring:nth-of-type(4) { width: 720px; height: 720px; opacity: 0.05; animation-delay: 4.5s; animation-duration: 18s; }
+
 .hero-ripple {
   position: absolute; top: 50%; left: 50%;
   width: 180px; height: 180px; border-radius: 50%;
@@ -253,7 +283,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   animation: qiPulse 7s ease-in-out infinite;
 }
 
-/* Light mode: darken yinyang SVG for visibility */
 [data-theme="light"] .hero-emblem svg circle,
 [data-theme="light"] .hero-emblem svg line,
 [data-theme="light"] .hero-emblem svg path {
@@ -265,14 +294,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 [data-theme="light"] .hero-emblem svg g[stroke*="#d4af37"] {
   opacity: 0.8 !important;
 }
-/* ==================================== */
 
 .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(154,122,58,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
 [data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196,160,96,0.25); }
+
 .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--gold-deep); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+
 .hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 580px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
 [data-theme="dark"] .hero-quote { color: var(--stone-light); }
+
 .hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone-light); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; }
+
 .hero-divider {
   display: flex; align-items: center; gap: 1.25rem;
   margin: 0 auto 2.5rem; width: fit-content;
@@ -282,28 +314,43 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 .hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
 .hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); transform-origin: right; }
 .hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+
 .hero-scroll-cue {
   position: absolute; bottom: 2rem; left: 50%;
   transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
   opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
   cursor: pointer; z-index: 2;
-  transition: transform 0.3s var(--ease-expo);
+  transition: transform 0.3s var(--ease-out-expo);
 }
 .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
 .hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
 .scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--gold-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
 
-/* Sections */
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
 section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+
 .section-header { text-align: center; margin-bottom: 56px; }
 .section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; }
 .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
 .section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
 
-.section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent); margin: 0 auto 20px; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
+.section-separator {
+  width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  margin: 0 auto 20px; opacity: 0; transform: scaleX(0);
+  transition: all 0.8s var(--ease-out-expo);
+  position: relative;
+}
 .section-separator.visible { opacity: 1; transform: scaleX(1); }
-.section-separator::after { content: '✦'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: var(--gold); font-size: 0.72rem; background: var(--bg); padding: 0 6px; }
+.section-separator::after {
+  content: '✦'; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%,-50%); color: var(--gold); font-size: 0.72rem;
+  background: var(--bg); padding: 0 6px;
+}
 
 .text-reveal { overflow: hidden; display: block; }
 .text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
@@ -329,6 +376,59 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   text-decoration: none;
 }
 
+/* =====================================================
+   DIAGRAMS
+   ===================================================== */
+
+.diagram-container {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+.diagram-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.4;
+}
+.diagram-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.diagram-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.diagram-svg path, .diagram-svg circle, .diagram-svg line, .diagram-svg rect, .diagram-svg text {
+  vector-effect: non-scaling-stroke;
+}
+.diagram-caption {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--stone);
+  text-align: center;
+  margin-top: 1.25rem;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   COMPARATIVE TABLE
+   ===================================================== */
+
 .comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
 .comparative-table thead tr { border-bottom: 1px solid var(--gold); }
 .comparative-table th { padding: 10px 8px; text-align: left; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
@@ -338,6 +438,10 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .comparative-table tbody tr:hover { background: var(--gold-glow); }
 .comparative-table-wrapper { overflow-x: auto; margin-top: 1rem; }
 
+/* =====================================================
+   SCRIPTURE PANELS
+   ===================================================== */
+
 .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
 .scripture-panel { background: var(--surface); padding: 32px; }
 .scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
@@ -346,16 +450,116 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .scripture-panel:hover { background: var(--surface2); }
 .scripture-panels.margin-top { margin-top: 2rem; }
 
-.pullquote-section { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+/* =====================================================
+   TENSION BOX & RESONANCE CALLOUT
+   ===================================================== */
+
+.tension-box {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, var(--surface2), var(--surface));
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  position: relative;
+}
+.tension-box::before {
+  content: '◈';
+  position: absolute;
+  top: -10px; left: 14px;
+  font-size: 1rem;
+  color: var(--gold);
+  background: var(--bg);
+  padding: 0 4px;
+}
+.tension-box p {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+.resonance-callout {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  position: relative;
+}
+.resonance-callout::before {
+  content: '✦';
+  display: block;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  opacity: 0.6;
+}
+.resonance-callout p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+/* =====================================================
+   PULLQUOTE
+   ===================================================== */
+
+.pullquote-section { position: relative; overflow: hidden; padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 [data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, #0a0d12 70%, var(--bg) 100%); }
 [data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+
 .pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
-@keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+
 .pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
 .pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
 .pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
 .pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
 .pullquote-attr a:hover { color: var(--gold); }
+
+/* =====================================================
+   CONTINUE LINK
+   ===================================================== */
+
+.continue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  transition: all 0.35s var(--ease-out-expo);
+  margin-top: 1rem;
+}
+.continue-link:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  transform: translateX(4px);
+}
+
+/* =====================================================
+   CHAPTER NAVIGATION
+   ===================================================== */
+
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-link:hover { color: var(--gold); }
+.chapter-sep { color: var(--gold-deep); opacity: 0.3; }
+.chapter-link.active { color: var(--gold); font-weight: 500; }
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
 .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
@@ -372,35 +576,65 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 
-.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
-.chapter-link:hover { color: var(--gold); }
-.chapter-sep { color: var(--gold-deep); opacity: 0.3; }
-.chapter-link.active { color: var(--gold); font-weight: 500; }
-
+/* =====================================================
+   FADE-IN & STAGGER
+   ===================================================== */
 
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 768px) { 
-  .nav-menu { min-width: 180px; } 
-  .back-to-top { right: 1.5rem; bottom: 5rem; } 
-  .footer-links { gap: 1.5rem; } 
-  .scripture-panels { grid-template-columns: 1fr; } 
-  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); } 
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.35s; }
+.stagger-4 { transition-delay: 0.5s; }
+.stagger-5 { transition-delay: 0.65s; }
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .nav-menu { min-width: 180px; }
+  .back-to-top { right: 1.5rem; bottom: 5rem; }
+  .footer-links { gap: 1.5rem; }
+  .scripture-panels { grid-template-columns: 1fr; }
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
   .hero-emblem { width: 64px; height: 64px; }
+  .diagram-container { padding: 1.25rem; }
 }
 
-@media (prefers-reduced-motion: reduce) { 
-  *, *::before, *::after { animation: none !important; transition: none !important; } 
-  .fade-in { opacity: 1 !important; transform: none !important; } 
+@media (max-width: 480px) {
+  body { font-size: 16px; line-height: 1.72; }
+  .content-section { padding: 48px 16px; }
+  .hero { padding: 4rem 1rem 5rem; }
+  .hero-emblem { width: 56px; height: 56px; }
+  .nav-compass { top: 0.75rem; left: 0.75rem; }
+  .nav-toggle { width: 40px; height: 40px; }
+  .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
+  .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
+  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+  .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
+  .scripture-panel { padding: 20px; }
+  .pullquote-section { padding: 3rem 1rem; }
+  .chapter-nav { gap: 0.75rem; font-size: 0.6rem; }
+  .footer { padding: 3rem 1rem 2rem; }
+  .footer-links { gap: 1rem; font-size: 0.7rem; }
+  .content-essay blockquote { padding: 16px 18px; }
+  .diagram-container { padding: 1rem; margin: 1.5rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
   .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
   .hero-emblem svg { animation: none !important; }
   .yy-spin { animation: none !important; }
   .yy-qi { animation: none !important; }
+  .text-reveal-inner { transform: translateY(0) !important; }
+  .section-separator { opacity: 1 !important; transform: scaleX(1) !important; }
 }
 </style>
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/vsCn-lCJx0bof7KzGpQGVjOraixfBGfoVOd9Zr7wO6m6nPZ6dsJ1dZg5295KPBrQoEJnt5T8Zy5QYZUTOpmwKXgAm39aiuc345z9srY0Zyb13MJxvmu5sFghmHZqJf0_SlzaPAABXlL9Zg_eZqlmEyz6fxjfYy0tyunvnq8FO1g2Hc8aPcVyudXDpd1d7cd7fdT0JPq84ourFmR-b3SGAM9jC70vDrOTVjeBo9Fk1qFOjL6ynnHwlHzD5RxmStiCFdnFjJZUnbwiBeSiW3lqjtpyMWqnwxKyLvHmw8pDliVjCNoXX9X5n-Dz81wX06MWhkOQyX5tgW5QaGYYjJ0PxC74gblSrrsDD6vAhzztVVGb-whrXwAEvcltMbgZPLgXsECLhVgsuHIeGgHhQeDs3zmZeW3fQyD9H5JGQgPEoyL3NKl4gruXL3WgwPrhd5OYNxr99rXnkCtHkJbiIXnGS_MYgnT1QeDwTjt5p29CI_dvaQd2ilc9LHLkMC45e1YF1_S_4bvcxpd777V3QhODNaip3ZEzGtRQJaBtiF2yulnKzBTzG7JnnSEMgSHD1P_CVLYQ0FJPBHkRDKEBS0fvzmUBHoYqh_P98Im7g3L3vYyRnUXvIdjqGO_xmNm-EBKgReRcnuTnMgfS29tl4-nn6fCpmAGxg1ZMECZ_SoZtJsQuzS3y5Kf_47H1CiENr7n9I0wuWUKSPYiR4RBfR3enrPXF4_ugGymqVpEMGEPoIjLDkGthPtpLDso9492BogFtRaMbf_3S8k_XWVrq2d-mnOIVMQhRYFbfytnGhimD4X9DvwW-7ukmr3LAOI2dorlGpOQvgv2Gui4FhmgytoP2mlP2sSNeYgXL9wZ1Ay3ZH7u6NdHj4CNhTH4T8KstHstWEE5aQ2KiamCF9dqSN8TC99sPBKwfskTpQQRDoWlKhAG9Vq2RP6E8fDpMLFDDnpRwkKAl3pc6x_L3ujptHLnY9V5_dyaBpTU6jmn24sDVj7hbuL5w7cwlhJIYOCEOcs5HfMwi02ayPEzWVa6f59vZ831q92BApWFC1hPfO1NG6vvFc-xq75JD2A'></script><base target="_blank">
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/uUfhNNuOALSpPgMZh1WUXypNF-2RvgtSTRVwFjtKSGUiFK_HDI4udAmPiqysAWYk9TdV5dDaPdbgLFifq-UIQZgnjz8xpSCibE-hQOjXMZ10mPzZ4Oc9TPZPyaTXd9VWdWxcCoofWzeWRmX-7LkPqq32CuZcvWN7yPplEO6BDg85xZ1HxzRpXyhe4b7KZZCkaBS1pHyM_ujEPoqWQDtoiBeYQBKALaCZwszgWY2pkY2_5TDgeWbwYZ1QjLojRE-No-eF6IyWlilJYOTkV3tcTx3GsNn6vtwTHvHnnxj64meaRSlhhcN-oOGAqAvbZ2B2FX9pFq33R4fh41iCYgfewJcox5Fc28mnIToBgoDjwa0qyHcuJnXG4zX9jiu01xSKIT7j-aj7qaD3h0lT8WvfNc3q4-sltyi0EcTKUFvFEf_WZIUzVCHWv6Gk9yMnfwJbpNZ7cnCyXf2bFEIKVeWw0aNItf7ArvTjN9vZxyK_1UJHFEtGAVk5WyikjJF5SufV_DBOCG5rWGUVafI9jKd-l9Lt6cXnXFeuwhLnodOdHaV9hWKOd6MDCJ40D8k-OCX_7DUOW8TH0bkiBRnK0EwNP9pu7VY8CYT0HXlI9pC7x9sNknuaHe5fEWJUmW--1N9sLNum5USPJgds1EjAFefFjkvJzao0cE0e1uyz28g6gxwAWrsAwsccf9wNYUMY3Aov9dE0nqRFNh0BRfuiaDqadybjwwEOLnYFl4K-vOJ0kVy6I9nb4gdOECLMUpQ-fxv5zloNHH2LltiD0wofzPOmFUlEL2rmWeTWKfs-nMdJgtG-uOQYKYFgdclSK7r6gTU_FJEZtyJrcksR8-KsEBUxTw7wMXo-MB5b33CGRDcMJU28PjdQfx6JFTsFx5dx8zpogw2tzQsbdMkdrCA3LNDAx-05MFaaHFE1E8EBN6jF7F6q2BFpi2jvVWyvYTBYQ4zsQJ0mQHNIAfz7iOaIsCFn0pjOfBhOIqNLBkmCi-Xq-TwuR7ipHz62t69huACgpq_XK-iL0M_myEqApFIc_oxWgrt3OE7XPHC6EU3fZN7_7I_xLClOTrnkNnIGzs-jgyP1I5BsZbfcZ3k'></script><base target="_blank">
 </head>
 <body>
 
@@ -411,31 +645,31 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </button>
   <div class="nav-menu" id="navMenu">
     <div class="nav-section-title">This Page</div>
-    <a href="#hero" class="nav-item"><span class="nav-item-icon">✦</span><span>Overview</span></a>
-    <a href="#apophatic" class="nav-item"><span class="nav-item-icon">∅</span><span>The Apophatic Threshold</span></a>
-    <a href="#uncarved" class="nav-item"><span class="nav-item-icon">🪵</span><span>The Uncarved Block</span></a>
-    <a href="#treasures" class="nav-item"><span class="nav-item-icon">💎</span><span>The Three Treasures</span></a>
-    <a href="#comparative" class="nav-item"><span class="nav-item-icon">📜</span><span>Tao and the Logos</span></a>
+    <a href="#hero" class="nav-item" data-section="hero"><span class="nav-item-icon">&#10022;</span><span>Overview</span></a>
+    <a href="#apophatic" class="nav-item" data-section="apophatic"><span class="nav-item-icon">&#8709;</span><span>The Apophatic Threshold</span></a>
+    <a href="#uncarved" class="nav-item" data-section="uncarved"><span class="nav-item-icon">&#9670;</span><span>The Uncarved Block</span></a>
+    <a href="#treasures" class="nav-item" data-section="treasures"><span class="nav-item-icon">&#10022;</span><span>The Three Treasures</span></a>
+    <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon">&#10000;</span><span>Tao and the Logos</span></a>
     <div class="nav-divider"></div>
-    <div class="nav-section-title">Taoism · Four Pages</div>
-    <a href="taoism-threshold.html" class="nav-item active"><span class="nav-item-icon">☯</span><span>I · The Unnamed Way</span></a>
-    <a href="taoism-practices.html" class="nav-item"><span class="nav-item-icon">🌱</span><span>II · The Uncarved Block</span></a>
-    <a href="taoism-butterfly.html" class="nav-item"><span class="nav-item-icon">🦋</span><span>III · The Butterfly Dream</span></a>
-    <a href="taoism-return.html" class="nav-item"><span class="nav-item-icon">🍃</span><span>IV · Returning to the Root</span></a>
+    <div class="nav-section-title">Taoism &middot; Four Pages</div>
+    <a href="taoism-threshold.html" class="nav-item active"><span class="nav-item-icon">&#9775;</span><span>I &middot; The Unnamed Way</span></a>
+    <a href="taoism-practices.html" class="nav-item"><span class="nav-item-icon">&#127793;</span><span>II &middot; The Uncarved Block</span></a>
+    <a href="taoism-butterfly.html" class="nav-item"><span class="nav-item-icon">&#128027;</span><span>III &middot; The Butterfly Dream</span></a>
+    <a href="taoism-return.html" class="nav-item"><span class="nav-item-icon">&#127810;</span><span>IV &middot; Returning to the Root</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
-    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
-    <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>Kabbalah</span></a>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">&#8962;</span><span>Home &middot; Vedantic Mappings</span></a>
+    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon">&#9784;</span><span>Advaita Vedanta</span></a>
+    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">&#10013;</span><span>The Vedantic Messiah</span></a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">&#10017;</span><span>Kabbalah</span></a>
   </div>
 </div>
 
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
-  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+  <span class="theme-toggle-icon theme-toggle-icon-sun">&#9728;</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">&#9790;</span>
 </button>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 
 <!-- HERO -->
 <header class="hero" id="hero">
@@ -495,129 +729,225 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </div>
 
   <h1 class="hero-title">The Unnamed Way</h1>
-  <p class="hero-subtitle">Apophatic Threshold · The Tao Before All Names</p>
+  <p class="hero-subtitle">Apophatic Threshold &middot; The Tao Before All Names</p>
   <div class="hero-divider">
     <div class="hero-divider-line"></div>
     <div class="hero-divider-diamond"></div>
     <div class="hero-divider-line"></div>
   </div>
-  <p class="hero-quote">"The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name."</p>
-  <p class="hero-quote-attr">— Tao Te Ching, Chapter 1 (Lao Tzu, 6th–4th c. BCE)</p>
+  <p class="hero-quote">&ldquo;The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name.&rdquo;</p>
+  <p class="hero-quote-attr">&mdash; Tao Te Ching, Chapter 1 (Lao Tzu, 6th&ndash;4th c. BCE)</p>
   <div class="hero-scroll-cue" onclick="document.getElementById('apophatic').scrollIntoView({behavior:'smooth'})">
     <span>Enter</span><div class="scroll-line"></div>
   </div>
 </header>
 
-<!-- INTRODUCTION: THE APOPHATIC THRESHOLD -->
+<!-- =====================================================
+     SECTION 1: THE APOPHATIC THRESHOLD
+     ===================================================== -->
 <section class="content-section fade-in" id="apophatic">
   <div class="section-header">
     <div class="section-separator"></div>
     <p class="section-eyemark">The Nameless Source</p>
     <h2><span class="text-reveal"><span class="text-reveal-inner">Beyond the Names of God</span></span></h2>
-    <p>Radical Apophaticism · The Cloud of Unknowing in Taoist Form</p>
+    <p>Radical Apophaticism &middot; The Cloud of Unknowing in Taoist Form</p>
   </div>
+
   <div class="content-essay fade-in">
-    <p class="content-introduction">The Tao Te Ching opens with a declaration that shatters all conceptual grasping. <strong>The Tao that can be spoken is not the eternal Tao.</strong> This is not a mere puzzle or a poetic flourish. It is a precise philosophical instrument — the same apophatic (via negativa) method found in Pseudo-Dionysius' <em>Mystical Theology</em>, in the Upanishads' <span class="chinese-term" title="Not this, not this — the method of negation in Advaita">neti-neti</span>, and in <em>The Cloud of Unknowing</em>'s instruction to abandon all images and concepts of God.</p>
+    <p class="content-introduction">The Tao Te Ching opens with a declaration that shatters all conceptual grasping. <strong>The Tao that can be spoken is not the eternal Tao.</strong> This is not a puzzle or poetic flourish. It is a precise philosophical instrument &mdash; the same apophatic (<em>via negativa</em>) method found in Pseudo-Dionysius&rsquo; <em>Mystical Theology</em>, in the Upani&#7779;ads&rsquo; <span class="sanskrit-term" title="Not this, not this &mdash; the method of negation in Advaita">neti-neti</span>, and in <em>The Cloud of Unknowing</em>&rsquo;s instruction to abandon all images and concepts of God.</p>
 
-    <p>Lao Tzu does not say the Tao is <em>unknowable</em> in a skeptical sense. He says the Tao is <em>unnameable</em> — beyond the reach of language and logic, yet immediately present as the ground of all experience. The first chapter of the Tao Te Ching is the <strong>hermeneutic key</strong> to the entire Taoist tradition: any attempt to fix the Tao in words or doctrines is a betrayal of its living reality.</p>
+    <p class="fade-in stagger-1">Lao Tzu does not say the Tao is <em>unknowable</em> in a skeptical sense. He says the Tao is <em>unnameable</em> &mdash; beyond language and logic, yet immediately present as the ground of all experience. The first chapter is the <strong>hermeneutic key</strong> to the entire tradition: any attempt to fix the Tao in words or doctrines betrays its living reality.</p>
 
-    <p>In this, Lao Tzu anticipates the Christian apophatic tradition by over five centuries. Pseudo-Dionysius (c. 500 CE) writes: "We pray to enter the darkness beyond light, and without seeing and without knowing, to see and to know that which is beyond all vision and all knowledge." The <em>Cloud of Unknowing</em> (14th century) instructs the seeker to "lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him."</p>
+    <p class="fade-in stagger-2">In this, Lao Tzu anticipates the Christian apophatic tradition by over five centuries. Pseudo-Dionysius (c. 500 CE) writes: &ldquo;We pray to enter the darkness beyond light, and without seeing and without knowing, to see and to know that which is beyond all vision and all knowledge.&rdquo; The <em>Cloud of Unknowing</em> (14th century) instructs the seeker to &ldquo;lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him.&rdquo; The Tao Te Ching&rsquo;s first chapter is the same instruction, delivered in the 6th century BCE: abandon the named, and rest in the nameless.</p>
 
-    <p>The Tao Te Ching's first chapter is the same instruction, given in the 6th century BCE: abandon the named, and rest in the nameless.</p>
-
-    <div class="scripture-panels fade-in">
+    <div class="scripture-panels fade-in stagger-3">
       <div class="scripture-panel">
-        <div class="scripture-panel-label">Tao Te Ching · Chapter 1</div>
-        <p class="scripture-panel-text">"The nameless is the origin of heaven and earth. The named is the mother of ten thousand things. Free from desire, you perceive the mystery. Filled with desire, you see only the manifestations."</p>
-        <p class="scripture-panel-ref">— Lao Tzu</p>
+        <div class="scripture-panel-label">Tao Te Ching &middot; Chapter 1</div>
+        <p class="scripture-panel-text">&ldquo;The nameless is the origin of heaven and earth. The named is the mother of ten thousand things. Free from desire, you perceive the mystery. Filled with desire, you see only the manifestations.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Lao Tzu</p>
       </div>
       <div class="scripture-panel">
         <div class="scripture-panel-label">The Cloud of Unknowing</div>
-        <p class="scripture-panel-text">"Lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him."</p>
-        <p class="scripture-panel-ref">— Anonymous, 14th c.</p>
+        <p class="scripture-panel-text">&ldquo;Lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Anonymous, 14th c.</p>
       </div>
     </div>
 
-    <h3>The Three‑Stage Hierarchy of the Tao</h3>
-    <p>The teaching of Lao Tzu, as preserved in the Tao Te Ching and elaborated by Zhuangzi and the later Taoist tradition, reveals a clear hierarchy — though Lao Tzu would resist the very notion of hierarchy, for the Tao "does not take sides" and "gives birth to both good and evil":</p>
+    <!-- DIAGRAM 1: Three-Stage Hierarchy of the Tao -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">The Three&ndash;Stage Hierarchy of the Tao</div>
+      <svg class="diagram-svg" viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#e6c86e" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#b8960c" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#b8960c"/>
+            <stop offset="50%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#e6c86e"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Level 3: Tao Itself (top) -->
+        <ellipse cx="360" cy="60" rx="140" ry="35" fill="url(#goldGrad)" stroke="url(#goldStroke)" stroke-width="1" opacity="0.9"/>
+        <text x="360" y="55" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="13" letter-spacing="0.15em" opacity="0.95">TAO ITSELF</text>
+        <text x="360" y="75" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">Beyond Being &amp; Non&ndash;Being</text>
+
+        <!-- Arrow down -->
+        <line x1="360" y1="100" x2="360" y2="125" stroke="#d4af37" stroke-width="0.8" opacity="0.5" stroke-dasharray="4,3"/>
+        <polygon points="360,133 355,123 365,123" fill="#d4af37" opacity="0.5"/>
+
+        <!-- Level 2: Nameless Mystery -->
+        <ellipse cx="360" cy="170" rx="180" ry="40" fill="url(#goldGrad)" stroke="url(#goldStroke)" stroke-width="0.8" opacity="0.7"/>
+        <text x="360" y="163" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="12" letter-spacing="0.12em" opacity="0.9">THE NAMELESS MYSTERY</text>
+        <text x="360" y="182" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.6">Wu &middot; Non&ndash;Being &middot; The Subtle Essence</text>
+
+        <!-- Arrow down -->
+        <line x1="360" y1="215" x2="360" y2="240" stroke="#d4af37" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,3"/>
+        <polygon points="360,248 355,238 365,238" fill="#d4af37" opacity="0.4"/>
+
+        <!-- Level 1: Named World -->
+        <ellipse cx="360" cy="285" rx="220" ry="45" fill="url(#goldGrad)" stroke="url(#goldStroke)" stroke-width="0.6" opacity="0.5"/>
+        <text x="360" y="278" text-anchor="middle" fill="#b8960c" font-family="Cinzel, serif" font-size="12" letter-spacing="0.1em" opacity="0.8">THE NAMED WORLD</text>
+        <text x="360" y="298" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.55">You &middot; Being &middot; The Ten Thousand Things</text>
+
+        <!-- Side annotation: Return arrow -->
+        <path d="M 590 285 Q 640 200 590 60" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.25" stroke-dasharray="6,4"/>
+        <polygon points="585,68 592,58 598,68" fill="#d4af37" opacity="0.25"/>
+        <text x="655" y="170" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="0.15em" opacity="0.45" transform="rotate(-20, 655, 170)">RETURN</text>
+
+        <!-- Bottom annotation -->
+        <text x="360" y="380" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.5">&ldquo;Returning is the movement of the Tao. Yielding is the way of the Tao.&rdquo;</text>
+        <text x="360" y="400" text-anchor="middle" fill="#b8960c" font-family="Cinzel, serif" font-size="8" letter-spacing="0.2em" opacity="0.4">TAO TE CHING &middot; CHAPTER 40</text>
+      </svg>
+      <p class="diagram-caption">The Tao Te Ching describes a descending hierarchy from the unnameable source through mystery into manifestation, with the path of return (&ldquo;fan&rdquo;) as the essential movement.</p>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Three&ndash;Stage Hierarchy</h3>
+    <p class="fade-in stagger-2">The teaching reveals a clear hierarchy &mdash; though Lao Tzu would resist the notion, for the Tao &ldquo;does not take sides&rdquo; and &ldquo;gives birth to both good and evil&rdquo;:</p>
 
     <ul>
-      <li><strong>1. The Named World (You / Being)</strong> — The realm of distinctions, names, desires, and the ten thousand things. This is ordinary existence, where "when people see some things as beautiful, other things become ugly; when people see some things as good, other things become bad." Here, the individual identifies with body, mind, social role, and the endless pursuit of desires. This is the realm of the "named" — the Mother of all things, but not the Source itself.</li>
-      <li><strong>2. The Nameless Mystery (Wu / Non‑Being)</strong> — The realization that behind all names and forms lies the unnamable source. "The Tao that can be told is not the eternal Tao; the name that can be named is not the eternal Name." Here, one "free from desire, realizes the mystery" — the subtle essence that precedes heaven and earth. This is the realm of meditation, of zuowang (sitting in forgetfulness), where the mind empties itself of concepts and distinctions. Yet even this "mystery" is not the final level, for "mystery and manifestations arise from the same source."</li>
-      <li><strong>3. The Tao Itself — Beyond Being and Non‑Being</strong> — The ultimate reality that transcends even the duality of named and nameless, being and non‑being, mystery and manifestation. This is "darkness within darkness, the gateway to all understanding." It is not a state, not a void, not a presence, not an absence. It is "the unobstructed breath," the "unlimited father and mother of all limited things," the "subtle reality of the universe" that "cannot be described." As one translation puts it: "The Tao that can be taoed is not the entire Tao."</li>
+      <li class="fade-in stagger-1"><strong>1. The Named World (Y&#466;u / Being)</strong> &mdash; The realm of distinctions, names, desires, and the ten thousand things. Here, &ldquo;when people see some things as beautiful, other things become ugly.&rdquo; The individual identifies with body, mind, social role, and the endless pursuit of desires. This is the realm of the &ldquo;named&rdquo; &mdash; the Mother of all things, but not the Source itself.</li>
+      <li class="fade-in stagger-2"><strong>2. The Nameless Mystery (W&uacute; / Non&ndash;Being)</strong> &mdash; The realization that behind all names and forms lies the unnamable source. Here, one &ldquo;free from desire, realizes the mystery&rdquo; &mdash; the subtle essence that precedes heaven and earth. This is the realm of <span class="chinese-term" title="Sitting in forgetfulness; meditation without object">zu&ograve;w&agrave;ng</span>, where the mind empties itself of concepts. Yet even this &ldquo;mystery&rdquo; is not final, for &ldquo;mystery and manifestations arise from the same source.&rdquo;</li>
+      <li class="fade-in stagger-3"><strong>3. The Tao Itself &mdash; Beyond Being and Non&ndash;Being</strong> &mdash; The ultimate reality that transcends even the duality of named and nameless. This is &ldquo;darkness within darkness, the gateway to all understanding.&rdquo; It is not a state, not a void, not a presence, not an absence. It is &ldquo;the unobstructed breath,&rdquo; the &ldquo;unlimited father and mother of all limited things.&rdquo;</li>
     </ul>
 
-    <h3>The Radical Move: Wu Wei — The Action of Non‑Action</h3>
-    <p>What makes Lao Tzu's teaching unique is that the path to the Absolute is not through effort, inquiry, or self‑emptying love, but through Wu Wei — non‑action, effortless action, action that arises spontaneously from alignment with the Tao. This is not passivity or laziness. It is the action of water, which "overcomes the hard and strong through softness"; the action of the sage, who "acts without doing anything and teaches without saying anything."</p>
+    <h3 class="fade-in stagger-1">Wu Wei &mdash; The Action of Non&ndash;Action</h3>
+    <p class="fade-in stagger-2">What makes Lao Tzu&rsquo;s teaching unique is that the path to the Absolute is not through effort or inquiry, but through <span class="chinese-term" title="Non-action; effortless action; action in harmony with the Tao">w&uacute; w&eacute;i</span> &mdash; action that arises spontaneously from alignment with the Tao. This is not passivity. It is the action of water, which &ldquo;overcomes the hard and strong through softness&rdquo;; the action of the sage, who &ldquo;acts without doing anything and teaches without saying anything.&rdquo;</p>
 
-    <p>The Tao Te Ching describes this paradox repeatedly: "The Master leads by emptying people's minds and filling their cores, by weakening their ambition and toughening their resolve." "He helps people lose everything they know, everything they desire, and creates confusion in those who think that they know." "Practice not‑doing, and everything will fall into place."</p>
+    <p class="fade-in stagger-3">The deepest cut: not that one must transcend the world through spiritual effort, but that one must stop trying to transcend it. The very effort to reach the Tao is what keeps one from it. The sage simply <em>is</em>, like the valley that receives all waters without striving.</p>
 
-    <p>This is the deepest cut: not that one must transcend the world through spiritual effort, but that one must stop trying to transcend it. The very effort to reach the Tao is what keeps one from it. As the text says: "Whoever free from attachment looks inward with detachment attains the vision of the Unmanifest; whoever is ego‑bound and clings to greed sees but the outer show." Yet even "looking inward" is a doing — the sage simply is, like the valley that receives all waters without striving.</p>
+    <!-- DIAGRAM 2: Wu Wei — The Valley Spirit -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">Wu Wei &middot; The Valley Spirit</div>
+      <svg class="diagram-svg" viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="valleyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d4af37" stop-opacity="0.08"/>
+            <stop offset="100%" stop-color="#b8960c" stop-opacity="0.02"/>
+          </linearGradient>
+          <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d4af37" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#b8960c" stop-opacity="0.05"/>
+          </linearGradient>
+        </defs>
 
-    <h3>The Nature of the Tao</h3>
-    <p>The Tao is not:</p>
+        <!-- Valley shape -->
+        <path d="M 100 40 Q 180 180 360 240 Q 540 180 620 40" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+        <path d="M 100 40 Q 180 180 360 240 Q 540 180 620 40" fill="url(#valleyGrad)" opacity="0.5"/>
+
+        <!-- Water level -->
+        <path d="M 120 200 Q 240 210 360 205 Q 480 200 600 195" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.4" stroke-dasharray="3,3"/>
+        <path d="M 120 200 Q 240 210 360 205 Q 480 200 600 195 L 600 280 Q 480 285 360 282 Q 240 285 120 280 Z" fill="url(#waterGrad)" opacity="0.3"/>
+
+        <!-- Flow arrows -->
+        <path d="M 200 80 Q 220 130 250 160" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.35" marker-end="url(#arrowhead)"/>
+        <path d="M 520 80 Q 500 130 470 160" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.35"/>
+        <path d="M 360 60 Q 360 120 360 170" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3" stroke-dasharray="4,3"/>
+        <polygon points="360,178 355,168 365,168" fill="#d4af37" opacity="0.3"/>
+
+        <!-- Labels -->
+        <text x="360" y="30" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em" opacity="0.85">THE VALLEY SPIRIT</text>
+        <text x="360" y="48" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">G&ucirc; Sh&eacute;n &middot; The Empty That Never Runs Dry</text>
+
+        <text x="160" y="110" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.5">MOUNTAIN</text>
+        <text x="560" y="110" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.5">MOUNTAIN</text>
+
+        <text x="360" y="230" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.7">WATER FINDS ITS LEVEL</text>
+
+        <!-- Bottom quote -->
+        <text x="360" y="295" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.5">&ldquo;The supreme good is like water, which benefits all things without contention.&rdquo;</text>
+      </svg>
+      <p class="diagram-caption">The valley does not strive to receive water; it is simply low, and water flows to it naturally. This is w&uacute; w&eacute;i: effortless alignment with the way things are.</p>
+    </div>
+
+    <h3 class="fade-in stagger-1">What the Tao Is Not</h3>
     <ul>
-      <li>A deity or divine being ("It is older than God")</li>
-      <li>A state of consciousness (consciousness is one of the "ten thousand things" that arise from it)</li>
-      <li>The witness or observer (the witness is still a mode of perception)</li>
-      <li>An experience (all experiences are transient; the Tao "can be experienced" but "is not true" in the sense of being an object of experience)</li>
-      <li>A void or emptiness (it is "empty yet infinitely capable; the more you use it, the more it produces")</li>
-      <li>Something to be attained (it is "always present," "hidden but always present")</li>
+      <li class="fade-in stagger-1">A deity or divine being (&ldquo;It is older than God&rdquo;)</li>
+      <li class="fade-in stagger-1">A state of consciousness (consciousness is one of the &ldquo;ten thousand things&rdquo; that arise from it)</li>
+      <li class="fade-in stagger-2">The witness or observer (the witness is still a mode of perception)</li>
+      <li class="fade-in stagger-2">An experience (all experiences are transient)</li>
+      <li class="fade-in stagger-3">A void or emptiness (&ldquo;empty yet infinitely capable; the more you use it, the more it produces&rdquo;)</li>
+      <li class="fade-in stagger-3">Something to be attained (&ldquo;always present,&rdquo; &ldquo;hidden but always present&rdquo;)</li>
     </ul>
-    <p>The Tao is described through negation and paradox: "It is like a well: used but never used up. It is like the eternal void: filled with infinite possibilities." "It is hidden but always present. I don't know who gave birth to it. It is older than God." "The Tao doesn't take sides; it gives birth to both good and evil." "The Tao is like a bellows: it is empty yet infinitely capable."</p>
 
-    <h3>The Path to the Absolute: Returning to the Uncarved Block</h3>
-    <p>Lao Tzu's method is not inquiry, not devotion, not meditation in the yogic sense, but return — a turning back to what was never left:</p>
+    <p class="fade-in stagger-1">The Tao is described through negation and paradox: &ldquo;It is like a well: used but never used up. It is like the eternal void: filled with infinite possibilities.&rdquo; &ldquo;The Tao doesn&rsquo;t take sides; it gives birth to both good and evil.&rdquo; &ldquo;The Tao is like a bellows: it is empty yet infinitely capable.&rdquo;</p>
+
+    <h3 class="fade-in stagger-1">Returning to the Uncarved Block</h3>
+    <p class="fade-in stagger-2">Lao Tzu&rsquo;s method is not inquiry, not devotion, not meditation in the yogic sense, but return &mdash; a turning back to what was never left:</p>
+
     <ul>
-      <li>"Return is the movement of the Tao" — The way forward is the way back</li>
-      <li>"Yielding is the way of the Tao" — The soft overcomes the hard</li>
-      <li>"Be like water" — The supreme good is like water, which benefits all things without contention</li>
-      <li>"The Master does nothing, yet leaves nothing undone" — Wu Wei in its perfection</li>
-      <li>"The Uncarved Block" (Pu) — The state before the mind carves the world into names and forms</li>
+      <li class="fade-in stagger-1"><strong>&ldquo;Return is the movement of the Tao&rdquo;</strong> &mdash; The way forward is the way back</li>
+      <li class="fade-in stagger-2"><strong>&ldquo;Yielding is the way of the Tao&rdquo;</strong> &mdash; The soft overcomes the hard</li>
+      <li class="fade-in stagger-3"><strong>&ldquo;Be like water&rdquo;</strong> &mdash; The supreme good benefits all things without contention</li>
+      <li class="fade-in stagger-4"><strong>&ldquo;The Uncarved Block&rdquo; (P&#468;)</strong> &mdash; The state before the mind carves the world into names and forms</li>
     </ul>
-    <p>The sage "has but doesn't possess, acts but doesn't expect. When her work is done, she forgets it. That is why it lasts forever." This forgetting is not amnesia but the natural state of one who has returned to the Tao — there is no one left to remember or forget, no one left to claim ownership of actions. The work flows through the sage as water flows through a valley, leaving no trace.</p>
 
-    <h3>The Paradox of Teaching</h3>
-    <p>Like the Absolute of Nisargadatta, the Divine Ground of Jesus, and the Self of Ramana, the Tao cannot be taught — and Lao Tzu knew this better than any of them. The entire Tao Te Ching is a prolonged acknowledgment of its own inadequacy: "The Tao that can be told is not the eternal Tao"; "Even the finest teaching is not the Tao itself"; "Even the finest name is insufficient to define it"; "Without words, the Tao can be experienced, and without a name, it can be known."</p>
+    <p class="fade-in stagger-1">The sage &ldquo;has but doesn&rsquo;t possess, acts but doesn&rsquo;t expect. When her work is done, she forgets it. That is why it lasts forever.&rdquo; This forgetting is not amnesia but the natural state of one who has returned to the Tao &mdash; there is no one left to remember or forget, no one left to claim ownership. The work flows through the sage as water flows through a valley.</p>
 
-    <p>The text uses 5,000 words to say what cannot be said in 5,000 words. It employs paradox, metaphor, and negation not to build a philosophy but to dismantle the reader's philosophical constructions. As one commentator notes: "We can only penetrate to an understanding of it when we forget ourselves, even our desire to understand it, to shed all grasping and go beyond thought, words and names. Otherwise we only understand what is on the surface, what is superficial, failing to penetrate to the true essence of things."</p>
+    <h3 class="fade-in stagger-1">The Paradox of Teaching</h3>
+    <p class="fade-in stagger-2">Like the Absolute of Nisargadatta, the Divine Ground of Jesus, and the Self of Ramana, the Tao cannot be taught &mdash; and Lao Tzu knew this better than any of them. The entire Tao Te Ching is a prolonged acknowledgment of its own inadequacy: &ldquo;The Tao that can be told is not the eternal Tao&rdquo;; &ldquo;Even the finest teaching is not the Tao itself&rdquo;; &ldquo;Without words, the Tao can be experienced, and without a name, it can be known.&rdquo;</p>
 
-    <p>The Taoist tradition developed elaborate practices — neidan (internal alchemy), qigong, meditation — but these are fingers pointing at the moon. The deepest level remains what Zhuangzi called the "Great Thoroughfare": a state in which "the distinctions of self and other, subject and object, have dissolved into the undifferentiated flow of existence."</p>
+    <p class="fade-in stagger-3">The text uses 5,000 words to say what cannot be said. It employs paradox, metaphor, and negation not to build a philosophy but to dismantle the reader&rsquo;s philosophical constructions. As one commentator notes: &ldquo;We can only penetrate to an understanding of it when we forget ourselves, even our desire to understand it, to shed all grasping and go beyond thought, words and names.&rdquo;</p>
 
-    <h3>Final Understanding</h3>
-    <p>The deepest level of Lao Tzu's teaching is that what you fundamentally are is not the separate self struggling to find the Tao, but the Tao itself, temporarily obstructed by its own naming and desiring. The "I" that seeks the Tao is itself a name, a carving of the Uncarved Block. When the carving ceases, what remains is not a new state but the original state — the valley that has always received the waters, the bellows that has always been empty yet infinitely capable, the darkness within darkness that has always been the gateway to all understanding.</p>
+    <div class="tension-box fade-in stagger-1">
+      <p>The deepest level of Lao Tzu&rsquo;s teaching is that what you fundamentally are is not the separate self struggling to find the Tao, but the Tao itself, temporarily obstructed by its own naming and desiring. The &ldquo;I&rdquo; that seeks the Tao is itself a name, a carving of the Uncarved Block. When the carving ceases, what remains is not a new state but the original state.</p>
+    </div>
 
-    <p>As the Tao Te Ching says: "Returning is the movement of the Tao. Yielding is the way of the Tao. All things are born of being. Being is born of non‑being." And deeper still: the non‑being from which being is born is itself born of the Tao — which is neither being nor non‑being, neither named nor nameless, neither this nor that, yet the source of all this and all that.</p>
+    <p class="fade-in stagger-2">The sage does not reach this level. The sage <em>is</em> this level &mdash; not as an achievement, but as a return. &ldquo;The ten thousand things rise and fall while the Self watches their return.&rdquo; The Self here is not the individual self but the Tao itself, watching through the sage&rsquo;s empty eyes, acting through the sage&rsquo;s effortless hands.</p>
 
-    <p>The sage does not reach this level. The sage is this level — not as an achievement, but as a return. "The ten thousand things rise and fall while the Self watches their return." The Self here is not the individual self but the Tao itself, watching through the sage's empty eyes, acting through the sage's effortless hands, flowing through the sage's still heart like water finding its level, like the valley receiving the mountain's streams, like darkness receiving light without being diminished by it.</p>
-
-    <p>In the end, Lao Tzu's teaching is the most radical of all: there is nothing to do, nowhere to go, no one to become. The Tao is already flowing. The only question is whether you are flowing with it — or, more precisely, whether you have stopped trying to swim against the current that was never flowing in any direction at all.</p>
+    <p class="fade-in stagger-3">In the end, Lao Tzu&rsquo;s teaching is the most radical of all: there is nothing to do, nowhere to go, no one to become. The Tao is already flowing. The only question is whether you have stopped trying to swim against the current that was never flowing in any direction at all.</p>
 
     <div class="scripture-panels fade-in margin-top">
       <div class="scripture-panel">
-        <div class="scripture-panel-label">Tao Te Ching · Chapter 1</div>
-        <p class="scripture-panel-text">"The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name. Nameless it is the source of creation; named it is the mother of all things."</p>
-        <p class="scripture-panel-ref">— Lao Tzu</p>
+        <div class="scripture-panel-label">Tao Te Ching &middot; Chapter 1</div>
+        <p class="scripture-panel-text">&ldquo;The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name. Nameless it is the source of creation; named it is the mother of all things.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Lao Tzu</p>
       </div>
       <div class="scripture-panel">
-        <div class="scripture-panel-label">Comparative Table · The Deepest Level</div>
+        <div class="scripture-panel-label">Comparative Table &middot; The Deepest Level</div>
         <div class="comparative-table-wrapper">
           <table class="comparative-table">
             <thead>
               <tr>
                 <th>Aspect</th>
-                <th>Nisargadatta's Absolute</th>
-                <th>Jesus's Divine Ground</th>
-                <th>Ramana's Self</th>
-                <th>Lao Tzu's Tao</th>
+                <th>Nisargadatta&rsquo;s Absolute</th>
+                <th>Jesus&rsquo;s Divine Ground</th>
+                <th>Ramana&rsquo;s Self</th>
+                <th>Lao Tzu&rsquo;s Tao</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Nature of deepest reality</td><td>Beyond consciousness, prior to "I am"</td><td>Beyond essence, known only through energies</td><td>Beyond creation itself, no world ever appeared</td><td>Beyond being and non‑being, nameless and named as one</td></tr>
-              <tr><td>Path</td><td>Abiding in "I am," then dissolving it</td><td>Kenosis — self‑emptying love through the cross</td><td>Self‑inquiry — "Who am I?" tracing the "I" to its source</td><td>Wu Wei — non‑action, returning to the Uncarved Block</td></tr>
-              <tr><td>The self</td><td>Dissolves into pure awareness</td><td>Dies and rises as Christ‑life</td><td>Never existed — only the Self is</td><td>Dissolves into the Great Thoroughfare</td></tr>
-              <tr><td>Relationship to world</td><td>Temporary modulation of the Absolute</td><td>Loved into being and redeemed through incarnation</td><td>Never created — Ajata Vada</td><td>The world arises spontaneously; the sage lets it come and go</td></tr>
-              <tr><td>Final state</td><td>"I am dead already"</td><td>"It is finished"</td><td>Sahaja Samadhi — the natural state</td><td>The Uncarved Block, the valley spirit, water‑like being</td></tr>
+              <tr><td>Nature of deepest reality</td><td>Beyond consciousness, prior to &ldquo;I am&rdquo;</td><td>Beyond essence, known only through energies</td><td>Beyond creation itself, no world ever appeared</td><td>Beyond being and non&ndash;being, nameless and named as one</td></tr>
+              <tr><td>Path</td><td>Abiding in &ldquo;I am,&rdquo; then dissolving it</td><td>K&eacute;n&ocirc;sis &mdash; self&ndash;emptying love through the cross</td><td>Self&ndash;inquiry &mdash; &ldquo;Who am I?&rdquo; tracing the &ldquo;I&rdquo; to its source</td><td>W&uacute; w&eacute;i &mdash; non&ndash;action, returning to the Uncarved Block</td></tr>
+              <tr><td>The self</td><td>Dissolves into pure awareness</td><td>Dies and rises as Christ&ndash;life</td><td>Never existed &mdash; only the Self is</td><td>Dissolves into the Great Thoroughfare</td></tr>
+              <tr><td>Relationship to world</td><td>Temporary modulation of the Absolute</td><td>Loved into being and redeemed through incarnation</td><td>Never created &mdash; Aj&#257;ta V&#257;da</td><td>The world arises spontaneously; the sage lets it come and go</td></tr>
+              <tr><td>Final state</td><td>&ldquo;I am dead already&rdquo;</td><td>&ldquo;It is finished&rdquo;</td><td>Sahaja Sam&#257;dhi &mdash; the natural state</td><td>The Uncarved Block, the valley spirit, water&ndash;like being</td></tr>
             </tbody>
           </table>
         </div>
@@ -626,66 +956,186 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </div>
 </section>
 
-<!-- ESSAY: THE UNCARVED BLOCK AND THE CLOUD OF UNKNOWING -->
+<!-- =====================================================
+     SECTION 2: THE UNCARVED BLOCK
+     ===================================================== -->
 <section class="content-section fade-in" id="uncarved">
   <div class="section-header">
     <div class="section-separator"></div>
     <p class="section-eyemark">The Pivot of the Tao</p>
-    <h2><span class="text-reveal"><span class="text-reveal-inner">The Uncarved Block & The Cloud</span></span></h2>
-    <p>P'u · The Simplicity Before Distinction</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Uncarved Block &amp; The Cloud</span></span></h2>
+    <p>P&#468; &middot; The Simplicity Before Distinction</p>
   </div>
+
   <div class="content-essay fade-in">
-    <p>One of Lao Tzu's most powerful images is the <span class="chinese-term" title="Uncarved block; original simplicity; primordial nature">p'u</span> (樸) — the uncarved block of wood. Before the carpenter carves it into a bowl, a tool, or a statue, the block has no fixed purpose, no assigned name, no limited function. It is pure potential, undivided, whole. To carve it is to create a distinction — this thing is for eating, that thing is for fighting. The carved object has a name and a use, but it has also lost its original wholeness.</p>
+    <p class="content-introduction">One of Lao Tzu&rsquo;s most powerful images is the <span class="chinese-term" title="Uncarved block; original simplicity; primordial nature">p&#468;</span> (&#27189;) &mdash; the uncarved block of wood. Before the carpenter carves it into a bowl, a tool, or a statue, the block has no fixed purpose, no assigned name, no limited function. It is pure potential, undivided, whole. To carve it is to create a distinction &mdash; this thing is for eating, that thing is for fighting. The carved object has a name and a use, but it has also lost its original wholeness.</p>
 
-    <p>The sage, says Lao Tzu, "returns to the uncarved block." He abandons all artificial roles, ambitions, and conceptual identities. He becomes like a child — not in naivety, but in the absence of a constructed self. The <em>p'u</em> is the Taoist version of <em>sahaja</em> (natural state) in Advaita, and of Jesus' instruction to "become like little children" (Matthew 18:3).</p>
+    <p class="fade-in stagger-1">The sage, says Lao Tzu, &ldquo;returns to the uncarved block.&rdquo; He abandons all artificial roles, ambitions, and conceptual identities. He becomes like a child &mdash; not in naivety, but in the absence of a constructed self. The <em>p&#468;</em> is the Taoist version of <span class="sanskrit-term" title="Natural state; spontaneous being; the state of the j&ntilde;&#257;n&#299;">sahaja</span> in Advaita, and of Jesus&rsquo; instruction to &ldquo;become like little children&rdquo; (Matthew 18:3).</p>
 
-    <p>The Cloud of Unknowing says the same thing in the language of Christian mysticism: "For the first time, you may feel that you know nothing at all, not even what God is. This is the cloud of unknowing that lies between you and God." That cloud is not a barrier; it is the state of having returned to the uncarved block — before the mind has carved God into a concept, a name, or an image.</p>
+    <p class="fade-in stagger-2">The <em>Cloud of Unknowing</em> says the same thing in the language of Christian mysticism: &ldquo;For the first time, you may feel that you know nothing at all, not even what God is. This is the cloud of unknowing that lies between you and God.&rdquo; That cloud is not a barrier; it is the state of having returned to the uncarved block &mdash; before the mind has carved God into a concept, a name, or an image.</p>
 
-    <blockquote>
-      <p>"The sage embraces the uncarved block. He is the example for all under heaven. He does not show off, therefore he shines. He does not assert, therefore he is acknowledged."</p>
-      <cite>— Tao Te Ching, Chapter 22</cite>
+    <!-- DIAGRAM 3: The Uncarved Block -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">P&#468; &middot; From Block to Carving to Return</div>
+      <svg class="diagram-svg" viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="blockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d4af37" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#b8960c" stop-opacity="0.04"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Left: Uncarved Block -->
+        <rect x="60" y="80" width="120" height="120" rx="4" fill="url(#blockGrad)" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+        <text x="120" y="130" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em" opacity="0.85">P&#468;</text>
+        <text x="120" y="148" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Uncarved Block</text>
+        <text x="120" y="225" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.15em" opacity="0.5">NO NAME</text>
+        <text x="120" y="238" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.15em" opacity="0.5">NO PURPOSE</text>
+
+        <!-- Arrow right -->
+        <line x1="200" y1="140" x2="260" y2="140" stroke="#d4af37" stroke-width="0.6" opacity="0.4" stroke-dasharray="4,3"/>
+        <polygon points="268,140 258,135 258,145" fill="#d4af37" opacity="0.4"/>
+        <text x="234" y="130" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.4">CARVING</text>
+
+        <!-- Center: Carved objects -->
+        <rect x="290" y="70" width="50" height="50" rx="3" fill="none" stroke="#b8960c" stroke-width="0.5" opacity="0.4"/>
+        <text x="315" y="100" text-anchor="middle" fill="#9aaebf" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.5">BOWL</text>
+
+        <rect x="360" y="90" width="40" height="70" rx="2" fill="none" stroke="#b8960c" stroke-width="0.5" opacity="0.35"/>
+        <text x="380" y="130" text-anchor="middle" fill="#9aaebf" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.45">TOOL</text>
+
+        <rect x="300" y="150" width="55" height="40" rx="2" fill="none" stroke="#b8960c" stroke-width="0.5" opacity="0.3"/>
+        <text x="327" y="175" text-anchor="middle" fill="#9aaebf" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.4">STATUE</text>
+
+        <text x="355" y="225" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.15em" opacity="0.5">TEN THOUSAND NAMES</text>
+        <text x="355" y="238" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.15em" opacity="0.5">TEN THOUSAND PURPOSES</text>
+
+        <!-- Arrow right -->
+        <line x1="430" y1="140" x2="490" y2="140" stroke="#d4af37" stroke-width="0.6" opacity="0.4" stroke-dasharray="4,3"/>
+        <polygon points="498,140 488,135 488,145" fill="#d4af37" opacity="0.4"/>
+        <text x="464" y="130" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.4">RETURN</text>
+
+        <!-- Right: Return to Block -->
+        <rect x="530" y="80" width="120" height="120" rx="4" fill="url(#blockGrad)" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+        <text x="590" y="130" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em" opacity="0.85">P&#468;</text>
+        <text x="590" y="148" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Sage Returns</text>
+        <text x="590" y="225" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.15em" opacity="0.5">NO NAME</text>
+        <text x="590" y="238" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7" letter-spacing="0.15em" opacity="0.5">ALL POSSIBILITIES</text>
+
+        <!-- Top label -->
+        <text x="360" y="35" text-anchor="middle" fill="#b8960c" font-family="Cinzel, serif" font-size="9" letter-spacing="0.2em" opacity="0.6">&ldquo;The sage embraces the uncarved block.&rdquo;</text>
+      </svg>
+      <p class="diagram-caption">The carving of the block into named forms is the birth of the ten thousand things. The sage&rsquo;s return to p&#468; is not regression but the recovery of infinite potential.</p>
+    </div>
+
+    <blockquote class="fade-in stagger-1">
+      <p>&ldquo;The sage embraces the uncarved block. He is the example for all under heaven. He does not show off, therefore he shines. He does not assert, therefore he is acknowledged.&rdquo;</p>
+      <cite>&mdash; Tao Te Ching, Chapter 22</cite>
     </blockquote>
-    <blockquote>
-      <p>"Become like little children. For the kingdom of heaven belongs to such as these."</p>
-      <cite>— Matthew 18:3</cite>
+
+    <blockquote class="fade-in stagger-2">
+      <p>&ldquo;Become like little children. For the kingdom of heaven belongs to such as these.&rdquo;</p>
+      <cite>&mdash; Matthew 18:3</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- ESSAY: THE THREE TREASURES — COMPASSION, FRUGALITY, HUMILITY -->
+<!-- =====================================================
+     SECTION 3: THE THREE TREASURES
+     ===================================================== -->
 <section class="content-section fade-in" id="treasures">
   <div class="section-header">
     <div class="section-separator"></div>
     <p class="section-eyemark">The Three Treasures</p>
-    <h2><span class="text-reveal"><span class="text-reveal-inner">Compassion · Frugality · Humility</span></span></h2>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Compassion &middot; Frugality &middot; Humility</span></span></h2>
     <p>The Ethical Expression of the Unnamed Way</p>
   </div>
+
   <div class="content-essay fade-in">
-    <p>In Chapter 67 of the Tao Te Ching, Lao Tzu names three treasures that the sage holds dear:</p>
+    <p class="content-introduction">In Chapter 67 of the Tao Te Ching, Lao Tzu names three treasures that the sage holds dear:</p>
+
     <ul>
-      <li><strong><span class="chinese-term" title="Compassion; loving-kindness">Tz'u</span> (慈) — Compassion or love.</strong> The root of courage, because one who is compassionate acts fearlessly for the sake of others.</li>
-      <li><strong><span class="chinese-term" title="Frugality; moderation">Chien</span> (儉) — Frugality or moderation.</strong> The root of generosity, because one who lives simply has abundance to give.</li>
-      <li><strong><span class="chinese-term" title="Humility; not daring to be first">Pu Kan Wei Tian Hsia Hsien</span> (不敢為天下先) — Not daring to be first in the world.</strong> The root of leadership, because one who does not assert superiority becomes the true vessel of the Tao.</li>
+      <li class="fade-in stagger-1"><strong><span class="chinese-term" title="Compassion; loving-kindness">Tz&rsquo;&#365;</span> (&#24904;) &mdash; Compassion or love.</strong> The root of courage, because one who is compassionate acts fearlessly for the sake of others.</li>
+      <li class="fade-in stagger-2"><strong><span class="chinese-term" title="Frugality; moderation">Chien</span> (&#20778;) &mdash; Frugality or moderation.</strong> The root of generosity, because one who lives simply has abundance to give.</li>
+      <li class="fade-in stagger-3"><strong><span class="chinese-term" title="Humility; not daring to be first">Pu Kan Wei Tian Hsia Hsien</span> (&#19981;&#25954;&#28858;&#22825;&#19979;&#20808;) &mdash; Not daring to be first in the world.</strong> The root of leadership, because one who does not assert superiority becomes the true vessel of the Tao.</li>
     </ul>
-    <p>These three treasures are the ethical expression of the apophatic threshold. Compassion is the heart's recognition that no being is separate from the Tao. Frugality is the mind's recognition that grasping and accumulation are illusory. Humility is the ego's recognition that it is not the doer.</p>
-    <p>In Christian terms, these are faith, hope, and charity — but more precisely, they are the fruits of the Spirit (Galatians 5:22–23). In Advaita, they are the natural qualities of the jnani whose ego has dissolved. The three treasures are not commandments; they are <em>symptoms</em> of awakening. One who has touched the unnamed way cannot help but be compassionate, moderate, and humble.</p>
-    <blockquote>
-      <p>"I have three treasures which I hold and keep. The first is compassion; the second is frugality; the third is humility. Compassion leads to courage; frugality leads to generosity; humility leads to leadership."</p>
-      <cite>— Tao Te Ching, Chapter 67</cite>
+
+    <p class="fade-in stagger-1">These three treasures are the ethical expression of the apophatic threshold. Compassion is the heart&rsquo;s recognition that no being is separate from the Tao. Frugality is the mind&rsquo;s recognition that grasping and accumulation are illusory. Humility is the ego&rsquo;s recognition that it is not the doer.</p>
+
+    <p class="fade-in stagger-2">In Christian terms, these are faith, hope, and charity &mdash; but more precisely, they are the fruits of the Spirit (Galatians 5:22&ndash;23). In Advaita, they are the natural qualities of the <span class="sanskrit-term" title="One who knows; the realized being">j&ntilde;&#257;n&#299;</span> whose ego has dissolved. The three treasures are not commandments; they are <em>symptoms</em> of awakening. One who has touched the unnamed way cannot help but be compassionate, moderate, and humble.</p>
+
+    <!-- DIAGRAM 4: The Three Treasures -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">The Three Treasures &middot; Roots and Fruits</div>
+      <svg class="diagram-svg" viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="treasureGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#e6c86e" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#b8960c" stop-opacity="0.03"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Three treasure circles -->
+        <circle cx="180" cy="100" r="55" fill="url(#treasureGrad)" stroke="#d4af37" stroke-width="0.7" opacity="0.6"/>
+        <text x="180" y="90" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em" opacity="0.9">TZ&rsquo;&#365;</text>
+        <text x="180" y="108" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Compassion</text>
+        <text x="180" y="175" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.5">ROOT OF</text>
+        <text x="180" y="190" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.7">COURAGE</text>
+
+        <circle cx="360" cy="100" r="55" fill="url(#treasureGrad)" stroke="#d4af37" stroke-width="0.7" opacity="0.6"/>
+        <text x="360" y="90" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em" opacity="0.9">CHIEN</text>
+        <text x="360" y="108" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Frugality</text>
+        <text x="360" y="175" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.5">ROOT OF</text>
+        <text x="360" y="190" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.7">GENEROSITY</text>
+
+        <circle cx="540" cy="100" r="55" fill="url(#treasureGrad)" stroke="#d4af37" stroke-width="0.7" opacity="0.6"/>
+        <text x="540" y="85" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em" opacity="0.9">PU KAN</text>
+        <text x="540" y="98" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="7" letter-spacing="0.06em" opacity="0.85">WEI TIAN</text>
+        <text x="540" y="111" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="7" letter-spacing="0.06em" opacity="0.85">HSIA HSIEN</text>
+        <text x="540" y="175" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.5">ROOT OF</text>
+        <text x="540" y="190" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.7">LEADERSHIP</text>
+
+        <!-- Connecting lines to center -->
+        <line x1="235" y1="100" x2="305" y2="100" stroke="#d4af37" stroke-width="0.4" opacity="0.25"/>
+        <line x1="415" y1="100" x2="485" y2="100" stroke="#d4af37" stroke-width="0.4" opacity="0.25"/>
+
+        <!-- Center: Tao -->
+        <circle cx="360" cy="260" r="40" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.35"/>
+        <text x="360" y="255" text-anchor="middle" fill="#b8960c" font-family="Cinzel, serif" font-size="9" letter-spacing="0.15em" opacity="0.7">TAO</text>
+        <text x="360" y="270" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">The Unnamed Source</text>
+
+        <!-- Connecting lines down -->
+        <line x1="180" y1="155" x2="330" y2="235" stroke="#d4af37" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
+        <line x1="360" y1="155" x2="360" y2="220" stroke="#d4af37" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
+        <line x1="540" y1="155" x2="390" y2="235" stroke="#d4af37" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
+
+        <!-- Bottom quote -->
+        <text x="360" y="325" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;I have three treasures which I hold and keep.&rdquo; &mdash; Tao Te Ching 67</text>
+      </svg>
+      <p class="diagram-caption">Each treasure is simultaneously a root virtue and the negation of its opposite: compassion dissolves fear, frugality dissolves greed, humility dissolves pride. All three flow from the Tao.</p>
+    </div>
+
+    <blockquote class="fade-in stagger-1">
+      <p>&ldquo;I have three treasures which I hold and keep. The first is compassion; the second is frugality; the third is humility. Compassion leads to courage; frugality leads to generosity; humility leads to leadership.&rdquo;</p>
+      <cite>&mdash; Tao Te Ching, Chapter 67</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- PULLQUOTE: THE DARK WITHIN DARK -->
+<!-- =====================================================
+     PULLQUOTE: THE DARK WITHIN DARK
+     ===================================================== -->
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">"Look — it cannot be seen: call it colorless. Listen — it cannot be heard: call it noiseless. Reach — it cannot be held: call it formless. These three are beyond all inquiry — they are one, deep and dark. The dark within the dark — the gate of all mystery."</p>
-    <p class="pullquote-attr">— Tao Te Ching, Chapter 14 · The Cloud of Unknowing</p>
+    <p class="pullquote-text">&ldquo;Look &mdash; it cannot be seen: call it colorless. Listen &mdash; it cannot be heard: call it noiseless. Reach &mdash; it cannot be held: call it formless. These three are beyond all inquiry &mdash; they are one, deep and dark. The dark within the dark &mdash; the gate of all mystery.&rdquo;</p>
+    <p class="pullquote-attr">&mdash; Tao Te Ching, Chapter 14</p>
   </div>
 </div>
 
-<!-- ESSAY: THE TAO AND THE LOGOS — COMPARATIVE HERMENEUTIC -->
+<!-- =====================================================
+     SECTION 4: THE TAO AND THE LOGOS
+     ===================================================== -->
 <section class="content-section fade-in" id="comparative">
   <div class="section-header">
     <div class="section-separator"></div>
@@ -693,70 +1143,87 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <h2><span class="text-reveal"><span class="text-reveal-inner">The Tao and the Logos</span></span></h2>
     <p>Two Names for the Nameless</p>
   </div>
+
   <div class="content-essay fade-in">
-    <p>John's Gospel opens with "In the beginning was the Word (Logos), and the Word was with God, and the Word was God." The Logos is the principle of order, reason, and manifestation — the named Tao that is the "mother of ten thousand things." But the Gospel of John also insists that "no one has seen God at any time" — the nameless Father remains beyond all names.</p>
-    <p>Thus the Christian tradition, like Taoism, holds together the apophatic (God beyond all names) and the kataphatic (God revealed in the Word). Lao Tzu's first chapter does exactly the same: the nameless Tao is the origin of heaven and earth; the named Tao is the mother of ten thousand things. The two are not two different Taos. They are the same reality seen from two perspectives: in itself (noumenon) and as it appears (phenomenon).</p>
-    <p>This is precisely the Advaitin distinction between <em>Parabrahman</em> (the Absolute without attributes) and <em>Brahman</em> (the Absolute with qualities of existence, consciousness, bliss). The Tao that can be named is the Tao with form; the eternal Tao is the Tao without form. Yet they are not separate. As the Tao Te Ching says in Chapter 42: "The Tao gives birth to one; one gives birth to two; two gives birth to three; three gives birth to the ten thousand things." The nameless Tao is the source of the named Tao, and the named Tao is the manifestation of the nameless.</p>
-    <div class="scripture-panels fade-in">
+    <p class="content-introduction">John&rsquo;s Gospel opens with &ldquo;In the beginning was the Word (Logos), and the Word was with God, and the Word was God.&rdquo; The Logos is the principle of order, reason, and manifestation &mdash; the named Tao that is the &ldquo;mother of ten thousand things.&rdquo; But John also insists that &ldquo;no one has seen God at any time&rdquo; &mdash; the nameless Father remains beyond all names.</p>
+
+    <p class="fade-in stagger-1">Thus the Christian tradition, like Taoism, holds together the apophatic (God beyond all names) and the kataphatic (God revealed in the Word). Lao Tzu&rsquo;s first chapter does exactly the same: the nameless Tao is the origin of heaven and earth; the named Tao is the mother of ten thousand things. The two are not two different Taos. They are the same reality seen from two perspectives: in itself (<em>noumenon</em>) and as it appears (<em>phenomenon</em>).</p>
+
+    <p class="fade-in stagger-2">This is precisely the Advaitin distinction between <span class="sanskrit-term" title="The Absolute without attributes; beyond all qualities">Parabrahman</span> and <span class="sanskrit-term" title="The Absolute with qualities; the personal God">Brahman</span> (the Absolute with qualities of existence, consciousness, bliss). The Tao that can be named is the Tao with form; the eternal Tao is the Tao without form. Yet they are not separate. As the Tao Te Ching says in Chapter 42: &ldquo;The Tao gives birth to one; one gives birth to two; two gives birth to three; three gives birth to the ten thousand things.&rdquo;</p>
+
+    <div class="resonance-callout fade-in stagger-1">
+      <p>The nameless Tao is the source of the named Tao, and the named Tao is the manifestation of the nameless. This is not duality but a single reality viewed from two directions: descending into manifestation, or ascending into silence.</p>
+    </div>
+
+    <div class="scripture-panels fade-in stagger-2">
       <div class="scripture-panel">
-        <div class="scripture-panel-label">Tao Te Ching · Chapter 42</div>
-        <p class="scripture-panel-text">"The Tao gives birth to one. One gives birth to two. Two gives birth to three. Three gives birth to the ten thousand things. The ten thousand things carry yin and embrace yang."</p>
-        <p class="scripture-panel-ref">— Lao Tzu</p>
+        <div class="scripture-panel-label">Tao Te Ching &middot; Chapter 42</div>
+        <p class="scripture-panel-text">&ldquo;The Tao gives birth to one. One gives birth to two. Two gives birth to three. Three gives birth to the ten thousand things. The ten thousand things carry yin and embrace yang.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Lao Tzu</p>
       </div>
       <div class="scripture-panel">
-        <div class="scripture-panel-label">John 1:1–5 · Advaita Reading</div>
-        <p class="scripture-panel-text">"In the beginning was the Word (the named Tao), and the Word was with God (the nameless Tao), and the Word was God. All things were made through him."</p>
-        <p class="scripture-panel-ref">— Gospel of John</p>
+        <div class="scripture-panel-label">John 1:1&ndash;5 &middot; Advaita Reading</div>
+        <p class="scripture-panel-text">&ldquo;In the beginning was the Word (the named Tao), and the Word was with God (the nameless Tao), and the Word was God. All things were made through him.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Gospel of John</p>
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- TRANSITION PULLQUOTE TO PAGE 2 -->
+<!-- =====================================================
+     TRANSITION PULLQUOTE TO PAGE 2
+     ===================================================== -->
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">From the threshold of the unnamed way, we now enter the practice of the uncarved block — wu wei, te, and the simplicity of the sage.</p>
-    <p class="pullquote-attr"><a href="taoism-practices.html">→ Continue to The Uncarved Block · Practice</a></p>
+    <p class="pullquote-text">From the threshold of the unnamed way, we now enter the practice of the uncarved block &mdash; w&uacute; w&eacute;i, t&egrave;, and the simplicity of the sage.</p>
+    <p class="pullquote-attr"><a href="taoism-practices.html" class="continue-link">&rarr; Continue to The Uncarved Block &middot; Practice</a></p>
   </div>
 </div>
 
-<!-- CHAPTER NAVIGATION -->
+<!-- =====================================================
+     CHAPTER NAVIGATION
+     ===================================================== -->
 <div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">⌂ Home</a>
-  <span class="chapter-sep">☯</span>
-  <a href="taoism-threshold.html" class="chapter-link active">I · The Unnamed Way</a>
-  <span class="chapter-sep">☯</span>
-  <a href="taoism-practices.html" class="chapter-link">II · The Uncarved Block</a>
-  <span class="chapter-sep">☯</span>
-  <a href="taoism-butterfly.html" class="chapter-link">III · The Butterfly Dream</a>
-  <span class="chapter-sep">☯</span>
-  <a href="taoism-return.html" class="chapter-link">IV · Returning to the Root</a>
+  <a href="../index.html" class="chapter-link">&#8962; Home</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="taoism-threshold.html" class="chapter-link active">I &middot; The Unnamed Way</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="taoism-practices.html" class="chapter-link">II &middot; The Uncarved Block</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="taoism-butterfly.html" class="chapter-link">III &middot; The Butterfly Dream</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="taoism-return.html" class="chapter-link">IV &middot; Returning to the Root</a>
 </div>
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 <footer class="footer">
   <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
   <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-tagline">Cartographies of the Non&ndash;Dual Path</div>
   <div class="footer-links">
-    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="../index.html">&#8962; Vedantic Mappings</a>
     <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
     <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
     <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-    <a href="taoism-threshold.html">Taoism · The Unnamed Way</a>
+    <a href="taoism-threshold.html">Taoism &middot; The Unnamed Way</a>
   </div>
   <div class="footer-credit">Researched &amp; Composed</div>
-  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+  <div class="footer-copyright">&copy; 2026 John M Q. All rights reserved.</div>
 </footer>
 
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
 <script>
 (function() {
   'use strict';
 
+  // =====================================================
   // Navigation Toggle
+  // =====================================================
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   if (navToggle && navMenu) {
@@ -770,21 +1237,25 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     });
   }
 
+  // =====================================================
   // Theme Toggle
+  // =====================================================
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
   function setTheme(theme) {
     html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    try { localStorage.setItem('theme', theme); } catch(e) {}
   }
 
   function initTheme() {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light' || saved === 'dark') {
-      setTheme(saved);
-      return;
-    }
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        setTheme(saved);
+        return;
+      }
+    } catch(e) {}
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setTheme(prefersDark ? 'dark' : 'light');
   }
@@ -797,30 +1268,39 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     });
   }
 
+  // =====================================================
   // Back to Top
+  // =====================================================
   const backToTop = document.getElementById('backToTop');
-  function updateProgress() {
+  function updateBackToTop() {
     if (backToTop) {
       backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
     }
   }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
   if (backToTop) {
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
+  // =====================================================
+  // Intersection Observer — Fade In
+  // =====================================================
+  const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
 
-  // Text reveal
+  document.querySelectorAll('.fade-in, .section-separator').forEach(el => fadeObserver.observe(el));
+
+  // =====================================================
+  // Text Reveal Animation
+  // =====================================================
   const textObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -829,25 +1309,108 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       }
     });
   }, { threshold: 0.5 });
+
   document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
 
-  // Smooth scroll for anchors
+  // =====================================================
+  // Active Nav Highlighting on Scroll
+  // =====================================================
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navItems = document.querySelectorAll('.nav-item[data-section]');
+
+  function updateActiveNav() {
+    let current = '';
+    const scrollPos = window.scrollY + window.innerHeight * 0.35;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navItems.forEach(item => {
+      item.classList.toggle('active', item.getAttribute('data-section') === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  // =====================================================
+  // Smooth Scroll for Anchors
+  // =====================================================
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close nav menu on mobile after click
+        if (navMenu) navMenu.classList.remove('open');
+      }
     });
   });
 
-  // Touch gesture for nav
+  // =====================================================
+  // Touch Swipe for Nav (right-edge open, left-edge close)
+  // =====================================================
   let touchStartX = 0;
-  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  document.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].screenX - touchStartX;
-    if (diff > 55 && touchStartX < 30 && navMenu) navMenu.classList.add('open');
-    if (diff < -55 && navMenu) navMenu.classList.remove('open');
+  let touchStartY = 0;
+  const edgeThreshold = 40; // px from edge
+
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
   }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Ignore vertical swipes
+    if (Math.abs(diffY) > Math.abs(diffX) * 1.5) return;
+
+    // Right-edge swipe in (open nav) — start near right edge, swipe left
+    if (touchStartX > window.innerWidth - edgeThreshold && diffX < -55 && navMenu) {
+      navMenu.classList.add('open');
+    }
+
+    // Left-edge swipe out (close nav) — start near left edge, swipe right
+    if (touchStartX < edgeThreshold && diffX > 55 && navMenu) {
+      navMenu.classList.remove('open');
+    }
+
+    // Also close on any leftward swipe when nav is open
+    if (diffX < -55 && navMenu && navMenu.classList.contains('open')) {
+      // Check if swipe started inside nav area
+      if (touchStartX < 280) {
+        navMenu.classList.remove('open');
+      }
+    }
+  }, { passive: true });
+
+  // =====================================================
+  // Stillness Mode (double-tap header to toggle)
+  // =====================================================
+  let lastTap = 0;
+  const hero = document.getElementById('hero');
+  if (hero) {
+    hero.addEventListener('touchend', (e) => {
+      const now = Date.now();
+      if (now - lastTap < 300) {
+        document.body.classList.toggle('stillness-mode');
+      }
+      lastTap = now;
+    });
+    hero.addEventListener('dblclick', () => {
+      document.body.classList.toggle('stillness-mode');
+    });
+  }
+
 })();
 </script>
 </body>

@@ -279,24 +279,9 @@ a:focus-visible, button:focus-visible {
 [data-theme="dark"]  .theme-toggle-icon-sun  { opacity: 0; transform: scale(0.5); }
 [data-theme="dark"]  .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
 
-/* ── Stillness toggle ─────────────────────────────────── */
-.stillness-toggle {
-  position: fixed; bottom: 1.5rem; right: 5.5rem; z-index: 1000;
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--surface); border: 1px solid var(--border);
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  color: var(--stone); font-size: 1.1rem;
-  transition: all 0.4s var(--ease-out-expo);
-  box-shadow: var(--shadow);
-}
-.stillness-toggle:hover { color: var(--gold); border-color: var(--gold); transform: scale(1.08); }
-.stillness-toggle.active { color: var(--gold); border-color: var(--gold); background: var(--gold-glow); }
-body.stillness * { animation: none !important; transition: none !important; }
-body.stillness .fade-in { opacity: 1 !important; transform: none !important; }
-
 /* ── Back to top ──────────────────────────────────────── */
 .back-to-top {
-  position: fixed; bottom: 1.5rem; right: 9.5rem; z-index: 1000;
+  position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 1000;
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--surface); border: 1px solid var(--border);
   cursor: pointer; display: flex; align-items: center; justify-content: center;
@@ -796,8 +781,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .content-section { padding: 60px 20px; }
   .hero { padding: 4rem 1.5rem 5rem; }
   .threefold-grid { grid-template-columns: 1fr; }
-  .back-to-top { right: 5rem; }
-  .stillness-toggle { display: none; }
+  .back-to-top { right: 1.5rem; bottom: 6.5rem; }
 }
 @media (max-width: 480px) {
   body { font-size: 16px; }
@@ -857,8 +841,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <span class="theme-toggle-icon theme-toggle-icon-sun">&#9788;</span>
   <span class="theme-toggle-icon theme-toggle-icon-moon">&#9789;</span>
 </button>
-
-<button class="stillness-toggle" id="stillnessToggle" aria-label="Toggle stillness mode" title="Pause all animations">🧘</button>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 
