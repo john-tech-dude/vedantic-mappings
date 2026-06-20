@@ -326,41 +326,54 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 
 .greek-term {
   cursor: help;
-  border-bottom: 1px dotted var(--gold-deep);
+  border-bottom: 1px dotted var(--gold);
   text-decoration: none;
-  color: var(--gold);
+  color: var(--gold-light);
   font-weight: 400;
   transition: all 0.3s var(--ease-smooth);
 }
 .greek-term:hover {
-  color: var(--gold-light);
-  border-bottom-color: var(--gold-light);
+  color: var(--gold);
+  border-bottom-color: var(--gold-deep);
 }
 
 .coptic-term {
   cursor: help;
-  border-bottom: 1px dotted var(--gold-deep);
+  border-bottom: 1px dotted var(--gold);
   text-decoration: none;
-  color: var(--gold);
+  color: var(--gold-light);
   font-weight: 400;
   transition: all 0.3s var(--ease-smooth);
 }
 .coptic-term:hover {
-  color: var(--gold-light);
-  border-bottom-color: var(--gold-light);
+  color: var(--gold);
+  border-bottom-color: var(--gold-deep);
 }
 
 .sanskrit-term {
   cursor: help;
-  border-bottom: 1px dotted var(--silver);
+  border-bottom: 1px dotted var(--gold);
   text-decoration: none;
-  color: var(--silver);
+  color: var(--gold-light);
   font-weight: 400;
   transition: all 0.3s var(--ease-smooth);
 }
 .sanskrit-term:hover {
-  color: var(--gold-light);
-  border-bottom-color: var(--gold);
+  color: var(--gold);
+  border-bottom-color: var(--gold-deep);
+}
+
+[data-theme="light"] .greek-term,
+[data-theme="light"] .coptic-term,
+[data-theme="light"] .sanskrit-term {
+  border-bottom-color: var(--copper);
+  color: var(--copper-light);
+}
+[data-theme="light"] .greek-term:hover,
+[data-theme="light"] .coptic-term:hover,
+[data-theme="light"] .sanskrit-term:hover {
+  color: var(--copper);
+  border-bottom-color: var(--copper-deep);
 }
 
 .diagram-container {
@@ -559,8 +572,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
 [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
 [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
-[data-theme="light"] .footer-emblem-outer { border-color: var(--gold-deep); }
-[data-theme="light"] .footer-emblem-inner { border-color: var(--gold); }
+[data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
+[data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
 .footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 0.5rem; }
 .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
 .footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
