@@ -5,32 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Vedantic Mappings — Cartographies of the non-dual path: Advaita Vedanta, The Vedantic Messiah, Kabbalah, and Taoism · The Unnamed Way. Four complete maps from mistaken identity to liberation." />
 
-    <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Vedantic Mappings — Non-Dual Cartographies" />
     <meta property="og:description" content="Four complete maps from mistaken identity to liberation: Advaita Vedanta, The Vedantic Messiah, Kabbalah, and Taoism." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vedanticmappings.com" />
-    <meta property="og:image" content="https://vedanticmappings.com/og-image.jpg" /> <!-- Replace with actual image URL -->
+    <meta property="og:image" content="https://vedanticmappings.com/og-image.jpg" />
 
     <title>Vedantic Mappings — Non-Dual Cartographies</title>
 
-    <!-- Optimized Google Fonts: subset=latin & display=swap for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap&subset=latin" rel="stylesheet" />
 
     <style>
         /* =====================================================
-           VEDANTIC MAPPINGS — LANDING PAGE v5.1 (removed preachy instructions)
-           2x2 Grid · Premium · Accessibility · Performance
+           VEDANTIC MAPPINGS — V1.0
+           Systematic improvements: bug fixes, SVG diagrams,
+           tightened prose, enhanced styling, consistency
            ===================================================== */
 
-        /* ----- CSS Variables (deduplicated: :root = dark) ----- */
         :root {
-            /* Dark theme (default) */
             --bg: #0c0f14;
             --bg2: #12161c;
-            --bg3: #151920;
+            --bg3: #0a0c10;
             --surface: #181c23;
             --surface2: #21262e;
             --ink: #eef2f8;
@@ -43,29 +40,32 @@
             --gold-deep: #b8960c;
             --gold-glow: rgba(212, 175, 55, 0.08);
             --gold-glow-strong: rgba(212, 175, 55, 0.2);
+            --sun-glow: rgba(200, 169, 110, 0.4);
             --border: rgba(200, 169, 110, 0.12);
             --border-strong: rgba(200, 169, 110, 0.28);
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 20px 32px rgba(0, 0, 0, 0.5);
+            --border-subtle: rgba(200, 169, 110, 0.06);
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --shadow-deep: 0 8px 24px rgba(0, 0, 0, 0.4);
             --shadow-gold: 0 0 28px var(--gold-glow);
-            --hero-bg: radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
-            --mountain-fill: #c14410;
-            --ring-color: rgba(200, 169, 110, 0.10);
-            --sun-glow: rgba(200, 169, 110, 0.4);
-            --grain-opacity: 0.045;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             --text-primary: #eef2f8;
             --text-secondary: #e0d4b8;
             --text-muted: #a89880;
-            --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --radius-sm: 8px;
+            --hero-bg: radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+            --mountain-fill: #c14410;
+            --ring-color: rgba(200, 169, 110, 0.10);
+            --grain-opacity: 0.045;
         }
 
-        /* Light theme overrides only */
         [data-theme="light"] {
             --bg: #faf6ef;
             --bg2: #f2ece0;
-            --bg3: #e8dfc8;
+            --bg3: #e8e2d5;
             --surface: #ffffff;
             --surface2: #f7f2e8;
             --ink: #1c150a;
@@ -73,40 +73,29 @@
             --ink3: #6b5540;
             --stone: #8a7460;
             --stone-light: #b09a80;
-            /* Improved contrast for accessibility (darker gold) */
             --gold: #8a6a2a;
             --gold-light: #b0883a;
             --gold-deep: #6a4e1a;
             --gold-glow: rgba(138, 106, 42, 0.12);
             --gold-glow-strong: rgba(138, 106, 42, 0.25);
+            --sun-glow: rgba(138, 106, 42, 0.35);
             --border: rgba(138, 106, 42, 0.18);
             --border-strong: rgba(138, 106, 42, 0.35);
-            --shadow-sm: 0 4px 12px rgba(60, 30, 0, 0.06);
-            --shadow-md: 0 8px 24px rgba(60, 30, 0, 0.1);
-            --shadow-lg: 0 20px 32px rgba(60, 30, 0, 0.12);
+            --border-subtle: rgba(138, 106, 42, 0.08);
+            --shadow: 0 4px 12px rgba(60, 30, 0, 0.06);
+            --shadow-deep: 0 8px 24px rgba(60, 30, 0, 0.1);
+            --shadow-gold: 0 0 28px var(--gold-glow);
             --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
             --mountain-fill: #c8a860;
             --ring-color: rgba(138, 106, 42, 0.22);
-            --sun-glow: rgba(138, 106, 42, 0.35);
             --grain-opacity: 0.025;
             --text-primary: #1c150a;
             --text-secondary: #4a3820;
             --text-muted: #6b5540;
         }
 
-        /* ----- Reset & Base ----- */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
             background: var(--bg);
@@ -117,7 +106,6 @@
             transition: background 0.5s, color 0.5s;
         }
 
-        /* Grain overlay */
         body::before {
             content: '';
             position: fixed;
@@ -128,59 +116,156 @@
             opacity: var(--grain-opacity);
         }
 
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold-deep);
-            border-radius: 3px;
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 3px; }
+        ::selection { background: rgba(181, 133, 58, 0.25); color: var(--ink); }
+
+        .no-js .fade-in, .no-js .stagger-1, .no-js .stagger-2, .no-js .stagger-3, .no-js .stagger-4, .no-js .stagger-5 { opacity: 1 !important; transform: none !important; }
+        .no-js .scroll-reveal, .no-js .scroll-fade-up { opacity: 1 !important; transform: translateY(0) !important; }
+        .no-js .text-reveal .text-reveal-inner { transform: translateY(0) !important; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .fade-in, .stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5,
+            .scroll-reveal, .scroll-fade-up, .text-reveal .text-reveal-inner {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
 
-        ::selection {
-            background: rgba(181, 133, 58, 0.25);
-            color: var(--ink);
-        }
-
-        /* ----- No-JS fallback ----- */
-        .no-js .fade-in {
-            opacity: 1 !important;
-        }
-        .no-js .scroll-reveal,
-        .no-js .scroll-fade-up {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        /* ----- Tooltip styles ----- */
-        .sanskrit-term,
-        .biblical-ref {
+        .sanskrit-term, .biblical-ref {
             cursor: help;
             border-bottom: 1px dotted var(--gold-deep);
             text-decoration: none;
         }
-        .sanskrit-term:hover,
-        .biblical-ref:hover {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
+        .sanskrit-term:hover, .biblical-ref:hover { color: var(--gold); border-bottom-color: var(--gold); }
+        .tooltip-note { font-size: 0.7rem; color: var(--stone); text-align: center; margin-bottom: 1.5rem; }
+
+        /* ----- Navigation ----- */
+        .site-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 900;
+            background: rgba(12, 15, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.6rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transform: translateY(-100%);
+            transition: transform 0.5s var(--ease-out-expo);
         }
-        .tooltip-note {
-            font-size: 0.7rem;
+        .site-nav.visible { transform: translateY(0); }
+        [data-theme="light"] .site-nav { background: rgba(250, 246, 239, 0.88); }
+        .nav-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
             color: var(--stone);
-            text-align: center;
-            margin-bottom: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0; right: 0;
+            height: 1px;
+            background: var(--gold);
+        }
+        .nav-divider {
+            width: 1px;
+            height: 16px;
+            background: var(--border-strong);
+            margin: 0 0.5rem;
+        }
+        .nav-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-menu-btn { display: block; }
+        }
+
+        .nav-drawer {
+            position: fixed;
+            top: 0; right: 0;
+            width: 280px; height: 100vh;
+            background: var(--surface);
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.4s var(--ease-out-expo);
+            padding: 4rem 2rem;
+            border-left: 1px solid var(--border);
+        }
+        .nav-drawer.open { transform: translateX(0); }
+        .nav-drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .nav-drawer-overlay.open { opacity: 1; pointer-events: auto; }
+        .nav-drawer a {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--stone);
+            text-decoration: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.3s;
+        }
+        .nav-drawer a:hover { color: var(--gold); }
+        .nav-drawer-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* ----- Theme Toggle ----- */
         .theme-toggle {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+            bottom: 2rem; right: 2rem;
             z-index: 1000;
-            width: 54px;
-            height: 54px;
+            width: 54px; height: 54px;
             background: var(--surface);
             border: 2px solid var(--border-strong);
             border-radius: 50%;
@@ -190,7 +275,7 @@
             justify-content: center;
             font-size: 1.5rem;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: var(--shadow-md), var(--shadow-gold);
+            box-shadow: var(--shadow-deep), var(--shadow-gold);
             backdrop-filter: blur(2px);
             -webkit-tap-highlight-color: transparent;
         }
@@ -199,9 +284,7 @@
             border-color: var(--gold);
             box-shadow: 0 0 28px var(--gold-glow-strong);
         }
-        /* Focus-visible for accessibility */
-        .theme-toggle:focus-visible,
-        .cartography-card:focus-visible {
+        .theme-toggle:focus-visible, .cartography-card:focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 4px;
         }
@@ -210,31 +293,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
             color: var(--gold);
         }
-        [data-theme="light"] .theme-toggle-icon-sun {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
-        [data-theme="light"] .theme-toggle-icon-moon {
-            opacity: 0;
-            transform: rotate(-90deg) scale(0.5);
-        }
-        [data-theme="dark"] .theme-toggle-icon-sun {
-            opacity: 0;
-            transform: rotate(90deg) scale(0.5);
-        }
-        [data-theme="dark"] .theme-toggle-icon-moon {
-            opacity: 1;
-            transform: rotate(0deg);
-        }
+        [data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: rotate(0deg); }
+        [data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+        [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: rotate(90deg) scale(0.5); }
+        [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: rotate(0deg); }
         .toggle-tooltip {
             position: fixed;
-            bottom: 2rem;
-            right: 5.8rem;
+            bottom: 2rem; right: 5.8rem;
             z-index: 1000;
             font-family: 'Cinzel', serif;
             font-size: 0.6rem;
@@ -251,9 +320,29 @@
             white-space: nowrap;
             backdrop-filter: blur(4px);
         }
-        .theme-toggle:hover+.toggle-tooltip {
-            opacity: 0.85;
+        .theme-toggle:hover + .toggle-tooltip { opacity: 0.85; }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 5.5rem; right: 2rem;
+            z-index: 1000;
+            width: 54px; height: 54px;
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s var(--ease-out-expo);
+            box-shadow: var(--shadow);
         }
+        .back-to-top.visible { opacity: 1; transform: translateY(0); }
+        .back-to-top:hover { border-color: var(--gold); box-shadow: var(--shadow-gold); }
 
         /* ----- HERO ----- */
         .hero {
@@ -276,101 +365,65 @@
                 repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 133, 58, 0.03) 29px);
             pointer-events: none;
         }
-        .hero-mountain {
+        .hero-horizon {
             position: absolute;
-            bottom: 0;
-            left: 50%;
+            bottom: 0; left: 0; right: 0;
+            height: 45%;
+            background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-horizon::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold-deep) 20%, var(--gold) 50%, var(--gold-deep) 80%, transparent 100%);
+            opacity: 0.25;
+        }
+        .hero-horizon::after {
+            content: '';
+            position: absolute;
+            bottom: 20%; left: 50%;
             transform: translateX(-50%);
-            width: 120%;
-            height: 52%;
-            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(181, 133, 58, 0.3) 80%);
-            clip-path: polygon(0% 100%, 8% 85%, 15% 78%, 20% 65%, 25% 55%, 30% 48%, 35% 40%, 38% 32%, 42% 22%, 45% 14%, 48% 8%, 50% 0%, 52% 8%, 55% 14%, 58% 22%, 62% 32%, 65% 40%, 70% 48%, 75% 55%, 80% 65%, 85% 72%, 92% 82%, 100% 100%);
-            opacity: 0.12;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            filter: blur(40px);
         }
         .mandala-ring {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             border-radius: 50%;
             border: 1px solid var(--ring-color);
             transform: translate(-50%, -50%);
             pointer-events: none;
             animation: mandalaBreathe 12s ease-in-out infinite;
         }
-        .mandala-ring:nth-child(1) {
-            width: 260px;
-            height: 260px;
-            animation-delay: 0s;
-        }
-        .mandala-ring:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            animation-delay: 1.5s;
-            animation-duration: 14s;
-        }
-        .mandala-ring:nth-child(3) {
-            width: 560px;
-            height: 560px;
-            animation-delay: 3s;
-            animation-duration: 16s;
-        }
-        .mandala-ring:nth-child(4) {
-            width: 740px;
-            height: 740px;
-            animation-delay: 4.5s;
-            animation-duration: 18s;
-        }
+        .mandala-ring:nth-child(1) { width: 260px; height: 260px; animation-delay: 0s; }
+        .mandala-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 1.5s; animation-duration: 14s; }
+        .mandala-ring:nth-child(3) { width: 560px; height: 560px; animation-delay: 3s; animation-duration: 16s; }
+        .mandala-ring:nth-child(4) { width: 740px; height: 740px; animation-delay: 4.5s; animation-duration: 18s; }
         @keyframes mandalaBreathe {
-            0%,
-            100% {
-                opacity: 0.5;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.02);
-            }
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.02); }
         }
         .hero-ripple {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             border-radius: 50%;
             border: 1px solid var(--ring-color);
             pointer-events: none;
             animation: rippleOut 9s ease-out infinite;
         }
-        .hero-ripple:nth-child(5) {
-            width: 200px;
-            height: 200px;
-            margin: -100px 0 0 -100px;
-            animation-delay: 0s;
-        }
-        .hero-ripple:nth-child(6) {
-            width: 200px;
-            height: 200px;
-            margin: -100px 0 0 -100px;
-            animation-delay: 3s;
-        }
-        .hero-ripple:nth-child(7) {
-            width: 200px;
-            height: 200px;
-            margin: -100px 0 0 -100px;
-            animation-delay: 6s;
-        }
+        .hero-ripple:nth-child(5) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 0s; }
+        .hero-ripple:nth-child(6) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 3s; }
+        .hero-ripple:nth-child(7) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 6s; }
         @keyframes rippleOut {
-            0% {
-                opacity: 0.6;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(4.5);
-            }
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 0; transform: scale(4.5); }
         }
         .hero-emblem {
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             margin: 0 auto 2rem;
             position: relative;
             opacity: 0;
@@ -378,53 +431,34 @@
             z-index: 2;
         }
         .hero-emblem-circle {
-            position: absolute;
-            inset: 0;
+            position: absolute; inset: 0;
             border-radius: 50%;
             border: 1px solid var(--gold-deep);
             opacity: 0.6;
             animation: emblemRotate 30s linear infinite;
         }
         .hero-emblem-circle2 {
-            position: absolute;
-            inset: 12px;
+            position: absolute; inset: 12px;
             border-radius: 50%;
             border: 1px solid var(--gold);
             opacity: 0.4;
             animation: emblemRotate 20s linear infinite reverse;
         }
         .hero-emblem-dot {
-            position: absolute;
-            inset: 26px;
+            position: absolute; inset: 26px;
             border-radius: 50%;
             background: radial-gradient(circle, var(--gold-light), var(--gold));
             box-shadow: 0 0 20px 5px var(--sun-glow);
             animation: emblemPulse 4s ease-in-out infinite;
         }
-        @keyframes emblemRotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
+        @keyframes emblemRotate { to { transform: rotate(360deg); } }
         @keyframes emblemPulse {
-            0%,
-            100% {
-                box-shadow: 0 0 20px 5px var(--sun-glow);
-            }
-            50% {
-                box-shadow: 0 0 35px 12px var(--sun-glow);
-            }
+            0%, 100% { box-shadow: 0 0 20px 5px var(--sun-glow); }
+            50% { box-shadow: 0 0 35px 12px var(--sun-glow); }
         }
         @keyframes breathe {
-            0%,
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 40px var(--gold-glow);
-            }
-            50% {
-                transform: scale(1.04);
-                box-shadow: 0 0 64px var(--gold-glow);
-            }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 40px var(--gold-glow); }
+            50% { transform: scale(1.04); box-shadow: 0 0 64px var(--gold-glow); }
         }
         .hero-eyemark {
             font-family: 'Cinzel', serif;
@@ -435,8 +469,7 @@
             margin-bottom: 2rem;
             opacity: 0;
             animation: heroRise 1.2s 0.2s forwards;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
         }
         .hero-label {
             font-family: 'Cinzel', serif;
@@ -446,8 +479,7 @@
             margin-bottom: 0.5rem;
             opacity: 0;
             animation: heroRise 1.2s 0.8s forwards;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
         }
         .hero-subtitle-top {
             font-family: 'Cormorant Garamond', serif;
@@ -458,8 +490,7 @@
             margin-bottom: 0.8rem;
             opacity: 0;
             animation: heroRise 1.2s 1s forwards;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
         }
         .hero-title {
             font-family: 'Cinzel', serif;
@@ -470,8 +501,7 @@
             opacity: 0;
             animation: heroRise 1.4s 1.2s forwards;
             margin-bottom: 0.2em;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
         }
         [data-theme="light"] .hero-title {
             color: var(--ink);
@@ -490,8 +520,7 @@
             opacity: 0;
             animation: heroRise 1.2s 1.5s forwards;
             margin-bottom: 2.5rem;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
         }
         .hero-divider {
             display: flex;
@@ -501,36 +530,23 @@
             width: fit-content;
             opacity: 0;
             animation: heroRise 1.2s 1.8s forwards;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
         }
         .hero-divider-line {
-            width: 80px;
-            height: 1px;
+            width: 80px; height: 1px;
             background: linear-gradient(90deg, transparent, var(--gold-deep));
         }
-        .hero-divider-line:last-child {
-            background: linear-gradient(90deg, var(--gold-deep), transparent);
-        }
+        .hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); }
         .hero-divider-diamond {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: var(--gold);
             transform: rotate(45deg);
             box-shadow: 0 0 8px var(--sun-glow);
         }
         @keyframes heroRise {
-            from {
-                opacity: 0;
-                transform: translateY(28px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* ----- New Hero Thesis Line (kept, neutral) ----- */
         .hero-thesis {
             font-family: 'IM Fell English', serif;
             font-style: italic;
@@ -540,12 +556,11 @@
             margin: 0.5rem auto 0;
             opacity: 0;
             animation: heroRise 1.2s 2s forwards;
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
             letter-spacing: 0.02em;
         }
 
-        /* ----- INTRODUCTION (restructured) ----- */
+        /* ----- Content Sections ----- */
         .content-section {
             padding: 80px 24px;
             max-width: 900px;
@@ -579,10 +594,39 @@
             color: var(--gold);
             margin-top: 12px;
         }
-        .content-intro-block {
+        .section-separator {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 1.2rem;
+            opacity: 0.4;
+            position: relative;
+        }
+        .section-separator::after {
+            content: '';
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 8px; height: 8px;
+            background: var(--gold);
+            opacity: 0.6;
+        }
+
+        .text-reveal {
+            display: inline-block;
+            overflow: hidden;
+        }
+        .text-reveal .text-reveal-inner {
+            display: inline-block;
+            transform: translateY(100%);
+            transition: transform 0.9s var(--ease-smooth);
+        }
+        .text-reveal.visible .text-reveal-inner { transform: translateY(0); }
+
+        .content-essay, .content-introduction {
             margin-bottom: 2.5rem;
         }
-        .content-intro-block h3 {
+        .content-essay h3, .content-introduction h3 {
             font-family: 'Cinzel', serif;
             font-size: 0.8rem;
             letter-spacing: 0.2em;
@@ -590,33 +634,39 @@
             color: var(--gold);
             margin: 2rem 0 0.6rem;
         }
-        .content-intro-block h3:first-of-type {
-            margin-top: 0;
-        }
-        .content-intro-block p {
+        .content-essay h3:first-of-type, .content-introduction h3:first-of-type { margin-top: 0; }
+        .content-essay p, .content-introduction p {
             font-size: 1.02rem;
             color: var(--stone);
             line-height: 1.82;
             margin-bottom: 1.2rem;
         }
-        .content-intro-block .highlight {
+        .content-essay .highlight, .content-introduction .highlight {
             color: var(--text-secondary);
             font-weight: 400;
         }
-        /* REMOVED the "How to use this site" box entirely */
+
+        .stagger-1 { transition-delay: 0.05s; }
+        .stagger-2 { transition-delay: 0.12s; }
+        .stagger-3 { transition-delay: 0.2s; }
+        .stagger-4 { transition-delay: 0.3s; }
+        .stagger-5 { transition-delay: 0.4s; }
+
         .scripture-panels {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2px;
             margin: 36px 0;
-            border-radius: 14px;
+            border-radius: var(--radius-md);
             overflow: hidden;
             border: 1px solid var(--border);
         }
         .scripture-panel {
             background: var(--surface);
             padding: 32px;
+            transition: background 0.3s;
         }
+        .scripture-panel:hover { background: var(--surface2); }
         .scripture-panel-label {
             font-family: 'Cinzel', serif;
             font-size: 0.55rem;
@@ -641,26 +691,75 @@
             color: var(--stone-light);
             text-transform: uppercase;
         }
-        .scripture-panel:hover {
-            background: var(--surface2);
+
+        .tension-box {
+            background: var(--surface);
+            border-left: 3px solid var(--gold);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
-        @media (max-width: 768px) {
-            .scripture-panels {
-                grid-template-columns: 1fr;
-            }
+        .tension-box p {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .resonance-callout {
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .resonance-callout p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--stone);
         }
 
-        /* ----- CARTOGRAPHIES SECTION ----- */
+        /* ----- SVG Diagrams ----- */
+        .diagram-container {
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .diagram-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        .diagram-svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .diagram-svg text {
+            font-family: 'Cinzel', serif;
+        }
+        .diagram-caption {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+            color: var(--stone);
+            font-style: italic;
+            margin-top: 1rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ----- Cartographies Section ----- */
         .cartographies-section {
             background: var(--bg);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 6rem 2rem;
         }
-        .cartographies-container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
+        .cartographies-container { max-width: 1280px; margin: 0 auto; }
         .section-numeral {
             font-family: 'Cinzel', serif;
             font-size: 0.6rem;
@@ -689,9 +788,7 @@
             margin-bottom: 0.35em;
             line-height: 1.2;
         }
-        [data-theme="dark"] .section-title {
-            color: var(--gold-light);
-        }
+        [data-theme="dark"] .section-title { color: var(--gold-light); }
         .section-subtitle {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -701,20 +798,18 @@
             letter-spacing: 0.04em;
         }
 
-        /* 2x2 Grid */
         .cartographies-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2px;
             background: var(--border);
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             margin: 2.5rem 0;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-deep);
         }
 
-        /* Card Styling */
         .cartography-card {
             background: var(--surface);
             padding: 3rem 2.5rem;
@@ -724,60 +819,43 @@
             display: block;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(0px);
             cursor: pointer;
         }
         .cartography-card::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
+            bottom: 0; right: 0;
+            width: 60px; height: 60px;
             background: radial-gradient(circle at bottom right, var(--gold-glow), transparent);
             opacity: 0;
             transition: opacity 0.5s;
             pointer-events: none;
         }
-        .cartography-card:hover::after {
-            opacity: 1;
-        }
+        .cartography-card:hover::after { opacity: 1; }
         .cartography-card::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
+            left: 0; top: 0; bottom: 0;
             width: 3px;
             background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-        .cartography-card:hover::before {
-            opacity: 1;
-        }
+        .cartography-card:hover::before { opacity: 1; }
         .cartography-card:hover {
             background: var(--surface2);
             transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-deep);
             z-index: 2;
         }
-        [data-theme="dark"] .cartography-card {
-            background: var(--surface2);
-        }
-        [data-theme="dark"] .cartography-card:hover {
-            background: var(--surface);
-        }
-        /* Arrow indicator on title hover */
+        [data-theme="dark"] .cartography-card { background: var(--surface2); }
+        [data-theme="dark"] .cartography-card:hover { background: var(--surface); }
         .cartography-title::after {
             content: ' →';
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        .cartography-card:hover .cartography-title::after {
-            opacity: 1;
-        }
-
+        .cartography-card:hover .cartography-title::after { opacity: 1; }
         .cartography-number {
             font-family: 'Cinzel', serif;
             font-size: 0.6rem;
@@ -794,9 +872,7 @@
             margin-bottom: 0.3rem;
             letter-spacing: -0.01em;
         }
-        [data-theme="dark"] .cartography-title {
-            color: var(--gold-light);
-        }
+        [data-theme="dark"] .cartography-title { color: var(--gold-light); }
         .cartography-subtitle {
             font-family: 'Cinzel', serif;
             font-size: 0.7rem;
@@ -832,14 +908,13 @@
         }
         .cartography-meta span::before {
             content: '';
-            width: 5px;
-            height: 5px;
+            width: 5px; height: 5px;
             background: var(--gold);
             border-radius: 50%;
             opacity: 0.7;
         }
 
-        /* ----- PULLQUOTE / CTA ----- */
+        /* ----- Pullquote ----- */
         .pullquote-section {
             position: relative;
             overflow: hidden;
@@ -851,11 +926,9 @@
         }
         .pullquote-glow {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -55%);
-            width: 500px;
-            height: 500px;
+            width: 500px; height: 500px;
             background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%);
             pointer-events: none;
             animation: breathe 10s ease-in-out infinite;
@@ -886,11 +959,31 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-        .pullquote-attr a:hover {
-            color: var(--gold);
-        }
+        .pullquote-attr a:hover { color: var(--gold); }
 
-        /* ----- FOOTER ----- */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+        .continue-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+        .continue-link:hover { gap: 1rem; }
+
+        /* ----- Footer ----- */
         .footer {
             background: var(--bg2);
             border-top: 1px solid var(--border);
@@ -898,29 +991,22 @@
             text-align: center;
         }
         .footer-emblem {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             margin: 0 auto 1.5rem;
             position: relative;
         }
         .footer-emblem-outer {
-            position: absolute;
-            inset: 0;
+            position: absolute; inset: 0;
             border-radius: 50%;
             border: 1px solid var(--border-strong);
         }
         .footer-emblem-inner {
-            position: absolute;
-            inset: 8px;
+            position: absolute; inset: 8px;
             border-radius: 50%;
             border: 1px solid var(--border);
         }
-        [data-theme="dark"] .footer-emblem-outer {
-            border-color: var(--gold);
-        }
-        [data-theme="dark"] .footer-emblem-inner {
-            border-color: var(--gold-light);
-        }
+        [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+        [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
         .footer-name {
             font-family: 'Cinzel', serif;
             font-size: 0.95rem;
@@ -950,9 +1036,7 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-        .footer-links a:hover {
-            color: var(--gold);
-        }
+        .footer-links a:hover { color: var(--gold); }
         .footer-credit {
             font-family: 'Cinzel', serif;
             font-size: 0.5rem;
@@ -979,133 +1063,94 @@
             margin-top: 1rem;
         }
 
-        /* ----- SCROLL REVEAL & FADE IN ----- */
+        /* ----- Scroll Reveal & Fade In ----- */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(45px);
             transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1);
         }
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
         .scroll-fade-up {
             opacity: 0;
             transform: translateY(35px);
             transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1);
         }
-        .scroll-fade-up.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .scroll-fade-up.revealed { opacity: 1; transform: translateY(0); }
         .fade-in {
             opacity: 0;
             transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1);
         }
-        .fade-in.visible {
-            opacity: 1;
-        }
-        .section-separator {
-            width: 60px;
-            height: 2px;
-            background: var(--gold);
-            margin: 0 auto 1.2rem;
-            opacity: 0.4;
-        }
-        .text-reveal {
-            display: inline-block;
-            overflow: hidden;
-        }
-        .text-reveal .text-reveal-inner {
-            display: inline-block;
-            transform: translateY(100%);
-            transition: transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1);
-        }
-        .text-reveal.visible .text-reveal-inner {
-            transform: translateY(0);
-        }
+        .fade-in.visible { opacity: 1; }
 
-        /* Delay classes */
-        .delay-1 {
-            transition-delay: 0.05s;
-        }
-        .delay-2 {
-            transition-delay: 0.1s;
-        }
-        .delay-3 {
-            transition-delay: 0.15s;
-        }
-        .delay-4 {
-            transition-delay: 0.2s;
-        }
-        .delay-5 {
-            transition-delay: 0.3s;
-        }
-        .delay-6 {
-            transition-delay: 0.4s;
-        }
-        .delay-7 {
-            transition-delay: 0.5s;
-        }
-        .delay-8 {
-            transition-delay: 0.6s;
-        }
-
-        /* RESPONSIVE */
         @media (max-width: 800px) {
             .cartographies-grid {
                 grid-template-columns: 1fr;
                 gap: 1px;
                 border-radius: 16px;
             }
-            .cartography-card {
-                padding: 2rem 1.75rem;
-            }
-            .cartography-title {
-                font-size: 1.4rem;
-            }
-            .hero-title {
-                font-size: 2.4rem;
-            }
-            .hero-epithet {
-                font-size: 0.85rem;
-            }
-            .cartography-meta {
-                flex-direction: column;
-                gap: 0.6rem;
-            }
-            .hero-divider-line {
-                width: 40px;
-            }
-            .content-section {
-                padding: 60px 20px;
-            }
+            .cartography-card { padding: 2rem 1.75rem; }
+            .cartography-title { font-size: 1.4rem; }
+            .hero-title { font-size: 2.4rem; }
+            .hero-epithet { font-size: 0.85rem; }
+            .cartography-meta { flex-direction: column; gap: 0.6rem; }
+            .hero-divider-line { width: 40px; }
+            .content-section { padding: 60px 20px; }
+            .scripture-panels { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
-            .cartographies-section {
-                padding: 3rem 1rem;
-            }
-            .hero {
-                padding: 4rem 1rem 5rem;
-            }
-            .content-section {
-                padding: 40px 16px;
-            }
+            .cartographies-section { padding: 3rem 1rem; }
+            .hero { padding: 4rem 1rem 5rem; }
+            .content-section { padding: 40px 16px; }
+            .hero-title { font-size: 2rem; }
+            .hero-eyemark { font-size: 0.55rem; letter-spacing: 0.3em; }
+            .hero-subtitle-top { font-size: 1rem; }
+            .theme-toggle { width: 44px; height: 44px; bottom: 1rem; right: 1rem; }
+            .toggle-tooltip { display: none; }
+            .back-to-top { width: 44px; height: 44px; bottom: 5rem; right: 1rem; }
+            .nav-brand { font-size: 0.6rem; }
         }
     </style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/4yLNhN8OHPUZu4QcW6sbCPbxGHFKZDm02fNXcYxtzzfaS76bV3AMcMFCS0WqPOg85PDmt_34dhLRooAxe06IgilUKMiMjTTdfVu8EZfqWdcWD7q76o6cZ475yvtTRS4SHSrpaYLU9cdGmQDfcEGT2O3PrmTsLpfwwjRNcrVupnIspkPhmYhA0cIH5terEeKsvFQjlFk6UsE4eqdFB_OEpku2sM6sIOyCkE4EipF06vIiBwLHoYiHHBF8LK39FOFhYH2oD8KZqLcvGYK8cgrzb8zD3Zu365EfF8_Aiqj6yHEySrB8OMYICepaZ7wI6aUK0DRi9INiDnTMdlr7z_Lv1Ft_Z_N48vFYk8bkPvtSl2Y_lIYa5RNw_VnA0hgakNgbXidAgN-KMihJIcwSPQ_e_GCOEhPsgkYKmrbVn5MlLp7e8zm6eJbYzsN4fMegoT191_i3EbrLNGX0ei7A4MpwvDHkcOFHK8rR3g8Zq-T2o_S-X1OHpxgEsysmp9LSN5ErPUplVgoHYLEV7Q1Ik5xNzJxIh2V35gX2bH-cH7Va6vtwumbaT_tscryBNMVt0IDPRdVWn1997IYAc0N1RwlsAs8j98H68wqCYyXJ24_2CE7KuHkfCxWf5fLSVrOHhlTZ9MT3Bp5d-fdDgP4k5j_FE1-QIpMCWR6_QzXBMbynFmIKQr2csjURCgr4PoDHbKvc_-xD0kcWEawDD7Z06axxPvpP350HwsJmrS61ifIRpDqBs5mNItPFx6Ia6IyfF_oHS6upmcOBWdaSfr7MeoMOguGr_cG9dHJCpoDaPgsXkSCsxDh5VHGVK8fG_TeyEVTt3giooWNqJHqH29OeF936Rebo_y1q2GZiyZNvSTRfI9zh-7wYuPxSJ2AsuqcUKYl0i_XiC7izX_xSjOCuuhrtK3yClBFj_FkoQoiBXCmQg-lu_-_eSA564hETqRXtfdHznpJfBod7rurv-vF5WWCRZi1pPmoJV7xeJmxA_iW76y7W6XrNccHniXW-wABc4gVbddnXzdjg_xj4rQStzIL4iCyJwHheMmJcDrkLHc1n2kLdnOWlLCOaRqkHEUn7hYdR'></script><base target="_blank">
 </head>
 <body>
 
-    <!-- Theme Toggle -->
+    <!-- Navigation -->
+    <nav class="site-nav" id="siteNav">
+        <a href="#hero" class="nav-brand">Vedantic Mappings</a>
+        <ul class="nav-links">
+            <li><a href="#introduction" data-section="introduction">Introduction</a></li>
+            <li><a href="#cartographies" data-section="cartographies">Cartographies</a></li>
+            <li><a href="#diagrams" data-section="diagrams">Diagrams</a></li>
+            <li><a href="#pullquote" data-section="pullquote">Contemplation</a></li>
+        </ul>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu">&#9776;</button>
+    </nav>
+
+    <div class="nav-drawer-overlay" id="navDrawerOverlay"></div>
+    <div class="nav-drawer" id="navDrawer">
+        <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">&#10005;</button>
+        <a href="#introduction">Introduction</a>
+        <a href="#cartographies">Cartographies</a>
+        <a href="#diagrams">Diagrams</a>
+        <a href="#pullquote">Contemplation</a>
+        <div class="nav-divider" style="margin: 1rem 0;"></div>
+        <a href="advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
+        <a href="messiah/messiah-threshold.html">The Vedantic Messiah</a>
+        <a href="kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+        <a href="taoism/taoism-threshold.html">Taoism</a>
+    </div>
+
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
-        <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+        <span class="theme-toggle-icon theme-toggle-icon-sun">&#9788;</span>
+        <span class="theme-toggle-icon theme-toggle-icon-moon">&#9790;</span>
     </button>
     <span class="toggle-tooltip">Light / Dark</span>
 
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
     <!-- HERO -->
     <header class="hero" id="hero">
-        <div class="hero-mountain"></div>
+        <div class="hero-horizon"></div>
         <div class="mandala-ring"></div>
         <div class="mandala-ring"></div>
         <div class="mandala-ring"></div>
@@ -1123,10 +1168,10 @@
         </div>
 
         <p class="hero-label">Four Complete Maps</p>
-        <p class="hero-subtitle-top">For those who have sensed there is more—but aren't sure where to start.</p>
+        <p class="hero-subtitle-top">For those who have sensed there is more&mdash;but are not sure where to begin.</p>
 
         <h1 class="hero-title">Vedantic Mappings</h1>
-        <p class="hero-epithet">Advaita Vedanta · The Vedantic Messiah · Kabbalah · Taoism · The Unnamed Way</p>
+        <p class="hero-epithet">Advaita Vedanta &middot; The Vedantic Messiah &middot; Kabbalah &middot; Taoism</p>
 
         <div class="hero-divider">
             <div class="hero-divider-line"></div>
@@ -1137,60 +1182,231 @@
         <p class="hero-thesis">"The seeker is the sought. The path is the destination. These are the maps that point to what is already here."</p>
     </header>
 
-    <!-- MAIN CONTENT (accessibility landmark) -->
     <main id="main-content">
 
-        <!-- INTRODUCTION SECTION (clean, no instructions) -->
+        <!-- INTRODUCTION -->
         <section class="content-section fade-in" id="introduction">
             <div class="section-header">
                 <div class="section-separator"></div>
                 <p class="section-eyemark">What Is This Place?</p>
-                <h2><span class="text-reveal"><span class="text-reveal-inner">Cartographies of the Non‑Dual Path</span></span></h2>
-                <p>Vedanta · Maps · The Unnameable</p>
+                <h2><span class="text-reveal"><span class="text-reveal-inner">Cartographies of the Non-Dual Path</span></span></h2>
+                <p>Vedanta &middot; Maps &middot; The Unnameable</p>
             </div>
 
-            <div class="content-intro-block">
+            <div class="content-introduction">
+                <h3 class="stagger-1">What is Vedanta?</h3>
+                <p class="stagger-1"><strong><span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Vedanta</span></strong> (Sanskrit <em>veda</em> &ndash; knowledge, <em>anta</em> &ndash; end) is the philosophical culmination of the Upanishads. It teaches that the individual self (<strong><span class="sanskrit-term" title="The individual self or soul; the true consciousness within every being">Ātman</span></strong>) is ultimately identical with the absolute reality (<strong><span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span></strong>). This is non-duality (<strong><span class="sanskrit-term" title="Non-duality; the teaching that Ātman and Brahman are one">Advaita</span></strong>): not one-ness as a number, but the recognition that separation was never real.</p>
 
-                <h3>What is Vedanta?</h3>
-                <p><strong><span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Vedanta</span></strong> (from the Sanskrit <em>veda</em> – knowledge, <em>anta</em> – end) is the philosophical culmination of the ancient Upanishads. It teaches that the individual self (<strong><span class="sanskrit-term" title="The individual self or soul; the true consciousness within every being">Atman</span></strong>) is ultimately identical with the absolute reality (<strong><span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span></strong>). This is non‑duality (<strong><span class="sanskrit-term" title="Non-duality; the teaching that Atman and Brahman are one">Advaita</span></strong>): not one‑ness as a number, but the recognition that separation was never real.</p>
+                <h3 class="stagger-2">Why Maps?</h3>
+                <p class="stagger-2">Every tradition, every realized master, every scripture is a <em>map</em>&mdash;not the territory. The territory is the Self, the Absolute, the Tao. It cannot be drawn. But a good map, drawn from authentic experience, can orient the seeker and reveal the pitfalls of the journey.</p>
 
-                <h3>Why Maps?</h3>
-                <p>Every spiritual tradition, every realized master, every scripture is a <em>map</em> – not the territory itself. The territory is the Self, the Absolute, the Tao. It cannot be drawn, described, or captured. But a good map, drawn from authentic experience, can orient the seeker and reveal the pitfalls of the journey. The four cartographies presented here — <span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta — the non-dual metaphysics within Christian mysticism">The Vedantic Messiah</span>, <span class="sanskrit-term" title="Jewish mysticism and the Tree of Life — the ten sefirot and the path from Ein Sof to Malkhut">Kabbalah</span>, and <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi — the Way that cannot be named">Taoism · The Unnamed Way</span> – are not competitors. They are different paths up the same mountain, each with its own language, its own silences, and its own unique precision.</p>
+                <p class="stagger-3">The four cartographies here&mdash;<span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta &mdash; the non-dual metaphysics within Christian mysticism">The Vedantic Messiah</span>, <span class="sanskrit-term" title="Jewish mysticism and the Tree of Life &mdash; the ten sefirot and the path from Ein Sof to Malkhut">Kabbalah</span>, and <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi &mdash; the Way that cannot be named">Taoism &middot; The Unnamed Way</span>&mdash;are not competitors. They are different paths up the same mountain, each with its own language, its own silences, its own precision.</p>
 
-                <!-- (The "How to use" section has been removed entirely) -->
+                <div class="tension-box stagger-4">
+                    <p>"The Self is the only Guru. All outer gurus merely point back to that inner Guru."</p>
+                </div>
 
-                <p>As Ramana Maharshi said: <em>“The Self is the only Guru. All outer gurus merely point back to that inner Guru.”</em> And Nisargadatta Maharaj reminds us: <em>“Give up all questions except one: 'Who am I?' After all, the only fact you are sure of is that you are. The 'I am' is certain. The 'I am this' is not.”</em></p>
+                <p class="stagger-4">As Ramana Maharshi said: <em>"The Self is the only Guru. All outer gurus merely point back to that inner Guru."</em> Nisargadatta Maharaj reminds us: <em>"Give up all questions except one: 'Who am I?' After all, the only fact you are sure of is that you are. The 'I am' is certain. The 'I am this' is not."</em></p>
 
-                <div class="scripture-panels fade-in" style="margin-top: 2rem;">
+                <div class="scripture-panels fade-in stagger-5" style="margin-top: 2rem;">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">The Invitation</div>
-                        <p class="scripture-panel-text">“You are already That. The seeker is the sought. The perceiver is the perceived. There is no gap.”</p>
-                        <p class="scripture-panel-ref">— Nisargadatta Maharaj</p>
+                        <p class="scripture-panel-text">"You are already That. The seeker is the sought. The perceiver is the perceived. There is no gap."</p>
+                        <p class="scripture-panel-ref">&mdash; Nisargadatta Maharaj</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">The Method</div>
-                        <p class="scripture-panel-text">“The Tao that can be spoken is not the eternal Tao. The name that can be named is not the eternal name.”</p>
-                        <p class="scripture-panel-ref">— Lao Tzu, Tao Te Ching, Chapter 1</p>
+                        <p class="scripture-panel-text">"The Tao that can be spoken is not the eternal Tao. The name that can be named is not the eternal name."</p>
+                        <p class="scripture-panel-ref">&mdash; Lao Tzu, Tao Te Ching, Chapter 1</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CARTOGRAPHIES SECTION – 2x2 GRID -->
+        <!-- SVG DIAGRAMS SECTION -->
+        <section class="content-section fade-in" id="diagrams">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Visual Cartographies</p>
+                <h2><span class="text-reveal"><span class="text-reveal-inner">Structural Diagrams</span></span></h2>
+                <p>Four Maps &middot; One Mountain</p>
+            </div>
+
+            <!-- Diagram 1: The Non-Dual Structure -->
+            <div class="diagram-container scroll-reveal">
+                <div class="diagram-title">I. The Non-Dual Structure</div>
+                <svg class="diagram-svg" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" width="600" height="320">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.6" />
+                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="600" height="320" fill="transparent"/>
+                    <ellipse cx="300" cy="80" rx="180" ry="45" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
+                    <text x="300" y="75" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="500" letter-spacing="0.15em">BRAHMAN</text>
+                    <text x="300" y="95" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Absolute &middot; Pure Consciousness</text>
+                    <line x1="300" y1="125" x2="300" y2="165" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+                    <text x="310" y="148" fill="#b8960c" font-size="8" font-style="italic" opacity="0.8">=</text>
+                    <ellipse cx="300" cy="200" rx="120" ry="35" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
+                    <text x="300" y="195" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="500" letter-spacing="0.15em">ĀTMAN</text>
+                    <text x="300" y="215" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Individual Self</text>
+                    <path d="M 180 140 Q 300 170 420 140" stroke="#b8960c" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="6,3"/>
+                    <text x="300" y="165" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.6">MAYA &middot; The Veil of Appearance</text>
+                    <ellipse cx="300" cy="280" rx="80" ry="25" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.5"/>
+                    <text x="300" y="275" text-anchor="middle" fill="#7c8ea0" font-size="10" letter-spacing="0.1em">JĪVA</text>
+                    <text x="300" y="290" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.05em">Body &middot; Mind &middot; Ego</text>
+                    <line x1="300" y1="235" x2="300" y2="255" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
+                    <polygon points="300,258 297,252 303,252" fill="#7c8ea0" opacity="0.4"/>
+                    <text x="80" y="160" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.5">PARAMĀRTHIKA</text>
+                    <text x="80" y="172" fill="#7c8ea0" font-size="7" opacity="0.4">(Absolute Reality)</text>
+                    <text x="480" y="160" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.5">VYĀVAHĀRIKA</text>
+                    <text x="480" y="172" fill="#7c8ea0" font-size="7" opacity="0.4">(Conventional Reality)</text>
+                </svg>
+                <p class="diagram-caption">The Advaitic structure: Brahman (absolute) and Ātman (individual self) are identical. Māyā is the apparent veil that creates the illusion of separation.</p>
+            </div>
+
+            <!-- Diagram 2: Four Paths Convergence -->
+            <div class="diagram-container scroll-reveal">
+                <div class="diagram-title">II. Four Paths to the Absolute</div>
+                <svg class="diagram-svg" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" width="600" height="380">
+                    <defs>
+                        <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.3" />
+                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="600" height="380" fill="transparent"/>
+                    <circle cx="300" cy="80" r="50" fill="url(#centerGlow)" stroke="url(#goldGrad2)" stroke-width="2"/>
+                    <text x="300" y="75" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="500" letter-spacing="0.15em">THE ABSOLUTE</text>
+                    <text x="300" y="92" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">Brahman &middot; Ein Sof &middot; Tao</text>
+                    <path d="M 120 320 Q 200 200 270 120" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.8"/>
+                    <circle cx="120" cy="320" r="30" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
+                    <text x="120" y="315" text-anchor="middle" fill="#d4af37" font-size="9" letter-spacing="0.1em">ADVAITA</text>
+                    <text x="120" y="328" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">Vedanta</text>
+                    <path d="M 480 320 Q 400 200 330 120" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.8"/>
+                    <circle cx="480" cy="320" r="30" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
+                    <text x="480" y="315" text-anchor="middle" fill="#d4af37" font-size="9" letter-spacing="0.1em">MESSIAH</text>
+                    <text x="480" y="328" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">Gospel &middot; Vedanta</text>
+                    <path d="M 200 340 Q 250 220 290 130" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <circle cx="200" cy="340" r="25" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
+                    <text x="200" y="335" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">KABBALAH</text>
+                    <text x="200" y="347" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">Tree of Life</text>
+                    <path d="M 400 340 Q 350 220 310 130" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <circle cx="400" cy="340" r="25" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
+                    <text x="400" y="335" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">TAOISM</text>
+                    <text x="400" y="347" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">The Unnamed Way</text>
+                    <text x="300" y="200" text-anchor="middle" fill="#7c8ea0" font-size="8" font-style="italic" opacity="0.4">Different paths, one mountain</text>
+                </svg>
+                <p class="diagram-caption">Four traditions converging on the same Absolute. Each path uses distinct language and methodology, yet all point to the same non-dual recognition.</p>
+            </div>
+
+            <!-- Diagram 3: The Journey from Jīva to Brahman -->
+            <div class="diagram-container scroll-reveal">
+                <div class="diagram-title">III. The Journey of Recognition</div>
+                <svg class="diagram-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" width="600" height="200">
+                    <defs>
+                        <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#7c8ea0;stop-opacity:0.5" />
+                            <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="600" height="200" fill="transparent"/>
+                    <line x1="80" y1="100" x2="520" y2="100" stroke="url(#pathGrad)" stroke-width="2" stroke-dasharray="8,4"/>
+                    <circle cx="80" cy="100" r="35" fill="none" stroke="#7c8ea0" stroke-width="1.5" opacity="0.6"/>
+                    <text x="80" y="95" text-anchor="middle" fill="#7c8ea0" font-size="10" letter-spacing="0.1em">JĪVA</text>
+                    <text x="80" y="108" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.6">Mistaken Identity</text>
+                    <circle cx="220" cy="100" r="30" fill="none" stroke="#b8960c" stroke-width="1.5" opacity="0.5"/>
+                    <text x="220" y="95" text-anchor="middle" fill="#b8960c" font-size="9" letter-spacing="0.1em">SĀDHANA</text>
+                    <text x="220" y="107" text-anchor="middle" fill="#b8960c" font-size="7" opacity="0.6">Practice &middot; Inquiry</text>
+                    <circle cx="380" cy="100" r="30" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7"/>
+                    <text x="380" y="95" text-anchor="middle" fill="#d4af37" font-size="9" letter-spacing="0.1em">VIVEKA</text>
+                    <text x="380" y="107" text-anchor="middle" fill="#d4af37" font-size="7" opacity="0.7">Discrimination</text>
+                    <circle cx="520" cy="100" r="35" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.9"/>
+                    <text x="520" y="95" text-anchor="middle" fill="#d4af37" font-size="10" font-weight="500" letter-spacing="0.1em">MOKṢA</text>
+                    <text x="520" y="108" text-anchor="middle" fill="#d4af37" font-size="7" opacity="0.8">Liberation</text>
+                    <polygon points="150,97 160,100 150,103" fill="#7c8ea0" opacity="0.5"/>
+                    <polygon points="290,97 300,100 290,103" fill="#b8960c" opacity="0.6"/>
+                    <polygon points="450,97 460,100 450,103" fill="#d4af37" opacity="0.8"/>
+                    <text x="300" y="150" text-anchor="middle" fill="#7c8ea0" font-size="8" font-style="italic" opacity="0.4">Not a journey through space, but a dissolution of the illusion of distance</text>
+                </svg>
+                <p class="diagram-caption">The Advaitic path from mistaken identity (Jīva) to liberation (Mokṣa). The journey is not spatial but a shift in recognition: what was always true is seen.</p>
+            </div>
+
+            <!-- Diagram 4: The Sefirot Tree (Simplified) -->
+            <div class="diagram-container scroll-reveal">
+                <div class="diagram-title">IV. The Tree of Life (Kabbalah)</div>
+                <svg class="diagram-svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" width="400" height="500">
+                    <defs>
+                        <linearGradient id="sefGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:0.4" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="500" fill="transparent"/>
+                    <line x1="200" y1="60" x2="200" y2="440" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+                    <line x1="120" y1="140" x2="280" y2="140" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+                    <line x1="120" y1="220" x2="280" y2="220" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+                    <line x1="120" y1="300" x2="280" y2="300" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+                    <line x1="120" y1="380" x2="280" y2="380" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+                    <line x1="120" y1="140" x2="200" y2="220" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <line x1="280" y1="140" x2="200" y2="220" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <line x1="120" y1="220" x2="200" y2="300" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <line x1="280" y1="220" x2="200" y2="300" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <line x1="120" y1="300" x2="200" y2="380" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <line x1="280" y1="300" x2="200" y2="380" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <line x1="200" y1="300" x2="200" y2="380" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
+                    <circle cx="200" cy="40" r="22" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="1.5" opacity="0.9"/>
+                    <text x="200" y="44" text-anchor="middle" fill="#d4af37" font-size="8" font-weight="500" letter-spacing="0.1em">KETER</text>
+                    <circle cx="120" cy="120" r="18" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.7"/>
+                    <text x="120" y="124" text-anchor="middle" fill="#d4af37" font-size="7" letter-spacing="0.05em">ḤOKHMAH</text>
+                    <circle cx="280" cy="120" r="18" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.7"/>
+                    <text x="280" y="124" text-anchor="middle" fill="#d4af37" font-size="7" letter-spacing="0.05em">BINAH</text>
+                    <circle cx="200" cy="200" r="18" fill="none" stroke="#b8960c" stroke-width="1.2" opacity="0.6"/>
+                    <text x="200" y="204" text-anchor="middle" fill="#b8960c" font-size="7" letter-spacing="0.05em">DAʿAT</text>
+                    <circle cx="120" cy="280" r="18" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
+                    <text x="120" y="284" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">ḤESED</text>
+                    <circle cx="280" cy="280" r="18" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
+                    <text x="280" y="284" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">GEVURAH</text>
+                    <circle cx="200" cy="280" r="18" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.6"/>
+                    <text x="200" y="284" text-anchor="middle" fill="#d4af37" font-size="7" letter-spacing="0.05em">TIFERET</text>
+                    <circle cx="120" cy="360" r="16" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
+                    <text x="120" y="363" text-anchor="middle" fill="#7c8ea0" font-size="6" letter-spacing="0.05em">NETZAḤ</text>
+                    <circle cx="280" cy="360" r="16" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
+                    <text x="280" y="363" text-anchor="middle" fill="#7c8ea0" font-size="6" letter-spacing="0.05em">HOD</text>
+                    <circle cx="200" cy="360" r="16" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
+                    <text x="200" y="363" text-anchor="middle" fill="#7c8ea0" font-size="6" letter-spacing="0.05em">YESOD</text>
+                    <circle cx="200" cy="440" r="22" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.8"/>
+                    <text x="200" y="444" text-anchor="middle" fill="#d4af37" font-size="8" font-weight="500" letter-spacing="0.1em">MALKHUT</text>
+                    <text x="200" y="485" text-anchor="middle" fill="#7c8ea0" font-size="7" font-style="italic" opacity="0.4">From Ein Sof (Infinite) to embodied manifestation</text>
+                </svg>
+                <p class="diagram-caption">The Kabbalistic Tree of Life: ten sefirot (divine emanations) from Keter (Crown) to Malkhut (Kingdom). The path of ascent and descent between the Infinite and the manifest world.</p>
+            </div>
+        </section>
+
+        <!-- CARTOGRAPHIES SECTION -->
         <section class="cartographies-section scroll-reveal" id="cartographies">
             <div class="cartographies-container">
-                <div class="section-numeral scroll-fade-up delay-1">The Cartographies</div>
-                <h2 class="section-title scroll-fade-up delay-2">Four Paths to<br>the Absolute</h2>
-                <p class="section-subtitle scroll-fade-up delay-3">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions — Advaita Vedanta, The Vedantic Messiah, Kabbalah, and Taoism · The Unnamed Way.</p>
+                <div class="section-numeral scroll-fade-up stagger-1">The Cartographies</div>
+                <h2 class="section-title scroll-fade-up stagger-2">Four Paths to<br>the Absolute</h2>
+                <p class="section-subtitle scroll-fade-up stagger-3">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions &mdash; Advaita Vedanta, The Vedantic Messiah, Kabbalah, and Taoism &middot; The Unnamed Way.</p>
 
-                <div class="cartographies-grid scroll-reveal delay-4">
+                <div class="cartographies-grid scroll-reveal stagger-4">
 
-                    <!-- CARD 1: ADVAITA VEDANTA -->
-                    <a href="advaita-vedanta/gaudapada.html" class="cartography-card scroll-fade-up delay-5">
+                    <a href="advaita-vedanta/gaudapada.html" class="cartography-card scroll-fade-up stagger-5">
                         <span class="cartography-number">I</span>
                         <h3 class="cartography-title">Advaita Vedanta</h3>
                         <p class="cartography-subtitle">The Non-Dual Tradition</p>
-                        <p class="cartography-description">A comprehensive mapping of the Advaita Vedanta lineage from Gaudapada's ajāta vāda to modern masters. Includes Ramana Maharshi's Self-enquiry, Nisargadatta's "I Am" teaching, and comparative analysis with Adyashanti. Grounded in the Upanishadic tradition.</p>
+                        <p class="cartography-description">A comprehensive mapping of the Advaita Vedanta lineage from Gaudapada's ajata vada to modern masters. Includes Ramana Maharshi's Self-enquiry, Nisargadatta's "I Am" teaching, and comparative analysis with Adyashanti. Grounded in the Upanishadic tradition.</p>
                         <div class="cartography-meta">
                             <span>Ancient to Modern</span>
                             <span>Lineage Tradition</span>
@@ -1198,21 +1414,19 @@
                         </div>
                     </a>
 
-                    <!-- CARD 2: THE VEDANTIC MESSIAH -->
-                    <a href="messiah/messiah-threshold.html" class="cartography-card scroll-fade-up delay-6">
+                    <a href="messiah/messiah-threshold.html" class="cartography-card scroll-fade-up stagger-5">
                         <span class="cartography-number">II</span>
                         <h3 class="cartography-title">The Vedantic Messiah</h3>
-                        <p class="cartography-subtitle">Gospel & Upanishad</p>
-                        <p class="cartography-description">A mystical synthesis of the Gospel of Jesus and non-dual Upanishadic wisdom, explored through silent contemplation (hesychia) and the recognition that <em>"I and the Father are one."</em> Five pages mapping resonances between Christian mysticism and Advaita — not a merger, but illumination.</p>
+                        <p class="cartography-subtitle">Gospel &amp; Upanishad</p>
+                        <p class="cartography-description">A mystical synthesis of the Gospel of Jesus and non-dual Upanishadic wisdom, explored through silent contemplation (hesychia) and the recognition that <em>"I and the Father are one."</em> Five pages mapping resonances between Christian mysticism and Advaita &mdash; not a merger, but illumination.</p>
                         <div class="cartography-meta">
                             <span>Contemplative</span>
                             <span>Comparative</span>
-                            <span>Christian · Vedantic</span>
+                            <span>Christian &middot; Vedantic</span>
                         </div>
                     </a>
 
-                    <!-- CARD 3: KABBALAH -->
-                    <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="cartography-card scroll-fade-up delay-7">
+                    <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="cartography-card scroll-fade-up stagger-5">
                         <span class="cartography-number">III</span>
                         <h3 class="cartography-title">Kabbalah</h3>
                         <p class="cartography-subtitle">The Tree of Life</p>
@@ -1224,35 +1438,34 @@
                         </div>
                     </a>
 
-                    <!-- CARD 4: TAOISM -->
-                    <a href="taoism/taoism-threshold.html" class="cartography-card scroll-fade-up delay-8">
+                    <a href="taoism/taoism-threshold.html" class="cartography-card scroll-fade-up stagger-5">
                         <span class="cartography-number">IV</span>
-                        <h3 class="cartography-title">Lao Tzu · Taoism</h3>
-                        <p class="cartography-subtitle">The Uncarved Block & The Way</p>
-                        <p class="cartography-description">A complete apophatic cartography from the Tao Te Ching and Zhuangzi. The Tao that cannot be named, the practice of wu wei (effortless action), and the recognition that the ten thousand things and the self are one root — a parallel non‑dual path.</p>
+                        <h3 class="cartography-title">Lao Tzu &middot; Taoism</h3>
+                        <p class="cartography-subtitle">The Uncarved Block &amp; The Way</p>
+                        <p class="cartography-description">A complete apophatic cartography from the Tao Te Ching and Zhuangzi. The Tao that cannot be named, the practice of wu wei (effortless action), and the recognition that the ten thousand things and the self are one root &mdash; a parallel non-dual path.</p>
                         <div class="cartography-meta">
-                            <span>6th–4th c. BCE</span>
+                            <span>6th&ndash;4th c. BCE</span>
                             <span>Ancient China</span>
-                            <span>Taoism · Philosophical</span>
+                            <span>Taoism &middot; Philosophical</span>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- PULLQUOTE / NEUTRAL CTA -->
-        <div class="pullquote-section scroll-fade-up delay-6">
+        <!-- PULLQUOTE / CTA -->
+        <div class="pullquote-section scroll-fade-up stagger-5" id="pullquote">
             <div class="pullquote-glow"></div>
             <div class="pullquote">
                 <p class="pullquote-text">The journey from mistaken identity to liberation begins with a single step into the mystery of being.</p>
-                <p class="pullquote-attr"><a href="#cartographies">Explore the Cartographies →</a></p>
+                <p class="pullquote-attr"><a href="#cartographies">Explore the Cartographies &rarr;</a></p>
             </div>
         </div>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer scroll-fade-up delay-7">
+    <footer class="footer scroll-fade-up stagger-5">
         <div class="footer-emblem">
             <div class="footer-emblem-outer"></div>
             <div class="footer-emblem-inner"></div>
@@ -1260,92 +1473,194 @@
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
         <div class="footer-links">
-            <a href="index.html">⌂ Vedantic Mappings</a>
+            <a href="index.html">&#8962; Vedantic Mappings</a>
             <a href="advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
             <a href="messiah/messiah-threshold.html">The Vedantic Messiah</a>
             <a href="kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+            <a href="taoism/taoism-threshold.html">Taoism &middot; The Unnamed Way</a>
         </div>
         <div class="footer-credit">Curated from primary transcripts and oral teachings.</div>
-        <div class="footer-version">Last updated: 20 June 2026 · Four cartographies</div>
-        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+        <div class="footer-version">Last updated: 20 June 2026 &middot; Four cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. &middot; &copy; 2026</div>
     </footer>
 
     <script>
-        (function() {
-            'use strict';
+    (function() {
+        'use strict';
 
-            // 1. Remove no-js class so CSS transitions take over
-            document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.remove('no-js');
 
-            // 2. Theme Toggle
-            const toggle = document.getElementById('themeToggle');
-            const html = document.documentElement;
+        // 1. Theme Toggle
+        const toggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
 
-            function setTheme(theme) {
-                html.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function initTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light' || saved === 'dark') {
+                setTheme(saved);
+                return;
             }
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+        initTheme();
 
-            function initTheme() {
-                const saved = localStorage.getItem('theme');
-                if (saved === 'light' || saved === 'dark') {
-                    setTheme(saved);
-                    return;
+        if (toggle) {
+            toggle.addEventListener('click', function() {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                setTheme(next);
+            });
+        }
+
+        // 2. Navigation scroll visibility
+        const siteNav = document.getElementById('siteNav');
+        let lastScrollY = 0;
+        window.addEventListener('scroll', function() {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 100) {
+                siteNav.classList.add('visible');
+            } else {
+                siteNav.classList.remove('visible');
+            }
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        // 3. Active nav highlighting on scroll
+        const sections = document.querySelectorAll('section[id], div[id]');
+        const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+        const navObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(function(link) {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-section') === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
-                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                setTheme(prefersDark ? 'dark' : 'light');
+            });
+        }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+        sections.forEach(function(section) {
+            navObserver.observe(section);
+        });
+
+        // 4. Mobile nav drawer
+        const navMenuBtn = document.getElementById('navMenuBtn');
+        const navDrawer = document.getElementById('navDrawer');
+        const navDrawerOverlay = document.getElementById('navDrawerOverlay');
+        const navDrawerClose = document.getElementById('navDrawerClose');
+
+        function openDrawer() {
+            navDrawer.classList.add('open');
+            navDrawerOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDrawer() {
+            navDrawer.classList.remove('open');
+            navDrawerOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        if (navMenuBtn) navMenuBtn.addEventListener('click', openDrawer);
+        if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
+        if (navDrawerOverlay) navDrawerOverlay.addEventListener('click', closeDrawer);
+        navDrawer.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', closeDrawer);
+        });
+
+        // 5. Touch swipe for nav (right-edge open, left-edge close)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            const screenWidth = window.innerWidth;
+            // Right-edge swipe (start near right edge, swipe left to open)
+            if (touchStartX > screenWidth - 40 && diff < -50 && !navDrawer.classList.contains('open')) {
+                openDrawer();
             }
-            initTheme();
-
-            if (toggle) {
-                toggle.addEventListener('click', function() {
-                    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                    setTheme(next);
-                });
+            // Left-edge swipe (start near left edge, swipe right to close)
+            if (touchStartX < 40 && diff > 50 && navDrawer.classList.contains('open')) {
+                closeDrawer();
             }
+        }, { passive: true });
 
-            // 3. Scroll Reveal Observers
-            const scrollObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        scrollObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-            document.querySelectorAll('.scroll-reveal, .scroll-fade-up').forEach(function(el) {
-                scrollObserver.observe(el);
+        // 6. Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }, { passive: true });
+        if (backToTop) {
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+        }
 
-            // 4. Fade Observer (for intro)
-            const fadeObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(e) {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('visible');
-                        fadeObserver.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.fade-in, .section-separator, .text-reveal').forEach(function(el) {
-                fadeObserver.observe(el);
+        // 7. Scroll Reveal Observers
+        const scrollObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    scrollObserver.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-            // 5. Text-reveal inner handler
-            const textRevealObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(e) {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('visible');
-                        textRevealObserver.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            document.querySelectorAll('.text-reveal').forEach(function(el) {
-                textRevealObserver.observe(el);
+        document.querySelectorAll('.scroll-reveal, .scroll-fade-up').forEach(function(el) {
+            scrollObserver.observe(el);
+        });
+
+        // 8. Fade Observer
+        const fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    fadeObserver.unobserve(e.target);
+                }
             });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in, .section-separator').forEach(function(el) {
+            fadeObserver.observe(el);
+        });
 
-        })();
+        // 9. Text-reveal observer
+        const textRevealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    textRevealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.text-reveal').forEach(function(el) {
+            textRevealObserver.observe(el);
+        });
+
+        // 10. Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+    })();
     </script>
 </body>
 </html>

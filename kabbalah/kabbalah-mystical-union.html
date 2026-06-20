@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Zivug — The Mystical Union in Lurianic Kabbalah. The secret of divine coupling, Partzufim, and the repair of the world through sacred union." />
+<title>Zivug · The Mystical Union — Lurianic Kabbalah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   ROOT VARIABLES & THEME SYSTEM
+   ============================================================ */
+:root {
+  --bg: #0a0c14;
+  --bg2: #0f1220;
+  --bg3: #080a12;
+  --surface: #161a2a;
+  --surface2: #1e2338;
+  --ink: #e8ecf4;
+  --ink2: #8a9ab8;
+  --stone: #6a7a9a;
+  --stone-light: #8a9ab8;
+  --gold: #c4a855;
+  --gold-light: #e0c878;
+  --gold-deep: #a08840;
+  --gold-glow: rgba(196, 168, 85, 0.08);
+  --sun-glow: rgba(196, 168, 85, 0.18);
+  --indigo: #5a6a9a;
+  --indigo-light: #7a8aba;
+  --indigo-glow: rgba(90, 106, 154, 0.12);
+  --border: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.025);
+  --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+  --shadow-gold: 0 0 40px var(--gold-glow);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-accent: 'IM Fell English', serif;
+  --font-secondary: 'Crimson Pro', serif;
+  --header-height: 64px;
+  --nav-width: 280px;
+}
+
+[data-theme="light"] {
+  --bg: #f0f2f8;
+  --bg2: #e4e7f0;
+  --bg3: #e0e3ec;
+  --surface: #ffffff;
+  --surface2: #f5f7fa;
+  --ink: #1a1e2e;
+  --ink2: #3a4058;
+  --stone: #5a6080;
+  --stone-light: #7a80a0;
+  --gold: #8a7030;
+  --gold-light: #a08840;
+  --gold-deep: #6a5820;
+  --gold-glow: rgba(138, 112, 48, 0.08);
+  --sun-glow: rgba(138, 112, 48, 0.15);
+  --border: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.03);
+  --shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--indigo), var(--gold-deep), var(--gold));
+  border-radius: 2px;
+}
+
+::selection { background: rgba(90,106,154,0.20); color: var(--ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes scroll-bounce {
+  0%,100% { opacity: 1; transform: scaleY(1); }
+  50%     { opacity: 0.3; transform: scaleY(0.5); }
+}
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.04); }
+}
+@keyframes ripple-out {
+  0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0;    transform: translate(-50%,-50%) scale(5); }
+}
+@keyframes lineReveal {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes diamondReveal {
+  from { opacity: 0; transform: rotate(45deg) scale(0); }
+  to   { opacity: 1; transform: rotate(45deg) scale(1); }
+}
+@keyframes ambientDrift {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.35; }
+  33%     { transform: translate(3%,-2%) scale(1.03); opacity: 0.55; }
+  66%     { transform: translate(-2%,3%) scale(0.97); opacity: 0.25; }
+}
+@keyframes tzimtzumPulse {
+  0%, 100% { r: 28; opacity: 0.6; }
+  50% { r: 32; opacity: 0.9; }
+}
+@keyframes vesselBreak {
+  0%, 100% { transform: translate(0,0) rotate(0deg); opacity: 0.7; }
+  25% { transform: translate(2px,-1px) rotate(1deg); }
+  75% { transform: translate(-1px,2px) rotate(-1deg); }
+}
+@keyframes repairGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   NAVIGATION COMPASS
+   ============================================================ */
+.nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+.nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 240px; }
+.nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+.nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+.nav-item.active { color: var(--gold-light); background: rgba(154,122,58,0.08); border-left-color: var(--gold); font-weight: 500; }
+.nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
+.nav-section-title { font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+.nav-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); margin: 0.5rem 1rem; opacity: 0.6; }
+
+/* ============================================================
+   THEME TOGGLE & BACK TO TOP
+   ============================================================ */
+.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+.theme-toggle:active { transform: scale(0.95); }
+.theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+[data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+.back-to-top { position: fixed; bottom: 6.5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; background: radial-gradient(ellipse 120% 100% at 50% 30%, #1a1e3a 0%, #0f1220 50%, #0a0c14 100%); }
+[data-theme="light"] .hero { background: radial-gradient(ellipse 120% 100% at 50% 30%, #e4e7f0 0%, #d8dce8 50%, #c8cdd8 100%); }
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 70% 30%, rgba(90,106,154,0.10) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 70%, rgba(196,168,85,0.06) 0%, transparent 70%);
+  animation: ambientDrift 20s ease-in-out infinite;
+  pointer-events: none; z-index: 1;
+}
+.hero-ripple { position: absolute; top: 50%; left: 50%; width: 200px; height: 200px; border-radius: 50%; border: 1px solid var(--indigo); transform: translate(-50%,-50%); pointer-events: none; animation: ripple-out 10s ease-out infinite; }
+.hero-ripple:nth-of-type(2) { animation-delay: 3.5s; }
+.hero-ripple:nth-of-type(3) { animation-delay: 7s; }
+
+.hero-eyemark { font-family: var(--font-display); font-size: 0.58rem; letter-spacing: 0.5em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+
+.hero-emblem { width: 120px; height: 120px; margin: 0 auto 2rem; position: relative; z-index: 3; animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
+.hero-emblem svg { width: 100%; height: 100%; overflow: visible; }
+[data-theme="light"] .hero-emblem svg circle,
+[data-theme="light"] .hero-emblem svg line,
+[data-theme="light"] .hero-emblem svg path { opacity: 1 !important; }
+
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(90,106,154,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+[data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196,168,85,0.20); }
+.hero-subtitle { font-family: var(--font-body); font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--indigo-light); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+.hero-quote { font-family: var(--font-accent); font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 520px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
+[data-theme="dark"] .hero-quote { color: var(--stone-light); }
+.hero-quote-attr { font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; margin-bottom: 2rem; }
+.hero-divider { display: flex; align-items: center; gap: 1.25rem; margin: 0 auto 2.5rem; width: fit-content; opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards; position: relative; z-index: 2; }
+.hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, var(--indigo), var(--gold-deep)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
+.hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); transform-origin: right; }
+.hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+.hero-scroll-cue { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; cursor: pointer; z-index: 2; transition: transform 0.3s var(--ease-out-expo); }
+.hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+.hero-scroll-cue span { font-family: var(--font-display); font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone); text-transform: uppercase; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--indigo-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+/* ============================================================
+   SECTIONS & TYPOGRAPHY
+   ============================================================ */
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+.content-section { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
+
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-eyemark { font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.3em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+.section-header h2 { font-family: var(--font-body); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; line-height: 1.25; }
+.section-header p { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
+
+.section-separator { display: flex; align-items: center; gap: 1rem; margin: 3rem auto; max-width: 200px; color: var(--gold); opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
+.section-separator.visible { opacity: 0.5; transform: scaleX(1); }
+.section-separator::before, .section-separator::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-strong), transparent); }
+.section-separator::after { background: linear-gradient(90deg, transparent, var(--border-strong)); }
+.section-separator .diamond { font-size: 0.5rem; }
+
+.text-reveal { overflow: hidden; display: block; }
+.text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
+.visible .text-reveal-inner { transform: translateY(0); }
+
+.content-introduction { font-family: var(--font-accent); font-size: 1.15rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); font-style: italic; }
+.content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+.content-essay h3 { font-family: var(--font-body); font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
+.content-essay h4 { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.75rem; }
+.content-essay blockquote { border-left: 3px solid var(--indigo); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: var(--font-accent); font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+.content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: var(--font-body); font-size: 3rem; color: var(--indigo); opacity: 0.10; line-height: 1; }
+.content-essay blockquote cite { display: block; font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+.content-essay ul { margin: 1.5rem 0; padding-left: 0; list-style: none; }
+.content-essay ul li { padding: 0.85rem 0 0.85rem 2rem; position: relative; color: var(--stone); line-height: 1.75; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay ul li:last-child { border-bottom: none; }
+.content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--indigo); opacity: 0.6; }
+.content-essay ul li strong { color: var(--ink); font-weight: 500; }
+
+.hebrew-term { cursor: help; border-bottom: 1px dotted var(--indigo); text-decoration: none; }
+
+/* ============================================================
+   DIAGRAMS
+   ============================================================ */
+.diagram-container, .diagram-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin: 36px 0;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-smooth);
+}
+.diagram-container:hover, .diagram-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-deep); }
+.diagram-container::before, .diagram-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--indigo), var(--gold), var(--indigo));
+  opacity: 0.5;
+}
+.diagram-title, .diagram-card-label {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.diagram-svg, .diagram-card svg {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px var(--shadow-gold));
+}
+.diagram-caption, .diagram-card-caption {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--stone);
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SCRIPTURE PANELS
+   ============================================================ */
+.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.scripture-panel { background: var(--surface); padding: 32px; transition: background 0.3s ease; }
+.scripture-panel:hover { background: var(--surface2); }
+.scripture-panel-label, .panel-source { font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.scripture-panel-text, .panel-text { font-family: var(--font-accent); font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+.scripture-panel-ref, .panel-ref { font-family: var(--font-display); font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+.scripture-panels.margin-top { margin-top: 2rem; }
+
+/* ============================================================
+   TENSION BOX & RESONANCE CALLOUT
+   ============================================================ */
+.tension-box {
+  background: linear-gradient(135deg, var(--surface2), var(--bg3));
+  border-left: 3px solid var(--gold); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.75rem; margin: 2.5rem 0; position: relative;
+  box-shadow: var(--shadow);
+}
+.tension-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.tension-box p { margin: 0; font-family: var(--font-secondary); font-size: 1rem; line-height: 1.7; color: var(--stone); }
+
+.resonance-callout {
+  background: var(--gold-glow); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 1.5rem 2rem; margin: 2.5rem 0;
+  text-align: center; position: relative; overflow: hidden;
+}
+.resonance-callout::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, var(--sun-glow) 0%, transparent 70%);
+  opacity: 0.5; pointer-events: none;
+}
+.resonance-callout p {
+  font-family: var(--font-accent); font-size: 1.1rem; font-style: italic;
+  color: var(--ink); margin: 0; position: relative;
+}
+
+/* ============================================================
+   PULLQUOTE
+   ============================================================ */
+.pullquote-section { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+[data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #e4e7f0 0%, #d8dce8 40%, #c8cdd8 100%); }
+.pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+.pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
+.pullquote-text { font-family: var(--font-accent); font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+.pullquote-attr { font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+.pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.pullquote-attr a:hover { color: var(--gold); }
+
+/* ============================================================
+   CHAPTER NAV & FOOTER
+   ============================================================ */
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.chapter-link, .continue-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-link:hover, .continue-link:hover { color: var(--gold); }
+.chapter-sep { color: var(--indigo); opacity: 0.3; }
+.chapter-link.active { color: var(--gold); font-weight: 500; }
+
+.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+.footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--indigo); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold); }
+.footer-name { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+.footer-tagline { font-family: var(--font-body); font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+.footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-credit { font-family: var(--font-display); font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+.footer-copyright { font-family: var(--font-display); font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+
+/* ============================================================
+   ANIMATION UTILITIES
+   ============================================================ */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+  }
+  .fade-in { opacity: 1; transform: none; }
+  .text-reveal-inner { transform: none; }
+  .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
+}
+
+/* ============================================================
+   MOBILE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero { padding: 5rem 2rem 6rem 2rem; text-align: center; align-items: center; }
+  .hero-scroll-cue { left: 50%; transform: translateX(-50%); align-items: center; }
+  .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+  .nav-compass { right: 1rem; }
+  .nav-menu { min-width: 180px; }
+  .back-to-top { right: 1.5rem; bottom: 6.5rem; }
+  .theme-toggle { right: 1.5rem; }
+  .footer-links { gap: 1.5rem; }
+  .scripture-panels { grid-template-columns: 1fr; }
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .section-header { text-align: center; padding-left: 0; border-left: none; border-top: 2px solid var(--gold); padding-top: 24px; }
+  .section-separator { margin-left: auto; margin-right: auto; }
+  .content-section { padding: 60px 20px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .hero { padding: 4rem 1.5rem 5rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-emblem { width: 90px; height: 90px; }
+  .content-section { padding: 48px 16px; max-width: 100%; }
+  .section-header h2 { font-size: 1.6rem; }
+  .content-essay p { font-size: 0.95rem; line-height: 1.7; }
+  .content-introduction { font-size: 1.05rem; }
+  .diagram-container, .diagram-card { padding: 24px; }
+  .scripture-panels { margin: 24px 0; }
+  .scripture-panel { padding: 24px; }
+  .pullquote-section { padding: 3rem 1.5rem; }
+  .pullquote-text { font-size: 1.1rem; }
+  .nav-compass { top: 1rem; left: 1rem; }
+  .nav-toggle { width: 40px; height: 40px; }
+  .nav-menu { min-width: 160px; }
+  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+  .back-to-top { width: 40px; height: 40px; bottom: 5.5rem; right: 1rem; }
+  .chapter-nav { gap: 1rem; font-size: 0.6rem; }
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+}
+
+/* ============================================================
+   STILLNESS MODE
+   ============================================================ */
+body.stillness-mode .fade-in,
+body.stillness-mode .text-reveal-inner {
+  opacity: 1; transform: none; transition: none;
+}
+</style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/Gz-kdrtLDNip8hx_p715dH6UDOHg-uLCjkIFeqXg1sk8CA_EDjhMiriyQqFUjJ_2fjVrV0kGpLjzhfWgXHXGJcA2-S-lxzYEAhtW3EL6jMzeWekERzWWlgEOhrYFG0-JqcoCsewsstwHOEKQXRMvIAMhAeAArbKSy2Tdqxco3ugLZlqcbqBYhRyyBIl_jJp_7-h1tQf1BFWk6FQ8Z_zR9RkUbfDcaM1IsD54iMtuOYD88nvAJIWc_2yzoK90OEoVUlPZnHB4EP3kXOJ4XywMH36o-V4L8ocrv714yVCy5NwmK0PbKnm-1YVuJY8JpAdepmdTrNsYmpk1QwYAHsc8B4xffz925H9R0RKWrqICOiR9_Zwzw4QRAjKToUtgQ5idTklNpVbmiPQTtuojVG8QMbW2ivi8BzX0Ev99-w0xfbajSNQ12fL0Z_LxEhxD-E-YfEvkfHbfuuJsVCh18lKpLwaOrkfBLdQKTb2JJL12ABd168smg2hyStFsqXZVyO6Oz4lqg64uCNHPLLShCaGvS7REfmL3exFmbVuapIhzrE4U0gvTEFXnYgTdXVhmvmADtjjf1SWBCili48WG30T1fuP76dn61SikQyRQa3y2mFutPj1MAr4-cRkW9EUQuN8whs9FMff_1RarG0hqQ6H8VQy0fpAAFsrDI2erPBgmmSv1KZR78h4lEyzBeMVmKHgkkUO4zcCoQFwqOyNNAFwaRHO_tVRAPYtaSa2g5dEdNAL8qq9VMzzdbVQRaPFaWoLcAPR8VYCB4hEi3oG5DiGbUP_f0xP3CXho8-J17h3uDxK2E9UrgPuiSt2QYV0CTqaybgJ5eEDi5Cj4g2cXZ_UyQy2Xd5MF-69uWoFInKEDm1IBGYHRohW-OTZaPSGya1h2_HxU4Gi0r7T0Qt4ulEEXMK-j3vnbHTEEXV22hQ9is_dos4lJa_TqshneHlckQbnGuWpy4bLOs1mARosMC8GmE8IAAuV1fcvE2mKA4a_-hyVUcHq52m7GgUYxKUboHuIUaCXDClcp0Bl2so_8Ga8e_maJHmI5QzPZ4P2GedXxjdSbeImh'></script><script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/Ls7JPIWqNrkhI_6UAx9p3G-iEbuF_KB4aYXanMnCDfDS9wduyCFgTCtQEO3OeYDQX1F3crJGoMo4tRnxM7SVVh5an7GNquLoPYeYABmBFHzXIvUj_KBdFxObL2dnaPtLpN_9SAEuEDPEmj7muFzEDgvqtQAkNkgKL89vQf2AzA1jzLzqj98U5OVHw_BiS9e1ha5EB3k6b7l4ul4OEKQ9tWMES819mzmd1_0-sifxU5eGBbWr28yTgVdYR9UyMAwc3aMtrr9mSno5LQJOvj5iaEhE4nkLcMWWjpzFTYGLwqLC5enij9PvuptC763zin9mLWEYkdjy8aBNWWR3mz3yeXyHv8gH28bJvDb8k11M7ZNyHmugqNWKzzsOk3Q6NauxMMFwylPBIESY4sJLdXtex21KJmXxm9s4MUz9Z_AUJWjIpDmZSpe2G1YC6SPoiAa7eVtxvf3w3rYnmLwFZgGhsa2x6Xzi1DvuRmB5yGrQj7pOwFEyz3JbWh-Fxm4x-sknUoe9iG-7WaXBsj-m8i6KLyNloeSz_JCgrPOp_N0WD5Mswwsra_wEHkUYPzIcZU1ZPRCyJ8tJbj9KPyh8JvpxmO3DSW3WrX-KJ_NfKsswOXvv_byyrdjBzH2WaoD0DRgT_thS-MH9BA92XurbBxE_N9F5VzNwqsximyfYaG8RZ7gJb-P3P52VmqouINNPhiOaB-mnkzvVVH1r5txRzPQF1vaj7qGGn6YFc9MRkyYQNYoIJTBJkVgyyuLQbRppbsPKdd3of40RguVycAuWZ9wKQK7U8wJ0kQ6K-J95_kGTbJ8g9Miy1d8SiCebYgoUSySHf3J_dWHspjASkC8sKmhGcqyA4uTdNERBXdAcnEX6VmMDYDlTLw9F8gx-IXhiMSuenpzXEyYJebOpIOGBochNm3oNdIJBAvGABT6Ye2ANLKtdZEvU6ntHoxVICKZTQC0Zk15Z4Q04QZVNaTzzvr43vrbA69rd8GnvnTt6cPgxj82jGxgYZ5EyX6v83jJOujBqNFWLxaGh_OhcMuax1LaXy-eONYnOZEcTxiAtsTIepOTXnrIuEB1VU5TNkfcAQwEwwCKh6Q'></script><base target="_blank">
+<base target="_blank">
+</head>
+
+<body>
+
+<!-- NAVIGATION COMPASS -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">This Page</div>
+    <a href="#hero" class="nav-item"><span class="nav-item-icon">✦</span><span>Overview</span></a>
+    <a href="#introduction" class="nav-item"><span class="nav-item-icon">✧</span><span>The Secret of Union</span></a>
+    <a href="#partzufim" class="nav-item"><span class="nav-item-icon">◈</span><span>The Partzufim</span></a>
+    <a href="#sefirotic" class="nav-item"><span class="nav-item-icon">◉</span><span>Sefirotic Union</span></a>
+    <a href="#soul" class="nav-item"><span class="nav-item-icon">◊</span><span>Soul Zivug</span></a>
+    <a href="#lurianic" class="nav-item"><span class="nav-item-icon">✧</span><span>Lurianic Doctrine</span></a>
+    <a href="#practice" class="nav-item"><span class="nav-item-icon">✶</span><span>The Hidden War</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Kabbalah · Five Pages</div>
+    <a href="kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>I · The Book of Creation</span></a>
+    <a href="kabbalah-zohar.html" class="nav-item"><span class="nav-item-icon">✦</span><span>II · The Zohar</span></a>
+    <a href="kabbalah-luria.html" class="nav-item"><span class="nav-item-icon">🌙</span><span>III · Isaac Luria</span></a>
+    <a href="kabbalah-baal-shem-tov.html" class="nav-item"><span class="nav-item-icon">🔥</span><span>IV · The Baal Shem Tov</span></a>
+    <a href="kabbalah-mystical-union.html" class="nav-item active"><span class="nav-item-icon">💞</span><span>V · Mystical Union</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Other Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+  </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <p class="hero-eyemark">Lurianic Kabbalah</p>
+  <div class="hero-emblem">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="zGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <radialGradient id="zVoid" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#0a0c14" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#0a0c14" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="zLight" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#e0c878" stop-opacity="0.3"/>
+          <stop offset="60%" stop-color="#c4a855" stop-opacity="0.1"/>
+          <stop offset="100%" stop-color="#c4a855" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- Masculine circle -->
+      <circle cx="85" cy="100" r="55" fill="none" stroke="#5a6a9a" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="85" cy="100" r="48" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.25"/>
+      <!-- Feminine circle -->
+      <circle cx="115" cy="100" r="55" fill="none" stroke="#5a6a9a" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="115" cy="100" r="48" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.25"/>
+      <!-- Union intersection glow -->
+      <circle cx="100" cy="100" r="28" fill="url(#zLight)" opacity="0.6" filter="url(#zGlow)"/>
+      <circle cx="100" cy="100" r="18" fill="none" stroke="#e0c878" stroke-width="0.8" opacity="0.5"/>
+      <circle cx="100" cy="100" r="8" fill="#e0c878" opacity="0.7" filter="url(#zGlow)"/>
+      <circle cx="100" cy="100" r="3" fill="#fff" opacity="0.4"/>
+      <!-- Radiating lines -->
+      <g stroke="#c4a855" stroke-width="0.3" opacity="0.2" stroke-linecap="round">
+        <line x1="100" y1="5" x2="100" y2="20"/>
+        <line x1="100" y1="195" x2="100" y2="180"/>
+        <line x1="5" y1="100" x2="20" y2="100"/>
+        <line x1="195" y1="100" x2="180" y2="100"/>
+      </g>
+      <!-- Labels -->
+      <text x="55" y="165" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.6">ZEIR</text>
+      <text x="145" y="165" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.6">NUKVah</text>
+      <text x="100" y="105" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="6" letter-spacing="0.2em" opacity="0.8">ZIVUG</text>
+    </svg>
+  </div>
+
+  <h1 class="hero-title">The Mystical Union</h1>
+  <p class="hero-subtitle">Zivug in the Teachings of the Ari</p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"All couplings above and below depend upon the union of the Holy One, blessed be He, and His Shekhinah. When they join, all worlds are blessed and all waters flow."</p>
+  <p class="hero-quote-attr">— Zohar III, 81a</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('introduction').scrollIntoView({behavior:'smooth'})">
+    <span>Enter</span><div class="scroll-line"></div>
+  </div>
+</header>
+
+<main>
+
+<!-- INTRODUCTION: THE SECRET OF UNION -->
+<section class="content-section fade-in" id="introduction">
+  <div class="section-header">
+    <div class="section-separator"><span class="diamond">◆</span></div>
+    <p class="section-eyemark">I. The Secret of Union</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">What is Zivug?</span></span></h2>
+    <p>The Cosmic Coupling</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="content-introduction">In the hidden teachings of Kabbalah, <em class="hebrew-term" title="Coupling; union; mystical marriage">zivug</em> (זיווג) denotes far more than earthly marriage. It names the cosmic coupling through which divine energies flow, sustain creation, and restore the fractured unity of the worlds.</p>
+
+    <p class="fade-in stagger-1">The term derives from the Aramaic <em>zavag</em>, meaning to pair or join. Yet in the Zohar and the writings of the <em class="hebrew-term" title="The Lion; Rabbi Isaac Luria, 1534–1572">Arizal</em>, zivug assumes technical precision: it describes the union of masculine and feminine aspects within the divine structure — the <em class="hebrew-term" title="Divine countenances; personas">Partzufim</em> — through which the flow of divine abundance (<em class="hebrew-term" title="Divine influx; abundance">shefa</em>) descends from the Infinite (<em class="hebrew-term" title="Without end; the Infinite">Ein Sof</em>) into finite vessels.</p>
+
+    <p class="fade-in stagger-2">Luria revealed in Safed that creation depends upon continuous <em>zivugim</em>. Without these couplings, the channels of emanation would close, and the lower worlds would collapse into privation. Every cosmic union generates new light; every separation invites darkness. The Ari taught his disciples to contemplate these mysteries with trembling, for they touch the innermost workings of the Godhead.</p>
+  </div>
+
+  <div class="scripture-panels fade-in">
+    <div class="scripture-panel">
+      <div class="scripture-panel-label">Zohar III, 81a</div>
+      <p class="scripture-panel-text">"All couplings above and below depend upon the union of the Holy One, blessed be He, and His Shekhinah. When they join, all worlds are blessed and all waters flow."</p>
+      <p class="scripture-panel-ref">— The Book of Radiance</p>
+    </div>
+    <div class="scripture-panel">
+      <div class="scripture-panel-label">Etz Chaim, Sha'ar HaZivugim</div>
+      <p class="scripture-panel-text">"The coupling of Abba and Imma produces the illumination of Zeir Anpin, and from Zeir Anpin to Nukvah all blessings descend to the lower realms."</p>
+      <p class="scripture-panel-ref">— Chaim Vital</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-separator fade-in"><span class="diamond">◆</span></div>
+
+<!-- THE PARTZUFIM -->
+<section class="content-section fade-in" id="partzufim">
+  <div class="section-header">
+    <div class="section-separator"><span class="diamond">◆</span></div>
+    <p class="section-eyemark">II. The Divine Countenances</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Partzufim in Coupling</span></span></h2>
+    <p>The Architecture of Divine Union</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="fade-in stagger-1">Luria's revolutionary contribution was the doctrine of <em class="hebrew-term" title="Divine countenances; anthropomorphic configurations">Partzufim</em> — divine personas that replaced the static sefirotic tree with dynamic configurations capable of interaction, emotion, and union. Where earlier Kabbalah depicted ten luminous points, Luria revealed five great faces: <em class="hebrew-term" title="The Long-Suffering; the first Partzuf">Arich Anpin</em>, <em class="hebrew-term" title="Father; the sefirah of Chokhmah">Abba</em>, <em class="hebrew-term" title="Mother; the sefirah of Binah">Imma</em>, <em class="hebrew-term" title="The Short-Tempered; the six emotional sefirot">Zeir Anpin</em>, and <em class="hebrew-term" title="The Daughter; the Shekhinah; Malkhut">Nukvah</em>.</p>
+
+    <p class="fade-in stagger-2">Each Partzuf contains a complete array of ten sefirot within itself, organized according to the mystery of <em class="hebrew-term" title="Upright configuration">yosher</em>. The couplings occur between corresponding Partzufim: Abba (Chokhmah) unites with Imma (Binah), producing the intellectual light that nourishes Zeir Anpin. Zeir Anpin then couples with Nukvah (Malkhut), transmitting this light into the receptive vessel that governs the lower worlds.</p>
+
+    <p class="fade-in stagger-3">The Ari insisted that these unions are not metaphorical. They constitute the actual mechanics of creation. "Know," he told Rabbi Chaim Vital, "that every zivug above creates souls below." The coupling of Zeir Anpin and Nukvah generates human souls; the coupling of Abba and Imma produces angelic intelligences. Nothing in creation exists that does not originate in some higher union.</p>
+  </div>
+
+  <!-- DIAGRAM: PARTZUFIM ZIVUG -->
+  <div class="diagram-container fade-in">
+    <div class="diagram-title">The Coupling of the Partzufim</div>
+    <svg class="diagram-svg" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4af37"/>
+          <stop offset="100%" style="stop-color:#b8960c"/>
+        </linearGradient>
+        <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#e8c84a;stop-opacity:0.3"/>
+          <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.1"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect x="0" y="0" width="600" height="320" fill="var(--bg3)" rx="12"/>
+      <!-- Arich Anpin -->
+      <ellipse cx="300" cy="45" rx="70" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.6"/>
+      <text x="300" y="50" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="11" letter-spacing="2">ARICH ANPIN</text>
+      <!-- Flow line -->
+      <line x1="300" y1="67" x2="300" y2="85" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+      <!-- Abba -->
+      <rect x="160" y="90" width="100" height="50" rx="8" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+      <text x="210" y="118" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="12" letter-spacing="1.5">ABBA</text>
+      <!-- Imma -->
+      <rect x="340" y="90" width="100" height="50" rx="8" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+      <text x="390" y="118" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="12" letter-spacing="1.5">IMMA</text>
+      <!-- Zivug line -->
+      <line x1="260" y1="115" x2="340" y2="115" stroke="url(#goldGrad)" stroke-width="2" filter="url(#glow)"/>
+      <circle cx="300" cy="115" r="4" fill="#e0c878" filter="url(#glow)"/>
+      <!-- Flow down -->
+      <line x1="300" y1="140" x2="300" y2="165" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <polygon points="300,175 295,165 305,165" fill="url(#goldGrad)"/>
+      <!-- Zeir Anpin -->
+      <rect x="210" y="180" width="80" height="45" rx="6" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+      <text x="250" y="208" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="1">ZEIR ANPIN</text>
+      <!-- Nukvah -->
+      <rect x="310" y="180" width="80" height="45" rx="6" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5"/>
+      <text x="350" y="208" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="1">NUKVah</text>
+      <!-- Zivug line -->
+      <line x1="290" y1="202" x2="310" y2="202" stroke="url(#goldGrad)" stroke-width="2.5" filter="url(#glow)"/>
+      <circle cx="300" cy="202" r="5" fill="#e0c878" filter="url(#glow)"/>
+      <!-- Flow to worlds -->
+      <line x1="300" y1="225" x2="300" y2="255" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+      <text x="300" y="275" text-anchor="middle" fill="#6a7a9a" font-family="Crimson Pro" font-size="10" font-style="italic">Shefa to Lower Worlds</text>
+      <!-- Labels -->
+      <text x="130" y="115" text-anchor="end" fill="#6a7a9a" font-family="Crimson Pro" font-size="9" font-style="italic">Chokhmah</text>
+      <text x="470" y="115" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="9" font-style="italic">Binah</text>
+      <text x="180" y="205" text-anchor="end" fill="#6a7a9a" font-family="Crimson Pro" font-size="9" font-style="italic">Tiferet</text>
+      <text x="420" y="205" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="9" font-style="italic">Malkhut</text>
+    </svg>
+    <div class="diagram-caption">The cascade of divine couplings from Arich Anpin through Abba-Imma to Zeir Anpin-Nukvah, generating the flow of shefa to creation.</div>
+  </div>
+
+  <div class="tension-box fade-in">
+    <p>The Ari taught that during the <em class="hebrew-term" title="Smallness; diminished state">katnut</em> (smallness) of the Partzufim — when they exist in non-coupling states — the flow of shefa is constricted. Only in <em class="hebrew-term" title="Greatness; expanded state">gadlut</em> (greatness), when face turns to face in union, does the full light descend.</p>
+  </div>
+</section>
+
+<div class="section-separator fade-in"><span class="diamond">◆</span></div>
+
+<!-- SEFIROTIC UNION -->
+<section class="content-section fade-in" id="sefirotic">
+  <div class="section-header">
+    <div class="section-separator"><span class="diamond">◆</span></div>
+    <p class="section-eyemark">III. The Sefirotic Mystery</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Tiferet and Malkhut</span></span></h2>
+    <p>The Central Channel of Union</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="fade-in stagger-1">Within Zeir Anpin, the sefirah <em class="hebrew-term" title="Beauty; the heart of the sefirotic tree">Tiferet</em> serves as the masculine principle, while <em class="hebrew-term" title="Kingdom; the Shekhinah; receptive vessel">Malkhut</em> — constituting Nukvah — serves as the feminine receptacle. Their zivug is the central mystery upon which all Jewish liturgy turns. When Israel prays, the Ari explained, they arouse this union. The <em class="hebrew-term" title="Mystical intentions; meditative focus">kavvanot</em> of prayer are engineered to stimulate this coupling above.</p>
+
+    <p class="fade-in stagger-2">Luria mapped the anatomy of this union with extraordinary detail. Tiferet possesses six extremities — Chesed, Gevurah, Tiferet, Netzach, Hod, Yesod — corresponding to the six directions of space. Malkhut receives from <em class="hebrew-term" title="Foundation; the righteous one; channel of transmission">Yesod</em>, the covenantal sefirah, through the mystery of the <em class="hebrew-term" title="Covenant; circumcision">berit</em>. The Zohar calls Yesod the <em>tzaddik</em>, for it channels all accumulated light of Zeir Anpin into the waiting vessel of Malkhut.</p>
+
+    <p class="fade-in stagger-3">The coupling is <em class="hebrew-term" title="Face to face">panim el panim</em> when the Partzufim are in full communion, and <em class="hebrew-term" title="Back to back">achor el achor</em> when they turn away. The exile of the Shekhinah is nothing other than the separation of Zeir Anpin and Nukvah into back-to-back posture. Redemption is their restoration to face-to-face union. Every Sabbath eve, the Ari taught, this cosmic turning occurs anew — which is why the mystics of Safed would go to the fields to welcome the Sabbath Bride, the visible symbol of Nukvah returning to embrace her Beloved.</p>
+  </div>
+
+  <!-- DIAGRAM: SEFIROTIC TREE -->
+  <div class="diagram-container fade-in">
+    <div class="diagram-title">The Sefirotic Configuration of Union</div>
+    <svg class="diagram-svg" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#d4af37"/>
+          <stop offset="100%" style="stop-color:#b8960c"/>
+        </linearGradient>
+        <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.4"/>
+          <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0"/>
+        </radialGradient>
+      </defs>
+      <rect x="0" y="0" width="500" height="420" fill="var(--bg3)" rx="12"/>
+      <!-- Keter -->
+      <circle cx="250" cy="40" r="18" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.5"/>
+      <text x="250" y="45" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="9">Keter</text>
+      <!-- Chokhmah - Binah -->
+      <line x1="250" y1="58" x2="180" y2="110" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="250" y1="58" x2="320" y2="110" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="180" cy="110" r="16" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.6"/>
+      <text x="180" y="114" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Chokhmah</text>
+      <circle cx="320" cy="110" r="16" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.6"/>
+      <text x="320" y="114" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Binah</text>
+      <!-- Da'at -->
+      <circle cx="250" cy="130" r="14" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" opacity="0.4"/>
+      <text x="250" y="134" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8" opacity="0.7">Da'at</text>
+      <!-- Chesed - Gevurah -->
+      <line x1="180" y1="126" x2="140" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="320" y1="126" x2="360" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="250" y1="144" x2="140" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="250" y1="144" x2="360" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="140" cy="190" r="16" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.6"/>
+      <text x="140" y="194" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Chesed</text>
+      <circle cx="360" cy="190" r="16" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.6"/>
+      <text x="360" y="194" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Gevurah</text>
+      <!-- Tiferet (highlighted) -->
+      <line x1="140" y1="206" x2="250" y2="260" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="360" y1="206" x2="250" y2="260" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="250" cy="260" r="22" fill="url(#nodeGlow)" stroke="url(#goldGrad2)" stroke-width="2.5"/>
+      <text x="250" y="265" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" font-weight="600">Tiferet</text>
+      <!-- Netzach - Hod -->
+      <line x1="250" y1="282" x2="180" y2="330" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="250" y1="282" x2="320" y2="330" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="180" cy="330" r="15" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.6"/>
+      <text x="180" y="334" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Netzach</text>
+      <circle cx="320" cy="330" r="15" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.6"/>
+      <text x="320" y="334" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Hod</text>
+      <!-- Yesod -->
+      <line x1="180" y1="345" x2="250" y2="380" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="320" y1="345" x2="250" y2="380" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="250" cy="380" r="16" fill="none" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.7"/>
+      <text x="250" y="384" text-anchor="middle" fill="#6a7a9a" font-family="Cinzel" font-size="8">Yesod</text>
+      <!-- Malkhut (highlighted, below) -->
+      <line x1="250" y1="396" x2="250" y2="430" stroke="url(#goldGrad2)" stroke-width="2" stroke-dasharray="4,2"/>
+      <circle cx="250" cy="445" r="24" fill="url(#nodeGlow)" stroke="url(#goldGrad2)" stroke-width="2.5"/>
+      <text x="250" y="450" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" font-weight="600">Malkhut</text>
+      <!-- Zivug connection -->
+      <path d="M 250 282 Q 330 320 250 420" fill="none" stroke="url(#goldGrad2)" stroke-width="2" stroke-dasharray="6,3" opacity="0.8"/>
+      <text x="360" y="350" text-anchor="start" fill="#e0c878" font-family="Crimson Pro" font-size="10" font-style="italic">The Zivug</text>
+      <text x="360" y="365" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="9" font-style="italic">Channel of Shefa</text>
+    </svg>
+    <div class="diagram-caption">The sefirotic tree showing the central union between Tiferet (Zeir Anpin) and Malkhut (Nukvah/Shekhinah), with Yesod as the channel of transmission.</div>
+  </div>
+
+  <div class="pullquote-section fade-in">
+    <div class="pullquote-glow"></div>
+    <div class="pullquote">
+      <p class="pullquote-text">"The Holy One, blessed be He, unites with His Shekhinah only when Israel below unites in love and awe."</p>
+      <p class="pullquote-attr">— Zohar, Parashat Terumah</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-separator fade-in"><span class="diamond">◆</span></div>
+
+<!-- SOUL ZIVUG -->
+<section class="content-section fade-in" id="soul">
+  <div class="section-header">
+    <div class="section-separator"><span class="diamond">◆</span></div>
+    <p class="section-eyemark">IV. The Soul's Counterpart</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Zivug of Soul Levels</span></span></h2>
+    <p>The Fivefold Mystery of Soul-Mates</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="fade-in stagger-1">Luria revealed that every soul possesses a counterpart — a <em class="hebrew-term" title="Paired one; soul-mate">bat zug</em> — with whom it was originally united before entering the physical world. This doctrine of <em class="hebrew-term" title="Union of souls; soul-mates">zivug haneshamot</em> derives from the Zohar but achieves systematic formulation in the Ari's <em class="hebrew-term" title="Gate of Reincarnations">Sha'ar HaGilgulim</em>. Before incarnation, souls exist as androgynous units within the divine plenum. At the moment of descent, they split into masculine and feminine halves, each entering a separate body. The longing for one's true partner is thus the soul's cosmic homesickness.</p>
+
+    <p class="fade-in stagger-2">The soul comprises five levels: <em class="hebrew-term" title="Vital soul; animating principle">Nefesh</em>, <em class="hebrew-term" title="Spirit; emotional soul">Ruach</em>, <em class="hebrew-term" title="Higher soul; intellectual principle">Neshamah</em>, <em class="hebrew-term" title="Living essence; transcendent awareness">Chayah</em>, and <em class="hebrew-term" title="Unique unity; the divine spark">Yechidah</em>. Each level requires its own zivug. The Nefesh couples through physical union sanctified by the commandments; the Ruach through emotional communion; the Neshamah through intellectual and spiritual partnership. Higher unions occur only in rare moments of prophetic illumination, when the soul ascends beyond its garment and touches its root in the divine.</p>
+
+    <p class="fade-in stagger-3">The Ari taught that when a man and woman marry according to the law, their union above stimulates corresponding zivugim in the divine realm. The mystery of the <em class="hebrew-term" title="Covenant of circumcision">berit milah</em> and the laws of <em class="hebrew-term" title="Family purity; menstrual separation">niddah</em> are not merely ethical regulations but precise technologies for maintaining the cosmic channels of union. When Israel guards these mysteries, the Shekhinah dwells among them; when they neglect them, the channels constrict and exile deepens.</p>
+  </div>
+
+  <!-- DIAGRAM: SOUL LEVELS -->
+  <div class="diagram-container fade-in">
+    <div class="diagram-title">The Five Soul Levels and Their Unions</div>
+    <svg class="diagram-svg" viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#d4af37"/>
+          <stop offset="100%" style="stop-color:#b8960c"/>
+        </linearGradient>
+        <linearGradient id="soulGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.2"/>
+          <stop offset="100%" style="stop-color:#b8960c;stop-opacity:0.05"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="560" height="300" fill="var(--bg3)" rx="12"/>
+      <!-- Center axis -->
+      <line x1="280" y1="30" x2="280" y2="270" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+      <!-- Yechidah -->
+      <circle cx="280" cy="45" r="20" fill="url(#soulGrad)" stroke="url(#goldGrad3)" stroke-width="1.5"/>
+      <text x="280" y="50" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="9" letter-spacing="1">Yechidah</text>
+      <text x="310" y="42" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Unity</text>
+      <!-- Chayah -->
+      <circle cx="280" cy="95" r="22" fill="url(#soulGrad)" stroke="url(#goldGrad3)" stroke-width="1.5"/>
+      <text x="280" y="100" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="9" letter-spacing="1">Chayah</text>
+      <text x="310" y="92" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Life-force</text>
+      <!-- Neshamah -->
+      <circle cx="280" cy="145" r="24" fill="url(#soulGrad)" stroke="url(#goldGrad3)" stroke-width="1.5"/>
+      <text x="280" y="150" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="9" letter-spacing="1">Neshamah</text>
+      <text x="310" y="142" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Intellect</text>
+      <!-- Ruach -->
+      <circle cx="280" cy="195" r="22" fill="url(#soulGrad)" stroke="url(#goldGrad3)" stroke-width="1.5"/>
+      <text x="280" y="200" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="9" letter-spacing="1">Ruach</text>
+      <text x="310" y="192" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Emotion</text>
+      <!-- Nefesh -->
+      <circle cx="280" cy="245" r="20" fill="url(#soulGrad)" stroke="url(#goldGrad3)" stroke-width="1.5"/>
+      <text x="280" y="250" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="9" letter-spacing="1">Nefesh</text>
+      <text x="310" y="242" text-anchor="start" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Vitality</text>
+      <!-- Masculine -->
+      <text x="140" y="150" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="11" letter-spacing="2">MASCULINE</text>
+      <line x1="180" y1="150" x2="250" y2="150" stroke="url(#goldGrad3)" stroke-width="1.5" opacity="0.6"/>
+      <polygon points="255,150 248,146 248,154" fill="url(#goldGrad3)" opacity="0.6"/>
+      <!-- Feminine -->
+      <text x="420" y="150" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="11" letter-spacing="2">FEMININE</text>
+      <line x1="310" y1="150" x2="380" y2="150" stroke="url(#goldGrad3)" stroke-width="1.5" opacity="0.6"/>
+      <polygon points="385,150 378,146 378,154" fill="url(#goldGrad3)" opacity="0.6"/>
+      <!-- Zivug arrows -->
+      <g stroke="#c4a855" stroke-width="1" opacity="0.4" fill="none" stroke-dasharray="3,2">
+        <path d="M 180 45 Q 230 45 255 45"/>
+        <path d="M 180 95 Q 230 95 255 95"/>
+        <path d="M 180 145 Q 230 145 255 145" opacity="0.6" stroke-width="1.5"/>
+        <path d="M 180 195 Q 230 195 255 195"/>
+        <path d="M 180 245 Q 230 245 255 245"/>
+        <path d="M 310 45 Q 360 45 380 45"/>
+        <path d="M 310 95 Q 360 95 380 95"/>
+        <path d="M 310 145 Q 360 145 380 145" opacity="0.6" stroke-width="1.5"/>
+        <path d="M 310 195 Q 360 195 380 195"/>
+        <path d="M 310 245 Q 360 245 380 245"/>
+      </g>
+    </svg>
+    <div class="diagram-caption">The five levels of the soul (Nefesh through Yechidah) each possess masculine and feminine aspects that seek reunion through corresponding zivugim in the divine and human realms.</div>
+  </div>
+
+  <div class="resonance-callout fade-in">
+    <p>"When soul meets its true counterpart, the heavens open and the channels of shefa flow without obstruction."</p>
+  </div>
+</section>
+
+<div class="section-separator fade-in"><span class="diamond">◆</span></div>
+
+<!-- LURIANIC DOCTRINE -->
+<section class="content-section fade-in" id="lurianic">
+  <div class="section-header">
+    <div class="section-separator"><span class="diamond">◆</span></div>
+    <p class="section-eyemark">V. The Lurianic Revolution</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Tikkun Through Union</span></span></h2>
+    <p>Repairing the Broken Vessels</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="fade-in stagger-1">Luria's doctrine of <em class="hebrew-term" title="Contraction; divine withdrawal">Tzimtzum</em> and <em class="hebrew-term" title="Breaking of the vessels">Shevirat HaKelim</em> recontextualized zivug as an act of cosmic repair. Before creation, the Infinite light was uniform and undifferentiated. Through Tzimtzum, God withdrew to make space for worlds, then emanated the sefirot as vessels to receive the returning light. These vessels shattered under the intensity of the divine influx, scattering holy sparks throughout the lower realms.</p>
+
+    <p class="fade-in stagger-2">The purpose of zivug, in this framework, is <em class="hebrew-term" title="Repair; restoration">tikkun</em>. Every coupling of Partzufim above gathers the scattered sparks and elevates them toward their source. The primary tikkun occurs through the union of Zeir Anpin and Nukvah, for Malkhut is the vessel that fell farthest and contains the most broken sparks. When this union is achieved, the light of Yesod enters Malkhut, healing her fractures and enabling her to transmit blessing to the worlds below.</p>
+
+    <p class="fade-in stagger-3">The Sabbath occupies a unique place in this system. On Friday evening, as the sun sets, Zeir Anpin and Nukvah achieve their highest zivug — the <em class="hebrew-term" title="Union of souls; the divine coupling">zivug haneshamot</em> of the divine couple. The mystics of Safed developed elaborate rituals to accompany this union: the hymn <em>Lekhah Dodi</em> welcomes the Sabbath Bride; the <em>Kiddush</em> sanctifies the moment of coupling; the marital union of husband and wife on Friday night mirrors and stimulates the divine union above. Luria himself would go out to the fields, dressed in white, to welcome the Shekhinah with song and meditation.</p>
+
+    <p class="fade-in stagger-4">The ultimate zivug, toward which all creation strains, is the restoration of the primordial <em class="hebrew-term" title="Primordial man; the archetypal human">Adam Kadmon</em> to unified androgyny. At the end of days, all soul-fragments will return to their root, all Partzufim will couple in perfect harmony, and the Shekhinah will no longer wander in exile but dwell eternally within the rebuilt temple of creation.</p>
+  </div>
+
+  <div class="scripture-panels fade-in">
+    <div class="scripture-panel">
+      <div class="scripture-panel-label">Sha'ar HaKavvanot, Drushei HaZivug</div>
+      <p class="scripture-panel-text">"The zivug of Zeir Anpin and Nukvah on Sabbath eve is the source of all souls born during that week. The intentions of the mystic during this union determine the quality of souls entering the world."</p>
+      <p class="scripture-panel-ref">— Chaim Vital</p>
+    </div>
+    <div class="scripture-panel">
+      <div class="scripture-panel-label">Sefer HaLikutim, Parashat Bereshit</div>
+      <p class="scripture-panel-text">"In the beginning, Adam was created male and female as a single back. The separation was for the sake of tikkun, that through their longing and reunion they might repair the vessels."</p>
+      <p class="scripture-panel-ref">— Lurianic Tradition</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-separator fade-in"><span class="diamond">◆</span></div>
+
+<!-- PRACTICE -->
+<!-- ZIVUG RISHON VS ZIVUG SHENI: THE BATTLE FOR UNION -->
+<section class="content-section fade-in" id="practice">
+  <div class="section-header">
+    <div class="section-separator"><span class="diamond">◆</span></div>
+    <p class="section-eyemark">VI. The Hidden War</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">Zivug Rishon & Zivug Sheni</span></span></h2>
+    <p>The Battle Against Sitra Achra</p>
+  </div>
+
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The Ari revealed a terrifying secret: the union of souls is not merely a matter of divine arrangement — it is a battlefield. When a soul returns through <em class="hebrew-term" title="Reincarnation; the cycling of souls">gilgul</em>, the forces of the <em class="hebrew-term" title="The Other Side; the realm of impurity and opposition">Sitra Achra</em> rise to oppose its reunion with its true counterpart. The struggle is not metaphorical. It is the hidden war beneath every shidduch, every courtship, every marriage.</p>
+
+    <h4>The Two Pairings</h4>
+    <p class="fade-in stagger-1">The Arizal, in <em>Sha'ar HaGilgulim</em>, maps the mechanics of soul-matching with surgical precision. When a soul enters this world for the first time, its match is born alongside it. Marriage comes without struggle. This is <em class="hebrew-term" title="First pairing; the original soul-mate union">zivug rishon</em> — the first coupling — and it happens smoothly because both souls are fresh, unburdened by the weight of past lives. Abraham and Sarah, Isaac and Rebecca: these were unions of pristine souls meeting for the first time.</p>
+
+    <p class="fade-in stagger-2">But a soul that must return is different. Sometimes its match returns with it — as the verse says, "And his wife will go out with him" — reincarnating not because she needs to, but to accompany him. Sometimes she does not return because she has completed her work. And so Heaven arranges another wife — not his true zivug, but the woman closest to him in spiritual compatibility from among all the souls of the world.</p>
+
+    <p class="fade-in stagger-3">The Ari is careful to clarify: <em>zivug rishon</em> and <em>zivug sheni</em> do not mean first wife and second wife. "Many second pairings are better than first ones," he writes, "as we see with our own eyes every day." The second refers to the pairing, not the person. A man and woman who are true soul-mates, created as one before they descended — but meeting again after gilgul, for the second time — this is <em class="hebrew-term" title="Second pairing; reunion of original soul-mates after reincarnation">zivug sheni</em>. The same souls. But the second round.</p>
+
+    <h4>The Accusers Rise</h4>
+    <p class="fade-in stagger-1">And the second round is harder. Because the soul sinned and was forced to return, there are <em class="hebrew-term" title="Accusers; prosecuting angels">mekatregim</em> — accusers — in the upper worlds who try to prevent the reunion. They create quarrels, obstacles, resistance. The couple that fights bitterly before the wedding and finds peace only after — the Ari says this may be the signature of a true match encountering spiritual resistance. The struggle is not evidence against the pairing. It may be evidence for it.</p>
+
+    <p class="fade-in stagger-2">This is the true meaning of the Talmudic teaching that "pairing people is as difficult as the splitting of the Red Sea." Not that finding any wife is hard. But that reuniting soul-mates after gilgul requires overcoming forces that would keep them apart. The Sitra Achra — the Other Side — feeds on separation. Every sin committed in a previous life strengthens the <em class="hebrew-term" title="Shells; husks; forces of impurity">klipot</em> that encase the soul, making the path back to its other half a journey through thorns.</p>
+
+    <h4>The Five Categories of the Chesed L'Avraham</h4>
+    <p class="fade-in stagger-1">The <em>Chesed L'Avraham</em>, writing a generation after the Ari, expands the two pairings into a more detailed architecture. In Ma'ayan 2, Nahar 65, he identifies five distinct ways a soul can relate to its zivug, each carrying different consequences across lifetimes.</p>
+
+    <ul>
+      <li><strong>Two ways to find her.</strong> The first: a fresh soul meeting its match for the first time, unblemished by any prior incarnation. The second: a returning soul whose zivug returns alongside him, because she too has unfinished work, or because in the wisdom of Heaven she accompanies him — as Moses with Zipporah, David with Bathsheba.</li>
+      <li><strong>Two ways to lose her temporarily.</strong> Through his sin, she may be given to another man — just as he did not guard himself, so she was not guarded for him. Reuniting them then requires <em>dchiyas nefesh mipnei nefesh</em>, the displacement of one soul for the sake of another. Or she is not given to another at all — she is simply held, waiting, while he undergoes what he must undergo.</li>
+      <li><strong>One way to lose her in this world.</strong> Through divorce — which the Chesed L'Avraham calls the severance of <em>du-partzufin</em>, the two-faced being that was meant to be one. Even the altar weeps at this, he writes, because it is a rupture in this-worldly union. Yet the Kabbalists teach that the original soul-bond, forged at the root of creation, persists beneath the surface. At <em>Techiyat HaMetim</em> — the Resurrection of the Dead — the primary soul connection reasserts itself, and the original <em>zivug</em> is restored. What divorce severs is the garment of this world, not the root of the soul.</li>
+    </ul>
+
+    <h4>When the Zivug Is Here but Cannot Come</h4>
+    <p class="fade-in stagger-1">Even when one's predestined soulmate exists in this world, the union cannot occur until both souls have reached the same spiritual level. When they haven't, Hashem in His mercy prevents either from marrying someone else — holding them in waiting. Yes, Hashem not only orchestrates shidduchim but, out of compassion, also delays them. Yet this protection has limits in Olam HaAsiyah. If after extended time their spiritual trajectories fail to converge, Hashem may pair each with another — but this does not erase the original bond. The Kabbalists teach that at Techiyat HaMetim, the primary soul connection reasserts, and the original zivug reunites. What seems lost in this world is held in trust for the world to come.</p>
+
+    <p class="fade-in stagger-2">A person can be single not because the system has failed but because it is working. They are being held. The problem is not that no one is right for them. The problem is that the soul they are meant for has not yet arrived at the same place. And the question of whether that gap closes is not settled in advance.</p>
+
+    <h4>Trapped in the Klipot</h4>
+    <p class="fade-in stagger-1">The Ari reveals that for certain soul-roots, the female counterparts are trapped within the klipot and cannot emerge until Mashiach comes. "All the female souls from the root of Chur ben Miriam will not emerge until the coming of Mashiach." And then, almost as an aside, the Ari adds: "Even Aaron the Priest did not marry his true bat zug." Aaron. The Kohen Gadol. The man who loved peace and pursued peace, who made peace between husband and wife. The man whose very essence was the joining of what had been separated. Even he.</p>
+
+    <h4>The Equilibrium Principle</h4>
+    <p class="fade-in stagger-1">One more principle governs all of it: the match must be equal. A man who has achieved only <em>Nefesh</em> will receive a wife at the Nefesh level. A man who has achieved Nefesh, Ruach, and Neshamah will receive a wife with all three. Nefesh with Nefesh. Ruach with Ruach. Neshamah with Neshamah. The match is proportional. It reflects not who you were at the dawn of creation, but who you have become. This is what <em>l'fi ma'asav</em> — according to his deeds — truly means. Not punishment or reward. Equilibrium. You receive what you are.</p>
+
+    <p class="fade-in stagger-2">The Sitra Achra exploits every gap in this equilibrium. If a soul has not rectified its past, the forces of impurity create obstacles — financial ruin, family opposition, sudden illness, inexplicable quarrels — anything to prevent the zivug from occurring. The Ari taught that these are not natural events but the active resistance of the Other Side, which knows that every true union weakens its hold on creation.</p>
+  </div>
+
+  <!-- DIAGRAM: THE BATTLE FOR UNION -->
+  <div class="diagram-container fade-in">
+    <div class="diagram-title">The Opposition of Sitra Achra to the Zivug</div>
+    <svg class="diagram-svg" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#d4af37"/>
+          <stop offset="100%" style="stop-color:#b8960c"/>
+        </linearGradient>
+        <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#2a1a3a;stop-opacity:0.8"/>
+          <stop offset="100%" style="stop-color:#1a0a2a;stop-opacity:0.9"/>
+        </linearGradient>
+        <radialGradient id="klipahGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#8a2030;stop-opacity:0.3"/>
+          <stop offset="100%" style="stop-color:#8a2030;stop-opacity:0"/>
+        </radialGradient>
+        <filter id="glow2">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect x="0" y="0" width="600" height="380" fill="var(--bg3)" rx="12"/>
+
+      <!-- Upper world: Gan Eden / Soul Root -->
+      <ellipse cx="300" cy="40" rx="80" ry="20" fill="none" stroke="url(#goldGrad4)" stroke-width="1" opacity="0.6"/>
+      <text x="300" y="45" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="9" letter-spacing="2">Gan Eden · Soul Root</text>
+
+      <!-- Flow down -->
+      <line x1="300" y1="60" x2="300" y2="85" stroke="url(#goldGrad4)" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+
+      <!-- Masculine soul -->
+      <circle cx="180" cy="120" r="35" fill="none" stroke="url(#goldGrad4)" stroke-width="1.5" opacity="0.7"/>
+      <text x="180" y="125" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="1">Masculine</text>
+      <text x="180" y="138" text-anchor="middle" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Soul Half</text>
+
+      <!-- Feminine soul -->
+      <circle cx="420" cy="120" r="35" fill="none" stroke="url(#goldGrad4)" stroke-width="1.5" opacity="0.7"/>
+      <text x="420" y="125" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="1">Feminine</text>
+      <text x="420" y="138" text-anchor="middle" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic">Soul Half</text>
+
+      <!-- Klipot barriers -->
+      <rect x="130" y="170" width="100" height="50" rx="8" fill="url(#darkGrad)" stroke="#5a2030" stroke-width="1" opacity="0.8"/>
+      <text x="180" y="190" text-anchor="middle" fill="#a06060" font-family="Cinzel" font-size="8" letter-spacing="1">Klipot</text>
+      <text x="180" y="205" text-anchor="middle" fill="#8a5060" font-family="Crimson Pro" font-size="7" font-style="italic">Past Sins</text>
+
+      <rect x="370" y="170" width="100" height="50" rx="8" fill="url(#darkGrad)" stroke="#5a2030" stroke-width="1" opacity="0.8"/>
+      <text x="420" y="190" text-anchor="middle" fill="#a06060" font-family="Cinzel" font-size="8" letter-spacing="1">Klipot</text>
+      <text x="420" y="205" text-anchor="middle" fill="#8a5060" font-family="Crimson Pro" font-size="7" font-style="italic">Accusers</text>
+
+      <!-- Sitra Achra barrier between them -->
+      <rect x="250" y="160" width="100" height="70" rx="10" fill="url(#klipahGlow)" stroke="#8a2030" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.9"/>
+      <text x="300" y="190" text-anchor="middle" fill="#c07070" font-family="Cinzel" font-size="9" letter-spacing="1.5">SITRA</text>
+      <text x="300" y="205" text-anchor="middle" fill="#c07070" font-family="Cinzel" font-size="9" letter-spacing="1.5">ACHRA</text>
+
+      <!-- Arrows of opposition -->
+      <g stroke="#8a2030" stroke-width="1.5" opacity="0.6" fill="none" stroke-dasharray="4,3">
+        <path d="M 180 155 Q 220 180 250 185"/>
+        <path d="M 420 155 Q 380 180 350 185"/>
+      </g>
+      <polygon points="252,185 246,182 246,188" fill="#8a2030" opacity="0.6"/>
+      <polygon points="348,185 354,182 354,188" fill="#8a2030" opacity="0.6"/>
+
+      <!-- The struggle zone -->
+      <rect x="100" y="250" width="400" height="90" rx="10" fill="rgba(196,168,85,0.03)" stroke="url(#goldGrad4)" stroke-width="0.5" opacity="0.5"/>
+      <text x="300" y="275" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="2">THE BATTLEFIELD</text>
+
+      <!-- Obstacles -->
+      <text x="150" y="300" text-anchor="middle" fill="#8a6070" font-family="Crimson Pro" font-size="8" font-style="italic">Quarrels</text>
+      <text x="230" y="300" text-anchor="middle" fill="#8a6070" font-family="Crimson Pro" font-size="8" font-style="italic">Delays</text>
+      <text x="300" y="300" text-anchor="middle" fill="#8a6070" font-family="Crimson Pro" font-size="8" font-style="italic">Opposition</text>
+      <text x="370" y="300" text-anchor="middle" fill="#8a6070" font-family="Crimson Pro" font-size="8" font-style="italic">Illness</text>
+      <text x="450" y="300" text-anchor="middle" fill="#8a6070" font-family="Crimson Pro" font-size="8" font-style="italic">Doubt</text>
+
+      <!-- Zivug if overcome -->
+      <line x1="180" y1="220" x2="300" y2="250" stroke="url(#goldGrad4)" stroke-width="1.5" opacity="0.4" stroke-dasharray="5,4"/>
+      <line x1="420" y1="220" x2="300" y2="250" stroke="url(#goldGrad4)" stroke-width="1.5" opacity="0.4" stroke-dasharray="5,4"/>
+
+      <!-- Union glow at bottom -->
+      <circle cx="300" cy="335" r="15" fill="url(#goldGrad4)" opacity="0.2" filter="url(#glow2)"/>
+      <circle cx="300" cy="335" r="6" fill="#e0c878" opacity="0.6"/>
+      <text x="300" y="355" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="8" letter-spacing="1">ZIVUG OVERCOME</text>
+    </svg>
+    <div class="diagram-caption">The soul's descent through the klipot and the active opposition of Sitra Achra, which creates obstacles to prevent the reunion of the two halves.</div>
+  </div>
+
+  <div class="tension-box fade-in">
+    <p>The Ari taught that the couple that fights bitterly before the wedding and finds peace only after — this may be the signature of a true match encountering spiritual resistance. The struggle is not evidence against the pairing. It may be evidence <em>for</em> it. The Sitra Achra knows that every true union weakens its dominion, and so it fights with every weapon at its disposal. Yet no force — not divorce, not death, not exile — can sever what was joined at the root of creation. The zivug is delayed, not destroyed.</p>
+  </div>
+
+  <div class="scripture-panels fade-in">
+    <div class="scripture-panel">
+      <div class="scripture-panel-label">Sha'ar HaGilgulim, Hakdama 20</div>
+      <p class="scripture-panel-text">"Many second pairings are better than first ones, as we see with our own eyes every day." The second refers to the pairing, not the person. The same souls meeting again after gilgul — but the second round is harder.</p>
+      <p class="scripture-panel-ref">— The Arizal</p>
+    </div>
+    <div class="scripture-panel">
+      <div class="scripture-panel-label">Talmud Bavli, Sotah 2a</div>
+      <p class="scripture-panel-text">"Pairing people is as difficult as the splitting of the Red Sea." Not that finding any wife is hard — but that reuniting soul-mates after gilgul requires overcoming forces that would keep them apart.</p>
+      <p class="scripture-panel-ref">— The Sages</p>
+    </div>
+  </div>
+
+  <div class="resonance-callout fade-in">
+    <p>"Even Aaron the Priest did not marry his true bat zug. If the Kohen Gadol could not reach his soul's other half in this world — what guarantee is there? What is left? Only this: in Olam HaAsiyah, zivug is not found. It is built. And at the End of Days, every split soul will find its way home."</p>
+  </div>
+</section>
+
+
+<!-- TRANSITION PULLQUOTE -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote">
+    <p class="pullquote-text">"The Infinite is not diminished by the Tzimtzum, just as the soul is not diminished when it contracts into the body. The contraction is a concealment, not an absence."</p>
+    <p class="pullquote-attr">— Etz Chaim · The Paradox of Divine Self-Limitation</p>
+  </div>
+</div>
+
+<!-- CHAPTER NAVIGATION -->
+<div class="chapter-nav fade-in">
+  <a href="#hero" class="chapter-link">Overview</a>
+  <span class="chapter-sep">◆</span>
+  <a href="#introduction" class="chapter-link">The Secret</a>
+  <span class="chapter-sep">◆</span>
+  <a href="#partzufim" class="chapter-link">Partzufim</a>
+  <span class="chapter-sep">◆</span>
+  <a href="#sefirotic" class="chapter-link">Sefirotic</a>
+  <span class="chapter-sep">◆</span>
+  <a href="#soul" class="chapter-link">Soul</a>
+  <span class="chapter-sep">◆</span>
+  <a href="#lurianic" class="chapter-link">Tikkun</a>
+  <span class="chapter-sep">◆</span>
+  <a href="#practice" class="chapter-link">The Hidden War</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Zivug</div>
+  <div class="footer-tagline">The Mystical Union in Lurianic Kabbalah</div>
+  <div class="footer-links">
+    <a href="#introduction">The Secret</a>
+    <a href="#partzufim">Partzufim</a>
+    <a href="#sefirotic">Sefirotic</a>
+    <a href="#soul">Soul</a>
+    <a href="#lurianic">Tikkun</a>
+    <a href="#practice">The Hidden War</a>
+  </div>
+  <div class="footer-credit">Compiled from the teachings of Rabbi Isaac Luria, the Zohar, and the masters of the Kabbalistic tradition</div>
+  <div class="footer-copyright">© 2026 · Sacred Cartographies</div>
+</footer>
+
+</main>
+
+<script>
+(function() {
+  'use strict';
+
+  /* Theme Toggle */
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') { setTheme(saved); return; }
+    setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+  initTheme();
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  /* Navigation Toggle */
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => { navMenu.classList.toggle('open'); });
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove('open');
+    });
+  }
+
+  /* Back to Top */
+  const backToTop = document.getElementById('backToTop');
+  function updateProgress() {
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+  if (backToTop) backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  /* Intersection Observer: Fade-in & Text-reveal */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+
+  const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); textObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+
+  /* Active Nav Highlighting on Scroll */
+  const sections = document.querySelectorAll('.content-section, .pullquote-section');
+  const navLinks = document.querySelectorAll('.nav-item');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(section => navObserver.observe(section));
+
+  /* Smooth Scroll Anchors */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        if (navMenu) navMenu.classList.remove('open');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* Touch Swipe for Nav */
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    const startX = touchStartX;
+    const edgeZone = 40;
+    const threshold = 60;
+    if (diff > threshold && startX > window.innerWidth - edgeZone && navMenu) navMenu.classList.add('open');
+    if (diff < -threshold && startX < edgeZone && navMenu) navMenu.classList.remove('open');
+  }, { passive: true });
+
+  /* Stillness Mode */
+  const stillnessToggle = document.getElementById('stillnessToggle');
+  if (stillnessToggle) {
+    stillnessToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.body.classList.toggle('stillness-mode');
+      stillnessToggle.querySelector('span:last-child').textContent = document.body.classList.contains('stillness-mode') ? 'Motion Mode' : 'Stillness Mode';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

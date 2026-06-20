@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -287,6 +287,14 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .content-essay ul li:last-child { border-bottom: none; }
 .content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--indigo); opacity: 0.6; }
 .content-essay ul li strong { color: var(--ink); font-weight: 500; }
+
+/* Dark mode specific content styling */
+[data-theme="dark"] .content-essay p { color: var(--stone); }
+[data-theme="dark"] .content-introduction { color: var(--stone); }
+[data-theme="dark"] .content-essay h3 { color: var(--ink); }
+[data-theme="dark"] .content-essay h4 { color: var(--gold); }
+[data-theme="dark"] .content-essay ul li { color: var(--stone); }
+[data-theme="dark"] .content-essay ul li strong { color: var(--ink); }
 
 .hebrew-term, .sanskrit-term, .biblical-ref {
   cursor: help;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -305,6 +305,14 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .content-essay ul li:last-child { border-bottom: none; }
 .content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--indigo); opacity: 0.6; }
 .content-essay ul li strong { color: var(--ink); font-weight: 500; }
+
+/* Dark mode specific content styling */
+[data-theme="dark"] .content-essay p { color: var(--stone); }
+[data-theme="dark"] .content-introduction { color: var(--stone); }
+[data-theme="dark"] .content-essay h3 { color: var(--ink); }
+[data-theme="dark"] .content-essay h4 { color: var(--gold); }
+[data-theme="dark"] .content-essay ul li { color: var(--stone); }
+[data-theme="dark"] .content-essay ul li strong { color: var(--ink); }
 
 .hebrew-term, .sanskrit-term, .biblical-ref {
   cursor: help;
@@ -818,11 +826,12 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <a href="#tree" class="nav-item"><span class="nav-item-icon">🌳</span><span>The Tree of Life</span></a>
     <a href="#comparative" class="nav-item"><span class="nav-item-icon">📜</span><span>Comparative Hermeneutic</span></a>
     <div class="nav-divider"></div>
-    <div class="nav-section-title">Kabbalah · Four Pages</div>
+    <div class="nav-section-title">Kabbalah · Five Pages</div>
     <a href="kabbalah-sefer-yetzirah.html" class="nav-item active"><span class="nav-item-icon">🔯</span><span>I · The Book of Creation</span></a>
     <a href="kabbalah-zohar.html" class="nav-item"><span class="nav-item-icon">✦</span><span>II · The Zohar</span></a>
     <a href="kabbalah-luria.html" class="nav-item"><span class="nav-item-icon">🌙</span><span>III · Isaac Luria</span></a>
     <a href="kabbalah-baal-shem-tov.html" class="nav-item"><span class="nav-item-icon">🔥</span><span>IV · The Baal Shem Tov</span></a>
+    <a href="kabbalah-mystical-union.html" class="nav-item"><span class="nav-item-icon">💞</span><span>V · Mystical Union</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
     <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
