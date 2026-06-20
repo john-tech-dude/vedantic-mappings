@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="The Zohar — The Book of Splendor. The central scripture of Kabbalah. The mystical commentary on the Torah, the drama of the Shekhinah, and the hidden face of God." />
+<title>Kabbalah · The Book of Splendor — The Zohar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================
+   KABBALAH — THE BOOK OF SPLENDOR (Part II)
+   Styled identically to Vedantic Mappings / Taoism series
+   ===================================================== */
+
+:root {
+  --bg: #0a0812;
+  --bg2: #0f0d1a;
+  --surface: #14101a;
+  --surface2: #1e1830;
+  --ink: #f0e8f8;
+  --ink2: #9890b0;
+  --stone: #787090;
+  --stone-light: #9890b0;
+  --gold: #c4a855;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.08);
+  --sun-glow: rgba(212, 175, 55, 0.18);
+  --violet: #a860c8;
+  --violet-light: #c880e8;
+  --violet-deep: #8840a0;
+  --violet-glow: rgba(168, 96, 200, 0.12);
+  --border: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.025);
+  --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+  --shadow-gold: 0 0 40px var(--gold-glow);
+  --shadow-violet: 0 0 40px var(--violet-glow);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+[data-theme="dark"] {
+  --bg: #0a0812;
+  --bg2: #0f0d1a;
+  --surface: #14101a;
+  --surface2: #1e1830;
+  --ink: #f0e8f8;
+  --ink2: #9890b0;
+  --stone: #787090;
+  --stone-light: #9890b0;
+  --gold: #c4a855;
+  --gold-light: #e6c86e;
+  --gold-deep: #b8960c;
+}
+
+[data-theme="light"] {
+  --bg: #f5f0f8;
+  --bg2: #e8e0f0;
+  --surface: #ffffff;
+  --surface2: #f0e8f5;
+  --ink: #1a1018;
+  --ink2: #403850;
+  --stone: #706080;
+  --stone-light: #908090;
+  --gold: #c09020;
+  --gold-light: #d0a030;
+  --gold-deep: #a07010;
+  --violet: #a860c8;
+  --violet-light: #c880e8;
+  --violet-deep: #8840a0;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--violet-deep), var(--violet), var(--violet-light));
+  border-radius: 2px;
+}
+
+::selection { background: rgba(168, 96, 200, 0.20); color: var(--ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-bounce {
+  0%,100% { opacity: 1; transform: scaleY(1); }
+  50%     { opacity: 0.3; transform: scaleY(0.5); }
+}
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.04); }
+}
+@keyframes mandala-breathe {
+  0%,100% { opacity: 0.35; transform: translate(-50%,-50%) scale(1); }
+  50%     { opacity: 0.75; transform: translate(-50%,-50%) scale(1.012); }
+}
+@keyframes ripple-out {
+  0%   { opacity: 0.55; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0;    transform: translate(-50%,-50%) scale(4.2); }
+}
+@keyframes lineReveal {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes diamondReveal {
+  from { opacity: 0; transform: rotate(45deg) scale(0); }
+  to   { opacity: 1; transform: rotate(45deg) scale(1); }
+}
+@keyframes ambientDrift {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.45; }
+  33%     { transform: translate(2%,-1%) scale(1.02); opacity: 0.65; }
+  66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.35; }
+}
+
+@keyframes treeGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.15)); }
+  50% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.35)); }
+}
+
+@keyframes sefirotPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes pathShimmer {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -40; }
+}
+
+@keyframes shekhinahGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+@keyframes radiancePulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+@keyframes mysticVibrate {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.02) rotate(0.5deg); }
+  75% { transform: scale(0.98) rotate(-0.5deg); }
+}
+/* Navigation Compass */
+.nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--violet); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+.nav-toggle:hover { background: var(--violet-glow); border-color: var(--violet); transform: scale(1.08); }
+.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 240px; }
+.nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+.nav-item:hover { color: var(--ink); background: var(--violet-glow); padding-left: 1.5rem; }
+.nav-item.active { color: var(--violet-light); background: rgba(168, 96, 200, 0.08); border-left-color: var(--violet); font-weight: 500; }
+.nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+/* Theme Toggle */
+.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+.theme-toggle:active { transform: scale(0.95); }
+.theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+[data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+/* Back to Top */
+.back-to-top { position: fixed; bottom: 6.5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.back-to-top:hover { color: var(--violet); border-color: var(--violet); transform: translateY(-3px) scale(1.08); }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; background: radial-gradient(ellipse 100% 90% at 50% 30%, #1a1020 0%, #0a0812 40%, #0a0812 70%, #0a0812 100%); }
+[data-theme="dark"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 30%, var(--bg2) 0%, var(--bg) 40%, #0a0812 70%, var(--bg) 100%); }
+[data-theme="light"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 30%, #f5f0f8 0%, #e8e0f0 40%, #d8d0e8 70%, #c8c0d8 100%); }
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 20% 40%, rgba(168,96,200,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 55% at 80% 60%, rgba(168,96,200,0.05) 0%, transparent 70%);
+  animation: ambientDrift 18s ease-in-out infinite;
+  pointer-events: none; z-index: 1;
+}
+.hero-mountain {
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 120%; height: 52%;
+  background: linear-gradient(175deg, transparent 20%, rgba(154,122,58,0.05) 50%, rgba(154,122,58,0.18) 80%);
+  clip-path: polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);
+  opacity: 0.14;
+}
+.mandala-ring {
+  position: absolute; top: 50%; left: 50%;
+  border-radius: 50%; border: 1px solid var(--gold);
+  transform: translate(-50%,-50%); pointer-events: none;
+  animation: mandala-breathe 12s ease-in-out infinite;
+}
+.mandala-ring:nth-of-type(1) { width: 240px; height: 240px; opacity: 0.18; }
+.mandala-ring:nth-of-type(2) { width: 380px; height: 380px; opacity: 0.12; animation-delay: 1.5s; animation-duration: 14s; }
+.mandala-ring:nth-of-type(3) { width: 540px; height: 540px; opacity: 0.08; animation-delay: 3s; animation-duration: 16s; }
+.mandala-ring:nth-of-type(4) { width: 720px; height: 720px; opacity: 0.05; animation-delay: 4.5s; animation-duration: 18s; }
+.hero-ripple {
+  position: absolute; top: 50%; left: 50%;
+  width: 180px; height: 180px; border-radius: 50%;
+  border: 1px solid var(--violet); transform: translate(-50%,-50%);
+  pointer-events: none; animation: ripple-out 9s ease-out infinite;
+}
+.hero-ripple:nth-of-type(2) { animation-delay: 3s; }
+.hero-ripple:nth-of-type(3) { animation-delay: 6s; }
+
+.hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+
+.hero-emblem {
+  width: 90px;
+  height: 110px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, treeGlow 6s ease-in-out infinite, radiancePulse 4s ease-in-out infinite;
+}
+.hero-emblem svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.hero-emblem .tree-path {
+  stroke-dasharray: 8 4;
+  animation: pathShimmer 20s linear infinite;
+}
+.hero-emblem .sefirot {
+  animation: shekhinahGlow 3s ease-in-out infinite;
+}
+.hero-emblem .sefirot:nth-child(2n) { animation-delay: 0.5s; }
+.hero-emblem .sefirot:nth-child(3n) { animation-delay: 1s; }
+
+[data-theme="light"] .hero-emblem svg circle,
+[data-theme="light"] .hero-emblem svg line,
+[data-theme="light"] .hero-emblem svg path {
+  opacity: 1 !important;
+}
+[data-theme="light"] .hero-emblem svg circle[stroke*="url"] {
+  opacity: 0.9 !important;
+}
+[data-theme="light"] .hero-emblem svg g[stroke*="#d4af37"] {
+  opacity: 0.8 !important;
+}
+
+.hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(168, 96, 200, 0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+[data-theme="dark"] .hero-title { color: var(--violet-light); text-shadow: 0 0 80px rgba(200, 128, 232, 0.25); }
+.hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--violet-deep); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+.hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 580px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
+[data-theme="dark"] .hero-quote { color: var(--stone-light); }
+.hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone-light); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; }
+.hero-divider {
+  display: flex; align-items: center; gap: 1.25rem;
+  margin: 0 auto 2.5rem; width: fit-content;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+  position: relative; z-index: 2;
+}
+.hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet-deep)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
+.hero-divider-line:last-child { background: linear-gradient(90deg, var(--violet-deep), transparent); transform-origin: right; }
+.hero-divider-diamond { width: 6px; height: 6px; background: var(--violet-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+.hero-scroll-cue {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+  cursor: pointer; z-index: 2;
+  transition: transform 0.3s var(--ease-expo);
+}
+.hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+.hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--violet-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+/* Sections */
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-deep); text-transform: uppercase; margin-bottom: 0.75rem; }
+.section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
+.section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--violet); margin-top: 12px; }
+
+.section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet-deep), var(--violet-light), var(--violet-deep), transparent); margin: 0 auto 20px; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
+.section-separator.visible { opacity: 1; transform: scaleX(1); }
+.section-separator::after { content: '✦'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: var(--violet); font-size: 0.72rem; background: var(--bg); padding: 0 6px; }
+
+.text-reveal { overflow: hidden; display: block; }
+.text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
+.visible .text-reveal-inner { transform: translateY(0); }
+
+.content-section { padding: 80px 24px; max-width: 780px; margin: 0 auto; }
+.content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+.content-essay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
+.content-essay h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.75rem; }
+.content-essay blockquote { border-left: 3px solid var(--gold); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+.content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold); opacity: 0.10; line-height: 1; }
+.content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+.content-essay ul { margin: 1.5rem 0; padding-left: 0; list-style: none; }
+.content-essay ul li { padding: 0.85rem 0 0.85rem 2rem; position: relative; color: var(--stone); line-height: 1.75; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay ul li:last-child { border-bottom: none; }
+.content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--gold); opacity: 0.6; }
+.content-essay ul li strong { color: var(--ink); font-weight: 500; }
+
+.hebrew-term, .sanskrit-term, .biblical-ref {
+  cursor: help;
+  border-bottom: 1px dotted var(--gold-deep);
+  text-decoration: none;
+}
+
+.comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
+.comparative-table thead tr { border-bottom: 1px solid var(--gold); }
+.comparative-table th { padding: 10px 8px; text-align: left; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+.comparative-table td { padding: 8px; color: var(--stone); line-height: 1.5; }
+.comparative-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
+.comparative-table tbody tr:last-child { border-bottom: none; }
+.comparative-table tbody tr:hover { background: var(--gold-glow); }
+.comparative-table-wrapper { overflow-x: auto; margin-top: 1rem; }
+
+.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.scripture-panel { background: var(--surface); padding: 32px; }
+.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+.scripture-panel:hover { background: var(--surface2); }
+.scripture-panels.margin-top { margin-top: 2rem; }
+
+.pullquote-section { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+[data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, #0a0d12 70%, var(--bg) 100%); }
+[data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%); }
+.pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+.pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
+.pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+.pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+.pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.pullquote-attr a:hover { color: var(--gold); }
+
+.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+.footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+.footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+.footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+.footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+.footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-link:hover { color: var(--gold); }
+.chapter-sep { color: var(--gold-deep); opacity: 0.3; }
+.chapter-link.active { color: var(--gold); font-weight: 500; }
+
+
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) { 
+  .nav-menu { min-width: 180px; } 
+  .back-to-top { right: 1.5rem; bottom: 6.5rem; } 
+  .footer-links { gap: 1.5rem; } 
+  .scripture-panels { grid-template-columns: 1fr; } 
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); } 
+  .hero-emblem { width: 72px; height: 88px; }
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  *, *::before, *::after { animation: none !important; transition: none !important; } 
+  .fade-in { opacity: 1 !important; transform: none !important; } 
+  .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
+  .hero-emblem svg { animation: none !important; }
+  .tree-path { animation: none !important; }
+  .sefirot { animation: none !important; }
+}
+</style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/XCgCmXWnyBiNRpLeD0I2LGXtJnmsqCng6WlouAbZ7PWtwtWpY3EOaJqGq775B8RKeIIthwWFc-BuBUZ_UfUT-il1-276u4IGEGlUhoxGuPoa1e1tOCjsgI09Pt46-xqvajLzGW6Kxlhw5YHq58KNFpjsOGM3Otxnb4ukaCbOCbexbgnXMBi4gyLuRR0G_i6ZsdhatUe3zd7diBYXOhlxdx5odPpDfYyqx0yBUBiDyBn__hqLDc89xpjF0s3dSOR6OHJ-uQW2KRSnqdK1JkDioA3GTX-3LKXv7KFKcjlrupPKdgpNpG0dq_UHsP3Fs0ZagtaL_vJzs38yh5n4avGtfoTeBqZXvtXhl-MIpLG70duaCTVq_k5kPK0-BC2KneRHalFiTDdQW29GHv628bSb03LecxOewSlzf9lOZ-GXuI5FQVdTTcaJzHJI0V-NYbClWz_GLRCYyuZNW0O8yYyoPiDB-kqEYubkiDtRc0CTA6om-YTol3jFFIz6zkR9XBE03d6vXj9olvDG_VtT-e5EYxoHtv8nWqlQjj6d0FBN8iv_2vY4PZz7IgQ-JjXI7KuDN1TGgWvXHSruGQ2grJyHlRaS6HLebBsOAlbew5XnF_JTF2DEyLwBfAtNiMUp5MN5FSU_9bFH-sEhZey1X8w3FRKxb7w5gp1QidKDfG3uBufZHvjjo9AZJshxgvKX1cu6clNYxeFrY9Y_jfALNt4RBCc3yRoF6GWJQ3BiydT-RDah-9iGdS7cGIcQ_U9iR9lWBouvMObiVfu2a2VGeD3nyZ3jmjz71bkGfVgx4A2TNBehHu-zVgQWrWMYXFkEWHLBFgCxJnWcflaPpguvutCpYVOis77HV534gD4wUnyFcoxVlRKtwpWxlc5eey3bMhv9n2uzyDUu-uBZ-i8-r8ou-xYtcV8RPB9M6Nga3Dmfg9oedUJjYx3QadG-y8y4yAMoAU8mFKO-oo7g3ftemfnK_LF4DxMg3eZtKFKEezQoK8SrLhRxMCu45r2RxCZsba94EPssKGZLY74Wylr6OSQbRuRo_PaCnCz6nouCmgTv7-6Fh7lz'></script><base target="_blank">
+</head>
+<body>
+
+<!-- NAVIGATION COMPASS -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">The Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Advaita Vedanta</div>
+    <a href="../advaita-vedanta/ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
+    <a href="../advaita-vedanta/nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Comparative</div>
+    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Kabbalah · Four Pages</div>
+    <a href="kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>I · The Book of Creation</span></a>
+    <a href="kabbalah-zohar.html" class="nav-item active"><span class="nav-item-icon">✦</span><span>II · The Zohar</span></a>
+    <a href="kabbalah-luria.html" class="nav-item"><span class="nav-item-icon">🌙</span><span>III · Isaac Luria</span></a>
+    <a href="kabbalah-baal-shem-tov.html" class="nav-item"><span class="nav-item-icon">🔥</span><span>IV · The Baal Shem Tov</span></a>
+  </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-mountain"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="mandala-ring"></div><div class="mandala-ring"></div>
+  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <p class="hero-eyemark">The Book of Splendor</p>
+  <div class="hero-emblem">
+    <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="treeGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b8960c" stop-opacity="0.85"/>
+          <stop offset="50%" stop-color="#d4af37" stop-opacity="0.65"/>
+          <stop offset="100%" stop-color="#e6c86e" stop-opacity="0.45"/>
+        </linearGradient>
+        <radialGradient id="sefGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#e6c86e" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#b8960c" stop-opacity="0.2"/>
+        </radialGradient>
+      </defs>
+      <!-- Outer circle -->
+      <circle cx="100" cy="120" r="95" fill="none" stroke="url(#pathGrad)" stroke-width="0.4" opacity="0.25"/>
+      <!-- Cross lines -->
+      <g stroke="#d4af37" stroke-width="0.8" opacity="0.2" stroke-linecap="round">
+        <line x1="100" y1="20" x2="100" y2="220"/>
+        <line x1="20" y1="120" x2="180" y2="120"/>
+      </g>
+      <!-- Tree of Life paths -->
+      <g class="tree-path" stroke="url(#pathGrad)" stroke-width="1.2" opacity="0.55" fill="none" stroke-linecap="round">
+        <line x1="100" y1="35" x2="100" y2="205"/>
+        <line x1="40" y1="75" x2="40" y2="165"/>
+        <line x1="160" y1="75" x2="160" y2="165"/>
+        <line x1="40" y1="75" x2="100" y2="35"/>
+        <line x1="160" y1="75" x2="100" y2="35"/>
+        <line x1="40" y1="120" x2="100" y2="75"/>
+        <line x1="160" y1="120" x2="100" y2="75"/>
+        <line x1="40" y1="120" x2="160" y2="120"/>
+        <line x1="40" y1="165" x2="100" y2="120"/>
+        <line x1="160" y1="165" x2="100" y2="120"/>
+        <line x1="40" y1="165" x2="100" y2="205"/>
+        <line x1="160" y1="165" x2="100" y2="205"/>
+        <line x1="100" y1="75" x2="100" y2="120"/>
+        <line x1="100" y1="120" x2="100" y2="205"/>
+      </g>
+      <!-- Sefirot circles -->
+      <g class="sefirot">
+        <circle cx="100" cy="35" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="40" cy="75" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="160" cy="75" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="100" cy="75" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="40" cy="120" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="160" cy="120" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="100" cy="120" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="40" cy="165" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="160" cy="165" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="100" cy="205" r="10" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="0.6" opacity="0.7"/>
+      </g>
+      <!-- Inner glow center -->
+      <circle cx="100" cy="120" r="3.5" fill="#e6c86e" opacity="0.5" filter="url(#treeGlow)"/>
+      <circle cx="100" cy="120" r="1.5" fill="#fff" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <h1 class="hero-title">The Zohar</h1>
+  <p class="hero-subtitle">The Book of Splendor · The Hidden Face of the Torah</p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"Come and see: The Torah is the name of the Holy One, blessed be He. Just as the name is the mystery of the body, so the Torah is the mystery of the Holy One, blessed be He."</p>
+  <p class="hero-quote-attr">— Zohar, III:73a</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('radiance').scrollIntoView({behavior:'smooth'})">
+    <span>Enter</span><div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- INTRODUCTION: THE RADIANCE OF THE HIDDEN TORAH -->
+<section class="content-section fade-in" id="radiance">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Hidden Face of Scripture</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Torah That Is God</span></span></h2>
+    <p>Mystical Exegesis · The Drama of the Sefirot</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The <em>Zohar</em> — the <strong>Book of Splendor</strong> — is the central scripture of Kabbalah, a vast mystical commentary on the Torah written in Aramaic and traditionally attributed to Rabbi Shimon bar Yochai, a 2nd-century sage who, according to legend, composed it while hiding from the Romans in a cave for thirteen years. Modern scholarship places its actual composition in 13th-century Spain, primarily by <strong>Moses de León</strong> (c. 1240–1305), though it draws on centuries of earlier mystical traditions.</p>
+
+    <p>Where the Sefer Yetzirah is a cosmogonic manual — precise, mathematical, almost austere — the Zohar is a <strong>cosmic romance</strong>. It is a sprawling, multivocal work that weaves together biblical commentary, homiletics, mystical poetry, and visionary narrative. Its purpose is not merely to explain the structure of creation but to <em>draw the reader into it</em> — to transform the act of reading Torah into an act of mystical union with the divine.</p>
+
+    <p>The Zohar's central claim is radical: <strong>the Torah is not a book about God; it is God</strong>. "The Torah is the name of the Holy One, blessed be He." Every letter, every word, every narrative detail is a garment of the divine, a mask behind which the Infinite plays hide-and-seek with the finite. To read the Torah literally is to see only the mask. To read it mystically — through the "four gates" of exegesis (Peshat, Remez, Derash, Sod) — is to lift the mask and gaze upon the face of God.</p>
+
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Zohar · III:73a</div>
+        <p class="scripture-panel-text">"Come and see: The Torah is the name of the Holy One, blessed be He. Just as the name is the mystery of the body, so the Torah is the mystery of the Holy One, blessed be He."</p>
+        <p class="scripture-panel-ref">— The Zohar</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">John 5:39</div>
+        <p class="scripture-panel-text">"You search the Scriptures because you think that in them you have eternal life; and it is they that bear witness about me."</p>
+        <p class="scripture-panel-ref">— Gospel of John</p>
+      </div>
+    </div>
+
+    <h3>The Sefirot as Living Presences</h3>
+    <p>In the Zohar, the ten sefirot are no longer abstract vessels or numerical principles. They are <strong>living personalities</strong> — divine hypostases with desires, relationships, conflicts, and reconciliations. The Zohar transforms the static Tree of Life into a <em>drama</em>, a mythic narrative that unfolds in every moment of cosmic and human history.</p>
+
+    <ul>
+      <li><strong>Keter — The Ancient of Days (Atika Kadisha)</strong> — The most hidden of all, the white-haired elder who sits in the highest palace, beyond all color and form. Keter is so transcendent that even the other sefirot cannot gaze upon it directly. It is the "desire within desire," the will that precedes all willing.</li>
+      <li><strong>Chokhmah and Binah — The Father and Mother (Abba ve-Imma)</strong> — The primordial masculine and feminine principles. Chokhmah is the seed, the flash of insight; Binah is the womb, the palace that receives and gestates. Their union is the first act of divine love, the template for all subsequent creation.</li>
+      <li><strong>Chesed and Gevurah — Love and Judgment</strong> — The right and left arms of the divine. Chesed is the overflowing mercy that would give everything; Gevurah is the strict justice that says "measure." Their tension is the engine of history — the push and pull that drives the soul toward perfection.</li>
+      <li><strong>Tiferet — The Blessed Holy One (HaKadosh Barukh Hu)</strong> — The central figure of the Zoharic drama, the bridegroom, the sun, the heart. Tiferet is the God of Israel, the God of the patriarchs, the God who speaks from the burning bush and leads through the wilderness. He is the personal God — but he is also one sefirah among ten, the son of the supernal mother and father.</li>
+      <li><strong>Malkhut — The Shekhinah</strong> — The most revolutionary figure in the Zohar. Malkhut is not merely the "kingdom" or the "world." She is the <strong>divine feminine</strong>, the bride of Tiferet, the indwelling presence that accompanies Israel into exile, the moon that reflects the sun's light. The Zohar's treatment of the Shekhinah is one of its most distinctive contributions: it makes the feminine an explicit, essential dimension of the divine.</li>
+    </ul>
+
+    <h3>The Drama of Exile and Union</h3>
+    <p>The central narrative of the Zohar is the <strong>mystical love story</strong> between Tiferet (the masculine principle, the Blessed Holy One) and Malkhut (the feminine principle, the Shekhinah). In the primordial state, they are united in perfect harmony. But through human sin — particularly the sin of the golden calf and the destruction of the Temple — the Shekhinah is separated from her bridegroom and exiled with Israel into the realm of matter and suffering.</p>
+
+    <p>This is not merely a metaphor. The Zohar teaches that the <strong>actual structure of the cosmos</strong> depends on the relationship between these sefirot. When Israel sins, the channels between the upper and lower worlds are blocked. The divine flow is interrupted. The Shekhinah weeps. The world descends into darkness. When Israel performs the commandments (<span class="hebrew-term" title="Commandments; mitzvot">mitzvot</span>) with mystical intention (<span class="hebrew-term" title="Intention; directed consciousness">kavvanah</span>), the channels are reopened, the divine couple is reunited, and the world is restored to its original splendor.</p>
+
+    <p>This is the Zoharic equivalent of the Christian redemption and the Hindu lila — but with a crucial difference: <strong>human beings are active participants</strong>, not merely recipients of grace. The Jew who prays, studies Torah, and performs mitzvot is not merely obeying God. He is <em>repairing God</em> — restoring the broken unity of the divine itself.</p>
+
+    <h3>The Four Levels of Torah</h3>
+    <p>The Zohar systematizes the fourfold method of biblical interpretation known as <span class="hebrew-term" title="The four levels: Peshat, Remez, Derash, Sod">PaRDeS</span>:</p>
+    <ul>
+      <li><strong>Peshat (Literal)</strong> — The plain meaning of the text, the historical narrative, the legal instruction. This is the level accessible to all.</li>
+      <li><strong>Remez (Hint)</strong> — The allegorical meaning, the philosophical implication, the hidden allusion beneath the surface of the text.</li>
+      <li><strong>Derash (Homiletical)</strong> — The midrashic meaning, the rabbinic expansion, the moral and ethical teaching drawn from the text.</li>
+      <li><strong>Sod (Mystical)</strong> — The secret meaning, the Kabbalistic dimension, the direct mapping of the text onto the sefirot and the divine drama. This is the Zohar's domain.</li>
+    </ul>
+    <p>The Zohar insists that all four levels are simultaneously true. The Torah is not a text with one meaning and three decorations. It is a <strong>multi-dimensional object</strong> that can be entered from any direction and explored to any depth. "Like a nut," the Zohar says, "the Torah has a shell, a body, and a kernel." The mystic is not satisfied with the shell. He cracks it open and eats the kernel.</p>
+
+    <h3>The Shekhinah: The Divine Feminine</h3>
+    <p>No discussion of the Zohar is complete without addressing its revolutionary doctrine of the <strong>Shekhinah</strong>. In rabbinic literature, the Shekhinah is the divine presence that dwells among Israel — a somewhat abstract concept, the "glory" or "indwelling" of God. The Zohar transforms her into a full-fledged divine personality: the <strong>bride of God</strong>, the <strong>mother of Israel</strong>, the <strong>queen of the sefirot</strong>.</p>
+
+    <p>The Shekhinah is Malkhut, the tenth sefirah, but she is also more than Malkhut. She is the "daughter" of Binah (the supernal mother), the "sister" of the patriarchs, the "spouse" of Tiferet. She accompanies Israel into exile — not as a distant observer but as a suffering participant. "When Israel went into exile, the Shekhinah went with them." When Israel is redeemed, the Shekhinah is redeemed. When the mystic performs a commandment with proper intention, he is not merely serving God — he is <strong>wooing the bride</strong>, preparing her for the wedding that will restore cosmic harmony.</p>
+
+    <p>This doctrine has profound implications. It means that the divine is not purely masculine, not purely transcendent, not purely impassible. The divine has a feminine aspect that suffers, loves, longs, and rejoices. The Zohar's Shekhinah is the Kabbalistic equivalent of the Christian Sophia (Wisdom), the Hindu Shakti, and the Taoist yin principle — but integrated into a rigorous monotheistic framework that never compromises the unity of God.</p>
+
+    <h3>The Zohar and the Apophatic</h3>
+    <p>Despite its mythic exuberance, the Zohar never forgets the apophatic core of Jewish mysticism. The highest sefirah, Keter, is called the "Ancient of Days" — but the Zohar immediately adds that this is only a name for what cannot be named. "The Ancient of Days is hidden and concealed. No thought can grasp Him at all." Even the sefirot themselves are described as "vessels" or "lights" that emanate from the Ein Sof — the Infinite that is beyond all sefirot, all names, all knowledge.</p>
+
+    <p>The Zohar's myth is not a denial of the apophatic but its <strong>clothing</strong>. The mystic who reads the Zohar properly does not believe that God literally has a masculine and feminine aspect, a right arm and a left arm, a heart that breaks and a bride that weeps. These are <em>images</em> — necessary images, powerful images, transformative images — but images nonetheless. "The Torah speaks in the language of human beings," says the Talmud. The Zohar adds: and the mystic must learn to read beneath the language, to hear the silence between the words, to touch the Infinite that breathes through every letter.</p>
+
+    <div class="scripture-panels fade-in margin-top">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Zohar · I:15a</div>
+        <p class="scripture-panel-text">"The Ancient of Days is hidden and concealed. No thought can grasp Him at all. He is the desire within desire, the will within will, the mystery within mystery."</p>
+        <p class="scripture-panel-ref">— The Zohar</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Comparative Table · The Deepest Level</div>
+        <div class="comparative-table-wrapper">
+          <table class="comparative-table">
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>Nisargadatta's Absolute</th>
+                <th>Jesus's Divine Ground</th>
+                <th>Lao Tzu's Tao</th>
+                <th>The Zohar's Ein Sof</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Nature of deepest reality</td><td>Beyond consciousness, prior to "I am"</td><td>Beyond essence, known only through energies</td><td>Beyond being and non-being, nameless</td><td>Hidden and concealed; no thought can grasp Him</td></tr>
+              <tr><td>Path</td><td>Abiding in "I am," then dissolving it</td><td>Kenosis — self-emptying love</td><td>Wu Wei — non-action</td><td>Mitzvot with kavvanah; Torah study as theurgy</td></tr>
+              <tr><td>The self</td><td>Dissolves into pure awareness</td><td>Dies and rises as Christ-life</td><td>Dissolves into the Great Thoroughfare</td><td>Becomes a channel for the divine flow; repairs the sefirot</td></tr>
+              <tr><td>Relationship to world</td><td>Temporary modulation of the Absolute</td><td>Loved into being and redeemed</td><td>The world arises spontaneously</td><td>The world is the garment of Torah; Torah is the garment of God</td></tr>
+              <tr><td>Final state</td><td>"I am dead already"</td><td>"It is finished"</td><td>The Uncarved Block</td><td>The union of Tiferet and Malkhut; the redemption of the Shekhinah</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESSAY: THE IDRA AND THE DEATH OF RABBI SHIMON -->
+<section class="content-section fade-in" id="idra">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Gathering of the Friends</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Idra Zuta · The Great Assembly</span></span></h2>
+    <p>The Death of the Mystic as Cosmic Event</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>The most famous section of the Zohar is the <em>Idra Zuta</em> — the "Small Assembly" — which describes the death of Rabbi Shimon bar Yochai. But this is no ordinary death narrative. In the Zohar, the death of a great mystic is a <strong>cosmic event</strong>, a moment when the boundaries between the human and the divine become permeable, when the soul's ascent illuminates the entire structure of creation.</p>
+
+    <p>Rabbi Shimon gathers his disciples in a field. He opens his mouth and speaks the most profound secrets of the Torah — secrets so deep that the earth trembles, the heavens open, and the angels themselves lean down to listen. As he speaks, his soul rises through the sefirot, ascending from Malkhut to Yesod to Tiferet to Binah to Chokhmah to Keter, and finally beyond Keter into the Ein Sof itself. His body remains on earth, but his consciousness has become indistinguishable from the divine.</p>
+
+    <p>"Happy are you, Rabbi Shimon," his disciples cry, "for your soul has ascended and the Holy One, blessed be He, has kissed it." The kiss is not a metaphor. In the Zohar, the union of the human soul with the divine is described in the language of <strong>erotic mysticism</strong> — the same language found in the Song of Songs, in the Christian mystical tradition (Bernard of Clairvaux, Teresa of Avila), and in the Hindu Tantra. The soul is the bride; God is the bridegroom. Death is the wedding night.</p>
+
+    <blockquote>
+      <p>"Happy are you, Rabbi Shimon, for from the day the world was created until now, no man has been permitted to know what you know, and no man has been permitted to see what you have seen. Happy are you in this world and happy in the world to come."</p>
+      <cite>— Zohar, Idra Zuta</cite>
+    </blockquote>
+    <blockquote>
+      <p>"I am my beloved's, and my beloved is mine."</p>
+      <cite>— Song of Songs 6:3</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ESSAY: THE ZOHAR AND THE CHRISTIAN MYSTICS -->
+<section class="content-section fade-in" id="christian">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Comparative Thresholds</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Zohar and the Christian Mystics</span></span></h2>
+    <p>Bernard, Eckhart, and the Language of Divine Eros</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>The Zohar's erotic mysticism finds striking parallels in the Christian tradition, particularly in the medieval mystics who read the Song of Songs as an allegory of the soul's union with Christ.</p>
+    <ul>
+      <li><strong>Bernard of Clairvaux</strong> (1090–1153) wrote eighty-six sermons on the Song of Songs, describing the soul as the bride of Christ, the church as the body of the bridegroom, and the mystical life as a progressive deepening of love that culminates in the "kiss of the mouth" — the direct, unmediated union of the soul with God. Bernard's language is so similar to the Zohar's that one could almost translate passages from one to the other without loss of meaning.</li>
+      <li><strong>Meister Eckhart</strong> (c. 1260–1328) went further, pushing the apophatic dimension to its limit. "God is a being beyond being," Eckhart wrote, echoing the Zohar's Ein Sof. "The soul must become nothing in order to become all." Eckhart's "ground of the soul" (Seelengrund) is the Christian equivalent of the Zohar's "point" (nekudah) — the innermost dimension of the self that touches the innermost dimension of God.</li>
+      <li><strong>Teresa of Avila</strong> (1515–1582) described her mystical experiences in explicitly erotic terms — the "wound of love," the "spiritual marriage," the "ecstasy" in which the soul is "ravished" by divine love. Her "Interior Castle" is a Christian Heikhalot, a journey through seven mansions (sefirot) to the innermost chamber where the soul and God are united.</li>
+    </ul>
+    <p>The Zohar's uniqueness lies not in its eroticism — which is a universal feature of mystical literature — but in its <strong>integration of eros with law</strong>. For the Zohar, the highest expression of divine love is not ecstatic experience but the performance of the commandments. The Jew who wraps himself in tefillin, lights the Sabbath candles, or studies Torah on Saturday night is not merely obeying God. He is <em>making love to God</em> — restoring the broken union of the sefirot, wooing the Shekhinah back to her bridegroom, participating in the cosmic drama of redemption.</p>
+    <blockquote>
+      <p>"The Holy One, blessed be He, has nothing in His world but the four cubits of halakhah."</p>
+      <cite>— Zohar, I:19a</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- PULLQUOTE: THE MYSTERY OF THE WHITE HEAD -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">"The head of the Ancient of Days is the most hidden of all hidden things. It is called 'the head of nothingness,' for it is the head from which all heads emerge, the brain from which all brains are formed, the wisdom from which all wisdoms flow."</p>
+    <p class="pullquote-attr">— Zohar, Idra Rabba · The Apophatic Summit</p>
+  </div>
+</div>
+
+<!-- ESSAY: THE ZOHAR AND THE TORAH AS DIVINE BODY -->
+<section class="content-section fade-in" id="torah">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Living Text</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Torah as Divine Body</span></span></h2>
+    <p>The White Fire and the Black Fire</p>
+  </div>
+  <div class="content-essay fade-in">
+    <p>One of the Zohar's most beautiful teachings concerns the <strong>two fires</strong> of the Torah. The black fire is the written text — the letters, the words, the narratives that we read with our eyes. The white fire is the <strong>space between the letters</strong> — the silence, the breath, the divine presence that makes the black fire possible.</p>
+
+    <p>"The Torah was written with black fire upon white fire," the Zohar teaches. The black fire is the garment; the white fire is the body. The black fire is the name; the white fire is the named. The black fire is the "mystery of the ten" (the sefirot as they appear in the world); the white fire is the "mystery of the one" (the Ein Sof beyond all sefirot).</p>
+
+    <p>This teaching transforms the act of Torah study. The student who reads only the black fire sees only the surface. The student who learns to read the white fire — to attend to the silence between the words, the space between the letters, the breath between the sounds — begins to touch the living body of God. This is why the Zohar insists that every letter of the Torah contains infinite meaning. "If all the seas were ink and all the reeds pens, they could not exhaust the Torah's mystery."</p>
+
+    <p>The Zohar also teaches that the Torah is not a static text but a <strong>living organism</strong>. "The Torah is a tree of life to those who grasp it." Its roots are in Keter; its trunk is Tiferet; its branches reach into every sefirah; its fruit is the Shekhinah. To study Torah is to climb this tree, to eat its fruit, to become one with its life. The mystic does not interpret the Torah from outside. He enters it, lives inside it, becomes a cell in its body.</p>
+
+    <div class="scripture-panels fade-in">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Zohar · II:84a</div>
+        <p class="scripture-panel-text">"The Torah is a tree of life to those who grasp it. Its roots are above, in the Ancient of Days; its trunk is in the Blessed Holy One; its branches reach into all the sefirot; and its fruit is the Shekhinah, the presence that dwells among Israel."</p>
+        <p class="scripture-panel-ref">— The Zohar</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Tao Te Ching · Chapter 6</div>
+        <p class="scripture-panel-text">"The valley spirit never dies; it is called the mysterious female. The gateway of the mysterious female is called the root of heaven and earth."</p>
+        <p class="scripture-panel-ref">— Lao Tzu</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSITION PULLQUOTE TO PAGE 3 -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">From the radiance of the Zohar, we now enter the revolutionary cosmos of Isaac Luria — the Ari, who shattered the vessels and taught the world how to repair them.</p>
+    <p class="pullquote-attr"><a href="kabbalah-luria.html">→ Continue to Isaac Luria · The Lion of Safed</a></p>
+  </div>
+</div>
+
+<!-- CHAPTER NAVIGATION -->
+<div class="chapter-nav">
+  <a href="../index.html" class="chapter-link">⌂ Home</a>
+  <span class="chapter-sep">🔯</span>
+  <a href="kabbalah-sefer-yetzirah.html" class="chapter-link">I · The Book of Creation</a>
+  <span class="chapter-sep">🔯</span>
+  <a href="kabbalah-zohar.html" class="chapter-link active">II · The Zohar</a>
+  <span class="chapter-sep">🔯</span>
+  <a href="kabbalah-luria.html" class="chapter-link">III · Isaac Luria</a>
+  <span class="chapter-sep">🔯</span>
+  <a href="kabbalah-baal-shem-tov.html" class="chapter-link">IV · The Baal Shem Tov</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
+    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="kabbalah-sefer-yetzirah.html">Kabbalah</a>
+    <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+  </div>
+  <div class="footer-credit">Researched &amp; Composed</div>
+  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+      }
+    });
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      setTheme(saved);
+      return;
+    }
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  initTheme();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+
+  const backToTop = document.getElementById('backToTop');
+  function updateProgress() {
+    if (backToTop) {
+      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+    }
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+
+  const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        textObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (diff > 55 && touchStartX < 30 && navMenu) navMenu.classList.add('open');
+    if (diff < -55 && navMenu) navMenu.classList.remove('open');
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
