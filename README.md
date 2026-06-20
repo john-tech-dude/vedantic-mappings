@@ -15,18 +15,23 @@ vedantic-mappings/
 │   ├── gaudapada.html              # Gaudapada (lineage predecessor)
 │   ├── adi-shankara.html           # Adi Shankara (lineage predecessor)
 │   ├── ramana-maharshi.html        # Ramana Maharshi cartography
-│   └── nisargadatta-maharaj.html   # Nisargadatta Maharaj cartography
+│   ├── nisargadatta-maharaj.html   # Nisargadatta Maharaj cartography
+│   └── adyashanti-comparison.html  # Adyashanti vs. Classical Non-Duality comparative analysis
 ├── messiah/                         # Messiah series
 │   ├── messiah-threshold.html       # Hermeneutic Key (primary entry)
 │   ├── messiah-parables.html        # Three Bridges
 │   ├── messiah-silence.html         # The Cloud of Unknowing
 │   └── messiah-mirror.html          # Tat Tvam Asi
-│   (vedanta-messiah.html → archived in /archive/ as legacy monolithic 9-aspect version)
-└── taoism/                          # Taoism series
-    ├── taoism-threshold.html        # The Unnamed Way
-    ├── taoism-practices.html         # The Uncarved Block
-    ├── taoism-butterfly.html        # The Butterfly Dream
-    └── taoism-return.html           # Returning to the Root
+├── taoism/                          # Taoism series
+│   ├── taoism-threshold.html        # The Unnamed Way
+│   ├── taoism-practices.html         # The Uncarved Block
+│   ├── taoism-butterfly.html        # The Butterfly Dream
+│   └── taoism-return.html           # Returning to the Root
+├── archive/                         # Archived content
+│   ├── vedanta-messiah.html         # Legacy monolithic 9-aspect version
+│   └── TODO-nav-compass-refactor.md # Completed refactoring documentation
+└── scripts/                         # Utility scripts
+    └── cloud_audit.py               # File consistency auditing tool
 ```
 
 ## 🌐 Usage
