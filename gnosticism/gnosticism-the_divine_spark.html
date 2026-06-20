@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Gnosticism — The Divine Spark. The prisoner of matter, the sleeper who must awaken, and the path of gnosis that leads home. Nag Hammadi cartography." />
+<title>Gnosticism · The Divine Spark — The Awakening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================
+   GNOSTICISM — THE DIVINE SPARK (Threshold Page)
+   Cosmic Edition — Deep Indigo, Violet, Silver, Amber
+   ===================================================== */
+
+:root {
+  --bg: #090c18;
+  --bg2: #0f1324;
+  --bg3: #060814;
+  --surface: #141a2e;
+  --surface2: #1c2238;
+  --ink: #e6e9f0;
+  --ink2: #8a9abf;
+  --stone: #5e6d8a;
+  --stone-light: #8a9ab0;
+  --gold: #c9a84c;
+  --gold-light: #e0c46e;
+  --gold-deep: #a08030;
+  --gold-glow: rgba(201, 168, 76, 0.08);
+  --sun-glow: rgba(201, 168, 76, 0.18);
+  --violet: #7c6fae;
+  --violet-light: #a090d0;
+  --violet-deep: #4a4080;
+  --violet-glow: rgba(124, 111, 174, 0.15);
+  --copper: #b87333;
+  --copper-light: #cd7f32;
+  --copper-deep: #8b4513;
+  --copper-glow: rgba(184, 115, 51, 0.12);
+  --silver: #a0a8b8;
+  --border: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.025);
+  --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+  --shadow-gold: 0 0 40px var(--gold-glow);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+[data-theme="light"] {
+  --bg: #f0f1f5;
+  --bg2: #e4e6ee;
+  --bg3: #d8dbe6;
+  --surface: #ffffff;
+  --surface2: #f2f3f8;
+  --ink: #12152a;
+  --ink2: #3a3f5c;
+  --stone: #5a6080;
+  --stone-light: #7a80a0;
+  --gold: #8a6a2a;
+  --gold-light: #a08040;
+  --gold-deep: #6a5020;
+  --border: rgba(0, 0, 0, 0.07);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.03);
+  --gold-glow: rgba(138, 106, 42, 0.06);
+  --sun-glow: rgba(138, 106, 42, 0.14);
+  --violet: #5a5080;
+  --violet-light: #8a78b0;
+  --violet-deep: #3a3070;
+  --copper: #8b4513;
+  --copper-light: #a0522d;
+  --copper-deep: #6b3410;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.78;
+  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--violet-deep), var(--violet), var(--gold));
+  border-radius: 2px;
+}
+
+::selection { background: rgba(124,111,174,0.20); color: var(--ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-bounce {
+  0%,100% { opacity: 1; transform: scaleY(1); }
+  50%     { opacity: 0.3; transform: scaleY(0.5); }
+}
+
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.04); }
+}
+
+@keyframes pleroma-breathe {
+  0%,100% { opacity: 0.3; transform: translate(-50%,-50%) scale(1); }
+  50%     { opacity: 0.7; transform: translate(-50%,-50%) scale(1.015); }
+}
+
+@keyframes ripple-out {
+  0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0;    transform: translate(-50%,-50%) scale(4.5); }
+}
+
+@keyframes emblem-pulse {
+  0%,100% { filter: drop-shadow(0 0 12px rgba(201,168,76,0.15)); }
+  50%     { filter: drop-shadow(0 0 28px rgba(201,168,76,0.35)); }
+}
+
+@keyframes lineReveal {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes diamondReveal {
+  from { opacity: 0; transform: rotate(45deg) scale(0); }
+  to   { opacity: 1; transform: rotate(45deg) scale(1); }
+}
+
+@keyframes ambientDrift {
+  0%,100% { transform: translate(0,0) scale(1); opacity: 0.35; }
+  33%     { transform: translate(2%,-1%) scale(1.02); opacity: 0.55; }
+  66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.25; }
+}
+
+@keyframes spark-flicker {
+  0%,100% { opacity: 0.4; }
+  25%     { opacity: 0.9; }
+  50%     { opacity: 0.3; }
+  75%     { opacity: 0.8; }
+}
+
+.nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--violet-light); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+.nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 260px; }
+.nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+.nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+.nav-item.active { color: var(--gold-light); background: rgba(201,168,76,0.08); border-left-color: var(--gold); font-weight: 500; }
+.nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
+.nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+.theme-toggle:active { transform: scale(0.95); }
+.theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+[data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+[data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+.back-to-top { position: fixed; bottom: 5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+.back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; }
+[data-theme="dark"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 25%, #12183a 0%, var(--bg) 35%, #060814 70%, var(--bg) 100%); }
+[data-theme="light"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 25%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #7880a0 100%); }
+
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 50% at 25% 35%, rgba(124,111,174,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 75% 55%, rgba(201,168,76,0.05) 0%, transparent 70%);
+  animation: ambientDrift 20s ease-in-out infinite;
+  pointer-events: none; z-index: 1;
+}
+
+.hero-stars { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+
+.pleroma-ring {
+  position: absolute; top: 50%; left: 50%;
+  border-radius: 50%; border: 1px solid var(--violet);
+  transform: translate(-50%,-50%); pointer-events: none;
+  animation: pleroma-breathe 14s ease-in-out infinite;
+}
+.pleroma-ring:nth-of-type(1) { width: 220px; height: 220px; opacity: 0.22; }
+.pleroma-ring:nth-of-type(2) { width: 360px; height: 360px; opacity: 0.15; animation-delay: 2s; animation-duration: 16s; }
+.pleroma-ring:nth-of-type(3) { width: 520px; height: 520px; opacity: 0.10; animation-delay: 4s; animation-duration: 18s; }
+.pleroma-ring:nth-of-type(4) { width: 700px; height: 700px; opacity: 0.06; animation-delay: 6s; animation-duration: 20s; }
+
+.hero-ripple {
+  position: absolute; top: 50%; left: 50%;
+  width: 200px; height: 200px; border-radius: 50%;
+  border: 1px solid var(--violet-light); transform: translate(-50%,-50%);
+  pointer-events: none; animation: ripple-out 10s ease-out infinite;
+}
+.hero-ripple:nth-of-type(2) { animation-delay: 3.3s; }
+.hero-ripple:nth-of-type(3) { animation-delay: 6.6s; }
+
+.hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+
+.hero-emblem {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+  z-index: 3;
+  animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, emblem-pulse 5s ease-in-out infinite;
+}
+.hero-emblem svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+[data-theme="light"] .hero-emblem svg path,
+[data-theme="light"] .hero-emblem svg circle,
+[data-theme="light"] .hero-emblem svg line {
+  opacity: 1 !important;
+}
+
+.hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(124,111,174,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+[data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(201,168,76,0.2); }
+
+.hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--violet-light); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+
+.hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 620px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
+[data-theme="dark"] .hero-quote { color: var(--stone-light); }
+
+.hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone-light); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; }
+
+.hero-divider {
+  display: flex; align-items: center; gap: 1.25rem;
+  margin: 0 auto 2.5rem; width: fit-content;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+  position: relative; z-index: 2;
+}
+.hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
+.hero-divider-line:last-child { background: linear-gradient(90deg, var(--violet), transparent); transform-origin: right; }
+.hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+
+.hero-scroll-cue {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+  cursor: pointer; z-index: 2;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+.hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--violet-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 0.75rem; }
+.section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
+.section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
+
+.section-separator {
+  width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent);
+  margin: 0 auto 20px; opacity: 0; transform: scaleX(0);
+  transition: all 0.8s var(--ease-out-expo);
+  position: relative;
+}
+.section-separator.visible { opacity: 1; transform: scaleX(1); }
+.section-separator::after {
+  content: '✦'; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%,-50%); color: var(--gold); font-size: 0.72rem;
+  background: var(--bg); padding: 0 6px;
+}
+
+.text-reveal { overflow: hidden; display: block; }
+.text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
+.visible .text-reveal-inner { transform: translateY(0); }
+
+.content-section { padding: 80px 24px; max-width: 780px; margin: 0 auto; }
+.content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+.content-essay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
+.content-essay h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--violet-light); margin: 2rem 0 0.75rem; }
+.content-essay blockquote { border-left: 3px solid var(--violet); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+.content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--violet); opacity: 0.10; line-height: 1; }
+.content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+.content-essay ul { margin: 1.5rem 0; padding-left: 0; list-style: none; }
+.content-essay ul li { padding: 0.85rem 0 0.85rem 2rem; position: relative; color: var(--stone); line-height: 1.75; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
+.content-essay ul li:last-child { border-bottom: none; }
+.content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--violet); opacity: 0.6; }
+.content-essay ul li strong { color: var(--ink); font-weight: 500; }
+
+.greek-term, .coptic-term, .sanskrit-term {
+  cursor: help;
+  border-bottom: 1px dotted var(--violet-deep);
+  text-decoration: none;
+}
+
+.diagram-container {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: linear-gradient(145deg, var(--surface), var(--surface2));
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 0 40px var(--violet-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.diagram-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent);
+  opacity: 0.6;
+}
+.diagram-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.3;
+}
+.diagram-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--violet-light);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.diagram-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.diagram-svg path, .diagram-svg circle, .diagram-svg line, .diagram-svg rect, .diagram-svg text {
+  vector-effect: non-scaling-stroke;
+}
+.diagram-caption {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--stone);
+  text-align: center;
+  margin-top: 1.25rem;
+  line-height: 1.6;
+}
+
+.comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
+.comparative-table thead tr { border-bottom: 1px solid var(--violet); }
+.comparative-table th { padding: 10px 8px; text-align: left; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--violet-light); font-weight: 500; }
+.comparative-table td { padding: 8px; color: var(--stone); line-height: 1.5; }
+.comparative-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
+.comparative-table tbody tr:last-child { border-bottom: none; }
+.comparative-table tbody tr:hover { background: var(--gold-glow); }
+.comparative-table-wrapper { overflow-x: auto; margin-top: 1rem; }
+
+.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.scripture-panel { background: var(--surface); padding: 32px; }
+.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--violet-light); margin-bottom: 16px; }
+.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+.scripture-panel:hover { background: var(--surface2); }
+.scripture-panels.margin-top { margin-top: 2rem; }
+
+.tension-box {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, var(--surface2), var(--surface));
+  border-left: 3px solid var(--violet);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  position: relative;
+}
+.tension-box::before {
+  content: '◈';
+  position: absolute;
+  top: -10px; left: 14px;
+  font-size: 1rem;
+  color: var(--violet);
+  background: var(--bg);
+  padding: 0 4px;
+}
+.tension-box p {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+.resonance-callout {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  position: relative;
+}
+.resonance-callout::before {
+  content: '✦';
+  display: block;
+  font-size: 1.2rem;
+  color: var(--violet);
+  margin-bottom: 0.75rem;
+  opacity: 0.6;
+}
+.resonance-callout p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin: 0 !important;
+}
+
+.pullquote-section { position: relative; overflow: hidden; padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+[data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #12183a 0%, var(--bg) 40%, #060814 70%, var(--bg) 100%); }
+[data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #7880a0 100%); }
+
+.pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+
+.pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
+.pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+.pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+.pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.pullquote-attr a:hover { color: var(--gold); }
+
+.continue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  transition: all 0.35s var(--ease-out-expo);
+  margin-top: 1rem;
+}
+.continue-link:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  transform: translateX(4px);
+}
+
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-link:hover { color: var(--gold); }
+.chapter-sep { color: var(--violet); opacity: 0.3; }
+.chapter-link.active { color: var(--gold); font-weight: 500; }
+
+.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+.footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--violet); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--violet-light); }
+.footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 0.5rem; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+.footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+.footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+.footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.35s; }
+.stagger-4 { transition-delay: 0.5s; }
+.stagger-5 { transition-delay: 0.65s; }
+
+@media (max-width: 768px) {
+  .nav-menu { min-width: 180px; }
+  .back-to-top { right: 1.5rem; bottom: 5rem; }
+  .footer-links { gap: 1.5rem; }
+  .scripture-panels { grid-template-columns: 1fr; }
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .hero-emblem { width: 110px; height: 110px; }
+  .diagram-container { padding: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16px; line-height: 1.72; }
+  .content-section { padding: 48px 16px; }
+  .hero { padding: 4rem 1rem 5rem; }
+  .hero-emblem { width: 95px; height: 95px; }
+  .nav-compass { top: 0.75rem; left: 0.75rem; }
+  .nav-toggle { width: 40px; height: 40px; }
+  .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
+  .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
+  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+  .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
+  .scripture-panel { padding: 20px; }
+  .pullquote-section { padding: 3rem 1rem; }
+  .chapter-nav { gap: 0.75rem; font-size: 0.6rem; }
+  .footer { padding: 3rem 1rem 2rem; }
+  .footer-links { gap: 1rem; font-size: 0.7rem; }
+  .content-essay blockquote { padding: 16px 18px; }
+  .diagram-container { padding: 1rem; margin: 1.5rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+  .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
+  .text-reveal-inner { transform: translateY(0) !important; }
+  .section-separator { opacity: 1 !important; transform: scaleX(1) !important; }
+}
+</style>
+<base target="_blank">
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/1pPOMFM9FEzkL92XZamsv1E0Q0dl025JxioJkZfAUQGdqiTP2DzdmKbgyGvjiO69LZvMIeAhYtYo7HiWZyxoFEock55UlJecR6dcQ4sF960hbonhVYpegmI4gmFKfCALdOdnCXQ5d-4M5dPjr2Rrj-aH3GyMv9IarsdDN9g_bRiwc6zReAdA0PBlUMjEOn9dFdWw1UxPAAVE4felFoiz3QIYnH35XLcF_kkQkl20bc4TTpZEKeNymiad0i0KdMj8hvDh7VWGoCz0FV9VM8RMgFWqCLsrN_SBZ2t9kdITqAij2RvHLS2dO9IeMtonQIf1n3oimBdMpKjQSpDA-EMjX6BRNySK5Yf7BnrTskmk4QIa-X330tXbAbNWGmUVbdWatO-NFnZYW7E48IX1EyeAlnNHVwXb22wE5pVs0US51U5WFvEbUu1IRTTaTArJt0sqwGG5bsMsT6UQAaYzQubCcI-I6MSFpi8jVSL_7XgBVGqZ5015fVUqZAw18jPZC1C50RCa2d0f580LDaMxTqx8nf02qO0edWcqGKkFJTuF4kk55mfyFI7OnzhO8wUdPFe2VoT-xYPfcPN3bQknnM-l8h7kZUeIwkH5rwvg55AeEDxWcy57YWFbMJPWyNjneUnZl35NBtb_P9nr_viLx98xScpH6o_1EdnKViK033vm8uZlyWMLtMx9jHIrQrJRzlat7o-KlRLKbtIsnsk_ldtulZcyUUuV94IiFIV0OWnKbJFk2w41erlM2gsARbKBDTMzJSsbV0gl_9V-94uVPhkjLxfth-9n-9x7TTvhtkT6gpZlk6ls-0Jl2PISz20tFC2EXNQEBvyXt5gCvGKMWU-pUQ9FYUkMHfkE_zyrELioeDWxkZQ-4Wi9U8FccpUzcDP6VTj2itSBdbINU88HCoyuzWEppiVQ1_wxxD2iRiBrIGTA5xw9TZ7jrCs0kPXeCR097fPqqskx1D8EnzP1Ym7UNRT197b55H4f0kDrbptLcJuUUS0Mg0SZRbvwmcl00F-M_-rjwMynqDxFQG5HpnGFu0lQrZiikZdeTJszF8vs39SNPzXzHVnzew'></script><base target="_blank">
+</head>
+<body>
+<!-- NAVIGATION COMPASS -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">This Page</div>
+    <a href="#hero" class="nav-item" data-section="hero"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></span><span>Overview</span></a>
+    <a href="#prisoner" class="nav-item" data-section="prisoner"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span><span>The Prisoner of Matter</span></a>
+    <a href="#threefold" class="nav-item" data-section="threefold"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)"/></svg></span><span>The Threefold Man</span></a>
+    <a href="#awakening" class="nav-item" data-section="awakening"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></span><span>The Awakening</span></a>
+    <a href="#ascent" class="nav-item" data-section="ascent"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4m-9-9h4m12 0h4"/></svg></span><span>The Ascent Through the Heavens</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Gnosticism &middot; Four Pages</div>
+    <a href="gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8m-4-4h8"/></svg></span><span>I &middot; The Unknown Father</span></a>
+    <a href="gnosticism-demiurge.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><span>II &middot; The Demiurge</span></a>
+    <a href="gnosticism-spark.html" class="nav-item active"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span>III &middot; The Divine Spark</span></a>
+    <a href="gnosticism-bridal.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span>IV &middot; The Bridal Chamber</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Other Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span><span>Home &middot; Vedantic Mappings</span></a>
+    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/></svg></span><span>Advaita Vedanta</span></a>
+    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span><span>The Vedantic Messiah</span></a>
+    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20"/><path d="M12 7a5 5 0 0 0 0 10 5 5 0 0 0 0-10"/><path d="M12 12a5 5 0 0 0 5 5 5 5 0 0 0-5-5"/></svg></span><span>Taoism</span></a>
+  </div>
+</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-stars"></div>
+  <div class="pleroma-ring"></div><div class="pleroma-ring"></div>
+  <div class="pleroma-ring"></div><div class="pleroma-ring"></div>
+  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+  <p class="hero-eyemark">The Divine Spark</p>
+  <div class="hero-emblem">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sparkGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.9"/>
+          <stop offset="30%" stop-color="#c9a84c" stop-opacity="0.6"/>
+          <stop offset="70%" stop-color="#7c6fae" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#4a4080" stop-opacity="0.05"/>
+        </radialGradient>
+        <filter id="sparkGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softGlow2" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Central spark / flame -->
+      <circle cx="250" cy="250" r="40" fill="url(#sparkGrad)" filter="url(#sparkGlow)" opacity="0.9"/>
+      <circle cx="250" cy="250" r="25" fill="#e0c46e" opacity="0.5" filter="url(#softGlow2)"/>
+      <circle cx="250" cy="250" r="12" fill="#e0c46e" opacity="0.8"/>
+      <circle cx="250" cy="250" r="5" fill="#fff" opacity="0.9"/>
+
+      <!-- Flame tendrils -->
+      <path d="M 250 230 Q 245 200, 250 170 Q 255 200, 250 230" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.6" filter="url(#softGlow2)"/>
+      <path d="M 250 230 Q 235 205, 225 175 Q 240 205, 250 230" fill="none" stroke="#a090d0" stroke-width="1" opacity="0.4" filter="url(#softGlow2)"/>
+      <path d="M 250 230 Q 265 205, 275 175 Q 260 205, 250 230" fill="none" stroke="#a090d0" stroke-width="1" opacity="0.4" filter="url(#softGlow2)"/>
+
+      <!-- Inner prison / vessel -->
+      <circle cx="250" cy="250" r="80" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.25" stroke-dasharray="4,6"/>
+      <circle cx="250" cy="250" r="100" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.15" stroke-dasharray="3,8"/>
+
+      <!-- Outer rings -->
+      <circle cx="250" cy="250" r="130" fill="none" stroke="#4a4080" stroke-width="0.3" opacity="0.12" stroke-dasharray="2,10"/>
+      <circle cx="250" cy="250" r="160" fill="none" stroke="#4a4080" stroke-width="0.2" opacity="0.08" stroke-dasharray="1,15"/>
+
+      <!-- Small sparks escaping -->
+      <circle cx="200" cy="200" r="2" fill="#c9a84c" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.9;0.3;0.7;0.5" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="300" cy="190" r="1.5" fill="#e0c46e" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.8;0.2;0.6;0.4" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="180" cy="280" r="2" fill="#a090d0" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.2;0.5;0.3" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="320" cy="300" r="1.5" fill="#c9a84c" opacity="0.35">
+        <animate attributeName="opacity" values="0.35;0.75;0.25;0.6;0.35" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="250" cy="150" r="1.5" fill="#e0c46e" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.9;0.3;0.7;0.4" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+
+  <h1 class="hero-title">The Divine Spark</h1>
+  <p class="hero-subtitle">The Prisoner of Matter &middot; The Sleeper Who Must Awaken</p>
+  <div class="hero-divider">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">&ldquo;The spirit of man is a lamp of the Lord, searching all the innermost parts of his being.&rdquo;</p>
+  <p class="hero-quote-attr">&mdash; Proverbs 20:27, as read through Gnostic eyes</p>
+  <div class="hero-scroll-cue" onclick="document.getElementById('prisoner').scrollIntoView({behavior:'smooth'})">
+    <span>Descend</span><div class="scroll-line"></div>
+  </div>
+</header>
+<!-- =====================================================
+     SECTION 1: THE PRISONER OF MATTER
+     ===================================================== -->
+<section class="content-section fade-in" id="prisoner">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Spark Imprisoned</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Prisoner of Matter</span></span></h2>
+    <p>Hyle &middot; The Psychic Body &middot; The Covering of Skin</p>
+  </div>
+
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The Gnostic does not begin with the question of sin. The Gnostic begins with the question of <em>identity</em>. Who am I, really? The answer, delivered with terrible clarity across the Nag Hammadi library, is: <strong>you are a spark of divine light trapped in a prison of matter</strong>. Not a fallen angel, not a punished soul, not a creature in need of moral improvement &mdash; but a fragment of the Pleroma, temporarily obscured by its own emanation, dreaming it is something other than what it is. This is the Gnostic anthropology, and it is the foundation upon which everything else rests.</p>
+
+    <p class="fade-in stagger-1">The <em>Hypostasis of the Archons</em> tells the story with mythic precision. When the archons fashioned Adam from the dust of the earth, he lay inert &mdash; a clay effigy without animation. They had stolen light from Sophia, but they did not know what they possessed. They breathed into Adam, and the stolen light entered him. Immediately he surpassed his creators. The archons saw their mistake: the being they had made was more intelligent, more luminous, more powerful than themselves. Their subsequent history &mdash; creating Eve, fashioning the serpent, forbidding the tree of knowledge &mdash; is the story of their attempts to keep Adam and his descendants ignorant of what they really are.</p>
+
+    <p class="fade-in stagger-2">This is the Gnostic reading of Genesis: not the creation of man in the image of God, but the <em>theft</em> of divine light by ignorant beings who then try to hide the theft. The body is not a temple but a cell. The senses are not windows but bars. The world is not a garden but a workshop of necessity, and the one who runs it is not the gardener but the jailer.</p>
+
+    <div class="scripture-panels fade-in stagger-3">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Hypostasis of the Archons &middot; The Fashioning of Adam</div>
+        <p class="scripture-panel-text">&ldquo;And he breathed into his face; and Adam began to move upon the earth. And for many days he could not arise.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,4)</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Apocryphon of John &middot; The Divine Spark</div>
+        <p class="scripture-panel-text">&ldquo;The spiritual man was deposited in him without the Demiurge&rsquo;s knowledge by Sophia&rsquo;s offspring. He does not know what the vessel contains.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,1), via Irenaeus</p>
+      </div>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Epinoia of Light</h3>
+    <p class="fade-in stagger-2">In the <em>Apocryphon of John</em>, the divine spark is called the <span class="greek-term" title="Afterthought; the divine faculty of recollection hidden within the soul">Epinoia</span> of Light &mdash; the &ldquo;afterthought&rdquo; of the divine, hidden within the human like a seed buried in winter soil. It is not the product of the Demiurge&rsquo;s breath but an intrusion from above, a foreign element smuggled into the prison by Sophia herself. The Demiurge provides the vessel; Sophia provides the treasure. The archons rule the body; the spark rules the soul. This is the Gnostic dualism: not a metaphysical opposition between good and evil, but an ontological distinction between what is native to the prison and what has been exiled into it.</p>
+
+    <p class="fade-in stagger-3">The <em>Epinoia</em> is not merely a divine fragment. It is a faculty &mdash; the capacity for recognition, for remembrance, for <span class="greek-term" title="Knowledge; direct experiential recognition of one&rsquo;s true nature">gnosis</span>. Without it, the human being is merely psychic &mdash; animated by the Demiurge&rsquo;s breath, capable of virtue and law, but incapable of seeing through the prison. With it, the human being becomes pneumatic &mdash; spiritual, capable of recognizing the light within and tracing it back to its source. The <em>Epinoia</em> is the eye that sees in the dark, the ear that hears the silence, the hand that reaches through the bars.</p>
+
+    <h3 class="fade-in stagger-1">The Body as Prison Suit</h3>
+    <p class="fade-in stagger-2">The Gnostic body is described as a <em>covering of skin</em> &mdash; not the original garment of light but a sensory apparatus designed to keep the soul focused on the external world and oblivious to its internal origin. The five senses are the five gates of the prison, each one a channel of archonic deception. Sight shows us the visible world but hides the invisible; hearing captures the sounds of the cosmos but deafens us to the Silence; touch anchors us in the body but severs us from the Spirit. The Gnostic task is not to deny the senses but to see <em>through</em> them &mdash; to recognize that what they show is real but not ultimate, present but not primary.</p>
+
+    <p class="fade-in stagger-3">The <em>Gospel of Philip</em> pushes this further: &ldquo;The world came about through a mistake. For he who created it wanted to create it imperishable and immortal. He fell short of attaining his desire.&rdquo; The material world is not evil in itself; it is <em>error</em> &mdash; a failed attempt at permanence by a being who does not understand permanence. The body is the most intimate expression of this error: it ages, it suffers, it dies. Yet within this dying vessel lives something that does not die. The spark is not improved by the body; it is obscured by it. And the task of the Gnostic is not to perfect the body but to recognize what the body conceals.</p>
+
+    <blockquote class="fade-in stagger-1">
+      <p>&ldquo;Ignorance is the mother of all evil. Ignorance will result in death, because those who come from ignorance neither were nor are nor shall be. Truth is like ignorance: while it is hidden, it rests in itself, but when it is revealed and is recognized, it is praised, inasmuch as it is stronger than ignorance and error. It gives freedom.&rdquo;</p>
+      <cite>&mdash; Gospel of Philip, Nag Hammadi Library (II,3)</cite>
+    </blockquote>
+
+    <h3 class="fade-in stagger-1">Eve as Liberator</h3>
+    <p class="fade-in stagger-2">The <em>Hypostasis of the Archons</em> offers one of the most radical re-readings of Genesis in religious history. Eve is not a helper made from a rib. She is an emissary of the divine world sent to liberate the light imprisoned in Adam. The <em>Epinoia</em> of Light hides herself in Eve. When the archons attempt to rape her &mdash; to claim the divine spark for themselves &mdash; they succeed only in violating a shadow, a reflection. The real Eve escapes. She is the one who speaks from the tree, who teaches Adam what he is, who carries the gnosis into human history.</p>
+
+    <p class="fade-in stagger-3">This is the Gnostic rehabilitation of Eve: she is not the temptress who brings death but the instructor who brings life. The serpent is not the deceiver but the truth-teller. The tree of knowledge is not forbidden fruit but the sacrament of awakening. The archons forbid knowledge because knowledge is their enemy. The entire Old Testament narrative is re-read as a coded drama of archonic deception, with occasional breakthroughs of higher wisdom that represent intrusions from the Pleroma into the Demiurge&rsquo;s domain.</p>
+
+    <!-- DIAGRAM: The Prison of the Spark -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">The Spark Imprisoned &middot; The Threefold Composition of Man</div>
+      <svg class="diagram-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sparkGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.9"/>
+            <stop offset="40%" stop-color="#c9a84c" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#7c6fae" stop-opacity="0.1"/>
+          </radialGradient>
+          <radialGradient id="vesselGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#141a2e" stop-opacity="0.05"/>
+          </radialGradient>
+          <linearGradient id="prisonLine" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4a4080" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#7c6fae" stop-opacity="0.2"/>
+          </linearGradient>
+          <filter id="sparkGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Outer prison: Material body (Hyle) -->
+        <ellipse cx="400" cy="260" rx="280" ry="200" fill="url(#vesselGrad)" stroke="#5e6d8a" stroke-width="0.6" opacity="0.4"/>
+        <ellipse cx="400" cy="260" rx="260" ry="185" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.25" stroke-dasharray="4,8"/>
+        <text x="400" y="80" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="10" letter-spacing="0.18em" opacity="0.7">THE MATERIAL BODY &middot; HYLE</text>
+        <text x="400" y="96" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">The Prison Suit &middot; The Covering of Skin</text>
+
+        <!-- Middle layer: Psychic soul -->
+        <ellipse cx="400" cy="260" rx="180" ry="130" fill="none" stroke="#7c6fae" stroke-width="0.8" opacity="0.5"/>
+        <ellipse cx="400" cy="260" rx="165" ry="118" fill="none" stroke="#7c6fae" stroke-width="0.4" opacity="0.3" stroke-dasharray="3,6"/>
+        <text x="400" y="170" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="9" letter-spacing="0.14em" opacity="0.75">THE PSYCHIC SOUL &middot; PSYCHE</text>
+        <text x="400" y="185" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">The Demiurge&rsquo;s Breath &middot; Animation &middot; Discursive Thought</text>
+
+        <!-- Inner: Divine spark (Pneuma) -->
+        <circle cx="400" cy="260" r="55" fill="url(#sparkGrad)" filter="url(#sparkGlow)" opacity="0.85"/>
+        <circle cx="400" cy="260" r="40" fill="#e0c46e" opacity="0.4" filter="url(#sparkGlow)"/>
+        <circle cx="400" cy="260" r="22" fill="#e0c46e" opacity="0.7"/>
+        <circle cx="400" cy="260" r="10" fill="#fff" opacity="0.9"/>
+        <text x="400" y="255" text-anchor="middle" fill="#090c18" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">PNEUMA</text>
+        <text x="400" y="270" text-anchor="middle" fill="#090c18" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.7">The Divine Spark</text>
+
+        <!-- Labels -->
+        <text x="720" y="260" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.45" transform="rotate(90, 720, 260)">Perishable</text>
+        <text x="80" y="260" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.45" transform="rotate(-90, 80, 260)">May be saved</text>
+        <text x="400" y="430" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">Saved by nature &middot; Akratos &middot; Unmixed</text>
+
+        <!-- Connection lines from Pleroma -->
+        <line x1="400" y1="50" x2="400" y2="205" stroke="url(#prisonLine)" stroke-width="1" opacity="0.3" stroke-dasharray="5,4"/>
+        <polygon points="400,212 394,202 406,202" fill="#c9a84c" opacity="0.3"/>
+        <text x="400" y="40" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="8" letter-spacing="0.15em" opacity="0.5">FROM THE PLEROMA</text>
+        <text x="400" y="52" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.35">Sophia&rsquo;s Hidden Gift</text>
+      </svg>
+      <p class="diagram-caption">The human being is a composite of three elements: the material body (hyle) from the earth, the psychic soul (psyche) from the Demiurge&rsquo;s breath, and the divine spark (pneuma) from Sophia&rsquo;s hidden intervention. The spark is <em>akratos</em> &mdash; unmixed, pure, hidden.</p>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Counterfeit Soul</h3>
+    <p class="fade-in stagger-2">The Demiurge&rsquo;s breath into Adam is not the divine spark but the <em>psychic soul</em> &mdash; the principle of animation, sensation, and discursive thought. It is genuine life, but it is not eternal life. It is capable of virtue, of law, of moral improvement, but it is not capable of gnosis on its own. The psychic soul is the domain of conventional religion, of ethics, of social order. It is not evil, but it is <em>insufficient</em>. It can prepare the ground for gnosis, but it cannot produce it.</p>
+
+    <p class="fade-in stagger-3">The spiritual seed, by contrast, is <span class="greek-term" title="Unmixed; pure; the divine spark in its original, uncorrupted state">akratos</span> &mdash; unmixed, pure, hidden. It does not need to be created because it was never destroyed. It does not need to be saved because it was never lost. It needs only to be <em>recognized</em>. This is the Gnostic doctrine of predestination in its true form: not that some are chosen for salvation and others for damnation, but that some possess the capacity for gnosis and others do not. The spiritual are saved by nature, the psychic by inclination, the material by necessity. The Demiurge&rsquo;s world is fair to the psychic and the material; it is only the spiritual who find it unbearable, because they remember, however dimly, a home they have never seen.</p>
+  </div>
+</section>
+<!-- =====================================================
+     SECTION 2: THE THREEFOLD MAN
+     ===================================================== -->
+<section class="content-section fade-in" id="threefold">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Valentinian Anthropology</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Threefold Man</span></span></h2>
+    <p>Hylic &middot; Psychic &middot; Pneumatic</p>
+  </div>
+
+  <div class="content-essay fade-in">
+    <p class="content-introduction">Irenaeus records that the Valentinians taught three kinds of substance in the human being: the material (<span class="greek-term" title="Matter; the material substance that must perish">hyle</span>), which must perish; the animal (<span class="greek-term" title="Soul; the principle of animation and discursive thought">psychic</span>), which possesses free will and can incline toward either salvation or destruction; and the spiritual (<span class="greek-term" title="Spirit; the divine spark, saved by nature">pneumatic</span>), which is saved by nature. This threefold anthropology is the key to Gnostic soteriology: the material will perish, the psychic may be saved or lost depending on its inclination, and the spiritual is saved by nature. It is not a hierarchy of moral worth but a taxonomy of ontological capacity.</p>
+
+    <p class="fade-in stagger-1">The <em>Tripartite Tractate</em>, a Valentinian text from the Nag Hammadi library, elaborates this system with extraordinary sophistication. The Savior&rsquo;s appearance divides humankind into three classes: the pneumatic or spiritual recognize the Savior immediately and respond to him; the hylic or material reject him utterly; and between these two extremes, the psychic or soulful types hesitate, only gradually coming to join the Savior. The pneumatics are the Valentinians themselves; the hylics are non-Christians; the psychics are ordinary Christians. This is not sectarian arrogance but ontological realism: some beings have the capacity for gnosis, and some do not.</p>
+
+    <p class="fade-in stagger-2">Yet the <em>Tripartite Tractate</em> holds out hope even for the psychics. Unlike earlier Valentinian systems that condemned the psychic to an intermediate realm, this text insists that the psychic can be saved through their freely chosen response to the Savior. The three types are not fixed castes but dynamic possibilities. The hylic may remain bound to matter; the psychic may ascend through faith and virtue; the pneumatic returns to the Pleroma through recognition. The path is not the same for all, but the destination is open to all who can receive it.</p>
+
+    <div class="scripture-panels fade-in stagger-3">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Irenaeus &middot; The Threefold Distinction</div>
+        <p class="scripture-panel-text">&ldquo;They conceive, then, of three kinds of men, spiritual, material, and animal. The material goes, as a matter of course, into corruption. The animal, if it make choice of the better part, finds repose in the intermediate place; but if the worse, it too shall pass into destruction.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Adversus Haereses, I.7.5</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Tripartite Tractate &middot; The Savior&rsquo;s Division</div>
+        <p class="scripture-panel-text">&ldquo;The Savior&rsquo;s appearance divides humankind into three classes. The pneumatic recognize the Savior immediately and respond to him, while the hylic reject him utterly. Between these two extremes the psychic hesitate, and only gradually come to join the Savior.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (I,5)</p>
+      </div>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Hylic: Bound to Matter</h3>
+    <p class="fade-in stagger-2">The hylic is the human being who lives entirely at the level of matter &mdash; the materialist in the truest sense, not merely one who values wealth but one who cannot conceive of any reality beyond the sensory. For the hylic, the body is the self, death is the end, and the world is the only reality. The Gnostic does not condemn the hylic; the hylic is simply <em>asleep</em> &mdash; so deeply asleep that he does not know he is dreaming. The archons have no need to guard him; he guards himself, mistaking the prison for the world and the warden for God.</p>
+
+    <p class="fade-in stagger-3">Valentinus called this condition <span class="greek-term" title="Confusion; bewilderment; the state of the soul that has lost its inner compass">aporia</span> &mdash; confusion. The hylic has cut himself off from his own compassion as the source of all values. Any felt sense of the divine that does not fit within his material convictions is experienced as evil temptation. This is why the hylic is always at war with himself: his inner world is his enemy, because it contains something he cannot acknowledge. The spark is present even in the hylic, but it is so deeply buried that no light reaches it. Only a catastrophic rupture &mdash; a near-death experience, a mystical vision, an unbearable suffering &mdash; can crack the shell.</p>
+
+    <h3 class="fade-in stagger-1">The Psychic: The Soul in Tension</h3>
+    <p class="fade-in stagger-2">The psychic is in contact with his compassion but does not act on it. He is the rationalist, the ethicist, the believer who follows the law but has not encountered the living truth behind the law. The psychic thinks he can liberate himself from suffering by taming his soul until it is silent. Like the hylic, the psychic has made his inner world into an enemy &mdash; but whereas the hylic denies it, the psychic manages it. He is the good citizen, the faithful churchgoer, the moral philosopher. He is not evil, but he is <em>stuck</em>.</p>
+
+    <p class="fade-in stagger-3">The psychic occupies the intermediate realm &mdash; the <span class="greek-term" title="The middle; the realm between the Pleroma and the material world">mesotes</span> &mdash; and his fate depends on his response to the Savior. If he chooses the better part, he finds repose in the intermediate place, a kind of blessed half-sleep. If he chooses the worse, he passes into destruction along with the hylic. The psychic is the most tragic figure in the Gnostic drama because he is so close to awakening and yet so capable of turning away. He is the one who hears the call but does not answer, who sees the light but closes his eyes.</p>
+
+    <h3 class="fade-in stagger-1">The Pneumatic: The Spiritual by Nature</h3>
+    <p class="fade-in stagger-2">The pneumatic is the human being who has inner freedom and is motivated by love. The pneumatics experience love as the source of all compassion. Love is fundamentally different from the solidified faith of the hylic and the peace of mind of the psychic. The core of the Gnostic way of life is that love can only blossom in total openness to all that is. Only a person who has made peace with himself, who has stopped fighting himself, can obtain this level of openness. In practice, this means that you disarm yourself, take off your armor, and that you are prepared to be touched, even by pain and sorrow.</p>
+
+    <p class="fade-in stagger-3">The pneumatic is not saved by effort but by <em>recognition</em>. The spark does not need to be earned; it needs only to be remembered. This is the deepest teaching of the Gnostic texts: what you fundamentally are is not the trapped soul seeking the Father, but the Father himself, temporarily obscured by his own emanation. The &ldquo;I&rdquo; that seeks the Unknown is itself an Aeon, a ray of the Pleroma that has forgotten its origin. When the forgetting ceases, what remains is not a new attainment but the original plenitude.</p>
+
+    <!-- DIAGRAM: The Threefold Man -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">The Threefold Man &middot; Valentinian Anthropology</div>
+      <svg class="diagram-svg" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hylicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#3a4050" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="psychicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#7c6fae" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#4a4080" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="pneumaticGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#a08030" stop-opacity="0.05"/>
+          </linearGradient>
+          <filter id="softGlow3" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Three columns -->
+        <!-- HYlic -->
+        <rect x="60" y="80" width="200" height="340" rx="12" fill="url(#hylicGrad)" stroke="#5e6d8a" stroke-width="0.6" opacity="0.5"/>
+        <text x="160" y="115" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="11" letter-spacing="0.18em" opacity="0.85">HYLIC</text>
+        <text x="160" y="135" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">Of Matter</text>
+
+        <text x="160" y="180" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.7">Body-bound</text>
+        <text x="160" y="200" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.7">Sensory-only</text>
+        <text x="160" y="220" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.7">No spark awake</text>
+        <text x="160" y="240" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.7">Aporia (confusion)</text>
+
+        <text x="160" y="310" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.7">FATE</text>
+        <text x="160" y="330" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8.5" font-style="italic" opacity="0.6">Corruption</text>
+        <text x="160" y="350" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8.5" font-style="italic" opacity="0.6">Returns to hyle</text>
+
+        <!-- PSYCHIC -->
+        <rect x="300" y="80" width="200" height="340" rx="12" fill="url(#psychicGrad)" stroke="#7c6fae" stroke-width="0.8" opacity="0.6"/>
+        <text x="400" y="115" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="11" letter-spacing="0.18em" opacity="0.9">PSYCHIC</text>
+        <text x="400" y="135" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.65">Of Soul</text>
+
+        <text x="400" y="180" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.75">Soul-animated</text>
+        <text x="400" y="200" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.75">Moral capacity</text>
+        <text x="400" y="220" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.75">Free will</text>
+        <text x="400" y="240" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.75">Faith &amp; ethics</text>
+
+        <text x="400" y="310" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.75">FATE</text>
+        <text x="400" y="330" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8.5" font-style="italic" opacity="0.6">Intermediate realm</text>
+        <text x="400" y="350" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8.5" font-style="italic" opacity="0.6">Hesitates &amp; chooses</text>
+
+        <!-- PNEUMATIC -->
+        <rect x="540" y="80" width="200" height="340" rx="12" fill="url(#pneumaticGrad)" stroke="#c9a84c" stroke-width="1" opacity="0.7"/>
+        <text x="640" y="115" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="0.18em" opacity="0.95">PNEUMATIC</text>
+        <text x="640" y="135" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">Of Spirit</text>
+
+        <text x="640" y="180" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.8">Spark-awakened</text>
+        <text x="640" y="200" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.8">Gnosis-capable</text>
+        <text x="640" y="220" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.8">Recognition</text>
+        <text x="640" y="240" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8.5" opacity="0.8">Love as source</text>
+
+        <text x="640" y="310" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.85">FATE</text>
+        <text x="640" y="330" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8.5" font-style="italic" opacity="0.65">Return to Pleroma</text>
+        <text x="640" y="350" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8.5" font-style="italic" opacity="0.65">Saved by nature</text>
+
+        <!-- Arrows showing movement -->
+        <line x1="260" y1="260" x2="300" y2="260" stroke="#5e6d8a" stroke-width="0.5" opacity="0.3" stroke-dasharray="4,3"/>
+        <polygon points="295,256 303,260 295,264" fill="#5e6d8a" opacity="0.3"/>
+
+        <line x1="500" y1="260" x2="540" y2="260" stroke="#7c6fae" stroke-width="0.6" opacity="0.4" stroke-dasharray="4,3"/>
+        <polygon points="535,256 543,260 535,264" fill="#7c6fae" opacity="0.4"/>
+
+        <!-- Bottom annotation -->
+        <text x="400" y="460" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The spiritual are saved by nature, the psychic by inclination, the material by necessity.&rdquo;</text>
+      </svg>
+      <p class="diagram-caption">The Valentinian threefold anthropology. The hylic is bound to matter and perishes; the psychic hesitates in the intermediate realm; the pneumatic, recognizing the spark within, returns to the Pleroma.</p>
+    </div>
+
+    <div class="tension-box fade-in stagger-1">
+      <p>The deepest level of the Gnostic teaching is that what you fundamentally are is not the trapped soul seeking the Father, but the Father himself, temporarily obscured by his own emanation. The &ldquo;I&rdquo; that seeks the Unknown is itself an Aeon, a ray of the Pleroma that has forgotten its origin. When the forgetting ceases, what remains is not a new attainment but the original plenitude.</p>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     PULLQUOTE: THE ALL RAN ABOUT
+     ===================================================== -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">&ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought. And the All was distressed, not knowing him. And the All was searching for him.&rdquo;</p>
+    <p class="pullquote-attr">&mdash; Gospel of Truth, Nag Hammadi Library (I,3)</p>
+  </div>
+</div>
+
+<!-- =====================================================
+     SECTION 3: THE AWAKENING
+     ===================================================== -->
+<section class="content-section fade-in" id="awakening">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Path of Return</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Awakening</span></span></h2>
+    <p>Gnosis &middot; Recognition &middot; Remembrance</p>
+  </div>
+
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The Gnostic does not reach the Father. The Gnostic <em>remembers</em> the Father &mdash; not as an object of knowledge, but as the ground of knowing itself. This is the meaning of <span class="greek-term" title="Knowledge; direct experiential recognition of one&rsquo;s true nature and origin">gnosis</span>: not learning but <em>recognition</em>, not accumulation but <em>remembrance</em>. The spark within the human being is not a stranger to the Pleroma; it is a fragment of the Pleroma, temporarily dreaming it is separate. The task of gnosis is to wake the dreamer.</p>
+
+    <p class="fade-in stagger-1">The <em>Gospel of Truth</em> describes this awakening with devastating beauty: &ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought. And the All was distressed, not knowing him. And the All was searching for him.&rdquo; The search is the final obscurity. The finding is the recognition that there was never anything lost. The All was inside of him all along.</p>
+
+    <p class="fade-in stagger-2">This is the Gnostic answer to the problem of evil: the creator is not omnipotent, not omniscient, and not benevolent in the absolute sense. He is a limited being doing his best with limited materials and limited understanding. His world is not the best possible world but the best he could manage &mdash; a workshop of necessity, not a garden of delight. The evil in the world is not the Father&rsquo;s will but the Demiurge&rsquo;s ignorance, compounded by the archons&rsquo; malice and humanity&rsquo;s forgetfulness. The task is not to explain evil but to <em>transcend</em> it &mdash; not by denying the world but by seeing through it.</p>
+
+    <div class="scripture-panels fade-in stagger-3">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Gospel of Truth &middot; The Search</div>
+        <p class="scripture-panel-text">&ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (I,3)</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Gospel of Philip &middot; Ignorance and Freedom</div>
+        <p class="scripture-panel-text">&ldquo;Ignorance is a slave. Knowledge is freedom. If we know the truth, we shall find the fruits of the truth within us. If we are joined to it, it will bring our fulfillment.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,3)</p>
+      </div>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Savior as Awakener</h3>
+    <p class="fade-in stagger-2">In the Gnostic system, the Savior is not primarily a sacrifice for sin but a <em>teacher of gnosis</em>. He comes not to die for humanity but to <em>remind</em> humanity of what it has forgotten. The <em>Pistis Sophia</em> &mdash; one of the most elaborate Gnostic texts, preserved not in the Nag Hammadi library but in the Askew Codex &mdash; presents Jesus as the revealer of mysteries, the one who teaches the disciples the passwords and signs necessary to ascend through the archonic heavens. After his resurrection, he spends eleven years instructing them in the cosmic geography, the names of the archons, and the hymns of praise that will open the gates of the Pleroma.</p>
+
+    <p class="fade-in stagger-3">The <em>Pistis Sophia</em> is structured as a series of questions and answers between the risen Christ and his disciples, particularly Mary Magdalene, who emerges as the foremost interpreter of the mysteries. The text describes Sophia&rsquo;s fall and restoration in elaborate detail: she descends through the thirteen aeons, is persecuted by the archons, cries out to the Light, and is eventually redeemed by the Savior. Her story is the archetype of every soul&rsquo;s journey: descent, suffering, cry, and return. The Savior is the one who hears the cry and provides the map home.</p>
+
+    <h3 class="fade-in stagger-1">The Passwords of Ascent</h3>
+    <p class="fade-in stagger-2">A distinctive feature of Gnostic soteriology is the doctrine of <span class="greek-term" title="The names, passwords, and signs required to pass the archonic guardians">synthema</span> &mdash; the passwords, signs, and hymns that the ascending soul must present to each archon at each planetary gate. The archons are not merely obstacles; they are <em>gatekeepers</em>, and they demand recognition. The soul that does not know the proper names cannot pass. This is not magical superstition but a profound psychological insight: to transcend a level of consciousness, one must <em>understand</em> it. The password is the recognition of the archon&rsquo;s true nature &mdash; not a god but a limited being, not a warden but a fellow prisoner.</p>
+
+    <p class="fade-in stagger-3">The <em>First Apocalypse of James</em> and the <em>Second Book of Jeu</em> preserve elaborate lists of these passwords, each tailored to the specific archon of each heaven. The soul must declare: &ldquo;I am not of your world. I am from the pre-existent Father. I am a stranger here.&rdquo; This declaration is not a lie but a truth that the soul has forgotten and must remember. The archons cannot detain one who knows what they are. Knowledge is the key that turns the lock.</p>
+
+    <blockquote class="fade-in stagger-1">
+      <p>&ldquo;The powers do not see those who are clothed in the perfect light, and consequently are not able to detain them. One will clothe himself in this light sacramentally in the union.&rdquo;</p>
+      <cite>&mdash; Gospel of Philip, Nag Hammadi Library (II,3)</cite>
+    </blockquote>
+
+    <h3 class="fade-in stagger-1">The Three Sacraments</h3>
+    <p class="fade-in stagger-2">The <em>Gospel of Philip</em> describes a hierarchy of sacraments that correspond to the three levels of the Jerusalem temple: baptism is the Holy building, redemption is the Holy of the Holy, and the bridal chamber is the Holy of Holies. Baptism includes the resurrection and the redemption; the redemption takes place in the bridal chamber. But the bridal chamber is in that which is superior to all. The veil at first concealed how God controlled the creation, but when the veil is rent and the things inside are revealed, this house will be left desolate.</p>
+
+    <p class="fade-in stagger-3">The <em>chrism</em> (anointing) is superior to baptism, for it is from the word &ldquo;Chrism&rdquo; that we have been called Christians, certainly not because of the word &ldquo;baptism.&rdquo; The Father anointed the Son, and the Son anointed the apostles, and the apostles anointed us. He who has been anointed possesses everything: the resurrection, the light, the cross, the Holy Spirit. The Father gave him this in the bridal chamber; he merely accepted the gift. The Father was in the Son and the Son in the Father. This is the Kingdom of Heaven.</p>
+
+    <div class="resonance-callout fade-in stagger-1">
+      <p>The Gnostic path is not ascent but awakening &mdash; the shaking of a sleeper who discovers he has been dreaming in his own bed. The prison is not made of stone but of attention. To forget the Pleroma is to make the cosmos absolute. To remember the Pleroma is to see the cosmos as a shadow, a sign, a pointer toward what it is not.</p>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     SECTION 4: THE ASCENT THROUGH THE HEAVENS
+     ===================================================== -->
+<section class="content-section fade-in" id="ascent">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">The Journey Home</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Ascent Through the Heavens</span></span></h2>
+    <p>The Archonic Gates &middot; The Passwords &middot; The Return to the Pleroma</p>
+  </div>
+
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The Gnostic cosmos is not a flat plane but a vertical hierarchy &mdash; a series of nested spheres through which the ascending soul must pass on its journey home. Each sphere is governed by an archon, each archon demands a password, and each password is a recognition of the archon&rsquo;s true nature. The ascent is not a physical journey but a <em>progressive unmasking</em> &mdash; a stripping away of false identities until the true self stands revealed. The soul does not rise to the Father; it sinks through the Aeons, past the Pleroma, into the Silence where the Father dwells.</p>
+
+    <p class="fade-in stagger-1">The <em>Hypostasis of the Archons</em> describes the seven planetary heavens as a prison of ascending spheres, each one more deceptive than the last. The archons who govern these heavens are not evil in the moral sense; they are <em>ignorant</em> &mdash; beings who do not know that a higher realm exists above them. Their power is real but limited, their authority genuine but provisional. The soul that recognizes their limits has already transcended them. The soul that fears them remains bound.</p>
+
+    <p class="fade-in stagger-2">Irenaeus records that the Valentinians distinguished between the Demiurge and the <span class="greek-term" title="Ruler of the world; the spirit of wickedness who dwells in the material realm">Cosmocrator</span> &mdash; the ruler of the world. The Demiurge is animal in nature, ignorant but not malicious. Cosmocrator is a spirit of wickedness, derived from grief, who knows what is above himself but chooses to oppose it. He is the devil, the demons, the angels of wickedness &mdash; beings who have knowledge of the Pleroma but use it for destruction. The Demiurge dwells in the hebdomad (the seventh heaven); Cosmocrator dwells in our world. The mother (Achamoth) dwells in the intermediate abode above the heavens.</p>
+
+    <div class="scripture-panels fade-in stagger-3">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Hypostasis of the Archons &middot; The Seven Heavens</div>
+        <p class="scripture-panel-text">&ldquo;He placed seven kings over the seven heavens, and five over the depth of the abyss. The seven archons preside over the planetary spheres, forming a prison of ascending heavens.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,4)</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Irenaeus &middot; The Cosmocrator</div>
+        <p class="scripture-panel-text">&ldquo;The Demiurge is animal in nature &mdash; ignorant but not malicious. Cosmocrator is a spirit of wickedness, derived from grief, who knows what is above himself but chooses to oppose it.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Adversus Haereses, I.5.4</p>
+      </div>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Repentance of Sabaoth</h3>
+    <p class="fade-in stagger-2">Even the archonic hierarchy is not monolithic. In the <em>Hypostasis of the Archons</em>, a voice from above rebukes Yaldabaoth after his boast of sole divinity: &ldquo;You are wrong, Samael &mdash; god of the blind!&rdquo; This is the first intrusion of the Pleroma into the Demiurge&rsquo;s domain, the first crack in the prison wall. The voice does not destroy Yaldabaoth; it <em>informs</em> him. It tells him what he is and what he is not. The Demiurge is not punished with annihilation but with knowledge &mdash; the very thing he lacks and the very thing he fears.</p>
+
+    <p class="fade-in stagger-3">Among the seven sons of Yaldabaoth, one &mdash; Sabaoth &mdash; witnesses his father&rsquo;s downfall and repents. He condemns Yaldabaoth and the material realm, praises the higher divine order, and is elevated by divine forces to rule the seventh heaven. He receives a chariot of cherubim and seraphim, is enthroned as the &ldquo;God of the Forces,&rdquo; and becomes a protector of humanity &mdash; preserving Noah from the flood and issuing commandments that, though limited, maintain a measure of order amid chaos. Sabaoth is the bridge between the Demiurge&rsquo;s realm and the Pleroma &mdash; not a savior in the full sense, but a reformist warden, a jailer who has glimpsed the outside and now works, however imperfectly, to ease the conditions of the prisoners.</p>
+
+    <h3 class="fade-in stagger-1">The Three-Level Cosmos</h3>
+    <p class="fade-in stagger-2">The Gnostic map of the cosmos is a three-level structure: the Pleroma above, the intermediate realm in the middle, and the material world below. The soul must ascend through all three, passing the Cosmocrator in the world, the Demiurge in the hebdomad, and Achamoth (the lower Sophia) in the intermediate realm, before it can reach the Pleroma itself. Each level has its own dangers, its own deceptions, and its own partial truths.</p>
+
+    <p class="fade-in stagger-3">The Gnostic path is not a single leap but a progressive unmasking. At each gate, the soul must declare its true identity: &ldquo;I am not of your world. I am from the pre-existent Father.&rdquo; This is not arrogance but recognition. The soul that knows what it is cannot be detained by what it is not. The archons have power only over those who accept their authority. The moment the soul recognizes the archon as a limited being &mdash; a product of deficiency, a forger of divine realities &mdash; the archon&rsquo;s power dissolves. The prison is not made of stone but of <em>belief</em>.</p>
+
+    <!-- DIAGRAM: The Ascent -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">The Ascent &middot; From the Material World to the Pleroma</div>
+      <svg class="diagram-svg" viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="pleromaGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#4a4080" stop-opacity="0.03"/>
+          </radialGradient>
+          <radialGradient id="interGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#a090d0" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#7c6fae" stop-opacity="0.03"/>
+          </radialGradient>
+          <radialGradient id="worldGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#141a2e" stop-opacity="0.03"/>
+          </radialGradient>
+          <linearGradient id="ascentLine" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.3"/>
+            <stop offset="50%" stop-color="#7c6fae" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.7"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Level 1: Material World -->
+        <ellipse cx="400" cy="560" rx="300" ry="55" fill="url(#worldGrad)" stroke="#5e6d8a" stroke-width="0.5" opacity="0.5"/>
+        <text x="400" y="550" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.8">THE MATERIAL WORLD</text>
+        <text x="400" y="568" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">Cosmocrator &middot; The Prison of Forgetfulness</text>
+
+        <!-- Arrow up -->
+        <line x1="400" y1="505" x2="400" y2="475" stroke="url(#ascentLine)" stroke-width="1" opacity="0.5" stroke-dasharray="5,4"/>
+        <polygon points="400,467 394,477 406,477" fill="#7c6fae" opacity="0.5"/>
+
+        <!-- Level 2: Seven Heavens -->
+        <ellipse cx="400" cy="420" rx="260" ry="50" fill="url(#interGrad)" stroke="#7c6fae" stroke-width="0.6" opacity="0.55"/>
+        <text x="400" y="410" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em" opacity="0.85">THE SEVEN HEAVENS</text>
+        <text x="400" y="428" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">The Demiurge &middot; Sabaoth &middot; The Planetary Archons</text>
+
+        <!-- Individual archons -->
+        <circle cx="160" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="160" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">ATHOTH</text>
+        <circle cx="220" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="220" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">ELOAIOU</text>
+        <circle cx="280" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="280" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">ASTAPHAIOS</text>
+        <circle cx="340" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="340" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">YAO</text>
+        <circle cx="400" cy="420" r="20" fill="none" stroke="#7c6fae" stroke-width="0.6" opacity="0.5"/>
+        <text x="400" y="424" text-anchor="middle" fill="#7c6fae" font-family="Cinzel" font-size="7" opacity="0.75">SABAOTH</text>
+        <circle cx="460" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="460" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">ADONIN</text>
+        <circle cx="520" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="520" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">SABBATEON</text>
+        <circle cx="580" cy="420" r="18" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.4"/>
+        <text x="580" y="424" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel" font-size="6" opacity="0.6">YALDABAOTH</text>
+
+        <!-- Arrow up -->
+        <line x1="400" y1="370" x2="400" y2="340" stroke="url(#ascentLine)" stroke-width="1" opacity="0.5" stroke-dasharray="5,4"/>
+        <polygon points="400,332 394,342 406,342" fill="#a090d0" opacity="0.5"/>
+
+        <!-- Level 3: Intermediate Realm -->
+        <ellipse cx="400" cy="285" rx="220" ry="45" fill="url(#interGrad)" stroke="#a090d0" stroke-width="0.7" opacity="0.6"/>
+        <text x="400" y="276" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.85">THE INTERMEDIATE REALM</text>
+        <text x="400" y="294" text-anchor="middle" fill="#a090d0" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">Achamoth &middot; The Lower Sophia &middot; The Womb of Souls</text>
+
+        <!-- Arrow up -->
+        <line x1="400" y1="240" x2="400" y2="210" stroke="url(#ascentLine)" stroke-width="1" opacity="0.6" stroke-dasharray="5,4"/>
+        <polygon points="400,202 394,212 406,212" fill="#c9a84c" opacity="0.6"/>
+
+        <!-- Level 4: The Pleroma -->
+        <ellipse cx="400" cy="155" rx="250" ry="48" fill="url(#pleromaGrad)" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/>
+        <text x="400" y="146" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="0.16em" opacity="0.9">THE PLEROMA</text>
+        <text x="400" y="164" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Fullness &middot; The Aeons &middot; The Return</text>
+
+        <!-- Level 5: The Unknown Father -->
+        <circle cx="400" cy="65" r="45" fill="url(#pleromaGrad)" stroke="#e0c46e" stroke-width="0.8" opacity="0.8"/>
+        <circle cx="400" cy="65" r="38" fill="none" stroke="#e0c46e" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,5"/>
+        <text x="400" y="61" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.9">THE FATHER</text>
+        <text x="400" y="76" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">Unknown &middot; Unnameable</text>
+
+        <!-- Side annotation -->
+        <text x="730" y="300" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="8" letter-spacing="0.15em" opacity="0.4" transform="rotate(-16, 730, 300)">THE PATH OF</text>
+        <text x="730" y="315" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="8" letter-spacing="0.15em" opacity="0.4" transform="rotate(-16, 730, 315)">GNOSIS</text>
+
+        <!-- Bottom -->
+        <text x="400" y="620" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;I am not of your world. I am from the pre-existent Father.&rdquo;</text>
+      </svg>
+      <p class="diagram-caption">The soul ascends from the material world through the seven planetary heavens, past the intermediate realm of Achamoth, and into the Pleroma. At each gate, the soul must declare its true identity and recognize the archon&rsquo;s limitation.</p>
+    </div>
+
+    <h3 class="fade-in stagger-1">The 365 Angels and the Calendar</h3>
+    <p class="fade-in stagger-2">The <em>Apocryphon of John</em> specifies that the seven powers created six angels each, totaling 365 angels &mdash; one for each day of the solar year. This is the Gnostic explanation for the calendar: time itself is an archonic construct, a grid of regulation imposed upon the soul to keep it bound to the cycles of birth, death, and rebirth. The 365 days are not natural rhythms but prison bars &mdash; a temporal cage forged by beings who themselves are bound by time.</p>
+
+    <p class="fade-in stagger-3">The names given to these angels by their originator (Yaldabaoth) contain power, but the names given them according to the glory of heaven mean destruction and powerlessness. This is the Gnostic teaching on the power of names: the true names of things are their Pleromatic names, their names in the Fullness. The names given by the archons are counterfeit, binding, and ultimately empty. To know the true name of a thing is to know its origin and its destiny. To use the archonic name is to remain in the prison. The Gnostic who awakens learns the true names &mdash; not through study but through <em>recognition</em>.</p>
+
+    <h3 class="fade-in stagger-1">The Elements from the Passions</h3>
+    <p class="fade-in stagger-2">The Valentinian system, as reported by Irenaeus, traces the four elements to three passions: fear, grief, and perplexity. The earth arose from Sophia&rsquo;s state of stupor; the water from the agitation caused by her fear; the air from the consolidation of her grief; and fire, producing death and corruption, was inherent in all these elements, even as ignorance lay concealed in the three passions. This is not poetic metaphor but cosmological doctrine: the material elements are congealed emotions, the crystallized residue of a divine being&rsquo;s distress.</p>
+
+    <p class="fade-in stagger-3">To work with matter is to work with frozen grief, to build with petrified fear. The Gnostic does not hate the world. The Gnostic <em>misrecognizes</em> it &mdash; sees it as the only reality, when it is only the most obvious one. The prison is not made of stone but of <em>attention</em>. To forget the Pleroma is to make the cosmos absolute. To remember the Pleroma is to see the cosmos as a shadow, a sign, a pointer toward what it is not. The awakening is not a destruction of the world but a <em>recontextualization</em> of it &mdash; the recognition that the shadow implies the light, the copy implies the original, the prison implies the freedom beyond it.</p>
+
+    <div class="resonance-callout fade-in stagger-1">
+      <p>The Gnostic path is not war against the Demiurge but recognition of his limits &mdash; and, in that recognition, the dissolution of his power over the soul. The spark does not fight the darkness; it simply <em>is</em> light. The awakening is not an achievement but a <em>remembering</em> &mdash; the shaking of a sleeper who discovers he has been dreaming in his own bed.</p>
+    </div>
+  </div>
+</section>
+<!-- =====================================================
+     SECTION 5: COMPARATIVE THRESHOLDS
+     ===================================================== -->
+<section class="content-section fade-in" id="comparative">
+  <div class="section-header">
+    <div class="section-separator"></div>
+    <p class="section-eyemark">Comparative Thresholds</p>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Spark Across Traditions</span></span></h2>
+    <p>Four Names for the Imprisoned Light</p>
+  </div>
+
+  <div class="content-essay fade-in">
+    <p class="content-introduction">The divine spark is not a Gnostic peculiarity. It is the Gnostic name for a reality recognized across the non-dual traditions: the <span class="sanskrit-term" title="The individual self; the divine spark within each being">Atman</span> in Advaita Vedanta, the <span class="sanskrit-term" title="Buddha-nature; the luminous mind inherent in all beings">Tathagatagarbha</span> in Mahayana Buddhism, the <span class="sanskrit-term" title="Divine spark; the inner light in Kabbalah">Nitzotz</span> in Kabbalah, the <span class="sanskrit-term" title="The pearl; the divine self hidden in the world">Margarita</span> in the <em>Hymn of the Pearl</em>. Each tradition approaches the same imprisoned light with its own metaphors, its own path of liberation, its own language of return. The Gnostic contribution is the radical insistence on the <em>foreignness</em> of the spark &mdash; its origin in a realm utterly other than the world it inhabits.</p>
+
+    <p class="fade-in stagger-1">Where the Advaitin discovers the Atman as identical to Brahman through self-inquiry, the Gnostic discovers the spark as a fragment of the Pleroma through the Savior&rsquo;s teaching. Where the Buddhist recognizes the Buddha-nature as the true nature of all phenomena, the Gnostic recognizes the spark as the true nature of the self, obscured by the psychosomatic composite. Where the Kabbalist repairs the broken vessels through mitzvot to liberate the trapped sparks, the Gnostic ascends through the heavens through gnosis to return the spark to its source. The methods differ because the diagnoses differ, but the essential recognition is the same: what you are is not what you appear to be.</p>
+
+    <p class="fade-in stagger-2">The <em>Hymn of the Pearl</em> &mdash; a Gnostic text preserved in the <em>Acts of Thomas</em> &mdash; tells the story of a prince sent from the East to Egypt to retrieve a pearl. He forgets his mission, forgets his royal identity, and lives as an Egyptian until a letter from his father reminds him of who he is. He awakens, retrieves the pearl, and returns home. This is the Gnostic narrative in miniature: the soul as prince, the world as Egypt, the pearl as the spark, the letter as the Savior&rsquo;s teaching, and the return as the ascent to the Pleroma. The forgetting is the tragedy; the remembering is the comedy.</p>
+
+    <div class="scripture-panels fade-in stagger-3">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Hymn of the Pearl &middot; The Forgotten Prince</div>
+        <p class="scripture-panel-text">&ldquo;I remembered that I was a son of kings, and my free soul longed for its own kind. I remembered the pearl for which I had been sent to Egypt, and I began to charm the terrible serpent.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Acts of Thomas, 108-113</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Chandogya Upanishad &middot; Tat Tvam Asi</div>
+        <p class="scripture-panel-text">&ldquo;That thou art. This soul of mine within the heart is smaller than a grain of rice, or a barley-corn, or a mustard-seed, or a grain of millet, or the kernel of a grain of millet. This soul of mine within the heart is greater than the earth, greater than the atmosphere, greater than the sky, greater than these worlds.&rdquo;</p>
+        <p class="scripture-panel-ref">&mdash; Chandogya Upanishad 3.14.3-4</p>
+      </div>
+    </div>
+
+    <!-- Comparative Table -->
+    <div class="diagram-container fade-in stagger-1">
+      <div class="diagram-title">Comparative Table &middot; The Imprisoned Light</div>
+      <div class="comparative-table-wrapper">
+        <table class="comparative-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Advaita Vedanta</th>
+              <th>Mahayana Buddhism</th>
+              <th>Kabbalah</th>
+              <th>Gnosticism</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>The spark</td><td>Atman (the Self)</td><td>Tathagatagarbha (Buddha-nature)</td><td>Nitzotz (divine spark)</td><td>Pneuma (the divine spark)</td></tr>
+            <tr><td>The prison</td><td>Maya (illusion)</td><td>Samsara (cyclic existence)</td><td>Galut (exile)</td><td>Hyle (matter)</td></tr>
+            <tr><td>The warden</td><td>Avidya (ignorance)</td><td>Klesha (afflictive emotions)</td><td>Klipot (husks)</td><td>Archons (planetary rulers)</td></tr>
+            <tr><td>The path</td><td>Atma-vichara (self-inquiry)</td><td>Shikantaza (just sitting)</td><td>Tikkun (repair through mitzvot)</td><td>Gnosis (recognition, remembrance)</td></tr>
+            <tr><td>The return</td><td>Moksha (liberation)</td><td>Nirvana (cessation)</td><td>Aliyah (ascent)</td><td>Return to the Pleroma</td></tr>
+            <tr><td>Final state</td><td>Sahaja Samadhi (natural state)</td><td>Dharmakaya (truth body)</td><td>Restoration of the vessels</td><td>The Bridal Chamber</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="diagram-caption">Across the non-dual traditions, the same structure appears: a divine light imprisoned in matter, a path of recognition or repair, and a return to the original fullness. The Gnostic emphasis on the <em>foreignness</em> of the spark &mdash; its origin in a realm beyond the cosmos &mdash; is its distinctive contribution.</p>
+    </div>
+
+    <h3 class="fade-in stagger-1">The Gnostic Distinctiveness</h3>
+    <p class="fade-in stagger-2">What distinguishes the Gnostic spark from the Atman or the Buddha-nature is its <em>exilic</em> character. The Atman is not foreign to the world; it is the ground of the world, the consciousness that shines through all forms. The Buddha-nature is not trapped in matter; it is the true nature of matter itself, once the veil of afflictive emotions is lifted. But the Gnostic spark is <em>not at home</em> in the world. It is a stranger, an alien, a prisoner of war. Its natural habitat is the Pleroma, and the world is a foreign country where it does not speak the language.</p>
+
+    <p class="fade-in stagger-3">This is why the Gnostic experience is fundamentally one of <em>homesickness</em> &mdash; a longing for a home that cannot be named, a memory of a place never visited, a nostalgia for a fullness that has never been lost because it has never been possessed. The pneumatic is saved by nature because the pneumatic <em>is</em> the Pleroma in exile. The awakening is not the acquisition of something new but the recognition of something that has always been the case. The spark does not become divine; it remembers that it never ceased to be.</p>
+
+    <div class="tension-box fade-in stagger-1">
+      <p>The deepest paradox of the Gnostic teaching is that the spark&rsquo;s imprisonment is itself a form of divine play &mdash; a risky self-expression of the Pleroma that allows a fragment of itself to forget its origin in order to remember it more fully. The fall is not a punishment but a pedagogical device. The prison is not a mistake but a stage. The awakening is not an escape but a <em>graduation</em> &mdash; the soul&rsquo;s return to the fullness from which it never truly departed, now enriched by the experience of limitation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TRANSITION PULLQUOTE TO PAGE 4
+     ===================================================== -->
+<div class="pullquote-section fade-in">
+  <div class="pullquote-glow"></div>
+  <div class="pullquote fade-in">
+    <p class="pullquote-text">From the awakening of the spark, we now turn to the fulfillment &mdash; the Bridal Chamber, the sacred marriage, and the final restoration of the syzygy in the Pleroma.</p>
+    <p class="pullquote-attr"><a href="gnosticism-bridal.html" class="continue-link">&rarr; Continue to The Bridal Chamber &middot; The Sacred Marriage</a></p>
+  </div>
+</div>
+
+<!-- =====================================================
+     CHAPTER NAVIGATION
+     ===================================================== -->
+<div class="chapter-nav">
+  <a href="../index.html" class="chapter-link">&#8962; Home</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-unknown-father.html" class="chapter-link">I &middot; The Unknown Father</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-spark.html" class="chapter-link active">III &middot; The Divine Spark</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-bridal.html" class="chapter-link">IV &middot; The Bridal Chamber</a>
+</div>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non&ndash;Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">&#8962; Vedantic Mappings</a>
+    <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
+    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+    <a href="../taoism/taoism-threshold.html">Taoism</a>
+    <a href="gnosticism-spark.html">Gnosticism &middot; The Divine Spark</a>
+  </div>
+  <div class="footer-credit">Researched &amp; Composed</div>
+  <div class="footer-copyright">&copy; 2026 John M Q. All rights reserved.</div>
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+<script>
+(function() {
+  'use strict';
+
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+      }
+    });
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch(e) {}
+  }
+
+  function initTheme() {
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') {
+        setTheme(saved);
+        return;
+      }
+    } catch(e) {}
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  initTheme();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+  }
+
+  const backToTop = document.getElementById('backToTop');
+  function updateBackToTop() {
+    if (backToTop) {
+      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+    }
+  }
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in, .section-separator').forEach(el => fadeObserver.observe(el));
+
+  const textObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        textObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navItems = document.querySelectorAll('.nav-item[data-section]');
+
+  function updateActiveNav() {
+    let current = '';
+    const scrollPos = window.scrollY + window.innerHeight * 0.35;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navItems.forEach(item => {
+      item.classList.toggle('active', item.getAttribute('data-section') === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (navMenu) navMenu.classList.remove('open');
+      }
+    });
+  });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  const edgeThreshold = 40;
+
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    if (Math.abs(diffY) > Math.abs(diffX) * 1.5) return;
+
+    if (touchStartX > window.innerWidth - edgeThreshold && diffX < -55 && navMenu) {
+      navMenu.classList.add('open');
+    }
+
+    if (touchStartX < edgeThreshold && diffX > 55 && navMenu) {
+      navMenu.classList.remove('open');
+    }
+
+    if (diffX < -55 && navMenu && navMenu.classList.contains('open')) {
+      if (touchStartX < 280) {
+        navMenu.classList.remove('open');
+      }
+    }
+  }, { passive: true });
+
+})();
+</script>
+</body>
+</html>
