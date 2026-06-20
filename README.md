@@ -12,11 +12,11 @@ vedantic-mappings/
 ├── README.md                       # This file
 ├── .gitignore                      # Git configuration
 ├── advaita-vedanta/                # Advaita Vedanta series
-│   ├── gaudapada.html              # Gaudapada (lineage predecessor)
-│   ├── adi-shankara.html           # Adi Shankara (lineage predecessor)
-│   ├── ramana-maharshi.html        # Ramana Maharshi cartography
-│   ├── nisargadatta-maharaj.html   # Nisargadatta Maharaj cartography
-│   └── adyashanti-comparison.html  # Adyashanti vs. Classical Non-Duality comparative analysis
+│   ├── advaita-gaudapada.html              # Gaudapada (lineage predecessor)
+│   ├── advaita-adi-shankara.html           # Adi Shankara (lineage predecessor)
+│   ├── advaita-ramana-maharshi.html        # Ramana Maharshi cartography
+│   ├── advaita-nisargadatta-maharaj.html   # Nisargadatta Maharaj cartography
+│   └── advaita-adyashanti-comparison.html  # Adyashanti vs. Classical Non-Duality comparative analysis
 ├── messiah/                         # Messiah series
 │   ├── messiah-threshold.html       # Hermeneutic Key (primary entry)
 │   ├── messiah-parables.html        # Three Bridges
@@ -31,7 +31,10 @@ vedantic-mappings/
 │   ├── kabbalah-sefer-yetzirah.html # The Book of Creation
 │   ├── kabbalah-zohar.html          # The Book of Splendor
 │   ├── kabbalah-luria.html          # Isaac Luria
-│   └── kabbalah-baal-shem-tov.html  # The Baal Shem Tov
+│   ├── kabbalah-baal-shem-tov.html  # The Baal Shem Tov
+│   └── kabbalah-mystical-union.html # Zivug — The Mystical Union
+├── gnosticism/                      # Gnosticism series
+│   └── gnosticism-unknown-father.html # The Unknown Father
 ├── archive/                         # Archived content
 │   ├── vedanta-messiah.html         # Legacy monolithic 9-aspect version
 │   └── TODO-nav-compass-refactor.md # Completed refactoring documentation

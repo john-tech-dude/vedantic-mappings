@@ -98,10 +98,6 @@ body::before {
 ::selection { background: rgba(124,111,174,0.20); color: var(--ink); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
 
-/* =====================================================
-   ANIMATIONS
-   ===================================================== */
-
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -128,8 +124,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 }
 
 @keyframes emblem-pulse {
-  0%,100% { box-shadow: 0 0 18px 4px var(--sun-glow); }
-  50%     { box-shadow: 0 0 32px 10px var(--sun-glow); }
+  0%,100% { filter: drop-shadow(0 0 12px rgba(201,168,76,0.15)); }
+  50%     { filter: drop-shadow(0 0 28px rgba(201,168,76,0.35)); }
 }
 
 @keyframes lineReveal {
@@ -148,24 +144,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
   66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.25; }
 }
 
-@keyframes starTwinkle {
+@keyframes monadGlow {
+  0%,100% { filter: drop-shadow(0 0 8px rgba(201,168,76,0.15)); }
+  50%     { filter: drop-shadow(0 0 16px rgba(201,168,76,0.3)); }
+}
+
+@keyframes ouroboros-breathe {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.03); }
+}
+
+@keyframes scale-shimmer {
   0%,100% { opacity: 0.3; }
-  50%     { opacity: 0.9; }
+  50%     { opacity: 0.7; }
 }
-
-@keyframes aeonRotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-@keyframes sigePulse {
-  0%,100% { opacity: 0.15; }
-  50%     { opacity: 0.4; }
-}
-
-/* =====================================================
-   NAVIGATION COMPASS
-   ===================================================== */
 
 .nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
 .nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--violet-light); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
@@ -179,10 +171,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
 .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
 
-/* =====================================================
-   THEME TOGGLE
-   ===================================================== */
-
 .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
 .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
 .theme-toggle:active { transform: scale(0.95); }
@@ -192,17 +180,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
 [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
 
-/* =====================================================
-   BACK TO TOP
-   ===================================================== */
-
 .back-to-top { position: fixed; bottom: 5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
 .back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
 .back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
-
-/* =====================================================
-   HERO
-   ===================================================== */
 
 .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; }
 [data-theme="dark"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 25%, #12183a 0%, var(--bg) 35%, #060814 70%, var(--bg) 100%); }
@@ -217,9 +197,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
   pointer-events: none; z-index: 1;
 }
 
-.hero-stars {
-  position: absolute; inset: 0; pointer-events: none; z-index: 0;
-}
+.hero-stars { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 
 .pleroma-ring {
   position: absolute; top: 50%; left: 50%;
@@ -243,14 +221,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 
 .hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
 
-/* ===== PLEROMA EMBLEM ===== */
 .hero-emblem {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 2rem;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 2.5rem;
   position: relative;
   z-index: 3;
-  animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, emblem-pulse 6s ease-in-out infinite;
+  animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, emblem-pulse 5s ease-in-out infinite, ouroboros-breathe 8s ease-in-out infinite;
 }
 .hero-emblem svg {
   width: 100%;
@@ -258,9 +235,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
   overflow: visible;
 }
 
+[data-theme="light"] .hero-emblem svg path,
 [data-theme="light"] .hero-emblem svg circle,
-[data-theme="light"] .hero-emblem svg line,
-[data-theme="light"] .hero-emblem svg path {
+[data-theme="light"] .hero-emblem svg line {
   opacity: 1 !important;
 }
 
@@ -295,10 +272,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
 .hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
 .scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--violet-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
-
-/* =====================================================
-   SECTIONS
-   ===================================================== */
 
 section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
 
@@ -345,10 +318,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   text-decoration: none;
 }
 
-/* =====================================================
-   DIAGRAMS
-   ===================================================== */
-
 .diagram-container {
   margin: 2.5rem 0;
   padding: 2rem;
@@ -394,10 +363,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   line-height: 1.6;
 }
 
-/* =====================================================
-   COMPARATIVE TABLE
-   ===================================================== */
-
 .comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
 .comparative-table thead tr { border-bottom: 1px solid var(--violet); }
 .comparative-table th { padding: 10px 8px; text-align: left; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--violet-light); font-weight: 500; }
@@ -407,10 +372,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .comparative-table tbody tr:hover { background: var(--gold-glow); }
 .comparative-table-wrapper { overflow-x: auto; margin-top: 1rem; }
 
-/* =====================================================
-   SCRIPTURE PANELS
-   ===================================================== */
-
 .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
 .scripture-panel { background: var(--surface); padding: 32px; }
 .scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--violet-light); margin-bottom: 16px; }
@@ -418,10 +379,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
 .scripture-panel:hover { background: var(--surface2); }
 .scripture-panels.margin-top { margin-top: 2rem; }
-
-/* =====================================================
-   TENSION BOX & RESONANCE CALLOUT
-   ===================================================== */
 
 .tension-box {
   margin: 2rem 0;
@@ -474,10 +431,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   margin: 0 !important;
 }
 
-/* =====================================================
-   PULLQUOTE
-   ===================================================== */
-
 .pullquote-section { position: relative; overflow: hidden; padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 [data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #12183a 0%, var(--bg) 40%, #060814 70%, var(--bg) 100%); }
 [data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #7880a0 100%); }
@@ -489,10 +442,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
 .pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
 .pullquote-attr a:hover { color: var(--gold); }
-
-/* =====================================================
-   CONTINUE LINK
-   ===================================================== */
 
 .continue-link {
   display: inline-flex;
@@ -516,19 +465,11 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   transform: translateX(4px);
 }
 
-/* =====================================================
-   CHAPTER NAVIGATION
-   ===================================================== */
-
 .chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
 .chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
 .chapter-link:hover { color: var(--gold); }
 .chapter-sep { color: var(--violet); opacity: 0.3; }
 .chapter-link.active { color: var(--gold); font-weight: 500; }
-
-/* =====================================================
-   FOOTER
-   ===================================================== */
 
 .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
 .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
@@ -545,10 +486,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 
-/* =====================================================
-   FADE-IN & STAGGER
-   ===================================================== */
-
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
@@ -558,17 +495,13 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .stagger-4 { transition-delay: 0.5s; }
 .stagger-5 { transition-delay: 0.65s; }
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
-
 @media (max-width: 768px) {
   .nav-menu { min-width: 180px; }
   .back-to-top { right: 1.5rem; bottom: 5rem; }
   .footer-links { gap: 1.5rem; }
   .scripture-panels { grid-template-columns: 1fr; }
   .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
-  .hero-emblem { width: 64px; height: 64px; }
+  .hero-emblem { width: 110px; height: 110px; }
   .diagram-container { padding: 1.25rem; }
 }
 
@@ -576,7 +509,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   body { font-size: 16px; line-height: 1.72; }
   .content-section { padding: 48px 16px; }
   .hero { padding: 4rem 1rem 5rem; }
-  .hero-emblem { width: 56px; height: 56px; }
+  .hero-emblem { width: 95px; height: 95px; }
   .nav-compass { top: 0.75rem; left: 0.75rem; }
   .nav-toggle { width: 40px; height: 40px; }
   .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
@@ -601,6 +534,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 }
 </style>
 <base target="_blank">
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/y-ijWurvCNdSnj4kg3R4raqH1DK9Tnk2m2dO1-H24qPK0emso_9P3kDwSrl1WOe98AlYfMB9c2kzeCWduvpECkMBMmLn-J3XtRmR4LZF3ncYiMH8ih315mfF1cKizgl1ua9rLAZ-ZZH0YdRmDafv-oTN13Tect5Fa8AYPC_7G5ipfaDNBhXmGVXJnAEXuizwCW4kHGREMn6Ob9ED5Psk3pabNzcVm_tGV5Qvls5Sa4VXVHZhtldavYLaC33DmZYfB00HkEl-L98ZPq2ZD2m91xPnQ_1GYyuvY6PkNVC6t3-a9-QGykLTO5nwLjXjTF3sD2QwbRjl880kM-mgnEaltYjk1L9ZtlFKTt5jXZwbj4h9Rn3GWZoB5wHfBklZ67UbUyub_QRGr9J0k2pDb_b0qs32sT4QyIebgvqgCa50U2gXfsBLTJSu1MBL6Nge4INzF_7t6mi5Pa72Q8vOEx5siZyKXv2SlGMWfwMiTmCanbYIjdDV9GZGyiML6PPBnKixgXtvMOku2JenORLWPTjqjGsoLL2Av4MlNGC0eVj0D3DKFSoP1t7KwhiKOtsNWumKtWknCOZFhKHkFPQqR54Wt5CDqn_K1sVDoKc5zyO0faSJaUSrnUBg5GQtGu86y9kxF2hN0MCkGettQwoRdqq_2293m0fZv3snR7KrsQkb6EvLQIITDoAgVxoi4nOLPwm5ysRXk1oDEHvI1jENcCAlgio6tde7TBzOcX_9awSc5vrfEp-YMMKONUqcFaOZuOLkB8202UtPyWZITlbPvz1VryBt3WWrITlljQ5ViVk5PIdnWT1evujLSKfOQ-WtwqXskfmo_ny2VfmCvwYFpBpaW0sAKqEBg02NOknMdOT1fLwKdkxcZJIr8WPbcPi0Z3mFSw92DaILQSalic7EiAn8v1hgcjQyBsR3sWVzkRnsKXbq9NsNVgwA7COG8RJsZrJvk_Qc4tn-t9bzk4bQnuYkmw-8Dy8UC8B0EChdfgw30hRZTW-iR1h-lYQNQeOFuYjF_2rQKJsqqGvrtf1Y8O4S0O_NWQKRcvr5IYvN-YOBu4dsNQXwh_lKro0H6rdx_qYUsUw27grSVPKegg'></script><base target="_blank">
 </head>
 <body>
 
@@ -645,54 +579,64 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
   <p class="hero-eyemark">The Unknown Father</p>
   <div class="hero-emblem">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <filter id="plGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="blur"/>
+        <linearGradient id="ouroborosGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.9"/>
+          <stop offset="50%" stop-color="#a08030" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#7c6fae" stop-opacity="0.5"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
           <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
-        <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.12"/>
-          <stop offset="60%" stop-color="#7c6fae" stop-opacity="0.05"/>
-          <stop offset="100%" stop-color="#4a4080" stop-opacity="0.02"/>
-        </radialGradient>
-        <linearGradient id="aeonStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#7c6fae" stop-opacity="0.8"/>
-          <stop offset="50%" stop-color="#a090d0" stop-opacity="0.5"/>
-          <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.3"/>
-        </linearGradient>
       </defs>
-      <!-- Outer ring -->
-      <circle cx="100" cy="100" r="96" fill="none" stroke="url(#aeonStroke)" stroke-width="0.5" opacity="0.35"/>
-      <!-- Aeon dots -->
-      <g opacity="0.5">
-        <circle cx="100" cy="4" r="2.5" fill="#a090d0" opacity="0.6"/>
-        <circle cx="196" cy="100" r="2.5" fill="#a090d0" opacity="0.6"/>
-        <circle cx="100" cy="196" r="2.5" fill="#a090d0" opacity="0.6"/>
-        <circle cx="4" cy="100" r="2.5" fill="#a090d0" opacity="0.6"/>
-        <circle cx="168" cy="32" r="2" fill="#c9a84c" opacity="0.5"/>
-        <circle cx="168" cy="168" r="2" fill="#c9a84c" opacity="0.5"/>
-        <circle cx="32" cy="168" r="2" fill="#c9a84c" opacity="0.5"/>
-        <circle cx="32" cy="32" r="2" fill="#c9a84c" opacity="0.5"/>
+      
+      <!-- Main ouroboros circle - snake eating its tail -->
+      <circle cx="250" cy="250" r="180" fill="none" stroke="url(#ouroborosGradient)" stroke-width="12" opacity="0.8"/>
+      
+      <!-- Snake head detail -->
+      <g transform="translate(250, 70) rotate(0)">
+        <ellipse cx="0" cy="0" rx="16" ry="12" fill="#c9a84c" opacity="0.9"/>
+        <circle cx="-5" cy="-3" r="4" fill="#090c18" opacity="0.8"/>
+        <circle cx="-4" cy="-4" r="2" fill="#e0c46e" opacity="0.9"/>
+        <!-- Tongue/fangs -->
+        <path d="M 8 0 L 14 3 L 8 6" fill="#c9a84c" opacity="0.7"/>
       </g>
-      <!-- Inner rings -->
-      <circle cx="100" cy="100" r="70" fill="none" stroke="#7c6fae" stroke-width="0.4" opacity="0.25"/>
-      <circle cx="100" cy="100" r="55" fill="none" stroke="#a090d0" stroke-width="0.3" opacity="0.2"/>
-      <!-- Central Pleroma -->
-      <circle cx="100" cy="100" r="35" fill="url(#centerGrad)" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
-      <circle cx="100" cy="100" r="20" fill="none" stroke="#e0c46e" stroke-width="0.4" opacity="0.3"/>
-      <circle cx="100" cy="100" r="8" fill="#c9a84c" opacity="0.25" filter="url(#plGlow)"/>
-      <circle cx="100" cy="100" r="3" fill="#e0c46e" opacity="0.5" filter="url(#plGlow)"/>
-      <!-- Cross of light -->
-      <g stroke="#a090d0" stroke-width="0.3" opacity="0.25" stroke-linecap="round">
-        <line x1="100" y1="10" x2="100" y2="30"/>
-        <line x1="100" y1="170" x2="100" y2="190"/>
-        <line x1="10" y1="100" x2="30" y2="100"/>
-        <line x1="170" y1="100" x2="190" y2="100"/>
+      
+      <!-- Tail entering mouth -->
+      <g transform="translate(250, 95) rotate(-15)">
+        <path d="M -8 0 Q 0 -6, 8 0 Q 4 8, -4 6 Q -8 4, -8 0 Z" fill="#a08030" opacity="0.7"/>
       </g>
-      <!-- Sigē arcs -->
-      <path d="M 60 100 Q 100 60 140 100" fill="none" stroke="#7c6fae" stroke-width="0.4" opacity="0.3"/>
-      <path d="M 60 100 Q 100 140 140 100" fill="none" stroke="#7c6fae" stroke-width="0.4" opacity="0.3"/>
+      
+      <!-- Scale pattern around the body -->
+      <g fill="#c9a84c" opacity="0.3">
+        <circle cx="250" cy="95" r="3"/>
+        <circle cx="295" cy="105" r="3"/>
+        <circle cx="335" cy="130" r="3"/>
+        <circle cx="365" cy="170" r="3"/>
+        <circle cx="385" cy="215" r="3"/>
+        <circle cx="390" cy="265" r="3"/>
+        <circle cx="380" cy="310" r="3"/>
+        <circle cx="355" cy="350" r="3"/>
+        <circle cx="320" cy="380" r="3"/>
+        <circle cx="275" cy="400" r="3"/>
+        <circle cx="225" cy="405" r="3"/>
+        <circle cx="175" cy="395" r="3"/>
+        <circle cx="130" cy="370" r="3"/>
+        <circle cx="95" cy="335" r="3"/>
+        <circle cx="75" cy="290" r="3"/>
+        <circle cx="70" cy="240" r="3"/>
+        <circle cx="80" cy="195" r="3"/>
+        <circle cx="105" cy="155" r="3"/>
+        <circle cx="140" cy="125" r="3"/>
+        <circle cx="180" cy="108" r="3"/>
+      </g>
+      
+      <!-- Central void/abyss -->
+      <circle cx="250" cy="250" r="50" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+      <circle cx="250" cy="250" r="30" fill="none" stroke="#e0c46e" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="250" cy="250" r="10" fill="#c9a84c" opacity="0.15" filter="url(#glow)"/>
     </svg>
   </div>
 
@@ -722,32 +666,32 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </div>
 
   <div class="content-essay fade-in">
-    <p class="content-introduction">The Gnostic Apocryphon of John opens with a vision that annihilates every theological category. <strong>He is the invisible Spirit. It is not right to think of him as a god, for he is more than a god.</strong> This is not hyperbole. It is the apophatic (<em>via negativa</em>) method pushed to its absolute limit &mdash; the same limit encountered in Lao Tzu&rsquo;s Tao, in Pseudo-Dionysius&rsquo; <em>Mystical Theology</em>, and in the Upani&#7779;ads&rsquo; <span class="sanskrit-term" title="Not this, not this &mdash; the method of negation in Advaita">neti-neti</span>. Yet the Gnostic tradition goes further: the Unknown Father is not merely beyond names; he is beyond the very realm of names, beyond the Pleroma itself, beyond the totality of divine emanations.</p>
+    <p class="content-introduction">The Gnostic <em>Apocryphon of John</em> opens with a vision that annihilates every theological category. <strong>He is the invisible Spirit. It is not right to think of him as a god, for he is more than a god.</strong> This is not hyperbole. It is the apophatic (<em>via negativa</em>) method pushed to its absolute limit &mdash; the same limit encountered in Lao Tzu&rsquo;s Tao, in Pseudo-Dionysius&rsquo; <em>Mystical Theology</em>, and in the Upani&#7779;ads&rsquo; <span class="sanskrit-term" title="Not this, not this &mdash; the method of negation in Advaita">neti-neti</span>. Yet the Gnostic tradition goes further: the Unknown Father is not merely beyond names; he is beyond the very realm of names, beyond the Pleroma itself, beyond the totality of divine emanations.</p>
 
-    <p class="fade-in stagger-1">Where the Tao Te Ching speaks of the Tao as &ldquo;the mother of ten thousand things,&rdquo; the Gnostic speaks of the Father as the parent of the Pleroma &mdash; the <span class="greek-term" title="Fullness; the realm of divine aeons and archetypes">Pl&#275;r&#333;ma</span> &mdash; which is itself the mother of the visible cosmos. There is a double remove: the Father is not the world, not the creator of the world, not even the direct source of the world. Between the Unknown Father and the material universe stands an entire hierarchy of divine intermediaries: the Silence, the Only-Begotten, Barbelo, and the Aeons. This is the most radical cosmological buffer in the history of theology.</p>
+    <p class="fade-in stagger-1">Where the <em>Tao Te Ching</em> speaks of the Tao as &ldquo;the mother of ten thousand things,&rdquo; the Gnostic speaks of the Father as the parent of the Pleroma &mdash; the <span class="greek-term" title="Fullness; the realm of divine aeons and archetypes">Pl&#275;r&#333;ma</span> &mdash; which is itself the mother of the visible cosmos. There is a double remove: the Father is not the world, not the creator of the world, not even the direct source of the world. Between the Unknown Father and the material universe stands an entire hierarchy of divine intermediaries: the Silence, the Only-Begotten, Barbelo, and the Aeons. This is the most radical cosmological buffer in the history of theology.</p>
 
-    <p class="fade-in stagger-2">In this, Gnosticism anticipates the Kabbalistic doctrine of the <span class="sanskrit-term" title="The Infinite; the unknowable essence of God in Kabbalah">Ein Sof</span> by over a millennium. The Zohar describes Ein Sof as &ldquo;the Cause of Causes, the Root of Roots, hidden and unrevealed,&rdquo; from which the sefirot emanate as vessels of manifestation. The Gnostic Father is similarly hidden, but with a crucial difference: the Gnostic insists that the material world is not a theophany but a <em>prison</em>. The Pleroma is the true home; the cosmos is a forgetful shadow. The Father does not create the shadow. The shadow arises through a rupture, a fall, a forgetting &mdash; a theme we will explore in Part II.</p>
+    <p class="fade-in stagger-2">In this, Gnosticism anticipates the Kabbalistic doctrine of the <span class="sanskrit-term" title="The Infinite; the unknowable essence of God in Kabbalah">Ein Sof</span> by over a millennium. The <em>Zohar</em> describes Ein Sof as &ldquo;the Cause of Causes, the Root of Roots, hidden and unrevealed,&rdquo; from which the <em>sefirot</em> emanate as vessels of manifestation. The Gnostic Father is similarly hidden, but with a crucial difference: the Gnostic insists that the material world is not a theophany but a <em>prison</em>. The Pleroma is the true home; the cosmos is a forgetful shadow. The Father does not create the shadow. The shadow arises through a rupture, a fall, a forgetting &mdash; a theme we will explore in Part II.</p>
 
     <div class="scripture-panels fade-in stagger-3">
       <div class="scripture-panel">
         <div class="scripture-panel-label">Apocryphon of John &middot; The Unknown Father</div>
         <p class="scripture-panel-text">&ldquo;He is the invisible Spirit. It is not right to think of him as a god, or that he is something similar. Rather, he is more than a god. He is uncontainable, since no one contains him. He is unnameable, since no one can name him. He is prior to everything.&rdquo;</p>
-        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,1)</p>
       </div>
       <div class="scripture-panel">
         <div class="scripture-panel-label">The Gospel of Truth &middot; The All</div>
         <p class="scripture-panel-text">&ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought.&rdquo;</p>
-        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (I,3)</p>
       </div>
     </div>
 
     <!-- DIAGRAM 1: The Apophatic Ladder -->
     <div class="diagram-container fade-in stagger-1">
       <div class="diagram-title">The Apophatic Ladder &middot; From the Father to the World</div>
-      <svg class="diagram-svg" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diagram-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="plGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#a090d0" stop-opacity="0.12"/>
+            <stop offset="0%" stop-color="#a090d0" stop-opacity="0.14"/>
             <stop offset="100%" stop-color="#4a4080" stop-opacity="0.04"/>
           </linearGradient>
           <linearGradient id="aeonLine" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -755,49 +699,74 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
             <stop offset="50%" stop-color="#7c6fae"/>
             <stop offset="100%" stop-color="#a090d0"/>
           </linearGradient>
+          <linearGradient id="ruptureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="20%" stop-color="#7c6fae" stop-opacity="0.3"/>
+            <stop offset="50%" stop-color="#c9a84c" stop-opacity="0.2"/>
+            <stop offset="80%" stop-color="#7c6fae" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+          <filter id="diagGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
 
-        <!-- Level 4: Unknown Father (top) -->
-        <ellipse cx="360" cy="55" rx="130" ry="30" fill="url(#plGrad)" stroke="#c9a84c" stroke-width="0.8" opacity="0.9"/>
-        <text x="360" y="50" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="12" letter-spacing="0.15em" opacity="0.95">THE UNKNOWN FATHER</text>
-        <text x="360" y="68" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">Prior to the Pleroma &middot; Uncontainable</text>
+        <!-- Level 5: Unknown Father (top) -->
+        <ellipse cx="400" cy="50" rx="150" ry="35" fill="url(#plGrad)" stroke="#c9a84c" stroke-width="1" opacity="0.9"/>
+        <text x="400" y="45" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="13" letter-spacing="0.18em" opacity="0.95">THE UNKNOWN FATHER</text>
+        <text x="400" y="64" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">Prior to the Pleroma &middot; The Monad &middot; Uncontainable</text>
 
         <!-- Arrow down -->
-        <line x1="360" y1="90" x2="360" y2="115" stroke="#7c6fae" stroke-width="0.8" opacity="0.5" stroke-dasharray="4,3"/>
-        <polygon points="360,123 355,113 365,113" fill="#7c6fae" opacity="0.5"/>
+        <line x1="400" y1="90" x2="400" y2="115" stroke="#7c6fae" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
+        <polygon points="400,123 394,113 406,113" fill="#7c6fae" opacity="0.5"/>
 
-        <!-- Level 3: The Silence & Barbelo -->
-        <ellipse cx="360" cy="160" rx="170" ry="38" fill="url(#plGrad)" stroke="#a090d0" stroke-width="0.8" opacity="0.75"/>
-        <text x="360" y="153" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="11" letter-spacing="0.12em" opacity="0.9">SIG&#274; &middot; BARBELo &middot; THE ONLY-BEGOTTEN</text>
-        <text x="360" y="172" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">The Womb of Emanation &middot; First Thought</text>
+        <!-- Level 4: The Silence & Barbelo -->
+        <ellipse cx="400" cy="165" rx="190" ry="42" fill="url(#plGrad)" stroke="#a090d0" stroke-width="1" opacity="0.8"/>
+        <text x="400" y="157" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="12" letter-spacing="0.14em" opacity="0.9">SIG&#274; &middot; BARBELo &middot; THE ONLY-BEGOTTEN</text>
+        <text x="400" y="178" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.6">The Womb of Emanation &middot; First Thought &middot; Autogenes</text>
 
         <!-- Arrow down -->
-        <line x1="360" y1="202" x2="360" y2="227" stroke="#7c6fae" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,3"/>
-        <polygon points="360,235 355,225 365,225" fill="#7c6fae" opacity="0.4"/>
+        <line x1="400" y1="210" x2="400" y2="235" stroke="#7c6fae" stroke-width="0.9" opacity="0.4" stroke-dasharray="4,3"/>
+        <polygon points="400,243 394,233 406,233" fill="#7c6fae" opacity="0.4"/>
 
-        <!-- Level 2: The Pleroma / Aeons -->
-        <ellipse cx="360" cy="280" rx="210" ry="48" fill="url(#plGrad)" stroke="url(#aeonLine)" stroke-width="0.7" opacity="0.6"/>
-        <text x="360" y="272" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="11" letter-spacing="0.1em" opacity="0.85">THE PLERoMA &middot; THE AEONS</text>
-        <text x="360" y="292" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.55">The Fullness &middot; Realm of Divine Archetypes</text>
+        <!-- Level 3: The Pleroma / Aeons -->
+        <ellipse cx="400" cy="295" rx="230" ry="52" fill="url(#plGrad)" stroke="url(#aeonLine)" stroke-width="0.9" opacity="0.7"/>
+        <text x="400" y="286" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="12" letter-spacing="0.12em" opacity="0.85">THE PLERoMA &middot; THE OGDOAD &middot; THE AEONS</text>
+        <text x="400" y="308" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.55">The Fullness &middot; Realm of Divine Syzygies &middot; Depth, Silence, Mind, Truth, Word, Life, Man, Church</text>
 
         <!-- Arrow down (rupture) -->
-        <line x1="360" y1="332" x2="360" y2="357" stroke="#7c6fae" stroke-width="0.6" opacity="0.3" stroke-dasharray="6,4"/>
-        <polygon points="360,365 355,355 365,355" fill="#7c6fae" opacity="0.3"/>
+        <line x1="400" y1="350" x2="400" y2="375" stroke="#7c6fae" stroke-width="0.7" opacity="0.3" stroke-dasharray="6,4"/>
+        <polygon points="400,383 394,373 406,373" fill="#7c6fae" opacity="0.3"/>
+
+        <!-- Rupture line -->
+        <line x1="200" y1="355" x2="600" y2="355" stroke="url(#ruptureGrad)" stroke-width="1.5" opacity="0.6"/>
+        <text x="400" y="352" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="8" letter-spacing="0.2em" opacity="0.5">THE RUPTURE</text>
+
+        <!-- Level 2: The Demiurge -->
+        <ellipse cx="400" cy="425" rx="200" ry="40" fill="url(#plGrad)" stroke="#5e6d8a" stroke-width="0.7" opacity="0.55"/>
+        <text x="400" y="418" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="11" letter-spacing="0.12em" opacity="0.8">THE DEMIURGE &middot; YALDABAOTH</text>
+        <text x="400" y="438" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">The Blind Craftsman &middot; Creator of the Material Realm</text>
+
+        <!-- Arrow down -->
+        <line x1="400" y1="468" x2="400" y2="493" stroke="#5e6d8a" stroke-width="0.6" opacity="0.25" stroke-dasharray="5,4"/>
+        <polygon points="400,501 394,491 406,491" fill="#5e6d8a" opacity="0.25"/>
 
         <!-- Level 1: The Material World -->
-        <ellipse cx="360" cy="410" rx="240" ry="50" fill="url(#plGrad)" stroke="#5e6d8a" stroke-width="0.5" opacity="0.4"/>
-        <text x="360" y="402" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="11" letter-spacing="0.1em" opacity="0.75">THE MATERIAL WORLD</text>
-        <text x="360" y="422" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">The Shadow &middot; The Prison of Forgetfulness</text>
+        <ellipse cx="400" cy="540" rx="260" ry="50" fill="url(#plGrad)" stroke="#4a5068" stroke-width="0.5" opacity="0.4"/>
+        <text x="400" y="532" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="11" letter-spacing="0.1em" opacity="0.75">THE MATERIAL WORLD</text>
+        <text x="400" y="552" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">The Shadow &middot; The Prison of Forgetfulness &middot; Hyle</text>
 
         <!-- Side annotation: Return arrow -->
-        <path d="M 620 410 Q 680 280 620 55" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="6,4"/>
-        <polygon points="615,63 622,53 628,63" fill="#c9a84c" opacity="0.2"/>
-        <text x="695" y="230" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="8" letter-spacing="0.15em" opacity="0.4" transform="rotate(-18, 695, 230)">RETURN</text>
+        <path d="M 680 540 Q 740 320 680 50" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.25" stroke-dasharray="5,4"/>
+        <polygon points="675,58 682,48 688,58" fill="#c9a84c" opacity="0.25"/>
+        <text x="755" y="290" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="9" letter-spacing="0.18em" opacity="0.45" transform="rotate(-16, 755, 290)">RETURN</text>
+        <text x="755" y="305" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.35" transform="rotate(-16, 755, 305)">via Gnosis</text>
 
         <!-- Bottom annotation -->
-        <text x="360" y="465" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The All ran about, searching for him from whom it had come forth.&rdquo;</text>
+        <text x="400" y="590" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.45">&ldquo;The All ran about, searching for him from whom it had come forth.&rdquo;</text>
       </svg>
-      <p class="diagram-caption">The Gnostic cosmos descends from the unknowable Father through emanation into the Pleroma, then through rupture into the material world. The path of return is the awakening of the spark.</p>
+      <p class="diagram-caption">The Gnostic cosmos descends from the unknowable Father through emanation into the Pleroma, then through rupture and the Demiurge into the material world. The path of return is the awakening of the spark through <em>gn&#333;sis</em>.</p>
     </div>
 
     <h3 class="fade-in stagger-1">The Monad and the One-Who-Is</h3>
@@ -844,72 +813,99 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="content-essay fade-in">
     <p class="content-introduction">Between the Unknown Father and the material world lies the <span class="greek-term" title="Fullness; the complete realm of divine realities">Pl&#275;r&#333;ma</span> &mdash; the Fullness. This is not empty space or a vacuum. It is the totality of divine possibilities, the complete set of archetypal realities, the &ldquo;living waters&rdquo; from which all particular things draw their being. The Pleroma is not a place but a <em>mode of being</em> &mdash; the mode in which separation has not yet occurred, in which all things exist in their original unity.</p>
 
-    <p class="fade-in stagger-1">The Pleroma is populated by <span class="greek-term" title="Eternal ones; divine emanations or archetypes">Aeons</span> &mdash; not gods in the pagan sense, but eternal modalities of the Father&rsquo;s self-expression. Each Aeon is a dyad, a syzygy (pairing) of masculine and feminine principles: Depth and Silence, Mind and Truth, Word and Life, Man and Church. These are not persons but <em>categories of divine reality</em> &mdash; the eternal patterns after which the material world is imperfectly copied.</p>
+    <p class="fade-in stagger-1">The Pleroma is populated by <span class="greek-term" title="Eternal ones; divine emanations or archetypes">Aeons</span> &mdash; not gods in the pagan sense, but eternal modalities of the Father&rsquo;s self-expression. Each Aeon exists as a <span class="greek-term" title="Pairing; conjugal union of masculine and feminine aeons">syzygy</span> (pairing) of masculine and feminine principles: Depth (<em>Bythos</em>) and Silence (<em>Sig&#275;</em>), Mind (<em>Nous</em>) and Truth (<em>Aletheia</em>), Word (<em>Logos</em>) and Life (<em>Zo&#275;</em>), Man (<em>Anthropos</em>) and Church (<em>Ekklesia</em>). These eight form the <em>Ogdoad</em> &mdash; the primordial octave. They are not persons but <em>categories of divine reality</em> &mdash; the eternal patterns after which the material world is imperfectly copied.</p>
 
-    <p class="fade-in stagger-2">The highest Aeon is <span class="greek-term" title="The first emanation; the divine Mother; the womb of all aeons">Barbelo</span>, the &ldquo;first thought&rdquo; of the Father. She is the perfect Aeon, the &ldquo;womb&rdquo; that contains all subsequent emanations. From Barbelo comes the Only-Begotten (Autogenes), and from the Only-Begotten come the Four Luminaries: Harmozel, Oroiael, Daveithai, and Eleleth. Each Luminary presides over a realm of Aeons, forming a vast but ordered hierarchy of divine mediation.</p>
+    <p class="fade-in stagger-2">The highest Aeon is <span class="greek-term" title="The first emanation; the divine Mother; the womb of all aeons">Barbelo</span>, the &ldquo;first thought&rdquo; of the Father. She is the perfect Aeon, the &ldquo;womb&rdquo; that contains all subsequent emanations. From Barbelo comes the Only-Begotten (<em>Autogenes</em>), and from the Only-Begotten come the Four Luminaries: <em>Harmozel</em> (Grace), <em>Oroiael</em> (Will), <em>Daveithai</em> (Perception), and <em>Eleleth</em> (Wisdom). Each Luminary presides over a realm of Aeons, forming a vast but ordered hierarchy of divine mediation.</p>
 
     <!-- DIAGRAM 2: The Pleroma -->
     <div class="diagram-container fade-in stagger-1">
       <div class="diagram-title">The Pleroma &middot; The Emanation of the Aeons</div>
-      <svg class="diagram-svg" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
+      <svg class="diagram-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="fatherGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.15"/>
+            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.2"/>
             <stop offset="100%" stop-color="#4a4080" stop-opacity="0.03"/>
           </radialGradient>
           <radialGradient id="barbeloGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#a090d0" stop-opacity="0.12"/>
+            <stop offset="0%" stop-color="#a090d0" stop-opacity="0.15"/>
             <stop offset="100%" stop-color="#7c6fae" stop-opacity="0.04"/>
           </radialGradient>
+          <radialGradient id="lumGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#7c6fae" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#4a4080" stop-opacity="0.02"/>
+          </radialGradient>
+          <linearGradient id="connLine" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#a090d0" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#7c6fae" stop-opacity="0.2"/>
+          </linearGradient>
+          <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
 
         <!-- Central: Unknown Father -->
-        <circle cx="360" cy="80" r="45" fill="url(#fatherGrad)" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/>
-        <text x="360" y="76" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">FATHER</text>
-        <text x="360" y="90" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.6">Unknown</text>
+        <circle cx="400" cy="70" r="55" fill="url(#fatherGrad)" stroke="#c9a84c" stroke-width="1" opacity="0.8"/>
+        <circle cx="400" cy="70" r="48" fill="none" stroke="#c9a84c" stroke-width="0.4" opacity="0.3" stroke-dasharray="3,5"/>
+        <text x="400" y="65" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em" opacity="0.9">THE FATHER</text>
+        <text x="400" y="80" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Unknown &middot; Unnameable</text>
+
+        <!-- Connection to Barbelo -->
+        <line x1="400" y1="125" x2="400" y2="155" stroke="url(#connLine)" stroke-width="1" opacity="0.5"/>
+        <polygon points="400,163 394,153 406,153" fill="#a090d0" opacity="0.4"/>
 
         <!-- Barbelo -->
-        <circle cx="360" cy="180" r="60" fill="url(#barbeloGrad)" stroke="#a090d0" stroke-width="0.7" opacity="0.6"/>
-        <text x="360" y="175" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.85">BARBELO</text>
-        <text x="360" y="189" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.55">First Thought</text>
+        <circle cx="400" cy="195" r="70" fill="url(#barbeloGrad)" stroke="#a090d0" stroke-width="1" opacity="0.7"/>
+        <circle cx="400" cy="195" r="62" fill="none" stroke="#a090d0" stroke-width="0.4" opacity="0.25" stroke-dasharray="2,4"/>
+        <text x="400" y="190" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em" opacity="0.9">BARBELO</text>
+        <text x="400" y="205" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">First Thought &middot; The Womb</text>
+
+        <!-- Connection to Autogenes -->
+        <line x1="400" y1="265" x2="400" y2="295" stroke="url(#connLine)" stroke-width="0.8" opacity="0.4"/>
+        <polygon points="400,303 394,293 406,293" fill="#a090d0" opacity="0.35"/>
+
+        <!-- Autogenes -->
+        <circle cx="400" cy="330" r="45" fill="url(#barbeloGrad)" stroke="#a090d0" stroke-width="0.8" opacity="0.6"/>
+        <text x="400" y="326" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.85">AUTOGENES</text>
+        <text x="400" y="340" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">Only-Begotten</text>
 
         <!-- Lines to Luminaries -->
-        <line x1="360" y1="240" x2="140" y2="300" stroke="#7c6fae" stroke-width="0.4" opacity="0.35"/>
-        <line x1="360" y1="240" x2="280" y2="300" stroke="#7c6fae" stroke-width="0.4" opacity="0.35"/>
-        <line x1="360" y1="240" x2="440" y2="300" stroke="#7c6fae" stroke-width="0.4" opacity="0.35"/>
-        <line x1="360" y1="240" x2="580" y2="300" stroke="#7c6fae" stroke-width="0.4" opacity="0.35"/>
+        <line x1="360" y1="365" x2="160" y2="420" stroke="url(#connLine)" stroke-width="0.6" opacity="0.3"/>
+        <line x1="380" y1="375" x2="300" y2="430" stroke="url(#connLine)" stroke-width="0.6" opacity="0.3"/>
+        <line x1="420" y1="375" x2="500" y2="430" stroke="url(#connLine)" stroke-width="0.6" opacity="0.3"/>
+        <line x1="440" y1="365" x2="640" y2="420" stroke="url(#connLine)" stroke-width="0.6" opacity="0.3"/>
 
         <!-- Four Luminaries -->
-        <circle cx="140" cy="300" r="35" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.5"/>
-        <text x="140" y="296" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.8">HARMOZEL</text>
-        <text x="140" y="308" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Grace</text>
+        <circle cx="140" cy="435" r="42" fill="url(#lumGrad)" stroke="#7c6fae" stroke-width="0.7" opacity="0.6"/>
+        <text x="140" y="430" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.85">HARMOZEL</text>
+        <text x="140" y="443" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.55">Grace &middot; First Luminary</text>
 
-        <circle cx="280" cy="300" r="35" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.5"/>
-        <text x="280" y="296" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.8">OROIAEL</text>
-        <text x="280" y="308" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Will</text>
+        <circle cx="300" cy="445" r="42" fill="url(#lumGrad)" stroke="#7c6fae" stroke-width="0.7" opacity="0.6"/>
+        <text x="300" y="440" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.85">OROIAEL</text>
+        <text x="300" y="453" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.55">Will &middot; Second Luminary</text>
 
-        <circle cx="440" cy="300" r="35" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.5"/>
-        <text x="440" y="296" text-anchor="middle" fill="#7c6fae" font-family="Cinzel", serif" font-size="7" letter-spacing="0.08em" opacity="0.8">DAVEITHAI</text>
-        <text x="440" y="308" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro", serif" font-size="6" font-style="italic" opacity="0.5">Perception</text>
+        <circle cx="500" cy="445" r="42" fill="url(#lumGrad)" stroke="#7c6fae" stroke-width="0.7" opacity="0.6"/>
+        <text x="500" y="440" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.85">DAVEITHAI</text>
+        <text x="500" y="453" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.55">Perception &middot; Third Luminary</text>
 
-        <circle cx="580" cy="300" r="35" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.5"/>
-        <text x="580" y="296" text-anchor="middle" fill="#7c6fae" font-family="Cinzel", serif" font-size="7" letter-spacing="0.08em" opacity="0.8">ELELETH</text>
-        <text x="580" y="308" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro", serif" font-size="6" font-style="italic" opacity="0.5">Wisdom</text>
+        <circle cx="660" cy="435" r="42" fill="url(#lumGrad)" stroke="#7c6fae" stroke-width="0.7" opacity="0.6"/>
+        <text x="660" y="430" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.85">ELELETH</text>
+        <text x="660" y="443" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.55">Wisdom &middot; Fourth Luminary</text>
 
         <!-- Bottom -->
-        <text x="360" y="370" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro", serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The Pleroma is the fullness of the Father, the place where the All dwells in unity.&rdquo;</text>
+        <text x="400" y="500" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The Pleroma is the fullness of the Father, the place where the All dwells in unity.&rdquo;</text>
       </svg>
-      <p class="diagram-caption">The Pleroma emanates from the Unknown Father through Barbelo, branching into the Four Luminaries and their attendant Aeons. Each sphere is a syzygy of masculine and feminine principles.</p>
+      <p class="diagram-caption">The Pleroma emanates from the Unknown Father through Barbelo and the Only-Begotten, branching into the Four Luminaries and their attendant Aeons. Each sphere is a syzygy of masculine and feminine principles.</p>
     </div>
 
     <h3 class="fade-in stagger-1">The Syzygy &mdash; Divine Pairing</h3>
-    <p class="fade-in stagger-2">Every Aeon exists as a <span class="greek-term" title="Pairing; conjugal union of masculine and feminine aeons">syzygy</span> &mdash; a paired reality. There is no isolated masculine or feminine in the Pleroma; each principle is completed by its counterpart. Depth (Bythos) is paired with Silence (Sig&#275;); Mind (Nous) with Truth (Aletheia); Word (Logos) with Life (Zo&#275;). This is the Gnostic correction of all monotheistic abstraction: the ultimate is not a lonely monarch but a dynamic union, a cosmic marriage that is the archetype of all true relationship.</p>
+    <p class="fade-in stagger-2">Every Aeon exists as a <span class="greek-term" title="Pairing; conjugal union of masculine and feminine aeons">syzygy</span> &mdash; a paired reality. There is no isolated masculine or feminine in the Pleroma; each principle is completed by its counterpart. Depth (<em>Bythos</em>) is paired with Silence (<em>Sig&#275;</em>); Mind (<em>Nous</em>) with Truth (<em>Aletheia</em>); Word (<em>Logos</em>) with Life (<em>Zo&#275;</em>); Man (<em>Anthropos</em>) with Church (<em>Ekklesia</em>). This is the Gnostic correction of all monotheistic abstraction: the ultimate is not a lonely monarch but a dynamic union, a cosmic marriage that is the archetype of all true relationship.</p>
 
     <p class="fade-in stagger-3">The syzygy is not merely theological decoration. It is the structural guarantee that the Pleroma is relational, not solipsistic. The Father alone is absolute; but the Father&rsquo;s self-expression is always dyadic, always a dialogue. This becomes crucial in Part IV, where the <span class="greek-term" title="Bridal chamber; the sacrament of sacred marriage">Nymph&#333;n</span> &mdash; the Bridal Chamber &mdash; emerges as the highest sacrament and the final restoration.</p>
 
     <blockquote class="fade-in stagger-1">
       <p>&ldquo;The Father is surrounded by the Aeons, and the Aeons are surrounded by the Father. The Pleroma is a single body with many members, and each member is a complete body.&rdquo;</p>
-      <cite>&mdash; Tripartite Tractate, Nag Hammadi Library</cite>
+      <cite>&mdash; Tripartite Tractate, Nag Hammadi Library (I,5)</cite>
     </blockquote>
   </div>
 </section>
@@ -928,47 +924,91 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="content-essay fade-in">
     <p class="content-introduction">If the Father is the unknowable source, <span class="greek-term" title="Silence; the divine feminine ground prior to all utterance">Sig&#275;</span> is the unknowable ground. She is not an Aeon in the strict sense but the <em>space</em> in which Aeons arise, the silence that precedes and envelops every word, the womb that receives the unbegotten seed. In the <em>Apocryphon of John</em>, she is called &ldquo;the Silence that is with him&rdquo; &mdash; not a separate being but the necessary complement of the Father&rsquo;s hiddenness.</p>
 
-    <p class="fade-in stagger-1">Sig&#275; is the Gnostic equivalent of the Taoist <span class="sanskrit-term" title="The mysterious female; the valley spirit that never runs dry">Xu&aacute;n P&iacute;n</span> &mdash; the &ldquo;mysterious female&rdquo; from which heaven and earth arise. She is the Kabbalistic <span class="sanskrit-term" title="The Infinite; the formless ground from which the sefirot emanate">Ein Sof</span> in its feminine aspect, the Shekhinah before she descends into exile. She is the Advaitic <span class="sanskrit-term" title="The power of Brahman; the dynamic feminine principle of manifestation">M&#257;y&#257;</span> in its highest sense: not illusion but the creative power that makes manifestation possible without being identical to the manifest.</p>
+    <p class="fade-in stagger-1">Sig&#275; is the Gnostic equivalent of the Taoist <span class="sanskrit-term" title="The mysterious female; the valley spirit that never runs dry">Xu&aacute;n P&iacute;n</span> &mdash; the &ldquo;mysterious female&rdquo; from which heaven and earth arise. She is the Kabbalistic <span class="sanskrit-term" title="The Infinite; the formless ground from which the sefirot emanate">Ein Sof</span> in its feminine aspect, the <em>Shekhinah</em> before she descends into exile. She is the Advaitic <span class="sanskrit-term" title="The power of Brahman; the dynamic feminine principle of manifestation">M&#257;y&#257;</span> in its highest sense: not illusion but the creative power that makes manifestation possible without being identical to the manifest.</p>
 
     <p class="fade-in stagger-2">The <em>Cloud of Unknowing</em> instructs the seeker to &ldquo;enter the cloud of unknowing with a loving stirring,&rdquo; to abandon all concepts of God and rest in darkness. Sig&#275; <em>is</em> that cloud. She is the darkness that surrounds the Father, not as an obstacle but as the very condition of his transcendence. To enter the Silence is to cease all striving, all naming, all grasping. It is the Gnostic <em>wu wei</em> &mdash; the non-action that is the highest action.</p>
 
     <!-- DIAGRAM 3: The Silence -->
     <div class="diagram-container fade-in stagger-1">
-      <div class="diagram-title">Sig&#275; &middot; The Silence as Womb</div>
-      <svg class="diagram-svg" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+      <div class="diagram-title">Sig&#275; &middot; The Silence as Womb and Cloud</div>
+      <svg class="diagram-svg" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="sigeGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#4a4080" stop-opacity="0.08"/>
+            <stop offset="0%" stop-color="#4a4080" stop-opacity="0.12"/>
+            <stop offset="60%" stop-color="#1a1f3a" stop-opacity="0.06"/>
             <stop offset="100%" stop-color="#090c18" stop-opacity="0.02"/>
           </radialGradient>
+          <radialGradient id="fatherGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.25"/>
+            <stop offset="40%" stop-color="#c9a84c" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#4a4080" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="emanation" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#a090d0" stop-opacity="0.1"/>
+          </linearGradient>
+          <filter id="cloudBlur" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
         </defs>
 
-        <!-- The Silence (enveloping) -->
-        <ellipse cx="360" cy="150" rx="300" ry="120" fill="url(#sigeGrad)" stroke="#7c6fae" stroke-width="0.4" opacity="0.3"/>
-        <text x="360" y="40" text-anchor="middle" fill="#7c6fae" font-family="Cinzel", serif" font-size="10" letter-spacing="0.2em" opacity="0.6">SIG&#274; &middot; THE SILENCE</text>
+        <!-- The Silence (enveloping cloud) -->
+        <ellipse cx="400" cy="210" rx="340" ry="160" fill="url(#sigeGrad)" stroke="#7c6fae" stroke-width="0.5" opacity="0.35" filter="url(#cloudBlur)"/>
+        <ellipse cx="400" cy="210" rx="300" ry="135" fill="none" stroke="#7c6fae" stroke-width="0.4" opacity="0.2" stroke-dasharray="4,8"/>
+
+        <!-- Cloud particles / subtle dots -->
+        <g fill="#a090d0" opacity="0.25">
+          <circle cx="120" cy="150" r="1.5"/>
+          <circle cx="180" cy="120" r="2"/>
+          <circle cx="250" cy="100" r="1"/>
+          <circle cx="550" cy="100" r="1.5"/>
+          <circle cx="620" cy="120" r="2"/>
+          <circle cx="680" cy="150" r="1"/>
+          <circle cx="140" cy="280" r="1"/>
+          <circle cx="210" cy="310" r="1.5"/>
+          <circle cx="580" cy="310" r="1.5"/>
+          <circle cx="660" cy="280" r="1"/>
+          <circle cx="320" cy="80" r="1"/>
+          <circle cx="480" cy="80" r="1.5"/>
+          <circle cx="350" cy="340" r="1"/>
+          <circle cx="450" cy="340" r="1.5"/>
+        </g>
+
+        <text x="400" y="55" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="11" letter-spacing="0.25em" opacity="0.6">SIG&#274; &middot; THE SILENCE &middot; THE CLOUD OF UNKNOWING</text>
 
         <!-- The Father (hidden within) -->
-        <circle cx="360" cy="150" r="50" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
-        <text x="360" y="146" text-anchor="middle" fill="#c9a84c" font-family="Cinzel", serif" font-size="9" letter-spacing="0.1em" opacity="0.8">FATHER</text>
-        <text x="360" y="160" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro", serif" font-size="7" font-style="italic" opacity="0.5">Hidden</text>
+        <circle cx="400" cy="210" r="65" fill="url(#fatherGlow)" opacity="0.8"/>
+        <circle cx="400" cy="210" r="55" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,5"/>
+        <circle cx="400" cy="210" r="35" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
+        <text x="400" y="205" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em" opacity="0.8">THE FATHER</text>
+        <text x="400" y="220" text-anchor="middle" fill="#8a9abf" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">Hidden in the Silence</text>
 
-        <!-- Barbelo emerging -->
-        <ellipse cx="200" cy="150" rx="55" ry="35" fill="none" stroke="#a090d0" stroke-width="0.5" opacity="0.4"/>
-        <text x="200" y="146" text-anchor="middle" fill="#a090d0" font-family="Cinzel", serif" font-size="8" letter-spacing="0.08em" opacity="0.7">BARBELO</text>
-        <text x="200" y="158" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro", serif" font-size="7" font-style="italic" opacity="0.5">First Thought</text>
+        <!-- Barbelo emerging left -->
+        <ellipse cx="220" cy="210" rx="65" ry="45" fill="none" stroke="#a090d0" stroke-width="0.7" opacity="0.45" filter="url(#cloudBlur)"/>
+        <ellipse cx="220" cy="210" rx="55" ry="38" fill="none" stroke="#a090d0" stroke-width="0.4" opacity="0.3"/>
+        <text x="220" y="205" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.75">BARBELO</text>
+        <text x="220" y="218" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">First Thought</text>
 
-        <ellipse cx="520" cy="150" rx="55" ry="35" fill="none" stroke="#a090d0" stroke-width="0.5" opacity="0.4"/>
-        <text x="520" y="146" text-anchor="middle" fill="#a090d0" font-family="Cinzel", serif" font-size="8" letter-spacing="0.08em" opacity="0.7">AUTOGENES</text>
-        <text x="520" y="158" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro", serif" font-size="7" font-style="italic" opacity="0.5">Only-Begotten</text>
+        <!-- Autogenes emerging right -->
+        <ellipse cx="580" cy="210" rx="65" ry="45" fill="none" stroke="#a090d0" stroke-width="0.7" opacity="0.45" filter="url(#cloudBlur)"/>
+        <ellipse cx="580" cy="210" rx="55" ry="38" fill="none" stroke="#a090d0" stroke-width="0.4" opacity="0.3"/>
+        <text x="580" y="205" text-anchor="middle" fill="#a090d0" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.75">AUTOGENES</text>
+        <text x="580" y="218" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">Only-Begotten</text>
 
-        <!-- Connection lines -->
-        <line x1="310" y1="150" x2="255" y2="150" stroke="#a090d0" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
-        <line x1="410" y1="150" x2="465" y2="150" stroke="#a090d0" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
+        <!-- Connection lines (emanation rays) -->
+        <line x1="335" y1="210" x2="285" y2="210" stroke="url(#emanation)" stroke-width="1" opacity="0.4"/>
+        <line x1="465" y1="210" x2="515" y2="210" stroke="url(#emanation)" stroke-width="1" opacity="0.4"/>
+
+        <!-- Subtle particles along emanation -->
+        <circle cx="310" cy="210" r="1.5" fill="#c9a84c" opacity="0.4"/>
+        <circle cx="490" cy="210" r="1.5" fill="#c9a84c" opacity="0.4"/>
 
         <!-- Bottom -->
-        <text x="360" y="270" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro", serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The Silence is with him, and the Silence is his dwelling.&rdquo;</text>
+        <text x="400" y="380" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.45">&ldquo;The Silence is with him, and the Silence is his dwelling.&rdquo;</text>
+        <text x="400" y="395" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.35">&mdash; Apocryphon of John</text>
       </svg>
-      <p class="diagram-caption">The Father dwells in Sig&#275; as the unmanifest in the manifesting ground. From the Silence, Barbelo and the Only-Begotten emerge as the first rays of knowable light.</p>
+      <p class="diagram-caption">The Father dwells in Sig&#275; as the unmanifest in the manifesting ground. From the Silence, Barbelo and the Only-Begotten emerge as the first rays of knowable light, like stars condensing from a primordial nebula.</p>
     </div>
 
     <h3 class="fade-in stagger-1">The Cloud of Unknowing and the Gnostic Night</h3>
@@ -985,7 +1025,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <div class="scripture-panel">
         <div class="scripture-panel-label">Gospel of Thomas &middot; Logion 27</div>
         <p class="scripture-panel-text">&ldquo;If you do not fast from the world, you will not find the kingdom. If you do not keep the Sabbath as Sabbath, you will not see the Father.&rdquo;</p>
-        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,2)</p>
       </div>
     </div>
   </div>
@@ -998,7 +1038,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
     <p class="pullquote-text">&ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought. And the All was distressed, not knowing him. And the All was searching for him.&rdquo;</p>
-    <p class="pullquote-attr">&mdash; Gospel of Truth, Nag Hammadi Library</p>
+    <p class="pullquote-attr">&mdash; Gospel of Truth, Nag Hammadi Library (I,3)</p>
   </div>
 </div>
 
@@ -1014,7 +1054,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </div>
 
   <div class="content-essay fade-in">
-    <p class="content-introduction">The Unknown Father is not a Gnostic peculiarity. He is the Gnostic name for a reality recognized across the non-dual traditions: the Tao that cannot be named, the Ein Sof that transcends all sefirot, the Brahman without qualities, the Divine Ground of the Christian mystics. Each tradition approaches the same abyss with its own metaphors, its own buffers, its own path of return. The Gnostic contribution is the radical insistence on the <em>distance</em> between the source and the world &mdash; a distance that makes the return a matter of life and death.</p>
+    <p class="content-introduction">The Unknown Father is not a Gnostic peculiarity. He is the Gnostic name for a reality recognized across the non-dual traditions: the Tao that cannot be named, the Ein Sof that transcends all <em>sefirot</em>, the Brahman without qualities, the Divine Ground of the Christian mystics. Each tradition approaches the same abyss with its own metaphors, its own buffers, its own path of return. The Gnostic contribution is the radical insistence on the <em>distance</em> between the source and the world &mdash; a distance that makes the return a matter of life and death.</p>
 
     <p class="fade-in stagger-1">Where the Taoist sage returns to the Uncarved Block through <em>wu wei</em>, the Gnostic returns to the Pleroma through <em>gn&#333;sis</em> &mdash; a knowledge that is not accumulation but recognition, not learning but remembering. Where the Advaitin dissolves the individual self into the Self through inquiry, the Gnostic dissolves the &ldquo;psychic&rdquo; self into the &ldquo;pneumatic&rdquo; self through revelation. Where the Christian mystic empties the soul into the Divine Ground through love, the Gnostic empties the soul into the Silence through the Savior&rsquo;s teaching.</p>
 
@@ -1051,7 +1091,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <div class="scripture-panel">
         <div class="scripture-panel-label">Gospel of Philip &middot; On Names</div>
         <p class="scripture-panel-text">&ldquo;Names given to the worldly are very deceptive, for they divert our thoughts from what is correct to what is incorrect. Thus one who hears the word &lsquo;god&rsquo; does not perceive what is correct, but perceives what is incorrect.&rdquo;</p>
-        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library</p>
+        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,3)</p>
       </div>
     </div>
   </div>
@@ -1094,6 +1134,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <a href="../index.html">&#8962; Vedantic Mappings</a>
     <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
     <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
     <a href="../taoism/taoism-threshold.html">Taoism</a>
     <a href="gnosticism-unknown-father.html">Gnosticism &middot; The Unknown Father</a>
   </div>

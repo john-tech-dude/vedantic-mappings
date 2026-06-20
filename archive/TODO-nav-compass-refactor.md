@@ -1,4 +1,4 @@
-# DONE: Refactor ramana-maharshi.html + nisargadatta-maharaj.html to unified nav-compass
+# DONE: Refactor advaita-ramana-maharshi.html + advaita-nisargadatta-maharaj.html to unified nav-compass
 
 **Completed as high-priority item (June 2026).**
 
@@ -114,4 +114,4 @@ See git history or the files for details. The original plan below is kept for re
 
 ## Reference Files
 - Target: `/Users/g/Desktop/vedantic-mappings/taoism/taoism-threshold.html` (nav-compass style)
-- Source: `/Users/g/Desktop/vedantic-mappings/advaita-vedanta/ramana-maharshi.html` (current sidebar style)
+- Source: `/Users/g/Desktop/vedantic-mappings/advaita-vedanta/advaita-ramana-maharshi.html` (current sidebar style)

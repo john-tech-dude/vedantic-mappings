@@ -394,7 +394,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .pullquote-section { position: relative; overflow: hidden; background: var(--pullquote-bg); padding: 6rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 600px; height: 600px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
 .pullquote { max-width: 680px; margin: 0 auto; position: relative; padding-top: 2rem; }
-.pullquote-mark { display: block; font-family: 'Cormorant Garamond', serif; font-size: 9rem; color: var(--gold); opacity: 0.08; line-height: 0.8; margin-bottom: -2rem; text-align: center; user-select: none; }
+.pullquote-mark { display: block; font-family: 'Cormorant Garamond', serif; font-size: 9rem; color: var(--gold); opacity: 0.08; line-height: 0.8; margin-bottom: -2rem; text-align: center; user-select: none; -webkit-user-select: none; }
 .pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.1rem, 3vw, 1.65rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
 .pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
 
@@ -479,7 +479,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 /* --- Ornamental Numbered Grid (for Pramanas & Sadhana) --- */
 .ornamental-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 1px;
   margin: 2.5rem 0;
   background: var(--border);
@@ -666,9 +666,9 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <div class="nav-section-title">Advaita Vedanta</div>
     <a href="gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Gaudapada</span></a>
     <a href="adi-shankara.html" class="nav-item active"><span class="nav-item-icon">🕉</span><span>Adi Shankara</span></a>
-    <a href="ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
-    <a href="nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
-    <a href="adyashanti-comparison.html" class="nav-item"><span class="nav-item-icon">🔍</span><span>Adyashanti Comparison</span></a>
+    <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
+    <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
+    <a href="advaita-adyashanti-comparison.html" class="nav-item"><span class="nav-item-icon">🔍</span><span>Adyashanti Comparison</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
     <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
@@ -723,7 +723,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 </header>
 
 <!-- TABLE OF CONTENTS -->
-<section id="toc" class="content-section" style="padding: 80px 24px; max-width: 900px; margin: 0 auto;">
+<section id="toc" class="content-section">
   <div class="section-header">
     <div class="section-separator"></div>
     <h2><span class="text-reveal"><span class="text-reveal-inner">The Core Teachings of Adi Shankara</span></span></h2>
@@ -936,7 +936,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </div>
   <div class="content-essay fade-in">
     <p>Shankara taught that not everyone is ready for direct Self‑enquiry. One must first cultivate the <strong><span class="sanskrit-term" title="The fourfold qualifications for Jñāna Yoga: discrimination, dispassion, six virtues, and longing for liberation">fourfold qualifications</span></strong> (sādhana chatuṣṭaya) to purify the mind:</p>
-    <div class="ornamental-grid fade-in" style="grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));">
+    <div class="ornamental-grid fade-in">
       <div class="ornamental-item">
         <div class="ornamental-num">I</div>
         <div class="ornamental-content">
@@ -967,7 +967,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       </div>
     </div>
     <p>Only when these are firmly established is the seeker qualified to hear (śravaṇa), reflect (manana), and meditate (nididhyāsana) on the great sayings. For Shankara, liberation is not a reward – it is the natural result of removing the ignorance that conceals one’s true nature.</p>
-    <div class="stage-quote" style="background: var(--surface2); border-left:3px solid var(--gold); padding:1.5rem; margin:1.5rem 0;">
+    <div class="stage-quote">
       <p>“The mind becomes purified by the practice of these virtues, and then the truth of the Upaniṣads shines forth like a lamp in a windless place.”</p><a class="biblical-ref" data-reference="Vivekachūḍāmaṇi 18" title="Shankara: Purification of mind reveals the truth of the Upaniṣads">[10]</a><cite>— Vivekachūḍāmaṇi 18</cite>
     </div>
   </div>
@@ -1041,7 +1041,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
     <p class="pullquote-text">Continue to the living cartography of Ramana Maharshi, the modern sage of Arunachala.</p>
-    <p class="pullquote-attr"><a href="ramana-maharshi.html">→ Ramana Maharshi · The Direct Path</a></p>
+    <p class="pullquote-attr"><a href="advaita-ramana-maharshi.html">→ Ramana Maharshi · The Direct Path</a></p>
   </div>
 
 
@@ -1055,9 +1055,9 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <span class="chapter-sep">🕉</span>
   <a href="adi-shankara.html" class="chapter-link active">Adi Shankara</a>
   <span class="chapter-sep">🕉</span>
-  <a href="ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
+  <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
   <span class="chapter-sep">🕉</span>
-  <a href="nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
+  <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
 </div>
 
 <!-- FOOTER -->
