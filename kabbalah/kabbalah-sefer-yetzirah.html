@@ -518,14 +518,38 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 768px) { 
-  .nav-menu { min-width: 180px; } 
-  .back-to-top { right: 1.5rem; bottom: 6.5rem; } 
-  .footer-links { gap: 1.5rem; } 
-  .scripture-panels { grid-template-columns: 1fr; } 
-  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); } 
+@media (max-width: 768px) {
+  .nav-menu { min-width: 180px; }
+  .back-to-top { right: 1.5rem; bottom: 6.5rem; }
+  .footer-links { gap: 1.5rem; }
+  .scripture-panels { grid-template-columns: 1fr; }
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
   .hero-emblem { width: 72px; height: 88px; }
   .diagram-container { padding: 1rem; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .hero { padding: 4rem 1.5rem 5rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-emblem { width: 90px; height: 90px; }
+  .content-section { padding: 48px 16px; max-width: 100%; }
+  .section-header h2 { font-size: 1.6rem; }
+  .content-essay p { font-size: 0.95rem; line-height: 1.7; }
+  .content-introduction { font-size: 1.05rem; }
+  .diagram-container, .diagram-card { padding: 24px; }
+  .scripture-panels { margin: 24px 0; }
+  .scripture-panel { padding: 24px; }
+  .pullquote-section { padding: 3rem 1.5rem; }
+  .pullquote-text { font-size: 1.1rem; }
+  .nav-compass { top: 1rem; left: 1rem; }
+  .nav-toggle { width: 40px; height: 40px; }
+  .nav-menu { min-width: 160px; }
+  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+  .back-to-top { width: 40px; height: 40px; bottom: 5.5rem; right: 1rem; }
+  .chapter-nav { gap: 1rem; font-size: 0.6rem; }
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
 }
 
 @media (prefers-reduced-motion: reduce) { 
@@ -809,7 +833,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   }
 }
 </style>
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/r815WD9RQUuG3rQ8aRt5-W9YLSnBZ1Lfm2y8ICtCzC56dDRXLlNUElM377a7b8eT9UaRTFyh7q80Htp2L34STdC28y0cSbZ-tLxQhscyMA5SM6UyW9RlG2pDPXMuBPSrBWKw6Ni_6RIB7uMlhYvT6r004UsqzAP0Pbxu8mjINqcn3kFxNIR_82apQ2vS41c8q7libL9ySY0sJvJXcc70hxGTIDHEnKVR0omrzAuwL5iRfR2k6arreeTIsI0necSdWIVUlxDREHgZZU6BU5Dh7vHylctDbj5q_dJLIqF__ku1rk-3IUtgcnELCi9bYIpd5htilPCazVMxA26AiKHMOGTriMCYFlv3cAnXPYTpkneufwAFx2ZuXb5rKzCgeimfYJjGMQBpacWf7aWvlpC7VK0BwonsRQuEP-KNEPyvymPReZUJ7PoJEkZawR4O_6CQ981z-aq-QB7LlLQJ2hbBwCXjmgaJfkC8LGkoc3J9Fl620LqGbGuRgNElSA9u0mqXOU0w86KqZGilCL-l4Sk7f-kjO_aSSoD8owJY1Mo_whq6v_gVeuILO9AjMJTc_m0mOn9-o6UMkmypkzCozyGh5UWZVDoqWm3iAjmJnL_incuuBz48Y767BTZ2_sxCTuhr3vNN_LptCPII33IZhe4BS49sE2LwtypCzNiYi05CJA1LsPEmaWvR_eQ4mexGurdnSifMwCTJoqMopgKL6TglKNWeieZwwMZdvF4JVtTMbe5uDR2DDTX7YN6QepSsXL9qExXKUfCis8x2NlRPrD7UVu-deShQiWueIeKmXbUW25ce27Hp1oYuHp-QlAgPdlg2_dcWDpkSzoTTJjCCC1ETKrCG228w2erNobncwKrGj-FRUwcjSsLKe8lBxaumDmyixAxW5hX9NsXB8TkazM8gnptdzFUEvMojjlbvxiX84xFZSUNZCVuAr1bJVCtXm7XRrZInxe-xJoRg-lHQZeIgL1NTjcNSn2xV70MOFIsbi_uTtS7Xe9XUL01R6U2PTrpSiZCPIRwYQDgDcAlkcmuGQnUlrsOdhVwLLgXi7l2KEx5kGdCW4gQ0uvKPPbZQlMu2VBdQR1kk'></script><base target="_blank">
+
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/6zRQUtFjmwP5a8d5hvCFvtvvBwnl_TbPEZGFtwDlMytiu7rO24MApAn_qn5ZFFh4sCRiBN_0hnZywhgFPUnvRPKoWdt7m53GQLvkmbDsNUfnYqjgb1h1yR9lSgNrherxQBUVC5ssINwTLX8-aWzEodQvSawnj9fAtjBJZ3BoLv5xzh-npk72X74xj5xDSIBFU_pAlXc0xWCyCkRkK4AxWJTP2jd5T62w9Z57MtUt82h2_oHcxsUempHhoGVuGK-oyC-FUVPYU9-G62bbZzoK1xc4Sfv7bdaMOl71p3qgEFoxlGUqm8tSrKD8nUqusf4X0uyPQY-RrVvTdw3VMiOGc7bf1RcO2bj_xWbyMvGmwFxASxzXSz99g58U5UcPryx4H3StWUq4835LNUtairBxdMlVFwiqeWd7syGkm5NTESLsktoA2TDHApbh4vmCz-vuK6dScjwbhvkNauawnk1buy9su3qlFD2uBPsJLnYqcyeBhtLlhcSGrfukDSKazxGEpUs78n-bTE0WNmqcPKH1N9ZaJoNeKYhjVi4CiTx6c7_I-TSFET7hvkuDsjUtJdlYiNeleLYYYsUhhD4HWpDro5PCmRBClTPZDyyEGVWAYJg7oEqRGYuGEv6dy8NsYxx9rHZQN1PKXp7zohJGRXLbj9z19w_GwaBeuOO8qtpd5J-NkSfRC-WWY8fd9CV8pBno-ADbBbkwYvQM-t9lUXkI2ZcPehgYP6Uzbjv4VzOM-H_0UMKVwPtlh_MmIpDJYcz58S-wXnkysCg9rZabYY_Se0l9yNMPngjMWsH4yFfzlroeZ8HhqjHN7zumxdSJZ46Vu5TsFP9xCRsaZYSDDih8F_pQJPngcUJDS14_G8WwnhvdFBQ6Yhw4ClB-C1NW-pgoSRaxY8H2LX5LcDtulsE-anHelbbUZmYXAYL-_OiGzaolmNYZYf_1lrtyR-TCu6vXUu2D1AmGAF1_M5PxYX1jo4YV4H0TCelTSxPlJ8zpToen49gAlRFgPsz_XB14VhJkGckV-4zFTWF6F63OjQIcFk0ilzbxlfkeExz3GW27p2eXMwjpqxaC01-zz8DbPNHHhtgjlEp8FB_YWVx4vNXIlyuVXJItwM6O'></script><base target="_blank">
 </head>
 <body>
 
@@ -1025,7 +1050,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
                 <!-- Shin (ש) -->
                 <g transform="translate(-60.0,-194.0)"><text fill="#c4a855" opacity="0.9" filter="url(#p32Glow)">ש</text><text y="14" font-size="6" fill="#8a9ab8" opacity="0.6">21</text></g>
                 <!-- Tav (ת) -->
-                <g transform="translate(0,-195)"><text fill="#7a8aba" opacity="0.85">ת</text><text y="14" font-size="6" fill="#8a9ab8" opacity="0.6">22</text></g>
+                <g transform="translate(-30,-192)"><text fill="#7a8aba" opacity="0.85">ת</text><text y="14" font-size="6" fill="#8a9ab8" opacity="0.6">22</text></g>
               </g>
             </g>
 
@@ -1312,8 +1337,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
           <div class="diagram-subcaption">Hover or tap any sefirah to reveal its mystery</div>
         </div>
       </div>
-    </div>
-
     </div>
 
     <ul>
@@ -1758,6 +1781,11 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
   </svg></span>
   <a href="kabbalah-baal-shem-tov.html" class="chapter-link">IV · The Baal Shem Tov</a>
+  <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+    <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+  </svg></span>
+  <a href="kabbalah-mystical-union.html" class="chapter-link">V · Mystical Union</a>
 </div>
 
 <!-- FOOTER -->

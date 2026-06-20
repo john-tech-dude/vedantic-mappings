@@ -380,7 +380,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .hero { padding: 5rem 2rem 6rem 2rem; text-align: center; align-items: center; }
   .hero-scroll-cue { left: 50%; transform: translateX(-50%); align-items: center; }
   .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
@@ -388,11 +388,35 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .nav-menu { min-width: 180px; }
   .back-to-top { right: 1.5rem; bottom: 6.5rem; }
   .theme-toggle { right: 1.5rem; }
-  .footer-links { gap: 1.5rem; } 
-  .scripture-panels { grid-template-columns: 1fr; } 
+  .footer-links { gap: 1.5rem; }
+  .scripture-panels { grid-template-columns: 1fr; }
   .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
   .section-header { text-align: center; padding-left: 0; border-left: none; border-top: 2px solid var(--gold); padding-top: 24px; }
   .section-separator { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .hero { padding: 4rem 1.5rem 5rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-emblem { width: 90px; height: 90px; }
+  .content-section { padding: 48px 16px; max-width: 100%; }
+  .section-header h2 { font-size: 1.6rem; }
+  .content-essay p { font-size: 0.95rem; line-height: 1.7; }
+  .content-introduction { font-size: 1.05rem; }
+  .diagram-container, .diagram-card { padding: 24px; }
+  .scripture-panels { margin: 24px 0; }
+  .scripture-panel { padding: 24px; }
+  .pullquote-section { padding: 3rem 1.5rem; }
+  .pullquote-text { font-size: 1.1rem; }
+  .nav-compass { top: 1rem; left: 1rem; }
+  .nav-toggle { width: 40px; height: 40px; }
+  .nav-menu { min-width: 160px; }
+  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+  .back-to-top { width: 40px; height: 40px; bottom: 5.5rem; right: 1rem; }
+  .chapter-nav { gap: 1rem; font-size: 0.6rem; }
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
 }
 
 @media (prefers-reduced-motion: reduce) { 
@@ -1362,6 +1386,11 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
   </svg></span>
   <a href="kabbalah-baal-shem-tov.html" class="chapter-link active">IV · The Baal Shem Tov</a>
+  <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+    <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+  </svg></span>
+  <a href="kabbalah-mystical-union.html" class="chapter-link">V · Mystical Union</a>
 </div>
 
 <!-- FOOTER -->
