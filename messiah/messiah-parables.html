@@ -4,19 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="The Vedantic Messiah — Three Bridges between Gospel, Vedanta, Kabbalah, and Gnosticism: the Kingdom within, the Cross as ego-dissolution, the Holy Spirit as Shakti, and the Unitive Vision." />
-<title>The Vedantic Messiah — Three Bridges (Expanded)</title>
+<title>The Vedantic Messiah — Three Bridges</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
 <style>
 /* ═══════════════════════════════════════════════════════════
-   THE VEDANTIC MESSIAH — Three Bridges (Expanded v4)
+   THE VEDANTIC MESSIAH — Three Bridges (Refined)
    Non-dual cartography with Vedanta, Kabbalah, Gnosticism
    ═══════════════════════════════════════════════════════════ */
 
 :root {
   --bg: #0c0f14;
   --bg2: #12161c;
+  --bg3: #0a0c10;
   --surface: #181c23;
   --surface2: #21262e;
   --ink: #eef2f8;
@@ -43,30 +44,10 @@
   --crimson-soft: rgba(201, 90, 90, 0.08);
 }
 
-[data-theme="dark"] {
-  --bg: #0c0f14;
-  --bg2: #12161c;
-  --surface: #181c23;
-  --surface2: #21262e;
-  --ink: #eef2f8;
-  --ink2: #9aaebf;
-  --stone: #7c8ea0;
-  --stone-light: #9eb0c0;
-  --gold: #d4af37;
-  --gold-light: #e6c86e;
-  --gold-deep: #b8960c;
-  --gold-glow: rgba(212, 175, 55, 0.08);
-  --sun-glow: rgba(212, 175, 55, 0.18);
-  --border: rgba(255, 255, 255, 0.06);
-  --border-strong: rgba(255, 255, 255, 0.12);
-  --border-subtle: rgba(255, 255, 255, 0.03);
-  --crimson: #c95a5a;
-  --crimson-soft: rgba(201, 90, 90, 0.08);
-}
-
 [data-theme="light"] {
   --bg: #f8f5ef;
   --bg2: #f0ebe0;
+  --bg3: #e8e2d5;
   --surface: #ffffff;
   --surface2: #f5f0e8;
   --ink: #1a1510;
@@ -76,6 +57,8 @@
   --gold: #9a7a3a;
   --gold-light: #b8964a;
   --gold-deep: #7a5a22;
+  --gold-glow: rgba(154, 122, 58, 0.08);
+  --sun-glow: rgba(154, 122, 58, 0.18);
   --border: rgba(0, 0, 0, 0.08);
   --border-strong: rgba(0, 0, 0, 0.15);
   --crimson: #b44;
@@ -110,9 +93,7 @@ body::before {
   background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
   border-radius: 2px;
 }
-
 ::selection { background: rgba(154,122,58,0.20); color: var(--ink); }
-
 a:focus-visible, button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
@@ -158,6 +139,10 @@ a:focus-visible, button:focus-visible {
   66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.35; }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════ */
+
 .nav-compass {
   position: fixed;
   top: 1.5rem;
@@ -167,7 +152,6 @@ a:focus-visible, button:focus-visible {
   flex-direction: column;
   gap: 0.5rem;
 }
-
 .nav-toggle {
   width: 44px;
   height: 44px;
@@ -182,13 +166,11 @@ a:focus-visible, button:focus-visible {
   transition: all 0.35s var(--ease-out-expo);
   box-shadow: var(--shadow);
 }
-
 .nav-toggle:hover {
   background: var(--gold-glow);
   border-color: var(--gold);
   transform: scale(1.08);
 }
-
 .nav-menu {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -200,14 +182,14 @@ a:focus-visible, button:focus-visible {
   pointer-events: none;
   transition: all 0.4s var(--ease-out-expo);
   min-width: 240px;
+  max-height: 80vh;
+  overflow-y: auto;
 }
-
 .nav-menu.open {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: all;
 }
-
 .nav-item {
   display: flex;
   align-items: center;
@@ -220,23 +202,24 @@ a:focus-visible, button:focus-visible {
   transition: all 0.3s var(--ease-out-expo);
   border-left: 3px solid transparent;
 }
-
 .nav-item:hover {
   color: var(--ink);
   background: var(--gold-glow);
   padding-left: 1.5rem;
 }
-
 .nav-item.active {
   color: var(--gold-light);
   background: rgba(154,122,58,0.08);
   border-left-color: var(--gold);
   font-weight: 500;
 }
-
 .nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
 .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
 .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+/* ═══════════════════════════════════════════════════════════
+   THEME TOGGLE, STILLNESS, BACK TO TOP
+   ═══════════════════════════════════════════════════════════ */
 
 .theme-toggle {
   position: fixed;
@@ -257,10 +240,8 @@ a:focus-visible, button:focus-visible {
   box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1);
   overflow: hidden;
 }
-
 .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
 .theme-toggle:active { transform: scale(0.95); }
-
 .theme-toggle-icon {
   position: absolute;
   transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
@@ -271,13 +252,11 @@ a:focus-visible, button:focus-visible {
   width: 100%;
   height: 100%;
 }
-
 [data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
 [data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
 [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
 [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
 
-/* Stillness Mode */
 .stillness-toggle {
   position: fixed;
   bottom: 1.5rem;
@@ -327,9 +306,12 @@ body.stillness-mode *::after {
   pointer-events: none;
   transform: translateY(12px) scale(0.9);
 }
-
 .back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
 .back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
 
 .hero {
   min-height: 100vh;
@@ -342,9 +324,6 @@ body.stillness-mode *::after {
 }
 [data-theme="dark"] .hero {
   background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
-}
-[data-theme="light"] .hero {
-  background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
 }
 .hero::after {
   content: ''; position: absolute; inset: 0;
@@ -436,165 +415,154 @@ body.stillness-mode *::after {
   position: absolute; bottom: 2rem; left: 50%;
   transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
   cursor: pointer; z-index: 2;
-  transition: transform 0.3s var(--ease-expo);
+  transition: transform 0.3s var(--ease-out-expo);
 }
 .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
 .hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
 .scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--gold-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
 
-section {
-  position: relative;
-  transition: background-color 0.6s var(--ease-smooth);
-}
+/* ═══════════════════════════════════════════════════════════
+   CONTENT SECTIONS
+   ═══════════════════════════════════════════════════════════ */
 
-.section-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
+section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
 
+.section-header { text-align: center; margin-bottom: 56px; }
 .section-eyemark {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-  text-transform: uppercase;
+  font-family: 'Cinzel', serif; font-size: 0.55rem;
+  letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase;
   margin-bottom: 0.75rem;
 }
-
 .section-header h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
+  font-weight: 500; color: var(--ink);
+  margin-bottom: 8px; letter-spacing: 0.02em;
 }
-
 .section-header p {
-  font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 12px;
+  font-family: 'Cinzel', serif; font-size: 0.75rem;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-top: 12px;
 }
-
 .section-separator {
-  width: 48px;
-  height: 1px;
+  width: 48px; height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
   margin: 0 auto 20px;
-  opacity: 0;
-  transform: scaleX(0);
+  opacity: 0; transform: scaleX(0);
   transition: all 0.8s var(--ease-out-expo);
+  position: relative;
 }
-
-.section-separator.visible {
-  opacity: 1;
-  transform: scaleX(1);
-}
-
+.section-separator.visible { opacity: 1; transform: scaleX(1); }
 .section-separator::after {
   content: '✦';
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 50%; top: 50%;
   transform: translate(-50%,-50%);
-  color: var(--gold);
-  font-size: 0.72rem;
-  background: var(--bg);
-  padding: 0 6px;
+  color: var(--gold); font-size: 0.72rem;
+  background: var(--bg); padding: 0 6px;
 }
 
 .text-reveal { overflow: hidden; display: block; }
 .text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
 .visible .text-reveal-inner { transform: translateY(0); }
 
-.content-section {
-  padding: 80px 24px;
-  max-width: 780px;
-  margin: 0 auto;
-}
+.content-section { padding: 80px 24px; max-width: 780px; margin: 0 auto; }
 
 .content-introduction {
-  font-size: 1.05rem;
-  color: var(--stone);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
+  font-size: 1.05rem; color: var(--stone);
+  line-height: 1.8; margin-bottom: 2rem;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle);
 }
 
 .content-essay p {
-  font-size: 1.02rem;
-  color: var(--stone);
-  line-height: 1.82;
-  margin-bottom: 1.5rem;
+  font-size: 1.02rem; color: var(--stone);
+  line-height: 1.82; margin-bottom: 1.5rem;
 }
 
 .content-essay h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin: 2.5rem 0 1rem;
+  font-size: 1.35rem; font-weight: 500;
+  color: var(--ink); margin: 2.5rem 0 1rem;
   letter-spacing: 0.015em;
 }
 
 .content-essay h4 {
-  font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 2rem 0 0.75rem;
+  font-family: 'Cinzel', serif; font-size: 0.65rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); margin: 2rem 0 0.75rem;
 }
 
 .content-essay blockquote {
   border-left: 3px solid var(--gold);
-  padding: 20px 24px;
-  margin: 1.5rem 0;
+  padding: 20px 24px; margin: 1.5rem 0;
   background: var(--surface2);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.68;
+  font-family: 'IM Fell English', serif; font-style: italic;
+  color: var(--ink); line-height: 1.68;
   position: relative;
 }
-
 .content-essay blockquote::before {
   content: '"';
-  position: absolute;
-  top: -8px;
-  left: 12px;
+  position: absolute; top: -8px; left: 12px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  color: var(--gold);
-  opacity: 0.10;
-  line-height: 1;
+  font-size: 3rem; color: var(--gold); opacity: 0.10; line-height: 1;
 }
-
 .content-essay blockquote cite {
   display: block;
-  font-family: 'Cinzel', serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--stone-light);
-  text-transform: uppercase;
-  margin-top: 12px;
+  font-family: 'Cinzel', serif; font-size: 0.6rem;
+  letter-spacing: 0.2em; color: var(--stone-light);
+  text-transform: uppercase; margin-top: 12px;
   font-style: normal;
 }
 
-.sanskrit-term,.biblical-ref{
-  cursor:help;
-  border-bottom:1px dotted var(--gold-deep);
-  text-decoration:none;
+.sanskrit-term, .biblical-ref {
+  cursor: help;
+  border-bottom: 1px dotted var(--gold-deep);
+  text-decoration: none;
+  color: inherit;
 }
-.sanskrit-footnote { font-size: 0.7em; color: var(--stone); vertical-align: super; margin-left: 2px; }
-.footnote { margin: 0.5rem 0 1.5rem 0; font-style: italic; color: var(--stone); font-size: 0.85rem; }
+
+/* ═══════════════════════════════════════════════════════════
+   DIAGRAMS
+   ═══════════════════════════════════════════════════════════ */
+
+.diagram-container {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.diagram-container::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+}
+.diagram-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.diagram-svg {
+  max-width: 100%; height: auto;
+  display: block; margin: 0 auto;
+}
+.diagram-caption {
+  font-size: 0.85rem; color: var(--stone);
+  margin-top: 1rem; font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCRIPTURE PANELS
+   ═══════════════════════════════════════════════════════════ */
 
 .scripture-panels {
   display: grid;
@@ -605,129 +573,99 @@ section {
   overflow: hidden;
   border: 1px solid var(--border);
 }
-
-.scripture-panel {
-  background: var(--surface);
-  padding: 32px;
-}
-
-.scripture-panel-label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-
-.scripture-panel-text {
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.72;
-  color: var(--ink);
-  margin-bottom: 12px;
-  font-weight: 300;
-}
-
-.scripture-panel-ref {
-  font-family: 'Cinzel', serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  color: var(--stone-light);
-  text-transform: uppercase;
-}
-
+.scripture-panel { background: var(--surface); padding: 32px; transition: background 0.4s var(--ease-smooth); }
 .scripture-panel:hover { background: var(--surface2); }
-
-@media (max-width: 768px) {
-  .scripture-panels { grid-template-columns: 1fr; }
-  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+.scripture-panel-label {
+  font-family: 'Cinzel', serif; font-size: 0.55rem;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
 }
+.scripture-panel-text {
+  font-family: 'IM Fell English', serif; font-style: italic;
+  font-size: 1.05rem; line-height: 1.72;
+  color: var(--ink); margin-bottom: 12px; font-weight: 300;
+}
+.scripture-panel-ref {
+  font-family: 'Cinzel', serif; font-size: 0.58rem;
+  letter-spacing: 0.2em; color: var(--stone-light);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TENSION BOX & RESONANCE CALLOUT
+   ═══════════════════════════════════════════════════════════ */
 
 .tension-box {
   background: var(--crimson-soft);
   border-left: 4px solid var(--crimson);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  padding: 24px 28px;
-  margin: 28px 0;
+  padding: 24px 28px; margin: 28px 0;
 }
-
 .tension-box h4 {
-  font-family: 'Cinzel', serif;
-  font-size: 0.62rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--crimson);
-  margin-bottom: 12px;
+  font-family: 'Cinzel', serif; font-size: 0.62rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--crimson); margin-bottom: 12px;
+}
+.tension-box p {
+  font-size: 0.95rem; color: var(--ink);
+  line-height: 1.72; margin: 0;
 }
 
-.tension-box p {
-  font-size: 0.95rem;
-  color: var(--ink);
-  line-height: 1.72;
-  margin: 0;
+.resonance-callout {
+  margin: 1.5rem 0; padding: 1rem 1.25rem;
+  background: var(--surface2);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 4px 4px 0;
 }
+.resonance-callout .label {
+  font-family: 'Cinzel', serif; font-size: 0.6rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.4rem;
+}
+.resonance-callout p {
+  margin: 0; font-size: 0.92rem;
+  line-height: 1.55; color: var(--stone);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PULLQUOTE BAND
+   ═══════════════════════════════════════════════════════════ */
 
 .pullquote-section {
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
   background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-  padding: 5rem 2rem;
-  text-align: center;
+  padding: 5rem 2rem; text-align: center;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 [data-theme="dark"] .pullquote-section {
   background: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
 }
-[data-theme="light"] .pullquote-section {
-  background: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-}
-
 .pullquote-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: absolute; top: 50%; left: 50%;
   transform: translate(-50%,-55%);
-  width: 500px;
-  height: 500px;
+  width: 500px; height: 500px;
   background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%);
-  pointer-events: none;
-  animation: breathe 10s ease-in-out infinite;
+  pointer-events: none; animation: breathe 10s ease-in-out infinite;
 }
-
-.pullquote {
-  max-width: 640px;
-  margin: 0 auto;
-  position: relative;
-  padding-top: 2rem;
-}
-
+.pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
 .pullquote-text {
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
+  font-family: 'IM Fell English', serif; font-style: italic;
   font-size: clamp(1.05rem, 2.5vw, 1.5rem);
-  color: var(--ink);
-  line-height: 1.68;
+  color: var(--ink); line-height: 1.68;
   margin-bottom: 1.5rem;
 }
-
 .pullquote-attr {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.4em;
-  color: var(--stone-light);
+  font-family: 'Cinzel', serif; font-size: 0.55rem;
+  letter-spacing: 0.4em; color: var(--stone-light);
   text-transform: uppercase;
 }
-
-.pullquote-attr a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
+.pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
 .pullquote-attr a:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
 
 .footer {
   background: var(--bg2);
@@ -735,101 +673,42 @@ section {
   padding: 5rem 2rem 3rem;
   text-align: center;
 }
-
 .footer-emblem {
-  width: 36px;
-  height: 36px;
-  margin: 0 auto 1.5rem;
-  position: relative;
+  width: 36px; height: 36px;
+  margin: 0 auto 1.5rem; position: relative;
 }
-
-.footer-emblem-outer {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px solid var(--border-strong);
-}
-
-.footer-emblem-inner {
-  position: absolute;
-  inset: 8px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-}
-
-[data-theme="dark"] .footer-emblem-outer {
-  border-color: var(--gold);
-}
-
-[data-theme="dark"] .footer-emblem-inner {
-  border-color: var(--gold-light);
-}
-
+.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+[data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
 .footer-name {
-  font-family: 'Cinzel', serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif; font-size: 0.95rem;
+  letter-spacing: 0.2em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 0.5rem;
 }
-
 .footer-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  color: var(--stone);
-  font-size: 0.98rem;
-  margin-bottom: 2rem;
-  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  color: var(--stone); font-size: 0.98rem;
+  margin-bottom: 2rem; font-weight: 300;
 }
-
 .footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  font-size: 0.78rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 2.5rem;
+  display: flex; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
+  font-size: 0.78rem; letter-spacing: 0.15em;
+  text-transform: uppercase; margin-bottom: 2.5rem;
 }
-
-.footer-links a {
-  color: var(--stone);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
+.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
 .footer-links a:hover { color: var(--gold); }
-
-.footer-credit {
-  font-family: 'Cinzel', serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  color: var(--stone);
-  text-transform: uppercase;
-  opacity: 0.4;
+.footer-credit, .footer-copyright {
+  font-family: 'Cinzel', serif; font-size: 0.5rem;
+  letter-spacing: 0.3em; color: var(--stone);
+  text-transform: uppercase; opacity: 0.4;
 }
+.footer-copyright { margin-top: 0.5rem; }
 
-.footer-version {
-  font-family: 'Cinzel', serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  color: var(--stone);
-  text-transform: uppercase;
-  opacity: 0.4;
-  margin-top: 1rem;
-}
-
-.footer-copyright {
-  font-family: 'Cinzel', serif;
-  font-size: 0.5rem;
-  letter-spacing: 0.3em;
-  color: var(--stone);
-  text-transform: uppercase;
-  opacity: 0.4;
-  margin-top: 1rem;
-}
+/* ═══════════════════════════════════════════════════════════
+   CHAPTER NAV & CONTINUE LINK
+   ═══════════════════════════════════════════════════════════ */
 
 .continue-link { text-align: center; padding: 2rem 0 3rem; }
 .continue-link a { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
@@ -840,72 +719,88 @@ section {
 .chapter-sep { color: var(--gold-deep); opacity: 0.3; }
 .chapter-link.active { color: var(--gold); font-weight: 500; }
 
-@media (max-width: 768px) {
-  .nav-menu { min-width: 180px; }
-  .back-to-top { right: 1.5rem; bottom: 5rem; }
-  .stillness-toggle { right: 6rem; bottom: 1.5rem; }
-  .footer-links { gap: 1.5rem; }
-}
+/* ═══════════════════════════════════════════════════════════
+   UTILITY & ANIMATION CLASSES
+   ═══════════════════════════════════════════════════════════ */
 
 .fade-in {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
 }
-
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .nav-menu { min-width: 180px; }
+  .back-to-top { right: 1.5rem; bottom: 5rem; }
+  .stillness-toggle { right: 6rem; bottom: 1.5rem; }
+  .footer-links { gap: 1.5rem; }
+  .scripture-panels { grid-template-columns: 1fr; }
+  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .content-section { padding: 60px 20px; }
+  .hero { padding: 4rem 1.5rem 5rem; }
+  .diagram-container { padding: 1.5rem 1rem; }
+}
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .content-essay p { font-size: 0.95rem; }
+  .scripture-panel { padding: 24px; }
+  .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
+  .nav-menu { min-width: 160px; }
+  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+  .stillness-toggle { width: 42px; height: 42px; bottom: 1rem; right: 5.5rem; }
+  .back-to-top { width: 40px; height: 40px; bottom: 1rem; right: 9.5rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .fade-in { opacity: 1 !important; transform: none !important; }
-}
-
-/* Premium cross-tradition resonances callout */
-.resonance-callout {
-  margin: 1.5rem 0;
-  padding: 1rem 1.25rem;
-  background: var(--surface2);
-  border-left: 4px solid var(--gold);
-  border-radius: 0 4px 4px 0;
-}
-.resonance-callout .label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.4rem;
-}
-.resonance-callout p {
-  margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--stone);
+  .text-reveal-inner { transform: translateY(0) !important; }
+  .section-separator { opacity: 1 !important; transform: scaleX(1) !important; }
 }
 </style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/88sfmCUwue-CheoHEWFjWetoVS_9e7mnSBveR1IHkYf2uoLgKEFIk1B2AD4EVhqMv_z4CLF2c_8e8f3b4DbqNv7vpXB0jJwc5HnLXSAAgP-5tCr7-c37ObrDEbL9M-cfUlEXtsYDGV0I1yb51O7FazrZyWT98R5SAPhLVZDkK0z2bTy9BH9StRDW_6Lo8nd0vToQr8NrMRZRzq4msNXkvgLgocDoH8NdyRkmMFCkMMCSOw-iOKoJY1xRExvO_XMiDTsx4CM0CWa5O85LXXB_lNpF2j56U3LN0oN7SU00lnWggXxX8rY75NpaLe5kSrBvHqSGoap2ICNeYDk3ni3Af0Hy7EDZ-9KK_31V07nTzZdteYkx9npyul9IlRWMsosywcIeu9cBq5qcZLEmFfXGizoFkQEY_lmgrO9ay22P5-mgzchdiELlaU_RPcG6GggZesrI8UJGBKGxWchwzcZEEKU1SeQ-aEry_ttDJcY8svPahNv1zR8XRAGMyWRLt36biNjTnYJOAMfB7wv_KsPylvaRcpweLxmQSdYvS_SLrHtAohBi2lAONl8go0lLkEtcMgSHkZPF-jF12Va-x7fxsnlQTqAO_uRbAQlsqI50DZeCAc8xgBg-sw0YLcLznIT8e4XBcl8QMGXI6uU4OA45osuvgX0EabXz0Zb_D4L7mWphgNyfQCehQhuqO5rePV9sAWFQeypnqQkLkj9akqD8KFY12sYoentDkooIZhhJBiP4-rIcJCCFGfJIL9noHpIOPNTYcPiSVtSfR6ao1N66cB_BwVH2W3Pidf8bQLh9-YhGdKFnKI_BBxm2vugLFjc7pk0ZXwtAjSMUkRdvw8CR79iGLHlZaLzoBLvEtspXCZar8l3bCDlLrO4kDB62WGmg5WenxKDCfz-o9Er9-ugL-m9CdhjQoEtVck_bz67uDL41BqDLlXlZDjh4f3XKnxqBKFXdomqV_m-01lAVpR2XusY_e6nGELCcYxpH9QiusYbNlQRCnpd2F7dtAidWZt-G2sPJr4e_vmS0XDRPK6PeAE_hS6pKZjy3z6XtAv5NRGhJFbm7k89APGtmN-nadnl__Eo'></script><base target="_blank">
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
 <div class="nav-compass">
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
   <div class="nav-menu" id="navMenu">
-    <div class="nav-section-title">The Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <div class="nav-section-title">This Page</div>
+    <a href="#hero" class="nav-item"><span class="nav-item-icon">✦</span><span>Overview</span></a>
+    <a href="#introduction" class="nav-item"><span class="nav-item-icon">◈</span><span>The Trinitarian Map</span></a>
+    <a href="#bridge-kingdom" class="nav-item"><span class="nav-item-icon">I</span><span>Bridge I: The Kingdom Within</span></a>
+    <a href="#bridge-cross" class="nav-item"><span class="nav-item-icon">II</span><span>Bridge II: The Cross</span></a>
+    <a href="#bridge-spirit" class="nav-item"><span class="nav-item-icon">III</span><span>Bridge III: The Holy Spirit</span></a>
+    <a href="#bridge-unitive" class="nav-item"><span class="nav-item-icon">IV</span><span>Bridge IV: The Unitive Vision</span></a>
+    <a href="#glossary" class="nav-item"><span class="nav-item-icon">◉</span><span>Comparative Glossary</span></a>
     <div class="nav-divider"></div>
-    <div class="nav-section-title">Advaita Vedanta</div>
-    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Gaudapada</span></a>
-    <a href="../advaita-vedanta/adi-shankara.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Adi Shankara</span></a>
-    <a href="../advaita-vedanta/ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Ramana Maharshi</span></a>
-    <a href="../advaita-vedanta/nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
-    <div class="nav-divider"></div>
-    <div class="nav-section-title">The Nine Dimensions</div>
+    <div class="nav-section-title">The Vedantic Messiah</div>
     <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>The Hermeneutic Key</span></a>
-    <a href="messiah-parables.html" class="nav-item active"><span class="nav-item-icon">📖</span><span>Three Bridges</span></a>
-    <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◈</span><span>The Cloud of Unknowing</span></a>
+    <a href="messiah-parables.html" class="nav-item active"><span class="nav-item-icon">◈</span><span>Three Bridges</span></a>
+    <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>The Cloud of Unknowing</span></a>
     <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>Tat Tvam Asi</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Other Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <a href="../advaita-vedanta/gaudapada.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>Advaita Vedanta</span></a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
+    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Taoism · Four Pages</div>
     <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>I · The Unnamed Way</span></a>
@@ -923,7 +818,9 @@ section {
 <button class="stillness-toggle" id="stillnessToggle" aria-label="Stillness mode – pause animations">🧘</button>
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-<!-- HERO -->
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
 <header class="hero" id="hero">
   <div class="hero-mountain"></div>
   <div class="mandala-ring"></div><div class="mandala-ring"></div>
@@ -949,7 +846,9 @@ section {
   </div>
 </header>
 
-<!-- EXPANDED INTRODUCTION: THE TRINITARIAN MAP -->
+<!-- ═══════════════════════════════════════════════════════════
+     INTRODUCTION: THE TRINITARIAN MAP
+     ═══════════════════════════════════════════════════════════ -->
 <section class="content-section fade-in" id="introduction">
   <div class="section-header">
     <div class="section-separator"></div>
@@ -957,13 +856,55 @@ section {
     <h2><span class="text-reveal"><span class="text-reveal-inner">A Trinitarian Cartography of Non‑Duality</span></span></h2>
     <p>The Kingdom, the Cross, the Spirit</p>
   </div>
-  <div class="content-essay fade-in">
-    <p class="content-introduction">The Christian tradition, when read through a mystical lens, offers a trinitarian structure that mirrors the non‑dual map of Advaita Vedanta. The Father is the unmanifest ground (Nirguna Brahman); the Son is the manifest dissolution of the ego (Ahamkara); the Holy Spirit is the dynamic power (Shakti) that awakens and guides. These three “bridges” are not sequential stages but three facets of a single recognition: the Kingdom is within, the Cross is the death of the false self, and the Spirit is the ever‑present grace that reveals what has always been true.</p>
-    <p>In the pages that follow, we cross each bridge not as a linear progression but as a deepening of the same insight. The seeker who enters the Kingdom discovers the Cross; the one who embraces the Cross receives the Spirit; and the one who abides in the Spirit knows the Kingdom. This is the circle of non‑dual realization, traced in the language of Gospel and Vedanta, Kabbalah and Gnosis.</p>
+  <div class="content-essay">
+    <p class="content-introduction">Read mystically, the Christian trinity mirrors Advaita Vedānta's non‑dual map: the Father as unmanifest Nirguṇa Brahman, the Son as the dissolution of ego (<span class="sanskrit-term" title="The ego; the 'I-maker' that creates the illusion of separate existence">ahaṃkāra</span>), and the Holy Spirit as the dynamic <span class="sanskrit-term" title="The divine energy or power; the spiritual energy of consciousness">Śakti</span> that awakens. These three bridges are not stages but facets of one recognition: the Kingdom within, the Cross as ego‑death, and the Spirit as ever‑present grace.</p>
+    <p class="fade-in stagger-1">We cross each bridge not linearly but as a deepening of the same insight: the Kingdom reveals the Cross, the Cross opens to the Spirit, and the Spirit discloses the Kingdom anew. This is the circle of non‑dual realization, spoken in the tongues of Gospel and Vedānta, Kabbalah and Gnosis.</p>
+
+    <!-- DIAGRAM: The Three Bridges as a Cycle -->
+    <div class="diagram-container fade-in">
+      <div class="diagram-title">The Three Bridges · A Circular Path</div>
+      <svg class="diagram-svg" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle cx="250" cy="210" r="45" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.3"/>
+        <text x="250" y="205" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="2" font-weight="500">THE</text>
+        <text x="250" y="220" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="2" font-weight="500">SELF</text>
+        <ellipse cx="250" cy="65" rx="90" ry="30" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+        <text x="250" y="60" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">BRIDGE I</text>
+        <text x="250" y="76" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="10" font-style="italic">The Kingdom Within</text>
+        <ellipse cx="115" cy="300" rx="90" ry="30" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+        <text x="115" y="295" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">BRIDGE II</text>
+        <text x="115" y="311" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="10" font-style="italic">The Cross</text>
+        <ellipse cx="385" cy="300" rx="90" ry="30" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+        <text x="385" y="295" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">BRIDGE III</text>
+        <text x="385" y="311" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="10" font-style="italic">The Holy Spirit</text>
+        <path d="M 200 90 Q 160 150 140 270" stroke="#d4af37" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4,3"/>
+        <polygon points="140,270 136,262 144,262" fill="#d4af37" opacity="0.3"/>
+        <path d="M 205 300 L 295 300" stroke="#d4af37" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4,3"/>
+        <polygon points="295,300 287,296 287,304" fill="#d4af37" opacity="0.3"/>
+        <path d="M 360 270 Q 340 150 300 90" stroke="#d4af37" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="4,3"/>
+        <polygon points="300,90 296,98 304,98" fill="#d4af37" opacity="0.3"/>
+        <line x1="250" y1="95" x2="250" y2="165" stroke="#d4af37" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
+        <line x1="140" y1="270" x2="210" y2="230" stroke="#d4af37" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
+        <line x1="360" y1="270" x2="290" y2="230" stroke="#d4af37" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
+        <text x="250" y="380" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="9" letter-spacing="2" opacity="0.5">NOT SEQUENTIAL STAGES · THREE FACETS OF ONE RECOGNITION</text>
+      </svg>
+      <p class="diagram-caption">The three bridges are not a linear path but a circular deepening. Each bridge reveals the others; the seeker who enters the Kingdom discovers the Cross, and the one who receives the Spirit knows the Kingdom anew.</p>
+    </div>
   </div>
 </section>
 
-<!-- BRIDGE I: THE KINGDOM WITHIN -->
+<!-- ═══════════════════════════════════════════════════════════
+     BRIDGE I: THE KINGDOM WITHIN
+     ═══════════════════════════════════════════════════════════ -->
 <section class="content-section fade-in" id="bridge-kingdom">
   <div class="section-header">
     <div class="section-separator"></div>
@@ -971,124 +912,215 @@ section {
     <h2><span class="text-reveal"><span class="text-reveal-inner">The Kingdom of God Within</span></span></h2>
     <p>The Inward Turn · The Recognition of the Self</p>
   </div>
-  
-  <div class="content-essay fade-in">
-    <p class="content-introduction">When asked when the Kingdom would come, Jesus offers a corrective: <em>"The kingdom of God does not come with signs to be observed... the kingdom of God is within you"</em><a class="biblical-ref" data-reference="Luke 17:20-21" title="Luke 17:20-21: 'The kingdom of God is within you.'">[1]</a>. This is the essence of Vedanta itself: <span class="sanskrit-term" title="Liberation; release from the cycle of birth and death">moksha</span> is not a posthumous destination or geopolitical future, but the direct recognition of one's true nature as limitless consciousness, available here and now.</p>
-    
-    <p>The Kingdom is <strong>Sat-Cit-Ananda</strong> (Being-Consciousness-Bliss)<a class="biblical-ref" data-reference="Taittiriya Upanishad 2.1" title="Taittiriya Upanishad 2.1: Sat-Cit-Ananda – Existence, Consciousness, Bliss">[†]</a>, obscured only by the mind's compulsive turning outward. Jesus directs the seeker to inward practice: "When you pray, go into your room, close the door"<a class="biblical-ref" data-reference="Matthew 6:6" title="Matthew 6:6: 'When you pray, go into your inner room, close the door and pray to your Father who is unseen.'">[2]</a>—a direct parallel to the Sanskrit practice of <span class="sanskrit-term" title="Withdrawal of the senses from external objects">pratyahara</span> (sense withdrawal) and <span class="sanskrit-term" title="Deep, absorbed meditation on the Self">nididhyasana</span> (meditative absorption)<a class="biblical-ref" data-reference="Yoga Sutras 2.54, 1.12" title="Yoga Sutras 2.54: pratyahara; 1.12: abhyasa and vairagya">[‡]</a>.</p>
-    
-    <p>Jesus' parables of the Kingdom—the mustard seed that grows into a great shrub, the hidden treasure found in a field, the pearl of such value that a merchant sells all to acquire it—point to a single truth: <em>The Self is already present, already attained, but overlooked because consciousness remains turned outward</em>. The seeker is the sought. The Kingdom is not acquired; it is <em>recognized</em>.</p>
 
-    <h3>The Mustard Seed as Non‑Dual Parable</h3>
-    <p>The smallest of seeds<a class="biblical-ref" data-reference="Matthew 13:31-32" title="Matthew 13:31-32: The parable of the mustard seed.">[11]</a> becomes the greatest of shrubs. In Vedantic terms, the <span class="sanskrit-term" title="The individual self; the empirical ego">jiva</span> appears infinitesimally small within the vast cosmos, yet when the root belief in separation is pierced, that same jiva expands into the infinite Brahman. The mustard seed is the ego; the shrub is the Self. The transformation is not a change but an unveiling.</p>
+  <div class="content-essay">
+    <p class="content-introduction">When asked when the Kingdom would come, Jesus answers: <em>"The kingdom of God does not come with signs to be observed... the kingdom of God is within you"</em><a class="biblical-ref" data-reference="Luke 17:20-21" title="Luke 17:20-21">[1]</a>. This is the essence of Vedānta: <span class="sanskrit-term" title="Liberation; release from the cycle of birth and death">mokṣa</span> is not a posthumous destination but the direct recognition of one's true nature as limitless consciousness, available now.</p>
 
-    <h3>The Pearl of Great Price as Viveka</h3>
-    <p>The merchant who sells everything to acquire one pearl<a class="biblical-ref" data-reference="Matthew 13:45-46" title="Matthew 13:45-46: The pearl of great price.">[12]</a> enacts <span class="sanskrit-term" title="Discrimination between the real and the unreal">viveka</span>—the radical discernment that the Self alone is worth the surrender of all attachments to the non‑Self. This is the uncompromising renunciation taught by both Jesus and Shankara.</p>
+    <p class="fade-in">Jesus directs the seeker inward: <em>"When you pray, go into your room, close the door"</em><a class="biblical-ref" data-reference="Matthew 6:6" title="Matthew 6:6">[2]</a>—a direct parallel to <span class="sanskrit-term" title="Withdrawal of the senses from external objects">pratyāhāra</span> (sense withdrawal) and <span class="sanskrit-term" title="Deep, absorbed meditation on the Self">nididhyāsana</span> (meditative absorption)<a class="biblical-ref" data-reference="Yoga Sutras 2.54, 1.12" title="Yoga Sūtras 2.54, 1.12">[3]</a>.</p>
 
-    <h3>The Movement from Centrifugal to Centripetal</h3>
-    <p>The entire spiritual path is a single movement: from <strong>centrifugal</strong> consciousness (dissipating attention among objects) to <strong>centripetal</strong> consciousness (gathering all attention to its source). The Kingdom is not constructed; it is revealed when the noise of the world quiets and the seeker rests in the still point of their own being.</p>
+    <p class="fade-in stagger-1">His parables—the mustard seed, the hidden treasure, the pearl—point to one truth: <em>the Self is already present but overlooked because consciousness turns outward</em>. The seeker is the sought. The Kingdom is recognized, not acquired.</p>
 
-    <p>This is the teaching of the <span class="sanskrit-term" title="The indwelling Self; the inner ruler">antaryamin</span><a class="biblical-ref" data-reference="Brihadaranyaka Upanishad 3.7.15" title="Brihadaranyaka Upanishad 3.7.15: The antaryamin, the inner controller">[§]</a> (inner controller), the <span class="sanskrit-term" title="The Self; the true consciousness within every being">Atman</span> dwelling in the cave of the heart. Heaven is not a spatial location in the cosmos but the <strong>subjective realm</strong> of pure consciousness itself—what Vedanta calls <span class="sanskrit-term" title="The space of consciousness; the inner expanse of awareness">cid-akasa</span><a class="biblical-ref" data-reference="Chandogya Upanishad 3.12.6" title="Chandogya Upanishad 3.12.6: The space within the heart">[‖]</a> (the space of consciousness), and what Kabbalah calls <span class="sanskrit-term" title="The infinite No-thing; the ultimate ground beyond all attributes">Ein Sof</span><a class="biblical-ref" data-reference="Kabbalah: Ein Sof (Ayin)" title="Ein Sof: 'without end', the transcendent No-thing. Cf. Gershom Scholem, Major Trends in Jewish Mysticism; Daniel C. Matt, The Essential Kabbalah.">[††]</a>—the infinite No-thing from which all Being arises. The search for God in the external world of objects is the root of all bondage; the inward turn is the condition of its breaking.</p>
+    <h3 class="fade-in">The Mustard Seed as Non‑Dual Parable</h3>
+    <p class="fade-in">The smallest seed becomes the greatest shrub<a class="biblical-ref" data-reference="Matthew 13:31-32" title="Matthew 13:31-32">[4]</a>. The <span class="sanskrit-term" title="The individual self; the empirical ego">jīva</span> appears infinitesimal, yet when the root belief in separation is pierced, it expands into infinite Brahman. The mustard seed is the ego; the shrub is the Self. The transformation is an unveiling, not a change.</p>
 
-    <p>Jesus directs this inward movement with remarkable clarity: withdraw the senses from the world (<span class="sanskrit-term" title="Withdrawal of the senses from external objects">pratyahara</span>), cultivate the inward-facing gaze (<span class="sanskrit-term" title="Introversion of attention; the inward-facing perspective">antar-mukha</span>), and discover there the light of the Self—<em>"the true Light which gives light to every man coming into the world"</em><a class="biblical-ref" data-reference="John 1:9" title="John 1:9: 'The true light that gives light to everyone was coming into the world.'">[3]</a>.</p>
+    <h3 class="fade-in">The Pearl of Great Price as Viveka</h3>
+    <p class="fade-in">The merchant who sells everything for one pearl<a class="biblical-ref" data-reference="Matthew 13:45-46" title="Matthew 13:45-46">[5]</a> enacts <span class="sanskrit-term" title="Discrimination between the real and the unreal">viveka</span>—the radical discernment that the Self alone is worth the surrender of all attachments to the non‑Self. This is the uncompromising renunciation taught by both Jesus and <span class="sanskrit-term" title="The great Advaita philosopher">Śaṅkara</span>.</p>
 
-    <blockquote>
+    <h3 class="fade-in">The Movement from Centrifugal to Centripetal</h3>
+    <p class="fade-in">The path is a single movement: from <strong>centrifugal</strong> consciousness (dissipated among objects) to <strong>centripetal</strong> consciousness (gathered to its source). The Kingdom is revealed when the noise of the world quiets and the seeker rests in the still point of being.</p>
+
+    <p class="fade-in stagger-1">This is the <span class="sanskrit-term" title="The indwelling Self; the inner ruler">antaryāmin</span><a class="biblical-ref" data-reference="Brihadaranyaka Upanishad 3.7.15" title="Bṛhadāraṇyaka Upaniṣad 3.7.15">[6]</a> (inner ruler), the <span class="sanskrit-term" title="The Self; the true consciousness within every being">Ātman</span> dwelling in the cave of the heart. Heaven is not a location but the <strong>subjective realm</strong> of pure consciousness—what Vedānta calls <span class="sanskrit-term" title="The space of consciousness; the inner expanse of awareness">cid‑ākāśa</span><a class="biblical-ref" data-reference="Chandogya Upanishad 3.12.6" title="Chāndogya Upaniṣad 3.12.6">[7]</a>, and Kabbalah calls <span class="sanskrit-term" title="The infinite No-thing; the ultimate ground beyond all attributes">Ein Sof</span><a class="biblical-ref" data-reference="Kabbalah: Ein Sof" title="Ein Sof: 'without end', the transcendent No-thing">[8]</a>—the infinite No‑thing from which all Being arises.</p>
+
+    <p class="fade-in stagger-2">Jesus directs this inward movement: withdraw the senses (<span class="sanskrit-term" title="Withdrawal of the senses from external objects">pratyāhāra</span>), cultivate the inward gaze (<span class="sanskrit-term" title="Introversion of attention; the inward-facing perspective">antarmukha</span>), and discover the light of the Self—<em>"the true Light which gives light to every man coming into the world"</em><a class="biblical-ref" data-reference="John 1:9" title="John 1:9">[9]</a>.</p>
+
+    <blockquote class="fade-in">
       <p>"The kingdom of God does not come with your careful observation, nor will people say, 'Here it is,' or 'There it is,' because the kingdom of God is within you."</p>
-      <cite>— Luke 17:20-21</cite>
+      <cite>— Luke 17:20–21</cite>
     </blockquote>
-    
-    <blockquote>
+
+    <blockquote class="fade-in stagger-1">
       <p>"When you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you."</p>
       <cite>— Matthew 6:6</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- BRIDGE II: THE CROSS -->
+<!-- ═══════════════════════════════════════════════════════════
+     BRIDGE II: THE CROSS
+     ═══════════════════════════════════════════════════════════ -->
 <section class="content-section fade-in" id="bridge-cross">
   <div class="section-header">
     <div class="section-separator"></div>
     <p class="section-eyemark">Bridge II</p>
     <h2><span class="text-reveal"><span class="text-reveal-inner">The Cross as Dissolution of the Ego</span></span></h2>
-    <p>The Crucifixion of Ahamkara · The Death of the False Self</p>
+    <p>The Crucifixion of Ahaṃkāra · The Death of the False Self</p>
   </div>
-  
-  <div class="content-essay fade-in">
-    <p class="content-introduction">Mystically, the Cross is not tragedy but divine pedagogy. The crucifixion of Jesus represents the total dissolution of the <span class="sanskrit-term" title="The ego; the 'I-maker' that creates the illusion of separate existence">ahamkara</span>—the ego-sense that identifies with body and mind. His cry in Gethsemane—<em>"Not my will, but yours be done"</em><a class="biblical-ref" data-reference="Luke 22:42" title="Luke 22:42: 'Not my will, but yours be done.'">[4]</a>—embodies the ultimate surrender, which is the root liberation from bondage.</p>
-    
-    <p>Paul later captures this Vedantic insight with precision: <em>"I have been crucified with Christ and I no longer live, but Christ lives in me"</em><a class="biblical-ref" data-reference="Galatians 2:20" title="Galatians 2:20: 'I have been crucified with Christ and I no longer live, but Christ lives in me.'">[5]</a>. The false self dies on the cross of discernment; what remains is the universal Christ-consciousness, untouched by birth and death. The Resurrection reveals that the true Self was never born and never dies—the teaching of <span class="sanskrit-term" title="The doctrine of non-creation; that in reality nothing was ever created">ajata vada</span><a class="biblical-ref" data-reference="Gaudapada Karika 3.15" title="Gaudapada Karika 3.15: The doctrine of non-creation (ajata)">[¶]</a> (the doctrine of non-creation).</p>
-    
-    <p>The cry from the cross—<em>"My God, my God, why have you forsaken me?"</em>—expresses the ultimate ego-death, when even the consolation of divine presence vanishes. The <span class="sanskrit-term" title="One who has realized the Self; the enlightened one">jnani</span> (the realized one) stands alone in the Absolute, beyond the distinction of God and soul, consciousness and object. This is <span class="sanskrit-term" title="Not this, not this; the method of negating all that is not the Self">neti neti</span> (the negation of all proxies) carried to its absolute limit.</p>
 
-    <h3>The Cross as Supreme Austerity and Kabbalistic Contraction</h3>
-    <p>"Taking up the cross" is the supreme <span class="sanskrit-term" title="Austerity; spiritual discipline and practice">tapas</span><a class="biblical-ref" data-reference="Bhagavad Gita 6.17" title="Bhagavad Gita 6.17: 'He who is regulated in his habits of eating, sleeping, recreation and work can mitigate all material pains by practicing the yoga system.'">[#]</a> (austerity)—the dis-identification from the body-mind until the ego-sense itself is crucified, leading to the resurrection as the liberated <span class="sanskrit-term" title="The Self; the true consciousness">Atman</span>. The cross, in this light, is the supreme <em>tzimtzum</em><a class="biblical-ref" data-reference="Lurianic Kabbalah: Tzimtzum" title="Lurianic Kabbalah: The divine contraction (tzimtzum) to create space for creation. Cf. Isaac Luria, Etz Chayim.">[‡‡]</a>—a voluntary contraction of the divine into mortal form. The resurrection is the <em>tikkun</em><a class="biblical-ref" data-reference="Lurianic Kabbalah: Tikkun" title="Lurianic Kabbalah: The restoration (tikkun) of the shattered vessels. Cf. Sha'ar HaGilgulim.">[§§]</a>: the gathering of the scattered sparks back into the One.</p>
+  <div class="content-essay">
+    <p class="content-introduction">Mystically, the Cross is not tragedy but divine pedagogy. The crucifixion represents the total dissolution of <span class="sanskrit-term" title="The ego; the 'I-maker' that creates the illusion of separate existence">ahaṃkāra</span>—the ego‑sense that identifies with body and mind. Jesus' cry in Gethsemane—<em>"Not my will, but yours be done"</em><a class="biblical-ref" data-reference="Luke 22:42" title="Luke 22:42">[10]</a>—embodies the ultimate surrender that is root liberation.</p>
 
-    <h3>The Cross in the Gospel of Thomas</h3>
-    <p>The <em>Gospel of Thomas</em> (logion 55) records Jesus saying, "Whoever does not hate his father and his mother cannot be a disciple to me, and whoever does not hate his brothers and his sisters and take up his cross in my way will not be worthy of me."<a class="biblical-ref" data-reference="Gospel of Thomas 55" title="Gospel of Thomas 55: The radical renunciation of attachment.">[†††]</a> This is not literal hatred but the <span class="sanskrit-term" title="Dispassion; detachment from worldly relations">vairagya</span> that severs the ego's identification with family, status, and all temporal bonds—the necessary condition for the resurrection of the Self.</p>
+    <p class="fade-in">Paul captures this Vedāntic insight: <em>"I have been crucified with Christ and I no longer live, but Christ lives in me"</em><a class="biblical-ref" data-reference="Galatians 2:20" title="Galatians 2:20">[11]</a>. The false self dies; what remains is universal Christ‑consciousness, untouched by birth and death. The Resurrection reveals that the true Self was never born and never dies—the teaching of <span class="sanskrit-term" title="The doctrine of non-creation; that in reality nothing was ever created">ajāti‑vāda</span><a class="biblical-ref" data-reference="Gaudapada Karika 3.15" title="Gauḍapāda Kārikā 3.15">[12]</a> (non‑creation).</p>
 
-    <div class="tension-box">
-      <h4>The Convergence and the Difference</h4>
-      <p>Both traditions demand total reorientation of the heart toward the Absolute. The Vedantin speaks of discrimination between Self and non-Self; the Christian speaks of allegiance to the one God. But they differ significantly: Advaita locates the "problem" in ignorance, Christianity locates it in sin—a personal rebellion. The remedy in Advaita is knowledge; in Christianity, it is also grace and covenant fidelity. Yet as the Valentinian Gnostics understood, the realm of multiplicity (<em>kenoma</em>) is not separate from the <em>pleroma</em> (Fullness) but its necessary expression—a non-dual emanationism that echoes Advaita<a class="biblical-ref" data-reference="Valentinian Gnosticism" title="Tripartite Tractate, Nag Hammadi Codex I: The kenoma is not a separate evil substance but a necessary phase in the cosmic drama. Cf. Matthew Clark Brewer, 'Nonduality in Valentinian Christianity'.">[‖‖]</a>.</p>
+    <p class="fade-in stagger-1">The cry from the cross—<em>"My God, why have you forsaken me?"</em>—expresses ultimate ego‑death, when even divine consolation vanishes. The <span class="sanskrit-term" title="One who has realized the Self; the enlightened one">jñānī</span> stands alone in the Absolute, beyond the distinction of God and soul. This is <span class="sanskrit-term" title="Not this, not this; the method of negating all that is not the Self">neti neti</span> (the negation of all proxies) carried to its limit.</p>
+
+    <!-- DIAGRAM: The Cross as Ego-Dissolution -->
+    <div class="diagram-container fade-in">
+      <div class="diagram-title">The Cross · The Four Points of Ego‑Dissolution</div>
+      <svg class="diagram-svg" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
+          </linearGradient>
+          <filter id="glow2">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <line x1="250" y1="80" x2="250" y2="300" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.5"/>
+        <line x1="130" y1="190" x2="370" y2="190" stroke="url(#goldGrad2)" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="250" cy="190" r="8" fill="#d4af37" opacity="0.6" filter="url(#glow2)"/>
+        <text x="250" y="195" text-anchor="middle" fill="#0c0f14" font-family="Cinzel, serif" font-size="8" font-weight="600">SELF</text>
+        <text x="250" y="65" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">GETHSEMANE</text>
+        <text x="250" y="50" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="9" font-style="italic">"Not my will, but yours"</text>
+        <text x="250" y="35" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8">Surrender of personal will</text>
+        <circle cx="250" cy="80" r="4" fill="#d4af37" opacity="0.5"/>
+        <text x="250" y="320" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">THE TOMB</text>
+        <text x="250" y="335" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="9" font-style="italic">"Why have you forsaken me?"</text>
+        <text x="250" y="350" text-anchor="middle" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8">Ultimate ego‑death</text>
+        <circle cx="250" cy="300" r="4" fill="#d4af37" opacity="0.3"/>
+        <text x="115" y="185" text-anchor="end" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">BAPTISM</text>
+        <text x="115" y="200" text-anchor="end" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="9" font-style="italic">"He must increase, I decrease"</text>
+        <text x="115" y="215" text-anchor="end" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8">Renunciation of identity</text>
+        <circle cx="130" cy="190" r="4" fill="#d4af37" opacity="0.4"/>
+        <text x="385" y="185" text-anchor="start" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">RESURRECTION</text>
+        <text x="385" y="200" text-anchor="start" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="9" font-style="italic">"Christ lives in me"</text>
+        <text x="385" y="215" text-anchor="start" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8">The Self revealed</text>
+        <circle cx="370" cy="190" r="4" fill="#d4af37" opacity="0.7"/>
+        <circle cx="250" cy="190" r="140" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.15" stroke-dasharray="5,5"/>
+        <text x="250" y="365" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="1" opacity="0.5">THE CROSS AS THE STRUCTURE OF EGO‑DEATH</text>
+      </svg>
+      <p class="diagram-caption">The cross maps the four cardinal moments of ego‑dissolution: Baptism (renunciation), Gethsemane (surrender), the Tomb (death), and Resurrection (revelation of the Self).</p>
     </div>
 
-    <p>Jesus's ethical demands are the practical prerequisites for <span class="sanskrit-term" title="Liberation from the cycle of birth and death">moksha</span>: <span class="sanskrit-term" title="Discrimination between the real and the unreal">viveka</span> (discrimination) and <span class="sanskrit-term" title="Dispassion; detachment from worldly desires">vairagya</span> (dispassion). <em>"No one can serve two masters... You cannot serve God and mammon"</em><a class="biblical-ref" data-reference="Matthew 6:24" title="Matthew 6:24: 'No one can serve two masters... You cannot serve both God and money.'">[6]</a> is a call for viveka—the sharp discrimination between the eternal and the transient, the Self and the not-Self. "Mammon" is the entire cosmos of objectified desire.</p>
+    <h3 class="fade-in">The Cross as Supreme Austerity and Kabbalistic Contraction</h3>
+    <p class="fade-in">"Taking up the cross" is the supreme <span class="sanskrit-term" title="Austerity; spiritual discipline and practice">tapas</span><a class="biblical-ref" data-reference="Bhagavad Gita 6.17" title="Bhagavad Gītā 6.17">[13]</a> (austerity)—dis‑identification from body‑mind until the ego‑sense is crucified, leading to resurrection as liberated <span class="sanskrit-term" title="The Self; the true consciousness">Ātman</span>. The cross is the supreme <em>tzimtzum</em><a class="biblical-ref" data-reference="Lurianic Kabbalah: Tzimtzum" title="Lurianic Kabbalah: Tzimtzum">[14]</a>: divine self‑contraction into mortal form. The resurrection is <em>tikkun</em><a class="biblical-ref" data-reference="Lurianic Kabbalah: Tikkun" title="Lurianic Kabbalah: Tikkun">[15]</a>: the gathering of scattered sparks into the One.</p>
 
-    <blockquote>
+    <h3 class="fade-in">The Cross in the Gospel of Thomas</h3>
+    <p class="fade-in">The <em>Gospel of Thomas</em> (logion 55) records Jesus saying, "Whoever does not hate his father and mother cannot be my disciple... and take up his cross in my way"<a class="biblical-ref" data-reference="Gospel of Thomas 55" title="Gospel of Thomas 55">[16]</a>. This is not literal hatred but <span class="sanskrit-term" title="Dispassion; detachment from worldly relations">vairāgya</span>—detachment that severs the ego's identification with family, status, and temporal bonds.</p>
+
+    <div class="tension-box fade-in">
+      <h4>The Convergence and the Difference</h4>
+      <p>Both traditions demand total reorientation toward the Absolute. The Vedāntin speaks of discrimination between Self and non‑Self; the Christian speaks of allegiance to the one God. Advaita locates the "problem" in ignorance; Christianity in sin. The remedy in Advaita is knowledge; in Christianity, grace. Yet the Valentinian Gnostics understood that the realm of multiplicity (<em>kenōma</em>) is not separate from the <em>plēroma</em> (Fullness) but its necessary expression—a non‑dual emanationism that echoes Advaita<a class="biblical-ref" data-reference="Valentinian Gnosticism" title="Valentinian Gnosticism">[17]</a>.</p>
+    </div>
+
+    <p class="fade-in">Jesus' ethical demands are the prerequisites for <span class="sanskrit-term" title="Liberation from the cycle of birth and death">mokṣa</span>: <span class="sanskrit-term" title="Discrimination between the real and the unreal">viveka</span> and <span class="sanskrit-term" title="Dispassion; detachment from worldly desires">vairāgya</span>. <em>"No one can serve two masters... You cannot serve God and mammon"</em><a class="biblical-ref" data-reference="Matthew 6:24" title="Matthew 6:24">[18]</a> is viveka—the sharp discrimination between eternal and transient. "Mammon" is the entire cosmos of objectified desire.</p>
+
+    <blockquote class="fade-in">
       <p>"Not my will, but yours be done."</p>
       <cite>— Luke 22:42</cite>
     </blockquote>
-    
-    <blockquote>
+
+    <blockquote class="fade-in stagger-1">
       <p>"I have been crucified with Christ and I no longer live, but Christ lives in me."</p>
       <cite>— Galatians 2:20</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- BRIDGE III: THE HOLY SPIRIT -->
+<!-- ═══════════════════════════════════════════════════════════
+     BRIDGE III: THE HOLY SPIRIT
+     ═══════════════════════════════════════════════════════════ -->
 <section class="content-section fade-in" id="bridge-spirit">
   <div class="section-header">
     <div class="section-separator"></div>
     <p class="section-eyemark">Bridge III</p>
-    <h2><span class="text-reveal"><span class="text-reveal-inner">The Holy Spirit as Shakti</span></span></h2>
+    <h2><span class="text-reveal"><span class="text-reveal-inner">The Holy Spirit as Śakti</span></span></h2>
     <p>The Divine Power · The Indwelling Grace</p>
   </div>
-  
-  <div class="content-essay fade-in">
-    <p class="content-introduction">In Vedanta, the active power of realization is <span class="sanskrit-term" title="The divine energy or power; the spiritual energy of consciousness">Shakti</span>, the divine potency that conducts the individual soul back to its source. Jesus names this the <em>Paraclete</em>, the Spirit of Truth who <em>"will guide you into all truth"</em><a class="biblical-ref" data-reference="John 16:13" title="John 16:13: 'When the Spirit of truth comes, he will guide you into all the truth.'">[7]</a>—the inner guru, the spontaneous unfoldment of wisdom when obstacles are cleared.</p>
-    
-    <p><strong>Pentecost</strong>, the descent of tongues of fire, symbolizes the rising of Shakti to the crown, the <span class="sanskrit-term" title="The crown center; the thousand-petaled lotus at the apex of consciousness">sahasrara</span>. The apostles speak in all languages because, in Christ-realization, the heart recognizes the one consciousness animating all forms. This is <span class="sanskrit-term" title="Direct experience or realization; the lived knowledge of truth">anubhava</span> (the lived realization) that transcends conceptual knowledge.</p>
-    
-    <p>Jesus promises the Spirit as a permanent, indwelling presence: <em>"I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth"</em><a class="biblical-ref" data-reference="John 14:16-17" title="John 14:16-17: 'I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth.'">[8]</a>. This is not a future reward but grace ever-present, guiding the sincere seeker. The Spirit is the <span class="sanskrit-term" title="Life-force; the vital energy animating all existence">prana</span> (life-force) of the teaching itself—the living transmission from guru to disciple.</p>
 
-    <h3>The Holy Spirit as Trimorphic Protennoia</h3>
-    <p>The Holy Spirit, in her aspect as the indwelling presence, echoes the Gnostic <em>Trimorphic Protennoia</em><a class="biblical-ref" data-reference="Trimorphic Protennoia, Nag Hammadi Codex XIII" title="Trimorphic Protennoia: The 'Three Forms of First Thought', a Sethian Gnostic text where Barbelo speaks as the triple-formed divine mother—Father, Mother, Son.">[§§§]</a>—the triple-formed First Thought, mother and father both, who descends as light into the darkness to awaken those who sleep. Barbelo, the first emanation from the ineffable Father, is "the first power, the glory, the perfect glory in the aeons"<a class="biblical-ref" data-reference="Sethian Gnosticism: Barbelo" title="Barbelo: The 'First Thought' (Protennoia), the androgynous Mother-Father. Cf. Apocryphon of John, Nag Hammadi Codex II.">[‡‡‡]</a>—a direct parallel to the Holy Spirit as the creative, nurturing, and revealing power of God.</p>
+  <div class="content-essay">
+    <p class="content-introduction">In Vedānta, the active power of realization is <span class="sanskrit-term" title="The divine energy or power; the spiritual energy of consciousness">Śakti</span>, the divine potency that conducts the soul back to its source. Jesus names this the <em>Paraclete</em>, the Spirit of Truth who <em>"will guide you into all truth"</em><a class="biblical-ref" data-reference="John 16:13" title="John 16:13">[19]</a>—the inner guru, the spontaneous unfoldment of wisdom when obstacles clear.</p>
 
-    <h3>The Spirit as Shekinah</h3>
-    <p>In Kabbalah, the indwelling presence of God is <em>Shekinah</em><a class="biblical-ref" data-reference="Kabbalah: Shekinah" title="Shekinah: The feminine, immanent presence of the Divine dwelling within creation.">[‡‡‡†]</a>—the manifest glory that rests in the Tabernacle and in every pure heart. She is the Bride, the Sabbath Queen, the intimate nearness of the transcendent Ein Sof. The Holy Spirit as Comforter and Advocate is the Christian analogue of Shekinah: the divine presence that dwells <em>within</em> the community and the individual seeker, guiding, healing, and revealing.</p>
+    <p class="fade-in"><strong>Pentecost</strong>, the descent of tongues of fire, symbolizes Śakti rising to the crown, the <span class="sanskrit-term" title="The crown center; the thousand-petaled lotus at the apex of consciousness">sahasrāra</span>. The apostles speak in all languages because, in Christ‑realization, the heart recognizes the one consciousness animating all forms. This is <span class="sanskrit-term" title="Direct experience or realization; the lived knowledge of truth">anubhava</span> (lived realization) that transcends conceptual knowledge.</p>
 
-    <h3>Maya, Illusion, and the World</h3>
-    <p>In Johannine theology, the "Prince of this world"<a class="biblical-ref" data-reference="John 12:31" title="John 12:31: 'Now is the judgment of this world; now the ruler of this world will be driven out.'">[10]</a> is a personal demonic force—Satan. Yet Scripture also presents a God who sovereignly deploys delusion as an instrument of judgment: Paul writes that God will send a "strong delusion" upon those who reject the truth<a class="biblical-ref" data-reference="2 Thessalonians 2:11" title="2 Thessalonians 2:11: 'Therefore God sends them a strong delusion, so that they may believe what is false.'">[†††]</a>; Yahweh permits a lying spirit to deceive Ahab's prophets<a class="biblical-ref" data-reference="1 Kings 22:19-23" title="1 Kings 22:19-23: God permits a lying spirit to deceive Ahab's prophets.">[‡‡‡†]</a>; the deceived prophet has been deceived by God himself<a class="biblical-ref" data-reference="Ezekiel 14:9" title="Ezekiel 14:9: 'If the prophet is deceived and speaks a word, I the Lord have deceived that prophet.'">[§§§†]</a>; and "the deceived and the deceiver are his"<a class="biblical-ref" data-reference="Job 12:16" title="Job 12:16: 'With him are strength and wisdom; the deceived and the deceiver are his.'">[‖‖‖]</a>.</p>
+    <p class="fade-in stagger-1">Jesus promises the Spirit as a permanent, indwelling presence: <em>"I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth"</em><a class="biblical-ref" data-reference="John 14:16-17" title="John 14:16–17">[20]</a>. This is not a future reward but grace ever‑present. The Spirit is the <span class="sanskrit-term" title="Life-force; the vital energy animating all existence">prāṇa</span> of the teaching itself—the living transmission from guru to disciple.</p>
 
-    <p>In Advaita, <span class="sanskrit-term" title="The cosmic illusion; the power that veils reality and projects multiplicity">maya</span> is impersonal: the power of Brahman that simultaneously veils and projects. It is neither good nor evil, but the inherent power of Brahman to project the world of names and forms while veiling the non-dual Self. The biblical picture preserves a personal, morally engaged deity who actively sends deception as an act of judgment. Advaita preserves an impersonal, neutral cosmic power that is the very mechanism of manifestation itself<a class="biblical-ref" data-reference="Shankara, Brahma Sutra Bhasya 1.1.1" title="Shankara: Maya is the power of Brahman, beginningless and the cause of the universe.">[###]</a>.</p>
+    <!-- DIAGRAM: The Holy Spirit as Shakti — Kundalini Rising -->
+    <div class="diagram-container fade-in">
+      <div class="diagram-title">The Holy Spirit as Śakti · The Indwelling Power</div>
+      <svg class="diagram-svg" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad3" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.3" />
+            <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.6" />
+            <stop offset="100%" style="stop-color:#e6c86e;stop-opacity:0.9" />
+          </linearGradient>
+          <filter id="glow3">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <line x1="200" y1="420" x2="200" y2="60" stroke="url(#goldGrad3)" stroke-width="2" opacity="0.4"/>
+        <circle cx="200" cy="400" r="12" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+        <text x="200" y="405" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7">MULADHARA</text>
+        <circle cx="200" cy="340" r="10" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.35"/>
+        <text x="200" y="344" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7">SVADHISTHANA</text>
+        <circle cx="200" cy="280" r="10" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+        <text x="200" y="284" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="7">MANIPURA</text>
+        <circle cx="200" cy="220" r="11" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.45"/>
+        <text x="200" y="224" text-anchor="middle" fill="#9aaebf" font-family="Cinzel, serif" font-size="7">ANAHATA</text>
+        <circle cx="200" cy="160" r="10" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+        <text x="200" y="164" text-anchor="middle" fill="#9aaebf" font-family="Cinzel, serif" font-size="7">VISHUDDHA</text>
+        <circle cx="200" cy="110" r="9" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+        <text x="200" y="114" text-anchor="middle" fill="#9aaebf" font-family="Cinzel, serif" font-size="7">AJNA</text>
+        <ellipse cx="200" cy="50" rx="35" ry="18" fill="url(#goldGrad3)" opacity="0.2" filter="url(#glow3)"/>
+        <text x="200" y="47" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="10" letter-spacing="2" font-weight="500">SAHASRARA</text>
+        <text x="200" y="62" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Pentecost · The Crown</text>
+        <path d="M 170 35 Q 165 15 175 5 Q 180 20 185 30" fill="#d4af37" opacity="0.4"/>
+        <path d="M 230 35 Q 235 15 225 5 Q 220 20 215 30" fill="#d4af37" opacity="0.4"/>
+        <path d="M 200 30 Q 195 5 200 0 Q 205 5 200 30" fill="#e6c86e" opacity="0.5"/>
+        <text x="120" y="405" text-anchor="end" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Earth · Foundation</text>
+        <text x="120" y="284" text-anchor="end" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Fire · Will</text>
+        <text x="120" y="164" text-anchor="end" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Sound · Truth</text>
+        <text x="280" y="344" text-anchor="start" fill="#7c8ea0" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Water · Flow</text>
+        <text x="280" y="224" text-anchor="start" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Air · Love</text>
+        <text x="280" y="114" text-anchor="start" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Light · Vision</text>
+        <text x="200" y="460" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="9" letter-spacing="1" opacity="0.5">THE RISING OF ŚAKTI · THE DESCENT OF THE HOLY SPIRIT</text>
+      </svg>
+      <p class="diagram-caption">Pentecost—the descent of tongues of fire—parallels the rising of Kuṇḍalinī Śakti through the seven centers to the crown (sahasrāra), where the individual recognizes the one consciousness animating all forms.</p>
+    </div>
 
-    <p>Both traditions agree that the ordinary human condition is one of being deceived about the nature of reality. Both affirm that this deception is not accidental—it serves a divine purpose. The difference lies in the nature of the deceiver: personal will vs. cosmic power, judgment vs. neutrality, response to sin vs. the fabric of existence itself.</p>
+    <h3 class="fade-in">The Holy Spirit as Trimorphic Protennoia</h3>
+    <p class="fade-in">The Holy Spirit echoes the Gnostic <em>Trimorphic Protennoia</em><a class="biblical-ref" data-reference="Trimorphic Protennoia, Nag Hammadi Codex XIII" title="Trimorphic Protennoia, Nag Hammadi Codex XIII">[21]</a>—the triple‑formed First Thought, mother and father both, who descends as light into darkness to awaken those who sleep. Barbelo, the first emanation from the ineffable Father, is "the first power, the glory, the perfect glory in the aeons"<a class="biblical-ref" data-reference="Sethian Gnosticism: Barbelo" title="Sethian Gnosticism: Barbelo">[22]</a>—a direct parallel to the Holy Spirit as the creative, nurturing, and revealing power.</p>
 
-    <p>The anxiety about tomorrow<a class="biblical-ref" data-reference="Matthew 6:34" title="Matthew 6:34: 'Therefore do not worry about tomorrow, for tomorrow will worry about itself.'">[9]</a> springs from the very nature of <span class="sanskrit-term" title="The cycle of birth, death, and rebirth; the round of existence">samsara</span>. The teaching to consider the lilies—which neither toil nor spin—invites the seeker to abide in the effortless, non-doing (<span class="sanskrit-term" title="Freedom from action; the state of non-agency in realization">naiskarmya</span>)<a class="biblical-ref" data-reference="Bhagavad Gita 3.5" title="Bhagavad Gita 3.5: 'Everyone is forced to act helplessly by the qualities born of nature.'">[‡‡]</a> of the Self, trusting the natural order (<span class="sanskrit-term" title="Cosmic order; the inherent harmony and rhythm of existence">rta</span>)<a class="biblical-ref" data-reference="Rig Veda 10.85.1" title="Rig Veda 10.85.1: rta as cosmic order">[§§]</a> of Brahman. The birds and flowers live in perfect alignment with the Tao, in harmony with the cosmic rhythm of divine order.</p>
+    <h3 class="fade-in">The Spirit as Shekinah</h3>
+    <p class="fade-in">In Kabbalah, the indwelling presence of God is <em>Shekinah</em><a class="biblical-ref" data-reference="Kabbalah: Shekinah" title="Kabbalah: Shekinah">[23]</a>—the manifest glory that rests in the Tabernacle and in every pure heart. She is the Bride, the Sabbath Queen, the intimate nearness of transcendent Ein Sof. The Holy Spirit as Comforter is the Christian analogue of Shekinah: the divine presence that dwells within, guiding, healing, and revealing.</p>
 
-    <blockquote>
+    <h3 class="fade-in">Māyā, Illusion, and the World</h3>
+    <p class="fade-in">In Johannine theology, the "Prince of this world" is a personal demonic force<a class="biblical-ref" data-reference="John 12:31" title="John 12:31">[24]</a>. Yet Scripture also presents a God who deploys delusion as judgment: Paul writes that God sends a "strong delusion" upon those who reject truth<a class="biblical-ref" data-reference="2 Thessalonians 2:11" title="2 Thessalonians 2:11">[25]</a>; Yahweh permits a lying spirit to deceive Ahab's prophets<a class="biblical-ref" data-reference="1 Kings 22:19-23" title="1 Kings 22:19–23">[26]</a>; the deceived prophet has been deceived by God himself<a class="biblical-ref" data-reference="Ezekiel 14:9" title="Ezekiel 14:9">[27]</a>; and "the deceived and the deceiver are his"<a class="biblical-ref" data-reference="Job 12:16" title="Job 12:16">[28]</a>.</p>
+
+    <p class="fade-in stagger-1">In Advaita, <span class="sanskrit-term" title="The cosmic illusion; the power that veils reality and projects multiplicity">māyā</span> is impersonal: the power of Brahman that simultaneously veils and projects. It is neither good nor evil, but the inherent power to project names and forms while veiling the non‑dual Self. The biblical picture preserves a personal, morally engaged deity who sends deception as judgment. Advaita preserves an impersonal, neutral cosmic power that is the very mechanism of manifestation itself<a class="biblical-ref" data-reference="Shankara, Brahma Sutra Bhasya 1.1.1" title="Śaṅkara, Brahmasūtrabhāṣya 1.1.1">[29]</a>.</p>
+
+    <p class="fade-in stagger-2">Both traditions agree that the ordinary human condition is one of deception about reality. Both affirm this deception serves a divine purpose. The difference lies in the nature of the deceiver: personal will versus cosmic power, judgment versus neutrality, response to sin versus the fabric of existence.</p>
+
+    <p class="fade-in stagger-3">Anxiety about tomorrow springs from the nature of <span class="sanskrit-term" title="The cycle of birth, death, and rebirth; the round of existence">saṃsāra</span> itself<a class="biblical-ref" data-reference="Matthew 6:34" title="Matthew 6:34">[30]</a>. The teaching to consider the lilies—which neither toil nor spin—invites the seeker to abide in the effortless non‑doing (<span class="sanskrit-term" title="Freedom from action; the state of non-agency in realization">naiṣkarmya</span>)<a class="biblical-ref" data-reference="Bhagavad Gita 3.5" title="Bhagavad Gītā 3.5">[31]</a> of the Self, trusting the natural order (<span class="sanskrit-term" title="Cosmic order; the inherent harmony and rhythm of existence">ṛta</span>)<a class="biblical-ref" data-reference="Rig Veda 10.85.1" title="Ṛg Veda 10.85.1">[32]</a> of Brahman.</p>
+
+    <blockquote class="fade-in">
       <p>"But when he, the Spirit of truth, comes, he will guide you into all the truth. He will not speak on his own; he will speak only what he hears, and he will tell you what is yet to come."</p>
       <cite>— John 16:13</cite>
     </blockquote>
-    
-    <blockquote>
+
+    <blockquote class="fade-in stagger-1">
       <p>"And I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth."</p>
-      <cite>— John 14:16-17</cite>
+      <cite>— John 14:16–17</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- BRIDGE IV: THE UNITIVE VISION -->
+<!-- ═══════════════════════════════════════════════════════════
+     BRIDGE IV: THE UNITIVE VISION
+     ═══════════════════════════════════════════════════════════ -->
 <section class="content-section fade-in" id="bridge-unitive">
   <div class="section-header">
     <div class="section-separator"></div>
@@ -1096,64 +1128,128 @@ section {
     <h2><span class="text-reveal"><span class="text-reveal-inner">The Unitive Vision</span></span></h2>
     <p>Non‑Duality in Practice · From Map to Territory</p>
   </div>
-  
-  <div class="content-essay fade-in">
-    <p class="content-introduction">Having crossed the three bridges—Kingdom, Cross, Spirit—the seeker arrives not at a new location but at the recognition that there is nowhere to go. The Kingdom was always within; the Cross was always the dissolution of the one who sought; the Spirit was always the very act of seeing. This is the unitive vision: the collapse of subject and object, seeker and sought, into the single reality of consciousness itself.</p>
 
-    <h3>The Non‑Dual Thread Across Traditions</h3>
-    <p>Advaita Vedanta calls this recognition <em>Brahmavidya</em>—the knowledge of Brahman that erases the distinction between knower, knowing, and known. The Christian mystics call it <em>unio mystica</em>—the union in which the soul no longer lives, but Christ lives in her. Kabbalah calls it <em>devekut</em><a class="biblical-ref" data-reference="Kabbalah: Devekut" title="Devekut: Cleaving to God; the state of non‑dual attachment.">[###†]</a>—the cleaving to Ein Sof that dissolves the sense of separate self. The Sethian Gnostics called it <em>gnosis</em>—the direct, salvific knowledge that one is not a fallen fragment but the luminous thought of the Father.</p>
+  <div class="content-essay">
+    <p class="content-introduction">Having crossed the three bridges, the seeker arrives not at a new location but at the recognition that there is nowhere to go. The Kingdom was always within; the Cross was always the dissolution of the one who sought; the Spirit was always the very act of seeing. This is the unitive vision: the collapse of subject and object into the single reality of consciousness.</p>
 
-    <h3>Daily Practice: The Cross as Moment‑by‑Moment Surrender</h3>
-    <p>Jesus said, "If anyone would come after me, let him deny himself and take up his cross <strong>daily</strong>"<a class="biblical-ref" data-reference="Luke 9:23" title="Luke 9:23: 'Take up his cross daily.'">[13]</a>. The cross is not only the final crucifixion at the end of the path; it is the continuous practice of offering each arising thought, each emotional reaction, each identification back to its source. This is <span class="sanskrit-term" title="The continuous practice of abiding in the Self">sakshatkara</span>—the moment‑by‑moment recognition of the Self until it becomes effortless and natural.</p>
+    <h3 class="fade-in">The Non‑Dual Thread Across Traditions</h3>
+    <p class="fade-in">Advaita calls this <em>Brahmavidyā</em>—the knowledge of Brahman that erases the distinction between knower, knowing, and known. Christian mystics call it <em>unio mystica</em>—the union in which the soul no longer lives, but Christ lives in her. Kabbalah calls it <em>devekut</em><a class="biblical-ref" data-reference="Kabbalah: Devekut" title="Kabbalah: Devekut">[33]</a>—cleaving to Ein Sof that dissolves separate selfhood. The Sethian Gnostics called it <em>gnosis</em>—the direct knowledge that one is not a fallen fragment but the luminous thought of the Father.</p>
 
-    <h3>The Guru Principle: The Spirit as Inner Teacher</h3>
-    <p>Jesus promises "another advocate"<a class="biblical-ref" data-reference="John 14:16" title="John 14:16: 'Another advocate'">[14]</a>—implying that he himself was the first. In Vedanta, the living <em>guru</em> is the embodied transmission of awakening. The Holy Spirit is the inner guru, the presence of the awakened consciousness that guides from within once the outer teacher has ignited the flame. To rely on the Spirit is to trust that the wisdom one seeks is already present, hidden only by the mind's noise.</p>
-
-    <h3>The Communion of Saints: The Collective Body of Christ</h3>
-    <p>The unitive vision is not solitary. Paul writes that the Church is the Body of Christ< a class="biblical-ref" data-reference="1 Corinthians 12:27" title="1 Corinthians 12:27: 'You are the body of Christ.'">[15]</a>, each member interdependent. In Vedanta, the realized being (<em>jivanmukta</em>) continues to act in the world for the sake of others (<em>loka-samgraha</em>)<a class="biblical-ref" data-reference="Bhagavad Gita 3.20" title="Bhagavad Gita 3.20: 'Janaka and others attained perfection by action for the welfare of the world.'">[##]</a>. The cross, therefore, is not only the death of the separate self but the birth of a new, relational selfhood that exists for others. The Kingdom within manifests as a Kingdom among.</p>
-
-    <div class="tension-box">
-      <h4>Final Friction: Non‑Duality vs. Relationality</h4>
-      <p>The most profound resistance between the traditions remains: Advaita tends toward solitary realization; Christianity toward communal salvation. Yet the cross reveals that the solitary path and the communal path are not opposites. The one who has died to self sees no other separate self anywhere. Compassion is not an obligation but the spontaneous expression of non‑duality in action. "Love your neighbor as yourself" is the natural fruit of seeing that the neighbor <em>is</em> yourself.</p>
+    <!-- DIAGRAM: The Unitive Vision — Four Traditions Converging -->
+    <div class="diagram-container fade-in">
+      <div class="diagram-title">The Unitive Vision · Four Traditions Converging</div>
+      <svg class="diagram-svg" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
+          </linearGradient>
+          <filter id="glow4">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <ellipse cx="250" cy="210" rx="70" ry="35" fill="url(#goldGrad4)" opacity="0.15" filter="url(#glow4)"/>
+        <text x="250" y="205" text-anchor="middle" fill="#e6c86e" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">THE ONE</text>
+        <text x="250" y="220" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Reality · Consciousness · Self</text>
+        <ellipse cx="250" cy="60" rx="85" ry="28" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+        <text x="250" y="55" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">ADVAITA VEDANTA</text>
+        <text x="250" y="70" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Brahmavidyā · Tat tvam asi</text>
+        <line x1="250" y1="88" x2="250" y2="175" stroke="#d4af37" stroke-width="0.5" opacity="0.25" stroke-dasharray="4,3"/>
+        <ellipse cx="420" cy="210" rx="70" ry="28" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+        <text x="420" y="205" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">CHRISTIANITY</text>
+        <text x="420" y="220" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Unio Mystica · Theosis</text>
+        <line x1="350" y1="210" x2="395" y2="210" stroke="#d4af37" stroke-width="0.5" opacity="0.25" stroke-dasharray="4,3"/>
+        <ellipse cx="250" cy="360" rx="70" ry="28" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+        <text x="250" y="355" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">KABBALAH</text>
+        <text x="250" y="370" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Devekut · Ein Sof</text>
+        <line x1="250" y1="245" x2="250" y2="332" stroke="#d4af37" stroke-width="0.5" opacity="0.25" stroke-dasharray="4,3"/>
+        <ellipse cx="80" cy="210" rx="70" ry="28" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
+        <text x="80" y="205" text-anchor="middle" fill="#d4af37" font-family="Cinzel, serif" font-size="10" letter-spacing="1">GNOSTICISM</text>
+        <text x="80" y="220" text-anchor="middle" fill="#9aaebf" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Gnosis · Plēroma</text>
+        <line x1="150" y1="210" x2="105" y2="210" stroke="#d4af37" stroke-width="0.5" opacity="0.25" stroke-dasharray="4,3"/>
+        <polygon points="250,175 246,183 254,183" fill="#d4af37" opacity="0.3"/>
+        <polygon points="350,210 342,206 342,214" fill="#d4af37" opacity="0.3"/>
+        <polygon points="250,245 246,237 254,237" fill="#d4af37" opacity="0.3"/>
+        <polygon points="150,210 158,206 158,214" fill="#d4af37" opacity="0.3"/>
+        <text x="250" y="410" text-anchor="middle" fill="#7c8ea0" font-family="Cinzel, serif" font-size="8" letter-spacing="1" opacity="0.5">FOUR LANGUAGES · ONE SILENCE</text>
+      </svg>
+      <p class="diagram-caption">Four traditions converge on a single recognition: the dissolution of the separate self into the one reality that was never absent. The languages differ; the silence is the same.</p>
     </div>
 
-    <blockquote>
+    <h3 class="fade-in">Daily Practice: The Cross as Moment‑by‑Moment Surrender</h3>
+    <p class="fade-in">Jesus said, "If anyone would come after me, let him deny himself and take up his cross <strong>daily</strong>"<a class="biblical-ref" data-reference="Luke 9:23" title="Luke 9:23">[34]</a>. The cross is the continuous practice of offering each thought, each reaction, each identification back to its source. This is <span class="sanskrit-term" title="The continuous practice of abiding in the Self">sākṣātkāra</span>—the moment‑by‑moment recognition of the Self until it becomes effortless.</p>
+
+    <h3 class="fade-in">The Guru Principle: The Spirit as Inner Teacher</h3>
+    <p class="fade-in">Jesus promises "another advocate"<a class="biblical-ref" data-reference="John 14:16" title="John 14:16">[35]</a>—implying that he himself was the first. In Vedānta, the living <em>guru</em> is the embodied transmission of awakening. The Holy Spirit is the inner guru, the presence of awakened consciousness that guides from within. To rely on the Spirit is to trust that the wisdom one seeks is already present, hidden only by the mind's noise.</p>
+
+    <h3 class="fade-in">The Communion of Saints: The Collective Body of Christ</h3>
+    <p class="fade-in">The unitive vision is not solitary. Paul writes that the Church is the Body of Christ<a class="biblical-ref" data-reference="1 Corinthians 12:27" title="1 Corinthians 12:27">[36]</a>, each member interdependent. In Vedānta, the realized being (<span class="sanskrit-term" title="One who is liberated while living">jīvanmukta</span>) continues to act for the sake of others (<span class="sanskrit-term" title="The welfare of the world; maintenance of cosmic order">lokasaṃgraha</span>)<a class="biblical-ref" data-reference="Bhagavad Gita 3.20" title="Bhagavad Gītā 3.20">[37]</a>. The cross is not only the death of the separate self but the birth of a new relational selfhood that exists for others. The Kingdom within manifests as a Kingdom among.</p>
+
+    <div class="tension-box fade-in">
+      <h4>Final Friction: Non‑Duality vs. Relationality</h4>
+      <p>The most profound resistance between the traditions remains: Advaita tends toward solitary realization; Christianity toward communal salvation. Yet the cross reveals that these are not opposites. The one who has died to self sees no other separate self anywhere. Compassion is not an obligation but the spontaneous expression of non‑duality in action. "Love your neighbor as yourself" is the natural fruit of seeing that the neighbor <em>is</em> yourself.</p>
+    </div>
+
+    <blockquote class="fade-in">
       <p>"The eye through which I see God is the same eye through which God sees me."</p>
       <cite>— Meister Eckhart</cite>
     </blockquote>
-    
-    <blockquote>
+
+    <blockquote class="fade-in stagger-1">
       <p>"When I am awake within the Self, I see that all beings are my own Self."</p>
-      <cite>— Ashtavakra Gita 7.4</cite>
+      <cite>— Aṣṭāvakra Gītā 7.4</cite>
     </blockquote>
   </div>
 </section>
 
-<!-- COMPARATIVE GLOSSARY -->
+<!-- ═══════════════════════════════════════════════════════════
+     COMPARATIVE GLOSSARY
+     ═══════════════════════════════════════════════════════════ -->
 <section class="content-section fade-in" id="glossary">
   <div class="section-header">
     <div class="section-separator"></div>
     <p class="section-eyemark">Glossary</p>
     <h2><span class="text-reveal"><span class="text-reveal-inner">Key Terms in Comparative Light</span></span></h2>
-    <p>Vedanta · Christianity · Kabbalah · Gnosticism</p>
+    <p>Vedānta · Christianity · Kabbalah · Gnosticism</p>
   </div>
   <div class="content-essay fade-in">
     <div class="scripture-panels">
-      <div class="scripture-panel"><div class="scripture-panel-label">Ātman / Christ</div><p class="scripture-panel-text">The true Self, identical with Brahman (Vedanta). The universal Christ-consciousness that "lives in me" (Galatians 2:20).</p></div>
-      <div class="scripture-panel"><div class="scripture-panel-label">Brahman / The Father</div><p class="scripture-panel-text">The ultimate, attributeless ground of being (Nirguna Brahman). The Father who is greater than all (John 14:28).</p></div>
-      <div class="scripture-panel"><div class="scripture-panel-label">Māyā / Strong Delusion</div><p class="scripture-panel-text">The impersonal power that veils reality (Advaita). The personal judgment that sends delusion (2 Thessalonians 2:11). Both describe the deceptive nature of ordinary perception.</p></div>
-      <div class="scripture-panel"><div class="scripture-panel-label">Shakti / Holy Spirit / Shekinah</div><p class="scripture-panel-text">The dynamic, creative, indwelling divine power that awakens and guides.</p></div>
-      <div class="scripture-panel"><div class="scripture-panel-label">Tzimtzum / Kenosis</div><p class="scripture-panel-text">The divine self‑contraction (Kabbalah). Christ's emptying of divine prerogatives (Philippians 2:7). The cross as voluntary limitation.</p></div>
-      <div class="scripture-panel"><div class="scripture-panel-label">Pleroma / Fullness</div><p class="scripture-panel-text">The divine realm of total perfection (Valentinian). The "fullness of God" (Ephesians 3:19) that dwells in Christ.</p></div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Ātman / Christ</div>
+        <p class="scripture-panel-text">The true Self, identical with Brahman (Vedānta). The universal Christ‑consciousness that "lives in me" (Galatians 2:20).</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Brahman / The Father</div>
+        <p class="scripture-panel-text">The ultimate, attributeless ground of being (Nirguṇa Brahman). The Father who is greater than all (John 14:28).</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Māyā / Strong Delusion</div>
+        <p class="scripture-panel-text">The impersonal power that veils reality (Advaita). The personal judgment that sends delusion (2 Thessalonians 2:11). Both describe the deceptive nature of ordinary perception.</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Śakti / Holy Spirit / Shekinah</div>
+        <p class="scripture-panel-text">The dynamic, creative, indwelling divine power that awakens and guides.</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Tzimtzum / Kenosis</div>
+        <p class="scripture-panel-text">The divine self‑contraction (Kabbalah). Christ's emptying of divine prerogatives (Philippians 2:7). The cross as voluntary limitation.</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Plēroma / Fullness</div>
+        <p class="scripture-panel-text">The divine realm of total perfection (Valentinian). The "fullness of God" (Ephesians 3:19) that dwells in Christ.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TRANSITION TO NEXT ESSAY -->
+<!-- ═══════════════════════════════════════════════════════════
+     TRANSITION TO NEXT ESSAY
+     ═══════════════════════════════════════════════════════════ -->
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">Continue to The Cloud of Unknowing for the Transfiguration, Jnana Yoga, and the Final Dissolution.</p>
+    <p class="pullquote-text">Continue to The Cloud of Unknowing for the Transfiguration, Jñāna Yoga, and the Final Dissolution.</p>
     <p class="pullquote-attr"><a href="messiah-silence.html">→ The Cloud of Unknowing</a></p>
   </div>
 </div>
@@ -1170,11 +1266,13 @@ section {
   <a href="messiah-mirror.html" class="chapter-link">Tat Tvam Asi</a>
 </div>
 
-<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
   <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-tagline">Cartographies of the Non‑Dual Path</div>
   <div class="footer-links">
     <a href="../index.html">⌂ Vedantic Mappings</a>
     <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
@@ -1186,10 +1284,14 @@ section {
   <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
 </footer>
 
+<!-- ═══════════════════════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════════════════════ -->
 <script>
 (function() {
   'use strict';
 
+  // Navigation
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
   if (navToggle && navMenu) {
@@ -1203,6 +1305,7 @@ section {
     });
   }
 
+  // Theme
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
 
@@ -1227,6 +1330,7 @@ section {
     });
   }
 
+  // Stillness mode
   const stillnessBtn = document.getElementById('stillnessToggle');
   if (stillnessBtn) {
     stillnessBtn.addEventListener('click', () => {
@@ -1240,6 +1344,7 @@ section {
     }
   }
 
+  // Back to top
   const backToTop = document.getElementById('backToTop');
   function updateProgress() {
     if (backToTop) {
@@ -1255,6 +1360,7 @@ section {
     });
   }
 
+  // Intersection Observer for fade-in animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('visible');
@@ -1263,6 +1369,7 @@ section {
 
   document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
 
+  // Text reveal observer
   const textObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1274,6 +1381,7 @@ section {
 
   document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
 
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
       e.preventDefault();
@@ -1282,12 +1390,39 @@ section {
     });
   });
 
+  // Active nav highlighting based on scroll
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navItems = document.querySelectorAll('.nav-item[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (scrollY >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+    navItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('href') === '#' + current) {
+        item.classList.add('active');
+      }
+    });
+  }, { passive: true });
+
+  // Touch swipe for nav: right-edge open, left-edge close
   let touchStartX = 0;
   document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
   document.addEventListener('touchend', e => {
     const diff = e.changedTouches[0].screenX - touchStartX;
-    if (diff > 55 && touchStartX < 30 && navMenu) navMenu.classList.add('open');
-    if (diff < -55 && navMenu) navMenu.classList.remove('open');
+    const width = window.innerWidth;
+    // Right-edge open: swipe from right edge inward (leftward)
+    if (touchStartX > width - 40 && diff < -50 && navMenu) {
+      navMenu.classList.add('open');
+    }
+    // Left-edge close: swipe from left edge inward (rightward)
+    if (touchStartX < 40 && diff > 50 && navMenu) {
+      navMenu.classList.remove('open');
+    }
   }, { passive: true });
 })();
 </script>
