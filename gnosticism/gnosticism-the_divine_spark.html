@@ -557,10 +557,37 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   transform: translateX(4px);
 }
 
-.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) var(--border);
+}
+.chapter-nav::-webkit-scrollbar {
+  height: 6px;
+}
+.chapter-nav::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: 3px;
+}
+.chapter-nav::-webkit-scrollbar-thumb {
+  background: var(--stone);
+  border-radius: 3px;
+}
+.chapter-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--copper);
+}
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; white-space: nowrap; }
 .chapter-link:hover { color: var(--copper); }
-.chapter-sep { color: var(--violet); opacity: 0.3; }
+.chapter-sep { color: var(--violet); opacity: 0.3; flex-shrink: 0; }
 .chapter-link.active { color: var(--copper-light); font-weight: 500; }
 
 .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }

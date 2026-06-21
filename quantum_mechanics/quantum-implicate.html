@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Implicate Order — Bohm's enfolded wholeness, Wheeler's it from bit, and the holographic universe. A contemplation across quantum mechanics, Advaita Vedanta, Kabbalah, Jesus' teachings, and Gnosticism." />
+    <title>Quantum · The Implicate Order</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+    <style>
+        /* =====================================================
+           QUANTUM MECHANICS — PAGE IV: THE IMPLICATE ORDER
+           Cosmic gold, holographic diagrams, enfolded wholeness
+           ===================================================== */
+
+        :root {
+            --bg: #0a0c14;
+            --bg2: #0f1220;
+            --surface: #161a2a;
+            --surface2: #1e2338;
+            --ink: #e8ecf4;
+            --ink2: #8a9ab8;
+            --stone: #6a7a9a;
+            --stone-light: #8a9ab8;
+            --gold: #c4a855;
+            --gold-light: #e0c878;
+            --gold-deep: #a08840;
+            --gold-glow: rgba(196, 168, 85, 0.08);
+            --sun-glow: rgba(196, 168, 85, 0.18);
+            --copper: #b87333;
+            --copper-light: #cd7f32;
+            --copper-deep: #8b4513;
+            --copper-glow: rgba(184, 115, 51, 0.12);
+            --indigo: #5a6a9a;
+            --indigo-light: #7a8aba;
+            --indigo-glow: rgba(90, 106, 154, 0.12);
+            --border: rgba(255, 255, 255, 0.05);
+            --border-strong: rgba(255, 255, 255, 0.10);
+            --border-subtle: rgba(255, 255, 255, 0.025);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+            --shadow-gold: 0 0 40px var(--gold-glow);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0a0c14;
+            --bg2: #0f1220;
+            --surface: #161a2a;
+            --surface2: #1e2338;
+            --ink: #e8ecf4;
+            --ink2: #8a9ab8;
+            --stone: #6a7a9a;
+            --stone-light: #8a9ab8;
+            --gold: #c4a855;
+            --gold-light: #e0c878;
+            --gold-deep: #a08840;
+            --copper: #b87333;
+            --copper-light: #cd7f32;
+            --copper-deep: #8b4513;
+            --copper-glow: rgba(184, 115, 51, 0.12);
+        }
+
+        [data-theme="light"] {
+            --bg: #f0f2f8;
+            --bg2: #e4e7f0;
+            --surface: #ffffff;
+            --surface2: #f5f7fa;
+            --ink: #1a1e2e;
+            --ink2: #3a4058;
+            --stone: #5a6080;
+            --stone-light: #7a80a0;
+            --gold: #8a7030;
+            --gold-light: #a08840;
+            --gold-deep: #6a5820;
+            --copper: #8b4513;
+            --copper-light: #a0522d;
+            --copper-deep: #6b3410;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-strong: rgba(0, 0, 0, 0.12);
+            --border-subtle: rgba(0, 0, 0, 0.04);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.10);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.15);
+            --indigo-glow: rgba(90, 106, 154, 0.08);
+            --gold-glow: rgba(138, 112, 48, 0.08);
+            --sun-glow: rgba(138, 112, 48, 0.15);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
+            font-size: 18px;
+            line-height: 1.78;
+            transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+            border-radius: 2px;
+        }
+
+        ::selection {
+            background: rgba(196, 168, 85, 0.20);
+            color: var(--ink);
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes scroll-bounce {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scaleY(0.5);
+            }
+        }
+        @keyframes breathe {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.04);
+            }
+        }
+        @keyframes ripple-out {
+            0% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(5);
+            }
+        }
+        @keyframes lineReveal {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+        @keyframes diamondReveal {
+            from {
+                opacity: 0;
+                transform: rotate(45deg) scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+        }
+        @keyframes ambientDrift {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.35;
+            }
+            33% {
+                transform: translate(3%, -2%) scale(1.03);
+                opacity: 0.55;
+            }
+            66% {
+                transform: translate(-2%, 3%) scale(0.97);
+                opacity: 0.25;
+            }
+        }
+        @keyframes holographicPulse {
+            0%,
+            100% {
+                opacity: 0.15;
+                stroke-width: 0.3;
+            }
+            50% {
+                opacity: 0.5;
+                stroke-width: 0.8;
+            }
+        }
+        @keyframes unfoldReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* Navigation Compass */
+        .nav-compass {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 1010;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .nav-toggle {
+            width: 44px;
+            height: 44px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.35s var(--ease-out-expo);
+            box-shadow: var(--shadow);
+        }
+        .nav-toggle:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            transform: scale(1.08);
+        }
+        .nav-menu {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all 0.4s var(--ease-out-expo);
+            min-width: 240px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .nav-menu.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 1.25rem;
+            color: var(--stone);
+            text-decoration: none;
+            font-size: 0.88rem;
+            line-height: 1.35;
+            transition: all 0.3s var(--ease-out-expo);
+            border-left: 3px solid transparent;
+        }
+        .nav-item:hover {
+            color: var(--ink);
+            background: var(--gold-glow);
+            padding-left: 1.5rem;
+        }
+        .nav-item.active {
+            color: var(--gold-light);
+            background: rgba(154, 122, 58, 0.08);
+            border-left-color: var(--gold);
+            font-weight: 500;
+        }
+        .nav-item-icon {
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            width: 18px;
+            text-align: center;
+        }
+        .nav-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            padding: 0.6rem 1.25rem 0.3rem;
+        }
+        .nav-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 1rem;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: var(--shadow-gold), 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.12);
+            border-color: var(--gold);
+        }
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+        .theme-toggle-icon {
+            position: absolute;
+            transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        [data-theme="light"] .theme-toggle-icon-sun {
+            opacity: 1;
+            transform: scale(1);
+        }
+        [data-theme="light"] .theme-toggle-icon-moon {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .theme-toggle-icon-sun {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .theme-toggle-icon-moon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 6.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--stone);
+            font-size: 1.1rem;
+            transition: all 0.4s var(--ease-out-expo);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px) scale(0.9);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .back-to-top:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px) scale(1.08);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+            background: radial-gradient(ellipse 120% 100% at 50% 30%, #1a1e3a 0%, #0f1220 50%, #0a0c14 100%);
+        }
+        [data-theme="light"] .hero {
+            background: radial-gradient(ellipse 120% 100% at 50% 30%, #e4e7f0 0%, #d8dce8 50%, #c8cdd8 100%);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 70% 30%, rgba(196, 168, 85, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 20% 70%, rgba(90, 106, 154, 0.06) 0%, transparent 70%);
+            animation: ambientDrift 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: ripple-out 10s ease-out infinite;
+        }
+        .hero-ripple:nth-of-type(2) {
+            animation-delay: 3.5s;
+        }
+        .hero-ripple:nth-of-type(3) {
+            animation-delay: 7s;
+        }
+
+        .hero-eyemark {
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.5em;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+        }
+
+        .hero-emblem {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+        }
+        .hero-emblem svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.4rem, 6vw, 5rem);
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            line-height: 1.08;
+            color: var(--ink);
+            text-shadow: 0 2px 40px rgba(196, 168, 85, 0.15);
+            margin-bottom: 0.2em;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+        }
+        [data-theme="dark"] .hero-title {
+            color: var(--gold-light);
+            text-shadow: 0 0 80px rgba(196, 168, 85, 0.25);
+        }
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+            color: var(--indigo-light);
+            letter-spacing: 0.12em;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
+        }
+        .hero-quote {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            color: var(--ink2);
+            max-width: 520px;
+            margin: 0 auto 0.6rem;
+            line-height: 1.88;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+            position: relative;
+            z-index: 2;
+        }
+        [data-theme="dark"] .hero-quote {
+            color: var(--stone-light);
+        }
+        .hero-quote-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.35em;
+            color: var(--stone);
+            text-transform: uppercase;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2rem;
+        }
+        .hero-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin: 0 auto 2.5rem;
+            width: fit-content;
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-divider-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold-deep), var(--gold-light));
+            transform-origin: left;
+            animation: lineReveal 1.2s 1s forwards;
+            transform: scaleX(0);
+        }
+        .hero-divider-line:last-child {
+            background: linear-gradient(90deg, var(--gold-light), transparent);
+            transform-origin: right;
+        }
+        .hero-divider-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold-light);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px var(--sun-glow);
+            animation: diamondReveal 0.8s 1.2s forwards;
+            opacity: 0;
+        }
+        .hero-scroll-cue {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+            cursor: pointer;
+            z-index: 2;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+        .hero-scroll-cue:hover {
+            transform: translateX(-50%) translateY(4px);
+        }
+        .hero-scroll-cue span {
+            font-family: 'Cinzel', serif;
+            font-size: 0.48rem;
+            letter-spacing: 0.5em;
+            color: var(--stone);
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(180deg, var(--gold-light), transparent);
+            animation: scroll-bounce 2.5s ease-in-out infinite;
+        }
+
+        /* Sections */
+        section {
+            position: relative;
+            transition: background-color 0.6s var(--ease-smooth);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-eyemark {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+        .section-header p {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 12px;
+        }
+
+        .section-separator {
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+            margin: 0 auto 20px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+        .section-separator.visible {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .text-reveal {
+            overflow: hidden;
+            display: block;
+        }
+        .text-reveal-inner {
+            display: block;
+            transform: translateY(110%);
+            transition: transform 1s var(--ease-out-expo);
+        }
+        .visible .text-reveal-inner {
+            transform: translateY(0);
+        }
+
+        .content-section {
+            padding: 80px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .content-introduction {
+            font-size: 1.05rem;
+            color: var(--stone);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .content-essay p {
+            font-size: 1.02rem;
+            color: var(--stone);
+            line-height: 1.82;
+            margin-bottom: 1.5rem;
+        }
+        .content-essay h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin: 2.5rem 0 1rem;
+            letter-spacing: 0.015em;
+        }
+        .content-essay h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 2rem 0 0.75rem;
+        }
+        .content-essay blockquote {
+            border-left: 3px solid var(--gold);
+            padding: 20px 24px;
+            margin: 1.5rem 0;
+            background: var(--surface2);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            color: var(--ink);
+            line-height: 1.68;
+            position: relative;
+        }
+        .content-essay blockquote::before {
+            content: '"';
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.10;
+            line-height: 1;
+        }
+        .content-essay blockquote cite {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            margin-top: 12px;
+            font-style: normal;
+        }
+
+        .hebrew-term,
+        .sanskrit-term,
+        .biblical-ref,
+        .physics-term {
+            cursor: help;
+            border-bottom: 1px dotted var(--gold);
+            text-decoration: none;
+            color: var(--gold-light);
+            font-weight: 400;
+            transition: all 0.3s var(--ease-smooth);
+        }
+        .hebrew-term:hover,
+        .sanskrit-term:hover,
+        .biblical-ref:hover,
+        .physics-term:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold-deep);
+        }
+
+        [data-theme="light"] .hebrew-term,
+        [data-theme="light"] .sanskrit-term,
+        [data-theme="light"] .biblical-ref,
+        [data-theme="light"] .physics-term {
+            border-bottom-color: var(--copper);
+            color: var(--copper-light);
+        }
+        [data-theme="light"] .hebrew-term:hover,
+        [data-theme="light"] .sanskrit-term:hover,
+        [data-theme="light"] .biblical-ref:hover,
+        [data-theme="light"] .physics-term:hover {
+            color: var(--copper);
+            border-bottom-color: var(--copper-deep);
+        }
+
+        /* Diagram Cards */
+        .diagram-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin: 36px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .diagram-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+            opacity: 0.5;
+        }
+        .diagram-card-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+        .diagram-card svg {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+        .diagram-card-caption {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--stone);
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Scripture Panels */
+        .scripture-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 36px 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .scripture-panel {
+            background: var(--surface);
+            padding: 32px;
+        }
+        .scripture-panel-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .scripture-panel-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.72;
+            color: var(--ink);
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .scripture-panel-ref {
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+        }
+        .scripture-panel:hover {
+            background: var(--surface2);
+        }
+        .scripture-panels.margin-top {
+            margin-top: 2rem;
+        }
+
+        /* Voice Cards */
+        .voice-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 28px 32px;
+            margin: 20px 0;
+            position: relative;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .voice-card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        .voice-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .voice-card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gold-glow);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .voice-card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 0;
+        }
+        .voice-card-body {
+            font-size: 0.95rem;
+            color: var(--stone);
+            line-height: 1.75;
+            margin: 0;
+        }
+        .voice-card-body strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .comparative-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: transparent;
+            font-size: 0.8rem;
+        }
+        .comparative-table thead tr {
+            border-bottom: 1px solid var(--gold);
+        }
+        .comparative-table th {
+            padding: 10px 8px;
+            text-align: left;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .comparative-table td {
+            padding: 8px;
+            color: var(--stone);
+            line-height: 1.5;
+        }
+        .comparative-table tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s ease;
+        }
+        .comparative-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        .comparative-table tbody tr:hover {
+            background: var(--gold-glow);
+        }
+        .comparative-table-wrapper {
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+
+        .pullquote-section {
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        [data-theme="light"] .pullquote-section {
+            background: radial-gradient(ellipse 90% 80% at 50% 35%, #e4e7f0 0%, #d8dce8 40%, #c8cdd8 100%);
+        }
+        .pullquote-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%);
+            pointer-events: none;
+            animation: breathe 10s ease-in-out infinite;
+        }
+        .pullquote {
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 2rem;
+        }
+        .pullquote-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+            color: var(--ink);
+            line-height: 1.68;
+            margin-bottom: 1.5rem;
+        }
+        .pullquote-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.4em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+        }
+        .pullquote-attr a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .pullquote-attr a:hover {
+            color: var(--gold);
+        }
+
+        .footer {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+        .footer-emblem {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        .footer-emblem-outer {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+        }
+        .footer-emblem-inner {
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+        [data-theme="dark"] .footer-emblem-outer {
+            border-color: var(--gold);
+        }
+        [data-theme="dark"] .footer-emblem-inner {
+            border-color: var(--gold-light);
+        }
+        [data-theme="light"] .footer-emblem-outer {
+            border-color: var(--copper);
+        }
+        [data-theme="light"] .footer-emblem-inner {
+            border-color: var(--copper-light);
+        }
+        .footer-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--stone);
+            font-size: 0.98rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .footer-credit {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
+        }
+        .footer-copyright {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
+            margin-top: 1rem;
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .chapter-link {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .chapter-link:hover {
+            color: var(--gold);
+        }
+        .chapter-sep {
+            color: var(--gold);
+            opacity: 0.3;
+        }
+        .chapter-link.active {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+        .js-active .fade-in:not(.visible) {
+            opacity: 0;
+            transform: translateY(28px);
+        }
+        .js-active .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Holographic grid background for special sections */
+        .holographic-bg {
+            position: relative;
+        }
+        .holographic-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(196, 168, 85, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(90, 106, 154, 0.03) 0%, transparent 50%),
+                linear-gradient(0deg, transparent 49%, rgba(196, 168, 85, 0.02) 50%, transparent 51%),
+                linear-gradient(90deg, transparent 49%, rgba(196, 168, 85, 0.02) 50%, transparent 51%);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .holographic-bg>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 2rem 6rem 2rem;
+                text-align: center;
+                align-items: center;
+            }
+            .nav-compass {
+                right: 1rem;
+            }
+            .nav-menu {
+                min-width: 180px;
+            }
+            .back-to-top {
+                right: 1.5rem;
+                bottom: 6.5rem;
+            }
+            .theme-toggle {
+                right: 1.5rem;
+            }
+            .footer-links {
+                gap: 1.5rem;
+            }
+            .scripture-panels {
+                grid-template-columns: 1fr;
+            }
+            .scripture-panel:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+            .voice-card {
+                padding: 20px 24px;
+            }
+            .diagram-card {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            .hero {
+                padding: 4rem 1.5rem 5rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-emblem {
+                width: 100px;
+                height: 100px;
+            }
+            .content-section {
+                padding: 48px 16px;
+                max-width: 100%;
+            }
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            .content-essay p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+            .nav-compass {
+                top: 1rem;
+                left: 1rem;
+            }
+            .nav-toggle {
+                width: 40px;
+                height: 40px;
+            }
+            .nav-menu {
+                min-width: 160px;
+            }
+            .theme-toggle {
+                width: 42px;
+                height: 42px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 5.5rem;
+                right: 1rem;
+            }
+            .chapter-nav {
+                gap: 1rem;
+                font-size: 0.6rem;
+            }
+            .footer {
+                padding: 3rem 1.5rem 2rem;
+            }
+            .footer-links {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            .voice-card {
+                padding: 16px 20px;
+            }
+            .diagram-card {
+                padding: 16px;
+            }
+            .diagram-card svg {
+                max-width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .js-active .fade-in:not(.visible) {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .hero-emblem {
+                animation: fadeInUp 1.1s 0.6s both !important;
+            }
+        }
+
+        .no-js .fade-in {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        .no-js .section-separator {
+            opacity: 1 !important;
+            transform: scaleX(1) !important;
+        }
+        .no-js .text-reveal-inner {
+            transform: translateY(0) !important;
+        }
+    </style>
+    <noscript>
+        <style>
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .section-separator {
+                opacity: 1 !important;
+                transform: scaleX(1) !important;
+            }
+            .text-reveal-inner {
+                transform: translateY(0) !important;
+            }
+            .js-active .fade-in:not(.visible) {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <!-- NAVIGATION COMPASS -->
+    <div class="nav-compass">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-section-title">This Page</div>
+            <a href="#hero" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></span><span>Overview</span></a>
+            <a href="#bohm" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>Bohm's Implicate Order</span></a>
+            <a href="#wheeler" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg></span><span>Wheeler's It from Bit</span></a>
+            <a href="#holographic" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></span><span>The Holographic Principle</span></a>
+            <a href="#mystical" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>Mystical Parallels</span></a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Quantum · Four Pages</div>
+            <a href="quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>I · The Unmeasured Ground</span></a>
+            <a href="quantum-observer.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="4"/></svg></span><span>II · The Act of Looking</span></a>
+            <a href="quantum-entanglement.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m1.4-1.4l2.8-2.8m11.3 11.3l2.8-2.8M3.5 17.5l2.8 2.8m11.3-11.3l2.8-2.8"/></svg></span><span>III · The Hidden Connection</span></a>
+            <a href="quantum-implicate.html" class="nav-item active"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>IV · The Implicate Order</span></a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Other Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+            <a href="../kabbalah/kabbalah-luria.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah · Isaac Luria</span></a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
+        </div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+        <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- HERO -->
+    <header class="hero" id="hero">
+        <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+        <p class="hero-eyemark">Quantum Mechanics · Page IV</p>
+        <div class="hero-emblem">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="hGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="4" result="blur"/>
+                        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <radialGradient id="implicateGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#e0c878" stop-opacity="0.15"/>
+                        <stop offset="40%" stop-color="#c4a855" stop-opacity="0.08"/>
+                        <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="foldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e0c878" stop-opacity="0.2"/>
+                        <stop offset="50%" stop-color="#c4a855" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#7a8aba" stop-opacity="0.2"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Implicate field -->
+                <circle cx="100" cy="100" r="60" fill="url(#implicateGrad)">
+                    <animate attributeName="r" values="60;65;60" dur="6s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Enfolded layers -->
+                <g opacity="0.3">
+                    <ellipse cx="100" cy="100" rx="45" ry="25" fill="none" stroke="#c4a855" stroke-width="0.5" transform="rotate(0 100 100)">
+                        <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite"/>
+                    </ellipse>
+                    <ellipse cx="100" cy="100" rx="45" ry="25" fill="none" stroke="#c4a855" stroke-width="0.5" transform="rotate(45 100 100)">
+                        <animateTransform attributeName="transform" type="rotate" from="45 100 100" to="405 100 100" dur="20s" repeatCount="indefinite"/>
+                    </ellipse>
+                    <ellipse cx="100" cy="100" rx="45" ry="25" fill="none" stroke="#c4a855" stroke-width="0.5" transform="rotate(90 100 100)">
+                        <animateTransform attributeName="transform" type="rotate" from="90 100 100" to="450 100 100" dur="20s" repeatCount="indefinite"/>
+                    </ellipse>
+                    <ellipse cx="100" cy="100" rx="45" ry="25" fill="none" stroke="#c4a855" stroke-width="0.5" transform="rotate(135 100 100)">
+                        <animateTransform attributeName="transform" type="rotate" from="135 100 100" to="495 100 100" dur="20s" repeatCount="indefinite"/>
+                    </ellipse>
+                </g>
+
+                <!-- Implicate center: the undivided whole -->
+                <circle cx="100" cy="100" r="14" fill="#e0c878" opacity="0.6" filter="url(#hGlow)">
+                    <animate attributeName="r" values="14;18;14" dur="4s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="100" cy="100" r="5" fill="#fff" opacity="0.5"/>
+
+                <!-- Explicate projections (unfolded) -->
+                <g opacity="0.4">
+                    <circle cx="40" cy="60" r="6" fill="#7a8aba" filter="url(#hGlow)">
+                        <animate attributeName="r" values="6;7;6" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="160" cy="60" r="6" fill="#7a8aba" filter="url(#hGlow)">
+                        <animate attributeName="r" values="6;7;6" dur="2s" begin="0.7s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="40" cy="140" r="6" fill="#7a8aba" filter="url(#hGlow)">
+                        <animate attributeName="r" values="6;7;6" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="160" cy="140" r="6" fill="#7a8aba" filter="url(#hGlow)">
+                        <animate attributeName="r" values="6;7;6" dur="2s" begin="0.35s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="100" cy="40" r="6" fill="#7a8aba" filter="url(#hGlow)">
+                        <animate attributeName="r" values="6;7;6" dur="2s" begin="1.05s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="100" cy="160" r="6" fill="#7a8aba" filter="url(#hGlow)">
+                        <animate attributeName="r" values="6;7;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <!-- Connection lines (implicate → explicate) -->
+                <g stroke="#c4a855" stroke-width="0.3" opacity="0.15">
+                    <line x1="86" y1="86" x2="46" y2="66"/>
+                    <line x1="114" y1="86" x2="154" y2="66"/>
+                    <line x1="86" y1="114" x2="46" y2="134"/>
+                    <line x1="114" y1="114" x2="154" y2="134"/>
+                    <line x1="100" y1="86" x2="100" y2="46"/>
+                    <line x1="100" y1="114" x2="100" y2="154"/>
+                </g>
+
+                <!-- Diamond markers -->
+                <g fill="#c4a855" opacity="0.2">
+                    <rect x="97" y="3" width="6" height="6" transform="rotate(45 100 6)"/>
+                    <rect x="97" y="191" width="6" height="6" transform="rotate(45 100 194)"/>
+                    <rect x="3" y="97" width="6" height="6" transform="rotate(45 6 100)"/>
+                    <rect x="191" y="97" width="6" height="6" transform="rotate(45 194 100)"/>
+                </g>
+
+                <!-- Labels -->
+                <text x="100" y="184" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="7" letter-spacing="0.25em" opacity="0.5">IMPLICATE · EXPLICATE</text>
+                <text x="100" y="24" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="6" letter-spacing="0.2em" opacity="0.35">THE ENFOLDED ORDER</text>
+            </svg>
+        </div>
+
+        <h1 class="hero-title">The Implicate Order</h1>
+        <p class="hero-subtitle">Bohm · Wheeler · The Holographic Universe</p>
+        <div class="hero-divider">
+            <div class="hero-divider-line"></div>
+            <div class="hero-divider-diamond"></div>
+            <div class="hero-divider-line"></div>
+        </div>
+        <p class="hero-quote">"The implicate order is the ground from which the explicate order unfolds. The electron is not a particle in space; it is a projection of a deeper, enfolded wholeness."</p>
+        <p class="hero-quote-attr">— David Bohm</p>
+        <div class="hero-scroll-cue" onclick="document.getElementById('bohm').scrollIntoView({behavior:'smooth'})">
+            <span>Enter</span><div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- SECTION: BOHM'S IMPLICATE ORDER -->
+    <section class="content-section fade-in" id="bohm">
+        <div class="section-header">
+            <div class="section-separator"></div>
+            <p class="section-eyemark">David Bohm · 1917–1992</p>
+            <h2><span class="text-reveal"><span class="text-reveal-inner">The Enfolded and the Unfolded</span></span></h2>
+            <p>Implicate Order · Explicate Order · The Holomovement</p>
+        </div>
+        <div class="content-essay">
+            <p class="content-introduction"><strong>David Bohm</strong> was one of the most brilliant and unorthodox physicists of the 20th century. His interpretation of quantum mechanics — the pilot-wave theory — was dismissed by the mainstream for decades. But his later work, developed in dialogue with the philosopher Jiddu Krishnamurti, went far beyond physics. Bohm proposed that the universe is not a collection of separate objects interacting through forces. It is a single, indivisible <span class="physics-term" title="Bohm's term for the fundamental, undivided wholeness of reality">holomovement</span> — a dynamic process of enfolding and unfolding.</p>
+
+            <p>The <strong>implicate order</strong> is the enfolded, hidden order of reality — the ground from which everything emerges. The <strong>explicate order</strong> is the unfolded, manifest world — the realm of separate objects, space, and time that we experience. The explicate is a projection of the implicate, just as a holographic image is a projection of the interference pattern on the photographic plate.</p>
+
+            <p>Bohm's key insight was that <em>separation is an illusion</em>. The electron appears to be a particle because we have "cut" it out of the implicate order. The act of measurement is not a collapse but a <em>projection</em> — the unfolding of a particular aspect of the implicate into the explicate. The implicate order remains whole, undivided, and non-local.</p>
+
+            <p>This is not mysticism. It is a rigorous physical theory. Bohm's mathematical formalism — the quantum potential — describes a non-local, deterministic reality. The quantum potential acts instantaneously across space, guiding particles along trajectories that are correlated beyond any classical explanation. The implicate order is the mathematical structure that generates the quantum potential.</p>
+
+            <p>Bohm wrote: "The notion of a separate organism is clearly an abstraction. It is not a fundamental reality. The fundamental reality is the whole, the undivided wholeness of the universe." He was not merely a physicist but a contemplative — a man who sat in silence with Krishnamurti, who listened to the universe as much as he calculated it.</p>
+
+            <!-- DIAGRAM: IMPLICATE → EXPLICATE -->
+            <div class="diagram-card fade-in">
+                <div class="diagram-card-label">Diagram · The Implicate and Explicate Orders</div>
+                <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="ieGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                        <radialGradient id="implicitGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#e0c878" stop-opacity="0.15"/>
+                            <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Implicate Order (left) -->
+                    <rect x="30" y="40" width="220" height="240" rx="12" fill="none" stroke="#c4a855" stroke-width="0.6" opacity="0.3"/>
+                    <text x="140" y="24" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="9" letter-spacing="0.2em" opacity="0.6">IMPLICATE ORDER</text>
+
+                    <!-- Enfolded field -->
+                    <circle cx="140" cy="160" r="60" fill="url(#implicitGrad)"/>
+                    <g opacity="0.5">
+                        <ellipse cx="140" cy="160" rx="40" ry="20" fill="none" stroke="#e0c878" stroke-width="0.5" transform="rotate(0 140 160)">
+                            <animateTransform attributeName="transform" type="rotate" from="0 140 160" to="360 140 160" dur="12s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="140" cy="160" rx="40" ry="20" fill="none" stroke="#e0c878" stroke-width="0.5" transform="rotate(60 140 160)">
+                            <animateTransform attributeName="transform" type="rotate" from="60 140 160" to="420 140 160" dur="12s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <ellipse cx="140" cy="160" rx="40" ry="20" fill="none" stroke="#e0c878" stroke-width="0.5" transform="rotate(120 140 160)">
+                            <animateTransform attributeName="transform" type="rotate" from="120 140 160" to="480 140 160" dur="12s" repeatCount="indefinite"/>
+                        </ellipse>
+                    </g>
+                    <circle cx="140" cy="160" r="12" fill="#e0c878" opacity="0.4" filter="url(#ieGlow)">
+                        <animate attributeName="r" values="12;14;12" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="140" y="120" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.1em" opacity="0.4">ENFOLDED</text>
+                    <text x="140" y="205" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.1em" opacity="0.4">UNDIVIDED</text>
+
+                    <!-- Unfolding arrows -->
+                    <path d="M 250 120 Q 290 100, 320 120" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.3" marker-end="url(#arrowGold)"/>
+                    <path d="M 250 200 Q 290 220, 320 200" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.3" marker-end="url(#arrowGold)"/>
+                    <defs>
+                        <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+                            <polygon points="0,0 8,4 0,8" fill="#c4a855" opacity="0.4"/>
+                        </marker>
+                    </defs>
+                    <text x="290" y="150" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.4">UNFOLDING</text>
+                    <text x="290" y="172" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">(projection)</text>
+
+                    <!-- Explicate Order (right) -->
+                    <rect x="350" y="40" width="220" height="240" rx="12" fill="none" stroke="#7a8aba" stroke-width="0.6" opacity="0.3"/>
+                    <text x="460" y="24" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="9" letter-spacing="0.2em" opacity="0.6">EXPLICATE ORDER</text>
+
+                    <!-- Unfolded particles -->
+                    <g opacity="0.5">
+                        <circle cx="400" cy="90" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="520" cy="90" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="460" cy="130" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="380" cy="170" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="500" cy="170" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="430" cy="210" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="480" cy="60" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                        <circle cx="410" cy="240" r="5" fill="#7a8aba" filter="url(#ieGlow)"/>
+                    </g>
+                    <text x="460" y="270" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.1em" opacity="0.4">UNFOLDED</text>
+                    <text x="460" y="285" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.1em" opacity="0.4">SEPARATE</text>
+
+                    <!-- Corner marks -->
+                    <g stroke="#5a6a9a" stroke-width="0.4" opacity="0.12" stroke-linecap="round">
+                        <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
+                        <line x1="585" y1="15" x2="565" y2="15"/><line x1="585" y1="15" x2="585" y2="35"/>
+                        <line x1="15" y1="305" x2="35" y2="305"/><line x1="15" y1="305" x2="15" y2="285"/>
+                        <line x1="585" y1="305" x2="565" y2="305"/><line x1="585" y1="305" x2="585" y2="285"/>
+                    </g>
+                </svg>
+                <div class="diagram-card-caption">The implicate order is the enfolded, undivided whole. The explicate order is the unfolded, manifest world of separate objects. The unfolding is a continuous process — the holomovement.</div>
+            </div>
+
+            <div class="scripture-panels fade-in">
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">David Bohm · 1980</div>
+                    <p class="scripture-panel-text">"In the implicate order, space and time are no longer the dominant factors determining the relationships of dependence or independence of different elements. Rather, the implicate order is a deeper ground from which the explicate order unfolds."</p>
+                    <p class="scripture-panel-ref">— Wholeness and the Implicate Order</p>
+                </div>
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">Bohm & Krishnamurti · Dialogue</div>
+                    <p class="scripture-panel-text">"The observer is the observed. There is no division between the thinker and the thought. The whole movement of consciousness is one single, undivided process."</p>
+                    <p class="scripture-panel-ref">— The Ending of Time</p>
+                </div>
+            </div>
+
+            <h3 id="wheeler">Wheeler's Participatory Universe — It from Bit</h3>
+            <p>John Archibald Wheeler, a student of Bohr and mentor to Feynman, was the other great visionary of 20th-century physics. His <strong>"It from Bit"</strong> slogan is the most concise expression of the information-theoretic view of reality: "Every it — every particle, every field of force, even the space-time continuum itself — derives its function, its meaning, its very existence from bits." The universe is fundamentally information, not matter.</p>
+
+            <p>Wheeler's <strong>participatory universe</strong> is the logical extension: the observer is not passive but active. The act of observation creates reality. The universe is not a pre-existing object that we discover; it is a process in which we participate. The "bit" is the elementary unit of information — the answer to a yes/no question. The universe is the sum of all such answers, generated by the act of looking.</p>
+
+            <p>Wheeler's <strong>delayed-choice experiment</strong> is the experimental demonstration of this principle. A photon passes through a double-slit apparatus. The experimenter chooses, <em>after</em> the photon has passed through the slits, whether to observe the interference pattern or the particle trajectory. The photon "knows" what the experimenter will choose — the choice determines the photon's behavior retroactively. The observer's decision at the present moment determines the history of the photon. The past is not fixed; it is shaped by the present act of looking.</p>
+
+            <p>Wheeler asked: "Why existence?" His answer was: "Existence is a self-excited circuit. The universe observes itself into being." The act of looking is the act of creation. The observer is not an afterthought; the observer is the universe's way of knowing itself.</p>
+
+            <!-- DIAGRAM: DELAYED CHOICE -->
+            <div class="diagram-card fade-in">
+                <div class="diagram-card-label">Diagram · Wheeler's Delayed-Choice Experiment</div>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="dcGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Source -->
+                    <circle cx="50" cy="140" r="8" fill="#e0c878" opacity="0.8" filter="url(#dcGlow)"/>
+                    <text x="50" y="170" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.5">SOURCE</text>
+
+                    <!-- First beam splitter -->
+                    <rect x="120" y="100" width="6" height="80" fill="#5a6a9a" opacity="0.3"/>
+                    <text x="123" y="90" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.4">BS1</text>
+
+                    <!-- Paths -->
+                    <line x1="126" y1="140" x2="240" y2="60" stroke="#7a8aba" stroke-width="0.8" opacity="0.3"/>
+                    <line x1="126" y1="140" x2="240" y2="220" stroke="#7a8aba" stroke-width="0.8" opacity="0.3"/>
+
+                    <!-- Mirrors -->
+                    <rect x="235" y="55" width="10" height="10" rx="2" fill="none" stroke="#c4a855" stroke-width="0.5" opacity="0.4"/>
+                    <rect x="235" y="215" width="10" height="10" rx="2" fill="none" stroke="#c4a855" stroke-width="0.5" opacity="0.4"/>
+                    <text x="240" y="48" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">M1</text>
+                    <text x="240" y="238" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">M2</text>
+
+                    <!-- Second beam splitter (delayed choice) -->
+                    <rect x="350" y="100" width="6" height="80" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.5" stroke-dasharray="3 2"/>
+                    <text x="353" y="90" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.5">BS2</text>
+
+                    <!-- Paths after BS2 -->
+                    <line x1="356" y1="140" x2="460" y2="100" stroke="#7a8aba" stroke-width="0.6" opacity="0.25"/>
+                    <line x1="356" y1="140" x2="460" y2="180" stroke="#7a8aba" stroke-width="0.6" opacity="0.25"/>
+
+                    <!-- Detectors -->
+                    <circle cx="470" cy="100" r="5" fill="#e0c878" opacity="0.5"/>
+                    <text x="470" y="90" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.4">D1</text>
+                    <circle cx="470" cy="180" r="5" fill="#e0c878" opacity="0.5"/>
+                    <text x="470" y="195" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.4">D2</text>
+
+                    <!-- Delay indicator -->
+                    <text x="310" y="260" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="6" letter-spacing="0.15em" opacity="0.5">CHOICE IS MADE AFTER PHOTON PASSES BS1</text>
+
+                    <!-- Observer icon -->
+                    <g transform="translate(540, 20)" opacity="0.3">
+                        <circle cx="0" cy="0" r="14" fill="none" stroke="#c4a855" stroke-width="0.5"/>
+                        <circle cx="0" cy="0" r="6" fill="#c4a855" opacity="0.2"/>
+                        <text x="0" y="22" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="6" letter-spacing="0.1em">OBSERVER</text>
+                        <text x="0" y="32" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="5" letter-spacing="0.1em" opacity="0.4">(delayed choice)</text>
+                    </g>
+
+                    <!-- Corner marks -->
+                    <g stroke="#5a6a9a" stroke-width="0.4" opacity="0.12" stroke-linecap="round">
+                        <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
+                        <line x1="585" y1="15" x2="565" y2="15"/><line x1="585" y1="15" x2="585" y2="35"/>
+                        <line x1="15" y1="265" x2="35" y2="265"/><line x1="15" y1="265" x2="15" y2="245"/>
+                        <line x1="585" y1="265" x2="565" y2="265"/><line x1="585" y1="265" x2="585" y2="245"/>
+                    </g>
+                </svg>
+                <div class="diagram-card-caption">Wheeler's delayed-choice experiment: the experimenter chooses after the photon has passed the first beam splitter whether to observe interference (with BS2) or particle behavior (without). The choice retroactively determines the photon's history.</div>
+            </div>
+
+            <h3 id="holographic">The Holographic Principle — Entanglement as Geometry</h3>
+            <p>In the last two decades, a remarkable connection has emerged between quantum entanglement and the geometry of spacetime. The <strong>AdS/CFT correspondence</strong> (Maldacena, 1997) shows that a theory of gravity in a higher-dimensional space is mathematically equivalent to a quantum field theory on the boundary of that space. The entanglement entropy of regions on the boundary corresponds to the area of surfaces in the bulk. Entanglement, it seems, <em>is</em> geometry — or at least, geometry emerges from entanglement.</p>
+
+            <p>The <strong>ER=EPR conjecture</strong> (Maldacena and Susskind, 2013) goes further: Einstein-Rosen bridges (wormholes) in the bulk are equivalent to Einstein-Podolsky-Rosen pairs (entangled particles) on the boundary. Two entangled black holes are connected by a wormhole. The non-local correlation of entanglement is the same phenomenon as the non-traversable wormhole of general relativity. The "spooky action at a distance" that Einstein rejected is, in the deepest theory we have, the same thing as the "bridge through spacetime" that he invented.</p>
+
+            <p>This is not yet a complete theory. The connection between quantum information and gravity is one of the most active frontiers in physics. But the direction is clear: <strong>entanglement is not merely a feature of quantum mechanics. It is the fabric from which spacetime itself is woven.</strong> The implicate order is not a metaphor; it is the mathematics of holographic duality.</p>
+
+            <!-- DIAGRAM: HOLOGRAPHIC PRINCIPLE -->
+            <div class="diagram-card fade-in">
+                <div class="diagram-card-label">Diagram · The Holographic Principle (AdS/CFT)</div>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="hpGlow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                        <radialGradient id="bulkGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#e0c878" stop-opacity="0.1"/>
+                            <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Bulk (interior) -->
+                    <ellipse cx="300" cy="140" rx="140" ry="100" fill="url(#bulkGrad)" opacity="0.3"/>
+                    <text x="300" y="80" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.5">BULK SPACETIME</text>
+                    <text x="300" y="96" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">(gravity · AdS)</text>
+
+                    <!-- Wormhole connection -->
+                    <path d="M 220 140 Q 260 100, 300 140 Q 340 180, 380 140" fill="none" stroke="#c4a855" stroke-width="0.4" opacity="0.2"/>
+                    <text x="300" y="210" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">ER = EPR</text>
+
+                    <!-- Boundary -->
+                    <ellipse cx="300" cy="140" rx="150" ry="110" fill="none" stroke="#7a8aba" stroke-width="0.5" opacity="0.3" stroke-dasharray="4 2"/>
+                    <text x="300" y="248" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.4">BOUNDARY · CFT</text>
+
+                    <!-- Boundary particles (entangled) -->
+                    <circle cx="180" cy="140" r="5" fill="#e0c878" opacity="0.5" filter="url(#hpGlow)"/>
+                    <circle cx="420" cy="140" r="5" fill="#e0c878" opacity="0.5" filter="url(#hpGlow)"/>
+                    <line x1="185" y1="140" x2="415" y2="140" stroke="#c4a855" stroke-width="0.4" opacity="0.2" stroke-dasharray="3 2"/>
+
+                    <!-- Projection lines -->
+                    <line x1="180" y1="140" x2="260" y2="140" stroke="#7a8aba" stroke-width="0.3" opacity="0.15"/>
+                    <line x1="420" y1="140" x2="340" y2="140" stroke="#7a8aba" stroke-width="0.3" opacity="0.15"/>
+
+                    <!-- Labels -->
+                    <text x="180" y="165" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">ENTANGLED</text>
+                    <text x="420" y="165" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="6" letter-spacing="0.1em" opacity="0.3">ENTANGLED</text>
+
+                    <!-- Corner marks -->
+                    <g stroke="#5a6a9a" stroke-width="0.4" opacity="0.12" stroke-linecap="round">
+                        <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
+                        <line x1="585" y1="15" x2="565" y2="15"/><line x1="585" y1="15" x2="585" y2="35"/>
+                        <line x1="15" y1="265" x2="35" y2="265"/><line x1="15" y1="265" x2="15" y2="245"/>
+                        <line x1="585" y1="265" x2="565" y2="265"/><line x1="585" y1="265" x2="585" y2="245"/>
+                    </g>
+                </svg>
+                <div class="diagram-card-caption">The holographic principle: the boundary (CFT) contains all the information of the bulk (AdS spacetime). Entanglement on the boundary corresponds to geometry in the bulk. ER = EPR: wormholes are entangled pairs.</div>
+            </div>
+
+            <h3 id="mystical">The Mystical Parallels — The Holographic Ground</h3>
+            <p>The implicate order, the holographic principle, and the participatory universe find profound echoes in the contemplative traditions. Each tradition has a name for the undivided wholeness from which all appearances emerge.</p>
+
+            <h4>Advaita Vedanta — Brahman and Māyā</h4>
+            <p>In Advaita, <span class="sanskrit-term" title="The ultimate reality; pure consciousness; the non-dual ground">Brahman</span> is the implicate order — the one without a second, the ground from which all appearances emerge. <span class="sanskrit-term" title="The power of illusion; the superimposition of the world on Brahman">Māyā</span> is the explicate order — the unfolding of multiplicity from the non-dual ground. The world appears separate and manifold, but it is a projection of the one reality. The holographic principle — that every part contains the whole — is the <span class="sanskrit-term" title="The non-difference of the individual self and Brahman">advaita</span> insight: <em>ātman</em> (individual self) is non-different from <em>Brahman</em> (universal self). The part is the whole, seen from a limited perspective.</p>
+
+            <p>The <span class="sanskrit-term" title="The knower; the one who has realized non-duality">jñāni</span> recognizes that the explicate is not separate from the implicate. The world is not an illusion; it is the <em>projection</em> of the implicate. The physicist who studies the holographic principle is not studying a metaphor; she is studying the structure of <em>māyā</em>. The hologram is the laboratory demonstration of <em>sarvaṃ khalvidaṃ brahma</em> — "All this, indeed, is Brahman."</p>
+
+            <blockquote>
+                <p>"As the one sun is reflected in many waters, so is the one Self reflected in many bodies. The water is the explicate; the sun is the implicate. The reflection is the universe."</p>
+                <cite>— Śvetāśvatara Upanishad · 2.1</cite>
+            </blockquote>
+
+            <h4>Kabbalah — Adam Kadmon and the Sefirot</h4>
+            <p>In Lurianic Kabbalah, <span class="hebrew-term" title="The primordial man; the divine template containing all worlds and sefirot">Adam Kadmon</span> is the implicate order — the divine blueprint that contains all worlds and all sefirot in an enfolded state. The <span class="hebrew-term" title="The ten emanations; the divine attributes through which the Infinite manifests">sefirot</span> are the explicate order — the unfolding of the divine into specific attributes and worlds. The <span class="hebrew-term" title="The contraction; the divine act of withdrawal to create space for the finite">Tzimtzum</span> is the primordial unfolding — the contraction that creates the space for the explicate.</p>
+
+            <p>The <span class="hebrew-term" title="The repair; the restoration of the broken vessels">Tikkun</span> is the re-enfoldment — the restoration of the implicate order that was shattered in the <span class="hebrew-term" title="The breaking of the vessels; the primordial catastrophe">Shevirat HaKelim</span>. Every act of <span class="hebrew-term" title="Intention; the focused attention that directs divine light">kavanah</span> (intention) is a micro-unfolding — a projection of the implicate into the explicate. The Kabbalist who prays with <em>kavanah</em> participates in the holographic process. The part contains the whole; the whole is present in every part.</p>
+
+            <p>The <span class="hebrew-term" title="The divine presence; the Shekhinah">Shekhinah</span> is the implicate present in the explicate — the divine light that is always present but often hidden. The act of <em>Tikkun</em> is the recognition that the Shekhinah is not separate from the world but is the world's deepest nature. The holographic principle is the Kabbalistic insight: the world is a projection of the divine, and the divine is present in every projection.</p>
+
+            <blockquote>
+                <p>"From the light of the Ein Sof, all worlds were formed. The worlds are projections of the light, and the light is present in every world. The whole is in the part, and the part is in the whole."</p>
+                <cite>— Zohar · I, 15a</cite>
+            </blockquote>
+
+            <h4>Jesus' Teaching — "The Kingdom Is Inside You"</h4>
+            <p>In the Gospel of Luke, Jesus says: "The kingdom of God is inside you and among you" (Luke 17:21). The kingdom is the implicate order — the divine reality that is always present but often hidden. The explicate order — the world of separate objects, of "this" and "that" — is the appearance. The kingdom is the recognition that the appearance is not separate from the reality.</p>
+
+            <p>The <span class="biblical-ref" title="The mystical body of Christ; the entangled state of all believers">mystical body of Christ</span> is the holographic body — the whole present in every part. "For as the body is one and has many members, but all the members of that one body, being many, are one body, so also is Christ" (1 Corinthians 12:12). The body is the explicate; the Christ is the implicate. The part is not separate from the whole; the whole is not separate from the part.</p>
+
+            <p>The Eucharist is the ritual enactment of the holographic principle. The bread and wine become the body and blood of Christ — the implicate present in the explicate. The communicant who receives the host participates in the whole. The part contains the whole; the whole is present in every part. "He who eats My flesh and drinks My blood abides in Me, and I in him" (John 6:56). The implicate and explicate are not two; they are one.</p>
+
+            <blockquote>
+                <p>"I am the vine, you are the branches. He who abides in Me, and I in him, bears much fruit. For apart from Me you can do nothing."</p>
+                <cite>— John 15:5</cite>
+            </blockquote>
+
+            <h4>Gnosticism — The Pleroma and the Kenoma</h4>
+            <p>In Gnostic cosmology, the <span class="hebrew-term" title="The fullness; the totality of divine powers and aeons; the realm of perfect unity">Pleroma</span> is the implicate order — the fullness of the divine, the realm of the Aeons, the perfect unity that has never been divided. The <span class="hebrew-term" title="The void; the deficiency; the material world created by the Demiurge">Kenoma</span> (the void) is the explicate order — the material world, the projection of the Pleroma into deficiency and separation.</p>
+
+            <p>The <span class="hebrew-term" title="The demiurge; the creator god of the material world; a lower power who mistakenly believes himself to be the supreme God">Demiurge</span> (Yaldabaoth) is the false projector — the one who mistakes the projection for the original. The Gnostic's <span class="hebrew-term" title="The recollection; the recognition of one's divine origin">anamnesis</span> (recollection) is the recognition that the Kenoma is a projection of the Pleroma — that the material world is not separate from the divine. The holographic principle is the Gnostic insight: the part contains the whole; the whole is present in every part.</p>
+
+            <p>The Gospel of Thomas: "The kingdom is inside you and outside you. When you come to know yourselves, you will be known" (Logion 3). The kingdom is the implicate order; the self is the explicate. The recognition is the re-enfoldment — the restoration of the implicate order that was never really lost. The Gnostic does not "escape" the world; she recognizes that the world was never separate from the Pleroma. The implicate and explicate are one.</p>
+
+            <blockquote>
+                <p>"Split a piece of wood, and I am there. Lift up a stone, and you will find me there. The whole is in the part, and the part is in the whole. The kingdom is the hologram of the Pleroma."</p>
+                <cite>— Gospel of Thomas · Logion 77 (adapted)</cite>
+            </blockquote>
+
+            <!-- COMPARATIVE TABLE -->
+            <div class="diagram-card fade-in">
+                <div class="diagram-card-label">Comparative Table · The Implicate Order</div>
+                <div class="comparative-table-wrapper">
+                    <table class="comparative-table">
+                        <thead>
+                            <tr>
+                                <th>Tradition</th>
+                                <th>The Implicate (Enfolded)</th>
+                                <th>The Explicate (Unfolded)</th>
+                                <th>The Recognition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bohm's Physics</strong></td>
+                                <td>The implicate order — the enfolded, non-local, undivided whole</td>
+                                <td>The explicate order — the unfolded, local, manifest world of separate objects</td>
+                                <td>The holomovement — the continuous process of enfolding and unfolding</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Advaita Vedanta</strong></td>
+                                <td>Brahman — the one without a second; the non-dual ground</td>
+                                <td>Māyā — the superimposition of multiplicity on the non-dual ground</td>
+                                <td>Jñāna — the recognition that the explicate is not separate from the implicate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lurianic Kabbalah</strong></td>
+                                <td>Adam Kadmon — the divine blueprint containing all worlds</td>
+                                <td>The sefirot and the worlds — the unfolding of the divine into specific attributes</td>
+                                <td>Tikkun — the restoration of the implicate order through kavanah and mitzvah</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jesus' Teaching</strong></td>
+                                <td>The kingdom of God — the divine reality always present but hidden</td>
+                                <td>The world of separate selves, of "this" and "that"</td>
+                                <td>"The kingdom is inside you" — the recognition that the explicate is a projection of the implicate</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gnosticism</strong></td>
+                                <td>The Pleroma — the fullness of the divine; the realm of the Aeons</td>
+                                <td>The Kenoma — the void, the material world projected by the Demiurge</td>
+                                <td>Anamnesis — the recollection that restores the implicate order; the recognition that the Pleroma is present in all</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h4>The Open Question — Why Existence?</h4>
+            <p>Wheeler asked: "Why existence?" Bohm asked: "What is the nature of wholeness?" The question is the same. The implicate order is not a final answer; it is a deeper question. It is the recognition that reality is not a collection of separate objects but a single, undivided process. The physicist who studies the holographic principle is not solving a puzzle; she is entering a mystery.</p>
+
+            <p>The contemplative traditions have always known this. The <em>jñāni</em> does not "solve" the mystery; she abides in it. The Kabbalist does not "answer" the question; she holds it in her heart. The Gnostic does not "escape" the world; she recognizes that the world was never separate. The Christian mystic does not "achieve" union; she recognizes that union was never absent.</p>
+
+            <p>The implicate order is the recognition that the universe is not a collection of parts but a single, undivided whole. The explicate order is the appearance of parts. The two are not separate; they are the same reality, seen from different perspectives. The act of looking is the act of creation. The observer is the observed. The implicate and explicate are one.</p>
+
+            <p>Feynman said: "I think I can safely say that nobody understands quantum mechanics." But perhaps the not-understanding is the point. The mystery is not a problem to be solved; it is a reality to be inhabited. The implicate order is not a theory; it is a <em>way of seeing</em> — a way of recognizing that the universe is not a machine but a dance, not a collection of parts but a single, undivided whole.</p>
+
+            <div class="scripture-panels margin-top">
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">John Archibald Wheeler · 1990</div>
+                    <p class="scripture-panel-text">"Why does existence exist? We are not just observers; we are participators. In some strange sense, this is a participatory universe. The observer is not merely a passive recipient of reality; the observer is a co-creator of reality."</p>
+                    <p class="scripture-panel-ref">— The Participatory Universe</p>
+                </div>
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">David Bohm · 1980</div>
+                    <p class="scripture-panel-text">"The notion of a separate organism is clearly an abstraction. It is not a fundamental reality. The fundamental reality is the whole, the undivided wholeness of the universe. The implicate order is the ground from which all things emerge."</p>
+                    <p class="scripture-panel-ref">— Wholeness and the Implicate Order</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL PULLQUOTE -->
+    <div class="pullquote-section fade-in">
+        <div class="pullquote-glow"></div>
+        <div class="pullquote">
+            <p class="pullquote-text">"The universe is not only queerer than we suppose, but queerer than we can suppose. The implicate order is the queerest of all — the recognition that the whole is present in every part, that the observer is the observed, that the act of looking is the act of creation. This is the end of the journey: the recognition that we never left the ground."</p>
+            <p class="pullquote-attr">— J.B.S. Haldane · adapted</p>
+        </div>
+    </div>
+
+    <!-- CHAPTER NAVIGATION -->
+    <div class="chapter-nav">
+        <a href="../index.html" class="chapter-link">⌂ Home</a>
+        <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+                <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+            </svg></span>
+        <a href="quantum-unmeasured.html" class="chapter-link">I · The Unmeasured Ground</a>
+        <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+                <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+            </svg></span>
+        <a href="quantum-observer.html" class="chapter-link">II · The Act of Looking</a>
+        <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+                <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+            </svg></span>
+        <a href="quantum-entanglement.html" class="chapter-link">III · The Hidden Connection</a>
+        <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+                <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+            </svg></span>
+        <a href="quantum-implicate.html" class="chapter-link active">IV · The Implicate Order</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-name">Vedantic Mappings</div>
+        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../kabbalah/kabbalah-luria.html">Kabbalah · Isaac Luria</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+        </div>
+        <div class="footer-credit">Researched &amp; Composed</div>
+        <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+
+            document.documentElement.classList.add('js-active');
+
+            // Navigation toggle
+            var navToggle = document.getElementById('navToggle');
+            var navMenu = document.getElementById('navMenu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('open');
+                });
+                document.addEventListener('click', function(e) {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                        navMenu.classList.remove('open');
+                    }
+                });
+            }
+
+            // Theme toggle
+            var themeToggle = document.getElementById('themeToggle');
+            var html = document.documentElement;
+
+            function setTheme(theme) {
+                html.setAttribute('data-theme', theme);
+                try { localStorage.setItem('theme', theme); } catch (_) {}
+            }
+
+            function initTheme() {
+                var saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (_) {}
+                if (saved === 'light' || saved === 'dark') {
+                    setTheme(saved);
+                    return;
+                }
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setTheme(prefersDark ? 'dark' : 'light');
+            }
+            initTheme();
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                    setTheme(next);
+                });
+            }
+
+            // Back to top
+            var backToTop = document.getElementById('backToTop');
+
+            function updateBackToTop() {
+                if (backToTop) {
+                    var show = window.scrollY > window.innerHeight * 0.5;
+                    backToTop.classList.toggle('visible', show);
+                }
+            }
+            window.addEventListener('scroll', updateBackToTop, { passive: true });
+            updateBackToTop();
+            if (backToTop) {
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Fade-in engine
+            var fadeElements = document.querySelectorAll('.fade-in, .section-separator');
+
+            function revealElement(el) {
+                if (el.classList.contains('visible')) return;
+                el.classList.add('visible');
+            }
+
+            function checkElementVisibility(el) {
+                var rect = el.getBoundingClientRect();
+                var winH = window.innerHeight;
+                var winW = window.innerWidth;
+                var top = rect.top;
+                var bottom = rect.bottom;
+                var left = rect.left;
+                var right = rect.right;
+                var isVisible = bottom > -20 && top < winH + 20 &&
+                    right > -20 && left < winW + 20;
+                if (isVisible) {
+                    revealElement(el);
+                    return true;
+                }
+                return false;
+            }
+
+            function scanAllFadeElements() {
+                var elements = document.querySelectorAll('.fade-in:not(.visible), .section-separator:not(.visible)');
+                var anyRevealed = false;
+                elements.forEach(function(el) {
+                    if (checkElementVisibility(el)) {
+                        anyRevealed = true;
+                    }
+                });
+                return anyRevealed;
+            }
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            revealElement(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.02,
+                    rootMargin: '0px 0px 0px 0px'
+                });
+
+                fadeElements.forEach(function(el) {
+                    observer.observe(el);
+                });
+
+                requestAnimationFrame(function() {
+                    scanAllFadeElements();
+                });
+            } else {
+                var fallbackScan = function() {
+                    scanAllFadeElements();
+                };
+                window.addEventListener('scroll', fallbackScan, { passive: true });
+                window.addEventListener('resize', fallbackScan, { passive: true });
+                setTimeout(fallbackScan, 100);
+            }
+
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function() {
+                    setTimeout(scanAllFadeElements, 200);
+                });
+            } else {
+                setTimeout(scanAllFadeElements, 600);
+            }
+
+            window.addEventListener('load', function() {
+                setTimeout(scanAllFadeElements, 300);
+            });
+
+            // Smooth anchor scroll
+            document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+                a.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        var offset = 80;
+                        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                        if (navMenu) navMenu.classList.remove('open');
+                    }
+                });
+            });
+
+            // Touch swipe
+            var touchStartX = 0;
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            document.addEventListener('touchend', function(e) {
+                var diff = e.changedTouches[0].screenX - touchStartX;
+                if (diff < -55 && touchStartX > window.innerWidth - 30 && navMenu) {
+                    navMenu.classList.add('open');
+                }
+                if (diff > 55 && navMenu) {
+                    navMenu.classList.remove('open');
+                }
+            }, { passive: true });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navMenu) {
+                    navMenu.classList.remove('open');
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>
