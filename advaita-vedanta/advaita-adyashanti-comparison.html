@@ -377,11 +377,18 @@
             align-items: center;
             gap: 4px;
             overflow-x: auto;
-            scrollbar-width: none;
         }
 
-        .toc-inner::-webkit-scrollbar {
-            display: none;
+        /* Hide scrollbar where supported */
+        @supports (scrollbar-width: none) {
+            .toc-inner {
+                scrollbar-width: none;
+            }
+        }
+        @supports selector(::webkit-scrollbar) {
+            .toc-inner::-webkit-scrollbar {
+                display: none;
+            }
         }
 
         .toc-link {
@@ -1872,7 +1879,7 @@
             outline-offset: 3px;
         }
     </style>
-    <base target="_blank">
+    <base >
 </head>
 <body>
 
@@ -2855,13 +2862,16 @@
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
         <div class="footer-links">
             <a href="../index.html">⌂ Vedantic Mappings</a>
-            <a href="gaudapada.html">Advaita Vedanta</a>
+            <a href="advaita-gaudapada.html">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
-        <div class="footer-credit">Researched &amp; Composed</div>
-        <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+        <div class="footer-credit">Researched and composed - .</div>
+        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
     <!-- Fixed Bottom-Right Controls -->

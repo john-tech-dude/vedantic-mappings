@@ -6,2650 +6,1893 @@
   <title>Ramana Maharshi — Traditional Cartography of the Non-Dual Path</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ===== CSS CUSTOM PROPERTIES (unified with design system) ===== */
+    /* ═══════════════════════════════════════════════════════════════
+       TOKENS
+       ═══════════════════════════════════════════════════════════════ */
     :root {
-      --bg: #0c0f14;
-      --bg2: #12161c;
-      --bg3: #151920;
-      --surface: #181c23;
-      --surface2: #21262e;
-      --ink: #eef2f8;
-      --ink2: #9aaebf;
-      --ink3: #7c8ea0;
-      --stone: #7c8ea0;
-      --stone-light: #9eb0c0;
-      --gold: #d4af37;
-      --gold-light: #e6c86e;
-      --gold-deep: #b8960c;
-      --gold-glow: rgba(212, 175, 55, 0.08);
-      --sun-glow: rgba(212, 175, 55, 0.18);
-      --copper: #b87333;
-      --copper-light: #cd7f32;
-      --copper-deep: #8b4513;
-      --copper-glow: rgba(184, 115, 51, 0.12);
-      --border: rgba(255, 255, 255, 0.06);
-      --border-strong: rgba(255, 255, 255, 0.12);
-      --border-subtle: rgba(255, 255, 255, 0.03);
-      --shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
-      --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.7);
-      --shadow-gold: 0 0 40px var(--gold-glow);
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-      --crimson: #7a2d2d;
-      --saffron: #c05820;
-      --pullquote-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-      --grain-opacity: 0.025;
+      --bg:        #faf7f2;
+      --bg2:       #f2ece0;
+      --bg3:       #e8dfc8;
+      --surface:   #ffffff;
+      --surface2:  #f7f2e8;
+      --ink:       #0e1a2a;
+      --ink2:      #1a2d4d;
+      --stone:     #6b7f94;
+      --stone-light: #9aafbf;
+      --gold:       #b5822a;
+      --gold-light: #d4a44a;
+      --gold-deep:  #8a5e1a;
+      --gold-glow:  rgba(181,130,42,0.18);
+      --sun-glow:   rgba(181,130,42,0.28);
+      --s1: #7c6fa0; --s2: #4a7fa5; --s3: #c0622a;
+      --s4: #4a8a72; --s5: #5a7ca8; --s6: #8a5c9a; --s7: #b5822a;
+      --border:        rgba(181,130,42,0.14);
+      --border-strong: rgba(181,130,42,0.32);
+      --border-subtle: rgba(181,130,42,0.07);
+      --border-medium: rgba(181,130,42,0.20);
+      --shadow:      0 2px 24px rgba(60,30,0,0.09);
+      --shadow-deep: 0 8px 40px rgba(60,30,0,0.13);
+      --shadow-gold: 0 0 40px rgba(181,130,42,0.16);
+      --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px;
       --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-      --mountain-fill: #c8a860;
-      --ring-color: rgba(122, 90, 42, 0.22);
-      --text-primary: #1c150a;
-      --text-secondary: #3d2e18;
-      --text-muted: #5a4a34;
+      --grain-opacity: 0.025;
+      --mountain-fill: rgba(181,130,42,0.05);
+      --ring-color: rgba(122,90,42,0.22);
+      --ease-out-expo:  cubic-bezier(0.16,1,0.3,1);
+      --ease-out-quart: cubic-bezier(0.25,1,0.5,1);
+      --ease-smooth:    cubic-bezier(0.45,0.05,0.55,0.95);
     }
 
     [data-theme="dark"] {
-      --bg: #0c0f14;
-      --bg2: #12161c;
-      --bg3: #1a2028;
-      --surface: #181c23;
-      --surface2: #21262e;
-      --ink: #eef2f8;
-      --ink2: #9aaebf;
-      --ink3: #7c8ea0;
-      --stone: #7c8ea0;
+      --bg:        #0c0f14;
+      --bg2:       #12161c;
+      --bg3:       #151920;
+      --surface:   #181c23;
+      --surface2:  #21262e;
+      --ink:       #eef2f8;
+      --ink2:      #9aaebf;
+      --stone:     #7c8ea0;
       --stone-light: #9eb0c0;
-      --gold: #d4af37;
+      --gold:       #d4af37;
       --gold-light: #e6c86e;
-      --gold-deep: #b8960c;
-      --gold-glow: rgba(212, 175, 55, 0.08);
-      --sun-glow: rgba(212, 175, 55, 0.18);
-      --border: rgba(255, 255, 255, 0.06);
-      --border-strong: rgba(255, 255, 255, 0.12);
-      --border-subtle: rgba(255, 255, 255, 0.03);
+      --gold-deep:  #b8960c;
+      --gold-glow:  rgba(212,175,55,0.08);
+      --sun-glow:   rgba(212,175,55,0.18);
+      --s1:#9a8fc0; --s2:#6aaac8; --s3:#d4844a;
+      --s4:#6aaa92; --s5:#7a9cc8; --s6:#aa7cc8; --s7:#d4af37;
+      --border:        rgba(255,255,255,0.06);
+      --border-strong: rgba(255,255,255,0.12);
+      --border-subtle: rgba(255,255,255,0.03);
+      --border-medium: rgba(255,255,255,0.08);
+      --shadow:      0 2px 24px rgba(0,0,0,0.36);
+      --shadow-deep: 0 8px 40px rgba(0,0,0,0.44);
+      --shadow-gold: 0 0 40px rgba(212,175,55,0.08);
       --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
-      --mountain-fill: #d4af37;
-      --ring-color: rgba(212, 175, 55, 0.1);
-      --pullquote-bg: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
       --grain-opacity: 0.045;
-      --text-primary: #eef2f8;
-      --text-secondary: #9aaebf;
-      --text-muted: #7c8ea0;
+      --mountain-fill: rgba(212,175,55,0.05);
+      --ring-color: rgba(212,175,55,0.10);
     }
 
-    [data-theme="light"] {
-      --bg: #faf6ef;
-      --bg2: #f2ece0;
-      --bg3: #e8dfc8;
-      --surface: #ffffff;
-      --surface2: #f7f2e8;
-      --ink: #1c150a;
-      --ink2: #3d2e18;
-      --ink3: #6b5540;
-      --stone: #5a4a34;
-      --stone-light: #b09a80;
-      --gold: #7a5a2a;
-      --gold-light: #d4a84b;
-      --gold-deep: #5a3a15;
-      --gold-glow: rgba(122, 90, 42, 0.16);
-      --sun-glow: rgba(122, 90, 42, 0.35);
-      --copper: #8b4513;
-      --copper-light: #a0522d;
-      --copper-deep: #6b3410;
-      --border: rgba(122, 90, 42, 0.18);
-      --border-strong: rgba(122, 90, 42, 0.35);
-      --border-subtle: rgba(122, 90, 42, 0.08);
-      --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-      --mountain-fill: #c8a860;
-      --ring-color: rgba(122, 90, 42, 0.22);
-      --pullquote-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-      --grain-opacity: 0.025;
-      --text-primary: #1c150a;
-      --text-secondary: #3d2e18;
-      --text-muted: #5a4a34;
-    }
-
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    /* ═══════════════════════════════════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Crimson Pro", "Cormorant Garamond", Georgia, serif;
+      font-family: 'Crimson Pro','Cormorant Garamond',Georgia,serif;
       background: var(--bg);
       color: var(--ink);
       overflow-x: hidden;
-      font-size: 19px;
-      line-height: 1.8;
-      transition: background 0.5s, color 0.5s;
+      font-size: 18px;
+      line-height: 1.78;
+      transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
     }
-
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-      opacity: var(--grain-opacity);
+      content:'';
+      position:fixed; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events:none; z-index:9999;
+      opacity:var(--grain-opacity);
+    }
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold-deep),var(--gold),var(--gold-light));border-radius:2px}
+    ::selection{background:rgba(181,130,42,0.22);color:var(--ink)}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+    /* ═══════════════════════════════════════════════════════════════
+       KEYFRAMES
+       ═══════════════════════════════════════════════════════════════ */
+    @keyframes hero-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes mandalaRotate{to{transform:rotate(360deg)}}
+    @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 40px var(--gold-glow)}50%{transform:scale(1.04);box-shadow:0 0 64px var(--gold-glow)}}
+    @keyframes mandala-breathe{0%,100%{opacity:0.35;transform:translate(-50%,-50%) scale(1)}50%{opacity:0.75;transform:translate(-50%,-50%) scale(1.012)}}
+    @keyframes scroll-bounce{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(.5);opacity:.3}}
+    @keyframes ripple-out{0%{opacity:0.55;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(4.2)}}
+    @keyframes emblem-rotate{to{transform:rotate(360deg)}}
+    @keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow)}50%{box-shadow:0 0 35px 12px var(--sun-glow)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAV COMPASS
+       ═══════════════════════════════════════════════════════════════ */
+    .nav-compass{position:fixed;top:1.5rem;left:1.5rem;z-index:1010;display:flex;flex-direction:column;gap:.5rem}
+    .nav-toggle{width:44px;height:44px;background:var(--surface);border:1px solid var(--border);border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all .35s var(--ease-out-expo);box-shadow:var(--shadow)}
+    .nav-toggle:hover{background:var(--gold-glow);border-color:var(--gold);transform:scale(1.08)}
+    .nav-menu{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 0;box-shadow:var(--shadow-deep);opacity:0;transform:translateY(-8px) scale(0.96);pointer-events:none;transition:all .4s var(--ease-out-expo);min-width:240px}
+    .nav-menu.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+    .nav-item{display:flex;align-items:center;gap:.75rem;padding:.6rem 1.25rem;color:var(--stone);text-decoration:none;font-size:.88rem;line-height:1.35;transition:all .3s var(--ease-out-expo);border-left:3px solid transparent}
+    .nav-item:hover{color:var(--ink);background:var(--gold-glow);padding-left:1.5rem}
+    .nav-item.active{color:var(--gold-light);background:rgba(154,122,58,0.08);border-left-color:var(--gold);font-weight:500}
+    .nav-item-icon{font-size:.8rem;flex-shrink:0;width:18px;text-align:center}
+    .nav-section-title{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase;padding:.6rem 1.25rem .3rem}
+    .nav-divider{height:1px;background:var(--border);margin:.5rem 1rem}
+
+    /* ═══════════════════════════════════════════════════════════════
+       CONTROLS
+       ═══════════════════════════════════════════════════════════════ */
+    .theme-toggle{position:fixed;bottom:1.75rem;right:1.75rem;z-index:1000;width:52px;height:52px;border-radius:50%;background:var(--surface);border:1px solid var(--border-medium);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:all .45s cubic-bezier(0.68,-0.55,0.265,1.55);box-shadow:var(--shadow-gold),0 2px 8px rgba(0,0,0,.1);overflow:hidden}
+    .theme-toggle:hover{transform:scale(1.12);border-color:var(--gold);box-shadow:0 0 30px var(--gold-glow)}
+    .theme-toggle:active{transform:scale(0.95)}
+    .theme-toggle-icon{position:absolute;transition:transform .5s var(--ease-out-expo),opacity .35s ease;color:var(--gold);display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+    [data-theme="light"] .theme-toggle-icon-sun{opacity:1;transform:scale(1)}
+    [data-theme="light"] .theme-toggle-icon-moon{opacity:0;transform:scale(0.5)}
+    [data-theme="dark"] .theme-toggle-icon-sun{opacity:0;transform:scale(0.5)}
+    [data-theme="dark"] .theme-toggle-icon-moon{opacity:1;transform:scale(1)}
+    .back-to-top{position:fixed;bottom:5.75rem;right:1.5rem;z-index:1000;width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--stone);font-size:1.1rem;transition:all .4s var(--ease-out-expo);box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(12px) scale(0.9)}
+    .back-to-top.visible{opacity:1;pointer-events:all;transform:translateY(0) scale(1)}
+    .back-to-top:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-3px) scale(1.08);box-shadow:var(--shadow-gold)}
+
+    /* ═══════════════════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════════════════ */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);perspective:1200px}
+    .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 20% 40%,rgba(181,130,42,.07) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 60%,rgba(181,130,42,.05) 0%,transparent 70%);animation:breathe 18s ease-in-out infinite;pointer-events:none;z-index:1}
+    [data-theme="light"] .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,130,42,.035) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,130,42,.025) 29px);pointer-events:none}
+    .hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12}
+    .mandala-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandala-breathe 12s ease-in-out infinite}
+    .mandala-ring:nth-child(1){width:260px;height:260px;opacity:0.18}
+    .mandala-ring:nth-child(2){width:400px;height:400px;opacity:0.12;animation-delay:1.5s;animation-duration:14s}
+    .mandala-ring:nth-child(3){width:560px;height:560px;opacity:0.08;animation-delay:3s;animation-duration:16s}
+    .mandala-ring:nth-child(4){width:740px;height:740px;opacity:0.05;animation-delay:4.5s;animation-duration:18s}
+    .hero-ripple{position:absolute;top:50%;left:50%;width:180px;height:180px;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:ripple-out 9s ease-out infinite}
+    .hero-ripple:nth-child(5){animation-delay:0s}
+    .hero-ripple:nth-child(6){animation-delay:3s}
+    .hero-emblem{width:72px;height:72px;margin:0 auto 2rem;position:relative;opacity:1;z-index:3}
+    .hero-emblem-circle{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-deep);opacity:.6;animation:emblem-rotate 30s linear infinite}
+    .hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblem-rotate 20s linear infinite reverse}
+    .hero-emblem-dot{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle,var(--gold-light),var(--gold));box-shadow:0 0 20px 5px var(--sun-glow);animation:emblem-pulse 4s ease-in-out infinite}
+    .hero-eyemark{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:2rem;opacity:0;position:relative;z-index:3}
+    .hero-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);margin-bottom:.5rem;opacity:0;position:relative;z-index:3}
+    .hero-subtitle-top{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--stone);letter-spacing:.08em;margin-bottom:.8rem;opacity:0;position:relative;z-index:3}
+    .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:400;letter-spacing:.06em;line-height:1.05;color:var(--ink);text-shadow:0 2px 40px rgba(181,130,42,.2);opacity:0;margin-bottom:.2em;position:relative;z-index:3}
+    [data-theme="dark"] .hero-title{color:var(--gold-light);text-shadow:0 0 80px rgba(212,164,74,.3)}
+    .hero-epithet{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-deep);letter-spacing:.12em;opacity:0;margin-bottom:2.5rem;position:relative;z-index:3}
+    .hero-divider{display:flex;align-items:center;gap:1.5rem;margin:0 auto 2.5rem;width:fit-content;opacity:0;position:relative;z-index:3}
+    .hero-divider-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep))}
+    .hero-divider-line:last-child{background:linear-gradient(90deg,var(--gold-deep),transparent)}
+    .hero-divider-diamond{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--sun-glow)}
+    .hero-quote{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--ink2);max-width:570px;margin:0 auto .7rem;line-height:1.85;opacity:0;position:relative;z-index:3}
+    .hero-quote-attr{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.35em;color:var(--stone);text-transform:uppercase;opacity:0;margin-bottom:3.5rem;position:relative;z-index:3}
+    .hero-dates{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--stone);letter-spacing:.18em;opacity:0;position:relative;z-index:3}
+    .hero-scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;cursor:pointer;z-index:3}
+    .hero-scroll-cue span{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.5em;color:var(--stone);text-transform:uppercase}
+    .scroll-line{width:1px;height:36px;background:linear-gradient(180deg,var(--gold-deep),transparent);animation:scroll-bounce 2.5s ease-in-out infinite}
+    .hero-eyemark{animation:hero-rise 1.1s .3s forwards}
+    .hero-label{animation:hero-rise 1.1s .9s forwards}
+    .hero-subtitle-top{animation:hero-rise 1.1s 1.1s forwards}
+    .hero-title{animation:hero-rise 1.3s 1.3s forwards}
+    .hero-epithet{animation:hero-rise 1.1s 1.6s forwards}
+    .hero-divider{animation:hero-rise 1.1s 1.8s forwards}
+    .hero-quote{animation:hero-rise 1.1s 2s forwards}
+    .hero-quote-attr{animation:hero-rise 1.1s 2.2s forwards}
+    .hero-dates{animation:hero-rise 1.1s 2.4s forwards}
+    .hero-scroll-cue{animation:hero-rise 1.1s 2.8s forwards}
+
+    /* ═══════════════════════════════════════════════════════════════
+       EDITORIAL LAYOUT SYSTEM
+       ═══════════════════════════════════════════════════════════════ */
+    .ed-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 32px;
     }
 
-    :focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-
-    /* ===== REFERENCES (tooltips) ===== */
-    .sanskrit-term, .biblical-ref {
-      cursor: help;
-      border-bottom: 1px dotted var(--gold);
-      text-decoration: none;
-      color: var(--gold-light);
-      font-weight: 400;
-      transition: all 0.3s var(--ease-smooth);
-    }
-    .sanskrit-term:hover, .biblical-ref:hover {
-      color: var(--gold);
-      border-bottom-color: var(--gold-deep);
-    }
-
-    [data-theme="light"] .sanskrit-term,
-    [data-theme="light"] .biblical-ref {
-      border-bottom-color: var(--copper);
-      color: var(--copper-light);
-    }
-    [data-theme="light"] .sanskrit-term:hover,
-    [data-theme="light"] .biblical-ref:hover {
-      color: var(--copper);
-      border-bottom-color: var(--copper-deep);
-    }
-
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--gold-deep);
-      border-radius: 3px;
-    }
-
-    /* ===== UNIFIED NAV COMPASS ===== */
-    .nav-compass {
-      position: fixed;
-      top: 1.5rem;
-      left: 1.5rem;
-      z-index: 1010;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .nav-toggle {
-      width: 44px;
-      height: 44px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      transition: all 0.35s var(--ease-out-expo);
-      box-shadow: var(--shadow);
-    }
-    .nav-toggle:hover {
-      background: var(--gold-glow);
-      border-color: var(--gold);
-      transform: scale(1.08);
-    }
-    .nav-menu {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1rem 0;
-      box-shadow: var(--shadow-deep);
-      opacity: 0;
-      transform: translateY(-8px) scale(0.96);
-      pointer-events: none;
-      transition: all 0.4s var(--ease-out-expo);
-      min-width: 240px;
-    }
-    .nav-menu.open {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: all;
-    }
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.6rem 1.25rem;
-      color: var(--stone);
-      text-decoration: none;
-      font-size: 0.88rem;
-      line-height: 1.35;
-      transition: all 0.3s var(--ease-out-expo);
-      border-left: 3px solid transparent;
-    }
-    .nav-item:hover {
-      color: var(--ink);
-      background: var(--gold-glow);
-      padding-left: 1.5rem;
-    }
-    .nav-item.active {
-      color: var(--gold-light);
-      background: rgba(154,122,58,0.08);
-      border-left-color: var(--gold);
-      font-weight: 500;
-    }
-    .nav-item-icon {
-      font-size: 0.8rem;
-      flex-shrink: 0;
-      width: 18px;
+    .skt-divider {
       text-align: center;
+      padding: 56px 0 48px;
+      position: relative;
+      overflow: hidden;
     }
-    .nav-section-title {
+    .skt-divider::before, .skt-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 28%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+      opacity: 0.15;
+    }
+    .skt-divider::before { left: 0; background: linear-gradient(to left, transparent, var(--gold)); }
+    .skt-divider::after  { right: 0; }
+    .skt-divider-inner {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      opacity: 0.28;
+      letter-spacing: 1em;
+      padding-left: 1em;
+    }
+
+    .deva {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 0.82em;
+      color: var(--stone-light);
+      margin-left: 0.35em;
+      opacity: 0.7;
+      letter-spacing: 0;
+      vertical-align: baseline;
+    }
+    [data-theme="dark"] .deva { opacity: 0.85; }
+
+    .ed-section-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      padding: 0.6rem 1.25rem 0.3rem;
-    }
-    .nav-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0.5rem 1rem;
-    }
-
-    /* Theme Toggle */
-    .theme-toggle {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 1000;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .theme-toggle:hover {
-      transform: scale(1.12);
-      border-color: var(--gold);
-    }
-    .theme-toggle:active {
-      transform: scale(0.95);
-    }
-    .theme-toggle-icon {
-      position: absolute;
-      transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-    [data-theme="light"] .theme-toggle-icon-sun {
-      opacity: 1;
-      transform: scale(1);
-    }
-    [data-theme="light"] .theme-toggle-icon-moon {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    [data-theme="dark"] .theme-toggle-icon-sun {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    [data-theme="dark"] .theme-toggle-icon-moon {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Back to Top */
-    .back-to-top {
-      position: fixed;
-      bottom: 5.5rem;
-      right: 1.5rem;
-      z-index: 1000;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--stone);
-      font-size: 1.1rem;
-      transition: all 0.4s var(--ease-out-expo);
-      box-shadow: var(--shadow);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(12px) scale(0.9);
-    }
-    .back-to-top.visible {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0) scale(1);
-    }
-    .back-to-top:hover {
-      color: var(--gold);
-      border-color: var(--gold);
-      transform: translateY(-3px) scale(1.08);
-    }
-
-    /* Chapter nav */
-    .chapter-nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 2rem 0;
-      flex-wrap: wrap;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-    .chapter-link {
-      color: var(--stone);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .chapter-link:hover {
-      color: var(--gold);
-    }
-    .chapter-sep {
-      color: var(--gold-deep);
-      opacity: 0.3;
-    }
-    .chapter-link.active {
-      color: var(--gold);
-      font-weight: 500;
-    }
-
-    /* ===== MAIN CONTENT ===== */
-    .main-content {
-      min-height: 100vh;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 5rem 2rem 6rem;
-      text-align: center;
-      background: var(--hero-bg);
-    }
-    [data-theme="light"] .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181, 133, 58, 0.04) 29px),
-                  repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 133, 58, 0.03) 29px);
-      pointer-events: none;
-    }
-    .hero-mountain-svg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      pointer-events: none;
-      transform: translateY(var(--parallax-y, 0));
-      will-change: transform;
-      transition: transform 0.05s linear;
-    }
-    .mandala-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border-radius: 50%;
-      border: 1px solid var(--ring-color);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      will-change: transform;
-    }
-    .mandala-ring:nth-child(1) { width: 260px; height: 260px; }
-    .mandala-ring:nth-child(2) { width: 400px; height: 400px; }
-    .mandala-ring:nth-child(3) { width: 560px; height: 560px; }
-    .mandala-ring:nth-child(4) { width: 740px; height: 740px; }
-    .hero-ripple {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border-radius: 50%;
-      border: 1px solid var(--ring-color);
-      pointer-events: none;
-      animation: ripple-out 9s ease-out infinite;
-      will-change: transform, opacity;
-    }
-    .hero-ripple:nth-child(5) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 0s; }
-    .hero-ripple:nth-child(6) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 3s; }
-    .hero-ripple:nth-child(7) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 6s; }
-    @keyframes ripple-out {
-      0% { opacity: 0.7; transform: scale(1); }
-      100% { opacity: 0; transform: scale(4.5); }
-    }
-
-    .hero-emblem {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 2rem;
-      position: relative;
-      z-index: 3;
-    }
-    .hero-emblem-circle {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1px solid var(--gold-deep);
-      opacity: 0.6;
-      animation: emblem-rotate 30s linear infinite;
-    }
-    .hero-emblem-circle2 {
-      position: absolute;
-      inset: 12px;
-      border-radius: 50%;
-      border: 1px solid var(--gold);
-      opacity: 0.4;
-      animation: emblem-rotate 20s linear infinite reverse;
-    }
-    .hero-emblem-dot {
-      position: absolute;
-      inset: 26px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--gold-light), var(--gold));
-      box-shadow: 0 0 20px 5px var(--sun-glow);
-      animation: emblem-pulse 4s ease-in-out infinite;
-    }
-    @keyframes emblem-rotate { to { transform: rotate(360deg); } }
-    @keyframes emblem-pulse {
-      0%, 100% { box-shadow: 0 0 20px 5px var(--sun-glow); }
-      50% { box-shadow: 0 0 35px 12px var(--sun-glow); }
-    }
-
-    .hero-eyemark {
-      font-family: "Cinzel", serif;
-      font-size: 0.63rem;
-      letter-spacing: 0.5em;
-      color: var(--gold-deep);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      z-index: 3;
-    }
-    .hero-label {
-      font-family: "Cinzel", serif;
       font-size: 0.58rem;
       letter-spacing: 0.5em;
       color: var(--gold-deep);
-      margin-bottom: 0.5rem;
-      z-index: 3;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
     }
-    .hero-subtitle-top {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--stone);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.8rem;
-      z-index: 3;
+    .ed-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.22;
+      max-width: 160px;
     }
-    .hero-title {
-      font-family: "Cinzel", serif;
-      font-size: clamp(2.8rem, 7vw, 5.8rem);
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      line-height: 1.05;
-      margin-bottom: 0.2em;
-      z-index: 3;
-    }
-    [data-theme="light"] .hero-title {
+    .ed-section-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 400;
       color: var(--ink);
-      text-shadow: 0 2px 40px rgba(181, 133, 58, 0.2);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
     }
-    [data-theme="dark"] .hero-title {
-      color: var(--gold-light);
-      text-shadow: 0 0 80px rgba(200, 169, 110, 0.3);
-    }
-    .hero-epithet {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
-      color: var(--gold-deep);
-      letter-spacing: 0.12em;
+    .ed-section-intro {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.02rem;
+      color: var(--stone);
+      line-height: 1.72;
+      max-width: 580px;
       margin-bottom: 2.5rem;
-      z-index: 3;
     }
-    .hero-divider {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin: 0 auto 2.5rem;
-      width: fit-content;
-      z-index: 3;
-    }
-    .hero-divider-line {
-      width: 70px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-deep));
-    }
-    .hero-divider-line:last-child {
-      background: linear-gradient(90deg, var(--gold-deep), transparent);
-    }
-    .hero-divider-diamond {
-      width: 7px;
-      height: 7px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      box-shadow: 0 0 8px var(--sun-glow);
-    }
-    .hero-quote {
-      font-family: "IM Fell English", serif;
-      font-style: italic;
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
-      color: var(--text-secondary);
-      max-width: 570px;
-      margin: 0 auto 0.7rem;
-      line-height: 1.85;
-      z-index: 3;
-    }
-    .hero-quote-attr {
-      font-family: "Cinzel", serif;
+
+    .ed-h3 {
+      font-family: 'Cinzel', serif;
       font-size: 0.6rem;
-      letter-spacing: 0.35em;
-      color: var(--stone);
+      letter-spacing: 0.4em;
+      color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      z-index: 3;
-    }
-    .hero-dates {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 0.9rem;
-      color: var(--stone);
-      letter-spacing: 0.18em;
-      z-index: 3;
-    }
-    .hero-scroll-cue {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      z-index: 3;
-    }
-    .hero-scroll-cue span {
-      font-family: "Cinzel", serif;
-      font-size: 0.52rem;
-      letter-spacing: 0.5em;
-      color: var(--stone);
-      text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(180deg, var(--gold-deep), transparent);
-      animation: scroll-bounce 2.5s ease-in-out infinite;
-    }
-    @keyframes scroll-bounce {
-      0%, 100% { transform: scaleY(1); opacity: 1; }
-      50% { transform: scaleY(0.5); opacity: 0.3; }
-    }
-
-    /* Animations */
-    @keyframes hero-rise {
-      from { opacity: 0; transform: translateY(22px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero-emblem { animation: hero-rise 1.1s 0.6s both; }
-    .hero-eyemark { animation: hero-rise 1.1s 0.3s both; }
-    .hero-label { animation: hero-rise 1.1s 0.9s both; }
-    .hero-subtitle-top { animation: hero-rise 1.1s 1.1s both; }
-    .hero-title { animation: hero-rise 1.3s 1.3s both; }
-    .hero-epithet { animation: hero-rise 1.1s 1.6s both; }
-    .hero-divider { animation: hero-rise 1.1s 1.8s both; }
-    .hero-quote { animation: hero-rise 1.1s 2s both; }
-    .hero-quote-attr { animation: hero-rise 1.1s 2.2s both; }
-    .hero-dates { animation: hero-rise 1.1s 2.6s both; }
-    .hero-scroll-cue { animation: hero-rise 1.1s 2.9s both; }
-
-    /* ===== VEDANTA MARQUEE ===== */
-    .vedanta-banner {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1.75rem 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .vedanta-banner::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.4;
-    }
-    .vedanta-scroll {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      animation: scroll-marquee 30s linear infinite;
-      white-space: nowrap;
-      width: max-content;
-    }
-    .vedanta-scroll-item {
-      font-family: "Cinzel", serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.28em;
-      color: var(--stone);
-      text-transform: uppercase;
-      flex-shrink: 0;
-    }
-    .vedanta-scroll-diamond {
-      color: var(--gold-deep);
-      font-size: 0.45rem;
-      opacity: 0.6;
-    }
-    @keyframes scroll-marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* ===== COMMON SECTION STYLES ===== */
-    section {
-      padding: 5.5rem 2rem;
-      position: relative;
-      transition: background-color 0.5s;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .container-wide {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-numeral {
-      font-family: "Cinzel", serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.5em;
-      color: var(--gold-deep);
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin: 2.75rem 0 1.25rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-    }
-    .section-numeral::after {
-      content: "";
-      flex: 1;
-      max-width: 50px;
-      height: 1px;
-      background: var(--gold-deep);
-      opacity: 0.3;
-    }
-    .section-title {
-      font-family: "Cinzel", serif;
-      font-size: clamp(1.6rem, 4vw, 2.5rem);
-      font-weight: 400;
-      color: var(--ink2);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.35em;
-      line-height: 1.2;
-    }
-    [data-theme="dark"] .section-title {
-      color: var(--gold-light);
-    }
-    .section-subtitle {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--stone);
-      margin-bottom: 3rem;
-      letter-spacing: 0.04em;
-    }
-    .section-separator {
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
-      margin: 0 auto 1.25rem;
-      position: relative;
-    }
-    .section-separator::after {
-      content: "✦";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: var(--gold);
-      font-size: 0.72rem;
-      background: var(--bg);
-      padding: 0 6px;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .section-header h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      color: var(--text-primary);
-      margin-bottom: 0.875rem;
-    }
-    .section-header p {
-      color: var(--stone);
-      font-size: 1rem;
-      max-width: 36.25rem;
-      margin: 0 auto;
-      line-height: 1.65;
-    }
-
-    /* ===== TEXT REVEAL ===== */
-    .text-reveal {
-      display: inline-block;
-      overflow: hidden;
-    }
-    .text-reveal-inner {
-      display: inline-block;
-      transform: translateY(100%);
-      transition: transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1);
-    }
-    .text-reveal.visible .text-reveal-inner {
-      transform: translateY(0);
-    }
-
-    /* ===== REVEAL / FADE (stagger) ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .stagger-1 { transition-delay: 0.05s; }
-    .stagger-2 { transition-delay: 0.10s; }
-    .stagger-3 { transition-delay: 0.15s; }
-    .stagger-4 { transition-delay: 0.20s; }
-    .stagger-5 { transition-delay: 0.25s; }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== ORIGIN SECTION ===== */
-    .origin-section {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .death-experience-card {
-      background: linear-gradient(135deg, rgba(122, 45, 45, 0.07), rgba(181, 133, 58, 0.04));
-      border: 1px solid rgba(122, 45, 45, 0.2);
-      border-radius: 2px;
-      padding: 2.5rem;
-      margin: 3rem 0;
-      position: relative;
-    }
-    [data-theme="dark"] .death-experience-card {
-      background: linear-gradient(135deg, rgba(122, 45, 45, 0.12), rgba(200, 169, 110, 0.05));
-      border-color: rgba(122, 45, 45, 0.3);
-    }
-    .death-experience-card::before {
-      content: "✦";
-      position: absolute;
-      top: -0.7rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--crimson);
-      font-size: 1.1rem;
-      background: var(--bg);
-      padding: 0 0.6rem;
-    }
-
-    /* ===== LINEAGE TIMELINE ===== */
-    .lineage-timeline {
-      margin-top: 3rem;
-      position: relative;
-    }
-    .lineage-timeline::before {
-      content: "";
-      position: absolute;
-      left: 28px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(180deg, var(--gold-deep), var(--border));
-      opacity: 0.6;
-    }
-    .lineage-node {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 0 1.5rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-    }
-    .lineage-node-marker {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 2px solid var(--gold-deep);
-      background: var(--surface);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
       position: relative;
       z-index: 1;
-      transition: all 0.4s;
-      cursor: default;
     }
-    .lineage-node:hover .lineage-node-marker {
-      background: var(--gold-glow);
-      border-color: var(--gold);
-      box-shadow: 0 0 20px var(--gold-glow);
-    }
-    .lineage-node-symbol {
-      font-family: "Cinzel", serif;
-      font-size: 0.7rem;
-      color: var(--gold-deep);
-      font-weight: 600;
-    }
-    .lineage-node-body {
-      padding-top: 0.3rem;
-    }
-    .lineage-node-role {
-      font-family: "Cinzel", serif;
-      font-size: 0.56rem;
-      letter-spacing: 0.4em;
-      color: var(--gold-deep);
-      margin-bottom: 0.3rem;
-      display: block;
-      text-transform: uppercase;
-    }
-    .lineage-node-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.3rem;
-      color: var(--ink2);
-      margin-bottom: 0.15rem;
-    }
-    [data-theme="dark"] .lineage-node-name {
-      color: var(--gold-light);
-    }
-    .lineage-node-dates {
-      font-family: "Cinzel", serif;
-      font-size: 0.55rem;
-      color: var(--stone);
-      letter-spacing: 0.2em;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-    .lineage-node-body p {
-      color: var(--stone);
-      font-size: 0.97rem;
-      line-height: 1.75;
+    .ed-h3::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.2;
     }
 
-    /* ===== ROOTS SECTION ===== */
-    .roots-section {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .upanishad-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
-    .upanishad-card {
-      background: var(--surface);
-      padding: 2rem 1.75rem;
-      transition: background 0.35s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .upanishad-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(180deg, var(--gold), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .upanishad-card:hover::before {
-      opacity: 1;
-    }
-    .upanishad-card:hover {
-      background: var(--surface2);
-    }
-    [data-theme="dark"] .upanishad-card {
-      background: var(--surface);
-    }
-    [data-theme="dark"] .upanishad-card:hover {
-      background: var(--surface2);
-    }
-    .upanishad-name {
-      font-family: "Cinzel", serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-    .upanishad-lineage {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: 0.88rem;
-      color: var(--stone);
-      margin-bottom: 0.6rem;
-    }
-    .upanishad-connection {
-      font-family: "Cinzel", serif;
-      font-size: 0.52rem;
-      letter-spacing: 0.3em;
-      color: var(--gold-deep);
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-    .upanishad-card p {
-      color: var(--text-muted);
-      font-size: 0.93rem;
-      line-height: 1.7;
-    }
-
-    .mahavakya-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin: 2rem 0;
-    }
-    .mahavakya-item {
-      background: var(--surface);
-      padding: 1.5rem 1.75rem;
-      text-align: center;
-      transition: background 0.3s;
-    }
-    .mahavakya-item:hover {
-      background: var(--surface2);
-    }
-    [data-theme="dark"] .mahavakya-item {
-      background: var(--surface);
-    }
-    [data-theme="dark"] .mahavakya-item:hover {
-      background: var(--surface2);
-    }
-    .mahavakya-sanskrit {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-    .mahavakya-translation {
-      font-family: "Cinzel", serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.25em;
-      color: var(--stone);
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-    .mahavakya-source {
-      color: var(--text-muted);
-      font-size: 0.87rem;
-    }
-
-    /* ===== PULLQUOTE ===== */
-    .arunachala-section {
-      position: relative;
-      overflow: hidden;
-      background: var(--pullquote-bg);
-      padding: 6rem 2rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .arunachala-glow {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .pullquote {
-      max-width: 700px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .pullquote-mark {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 7rem;
-      color: var(--border-strong);
-      line-height: 0;
-      position: absolute;
-      top: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      user-select: none;
-    }
-    .pullquote-text {
-      font-family: "IM Fell English", serif;
-      font-style: italic;
-      font-size: clamp(1.15rem, 3vw, 1.7rem);
-      color: var(--text-primary);
-      line-height: 1.65;
-      margin: 0 auto 1.5rem;
-      position: relative;
-    }
-    .pullquote-attr {
-      font-family: "Cinzel", serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      color: var(--stone);
-      text-transform: uppercase;
-    }
-
-    /* ===== TRANSMISSION SECTION ===== */
-    .transmission-section {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .transmission-figure {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding: 3rem 2rem;
-      margin: 2rem 0;
-      border-radius: 2px;
-    }
-    .transmission-figure-name {
-      font-family: "Cinzel", serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.08em;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-    .transmission-figure-dates {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      color: var(--stone);
-      margin-bottom: 1.5rem;
-    }
-    .transmission-figure p {
-      color: var(--text-muted);
-      line-height: 1.9;
-      margin-bottom: 1rem;
-    }
-    .transmission-figure p:last-child {
-      margin-bottom: 0;
-    }
-    .warning-box {
-      border: 1px solid rgba(192, 88, 32, 0.25);
-      background: rgba(192, 88, 32, 0.06);
+    .ed-note {
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
       padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
       display: flex;
       gap: 1rem;
       align-items: flex-start;
-      margin: 1.5rem 0;
-      border-radius: 2px;
-    }
-    .warning-icon {
-      color: var(--saffron);
-      font-size: 0.95rem;
-      flex-shrink: 0;
-      margin-top: 0.15rem;
-    }
-    .warning-box p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* ===== STAGES SECTION ===== */
-    .stages-section {
-      background: var(--bg);
-    }
-    .stage-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0 2.5rem;
       position: relative;
-      margin-bottom: 3rem;
+      z-index: 1;
     }
-    .stage-item::before {
-      content: "";
+    .ed-note .ni { font-size: 1.1rem; flex-shrink: 0; }
+    .ed-note p { font-size: 0.93rem; color: var(--stone); line-height: 1.7; margin: 0; }
+    .ed-note p strong { color: var(--ink); font-weight: 500; }
+
+    .ed-list { list-style: none; padding: 0; margin: 1.75rem 0; position: relative; z-index: 1; }
+    .ed-list li {
+      padding: 0.8rem 0 0.8rem 1.75rem;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+      color: var(--stone);
+      line-height: 1.65;
+    }
+    .ed-list li:last-child { border-bottom: none; }
+    .ed-list li::before { content: '◆'; position: absolute; left: 0; top: 1rem; font-size: 0.4rem; color: var(--gold); opacity: 0.55; }
+    .ed-list li strong { color: var(--ink); font-weight: 500; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LINEAGE TIMELINE
+       ═══════════════════════════════════════════════════════════════ */
+    .lineage-section {
+      padding: 100px 32px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .lin-timeline {
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .lin-timeline::before {
+      content: '';
       position: absolute;
-      left: calc(58px / 2);
-      top: 60px;
-      bottom: 0;
+      left: 10px; top: 22px; bottom: 0;
       width: 1px;
-      background: linear-gradient(180deg, var(--border-strong), var(--border));
+      background: linear-gradient(to bottom, var(--gold-light), transparent);
+      opacity: 0.35;
     }
-    .stage-item:last-child::before {
-      display: none;
+    .lin-entry {
+      position: relative;
+      padding: 0 0 3.5rem 3.5rem;
     }
-    .stage-number-outer {
-      width: 58px;
-      height: 58px;
-      border: 1px solid var(--border-strong);
+    .lin-dot {
+      position: absolute;
+      left: 4px; top: 8px;
+      width: 13px; height: 13px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--surface);
-      transition: all 0.4s;
-      flex-shrink: 0;
-      cursor: pointer;
+      border: 1.5px solid var(--gold);
+      background: var(--bg);
+      transition: all 0.35s var(--ease-out-expo);
     }
-    .stage-item:hover .stage-number-outer {
-      border-color: var(--gold);
-      background: var(--gold-glow);
-      box-shadow: 0 0 24px var(--gold-glow);
-    }
-    .stage-number-inner {
-      font-family: "Cinzel", serif;
-      font-size: 0.88rem;
-      color: var(--gold-deep);
-      font-weight: 600;
-    }
-    .stage-body {
-      padding-bottom: 1rem;
-    }
-    .stage-label {
-      font-family: "Cinzel", serif;
-      font-size: 0.56rem;
-      letter-spacing: 0.45em;
-      color: var(--saffron);
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-      margin-top: 0.5rem;
-    }
-    .stage-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.3rem, 3vw, 1.9rem);
-      color: var(--ink2);
-      margin-bottom: 0.9rem;
+    .lin-entry:hover .lin-dot { background: var(--gold); }
+    .lin-entry h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
       line-height: 1.2;
     }
-    [data-theme="dark"] .stage-title {
-      color: var(--gold-light);
-    }
-    .stage-body p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.85;
-      margin-bottom: 1rem;
-    }
-    .stage-body em {
-      color: var(--text-secondary);
-      font-style: italic;
-    }
-    .stage-quote {
-      border-left: 2px solid var(--gold-deep);
-      padding-left: 1.5rem;
-      margin: 1.5rem 0;
-      font-family: "IM Fell English", serif;
-      font-style: italic;
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    .stage-quote cite {
-      display: block;
-      margin-top: 0.5rem;
-      font-family: "Cinzel", serif;
-      font-style: normal;
-      font-size: 0.55rem;
-      letter-spacing: 0.25em;
-      color: var(--stone);
-      text-transform: uppercase;
-    }
-
-    /* ===== INFOBOX ===== */
-    .infobox {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 1.75rem 2rem;
-      margin: 1.5rem 0;
-    }
-    [data-theme="dark"] .infobox {
-      background: rgba(200, 169, 110, 0.04);
-      border-color: rgba(200, 169, 110, 0.12);
-    }
-    .infobox-title {
-      font-family: "Cinzel", serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      color: var(--gold-deep);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .infobox-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 0.75rem;
-    }
-    .infobox-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .infobox-item-label {
-      font-family: "Cinzel", serif;
-      font-size: 0.5rem;
+    .lin-entry .lin-dates {
+      font-family: 'Cinzel', serif;
+      font-size: 0.56rem;
       letter-spacing: 0.3em;
       color: var(--stone);
       text-transform: uppercase;
-    }
-    .infobox-item-value {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1rem;
-      color: var(--text-primary);
-    }
-
-    /* ===== STRIP FLOW ===== */
-    .strip-flow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      margin: 1.5rem 0;
-    }
-    .strip-item {
-      text-align: center;
-      padding: 0.7rem 2rem;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text-muted);
-      font-size: 0.97rem;
-      width: 100%;
-      max-width: 380px;
-      font-family: "Cormorant Garamond", serif;
-      transition: all 0.3s;
-    }
-    [data-theme="dark"] .strip-item {
-      background: rgba(200, 169, 110, 0.02);
-    }
-    .strip-item.fading {
-      opacity: 0.4;
-      color: var(--stone);
-      text-decoration: line-through;
-      text-decoration-color: var(--border-strong);
-    }
-    .strip-item.final {
-      background: var(--gold-glow);
-      border-color: var(--gold-deep);
-      color: var(--ink2);
-      font-size: 1.05rem;
-      font-style: italic;
-      opacity: 1;
-      text-decoration: none;
-    }
-    .strip-item.final.glow {
-      border-color: var(--gold);
-      box-shadow: 0 0 20px var(--gold-glow);
-    }
-    [data-theme="dark"] .strip-item.final {
-      color: var(--gold-light);
-    }
-    .strip-arrow {
-      color: var(--border-strong);
-      font-size: 0.7rem;
-      padding: 0.05rem;
-    }
-
-    /* ===== STATES GRID ===== */
-    .states-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr) 1fr;
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin: 2rem 0;
-    }
-    .state-card {
-      background: var(--surface);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: background 0.3s;
-    }
-    [data-theme="dark"] .state-card {
-      background: var(--surface);
-    }
-    .state-card.turiya {
-      grid-column: 1 / -1;
-      background: var(--surface2);
-      border-top: 1px solid var(--border-strong);
-    }
-    [data-theme="dark"] .state-card.turiya {
-      background: rgba(200, 169, 110, 0.04);
-    }
-    .state-icon { font-size: 1.4rem; margin-bottom: 0.7rem; }
-    .state-name {
-      font-family: "Cinzel", serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      color: var(--gold-deep);
-      margin-bottom: 0.2rem;
-    }
-    .state-sanskrit {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      color: var(--stone);
-      font-size: 0.88rem;
-      margin-bottom: 0.7rem;
-    }
-    .state-desc {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    /* ===== VEILS GRID ===== */
-    .veils-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin: 2rem 0;
-    }
-    .veil-card {
-      background: var(--surface);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: background 0.3s;
-    }
-    [data-theme="dark"] .veil-card {
-      background: var(--surface);
-    }
-    .veil-icon { font-size: 1.4rem; margin-bottom: 0.7rem; }
-    .veil-name {
-      font-family: "Cinzel", serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      color: var(--gold-deep);
-      margin-bottom: 0.2rem;
-    }
-    .veil-sanskrit {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      color: var(--stone);
-      font-size: 0.88rem;
-      margin-bottom: 0.7rem;
-    }
-    .veil-desc {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-    .veil-practice {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      color: var(--ink2);
-      font-size: 0.87rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px dashed var(--border);
-    }
-    [data-theme="dark"] .veil-practice {
-      color: var(--gold-light);
-    }
-
-    /* ===== DISTINCTION TABLE ===== */
-    .distinction-table {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 0;
-      margin: 2rem 0;
-      border: 1px solid var(--border);
-    }
-    .dist-col {
-      padding: 2rem;
-      background: var(--surface);
-    }
-    .dist-col.right {
-      background: var(--surface2);
-    }
-    [data-theme="dark"] .dist-col {
-      background: rgba(200, 169, 110, 0.02);
-    }
-    [data-theme="dark"] .dist-col.right {
-      background: rgba(200, 169, 110, 0.06);
-    }
-    .dist-col-header {
-      font-family: "Cinzel", serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.4em;
-      color: var(--gold-deep);
-      text-transform: uppercase;
       margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
     }
-    .dist-col-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.3rem;
-      color: var(--ink2);
-      margin-bottom: 1.25rem;
+    .lin-entry p {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      color: var(--stone);
+      line-height: 1.75;
+      max-width: 580px;
     }
-    [data-theme="dark"] .dist-col-title {
-      color: var(--gold-light);
+    .lin-entry p em { color: var(--ink2); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       TABLE OF CONTENTS
+       ═══════════════════════════════════════════════════════════════ */
+    .toc-section {
+      padding: 100px 32px;
+      max-width: 740px;
+      margin: 0 auto;
     }
-    .dist-item {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      padding: 0.38rem 0;
-      border-bottom: 1px solid var(--border);
-      line-height: 1.6;
+    .toc-book {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-subtle);
     }
-    .dist-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      font-size: 1.4rem;
-      color: var(--gold-deep);
-      background: var(--surface2);
-      border-left: 1px solid var(--border);
-      border-right: 1px solid var(--border);
+    .toc-book-item {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      align-items: baseline;
+      gap: 0 1.5rem;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      text-decoration: none;
+      transition: all 0.35s var(--ease-out-expo);
     }
-    [data-theme="dark"] .dist-arrow {
-      background: rgba(200, 169, 110, 0.03);
+    .toc-book-item:hover .toc-b-title { color: var(--gold); }
+    .toc-book-item:hover .toc-b-num { opacity: 1; }
+    .toc-b-num {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-align: right;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      padding-top: 2px;
+    }
+    .toc-b-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      transition: color 0.35s;
+      line-height: 1.3;
+    }
+    .toc-b-skt {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: var(--stone-light);
+      text-align: right;
+      white-space: nowrap;
     }
 
-    /* ===== PRACTICE SECTION ===== */
-    .practice-section {
-      background: var(--bg2);
+    /* ═══════════════════════════════════════════════════════════════
+       KOSHA ACCORDION
+       ═══════════════════════════════════════════════════════════════ */
+    .kosha-accord {
+      margin: 2.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+      position: relative;
+      z-index: 1;
     }
-    .practice-step {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 0;
-      transition: background 0.3s;
+    .kosha-row {
+      border-bottom: 1px solid var(--border-subtle);
+      cursor: pointer;
     }
-    .practice-step:hover {
-      background: var(--gold-glow);
-    }
-    .practice-step:last-child {
-      border-bottom: none;
-    }
-    .practice-step-number {
-      font-family: "Cinzel", serif;
-      font-size: 2rem;
-      color: var(--border-strong);
-      font-weight: 600;
-      align-self: flex-start;
-      padding-top: 0.2rem;
+    .kosha-row-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.1rem 0;
+      gap: 1rem;
       transition: color 0.3s;
     }
-    .practice-step:hover .practice-step-number {
-      color: var(--gold);
-    }
-    .practice-step-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.3rem;
-      color: var(--ink2);
-      margin-bottom: 0.5rem;
-    }
-    [data-theme="dark"] .practice-step-title {
-      color: var(--gold-light);
-    }
-    .practice-step p {
-      color: var(--text-muted);
-      font-size: 0.99rem;
-      line-height: 1.8;
-    }
-
-    /* ===== WORKS SECTION ===== */
-    .works-section {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5px;
-      background: var(--border);
-      margin-top: 2rem;
-      border: 1px solid var(--border);
-    }
-    .work-card {
-      background: var(--surface);
-      padding: 1.75rem 1.5rem;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .work-card:hover {
-      background: var(--surface2);
-      transform: translateY(-2px);
-    }
-    [data-theme="dark"] .work-card {
-      background: var(--surface);
-    }
-    [data-theme="dark"] .work-card:hover {
-      background: var(--surface2);
-    }
-    .work-card-title {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      font-size: 1.08rem;
-      color: var(--ink2);
-      margin-bottom: 0.35rem;
-    }
-    [data-theme="dark"] .work-card-title {
-      color: var(--gold-light);
-    }
-    .work-card-year {
-      font-family: "Cinzel", serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      color: var(--stone);
-      margin-bottom: 0.7rem;
-    }
-    .work-card p {
-      color: var(--text-muted);
-      font-size: 0.89rem;
-      line-height: 1.65;
-    }
-
-    /* ===== HR ORNAMENT ===== */
-    .hr-ornament {
+    .kosha-row:hover .kosha-row-head { color: var(--ink); }
+    .kosha-row-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin: 3rem auto;
-      max-width: 300px;
-    }
-    .hr-ornament-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-    .hr-ornament-mark {
-      width: 5px;
-      height: 5px;
-      background: var(--gold-deep);
-      transform: rotate(45deg);
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .footer-emblem {
-      width: 36px;
-      height: 36px;
-      margin: 0 auto 1.5rem;
-      position: relative;
-    }
-    .footer-emblem-outer {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1px solid var(--border-strong);
-    }
-    .footer-emblem-inner {
-      position: absolute;
-      inset: 8px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-    }
-    [data-theme="dark"] .footer-emblem-outer {
-      border-color: var(--gold);
-    }
-    [data-theme="dark"] .footer-emblem-inner {
-      border-color: var(--gold-light);
-    }
-    [data-theme="light"] .footer-emblem-outer {
-      border-color: var(--copper);
-    }
-    [data-theme="light"] .footer-emblem-inner {
-      border-color: var(--copper-light);
-    }
-    .footer-name {
-      font-family: "Cinzel", serif;
-      font-size: 0.92rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-    .footer-tagline {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      color: var(--stone);
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
+      align-items: baseline;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
-    .footer-links a {
-      color: var(--stone);
-      text-decoration: none;
-      transition: color 0.3s;
+    .kosha-row-skt {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--stone-light);
     }
-    .footer-links a:hover {
+    .kosha-row-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .kosha-row-deva {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 0.9rem;
+      color: var(--stone-light);
+      opacity: 0.6;
+    }
+    .kosha-arrow {
       color: var(--gold);
+      font-size: 0.72rem;
+      transition: transform 0.3s var(--ease-out-expo);
+      opacity: 0.6;
+      flex-shrink: 0;
     }
-    .footer-credit {
-      font-family: "Cinzel", serif;
-      font-size: 0.5rem;
-      letter-spacing: 0.3em;
-      color: var(--stone);
-      text-transform: uppercase;
-      opacity: 0.4;
+    .kosha-row.open .kosha-arrow { transform: rotate(180deg); }
+    .kosha-body {
+      padding: 0 0 1.5rem 0;
+      display: none;
+      animation: fadeInUp 0.3s var(--ease-out-expo);
     }
-    .footer-copyright {
-      font-family: "Cinzel", serif;
-      font-size: 0.5rem;
-      letter-spacing: 0.3em;
+    .kosha-row.open .kosha-body { display: block; }
+    .kosha-body-skt {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .kosha-body p {
+      font-size: 0.93rem !important;
+      line-height: 1.7 !important;
+      margin-bottom: 0.4rem !important;
       color: var(--stone);
+    }
+    .kosha-body-cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
       text-transform: uppercase;
-      opacity: 0.4;
-      margin-top: 1rem;
+      margin-top: 0.75rem;
+      display: block;
     }
 
-    /* ===== DIAGRAM STYLES ===== */
-    .diagram-container {
-      margin: 2.5rem 0;
+    /* ═══════════════════════════════════════════════════════════════
+       PULLQUOTE BANNER
+       ═══════════════════════════════════════════════════════════════ */
+    .pq-section {
+      padding: 100px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--bg2), var(--bg));
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .pq-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, var(--gold-glow), transparent 60%);
+      pointer-events: none;
+      animation: breathe 10s ease-in-out infinite;
+    }
+    .pq-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 8rem;
+      color: var(--gold);
+      opacity: 0.06;
+      line-height: 0.8;
+      display: block;
+      pointer-events: none;
+      user-select: none;
+      margin-bottom: -2.5rem;
+    }
+    .pq-text {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+      color: var(--ink);
+      line-height: 1.65;
+      max-width: 660px;
+      margin: 0 auto 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pq-attr {
+      font-family: 'Cinzel', serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.4em;
+      color: var(--stone-light);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PULL QUOTE INLINE
+       ═══════════════════════════════════════════════════════════════ */
+    .pull-q {
+      border-left: 2px solid var(--gold);
+      margin: 3rem 0;
+      padding: 0.75rem 0 0.75rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pull-q p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      line-height: 1.52;
+    }
+    .pull-q cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.57rem;
+      letter-spacing: 0.3em;
+      color: var(--stone-light);
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       STAGE SECTIONS
+       ═══════════════════════════════════════════════════════════════ */
+    .stages-wrap {
+      background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 30%, var(--bg) 70%, var(--bg2) 100%);
+    }
+
+    .stage-section {
+      padding: 120px 32px;
+      max-width: 740px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stage-wm {
+      position: absolute;
+      right: -30px;
+      top: 30px;
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(140px, 18vw, 220px);
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      letter-spacing: -0.05em;
+    }
+    [data-theme="dark"] .stage-wm { opacity: 0.065; }
+
+    .stage-header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 3rem;
+    }
+    .stage-eyeline {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .stage-n {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.45em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .stage-skt {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--stone-light);
+    }
+    .stage-deva-title {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 0.92rem;
+      color: var(--stone-light);
+      opacity: 0.65;
+    }
+    .stage-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    [data-theme="dark"] .stage-h2 { color: var(--gold-light); }
+    .stage-subtitle-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.38em;
+      color: var(--stone);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .stage-rule {
+      width: 40px;
+      height: 1.5px;
+      background: var(--gold);
+      position: relative;
+      display: block;
+      margin-top: 1rem;
+      z-index: 1;
+    }
+    .stage-rule::after {
+      content: '';
+      position: absolute;
+      right: -16px; top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      width: 5px; height: 5px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .stage-body { position: relative; z-index: 1; }
+    .stage-body > p {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      color: var(--stone);
+      line-height: 1.88;
+      margin-bottom: 1.5rem;
+    }
+    .stage-body > p strong { color: var(--ink); font-weight: 500; }
+    .stage-body > p em { color: var(--ink2); font-style: italic; }
+
+    .stage-body > p:first-child::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.2rem;
+      line-height: 0.72;
+      float: left;
+      margin: 0.08em 0.1em 0 0;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .stage-sep {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+      opacity: 0.1;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       STATES TILE STRIP
+       ═══════════════════════════════════════════════════════════════ */
+    .states-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: 3rem 0;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .state-tile {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 2rem 1.5rem 1.5rem;
+      padding: 1.75rem 1.25rem;
+      transition: background 0.3s;
       text-align: center;
     }
-    .diagram-title {
-      font-family: "Cinzel", serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
+    .state-tile:hover { background: var(--surface2); }
+    .state-tile-ghost {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
       color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .state-tile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .state-tile-skt {
+      font-family: 'Cinzel', serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.22em;
+      color: var(--stone);
       text-transform: uppercase;
       margin-bottom: 0.75rem;
     }
-    .diagram-svg {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      margin: 0 auto;
+    .state-tile p {
+      font-size: 0.83rem;
+      color: var(--stone);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .state-tile.turiya {
+      background: rgba(181, 130, 42, 0.05);
+      border-left: 2px solid var(--gold);
+    }
+    .state-tile.turiya .state-tile-name { color: var(--gold); }
+    .state-tile.turiya .state-tile-ghost { opacity: 0.2; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       DISTINCTION PANEL
+       ═══════════════════════════════════════════════════════════════ */
+    .dist-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin: 3rem 0;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .dist-col {
+      background: var(--surface);
+      padding: 2.25rem 2rem;
+    }
+    .dist-col:hover { background: var(--surface2); }
+    .dist-col-head {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    .dist-col-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.53rem;
+      letter-spacing: 0.3em;
+      color: var(--stone);
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
       display: block;
     }
-    .diagram-caption {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
+    .dist-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .dist-items li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.92rem;
       color: var(--stone);
-      font-size: 0.9rem;
-      margin-top: 0.75rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+    .dist-items li:last-child { border-bottom: none; }
+    .dist-items li::before { content: '—'; color: var(--gold); font-size: 0.75rem; flex-shrink: 0; opacity: 0.6; }
+    .dist-items li strong { color: var(--ink); font-weight: 500; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PRACTICE
+       ═══════════════════════════════════════════════════════════════ */
+    .practice-section {
+      padding: 80px 32px 100px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .practice-steps {
+      margin-top: 3rem;
+    }
+    .prac-step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 2rem;
+      padding: 2.25rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      align-items: start;
+    }
+    .prac-step:last-child { border-bottom: none; }
+    .prac-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      color: var(--gold);
+      opacity: 0.18;
+      line-height: 1;
+      font-style: italic;
+      text-align: right;
+      padding-top: 0.1rem;
+    }
+    .prac-content h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .prac-content p {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      color: var(--stone);
+      line-height: 1.78;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       GLOSSARY
+       ═══════════════════════════════════════════════════════════════ */
+    .gloss-section {
+      padding: 100px 32px 80px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .gloss-search-wrap {
+      position: relative;
+      max-width: 340px;
+      margin: 2.5rem auto 2.5rem;
+    }
+    .gloss-search {
+      width: 100%;
+      padding: 0.75rem 2.75rem 0.75rem 2.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border-medium);
+      border-radius: 100px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      outline: none;
+      transition: all 0.35s var(--ease-out-expo);
+    }
+    .gloss-search:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+    }
+    .gloss-search-ico {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--stone);
+      font-size: 0.88rem;
+      pointer-events: none;
+    }
+    .gloss-clear {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--stone);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+    .gloss-clear.vis {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .gloss-clear:hover {
+      background: var(--gold-glow);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .gloss-no-results {
       text-align: center;
+      color: var(--stone);
+      font-style: italic;
+      padding: 2rem;
+      display: none;
+    }
+    .gloss-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .gloss-entry {
+      background: var(--surface);
+      padding: 1.75rem 1.5rem;
+      transition: background 0.3s;
+      cursor: default;
+    }
+    .gloss-entry:hover { background: var(--surface2); }
+    .gloss-term {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+    }
+    .gloss-term-deva {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 0.95rem;
+      color: var(--stone-light);
+      opacity: 0.72;
+    }
+    .gloss-cat {
+      font-family: 'Cinzel', serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+    .gloss-def {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.65;
     }
 
-    /* ===== REDUCED MOTION ===== */
+    /* ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ */
+    .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2rem; text-align: center; }
+    .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+    .footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+    .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+    [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+    [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+    [data-theme="light"] .footer-emblem-outer { border-color: #b87333; }
+    [data-theme="light"] .footer-emblem-inner { border-color: #cd7f32; }
+    .footer-name { font-family: 'Cinzel', serif; font-size: .92rem; letter-spacing: .2em; color: var(--gold); margin-bottom: .5rem; }
+    .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: .95rem; margin-bottom: 2rem; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--stone); text-decoration: none; font-family: 'Cinzel', serif; transition: color .3s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-credit { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; }
+    .footer-copyright { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; margin-top: 1rem; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .states-strip { grid-template-columns: 1fr 1fr; }
+      .dist-panel   { grid-template-columns: 1fr; }
+      .prac-step    { grid-template-columns: 44px 1fr; gap: 1.25rem; }
+      .prac-n       { font-size: 2.5rem; }
+      .lin-timeline::before { left: 6px; }
+      .lin-entry { padding-left: 2.5rem; }
+      .lin-dot { left: 0; }
+    }
+    @media (max-width: 500px) {
+      .states-strip { grid-template-columns: 1fr; }
+      .gloss-grid   { grid-template-columns: 1fr; }
+      .toc-book-item { grid-template-columns: 38px 1fr; }
+      .toc-b-skt    { display: none; }
+      .stage-section { padding: 80px 24px; }
+      .ed-wrap { padding: 0 24px; }
+    }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-      .sacred-mandala, .hero-ripple, .vedanta-scroll, .hero-emblem, .scroll-line {
-        animation: none;
-      }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .back-to-top { right: 1.5rem; bottom: 6.5rem; }
-    }
-    @media (max-width: 700px) {
-      .distinction-table { grid-template-columns: 1fr; }
-      .dist-arrow { display: none; }
-      .states-grid { grid-template-columns: 1fr 1fr; }
-      .state-card.turiya { grid-column: 1 / -1; }
-      .veils-grid { grid-template-columns: 1fr; }
-      .lineage-timeline::before { left: 22px; }
-      .lineage-node { grid-template-columns: 44px 1fr; }
-      .lineage-node-marker { width: 44px; height: 44px; }
-      .stage-item { gap: 0 1.5rem; }
-      .stage-number-outer { width: 44px; height: 44px; }
-      .stage-item::before { left: calc(44px / 2); }
-      .mahavakya-row { grid-template-columns: 1fr 1fr; }
-      .works-grid { grid-template-columns: 1fr 1fr; }
-      section { padding: 3.5rem 1.25rem; }
-      .hero { padding: 4rem 1rem 5rem; }
-      .transmission-figure { padding: 2rem 1.5rem; }
-    }
-    @media (max-width: 480px) {
-      .states-grid, .mahavakya-row, .works-grid, .distinction-table {
-        grid-template-columns: 1fr;
-      }
-      .state-card.turiya { grid-column: 1; }
-      .veils-grid { grid-template-columns: 1fr; }
-      .footer-links { gap: 1rem; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
+
 <body>
-  <!-- NAVIGATION COMPASS -->
-  <div class="nav-compass">
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-    </button>
-    <div class="nav-menu" id="navMenu">
-      <div class="nav-section-title">The Cartographies</div>
-      <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
-      <div class="nav-divider"></div>
-      <div class="nav-section-title">Ramana Maharshi</div>
-      <a href="#hero" class="nav-item active" aria-current="page"><span class="nav-item-icon">✦</span><span>Home</span></a>
-      <a href="#origin" class="nav-item"><span class="nav-item-icon">⊙</span><span>Origin &amp; Awakening</span></a>
-      <a href="#transmission" class="nav-item"><span class="nav-item-icon">☸</span><span>Teachers &amp; Lineage</span></a>
-      <a href="#roots" class="nav-item"><span class="nav-item-icon">☷</span><span>Vedantic Roots</span></a>
-      <a href="#stages" class="nav-item"><span class="nav-item-icon">☰</span><span>Seven Stages</span></a>
-      <a href="#practice" class="nav-item"><span class="nav-item-icon">🕉</span><span>Practice Guide</span></a>
-      <a href="#works" class="nav-item"><span class="nav-item-icon">📚</span><span>Works &amp; Texts</span></a>
-      <div class="nav-divider"></div>
-      <div class="nav-section-title">Advaita Vedanta</div>
-      <a href="gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Gaudapada</span></a>
-      <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Adi Shankara</span></a>
-      <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">🌿</span><span>Nisargadatta Maharaj</span></a>
-      <a href="adyashanti-comparison.html" class="nav-item"><span class="nav-item-icon">🔍</span><span>Adyashanti Comparison</span></a>
-      <div class="nav-divider"></div>
-      <div class="nav-section-title">Comparative</div>
-      <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>Kabbalah</span></a>
-      <div class="nav-divider"></div>
-      <div class="nav-section-title">Taoism</div>
-      <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>The Unnamed Way</span></a>
-    </div>
-  </div>
 
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
-    <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+<!-- NAV COMPASS -->
+<div class="nav-compass">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
   </button>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <div class="nav-menu" id="navMenu">
+    <div class="nav-section-title">The Cartographies</div>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home</span></a>
+    <div class="nav-divider"></div>
+    <div class="nav-section-title">Ramana Maharshi</div>
+    <a href="#hero" class="nav-item active" aria-current="page"><span class="nav-item-icon">✦</span><span>Home</span></a>
+    <a href="#origin" class="nav-item"><span class="nav-item-icon">⊙</span><span>Origin</span></a>
+    <a href="#transmission" class="nav-item"><span class="nav-item-icon">☸</span><span>Lineage</span></a>
+    <a href="#roots" class="nav-item"><span class="nav-item-icon">☷</span><span>Vedantic Roots</span></a>
+    <a href="#stages" class="nav-item"><span class="nav-item-icon">☰</span><span>Seven Stages</span></a>
+    <a href="#practice" class="nav-item"><span class="nav-item-icon">🕉</span><span>Practice</span></a>
+    <a href="#glossary" class="nav-item"><span class="nav-item-icon">📖</span><span>Glossary</span></a>
+  </div>
+</div>
 
-  <div class="main-content">
-    <!-- HERO SECTION -->
-    <header class="hero" id="hero">
-      <svg class="sacred-geometry" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g class="sacred-mandala">
-          <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
-          <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
-          <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
-          <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
-        </g>
-      </svg>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-      <svg class="hero-mountain-svg" id="heroMountain" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="mtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="var(--mountain-fill)" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="var(--mountain-fill)" stop-opacity="0.04"/>
-          </linearGradient>
-          <linearGradient id="mtnGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="var(--gold-deep)" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="var(--gold-deep)" stop-opacity="0.02"/>
-          </linearGradient>
-        </defs>
-        <path d="M0,320 L120,240 L220,200 L340,170 L460,150 L560,120 L640,90 L720,50 L800,90 L880,120 L980,150 L1100,170 L1220,200 L1340,240 L1440,320 Z" fill="url(#mtnGrad)"/>
-        <path d="M0,320 L180,280 L300,260 L420,240 L520,220 L610,195 L660,175 L700,155 L720,130 L740,110 L760,130 L780,155 L820,175 L870,195 L960,220 L1060,240 L1180,260 L1300,280 L1440,320 Z" fill="url(#mtnGrad2)"/>
-        <path d="M718,108 L720,88 L722,108 Z" fill="var(--gold)" opacity="0.25"/>
-      </svg>
+<div class="main-content">
 
-      <div class="mandala-ring" aria-hidden="true"></div>
-      <div class="mandala-ring" aria-hidden="true"></div>
-      <div class="mandala-ring" aria-hidden="true"></div>
-      <div class="mandala-ring" aria-hidden="true"></div>
-      <div class="hero-ripple" aria-hidden="true"></div>
-      <div class="hero-ripple" aria-hidden="true"></div>
-      <div class="hero-ripple" aria-hidden="true"></div>
+<!-- ═════════════════════════════════
+     HERO
+     ═════════════════════════════════ -->
+<header class="hero" id="hero">
+  <svg style="position:absolute;inset:0;width:100%;height:auto" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g style="animation:mandalaRotate 60s linear infinite">
+      <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
+      <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
+      <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+    </g>
+  </svg>
+  <div class="hero-mountain" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="mandala-ring" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
+  <div class="hero-ripple" aria-hidden="true"></div>
 
-      <p class="hero-eyemark">Traditional Cartography of the Non-Dual Path</p>
-      <div class="hero-emblem" aria-hidden="true">
-        <div class="hero-emblem-circle"></div>
-        <div class="hero-emblem-circle2"></div>
-        <div class="hero-emblem-dot"></div>
-      </div>
-      <p class="hero-label">A Living Recognition</p>
-      <p class="hero-subtitle-top">The Sage of Arunachala</p>
-      <h1 class="hero-title">Ramana Maharshi</h1>
-      <p class="hero-epithet">Bhagavan · The Great Master · Sri Ramana</p>
-      <div class="hero-divider" aria-hidden="true">
-        <div class="hero-divider-line"></div>
-        <div class="hero-divider-diamond"></div>
-        <div class="hero-divider-line"></div>
-      </div>
-      <p class="hero-quote">"The Guru is none other than the Self."</p>
-      <p class="hero-quote-attr">— Ramana Maharshi, Talks with Sri Ramana Maharshi</p>
-      <p class="hero-dates">30 December 1879, Tiruchuzhi &nbsp;—&nbsp; 14 April 1950, Tiruvannamalai</p>
-      <div class="hero-scroll-cue" onclick="document.getElementById('origin').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button" aria-label="Scroll to content"><span>Explore</span><div class="scroll-line" aria-hidden="true"></div></div>
-    </header>
+  <p class="hero-eyemark">Traditional Cartography of the Non-Dual Path</p>
+  <div class="hero-emblem" aria-hidden="true">
+    <div class="hero-emblem-circle"></div>
+    <div class="hero-emblem-circle2"></div>
+    <div class="hero-emblem-dot"></div>
+  </div>
+  <p class="hero-label">A Living Recognition</p>
+  <p class="hero-subtitle-top">The Sage of Arunachala</p>
+  <h1 class="hero-title">Ramana Maharshi</h1>
+  <p class="hero-epithet">Bhagavan · The Great Master · Sri Ramana</p>
+  <div class="hero-divider" aria-hidden="true">
+    <div class="hero-divider-line"></div>
+    <div class="hero-divider-diamond"></div>
+    <div class="hero-divider-line"></div>
+  </div>
+  <p class="hero-quote">"The Guru is none other than the Self."</p>
+  <p class="hero-quote-attr">— Ramana Maharshi, Talks with Sri Ramana Maharshi</p>
+  <p class="hero-dates">30 December 1879, Tiruchuzhi &nbsp;—&nbsp; 14 April 1950, Tiruvannamalai</p>
+  <div class="hero-scroll-cue" id="heroScroll" tabindex="0" role="button" aria-label="Scroll to content">
+    <span>Explore</span>
+    <div class="scroll-line" aria-hidden="true"></div>
+  </div>
+</header>
 
-    <!-- VEDANTA MARQUEE -->
-    <div class="vedanta-banner" aria-label="Vedantic lineage timeline">
-      <div class="vedanta-scroll">
-        <span class="vedanta-scroll-item">Rig Veda · c. 1500 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Upanishads · c. 900–700 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Bhagavad Gita · c. 400 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Adi Shankaracharya · 788–820 CE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Ramana Maharshi · 1879–1950</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Papaji (H.W.L. Poonja) · 1910–1997</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <!-- repeated for seamless loop -->
-        <span class="vedanta-scroll-item">Rig Veda · c. 1500 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Upanishads · c. 900–700 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Bhagavad Gita · c. 400 BCE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-        <span class="vedanta-scroll-item">Adi Shankaracharya · 788–820 CE</span><span class="vedanta-scroll-diamond" aria-hidden="true">◆</span>
-      </div>
+<!-- ═════════════════════════════════
+     TABLE OF CONTENTS
+     ═════════════════════════════════ -->
+<section class="toc-section" id="toc">
+  <div class="ed-section-label">सप्त स्तर · Stages</div>
+  <h2 class="ed-section-h2">The Seven Stages of Realisation</h2>
+  <p class="ed-section-intro">A complete map from mistaken identity to the Self — with Ramana's direct teachings, Vedantic context, and practical guidance.</p>
+
+  <nav class="toc-book" aria-label="Page contents">
+    <a href="#stage1" class="toc-book-item">
+      <span class="toc-b-num">I</span>
+      <span class="toc-b-title">Mistaken Identity — The Vyakti</span>
+      <span class="toc-b-skt">व्यक्ति · 1896</span>
+    </a>
+    <a href="#stage2" class="toc-book-item">
+      <span class="toc-b-num">II</span>
+      <span class="toc-b-title">The Core Practice — Self-Enquiry</span>
+      <span class="toc-b-skt">आत्मविचार · Vicara</span>
+    </a>
+    <a href="#stage3" class="toc-book-item">
+      <span class="toc-b-num">III</span>
+      <span class="toc-b-title">The Three Veils — Obstacles</span>
+      <span class="toc-b-skt">अविद्या · Avidya</span>
+    </a>
+    <a href="#stage4" class="toc-book-item">
+      <span class="toc-b-num">IV</span>
+      <span class="toc-b-title">States of Consciousness</span>
+      <span class="toc-b-skt">तुरीय · Turiya</span>
+    </a>
+    <a href="#stage5" class="toc-book-item">
+      <span class="toc-b-num">V</span>
+      <span class="toc-b-title">The Critical Distinction</span>
+      <span class="toc-b-skt">विवेक · Viveka</span>
+    </a>
+    <a href="#stage6" class="toc-book-item">
+      <span class="toc-b-num">VI</span>
+      <span class="toc-b-title">Grace & Silence</span>
+      <span class="toc-b-skt">मौन · Mouna</span>
+    </a>
+    <a href="#stage7" class="toc-book-item">
+      <span class="toc-b-num">VII</span>
+      <span class="toc-b-title">The Jñāni — Natural State</span>
+      <span class="toc-b-skt">साहज · Sahaja</span>
+    </a>
+    <a href="#glossary" class="toc-book-item">
+      <span class="toc-b-num">★</span>
+      <span class="toc-b-title">Glossary &amp; Sadhana Guide</span>
+      <span class="toc-b-skt">शब्दकोश · शब्दकोश</span>
+    </a>
+  </nav>
+</section>
+
+<!-- ═════════════════════════════════
+     PULLQUOTE
+     ═════════════════════════════════ -->
+<div class="pq-section">
+  <div class="pq-glow" aria-hidden="true"></div>
+  <span class="pq-mark" aria-hidden="true">"</span>
+  <p class="pq-text">Of all the thoughts that rise in the mind, the thought 'I' is the first thought. Enquire into the nature of the 'I'. This is Self-enquiry.</p>
+  <p class="pq-attr">— Ramana Maharshi · Who Am I? (Nan Yar, 1902)</p>
+</div>
+
+<!-- ═════════════════════════════════
+     ORIGIN SECTION
+     ═════════════════════════════════ -->
+<section class="lineage-section" id="origin">
+  <div class="ed-section-label">Origin &amp; Awakening · आदि जागरण</div>
+  <h2 class="ed-section-h2">The Death Experience That Became Liberation</h2>
+  <p class="ed-section-intro">Madurai, 1896 — A boy of sixteen confronted death and found the Self.</p>
+
+  <div class="stage-body">
+    <p><strong>R</strong>amana himself described the event with extraordinary precision: <em>"The fear of death seized me. I said to myself: 'Now death has come. What does death mean? It is the death of the body. But I am not the body. The body dies, but I, the Self, am not touched by death.' I then lay down, stiffened my limbs, and held my breath. The mind turned inward. A current of awareness arose and I realised: 'I am the immortal Self.'"</em></p>
+    
+    <p>He later explained: <em>"That state has never left me. It is not something that comes and goes. It is my natural state. The body may speak, act, or be silent, but the awareness of the Self remains unbroken."</em></p>
+    
+    <div class="pull-q">
+      <p>"The Guru is not a person. Arunachala is the Guru. The Self is the Guru. The mountain called me. I never decided to come here – I was drawn."</p>
+      <cite>— Ramana Maharshi, on his journey to Arunachala</cite>
     </div>
-
-    <!-- ORIGIN SECTION -->
-    <section class="origin-section" id="origin" role="region" aria-labelledby="origin-heading">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-numeral">Origin &amp; Awakening</div>
-          <h2 class="section-title" id="origin-heading"><span class="text-reveal"><span class="text-reveal-inner">The Death Experience That Became Liberation</span></span></h2>
-          <p class="section-subtitle">Madurai, 1896 — A boy of sixteen confronted death and found the Self</p>
-        </div>
-        <div class="death-experience-card reveal">
-          <p class="death-text">Ramana himself described the event: <em>"The fear of death seized me. I said to myself: 'Now death has come. What does death mean? It is the death of the body. But I am not the body. The body dies, but I, the Self, am not touched by death.' I then lay down, stiffened my limbs, and held my breath. The mind turned inward. A current of awareness arose and I realised: 'I am the immortal Self.'"</em></p>
-          <p class="death-text">He later explained: <em>"That state has never left me. It is not something that comes and goes. It is my natural state. The body may speak, act, or be silent, but the awareness of the Self remains unbroken."</em></p>
-          <p class="death-text-last">He concluded: <em>"The Guru is not a person. Arunachala is the Guru. The Self is the Guru. The mountain called me. I never decided to come here – I was drawn."</em></p>
-        </div>
-        <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
-        <div class="reveal">
-          <div class="section-numeral">Context</div>
-          <h3 class="section-title section-title-lg">Arunachala as Guru</h3>
-          <p class="muted-text">Ramana said: <em>"Arunachala is the embodiment of Shiva, the form of the Guru. I came here and never left. The mountain itself taught me. There is no need for a human Guru when the Self is the only true teacher."</em></p>
-          <p class="muted-text-simple">He added: <em>"The outer Guru confirms what the inner Guru already knows. The true teaching is not in words. It is the silence that points to the Self."</em></p>
-        </div>
-        <!-- LINEAGE TIMELINE (shortened) -->
-        <div class="lineage-timeline reveal">
-          <div class="lineage-node">
-            <div class="lineage-node-marker"><span class="lineage-node-symbol">☸</span></div>
-            <div class="lineage-node-body">
-              <span class="lineage-node-role">The Sage</span>
-              <div class="lineage-node-name">Ramana Maharshi</div>
-              <span class="lineage-node-dates">1879–1950 · Tiruvannamalai</span>
-              <p>Realized at 16 with no formal instruction. Spent 54 years transmitting Self-knowledge through silence, gaze, and speech. His teaching is the direct pointing to the ever-present Self.</p>
-            </div>
-          </div>
-          <div class="lineage-node">
-            <div class="lineage-node-marker"><span class="lineage-node-symbol">⛰</span></div>
-            <div class="lineage-node-body">
-              <span class="lineage-node-role">The Guru</span>
-              <div class="lineage-node-name">Arunachala Hill</div>
-              <span class="lineage-node-dates">Tiruvannamalai, Tamil Nadu</span>
-              <p>Ramana's guru — the sacred mountain as <em>Jyotirlinga</em>, pillar of light. He circumambulated it barefoot and composed five hymns in its honour.</p>
-            </div>
-          </div>
-          <div class="lineage-node">
-            <div class="lineage-node-marker"><span class="lineage-node-symbol">✍</span></div>
-            <div class="lineage-node-body">
-              <span class="lineage-node-role">Primary Devotee</span>
-              <div class="lineage-node-name">Ganapati Muni</div>
-              <span class="lineage-node-dates">1878–1936</span>
-              <p>Sanskrit scholar who gave Ramana the name "Bhagavan Sri Ramana Maharshi." Wrote <em>Sri Ramana Gita</em>.</p>
-            </div>
-          </div>
-          <div class="lineage-node">
-            <div class="lineage-node-marker"><span class="lineage-node-symbol">✦</span></div>
-            <div class="lineage-node-body">
-              <span class="lineage-node-role">Primary Devotee</span>
-              <div class="lineage-node-name">Paul Brunton</div>
-              <span class="lineage-node-dates">1898–1981</span>
-              <p>Whose <em>A Search in Secret India</em> (1934) introduced Ramana to the Western world.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PULLQUOTE 1 -->
-    <div class="arunachala-section">
-      <div class="arunachala-glow" aria-hidden="true"></div>
-      <div class="pullquote reveal">
-        <div class="pullquote-mark" aria-hidden="true">"</div>
-        <p class="pullquote-text">Of all the thoughts that rise in the mind, the thought 'I' is the first thought. Enquire into the nature of the 'I'. This is Self-enquiry.</p>
-        <p class="pullquote-attr">— Ramana Maharshi · Who Am I? (Nan Yar, 1902)</p>
-        <p class="pullquote-attr-date">1879–1950 CE · Tiruvannamalai</p>
-      </div>
-    </div>
-
-    <!-- TRANSMISSION SECTION -->
-    <section class="transmission-section" id="transmission" role="region" aria-labelledby="transmission-heading">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-numeral">The Transmission Line</div>
-          <h2 class="section-title" id="transmission-heading"><span class="text-reveal"><span class="text-reveal-inner">Teachers &amp; Living Lineage</span></span></h2>
-          <p class="section-subtitle">How Ramana's teaching continues through his direct disciples</p>
-        </div>
-        <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
-        <div class="reveal mb-2rem">
-          <p class="muted-text-simple">Ramana never established a formal order or declared a successor. Yet his teaching has transmitted naturally through those transformed by his presence. These figures function as powerful pointers — not gurus in the hierarchical sense, but as vessels of the same Recognition.</p>
-        </div>
-        <!-- Figures (shortened) -->
-        <div class="transmission-figure reveal">
-          <div class="transmission-figure-name">Papaji (Sri H.W.L. Poonja)</div>
-          <div class="transmission-figure-dates">1910–1997 · Lucknow, India</div>
-          <p>After Ramana's glance dissolved his seeking, he spent 13 years with Ramana. He became the "Lightning Guru" for the way his presence would trigger sudden awakenings. Key teaching: <em>"The guru's grace is like the sun — it is always shining. The question is only whether you open your door."</em></p>
-          <div class="warning-box">
-            <span class="warning-icon" aria-hidden="true">⚠</span>
-            <p><strong>Note:</strong> Papaji's lineage includes teachers like Mooji and Gangaji. Seekers should always verify authenticity through their own recognition, not through lineage.</p>
-          </div>
-        </div>
-        <div class="transmission-figure reveal">
-          <div class="transmission-figure-name">Annamalai Swami</div>
-          <div class="transmission-figure-dates">1906–1995 · Arunachala</div>
-          <p>Served Ramana for 23 years and was fully liberated in his presence. Lived 45 years in a cave on Arunachala in complete solitude. His presence was an embodiment of <em>sahaja samadhi</em> — natural, unbroken abidance as the Self.</p>
-        </div>
-        <div class="transmission-figure reveal">
-          <div class="transmission-figure-name">Sri Lakshman Swamy</div>
-          <div class="transmission-figure-dates">1914–2005</div>
-          <p>Though he met Ramana only briefly, his realization was a direct fruit of Ramana's teaching. He taught a refined synthesis of Self-enquiry with detailed maps of the inner stages. Key text: <em>The Truth Revealed</em>.</p>
-        </div>
-        <div class="transmission-figure reveal">
-          <div class="transmission-figure-name">Living Authority: David Godman</div>
-          <div class="transmission-figure-dates">Contemporary</div>
-          <p>Editor of Ramana's words and custodian of the authentic teaching. Key texts: <em>Be As You Are</em>, <em>The Essential Teachings</em>. His work preserves the transmission with scholarly precision.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROOTS SECTION -->
-    <section class="roots-section" id="roots" role="region" aria-labelledby="roots-heading">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-numeral">Ancient Origins</div>
-          <h2 class="section-title" id="roots-heading"><span class="text-reveal"><span class="text-reveal-inner">Vedantic &amp; Upanishadic Roots</span></span></h2>
-          <p class="section-subtitle">Ramana did not invent his teaching — he recovered it from its source</p>
-        </div>
-        <div class="reveal">
-          <p class="muted-text">Ramana's teaching belongs squarely within Advaita Vedanta — the non-dual philosophy derived from the Upanishads. He never claimed originality. His contribution was the directness with which he pointed to what the ancient texts encoded in philosophical language: that consciousness itself, the witness behind all experience, is the one undivided reality.</p>
-          <p class="muted-text-2rem">The method of Self-enquiry is an experiential enactment of the Mahavakyas (the "great sayings"). Where the Upanishadic sages declared the identity of Self and Absolute in language, Ramana pointed to the immediate, felt recognition.</p>
-        </div>
-        <div class="reveal">
-          <div class="section-numeral">The Four Great Sayings</div>
-          <h3 class="section-title section-title-md">The Mahavakyas — Upanishadic Foundation</h3>
-          <p class="muted-text-compact">These four declarations form the doctrinal spine of Advaita. Ramana's teaching is an experiential unpacking of them.</p>
-        </div>
-        <div class="mahavakya-row reveal">
-          <div class="mahavakya-item">
-            <span class="mahavakya-sanskrit">Prajñānaṃ Brahma</span>
-            <span class="mahavakya-translation">Consciousness is Brahman</span>
-            <div class="mahavakya-source">Aitareya Upanishad · Rig Veda</div>
-          </div>
-          <div class="mahavakya-item">
-            <span class="mahavakya-sanskrit">Ahaṃ Brahmāsmi</span>
-            <span class="mahavakya-translation">I am Brahman</span>
-            <div class="mahavakya-source">Bṛhadāraṇyaka Upanishad · Yajur Veda</div>
-          </div>
-          <div class="mahavakya-item">
-            <span class="mahavakya-sanskrit">Tat Tvam Asi</span>
-            <span class="mahavakya-translation">That thou art</span>
-            <div class="mahavakya-source">Chāndogya Upanishad · Sāma Veda</div>
-          </div>
-          <div class="mahavakya-item">
-            <span class="mahavakya-sanskrit">Ayam Ātmā Brahma</span>
-            <span class="mahavakya-translation">This Self is Brahman</span>
-            <div class="mahavakya-source">Māṇḍūkya Upanishad · Atharva Veda</div>
-          </div>
-        </div>
-
-        <!-- DIAGRAM 1: Four States of Consciousness -->
-        <div class="diagram-container reveal">
-          <div class="diagram-title">The Four States of Consciousness</div>
-          <svg class="diagram-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#d4af37"/>
-                <stop offset="100%" stop-color="#b8960c"/>
-              </linearGradient>
-              <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#d4af37" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#b8960c" stop-opacity="0.05"/>
-              </radialGradient>
-            </defs>
-            <!-- Background -->
-            <rect width="400" height="400" fill="var(--bg)" rx="12"/>
-            <!-- Outer circle -->
-            <circle cx="200" cy="200" r="180" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.3"/>
-            <!-- Four quadrants -->
-            <path d="M200,20 A180,180 0 0,1 380,200 L200,200 Z" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.2"/>
-            <path d="M200,20 A180,180 0 0,0 20,200 L200,200 Z" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.2"/>
-            <path d="M200,380 A180,180 0 0,1 20,200 L200,200 Z" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.2"/>
-            <path d="M200,380 A180,180 0 0,0 380,200 L200,200 Z" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.2"/>
-            <!-- Labels -->
-            <text x="200" y="58" text-anchor="middle" fill="var(--gold)" font-family="Cinzel" font-size="12">Jagrat</text>
-            <text x="200" y="58" dy="14" text-anchor="middle" fill="var(--stone)" font-family="Cormorant Garamond" font-size="10" font-style="italic">Waking</text>
-            <text x="345" y="205" text-anchor="middle" fill="var(--gold)" font-family="Cinzel" font-size="12">Svapna</text>
-            <text x="345" y="220" text-anchor="middle" fill="var(--stone)" font-family="Cormorant Garamond" font-size="10" font-style="italic">Dream</text>
-            <text x="50" y="205" text-anchor="middle" fill="var(--gold)" font-family="Cinzel" font-size="12">Sushupti</text>
-            <text x="50" y="220" text-anchor="middle" fill="var(--stone)" font-family="Cormorant Garamond" font-size="10" font-style="italic">Deep Sleep</text>
-            <text x="200" y="365" text-anchor="middle" fill="var(--gold)" font-family="Cinzel" font-size="12">Turiya</text>
-            <text x="200" y="380" text-anchor="middle" fill="var(--stone)" font-family="Cormorant Garamond" font-size="10" font-style="italic">The Witness</text>
-            <!-- Center dot -->
-            <circle cx="200" cy="200" r="6" fill="url(#goldGrad)" opacity="0.8"/>
-            <!-- Inner glow -->
-            <circle cx="200" cy="200" r="40" fill="url(#centerGlow)" opacity="0.4"/>
-          </svg>
-          <div class="diagram-caption">The witness (Turiya) is not a fourth state but the background in which all three states appear and disappear.</div>
-        </div>
-
-        <!-- DIAGRAM 2: The Seven Stages -->
-        <div class="diagram-container reveal">
-          <div class="diagram-title">The Seven Stages of Realization</div>
-          <svg class="diagram-svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#d4af37"/>
-                <stop offset="100%" stop-color="#b8960c"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="500" fill="var(--bg)" rx="12"/>
-            <!-- Vertical axis -->
-            <line x1="200" y1="30" x2="200" y2="470" stroke="var(--border-strong)" stroke-width="1"/>
-            <!-- Nodes -->
-            <g font-family="Cinzel" font-size="9" fill="var(--stone)">
-              <circle cx="200" cy="50" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="55" text-anchor="middle" fill="var(--gold)" font-weight="bold">1</text>
-              <text x="200" y="78" text-anchor="middle" fill="var(--ink2)">Mistaken Identity</text>
-
-              <circle cx="200" cy="110" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="115" text-anchor="middle" fill="var(--gold)" font-weight="bold">2</text>
-              <text x="200" y="138" text-anchor="middle" fill="var(--ink2)">Self-Enquiry</text>
-
-              <circle cx="200" cy="170" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="175" text-anchor="middle" fill="var(--gold)" font-weight="bold">3</text>
-              <text x="200" y="198" text-anchor="middle" fill="var(--ink2)">The Three Veils</text>
-
-              <circle cx="200" cy="230" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="235" text-anchor="middle" fill="var(--gold)" font-weight="bold">4</text>
-              <text x="200" y="258" text-anchor="middle" fill="var(--ink2)">Four States</text>
-
-              <circle cx="200" cy="290" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="295" text-anchor="middle" fill="var(--gold)" font-weight="bold">5</text>
-              <text x="200" y="318" text-anchor="middle" fill="var(--ink2)">Mind vs Self</text>
-
-              <circle cx="200" cy="350" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="355" text-anchor="middle" fill="var(--gold)" font-weight="bold">6</text>
-              <text x="200" y="378" text-anchor="middle" fill="var(--ink2)">Silence &amp; Grace</text>
-
-              <circle cx="200" cy="410" r="16" fill="var(--gold-glow)" stroke="url(#goldGrad)" stroke-width="1.5"/>
-              <text x="200" y="415" text-anchor="middle" fill="var(--gold)" font-weight="bold">7</text>
-              <text x="200" y="438" text-anchor="middle" fill="var(--gold-light)" font-weight="bold">Sahaja Samadhi</text>
-            </g>
-          </svg>
-          <div class="diagram-caption">The natural state (Sahaja Samadhi) is not a final achievement but the recognition of what always already is.</div>
-        </div>
-
-        <!-- DIAGRAM 3: Distinction between I-thought and Pure Awareness -->
-        <div class="diagram-container reveal">
-          <div class="diagram-title">The Core Distinction</div>
-          <svg class="diagram-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#d4af37"/>
-                <stop offset="100%" stop-color="#b8960c"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="200" fill="var(--bg)" rx="12"/>
-            <!-- Left: I-thought -->
-            <rect x="20" y="20" width="160" height="160" rx="8" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-            <text x="100" y="50" text-anchor="middle" font-family="Cinzel" font-size="12" fill="var(--gold)">“I”-thought</text>
-            <text x="100" y="70" text-anchor="middle" font-family="Cormorant Garamond" font-size="10" fill="var(--stone)" font-style="italic">Ahaṃkāra</text>
-            <text x="100" y="95" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">First thought, root of ego</text>
-            <text x="100" y="115" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Borrows light from Self</text>
-            <text x="100" y="135" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Subject to change</text>
-            <text x="100" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Dissolves in enquiry</text>
-
-            <!-- Arrow -->
-            <line x1="190" y1="100" x2="210" y2="100" stroke="url(#goldGrad)" stroke-width="2"/>
-            <polygon points="210,95 225,100 210,105" fill="url(#goldGrad)"/>
-
-            <!-- Right: Pure Awareness -->
-            <rect x="220" y="20" width="160" height="160" rx="8" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1.5"/>
-            <text x="300" y="50" text-anchor="middle" font-family="Cinzel" font-size="12" fill="var(--gold-light)">Pure Awareness</text>
-            <text x="300" y="70" text-anchor="middle" font-family="Cormorant Garamond" font-size="10" fill="var(--stone)" font-style="italic">Ātman · Brahman</text>
-            <text x="300" y="95" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Self-luminous, uncaused</text>
-            <text x="300" y="115" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Witness of all states</text>
-            <text x="300" y="135" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Never born, never dies</text>
-            <text x="300" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--text-muted)">Already the case</text>
-          </svg>
-          <div class="diagram-caption">The “I”-thought is the ego; Pure Awareness is the Self. Tracing the “I” to its source dissolves the former and reveals the latter.</div>
-        </div>
-
-        <!-- DIAGRAM 4: The Three Veils -->
-        <div class="diagram-container reveal">
-          <div class="diagram-title">The Three Veils (Māyā)</div>
-          <svg class="diagram-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#d4af37"/>
-                <stop offset="100%" stop-color="#b8960c"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="300" fill="var(--bg)" rx="12"/>
-            <!-- Outer ring: Body-identification -->
-            <circle cx="200" cy="140" r="110" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.15"/>
-            <circle cx="200" cy="140" r="110" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.3" stroke-dasharray="4,4"/>
-            <text x="200" y="38" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold)">Dehātma-buddhi</text>
-            <text x="200" y="54" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone)">“I am the body”</text>
-
-            <!-- Middle ring: Mind-attachment -->
-            <circle cx="200" cy="140" r="70" fill="none" stroke="var(--gold-light)" stroke-width="1.5" opacity="0.2"/>
-            <circle cx="200" cy="140" r="70" fill="none" stroke="var(--gold-light)" stroke-width="0.5" opacity="0.4" stroke-dasharray="3,3"/>
-            <text x="200" y="74" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-light)">Manas-abhimāna</text>
-            <text x="200" y="90" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone)">“I am my thoughts”</text>
-
-            <!-- Inner ring: Doership -->
-            <circle cx="200" cy="140" r="30" fill="none" stroke="var(--gold-deep)" stroke-width="2" opacity="0.3"/>
-            <text x="200" y="128" text-anchor="middle" font-family="Cinzel" font-size="9" fill="var(--gold-deep)">Kartṛtva</text>
-            <text x="200" y="144" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone)">“I am the doer”</text>
-
-            <!-- Center: Self -->
-            <circle cx="200" cy="140" r="12" fill="url(#goldGrad)" opacity="0.6"/>
-            <text x="200" y="143" text-anchor="middle" font-family="Cinzel" font-size="6" fill="var(--bg)">Self</text>
-
-            <!-- Labels -->
-            <text x="200" y="195" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="var(--stone)" font-style="italic">Māyā — the veiling power</text>
-          </svg>
-          <div class="diagram-caption">The three layers of veiling: body, mind, and doership. Self-enquiry systematically dismantles each.</div>
-        </div>
-
-        <div class="reveal mt-3rem">
-          <div class="section-numeral">Philosophical Lineage</div>
-          <h3 class="section-title section-title-md">Adi Shankaracharya &amp; the Advaita Tradition</h3>
-          <p class="muted-text">Ramana's teaching is unmistakably within the Advaita Vedanta tradition systematized by Adi Shankaracharya (788–820 CE). Shankara's pivotal contribution was his interpretation of the Prasthanatrayi, demonstrating their convergent teaching: the non-dual identity of Ātman and Brahman. However, Ramana simplified Shankara's elaborate philosophical apparatus into a single direct inquiry: find the source of the "I."</p>
-          <blockquote class="stage-quote">
-            "The conclusion of the Vedas is that Brahman alone exists as the one undivided reality. There is no world apart from it; there is no second thing. Self-enquiry is the direct means to verify this."
-            <cite>— Ramana Maharshi, in dialogue</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- PULLQUOTE 2 -->
-    <div class="arunachala-section">
-      <div class="arunachala-glow" aria-hidden="true"></div>
-      <div class="pullquote reveal">
-        <div class="pullquote-mark" aria-hidden="true">"</div>
-        <p class="pullquote-text">There is no greater mystery than this — that we, being Reality ourselves, seek to gain Reality. We think something hides it. That is the only obstacle.</p>
-        <p class="pullquote-attr">— Ramana Maharshi</p>
-      </div>
-    </div>
-
-    <!-- STAGES SECTION (shortened) -->
-    <section class="stages-section" id="stages" role="region" aria-labelledby="stages-heading">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-numeral">The Map</div>
-          <h2 class="section-title" id="stages-heading"><span class="text-reveal"><span class="text-reveal-inner">The Seven Stages of Realization</span></span></h2>
-          <p class="section-subtitle">A complete cartography from mistaken identity to the Self</p>
-        </div>
-        <div class="hr-ornament reveal" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
-
-        <!-- Stage I (shortened) -->
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">I</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Starting Condition</div>
-            <h3 class="stage-title">Mistaken Identity — The Jīva</h3>
-            <p>"The jīva is only the 'I'-thought. The body and world are objects appearing in that thought. The root of all suffering is the idea 'I am the body'." (Who Am I?)</p>
-            <div class="infobox">
-              <div class="infobox-title">The Five Sheaths (Kośas) — All Appearances</div>
-              <div class="infobox-grid">
-                <div class="infobox-item"><span class="infobox-item-label">Annamaya</span><span class="infobox-item-value">Physical</span></div>
-                <div class="infobox-item"><span class="infobox-item-label">Prāṇamaya</span><span class="infobox-item-value">Vital</span></div>
-                <div class="infobox-item"><span class="infobox-item-label">Manomaya</span><span class="infobox-item-value">Mental</span></div>
-                <div class="infobox-item"><span class="infobox-item-label">Vijñānamaya</span><span class="infobox-item-value">Intellect</span></div>
-                <div class="infobox-item"><span class="infobox-item-label">Ānandamaya</span><span class="infobox-item-value">Bliss</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stage II -->
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">II</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Core Practice</div>
-            <h3 class="stage-title">Ātma Vicāra — Self-Enquiry</h3>
-            <p>"The practice of Self-enquiry consists in turning the mind inward and asking 'Who am I?' The 'I'-thought will then subside and the Self will shine forth." (Talks, §58)</p>
-            <div class="strip-flow">
-              <div class="strip-item fading">I am this body</div><div class="strip-arrow" aria-hidden="true">↓</div>
-              <div class="strip-item fading">I am the thoughts</div><div class="strip-arrow" aria-hidden="true">↓</div>
-              <div class="strip-item fading">I am the person named ___</div><div class="strip-arrow" aria-hidden="true">↓</div>
-              <div class="strip-item fading">I am the doer</div><div class="strip-arrow" aria-hidden="true">↓</div>
-              <div class="strip-item final">Who is aware? — I</div><div class="strip-arrow" aria-hidden="true">↓</div>
-              <div class="strip-item final glow">Pure Awareness — Ahaṃ Brahmāsmi</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stage III, IV, V, VI, VII (condensed) -->
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">III</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Obstacles</div>
-            <h3 class="stage-title">The Three Veils</h3>
-            <p>Three fundamental errors sustain separation: body-identification, mind-attachment, and doership. Self-enquiry undoes them simultaneously.</p>
-            <div class="veils-grid">
-              <div class="veil-card">
-                <div class="veil-icon" aria-hidden="true">◈</div>
-                <div class="veil-name">Body-Identification</div>
-                <div class="veil-sanskrit">Dehātma-buddhi</div>
-                <div class="veil-desc">"The body is composed of five elements and is insentient. Can it say 'I'? No." (Who Am I?)</div>
-                <div class="veil-practice">Ask "To whom does this body appear?" – trace to source.</div>
-              </div>
-              <div class="veil-card">
-                <div class="veil-icon" aria-hidden="true">◇</div>
-                <div class="veil-name">Mind-Attachment</div>
-                <div class="veil-sanskrit">Manas-abhimāna</div>
-                <div class="veil-desc">"The mind is a bundle of thoughts. The 'I' thought is the root of all other thoughts." (Talks, §33)</div>
-                <div class="veil-practice">Watch thoughts; ask "To whom do they arise?" – they dissolve.</div>
-              </div>
-              <div class="veil-card">
-                <div class="veil-icon" aria-hidden="true">◆</div>
-                <div class="veil-name">Sense of Doership</div>
-                <div class="veil-sanskrit">Kartṛtva-buddhi</div>
-                <div class="veil-desc">"Doership is only an illusion. The Self has nothing to do with activities." (Talks, §375)</div>
-                <div class="veil-practice">Before action, ask "Who is about to act?" – the doer dissolves.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">IV</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Four States</div>
-            <h3 class="stage-title">Waking, Dreaming, Sleep &amp; Turiya</h3>
-            <p>"The three states come and go. Turiya is the background that never changes. It is the witness of all states. Know that you are that." (Talks, §41)</p>
-            <div class="states-grid">
-              <div class="state-card"><div class="state-icon" aria-hidden="true">☀</div><div class="state-name">Waking</div><div class="state-sanskrit">Jagrat</div><div class="state-desc">Gross objects, apparent separation</div></div>
-              <div class="state-card"><div class="state-icon" aria-hidden="true">☽</div><div class="state-name">Dreaming</div><div class="state-sanskrit">Svapna</div><div class="state-desc">Mind-created images, also witnessed</div></div>
-              <div class="state-card"><div class="state-icon" aria-hidden="true">◉</div><div class="state-name">Deep Sleep</div><div class="state-sanskrit">Suṣupti</div><div class="state-desc">Consciousness apparently suspended</div></div>
-              <div class="state-card turiya"><div class="state-icon" aria-hidden="true">✦</div><div class="state-name">Turiya</div><div class="state-sanskrit">Not a state — the background</div><div class="state-desc">The unchanging witness in which all states appear and disappear.</div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">V</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Critical Distinction</div>
-            <h3 class="stage-title">Mind vs. Self — The "I"-Thought &amp; Pure Awareness</h3>
-            <p>"The 'I'-thought is the ego. The Self is pure awareness. When the ego is traced to its source, it dissolves, and only the Self remains." (Who Am I?)</p>
-            <div class="distinction-table">
-              <div class="dist-col">
-                <div class="dist-col-header">The "I"-Thought</div>
-                <div class="dist-col-title">Ahaṃkāra</div>
-                <div class="dist-item">First thought, root of all others</div>
-                <div class="dist-item">Appears and disappears</div>
-                <div class="dist-item">Borrows its light from the Self</div>
-                <div class="dist-item">Dissolved by enquiry</div>
-              </div>
-              <div class="dist-arrow" aria-hidden="true">→</div>
-              <div class="dist-col right">
-                <div class="dist-col-header">Pure Awareness</div>
-                <div class="dist-col-title">Ātman · Brahman</div>
-                <div class="dist-item">Self-luminous, uncaused</div>
-                <div class="dist-item">Witness of all states</div>
-                <div class="dist-item">Changeless, ever-present</div>
-                <div class="dist-item">Your own nature</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">VI</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Role of Grace</div>
-            <h3 class="stage-title">Mouna &amp; Grace — Silent Transmission</h3>
-            <p>"Grace is not something to be acquired. It is your own nature. The Self is grace. Silence is the highest teaching." (Talks, §192)</p>
-          </div>
-        </div>
-
-        <div class="stage-item reveal">
-          <div class="stage-number-outer"><span class="stage-number-inner">VII</span></div>
-          <div class="stage-body">
-            <div class="stage-label">The Fruit</div>
-            <h3 class="stage-title">The Jñāni — Liberation in Life</h3>
-            <p>"The jñāni has no ego. He lives without a centre of 'I'. Actions happen through him, but he does nothing. He is like a cinema screen – the world passes, but he remains unaffected." (Talks, §450)</p>
-            <blockquote class="stage-quote">
-              "Realization is not something to be gained afresh. It is already there. All that is necessary is to get rid of the thought 'I have not realized.' Stillness or peace is Realization."
-              <cite>— Talks with Sri Ramana Maharshi</cite>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRACTICE SECTION (shortened) -->
-    <section class="practice-section" id="practice" role="region" aria-labelledby="practice-heading">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-numeral">The Method</div>
-          <h2 class="section-title" id="practice-heading"><span class="text-reveal"><span class="text-reveal-inner">How to Practice Self-Enquiry</span></span></h2>
-          <p class="section-subtitle">A practical guide to Ātma Vicāra</p>
-        </div>
-
-        <div class="arunachala-section arunachala-section-padding">
-          <div class="arunachala-glow" aria-hidden="true"></div>
-          <div class="pullquote reveal">
-            <div class="pullquote-mark" aria-hidden="true">"</div>
-            <p class="pullquote-text">The state of self-realisation is not something to be attained afresh. It is already there. All that is necessary is to get rid of the thought 'I have not realised.' Stillness or peace is realisation.</p>
-            <p class="pullquote-attr">— Ramana Maharshi · Talks (1935–1950)</p>
-          </div>
-        </div>
-
-        <div class="hr-ornament" aria-hidden="true"><div class="hr-ornament-line"></div><div class="hr-ornament-mark"></div><div class="hr-ornament-line"></div></div>
-
-        <div>
-          <div class="practice-step reveal">
-            <div class="practice-step-number">1</div>
-            <div class="practice-step-content">
-              <div class="practice-step-title">Find the Sense of "I"</div>
-              <p>Sit quietly. Before any thought arises — before "I am tired," "I am happy," "I am the body" — there is a bare, raw sense of existing. That bare "I am" prior to all qualifiers is where the enquiry begins.</p>
-            </div>
-          </div>
-          <div class="practice-step reveal">
-            <div class="practice-step-number">2</div>
-            <div class="practice-step-content">
-              <div class="practice-step-title">Turn Attention Toward the "I"</div>
-              <p>Instead of following thoughts outward into objects, gently turn attention inward — not toward any thought, but toward the very sense of "I" itself. This reversal of attention is the entire method.</p>
-            </div>
-          </div>
-          <div class="practice-step reveal">
-            <div class="practice-step-number">3</div>
-            <div class="practice-step-content">
-              <div class="practice-step-title">Notice the Thoughts That Arise</div>
-              <p>When a thought arises, gently ask: "To whom does this thought arise? To me. Then who am I?" Return to the sense of "I." It is a gentle, persistent return to the witness.</p>
-            </div>
-          </div>
-          <div class="practice-step reveal">
-            <div class="practice-step-number">4</div>
-            <div class="practice-step-content">
-              <div class="practice-step-title">Allow the Mind to Subside</div>
-              <p>When attention rests steadily on the "I"-sense, the mind naturally subsides. Thoughts lose urgency; stillness opens. This is the approach to Turiya — the recognition of the witnessing awareness always present.</p>
-            </div>
-          </div>
-          <div class="practice-step reveal">
-            <div class="practice-step-number">5</div>
-            <div class="practice-step-content">
-              <div class="practice-step-title">Surrender as Complement</div>
-              <p>For those inclined to devotion, Ramana offered complete surrender of the ego-sense to God. Self-enquiry and surrender are two faces of the same movement — both dissolve the ego-sense and arrive at the Self.</p>
-            </div>
-          </div>
-          <div class="practice-step reveal border-none">
-            <div class="practice-step-number practice-step-icon">✦</div>
-            <div class="practice-step-content">
-              <div class="practice-step-title">The Final Understanding</div>
-              <p>There is nothing to gain, nothing to achieve, no distance to travel. The Self is already what you are. The effort of self-enquiry is not an effort to become something — it is the gradual dissolution of the habit of appearing to be something else.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORKS SECTION -->
-    <section id="works" class="works-section">
-      <div class="container">
-        <div class="reveal">
-          <div class="section-numeral">Primary Sources</div>
-          <h2 class="section-title"><span class="text-reveal"><span class="text-reveal-inner">The Works of Ramana Maharshi</span></span></h2>
-          <p class="section-subtitle">The Collected Works and their context in the Vedantic tradition</p>
-        </div>
-        <div class="works-grid reveal">
-          <div class="work-card"><div class="work-card-title">Nan Yar? — Who Am I?</div><div class="work-card-year">1902 · Tamil Prose</div><p>The foundational text — answers given in writing to Sivaprakasam Pillai. The clearest single statement of Ramana's core method.</p></div>
-          <div class="work-card"><div class="work-card-title">Vicharasangraham — Self-Enquiry</div><div class="work-card-year">1901–02 · Tamil Prose</div><p>Companion to Who Am I? — answers to Gambhiram Seshayya. The only prose works Ramana composed in his own hand.</p></div>
-          <div class="work-card"><div class="work-card-title">Ulladu Narpadu — Reality in Forty Verses</div><div class="work-card-year">1928 · Tamil Verse</div><p>The deepest philosophical work. Forty verses on the nature of reality — his closest engagement with the Upanishadic tradition in his own words.</p></div>
-          <div class="work-card"><div class="work-card-title">Upadesa Saram — Essence of Instruction</div><div class="work-card-year">1927 · Sanskrit &amp; Tamil Verse</div><p>Thirty Sanskrit verses condensing the essence of all sadhana across the three paths — jñāna, bhakti, and karma. One of Ramana's most-chanted texts.</p></div>
-          <div class="work-card"><div class="work-card-title">Five Hymns to Arunachala</div><div class="work-card-year">1914–1918 · Tamil Verse</div><p>Devotional poetry to the sacred mountain-guru. The most direct window into Ramana's personal relationship with Arunachala.</p></div>
-          <div class="work-card"><div class="work-card-title">Sri Ramana Gita</div><div class="work-card-year">1917 · Ganapati Muni</div><p>Dialogues between Ramana and Ganapati Muni, cast in Sanskrit in the form of the Bhagavad Gita — a precise record of the teaching.</p></div>
-          <div class="work-card"><div class="work-card-title">Talks with Sri Ramana Maharshi</div><div class="work-card-year">1935–39 · Munagala Venkataramiah</div><p>Three volumes of daily conversations. The richest single record of Ramana's spontaneous teaching.</p></div>
-          <div class="work-card"><div class="work-card-title">Be As You Are</div><div class="work-card-year">1985 · Ed. David Godman</div><p>The finest thematic anthology. The ideal first book and a reliable scholarly resource.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL PULLQUOTE -->
-    <div class="arunachala-section arunachala-section-padding">
-      <div class="arunachala-glow" aria-hidden="true"></div>
-      <div class="pullquote reveal">
-        <div class="pullquote-mark" aria-hidden="true">"</div>
-        <p class="pullquote-text">Your own Self-Realization is the greatest service you can render the world.</p>
-        <p class="pullquote-attr">— Ramana Maharshi · Tiruvannamalai · 1879–1950</p>
-      </div>
-    </div>
-
-    <!-- CHAPTER NAVIGATION -->
-    <div class="chapter-nav">
-      <a href="../index.html" class="chapter-link">⌂ Home</a>
-      <span class="chapter-sep">·</span>
-      <a href="#hero" class="chapter-link">Ramana Maharshi</a>
-      <span class="chapter-sep">·</span>
-      <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
-      <span class="chapter-sep">·</span>
-      <a href="../messiah/messiah-threshold.html" class="chapter-link">The Vedantic Messiah</a>
-      <span class="chapter-sep">·</span>
-      <a href="../taoism/taoism-threshold.html" class="chapter-link">Taoism · The Unnamed Way</a>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-      <div class="footer-name">Vedantic Mappings</div>
-      <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-      <div class="footer-links">
-        <a href="../index.html">⌂ Vedantic Mappings</a>
-        <a href="gaudapada.html">Advaita Vedanta</a>
-        <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-        <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-        <a href="../taoism/taoism-threshold.html">Taoism · The Unnamed Way</a>
-      </div>
-      <div class="footer-credit">Researched &amp; Composed</div>
-      <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
-    </footer>
   </div>
 
-  <script>
-    (function() {
-      'use strict';
+  <div class="ed-h3">The Transmission Lineage · गुरु परम्परा</div>
 
-      // NAV COMPASS TOGGLE
-      const navToggle = document.getElementById('navToggle');
-      const navMenu = document.getElementById('navMenu');
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-          navMenu.classList.toggle('open');
-        });
-        document.addEventListener('click', (e) => {
-          if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-            navMenu.classList.remove('open');
-          }
-        });
-      }
+  <div class="lin-timeline">
+    <div class="lin-entry">
+      <div class="lin-dot"></div>
+      <h4>Ramana Maharshi <span class="deva">रमण महर्षि</span></h4>
+      <div class="lin-dates">1879 – 1950 · Tiruvannamalai</div>
+      <p>Realized at 16 through spontaneous recognition of the Self. No formal teacher, no spiritual practices before the event. Spent 54 years transmitting Self-knowledge through silence, gaze, and direct pointing to the ever-present awareness.</p>
+    </div>
 
-      // THEME TOGGLE
-      const themeToggle = document.getElementById('themeToggle');
-      const html = document.documentElement;
-      function setTheme(theme) {
-        html.setAttribute('data-theme', theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-      }
-      function initTheme() {
-        const saved = localStorage.getItem('theme');
-        if (saved === 'light' || saved === 'dark') { setTheme(saved); return; }
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setTheme(prefersDark ? 'dark' : 'light');
-      }
-      initTheme();
-      if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-          const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          setTheme(next);
-        });
-      }
+    <div class="lin-entry">
+      <div class="lin-dot"></div>
+      <h4>Arunachala Hill <span class="deva">अरुणाचल</span></h4>
+      <div class="lin-dates">Sacred Mountain · Tiruvannamalai</div>
+      <p>Ramana's guru — the sacred mountain as Jyotirlinga, pillar of light. He circumambulated it barefoot and composed five hymns in its honour. <em>"The mountain itself taught me."</em></p>
+    </div>
 
-      // BACK TO TOP
-      const backToTop = document.getElementById('backToTop');
-      function updateBackToTop() {
-        if (backToTop) {
-          backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
-        }
-      }
-      window.addEventListener('scroll', updateBackToTop, { passive: true });
-      updateBackToTop();
-      if (backToTop) {
-        backToTop.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
+    <div class="lin-entry">
+      <div class="lin-dot"></div>
+      <h4>Papaji (H.W.L. Poonja) <span class="deva">पापाजी</span></h4>
+      <div class="lin-dates">1910 – 1997 · Lucknow</div>
+      <p>Spent 13 years with Ramana. Became the "Lightning Guru" for the way his presence triggered sudden awakenings. Key teaching: <em>"The guru's grace is like the sun — it is always shining. The question is only whether you open your door."</em></p>
+    </div>
 
-      // HERO PARALLAX
-      const heroMountain = document.getElementById('heroMountain');
-      if (heroMountain && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.addEventListener('scroll', () => {
-          const y = window.scrollY;
-          if (y < window.innerHeight) {
-            heroMountain.style.setProperty('--parallax-y', (-y * 0.15) + 'px');
-          }
-        }, { passive: true });
-      }
+    <div class="lin-entry">
+      <div class="lin-dot"></div>
+      <h4>David Godman</h4>
+      <div class="lin-dates">Contemporary · Custodian of the Teachings</div>
+      <p>Editor and translator of Ramana's works. Key texts: <em>Be As You Are</em>, <em>The Essential Teachings</em>. Preserves the transmission with scholarly precision and living presence.</p>
+    </div>
+  </div>
+</section>
 
-      // SCROLL REVEAL (fade-in, stagger, text-reveal)
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.07, rootMargin: '0px 0px -50px 0px' });
+<!-- ═════════════════════════════════
+     ROOTS SECTION
+     ═════════════════════════════════ -->
+<section class="lineage-section" id="roots">
+  <div class="ed-section-label">Vedantic Roots · वैदान्तिक जड़ें</div>
+  <h2 class="ed-section-h2">The Ancient Sources</h2>
+  <p class="ed-section-intro">Ramana's teaching belongs squarely within Advaita Vedanta. His contribution was directness: experiential enactment of what the ancient texts encoded in philosophy.</p>
 
-      document.querySelectorAll('.reveal, .fade-in, .text-reveal').forEach((el) => observer.observe(el));
+  <div class="stage-body">
+    <p>The method of Self-enquiry is the living practice of the Mahavakyas — the great sayings. Where the Upanishadic sages declared identity in language, Ramana pointed to immediate recognition.</p>
 
-      // Active nav highlighting on scroll
-      const sections = document.querySelectorAll('section[id], header[id]');
-      const navItems = document.querySelectorAll('.nav-item');
-      function updateActiveNav() {
-        let current = '';
-        const scrollPos = window.scrollY + 120;
-        sections.forEach((section) => {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            current = section.getAttribute('id');
-          }
-        });
-        navItems.forEach((item) => {
-          item.classList.remove('active');
-          if (item.getAttribute('href') === '#' + current) {
-            item.classList.add('active');
-          }
-        });
-      }
-      window.addEventListener('scroll', updateActiveNav, { passive: true });
-      updateActiveNav();
+    <div class="ed-h3">The Four Great Sayings · चत्वार महावाक्य</div>
 
-      // TOUCH SWIPE FOR NAV (right-edge open, left-edge close)
-      let touchStartX = 0;
-      let touchEndX = 0;
-      document.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-      document.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        // swipe left from right edge (close)
-        if (touchStartX > window.innerWidth - 50 && diff > 50) {
-          navMenu.classList.remove('open');
-        }
-        // swipe right from left edge (open)
-        if (touchStartX < 50 && diff < -50) {
-          navMenu.classList.add('open');
-        }
-      }, { passive: true });
+    <div class="states-strip" style="grid-template-columns: repeat(4, 1fr); margin: 2.5rem 0;">
+      <div class="state-tile">
+        <div class="state-tile-name">Prajñānaṃ Brahma</div>
+        <div class="state-tile-skt">Consciousness is Brahman</div>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Aitareya Upanishad · Rig Veda</p>
+      </div>
+      <div class="state-tile">
+        <div class="state-tile-name">Ahaṃ Brahmāsmi</div>
+        <div class="state-tile-skt">I am Brahman</div>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Bṛhadāraṇyaka · Yajur Veda</p>
+      </div>
+      <div class="state-tile">
+        <div class="state-tile-name">Tat Tvam Asi</div>
+        <div class="state-tile-skt">That thou art</div>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Chāndogya · Sāma Veda</p>
+      </div>
+      <div class="state-tile">
+        <div class="state-tile-name">Ayam Ātmā Brahma</div>
+        <div class="state-tile-skt">This Self is Brahman</div>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Māṇḍūkya · Atharva Veda</p>
+      </div>
+    </div>
 
-      // PAUSE ANIMATIONS ON TAB HIDE
-      document.addEventListener('visibilitychange', () => {
-        const els = document.querySelectorAll('.sacred-mandala, .hero-ripple, .vedanta-scroll');
-        els.forEach((el) => {
-          el.style.animationPlayState = document.hidden ? 'paused' : 'running';
-        });
+    <div class="ed-h3">The Primary Upanishads · प्राचीन उपनिषद्</div>
+
+    <div class="kosha-accord">
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Aitareya Upanishad <span class="kosha-row-skt">ऐतरेय</span></span>
+          <span class="kosha-row-right">
+            <span class="kosha-row-deva">ऐतरेय</span>
+            <span class="kosha-arrow">▾</span>
+          </span>
+        </div>
+        <div class="kosha-body">
+          <div class="kosha-body-skt">Aitareya Upanishad — Rig Veda</div>
+          <p>The first primary Upanishad. Its opening mahavakya "Prajñānaṃ Brahma" (Consciousness is Brahman) is fundamental to Advaita. Ramana often quoted this to point directly to awareness itself.</p>
+          <cite class="kosha-body-cite">Aitareya Upanishad 1.1</cite>
+        </div>
+      </div>
+
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Chandogya Upanishad <span class="kosha-row-skt">छान्दोग्य</span></span>
+          <span class="kosha-row-right">
+            <span class="kosha-row-deva">छान्दोग्य</span>
+            <span class="kosha-arrow">▾</span>
+          </span>
+        </div>
+        <div class="kosha-body">
+          <div class="kosha-body-skt">Chandogya Upanishad — Sama Veda</div>
+          <p>Contains "Tat Tvam Asi" (That Thou Art). The teaching of Uddalaka to his son Svetaketu unfolds gradually, culminating in the recognition of non-duality.</p>
+          <cite class="kosha-body-cite">Chandogya Upanishad 6.8–15</cite>
+        </div>
+      </div>
+
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Brihadaranyaka Upanishad <span class="kosha-row-skt">बृहदारण्यक</span></span>
+          <span class="kosha-row-right">
+            <span class="kosha-row-deva">बृहदारण्यक</span>
+            <span class="kosha-arrow">▾</span>
+          </span>
+        </div>
+        <div class="kosha-body">
+          <div class="kosha-body-skt">Brihadaranyaka Upanishad — Yajur Veda</div>
+          <p>Largest Upanishad, containing "Ahaṃ Brahmāsmi" (I Am Brahman). Also contains "neti, neti" (not this, not this) — negating all objects to arrive at the irreducible witness.</p>
+          <cite class="kosha-body-cite">Bṛhadāraṇyaka Upanishad 1.4, 4.2</cite>
+        </div>
+      </div>
+
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Mandukya Upanishad <span class="kosha-row-skt">माण्डूक्य</span></span>
+          <span class="kosha-row-right">
+            <span class="kosha-row-deva">माण्डूक्य</span>
+            <span class="kosha-arrow">▾</span>
+          </span>
+        </div>
+        <div class="kosha-body">
+          <div class="kosha-body-skt">Mandukya Upanishad — Atharva Veda</div>
+          <p>Smallest but most concentrated — 12 verses. Teaches the four states: waking, dreaming, deep sleep, and turīya. Forms the basis of Ramana's teaching on states of consciousness.</p>
+          <cite class="kosha-body-cite">Māṇḍūkya Upanishad 1–12</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-q" style="margin-top:3rem">
+      <p>"The conclusion of the Vedas is that Brahman alone exists as the one undivided reality. There is no world apart from it; there is no second thing. Self-enquiry is the direct means to verify this."</p>
+      <cite>— Ramana Maharshi, in dialogue</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════
+     STAGES SECTION
+     ═════════════════════════════════ -->
+<div class="stages-wrap" id="stages">
+
+<section class="stage-section" id="stage1">
+  <div class="stage-wm" aria-hidden="true">मिथ्या</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage I</span>
+      <span class="stage-skt">Mistaken Identity</span>
+      <span class="stage-deva-title">मिथ्या</span>
+    </div>
+    <h2 class="stage-h2">The Starting Condition</h2>
+    <span class="stage-subtitle-label">Vyakti · The Apparent Person</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>T</strong>he ordinary human takes itself to be a body-mind organism — a <em>vyakti</em>, a person with a name, biography, desires and fears. This identification is the root of all suffering. It is not a moral failing but an innocent error of attention: awareness has forgotten its own nature by becoming absorbed in its content.</p>
+
+    <p>The <em>Taittirīya Upaniṣad</em> maps five sheaths — <em>kośas</em> — in which the Self appears to be embedded. For Ramana, crucially, these layers are not veils obscuring awareness but objects <em>appearing within</em> consciousness.</p>
+
+    <div class="ed-h3">The Five Sheaths · पञ्च कोश</div>
+
+    <div class="kosha-accord">
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Physical Body <span class="kosha-row-skt">Annamaya-kośa</span></span>
+          <span class="kosha-row-right"><span class="kosha-row-deva">अन्नमय कोश</span><span class="kosha-arrow">▾</span></span>
+        </div>
+        <div class="kosha-body">
+          <p>The physical body, outermost sheath. Made of food, sustained by food. Not the perceiver — an object perceived within consciousness.</p>
+        </div>
+      </div>
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Vital Energy <span class="kosha-row-skt">Prāṇamaya-kośa</span></span>
+          <span class="kosha-row-right"><span class="kosha-row-deva">प्राणमय कोश</span><span class="kosha-arrow">▾</span></span>
+        </div>
+        <div class="kosha-body">
+          <p>The vital breath animating the body. Contains physiological functions. Subtler than physical body, but still an object in awareness.</p>
+        </div>
+      </div>
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Mental <span class="kosha-row-skt">Manomaya-kośa</span></span>
+          <span class="kosha-row-right"><span class="kosha-row-deva">मनोमय कोश</span><span class="kosha-arrow">▾</span></span>
+        </div>
+        <div class="kosha-body">
+          <p>The mind, emotions, thinking faculty. Where the ego-sense operates. Processes sensory input and generates desires and aversions.</p>
+        </div>
+      </div>
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Intellect <span class="kosha-row-skt">Vijñānamaya-kośa</span></span>
+          <span class="kosha-row-right"><span class="kosha-row-deva">विज्ञानमय कोश</span><span class="kosha-arrow">▾</span></span>
+        </div>
+        <div class="kosha-body">
+          <p>The intellect and higher mind. Contains capacity for discrimination. Not yet the Self — even the discriminating intellect is an object.</p>
+        </div>
+      </div>
+      <div class="kosha-row" onclick="toggleKosha(this)">
+        <div class="kosha-row-head">
+          <span class="kosha-row-name">Bliss <span class="kosha-row-skt">Ānandamaya-kośa</span></span>
+          <span class="kosha-row-right"><span class="kosha-row-deva">आनन्दमय कोश</span><span class="kosha-arrow">▾</span></span>
+        </div>
+        <div class="kosha-body">
+          <p>Subtle layer of peace experienced in meditation or deep sleep. Closer to Self but still an appearance — the subtlest veil before the witness.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-q">
+      <p>"As long as you identify with the body-mind you are conditioned. Once you stabilize in the knowledge 'I am' unconditionally you are free."</p>
+      <cite>— Ramana Maharshi</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<section class="stage-section" id="stage2">
+  <div class="stage-wm" aria-hidden="true">आत्मविचार</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage II</span>
+      <span class="stage-skt">The Core Practice</span>
+      <span class="stage-deva-title">आत्मविचार</span>
+    </div>
+    <h2 class="stage-h2">Self-Enquiry</h2>
+    <span class="stage-subtitle-label">Atma Vicara · The Investigation of the Self</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>T</strong>he pivot of Ramana's teaching. Locate the source of the "I"-thought — the sense that says <em>"I exist."</em> This is not conceptual thinking but direct inquiry: <em>"Who am I?" "To whom does this arise?" "What is the nature of the 'I'?"</em></p>
+
+    <p>Ramana said: <em>"Of all the thoughts that rise in the mind, the thought 'I' is the first thought. Enquire into the nature of the 'I'. This is Self-enquiry."</em> The method is simultaneously the simplest and the most direct: trace every appearance back to its source, and that source will dissolve when looked at directly.</p>
+
+    <div class="ed-note">
+      <span class="ni">⚠</span>
+      <p><strong>This is not a mantra to repeat</strong>. It is the actual, living recognition of consciousness itself, investigating its own nature. The question "Who am I?" is a pointer — the real work is turning attention backward toward the source.</p>
+    </div>
+
+    <div class="pull-q">
+      <p>"By the inquiry 'Who am I?' the mind will merge into the Self. If the mind is not destroyed, Self-realisation is not possible. The mind is destroyed through 'Who am I?' enquiry."</p>
+      <cite>— Ramana Maharshi</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<section class="stage-section" id="stage3">
+  <div class="stage-wm" aria-hidden="true">अविद्या</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage III</span>
+      <span class="stage-skt">The Obstacles</span>
+      <span class="stage-deva-title">अविद्या</span>
+    </div>
+    <h2 class="stage-h2">The Three Veils</h2>
+    <span class="stage-subtitle-label">Avidya · Fundamental Ignorance</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>T</strong>hree fundamental errors sustain the illusion of separation. Each must be seen through directly — not merely understood intellectually, for intellectual understanding itself is a product of mind.</p>
+
+    <div class="ed-h3">Body Identification · देहाभिमान</div>
+    <p>Mistaking the body for the self. The body is an object perceived within consciousness — it is not the perceiver. Ramana: <em>"The body is composed of five elements and is insentient. Can it say 'I'? No."</em></p>
+
+    <div class="ed-h3">Mind Attachment · संकल्प</div>
+    <p>The mind generates concepts, including spiritual concepts. Every concept must ultimately be relinquished. The Upanishads' "neti, neti" (not this, not this) negates all objects to arrive at the irreducible witness.</p>
+
+    <div class="ed-h3">Sense of Doership · कर्तृत्व</div>
+    <p>The belief "I act, I choose, I achieve" sustains separation. Actions happen through the body-mind; there is no independent doer. Ramana: <em>"Doership is only an illusion. The Self has nothing to do with activities."</em></p>
+
+    <div class="pull-q">
+      <p>"The very idea that you are the body is ridiculous. Consciousness is experiencing its manifestation. You are not bound."</p>
+      <cite>— Ramana Maharshi</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<section class="stage-section" id="stage4">
+  <div class="stage-wm" aria-hidden="true">तुरीय</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage IV</span>
+      <span class="stage-skt">States of Consciousness</span>
+      <span class="stage-deva-title">तुरीय</span>
+    </div>
+    <h2 class="stage-h2">The Fourth</h2>
+    <span class="stage-subtitle-label">Turiya · Beyond the Three States</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>R</strong>ooted in the <em>Māṇḍūkya Upaniṣad</em> — twelve verses containing the most concentrated teaching of consciousness — Ramana maps experience across four dimensions. All three ordinary states come and go; awareness, the witness, persists through them all.</p>
+
+    <div class="states-strip">
+      <div class="state-tile">
+        <div class="state-tile-ghost">I</div>
+        <div class="state-tile-name">Waking</div>
+        <div class="state-tile-skt">Jāgrat · जाग्रत्</div>
+        <p>The world of objects, names, and forms. Fully manifest.</p>
+      </div>
+      <div class="state-tile">
+        <div class="state-tile-ghost">II</div>
+        <div class="state-tile-name">Dreaming</div>
+        <div class="state-tile-skt">Svapna · स्वप्न</div>
+        <p>Subtle world of mind-created imagery. Objects without outer stimulus.</p>
+      </div>
+      <div class="state-tile">
+        <div class="state-tile-ghost">III</div>
+        <div class="state-tile-name">Deep Sleep</div>
+        <div class="state-tile-skt">Suṣupti · सुषुप्ति</div>
+        <p>Consciousness suspended — yet you know: "I slept."</p>
+      </div>
+      <div class="state-tile turiya">
+        <div class="state-tile-ghost">IV</div>
+        <div class="state-tile-name">Turīya</div>
+        <div class="state-tile-skt">The Fourth · तुरीय</div>
+        <p>Not a state. The unchanging witness that contains all three.</p>
+      </div>
+    </div>
+
+    <div class="pull-q">
+      <p>"The three states of waking, dreaming and sleeping are not you. You are the eternal witness of these three states."</p>
+      <cite>— Ramana Maharshi</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<section class="stage-section" id="stage5">
+  <div class="stage-wm" aria-hidden="true">विवेक</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage V</span>
+      <span class="stage-skt">The Crucial Move</span>
+      <span class="stage-deva-title">विवेक</span>
+    </div>
+    <h2 class="stage-h2">The Critical Distinction</h2>
+    <span class="stage-subtitle-label">Viveka · Discrimination Between Mind and Self</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>T</strong>he ultimate distinction: the "I"-thought is not the Self. The ego-sense, however refined, is still an object in awareness. Ramana taught that the search itself is for what was never lost, and the seeker is the sought.</p>
+
+    <p>Tracing the "I" inward, you discover that there is no "I" — only awareness that is aware of the apparent "I." The "I" thought has a source, and when that source is directly contacted, the separate self-sense dissolves.</p>
+
+    <div class="dist-panel">
+      <div class="dist-col">
+        <div class="dist-col-head">The "I"-Thought <span class="deva" style="font-size:0.75em">अहंकार</span></div>
+        <span class="dist-col-label">Ahaṃkāra · The Ego</span>
+        <ul class="dist-items">
+          <li>First thought, root of all others</li>
+          <li>Appears and disappears</li>
+          <li>Borrows light from the Self</li>
+          <li>Subject to change</li>
+          <li>Dissolved by enquiry</li>
+        </ul>
+      </div>
+      <div class="dist-col">
+        <div class="dist-col-head">Pure Awareness <span class="deva" style="font-size:0.75em">आत्मन्</span></div>
+        <span class="dist-col-label">Ātman · The Self</span>
+        <ul class="dist-items">
+          <li>Self-luminous, uncaused</li>
+          <li>Witness of all states</li>
+          <li>Never born, never dies</li>
+          <li>Already your nature</li>
+          <li>The ultimate reality</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pull-q">
+      <p>"The ignorance of identifying oneself with the body is the root cause of all misery. There is no individual 'I'. The Self alone exists."</p>
+      <cite>— Ramana Maharshi</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<section class="stage-section" id="stage6">
+  <div class="stage-wm" aria-hidden="true">मौन</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage VI</span>
+      <span class="stage-skt">The Unspoken</span>
+      <span class="stage-deva-title">मौन</span>
+    </div>
+    <h2 class="stage-h2">Silence &amp; Grace</h2>
+    <span class="stage-subtitle-label">Mouna · The Highest Teaching</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>R</strong>amana taught that the highest transmission is not through words but through silence. <em>"Silence is the highest teaching and the highest compassion."</em> His presence itself was the teaching — a direct transmission from Self to Self.</p>
+
+    <p>Grace is not something to be acquired. It is your own nature. The Self is grace. What appears as grace is simply the Self recognizing itself. The guru's role is to dissolve the false identification, and this happens through the power of being, not doing.</p>
+
+    <div class="pull-q">
+      <p>"The Guru is not a person. Arunachala is the Guru. The Self is the Guru. The mountain called me, and I came and never left."</p>
+      <cite>— Ramana Maharshi, on finding his guru</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<section class="stage-section" id="stage7">
+  <div class="stage-wm" aria-hidden="true">साहज</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Stage VII</span>
+      <span class="stage-skt">The Fruit</span>
+      <span class="stage-deva-title">साहज</span>
+    </div>
+    <h2 class="stage-h2">The Jñāni</h2>
+    <span class="stage-subtitle-label">Sahaja Samadhi · The Natural State</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>T</strong>he jñāni is one in whom the separate self-sense has completely dissolved. The body continues, words arise, activities happen. But there is no person claiming to be the doer. The jñāni does not claim liberation — liberation is simply the recognition that separation was never real.</p>
+
+    <p>Ramana lived this state for 54 years — from his spontaneous realization at 16 until his death in 1950. The very fact of his existence was the teaching: that it is possible to abide as the Self while the body-mind continues its apparent functioning.</p>
+
+    <div class="pull-q">
+      <p>"You are already That. The seeker is the sought. There is no difference between the Guru and the disciple. They are one consciousness. When the seeker knows this, he is free."</p>
+      <cite>— Ramana Maharshi</cite>
+    </div>
+  </div>
+</section>
+
+</div><!-- .stages-wrap -->
+
+<!-- ═════════════════════════════════
+     PRACTICE SECTION
+     ═════════════════════════════════ -->
+<section class="practice-section" id="practice">
+  <div class="ed-section-label">Sadhana · साधना</div>
+  <h2 class="ed-section-h2">How to Practice</h2>
+  <p class="ed-section-intro">A practical guide to Atma Vicara — Self-enquiry as lived practice.</p>
+
+  <div class="practice-steps">
+    <div class="prac-step">
+      <div class="prac-n">I</div>
+      <div class="prac-content">
+        <h5>Find the Sense of "I" · अस्मि</h5>
+        <p>Before any thought, locate the bare sense of existing. Not "I am this body" or "I am thinking" — just the raw fact of being. This is the gateway. It is always present; notice it.</p>
+      </div>
+    </div>
+
+    <div class="prac-step">
+      <div class="prac-n">II</div>
+      <div class="prac-content">
+        <h5>Turn Attention Inward · मुड़ना</h5>
+        <p>Instead of following thoughts outward, gently reverse attention. Not toward any object, but toward the sense of "I" itself. This reversal is the entire method.</p>
+      </div>
+    </div>
+
+    <div class="prac-step">
+      <div class="prac-n">III</div>
+      <div class="prac-content">
+        <h5>Ask "Who?" · कः</h5>
+        <p>When a thought arises, gently ask: "To whom? To me. Then who am I?" This is not intellectual analysis. It is a gentle inquiry that returns awareness to its source.</p>
+      </div>
+    </div>
+
+    <div class="prac-step">
+      <div class="prac-n">IV</div>
+      <div class="prac-content">
+        <h5>Allow the Mind to Subside · शान्तिः</h5>
+        <p>When attention remains steady on the "I"-sense, the mind naturally subsides. Thoughts lose urgency. Stillness opens. This is approaching Turiya — the recognition of the witness always present.</p>
+      </div>
+    </div>
+
+    <div class="prac-step">
+      <div class="prac-n">V</div>
+      <div class="prac-content">
+        <h5>Surrender as Complement · समर्पण</h5>
+        <p>For those inclined to devotion, Ramana offered complete surrender of the ego-sense. Self-enquiry and surrender are two faces of the same movement — both dissolve identification.</p>
+      </div>
+    </div>
+
+    <div class="prac-step">
+      <div class="prac-n">✦</div>
+      <div class="prac-content">
+        <h5>The Final Understanding · अनासक्ति</h5>
+        <p>There is nothing to gain. The Self is already what you are. The effort of self-enquiry is not an effort to become — it is the dissolution of the habit of appearing to be something else.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-q" style="margin-top:3rem">
+    <p>"Just 'TO BE' and to remain steady with the awareness 'I AM' is the beginning and end of spiritual practice."</p>
+    <cite>— Ramana Maharshi</cite>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════
+     GLOSSARY
+     ═════════════════════════════════ -->
+<section class="gloss-section" id="glossary">
+  <div class="ed-section-label">Glossary · शब्दकोश</div>
+  <h2 class="ed-section-h2">Key Terms</h2>
+  <p class="ed-section-intro">Sanskrit and technical terms used throughout this teaching.</p>
+
+  <div class="gloss-search-wrap">
+    <span class="gloss-search-ico">🔍</span>
+    <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms…" autocomplete="off"/>
+    <button class="gloss-clear" id="glossClear" aria-label="Clear">✕</button>
+  </div>
+  <p class="gloss-no-results" id="glossNoResults">No matching terms found.</p>
+
+  <div class="gloss-grid" id="glossGrid">
+    <div class="gloss-entry" data-terms="atman self soul consciousness">
+      <div class="gloss-term">Ātman <span class="gloss-term-deva">आत्मन्</span></div>
+      <span class="gloss-cat">The Self</span>
+      <p class="gloss-def">The eternal, unchanging consciousness that is your true nature. Beyond mind, body, and all attributes. Not to be confused with ego.</p>
+    </div>
+    <div class="gloss-entry" data-terms="brahman absolute reality consciousness">
+      <div class="gloss-term">Brahman <span class="gloss-term-deva">ब्रह्मन्</span></div>
+      <span class="gloss-cat">The Absolute</span>
+      <p class="gloss-def">The ultimate reality, the ground of existence. Non-dual, infinite, eternal. In Advaita, Ātman and Brahman are one — the Self is Brahman.</p>
+    </div>
+    <div class="gloss-entry" data-terms="turiya fourth witness awareness states">
+      <div class="gloss-term">Turīya <span class="gloss-term-deva">तुरीय</span></div>
+      <span class="gloss-cat">The Fourth</span>
+      <p class="gloss-def">Not a state but the unchanging witness of waking, dreaming, and deep sleep. The background awareness in which all three appear and disappear.</p>
+    </div>
+    <div class="gloss-entry" data-terms="jnani sage realized knower">
+      <div class="gloss-term">Jñāni <span class="gloss-term-deva">ज्ञानी</span></div>
+      <span class="gloss-cat">The Knower</span>
+      <p class="gloss-def">One who has realized the Self. The separate self-sense has dissolved completely. Ramana is a jñāni.</p>
+    </div>
+    <div class="gloss-entry" data-terms="ahankara ego i-sense doership">
+      <div class="gloss-term">Ahaṃkāra <span class="gloss-term-deva">अहंकार</span></div>
+      <span class="gloss-cat">The Ego</span>
+      <p class="gloss-def">The sense of being a separate individual. The "I"-thought that appears first and is root of all other thoughts. Dissolved by Self-enquiry.</p>
+    </div>
+    <div class="gloss-entry" data-terms="vichara enquiry investigation self-enquiry">
+      <div class="gloss-term">Vicāra <span class="gloss-term-deva">विचार</span></div>
+      <span class="gloss-cat">Enquiry</span>
+      <p class="gloss-def">The method of turning attention inward to investigate the "I"-thought. The primary sadhana of Ramana's teaching.</p>
+    </div>
+    <div class="gloss-entry" data-terms="maya illusion appearance power world">
+      <div class="gloss-term">Māyā <span class="gloss-term-deva">माया</span></div>
+      <span class="gloss-cat">Appearance</span>
+      <p class="gloss-def">The power of illusion. Not a trick — simply the apparent appearance of the world on the Self. Like images in a mirror.</p>
+    </div>
+    <div class="gloss-entry" data-terms="mouna silence teaching grace">
+      <div class="gloss-term">Mouna <span class="gloss-term-deva">मौन</span></div>
+      <span class="gloss-cat">Silence</span>
+      <p class="gloss-def">The highest teaching and the highest compassion. The direct transmission from Self to Self, beyond words.</p>
+    </div>
+    <div class="gloss-entry" data-terms="sahaja natural spontaneous effortless">
+      <div class="gloss-term">Sahaja <span class="gloss-term-deva">साहज</span></div>
+      <span class="gloss-cat">Natural State</span>
+      <p class="gloss-def">The natural, effortless abidance as the Self. Not something to be attained — the recognition of what always is.</p>
+    </div>
+    <div class="gloss-entry" data-terms="kosha sheath body layers five">
+      <div class="gloss-term">Kośas <span class="gloss-term-deva">कोश</span></div>
+      <span class="gloss-cat">The Five Sheaths</span>
+      <p class="gloss-def">Annamaya, Prāṇamaya, Manomaya, Vijñānamaya, Ānandamaya. All appearances in consciousness, not the Self.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════
+     FOOTER
+     ═════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+  <div class="footer-name">Vedantic Mappings</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+  <div class="footer-links">
+    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="advaita-gaudapada.html">Advaita Vedanta</a>
+    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+    <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+    <a href="../taoism/taoism-threshold.html">Taoism</a>
+    <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+  </div>
+  <div class="footer-credit">Researched and composed - .</div>
+  <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+  <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+</footer>
+
+</div><!-- .main-content -->
+
+<script>
+(function(){
+  'use strict';
+
+  /* THEME */
+  const html = document.documentElement;
+  (function initTheme(){
+    const saved = localStorage.getItem('theme');
+    if(saved === 'light' || saved === 'dark'){ html.setAttribute('data-theme', saved); return; }
+    html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  })();
+  const themeBtn = document.getElementById('themeToggle');
+  if(themeBtn) themeBtn.addEventListener('click', ()=>{
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  /* NAV */
+  const navToggle = document.getElementById('navToggle');
+  const navMenu   = document.getElementById('navMenu');
+  if(navToggle && navMenu){
+    navToggle.addEventListener('click', ()=> navMenu.classList.toggle('open'));
+    document.addEventListener('click', e=>{
+      if(!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove('open');
+    });
+  }
+
+  /* BACK TO TOP */
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', ()=>{ if(btt) btt.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6); }, {passive:true});
+  if(btt) btt.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+  /* HERO SCROLL CUE */
+  const heroScroll = document.getElementById('heroScroll');
+  if(heroScroll) heroScroll.addEventListener('click', ()=>{
+    const toc = document.getElementById('toc');
+    if(toc) toc.scrollIntoView({behavior:'smooth'});
+  });
+
+  /* SMOOTH SCROLL */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const t = document.querySelector(this.getAttribute('href'));
+      if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  /* KOSHA ACCORDION */
+  window.toggleKosha = function(row){
+    const isOpen = row.classList.contains('open');
+    document.querySelectorAll('.kosha-row.open').forEach(r=> r.classList.remove('open'));
+    if(!isOpen) row.classList.add('open');
+  };
+
+  /* GLOSSARY SEARCH */
+  const searchInput  = document.getElementById('glossSearch');
+  const clearBtn     = document.getElementById('glossClear');
+  const glossItems   = document.querySelectorAll('#glossGrid .gloss-entry');
+  const noResults    = document.getElementById('glossNoResults');
+
+  function norm(s){ return s.toLowerCase().replace(/[āàáâ]/g,'a').replace(/[īìíî]/g,'i').replace(/[ūùúû]/g,'u').replace(/[śṣ]/g,'s').replace(/[ṭ]/g,'t').replace(/[ḍ]/g,'d').replace(/[ṇ]/g,'n').replace(/[ṁṃ]/g,'m').replace(/[ḥ]/g,'h').replace(/ñ/g,'n'); }
+
+  if(searchInput){
+    searchInput.addEventListener('input', ()=>{
+      const q = norm(searchInput.value.trim());
+      if(clearBtn) clearBtn.classList.toggle('vis', searchInput.value.length > 0);
+      let count = 0;
+      glossItems.forEach(item=>{
+        const text = norm(item.textContent + ' ' + (item.dataset.terms || ''));
+        const show = !q || text.includes(q);
+        item.style.display = show ? '' : 'none';
+        if(show) count++;
       });
-    })();
-  </script>
+      if(noResults) noResults.style.display = count === 0 ? 'block' : 'none';
+    });
+    if(clearBtn) clearBtn.addEventListener('click', ()=>{
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+      searchInput.focus();
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

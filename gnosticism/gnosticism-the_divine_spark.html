@@ -235,6 +235,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 .hero-emblem svg {
   width: 100%;
   height: 100%;
+  display: block;
   overflow: visible;
 }
 
@@ -567,20 +568,29 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--stone) var(--border);
 }
-.chapter-nav::-webkit-scrollbar {
-  height: 6px;
+
+/* Firefox scrollbar styling */
+@supports (scrollbar-width: thin) {
+  .chapter-nav {
+    scrollbar-width: thin;
+    scrollbar-color: var(--stone) var(--border);
+  }
 }
-.chapter-nav::-webkit-scrollbar-track {
-  background: var(--border);
-  border-radius: 3px;
-}
-.chapter-nav::-webkit-scrollbar-thumb {
-  background: var(--stone);
-  border-radius: 3px;
+
+/* Webkit scrollbar styling (Chrome, Safari, Edge) */
+@supports selector(::webkit-scrollbar) {
+  .chapter-nav::-webkit-scrollbar {
+    height: 6px;
+  }
+  .chapter-nav::-webkit-scrollbar-track {
+    background: var(--border);
+    border-radius: 3px;
+  }
+  .chapter-nav::-webkit-scrollbar-thumb {
+    background: var(--stone);
+    border-radius: 3px;
+  }
 }
 .chapter-nav::-webkit-scrollbar-thumb:hover {
   background: var(--copper);
@@ -654,8 +664,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .section-separator { opacity: 1 !important; transform: scaleX(1) !important; }
 }
 </style>
-<base target="_blank">
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/1pPOMFM9FEzkL92XZamsv1E0Q0dl025JxioJkZfAUQGdqiTP2DzdmKbgyGvjiO69LZvMIeAhYtYo7HiWZyxoFEock55UlJecR6dcQ4sF960hbonhVYpegmI4gmFKfCALdOdnCXQ5d-4M5dPjr2Rrj-aH3GyMv9IarsdDN9g_bRiwc6zReAdA0PBlUMjEOn9dFdWw1UxPAAVE4felFoiz3QIYnH35XLcF_kkQkl20bc4TTpZEKeNymiad0i0KdMj8hvDh7VWGoCz0FV9VM8RMgFWqCLsrN_SBZ2t9kdITqAij2RvHLS2dO9IeMtonQIf1n3oimBdMpKjQSpDA-EMjX6BRNySK5Yf7BnrTskmk4QIa-X330tXbAbNWGmUVbdWatO-NFnZYW7E48IX1EyeAlnNHVwXb22wE5pVs0US51U5WFvEbUu1IRTTaTArJt0sqwGG5bsMsT6UQAaYzQubCcI-I6MSFpi8jVSL_7XgBVGqZ5015fVUqZAw18jPZC1C50RCa2d0f580LDaMxTqx8nf02qO0edWcqGKkFJTuF4kk55mfyFI7OnzhO8wUdPFe2VoT-xYPfcPN3bQknnM-l8h7kZUeIwkH5rwvg55AeEDxWcy57YWFbMJPWyNjneUnZl35NBtb_P9nr_viLx98xScpH6o_1EdnKViK033vm8uZlyWMLtMx9jHIrQrJRzlat7o-KlRLKbtIsnsk_ldtulZcyUUuV94IiFIV0OWnKbJFk2w41erlM2gsARbKBDTMzJSsbV0gl_9V-94uVPhkjLxfth-9n-9x7TTvhtkT6gpZlk6ls-0Jl2PISz20tFC2EXNQEBvyXt5gCvGKMWU-pUQ9FYUkMHfkE_zyrELioeDWxkZQ-4Wi9U8FccpUzcDP6VTj2itSBdbINU88HCoyuzWEppiVQ1_wxxD2iRiBrIGTA5xw9TZ7jrCs0kPXeCR097fPqqskx1D8EnzP1Ym7UNRT197b55H4f0kDrbptLcJuUUS0Mg0SZRbvwmcl00F-M_-rjwMynqDxFQG5HpnGFu0lQrZiikZdeTJszF8vs39SNPzXzHVnzew'></script><base target="_blank">
+
+
 </head>
 <body>
 <!-- NAVIGATION COMPASS -->
@@ -699,59 +709,121 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
   <p class="hero-eyemark">The Divine Spark</p>
   <div class="hero-emblem">
-    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="sparkGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.9"/>
-          <stop offset="30%" stop-color="#c9a84c" stop-opacity="0.6"/>
-          <stop offset="70%" stop-color="#7c6fae" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="#4a4080" stop-opacity="0.05"/>
-        </radialGradient>
-        <filter id="sparkGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="softGlow2" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="2" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-
-      <!-- Central spark / flame -->
-      <circle cx="250" cy="250" r="40" fill="url(#sparkGrad)" filter="url(#sparkGlow)" opacity="0.9"/>
-      <circle cx="250" cy="250" r="25" fill="#e0c46e" opacity="0.5" filter="url(#softGlow2)"/>
-      <circle cx="250" cy="250" r="12" fill="#e0c46e" opacity="0.8"/>
-      <circle cx="250" cy="250" r="5" fill="#fff" opacity="0.9"/>
-
-      <!-- Flame tendrils -->
-      <path d="M 250 230 Q 245 200, 250 170 Q 255 200, 250 230" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.6" filter="url(#softGlow2)"/>
-      <path d="M 250 230 Q 235 205, 225 175 Q 240 205, 250 230" fill="none" stroke="#a090d0" stroke-width="1" opacity="0.4" filter="url(#softGlow2)"/>
-      <path d="M 250 230 Q 265 205, 275 175 Q 260 205, 250 230" fill="none" stroke="#a090d0" stroke-width="1" opacity="0.4" filter="url(#softGlow2)"/>
-
-      <!-- Inner prison / vessel -->
-      <circle cx="250" cy="250" r="80" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.25" stroke-dasharray="4,6"/>
-      <circle cx="250" cy="250" r="100" fill="none" stroke="#5e6d8a" stroke-width="0.4" opacity="0.15" stroke-dasharray="3,8"/>
-
-      <!-- Outer rings -->
-      <circle cx="250" cy="250" r="130" fill="none" stroke="#4a4080" stroke-width="0.3" opacity="0.12" stroke-dasharray="2,10"/>
-      <circle cx="250" cy="250" r="160" fill="none" stroke="#4a4080" stroke-width="0.2" opacity="0.08" stroke-dasharray="1,15"/>
-
-      <!-- Small sparks escaping -->
-      <circle cx="200" cy="200" r="2" fill="#c9a84c" opacity="0.5">
-        <animate attributeName="opacity" values="0.5;0.9;0.3;0.7;0.5" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="300" cy="190" r="1.5" fill="#e0c46e" opacity="0.4">
-        <animate attributeName="opacity" values="0.4;0.8;0.2;0.6;0.4" dur="2.5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="180" cy="280" r="2" fill="#a090d0" opacity="0.3">
-        <animate attributeName="opacity" values="0.3;0.7;0.2;0.5;0.3" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="320" cy="300" r="1.5" fill="#c9a84c" opacity="0.35">
-        <animate attributeName="opacity" values="0.35;0.75;0.25;0.6;0.35" dur="3.5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="250" cy="150" r="1.5" fill="#e0c46e" opacity="0.4">
-        <animate attributeName="opacity" values="0.4;0.9;0.3;0.7;0.4" dur="2.8s" repeatCount="indefinite"/>
-      </circle>
+    <svg width="100%" height="100%" viewBox="0 0 615 614" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(7.5,607.5) scale(0.6,-0.6)" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round">
+        <!-- Base ouroboros shape -->
+        <path fill="var(--gold-light)" stroke="var(--gold)" stroke-width="3" d="M604,24
+        c231,47,396,246,396,476
+        c0,276,-224,500,-500,500
+        c-276,0,-500,-224,-500,-500
+        c0,-217,146,-408,358,-470
+        c5,-1,7,-2,12,-2
+        c18,0,33,-13,53,-13
+        c10,0,35,3,45,3
+        c30,0,74,-18,104,-18
+        c13,0,28,10,32,24Z
+        M342,136
+        c-150,62,-247,205,-247,364
+        c0,224,181,405,405,405
+        c224,0,405,-181,405,-405
+        c0,-172,-110,-324,-273,-380
+        c1,18,-22,29,-48,29
+        c-14,0,-27,-5,-34,-5
+        c-10,0,-28,11,-46,11
+        c-20,0,-54,-8,-84,-13
+        c-30,-5,-63,-12,-78,-6Z"/>
+        
+        <!-- Inner cutout / detail -->
+        <path fill="var(--bg)" stroke="var(--gold)" stroke-width="2" d="M604,24
+        c231,47,396,246,396,476
+        c0,276,-224,500,-500,500
+        c-276,0,-500,-224,-500,-500
+        c0,-217,146,-408,358,-470
+        c5,-1,7,-2,12,-2
+        c18,0,33,-13,53,-13
+        c10,0,35,3,45,3
+        c30,0,74,-18,104,-18
+        c13,0,28,10,32,24Z
+        M357,43
+        c-205,61,-345,247,-345,457
+        c0,270,218,488,488,488
+        c270,0,488,-218,488,-488
+        c0,-231,-170,-428,-403,-468
+        c-36,-6,-86,16,-86,23
+        c0,5,21,12,25,14
+        c239,12,426,201,426,431
+        c0,249,-201,450,-450,450
+        c-249,0,-450,-201,-450,-450
+        c0,-154,83,-298,218,-377
+        c13,-6,37,-7,47,-7
+        c10,0,46,2,56,7
+        c10,5,49,10,69,15
+        c20,5,47,9,62,9
+        c25,0,48,-15,56,-14
+        v2
+        c0,3,9,5,27,5
+        c20,0,41,-7,39,-23
+        l-24,-9
+        c-20,-6,-29,-5,-39,-9
+        c-25,-8,-31,-19,-54,-29
+        c-23,-10,-57,-10,-57,-15
+        c0,-3,15,-4,25,-5
+        c25,-3,50,-23,80,-26
+        c20,-2,25,-1,39,0
+        c-1,-5,-9,-15,-22,-15
+        c-32,0,-72,19,-99,19
+        c-15,0,-26,-6,-41,-6
+        c-22,0,-47,18,-67,30
+        c-5,3,-10,6,-15,6
+        c-5,0,-5,-1,-5,-2
+        c0,-4,20,-10,20,-13
+        c0,-2,-3,-1,-8,0Z
+        M572,92
+        c200,35,345,207,345,408
+        c0,230,-187,417,-417,417
+        c-230,0,-417,-187,-417,-417
+        c0,-163,100,-311,254,-375
+        c-24,-3,-52,-1,-65,5
+        c-133,78,-214,218,-214,370
+        c0,244,198,442,442,442
+        c244,0,442,-198,442,-442
+        c0,-220,-175,-403,-403,-422
+        c5,2,13,12,33,14Z
+        M342,136
+        c-150,62,-247,205,-247,364
+        c0,224,181,405,405,405
+        c224,0,405,-181,405,-405
+        c0,-172,-110,-324,-273,-380
+        c1,18,-22,29,-48,29
+        c-14,0,-27,-5,-34,-5
+        c-10,0,-28,11,-46,11
+        c-20,0,-54,-8,-84,-13
+        c-30,-5,-63,-12,-78,-6Z
+        M446,120
+        c0,-2,4,-3,14,-3
+        c15,-1,18,-13,30,-13
+        c21,0,30,9,37,9
+        l10,-2
+        l1,2
+        c-10,7,-25,17,-35,17
+        c-5,0,-10,-1,-20,-4
+        c-15,-4,-37,-4,-37,-6Z
+        M580,127
+        c18,-3,17,-9,27,-9
+        c3,0,5,2,5,5
+        c0,3,-12,6,-31,7
+        l-1,-3Z"/>
+        
+        <!-- Final details -->
+        <path fill="var(--gold)" stroke="var(--gold-deep)" stroke-width="1.5" d="M472,119
+        l15,3
+        c0,-5,3,-10,5,-13
+        c-9,0,-15,8,-20,10Z
+        M522,117
+        l-17,-7
+        c1,5,1,10,0,15
+        c8,-2,12,-5,17,-8Z"/>
+      </g>
     </svg>
   </div>
 
@@ -1329,20 +1401,19 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 <footer class="footer">
   <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
   <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Cartographies of the Non&ndash;Dual Path</div>
-  <div class="footer-links">
-    <a href="../index.html">&#8962; Vedantic Mappings</a>
-    <a href="../advaita-vedanta/gaudapada.html">Advaita Vedanta</a>
-    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-    <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-    <a href="../taoism/taoism-threshold.html">Taoism</a>
-    <a href="gnosticism-unknown-father.html">Gnosticism &middot; The Unknown Father</a>
-    <a href="gnosticism-the_demiurge.html">Gnosticism &middot; The Demiurge</a>
-    <a href="gnosticism-the_divine_spark.html">Gnosticism &middot; The Divine Spark</a>
-    <a href="gnosticism_the_bridal_chamber.html">Gnosticism &middot; The Bridal Chamber</a>
-  </div>
-  <div class="footer-credit">Researched &amp; Composed</div>
-  <div class="footer-copyright">&copy; 2026 John M Q. All rights reserved.</div>
+  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+              <div class="footer-links">
+      <a href="../index.html">⌂ Vedantic Mappings</a>
+      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+      <a href="gnosticism-unknown-father.html">Gnosticism</a>
+      <a href="../taoism/taoism-threshold.html">Taoism</a>
+      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+    </div>
+  <div class="footer-credit">Researched and composed - .</div>
+  <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+  <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
 </footer>
 
 <!-- =====================================================
