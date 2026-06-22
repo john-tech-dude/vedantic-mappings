@@ -1007,6 +1007,56 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
+       ADV AITA NAV — added above footer
+       ═══════════════════════════════════════════════════════════════ */
+    .nav-advaita {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 2.25rem 2rem 1.75rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border-subtle);
+      background: var(--bg);
+    }
+    .nav-advaita-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.35s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.2rem 0.1rem;
+      position: relative;
+    }
+    .nav-advaita-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--gold);
+      transition: width 0.35s var(--ease-out-expo);
+    }
+    .nav-advaita-link:hover { color: var(--gold); transform: translateY(-1px); }
+    .nav-advaita-link:hover::after { width: 100%; }
+    .nav-advaita-link span { font-size: 0.9rem; line-height: 1; }
+    .nav-advaita-link.active { color: var(--gold); }
+    .nav-advaita-link.active::after { width: 100%; }
+    .nav-advaita-sep { color: var(--border-strong); font-size: 0.55rem; opacity: 0.4; user-select: none; }
+
+    @media (max-width: 500px) {
+      .nav-advaita { gap: 0.75rem; padding: 1.5rem 0.75rem 1.25rem; }
+      .nav-advaita-link { font-size: 0.6rem; letter-spacing: 0.08em; gap: 0.3rem; }
+      .nav-advaita-link span { font-size: 0.7rem; }
+      .nav-advaita-sep { font-size: 0.45rem; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════════════════════════ */
     .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2rem; text-align: center; }
@@ -1784,6 +1834,21 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════
+     ADV AITA NAV — added above footer
+     ═══════════════════════════════════════ -->
+<nav class="nav-advaita" aria-label="Advaita Vedanta navigation">
+  <a href="../index.html" class="nav-advaita-link"><span>⌂</span> Home</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-gaudapada.html" class="nav-advaita-link"><span>🕉</span> Gaudapada</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-adi-shankara.html" class="nav-advaita-link"><span>🕉</span> Adi Shankara</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-ramana-maharshi.html" class="nav-advaita-link active"><span>🕉</span> Ramana Maharshi</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-nisargadatta-maharaj.html" class="nav-advaita-link"><span>🕉</span> Nisargadatta Maharaj</a>
+</nav>
 
 <!-- ═════════════════════════════════
      FOOTER

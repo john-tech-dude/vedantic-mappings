@@ -1,457 +1,1872 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Vedantic Mappings — Cartographies of the non-dual path: Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics · The Unnamed Way. Six complete maps from mistaken identity to liberation." />
-
     <meta property="og:title" content="Vedantic Mappings — Non-Dual Cartographies" />
     <meta property="og:description" content="Six complete maps from mistaken identity to liberation: Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vedanticmappings.com" />
     <meta property="og:image" content="https://vedanticmappings.com/og-image.jpg" />
-
     <title>Vedantic Mappings — Non-Dual Cartographies</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap&subset=latin" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap&subset=latin" rel="stylesheet" />
 
     <style>
-        /* =====================================================
-           VEDANTIC MAPPINGS — V2.0
-           Added: Quantum Mechanics cartography, enhanced diagrams
-           ===================================================== */
-
+        /* ═══════════════════════════════════════════════════════════════
+           TOKENS — Vedantic Deep Indigo / Gold / Violet
+           ═══════════════════════════════════════════════════════════════ */
         :root {
-            --bg: #0c0f14; --bg2: #12161c; --bg3: #0a0c10;
-            --surface: #181c23; --surface2: #21262e;
-            --ink: #eef2f8; --ink2: #9aaebf; --ink3: #7c8ea0;
-            --stone: #7c8ea0; --stone-light: #9eb0c0;
-            --gold: #d4af37; --gold-light: #e6c86e; --gold-deep: #b8960c;
-            --gold-glow: rgba(212, 175, 55, 0.08); --gold-glow-strong: rgba(212, 175, 55, 0.2);
-            --sun-glow: rgba(200, 169, 110, 0.4);
-            --copper: #b87333; --copper-light: #cd7f32; --copper-deep: #8b4513;
-            --quantum-blue: #4a90d9; --quantum-glow: rgba(74, 144, 217, 0.15); --quantum-deep: #2e5a8a;
-            --border: rgba(200, 169, 110, 0.12); --border-strong: rgba(200, 169, 110, 0.28); --border-subtle: rgba(200, 169, 110, 0.06);
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3); --shadow-deep: 0 8px 24px rgba(0, 0, 0, 0.4); --shadow-gold: 0 0 28px var(--gold-glow);
-            --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px;
-            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1); --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94); --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --text-primary: #eef2f8; --text-secondary: #e0d4b8; --text-muted: #a89880;
-            --hero-bg: radial-gradient(ellipse 80% 70% at 50% 40%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
-            --ring-color: rgba(200, 169, 110, 0.10); --grain-opacity: 0.045;
+            --bg: #0a0e1a;
+            --bg2: #10162a;
+            --bg3: #060a14;
+            --surface: #141c32;
+            --surface2: #1c2440;
+            --ink: #e8ecf4;
+            --ink2: #8a9abf;
+            --stone: #5a6a88;
+            --stone-light: #8a9ab0;
+            --gold: #c9a84c;
+            --gold-light: #e0c46e;
+            --gold-deep: #a08030;
+            --gold-glow: rgba(201, 168, 76, 0.08);
+            --sun-glow: rgba(201, 168, 76, 0.18);
+            --violet: #7c6fae;
+            --violet-light: #a090d0;
+            --violet-deep: #4a4080;
+            --violet-glow: rgba(124, 111, 174, 0.12);
+            --copper: #b87333;
+            --copper-light: #cd7f32;
+            --copper-deep: #8b4513;
+            --quantum-blue: #4a90d9;
+            --quantum-glow: rgba(74, 144, 217, 0.12);
+            --quantum-deep: #2e5a8a;
+            --border: rgba(255, 255, 255, 0.05);
+            --border-strong: rgba(255, 255, 255, 0.10);
+            --border-subtle: rgba(255, 255, 255, 0.025);
+            --border-medium: rgba(255, 255, 255, 0.07);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+            --shadow-gold: 0 0 40px var(--gold-glow);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --hero-bg: radial-gradient(ellipse 100% 90% at 50% 25%, #141a3a 0%, #0a0e1a 35%, #060814 70%, #0a0e1a 100%);
+            --grain-opacity: 0.035;
+            --mountain-fill: rgba(124, 111, 174, 0.05);
+            --ring-color: rgba(124, 111, 174, 0.20);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
         }
 
         [data-theme="light"] {
-            --bg: #faf6ef; --bg2: #f2ece0; --bg3: #e8e2d5;
-            --surface: #ffffff; --surface2: #f7f2e8;
-            --ink: #1c150a; --ink2: #3d2e18; --ink3: #6b5540;
-            --stone: #8a7460; --stone-light: #b09a80;
-            --gold: #8a6a2a; --gold-light: #b0883a; --gold-deep: #6a4e1a;
-            --gold-glow: rgba(138, 106, 42, 0.12); --gold-glow-strong: rgba(138, 106, 42, 0.25); --sun-glow: rgba(138, 106, 42, 0.35);
-            --copper: #8b4513; --copper-light: #a0522d; --copper-deep: #6b3410;
-            --quantum-blue: #2e5a8a; --quantum-glow: rgba(46, 90, 138, 0.15);
-            --border: rgba(138, 106, 42, 0.18); --border-strong: rgba(138, 106, 42, 0.35); --border-subtle: rgba(138, 106, 42, 0.08);
-            --shadow: 0 4px 12px rgba(60, 30, 0, 0.06); --shadow-deep: 0 8px 24px rgba(60, 30, 0, 0.1); --shadow-gold: 0 0 28px var(--gold-glow);
-            --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
-            --ring-color: rgba(138, 106, 42, 0.22); --grain-opacity: 0.025;
-            --text-primary: #1c150a; --text-secondary: #4a3820; --text-muted: #6b5540;
+            --bg: #eef0f6;
+            --bg2: #e0e4ee;
+            --bg3: #d0d4e0;
+            --surface: #ffffff;
+            --surface2: #f2f4fa;
+            --ink: #12152a;
+            --ink2: #3a3f5c;
+            --stone: #5a6080;
+            --stone-light: #7a80a0;
+            --gold: #8a6a2a;
+            --gold-light: #a08040;
+            --gold-deep: #6a5020;
+            --gold-glow: rgba(138, 106, 42, 0.06);
+            --sun-glow: rgba(138, 106, 42, 0.14);
+            --violet: #5a5080;
+            --violet-light: #8a78b0;
+            --violet-deep: #3a3070;
+            --copper: #8b4513;
+            --copper-light: #a0522d;
+            --copper-deep: #6b3410;
+            --quantum-blue: #2e5a8a;
+            --quantum-glow: rgba(46, 90, 138, 0.12);
+            --quantum-deep: #1a3a5a;
+            --border: rgba(0, 0, 0, 0.07);
+            --border-strong: rgba(0, 0, 0, 0.12);
+            --border-subtle: rgba(0, 0, 0, 0.03);
+            --border-medium: rgba(0, 0, 0, 0.08);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.13);
+            --shadow-gold: 0 0 40px rgba(138, 106, 42, 0.08);
+            --hero-bg: radial-gradient(ellipse 100% 90% at 50% 25%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #8880a8 100%);
+            --grain-opacity: 0.02;
+            --mountain-fill: rgba(90, 80, 128, 0.06);
+            --ring-color: rgba(90, 80, 128, 0.15);
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        /* ═══════════════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
-            background: var(--bg); color: var(--text-primary);
-            overflow-x: hidden; font-size: 18px; line-height: 1.75;
-            transition: background 0.5s, color 0.5s;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
+            font-size: 18px;
+            line-height: 1.78;
+            transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
         }
-
         body::before {
-            content: ''; position: fixed; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-            pointer-events: none; z-index: 9999; opacity: var(--grain-opacity);
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            animation: grainShift 10s steps(12) infinite;
+        }
+        @keyframes grainShift {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            10% {
+                transform: translate(-2%, -2%);
+            }
+            20% {
+                transform: translate(2%, 1%);
+            }
+            30% {
+                transform: translate(-1%, 2%);
+            }
+            40% {
+                transform: translate(1%, -1%);
+            }
+            50% {
+                transform: translate(-2%, 1%);
+            }
+            60% {
+                transform: translate(2%, -2%);
+            }
+            70% {
+                transform: translate(-1%, -1%);
+            }
+            80% {
+                transform: translate(1%, 2%);
+            }
+            90% {
+                transform: translate(-2%, -1%);
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--violet-deep), var(--violet), var(--gold));
+            border-radius: 2px;
+        }
+        ::selection {
+            background: rgba(124, 111, 174, 0.20);
+            color: var(--ink);
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--violet);
+            outline-offset: 2px;
+            border-radius: 4px;
         }
 
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 3px; }
-        ::selection { background: rgba(181, 133, 58, 0.25); color: var(--ink); }
+        /* ═══════════════════════════════════════════════════════════════
+           KEYFRAMES
+           ═══════════════════════════════════════════════════════════════ */
+        @keyframes hero-rise {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes mandalaRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes breathe {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 40px var(--gold-glow);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 64px var(--gold-glow);
+            }
+        }
+        @keyframes mandala-breathe {
+            0%,
+            100% {
+                opacity: 0.30;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.70;
+                transform: translate(-50%, -50%) scale(1.015);
+            }
+        }
+        @keyframes scroll-bounce {
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scaleY(.5);
+                opacity: .3;
+            }
+        }
+        @keyframes ripple-out {
+            0% {
+                opacity: 0.50;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(4.2);
+            }
+        }
+        @keyframes lineReveal {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+        @keyframes diamondReveal {
+            from {
+                opacity: 0;
+                transform: rotate(45deg) scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+        }
+        @keyframes ouroboros-breathe {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+        @keyframes ouroboros-glow {
+            0%,
+            100% {
+                filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.20)) drop-shadow(0 0 18px rgba(201, 168, 76, 0.10));
+            }
+            50% {
+                filter: drop-shadow(0 0 16px rgba(201, 168, 76, 0.50)) drop-shadow(0 0 40px rgba(201, 168, 76, 0.25)) drop-shadow(0 0 60px rgba(201, 168, 76, 0.12));
+            }
+        }
 
-        .no-js .fade-in, .no-js .stagger-1, .no-js .stagger-2, .no-js .stagger-3, .no-js .stagger-4, .no-js .stagger-5 { opacity: 1 !important; transform: none !important; }
-        .no-js .scroll-reveal, .no-js .scroll-fade-up { opacity: 1 !important; transform: translateY(0) !important; }
-        .no-js .text-reveal .text-reveal-inner { transform: translateY(0) !important; }
+        /* ═══════════════════════════════════════════════════════════════
+           NAV COMPASS
+           ═══════════════════════════════════════════════════════════════ */
+        .nav-compass {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 1010;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+        .nav-toggle {
+            width: 44px;
+            height: 44px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--violet-light);
+            transition: all .35s var(--ease-out-expo);
+            box-shadow: var(--shadow);
+        }
+        .nav-toggle:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            transform: scale(1.08);
+        }
+        .nav-menu {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .nav-menu.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: .6rem 1.25rem;
+            color: var(--stone);
+            text-decoration: none;
+            font-size: .88rem;
+            line-height: 1.35;
+            transition: all .3s var(--ease-out-expo);
+            border-left: 3px solid transparent;
+        }
+        .nav-item:hover {
+            color: var(--ink);
+            background: var(--gold-glow);
+            padding-left: 1.5rem;
+        }
+        .nav-item.active {
+            color: var(--gold-light);
+            background: rgba(201, 168, 76, 0.08);
+            border-left-color: var(--gold);
+            font-weight: 500;
+        }
+        .nav-item-icon {
+            font-size: .8rem;
+            flex-shrink: 0;
+            width: 18px;
+            text-align: center;
+        }
+        .nav-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: .55rem;
+            letter-spacing: .3em;
+            color: var(--violet-light);
+            text-transform: uppercase;
+            padding: .6rem 1.25rem .3rem;
+        }
+        .nav-divider {
+            height: 1px;
+            background: var(--border);
+            margin: .5rem 1rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONTROLS
+           ═══════════════════════════════════════════════════════════════ */
+        .theme-toggle {
+            position: fixed;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            z-index: 1000;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border-medium);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all .45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: var(--shadow-gold), 0 2px 8px rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.12);
+            border-color: var(--gold);
+            box-shadow: 0 0 30px var(--gold-glow);
+        }
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+        .theme-toggle-icon {
+            position: absolute;
+            transition: transform .5s var(--ease-out-expo), opacity .35s ease;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        [data-theme="light"] .theme-toggle-icon-sun {
+            opacity: 1;
+            transform: scale(1);
+        }
+        [data-theme="light"] .theme-toggle-icon-moon {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .theme-toggle-icon-sun {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .theme-toggle-icon-moon {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 5.75rem;
+            right: 1.5rem;
+            z-index: 1000;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--stone);
+            font-size: 1.1rem;
+            transition: all .4s var(--ease-out-expo);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px) scale(0.9);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .back-to-top:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+            background: var(--hero-bg);
+            perspective: 1200px;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 50% 50% at 25% 35%, rgba(124, 111, 174, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 75% 55%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+            animation: ambientDrift 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        [data-theme="light"] .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(90, 80, 128, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(90, 80, 128, .025) 29px);
+            pointer-events: none;
+        }
+        .hero-mountain {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 48%;
+            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(124, 111, 174, .25) 80%);
+            clip-path: polygon(0% 100%, 8% 85%, 15% 78%, 20% 65%, 25% 55%, 30% 48%, 35% 40%, 38% 32%, 42% 22%, 45% 14%, 48% 8%, 50% 0%, 52% 8%, 55% 14%, 58% 22%, 62% 32%, 65% 40%, 70% 48%, 75% 55%, 80% 65%, 85% 72%, 92% 82%, 100% 100%);
+            opacity: .15;
+        }
+        .mandala-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            border: 1px solid var(--ring-color);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: mandala-breathe 14s ease-in-out infinite;
+        }
+        .mandala-ring:nth-child(1) {
+            width: 220px;
+            height: 220px;
+            opacity: 0.18;
+        }
+        .mandala-ring:nth-child(2) {
+            width: 360px;
+            height: 360px;
+            opacity: 0.12;
+            animation-delay: 2s;
+            animation-duration: 16s;
+        }
+        .mandala-ring:nth-child(3) {
+            width: 520px;
+            height: 520px;
+            opacity: 0.08;
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+        .mandala-ring:nth-child(4) {
+            width: 700px;
+            height: 700px;
+            opacity: 0.05;
+            animation-delay: 6s;
+            animation-duration: 20s;
+        }
+        .hero-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px solid var(--ring-color);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: ripple-out 10s ease-out infinite;
+        }
+        .hero-ripple:nth-child(5) {
+            animation-delay: 0s;
+        }
+        .hero-ripple:nth-child(6) {
+            animation-delay: 3.3s;
+        }
+        .hero-ripple:nth-child(7) {
+            animation-delay: 6.6s;
+        }
+        .hero-emblem {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            position: relative;
+            opacity: 1;
+            z-index: 3;
+            animation: hero-rise 1.1s .6s forwards, emblem-pulse 5s ease-in-out infinite, ouroboros-breathe 8s ease-in-out infinite;
+        }
+        .hero-emblem svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            animation: ouroboros-glow 4s ease-in-out infinite;
+        }
+        .hero-eyemark {
+            font-family: 'Cinzel', serif;
+            font-size: .58rem;
+            letter-spacing: .5em;
+            color: var(--violet-light);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s .3s forwards;
+        }
+        .hero-label {
+            font-family: 'Cinzel', serif;
+            font-size: .55rem;
+            letter-spacing: .5em;
+            color: var(--violet-light);
+            margin-bottom: .5rem;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s .9s forwards;
+        }
+        .hero-subtitle-top {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--stone);
+            letter-spacing: .08em;
+            margin-bottom: .8rem;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 1.1s forwards;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 6vw, 5rem);
+            font-weight: 400;
+            letter-spacing: .06em;
+            line-height: 1.08;
+            color: var(--ink);
+            text-shadow: 0 2px 40px rgba(124, 111, 174, 0.2);
+            opacity: 0;
+            margin-bottom: .2em;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.3s 1.3s forwards;
+        }
+        [data-theme="dark"] .hero-title {
+            color: var(--gold-light);
+            text-shadow: 0 0 80px rgba(201, 168, 76, 0.2);
+        }
+        .hero-epithet {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+            color: var(--violet-light);
+            letter-spacing: .12em;
+            opacity: 0;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 1.6s forwards;
+        }
+        .hero-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin: 0 auto 2.5rem;
+            width: fit-content;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 1.8s forwards;
+        }
+        .hero-divider-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--violet));
+            transform-origin: left;
+            animation: lineReveal 1.2s 1.2s forwards;
+            transform: scaleX(0);
+        }
+        .hero-divider-line:last-child {
+            background: linear-gradient(90deg, var(--violet), transparent);
+            transform-origin: right;
+        }
+        .hero-divider-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold-light);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px var(--sun-glow);
+            animation: diamondReveal 0.8s 1.4s forwards;
+            opacity: 0;
+        }
+        .hero-quote {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+            color: var(--ink2);
+            max-width: 620px;
+            margin: 0 auto .7rem;
+            line-height: 1.88;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 2s forwards;
+        }
+        .hero-quote-attr {
+            font-family: 'Cinzel', serif;
+            font-size: .55rem;
+            letter-spacing: .35em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            opacity: 0;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 2.2s forwards;
+        }
+        .hero-scroll-cue {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
+            animation: hero-rise 1.1s 2.8s forwards;
+        }
+        .hero-scroll-cue:hover {
+            transform: translateX(-50%) translateY(4px);
+        }
+        .hero-scroll-cue span {
+            font-family: 'Cinzel', serif;
+            font-size: .48rem;
+            letter-spacing: .5em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(180deg, var(--violet-light), transparent);
+            animation: scroll-bounce 2.5s ease-in-out infinite;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           EDITORIAL LAYOUT SYSTEM
+           ═══════════════════════════════════════════════════════════════ */
+        .ed-wrap {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .ed-section-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.5em;
+            color: var(--violet-light);
+            text-transform: uppercase;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        .ed-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--violet), transparent);
+            opacity: 0.22;
+            max-width: 160px;
+        }
+        .ed-section-h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .ed-section-intro {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.02rem;
+            color: var(--stone);
+            line-height: 1.72;
+            max-width: 580px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           STAGE SECTIONS
+           ═══════════════════════════════════════════════════════════════ */
+        .stages-wrap {
+            background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 30%, var(--bg) 70%, var(--bg2) 100%);
+        }
+        .stage-section {
+            padding: 120px 32px;
+            max-width: 740px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .stage-wm {
+            position: absolute;
+            right: -30px;
+            top: 30px;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(100px, 14vw, 180px);
+            line-height: 1;
+            color: var(--violet);
+            opacity: 0.04;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            letter-spacing: -0.05em;
+        }
+        [data-theme="dark"] .stage-wm {
+            opacity: 0.06;
+        }
+        .stage-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 3rem;
+        }
+        .stage-eyeline {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .stage-n {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.45em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .stage-skt {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--stone-light);
+        }
+        .stage-deva-title {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.92rem;
+            color: var(--stone-light);
+            opacity: 0.65;
+        }
+        .stage-h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.15;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
+        }
+        [data-theme="dark"] .stage-h2 {
+            color: var(--gold-light);
+        }
+        .stage-subtitle-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.38em;
+            color: var(--stone);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .stage-rule {
+            width: 40px;
+            height: 1.5px;
+            background: var(--gold);
+            position: relative;
+            display: block;
+            margin-top: 1rem;
+            z-index: 1;
+        }
+        .stage-rule::after {
+            content: '';
+            position: absolute;
+            right: -16px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            opacity: 0.6;
+        }
+        .stage-body {
+            position: relative;
+            z-index: 1;
+        }
+        .stage-body>p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.05rem;
+            color: var(--stone);
+            line-height: 1.88;
+            margin-bottom: 1.5rem;
+        }
+        .stage-body>p strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .stage-body>p em {
+            color: var(--ink2);
+            font-style: italic;
+        }
+        .stage-body>p:first-child::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.2rem;
+            line-height: 0.72;
+            float: left;
+            margin: 0.08em 0.1em 0 0;
+            color: var(--gold);
+            font-weight: 400;
+        }
+        .stage-sep {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--violet), var(--gold), var(--violet), transparent);
+            opacity: 0.1;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SANSKRIT / TERMS
+           ═══════════════════════════════════════════════════════════════ */
+        .sanskrit-term {
+            cursor: help;
+            border-bottom: 1px dotted var(--gold);
+            text-decoration: none;
+            color: var(--gold-light);
+            font-weight: 400;
+            transition: all 0.3s var(--ease-smooth);
+        }
+        .sanskrit-term:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold-deep);
+        }
+        [data-theme="light"] .sanskrit-term {
+            border-bottom-color: var(--copper);
+            color: var(--copper-light);
+        }
+        [data-theme="light"] .sanskrit-term:hover {
+            color: var(--copper);
+            border-bottom-color: var(--copper-deep);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           DIAGRAM CONTAINER
+           ═══════════════════════════════════════════════════════════════ */
+        .diagram-container {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: linear-gradient(145deg, var(--surface), var(--surface2));
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 4px 24px rgba(0, 0, 0, 0.3),
+                0 0 40px var(--violet-glow),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        .diagram-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent);
+            opacity: 0.6;
+        }
+        .diagram-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0.3;
+        }
+        .diagram-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+        }
+        .diagram-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .diagram-svg path,
+        .diagram-svg circle,
+        .diagram-svg line,
+        .diagram-svg rect,
+        .diagram-svg text {
+            vector-effect: non-scaling-stroke;
+        }
+        .diagram-caption {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 0.88rem;
+            color: var(--stone-light);
+            text-align: center;
+            margin-top: 1.25rem;
+            line-height: 1.6;
+            padding: 0.75rem;
+            background: rgba(124, 111, 174, 0.08);
+            border-radius: var(--radius-sm);
+            border-left: 2px solid var(--violet-light);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SCRIPTURE PANELS
+           ═══════════════════════════════════════════════════════════════ */
+        .scripture-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 36px 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-strong);
+            position: relative;
+            z-index: 1;
+        }
+        .scripture-panel {
+            background: linear-gradient(145deg, var(--surface), var(--surface2));
+            padding: 2rem;
+            transition: all 0.4s var(--ease-smooth);
+            position: relative;
+        }
+        .scripture-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--violet-light), transparent);
+            opacity: 0.4;
+        }
+        .scripture-panel-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+        .scripture-panel-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.72;
+            color: var(--ink);
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .scripture-panel-ref {
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.2em;
+            color: var(--violet-light);
+            text-transform: uppercase;
+        }
+        .scripture-panel:hover {
+            background: linear-gradient(145deg, var(--surface2), var(--surface));
+            box-shadow: 0 4px 20px rgba(124, 111, 174, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TENSION BOX
+           ═══════════════════════════════════════════════════════════════ */
+        .tension-box {
+            margin: 2rem 0;
+            padding: 1.5rem 1.75rem;
+            background: linear-gradient(145deg, rgba(124, 111, 174, 0.15), rgba(74, 64, 128, 0.06));
+            border-left: 3px solid var(--copper);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(124, 111, 174, 0.10);
+        }
+        .tension-box::before {
+            content: '◈';
+            position: absolute;
+            top: -10px;
+            left: 14px;
+            font-size: 1rem;
+            color: var(--copper-light);
+            background: var(--bg);
+            padding: 0 4px;
+        }
+        .tension-box p {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            color: var(--ink);
+            line-height: 1.7;
+            margin: 0 !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PULLQUOTE BANNER
+           ═══════════════════════════════════════════════════════════════ */
+        .pq-section {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg2), var(--bg));
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .pq-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--gold-glow), transparent 60%);
+            pointer-events: none;
+            animation: breathe 10s ease-in-out infinite;
+        }
+        .pq-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--ink);
+            line-height: 1.65;
+            max-width: 660px;
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.57rem;
+            letter-spacing: 0.4em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .pq-attr a:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CARTOGRAPHIES GRID
+           ═══════════════════════════════════════════════════════════════ */
+        .cartographies-section {
+            background: var(--bg);
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .cartographies-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .section-numeral {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.5em;
+            color: var(--gold-deep);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .section-numeral::after {
+            content: '';
+            flex: 1;
+            max-width: 60px;
+            height: 1px;
+            background: var(--gold-deep);
+            opacity: 0.3;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            color: var(--ink2);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.35em;
+            line-height: 1.2;
+        }
+        [data-theme="dark"] .section-title {
+            color: var(--gold-light);
+        }
+        .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--stone);
+            margin-bottom: 3.5rem;
+            letter-spacing: 0.04em;
+        }
+
+        .cartographies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin: 2.5rem 0;
+            box-shadow: var(--shadow-deep);
+        }
+
+        .cartography-card {
+            background: var(--surface);
+            padding: 3rem 2.5rem;
+            transition: all 0.5s var(--ease-out-expo);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .cartography-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at bottom right, var(--gold-glow), transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        .cartography-card:hover::after {
+            opacity: 1;
+        }
+        .cartography-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .cartography-card:hover::before {
+            opacity: 1;
+        }
+        .cartography-card:hover {
+            background: var(--surface2);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-deep);
+            z-index: 2;
+        }
+        [data-theme="dark"] .cartography-card {
+            background: var(--surface2);
+        }
+        [data-theme="dark"] .cartography-card:hover {
+            background: var(--surface);
+        }
+        .cartography-title::after {
+            content: ' \2192';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .cartography-card:hover .cartography-title::after {
+            opacity: 1;
+        }
+        .cartography-number {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            color: var(--gold-deep);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .cartography-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--ink2);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+        }
+        [data-theme="dark"] .cartography-title {
+            color: var(--gold-light);
+        }
+        .cartography-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            color: var(--stone);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px dashed var(--border);
+            display: inline-block;
+            padding-bottom: 0.4rem;
+        }
+        .cartography-description {
+            color: var(--stone-light);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+        .cartography-meta {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.7rem;
+            color: var(--stone);
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            flex-wrap: wrap;
+        }
+        .cartography-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cartography-meta span::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .cartography-card.quantum::before {
+            background: linear-gradient(180deg, var(--quantum-blue), #6ab0e8, var(--quantum-blue));
+        }
+        .cartography-card.quantum:hover::after {
+            background: radial-gradient(circle at bottom right, var(--quantum-glow), transparent);
+        }
+        .cartography-card.quantum .cartography-number {
+            color: var(--quantum-blue);
+        }
+        .cartography-card.quantum .cartography-title {
+            color: var(--quantum-blue);
+        }
+        [data-theme="dark"] .cartography-card.quantum .cartography-title {
+            color: #7ab8e8;
+        }
+        .cartography-card.quantum .cartography-subtitle {
+            color: var(--quantum-deep);
+        }
+        .cartography-card.quantum .cartography-meta span::before {
+            background: var(--quantum-blue);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════ */
+        .footer {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .footer-emblem {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        .footer-emblem-outer {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+        }
+        .footer-emblem-inner {
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+        [data-theme="dark"] .footer-emblem-outer {
+            border-color: var(--gold);
+        }
+        [data-theme="dark"] .footer-emblem-inner {
+            border-color: var(--gold-light);
+        }
+        [data-theme="light"] .footer-emblem-outer {
+            border-color: var(--copper);
+        }
+        [data-theme="light"] .footer-emblem-inner {
+            border-color: var(--copper-light);
+        }
+        .footer-name {
+            font-family: 'Cinzel', serif;
+            font-size: .92rem;
+            letter-spacing: .2em;
+            color: var(--violet-light);
+            text-transform: uppercase;
+            margin-bottom: .5rem;
+        }
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--stone);
+            font-size: .95rem;
+            margin-bottom: 2rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: .75rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            transition: color .3s;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .footer-credit {
+            font-family: 'Cinzel', serif;
+            font-size: .5rem;
+            letter-spacing: .3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: .4;
+        }
+        .footer-copyright {
+            font-family: 'Cinzel', serif;
+            font-size: .5rem;
+            letter-spacing: .3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: .4;
+            margin-top: 1rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           UTILITY
+           ═══════════════════════════════════════════════════════════════ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-1 {
+            transition-delay: 0.1s;
+        }
+        .stagger-2 {
+            transition-delay: 0.2s;
+        }
+        .stagger-3 {
+            transition-delay: 0.35s;
+        }
+        .stagger-4 {
+            transition-delay: 0.5s;
+        }
+        .stagger-5 {
+            transition-delay: 0.65s;
+        }
+        .text-reveal {
+            overflow: hidden;
+            display: block;
+        }
+        .text-reveal-inner {
+            display: block;
+            transform: translateY(110%);
+            transition: transform 1s var(--ease-out-expo);
+        }
+        .visible .text-reveal-inner {
+            transform: translateY(0);
+        }
+        .section-separator {
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent);
+            margin: 0 auto 20px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.8s var(--ease-out-expo);
+            position: relative;
+        }
+        .section-separator.visible {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        .section-separator::after {
+            content: '✦';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gold);
+            font-size: 0.72rem;
+            background: var(--bg);
+            padding: 0 6px;
+        }
+
+        @media (pointer: fine) {
+            .cursor-glow {
+                position: fixed;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+                pointer-events: none;
+                z-index: 9998;
+                transform: translate(-50%, -50%);
+                transition: opacity 0.3s ease;
+                opacity: 0;
+                mix-blend-mode: screen;
+            }
+            body:hover .cursor-glow {
+                opacity: 1;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 800px) {
+            .cartographies-grid {
+                grid-template-columns: 1fr;
+                gap: 1px;
+                border-radius: 16px;
+            }
+            .cartography-card {
+                padding: 2rem 1.75rem;
+            }
+            .cartography-title {
+                font-size: 1.4rem;
+            }
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            .hero-epithet {
+                font-size: 0.85rem;
+            }
+            .cartography-meta {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .hero-divider-line {
+                width: 40px;
+            }
+            .scripture-panels {
+                grid-template-columns: 1fr;
+            }
+            .scripture-panel:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+            .hero-emblem {
+                width: 110px;
+                height: 110px;
+            }
+            .diagram-container {
+                padding: 1.25rem;
+            }
+            .stage-section {
+                padding: 80px 24px;
+            }
+            .ed-wrap {
+                padding: 0 24px;
+            }
+            .nav-menu {
+                min-width: 180px;
+            }
+            .back-to-top {
+                right: 1.5rem;
+                bottom: 5rem;
+            }
+            .footer-links {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                line-height: 1.72;
+            }
+            .hero {
+                padding: 4rem 1rem 5rem;
+            }
+            .hero-emblem {
+                width: 95px;
+                height: 95px;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-eyemark {
+                font-size: 0.55rem;
+                letter-spacing: 0.3em;
+            }
+            .hero-subtitle-top {
+                font-size: 1rem;
+            }
+            .nav-compass {
+                top: 0.75rem;
+                left: 0.75rem;
+            }
+            .nav-toggle {
+                width: 40px;
+                height: 40px;
+            }
+            .nav-menu {
+                min-width: 160px;
+                border-radius: var(--radius-sm);
+            }
+            .nav-item {
+                padding: 0.5rem 1rem;
+                font-size: 0.82rem;
+            }
+            .theme-toggle {
+                width: 42px;
+                height: 42px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 4.5rem;
+                right: 1rem;
+            }
+            .scripture-panel {
+                padding: 20px;
+            }
+            .cartographies-section {
+                padding: 3rem 1rem;
+            }
+            .stage-section {
+                padding: 60px 16px;
+            }
+            .pq-section {
+                padding: 3rem 1rem;
+            }
+            .footer {
+                padding: 3rem 1rem 2rem;
+            }
+            .footer-links {
+                gap: 1rem;
+                font-size: 0.7rem;
+            }
+            .diagram-container {
+                padding: 1rem;
+                margin: 1.5rem 0;
+            }
+            .cartography-card {
+                padding: 1.5rem 1.25rem;
+            }
+            .cartography-title {
+                font-size: 1.2rem;
+            }
+        }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-            .fade-in, .stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5,
-            .scroll-reveal, .scroll-fade-up, .text-reveal .text-reveal-inner { opacity: 1 !important; transform: none !important; }
-        }
-
-        .sanskrit-term, .biblical-ref {
-            cursor: help; border-bottom: 1px dotted var(--gold); text-decoration: none;
-            color: var(--gold-light); font-weight: 400; transition: all 0.3s var(--ease-smooth);
-        }
-        .sanskrit-term:hover, .biblical-ref:hover { color: var(--gold); border-bottom-color: var(--gold-deep); }
-        [data-theme="light"] .sanskrit-term, [data-theme="light"] .biblical-ref { border-bottom-color: var(--copper); color: var(--copper-light); }
-        [data-theme="light"] .sanskrit-term:hover, [data-theme="light"] .biblical-ref:hover { color: var(--copper); border-bottom-color: var(--copper-deep); }
-        .tooltip-note { font-size: 0.7rem; color: var(--stone); text-align: center; margin-bottom: 1.5rem; }
-
-        /* ----- Navigation ----- */
-        .site-nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-            background: rgba(12, 15, 20, 0.85); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); padding: 0.6rem 2rem;
-            display: flex; align-items: center; justify-content: space-between;
-            transform: translateY(-100%); transition: transform 0.5s var(--ease-out-expo);
-        }
-        .site-nav.visible { transform: translateY(0); }
-        [data-theme="light"] .site-nav { background: rgba(250, 246, 239, 0.88); }
-        .nav-brand { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stone); text-decoration: none; transition: color 0.3s; position: relative; }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-        .nav-links a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--gold); }
-        .nav-divider { width: 1px; height: 16px; background: var(--border-strong); margin: 0 0.5rem; }
-        .nav-menu-btn { display: none; background: none; border: none; color: var(--gold); font-size: 1.2rem; cursor: pointer; }
-        @media (max-width: 768px) { .nav-links { display: none; } .nav-menu-btn { display: block; } }
-
-        .nav-drawer { position: fixed; top: 0; right: 0; width: 280px; height: 100vh; background: var(--surface); z-index: 1001; transform: translateX(100%); transition: transform 0.4s var(--ease-out-expo); padding: 4rem 2rem; border-left: 1px solid var(--border); }
-        .nav-drawer.open { transform: translateX(0); }
-        .nav-drawer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-        .nav-drawer-overlay.open { opacity: 1; pointer-events: auto; }
-        .nav-drawer a { display: block; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); text-decoration: none; padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color 0.3s; }
-        .nav-drawer a:hover { color: var(--gold); }
-        .nav-drawer-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
-
-        /* ----- Theme Toggle ----- */
-        .theme-toggle { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; width: 54px; height: 54px; background: var(--surface); border: 2px solid var(--border-strong); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: var(--shadow-deep), var(--shadow-gold); backdrop-filter: blur(2px); -webkit-tap-highlight-color: transparent; }
-        .theme-toggle:hover { transform: scale(1.1) translateY(-3px); border-color: var(--gold); box-shadow: 0 0 28px var(--gold-glow-strong); }
-        .theme-toggle:focus-visible, .cartography-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-        .theme-toggle-icon { position: absolute; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease; color: var(--gold); }
-        [data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: rotate(0deg); }
-        [data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.5); }
-        [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: rotate(90deg) scale(0.5); }
-        [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: rotate(0deg); }
-        .toggle-tooltip { position: fixed; bottom: 2rem; right: 5.8rem; z-index: 1000; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone); text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; background: var(--surface); padding: 0.3rem 0.8rem; border: 1px solid var(--border); border-radius: 20px; white-space: nowrap; backdrop-filter: blur(4px); }
-        .theme-toggle:hover + .toggle-tooltip { opacity: 0.85; }
-
-        .back-to-top { position: fixed; bottom: 5.5rem; right: 2rem; z-index: 1000; width: 54px; height: 54px; background: var(--surface); border: 1px solid var(--border-strong); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.2rem; opacity: 0; transform: translateY(20px); transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); }
-        .back-to-top.visible { opacity: 1; transform: translateY(0); }
-        .back-to-top:hover { border-color: var(--gold); box-shadow: var(--shadow-gold); }
-
-        /* ----- HERO ----- */
-        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 6rem 2rem 7rem; text-align: center; background: var(--hero-bg); }
-        [data-theme="light"] .hero::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181, 133, 58, 0.04) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 133, 58, 0.03) 29px); pointer-events: none; }
-        .hero-horizon { position: absolute; bottom: 0; left: 0; right: 0; height: 45%; background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(212, 175, 55, 0.08) 0%, transparent 70%); pointer-events: none; }
-        .hero-horizon::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--gold-deep) 20%, var(--gold) 50%, var(--gold-deep) 80%, transparent 100%); opacity: 0.25; }
-        .hero-horizon::after { content: ''; position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%); filter: blur(40px); }
-        .mandala-ring { position: absolute; top: 50%; left: 50%; border-radius: 50%; border: 1px solid var(--ring-color); transform: translate(-50%, -50%); pointer-events: none; animation: mandalaBreathe 12s ease-in-out infinite; }
-        .mandala-ring:nth-child(1) { width: 260px; height: 260px; animation-delay: 0s; }
-        .mandala-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 1.5s; animation-duration: 14s; }
-        .mandala-ring:nth-child(3) { width: 560px; height: 560px; animation-delay: 3s; animation-duration: 16s; }
-        .mandala-ring:nth-child(4) { width: 740px; height: 740px; animation-delay: 4.5s; animation-duration: 18s; }
-        @keyframes mandalaBreathe { 0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.02); } }
-        .hero-ripple { position: absolute; top: 50%; left: 50%; border-radius: 50%; border: 1px solid var(--ring-color); pointer-events: none; animation: rippleOut 9s ease-out infinite; }
-        .hero-ripple:nth-child(5) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 0s; }
-        .hero-ripple:nth-child(6) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 3s; }
-        .hero-ripple:nth-child(7) { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation-delay: 6s; }
-        @keyframes rippleOut { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(4.5); } }
-        .hero-emblem { width: 80px; height: 80px; margin: 0 auto 2rem; position: relative; opacity: 0; animation: heroRise 1.2s 0.5s forwards; z-index: 2; }
-        .hero-emblem-circle { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--gold-deep); opacity: 0.6; animation: emblemRotate 30s linear infinite; }
-        .hero-emblem-circle2 { position: absolute; inset: 12px; border-radius: 50%; border: 1px solid var(--gold); opacity: 0.4; animation: emblemRotate 20s linear infinite reverse; }
-        .hero-emblem-dot { position: absolute; inset: 26px; border-radius: 50%; background: radial-gradient(circle, var(--gold-light), var(--gold)); box-shadow: 0 0 20px 5px var(--sun-glow); animation: emblemPulse 4s ease-in-out infinite; }
-        @keyframes emblemRotate { to { transform: rotate(360deg); } }
-        @keyframes emblemPulse { 0%, 100% { box-shadow: 0 0 20px 5px var(--sun-glow); } 50% { box-shadow: 0 0 35px 12px var(--sun-glow); } }
-        @keyframes breathe { 0%, 100% { transform: scale(1); box-shadow: 0 0 40px var(--gold-glow); } 50% { transform: scale(1.04); box-shadow: 0 0 64px var(--gold-glow); } }
-        .hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.5em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 2rem; opacity: 0; animation: heroRise 1.2s 0.2s forwards; position: relative; z-index: 2; }
-        .hero-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.5em; color: var(--gold-deep); margin-bottom: 0.5rem; opacity: 0; animation: heroRise 1.2s 0.8s forwards; position: relative; z-index: 2; }
-        .hero-subtitle-top { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--stone); letter-spacing: 0.08em; margin-bottom: 0.8rem; opacity: 0; animation: heroRise 1.2s 1s forwards; position: relative; z-index: 2; }
-        .hero-title { font-family: 'Cinzel', serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.05; opacity: 0; animation: heroRise 1.4s 1.2s forwards; margin-bottom: 0.2em; position: relative; z-index: 2; }
-        [data-theme="light"] .hero-title { color: var(--ink); text-shadow: 0 2px 40px rgba(181, 133, 58, 0.2); }
-        [data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(200, 169, 110, 0.3); }
-        .hero-epithet { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.9rem, 2.5vw, 1.3rem); color: var(--gold-deep); letter-spacing: 0.12em; opacity: 0; animation: heroRise 1.2s 1.5s forwards; margin-bottom: 2.5rem; position: relative; z-index: 2; }
-        .hero-divider { display: flex; align-items: center; gap: 1.5rem; margin: 0 auto 2rem; width: fit-content; opacity: 0; animation: heroRise 1.2s 1.8s forwards; position: relative; z-index: 2; }
-        .hero-divider-line { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep)); }
-        .hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); }
-        .hero-divider-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); }
-        @keyframes heroRise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-        .hero-thesis { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1rem, 2vw, 1.3rem); color: var(--text-secondary); max-width: 640px; margin: 0.5rem auto 0; opacity: 0; animation: heroRise 1.2s 2s forwards; position: relative; z-index: 2; letter-spacing: 0.02em; }
-
-        /* ----- Content Sections ----- */
-        .content-section { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 56px; }
-        .section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; }
-        .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
-        .section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
-        .section-separator { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 1.2rem; opacity: 0.4; position: relative; }
-        .section-separator::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 8px; height: 8px; background: var(--gold); opacity: 0.6; }
-
-        .text-reveal { display: inline-block; overflow: hidden; }
-        .text-reveal .text-reveal-inner { display: inline-block; transform: translateY(100%); transition: transform 0.9s var(--ease-smooth); }
-        .text-reveal.visible .text-reveal-inner { transform: translateY(0); }
-
-        .content-essay, .content-introduction { margin-bottom: 2.5rem; }
-        .content-essay h3, .content-introduction h3 { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.6rem; }
-        .content-essay h3:first-of-type, .content-introduction h3:first-of-type { margin-top: 0; }
-        .content-essay p, .content-introduction p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.2rem; }
-        .content-essay .highlight, .content-introduction .highlight { color: var(--text-secondary); font-weight: 400; }
-
-        .stagger-1 { transition-delay: 0.05s; }
-        .stagger-2 { transition-delay: 0.12s; }
-        .stagger-3 { transition-delay: 0.2s; }
-        .stagger-4 { transition-delay: 0.3s; }
-        .stagger-5 { transition-delay: 0.4s; }
-
-        .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
-        .scripture-panel { background: var(--surface); padding: 32px; transition: background 0.3s; }
-        .scripture-panel:hover { background: var(--surface2); }
-        .scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-        .scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
-        .scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
-
-        .tension-box { background: var(--surface); border-left: 3px solid var(--gold); padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
-        .tension-box p { font-family: 'IM Fell English', serif; font-style: italic; color: var(--text-secondary); margin: 0; }
-        .resonance-callout { text-align: center; padding: 2rem; margin: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .resonance-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--stone); }
-
-        /* ----- SVG Diagrams ----- */
-        .diagram-container { margin: 3rem 0; text-align: center; }
-        .diagram-title { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-        .diagram-svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-        .diagram-svg text { font-family: 'Cinzel', serif; }
-        .diagram-caption { font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: var(--stone); font-style: italic; margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-
-        /* ----- Cartographies Section ----- */
-        .cartographies-section { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 6rem 2rem; }
-        .cartographies-container { max-width: 1280px; margin: 0 auto; }
-        .section-numeral { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.5em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 1rem; }
-        .section-numeral::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold-deep); opacity: 0.3; }
-        .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; color: var(--ink2); letter-spacing: 0.04em; margin-bottom: 0.35em; line-height: 1.2; }
-        [data-theme="dark"] .section-title { color: var(--gold-light); }
-        .section-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--stone); margin-bottom: 3.5rem; letter-spacing: 0.04em; }
-
-        .cartographies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: 2.5rem 0; box-shadow: var(--shadow-deep); }
-
-        .cartography-card { background: var(--surface); padding: 3rem 2.5rem; transition: all 0.5s var(--transition-smooth); text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; cursor: pointer; }
-        .cartography-card::after { content: ''; position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; background: radial-gradient(circle at bottom right, var(--gold-glow), transparent); opacity: 0; transition: opacity 0.5s; pointer-events: none; }
-        .cartography-card:hover::after { opacity: 1; }
-        .cartography-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold)); opacity: 0; transition: opacity 0.4s ease; }
-        .cartography-card:hover::before { opacity: 1; }
-        .cartography-card:hover { background: var(--surface2); transform: translateY(-6px); box-shadow: var(--shadow-deep); z-index: 2; }
-        [data-theme="dark"] .cartography-card { background: var(--surface2); }
-        [data-theme="dark"] .cartography-card:hover { background: var(--surface); }
-        .cartography-title::after { content: ' \2192'; opacity: 0; transition: opacity 0.3s ease; }
-        .cartography-card:hover .cartography-title::after { opacity: 1; }
-        .cartography-number { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em; color: var(--gold-deep); margin-bottom: 0.8rem; display: block; }
-        .cartography-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--ink2); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
-        [data-theme="dark"] .cartography-title { color: var(--gold-light); }
-        .cartography-subtitle { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--stone); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.8rem; border-bottom: 1px dashed var(--border); display: inline-block; padding-bottom: 0.4rem; }
-        .cartography-description { color: var(--text-muted); font-size: 1rem; line-height: 1.75; margin-bottom: 2rem; }
-        .cartography-meta { display: flex; gap: 1.8rem; font-size: 0.7rem; color: var(--stone); padding-top: 1.5rem; border-top: 1px solid var(--border); letter-spacing: 0.15em; text-transform: uppercase; flex-wrap: wrap; }
-        .cartography-meta span { display: flex; align-items: center; gap: 0.5rem; }
-        .cartography-meta span::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; opacity: 0.7; }
-
-        /* Quantum card accent */
-        .cartography-card.quantum::before { background: linear-gradient(180deg, var(--quantum-blue), #6ab0e8, var(--quantum-blue)); }
-        .cartography-card.quantum:hover::after { background: radial-gradient(circle at bottom right, var(--quantum-glow), transparent); }
-        .cartography-card.quantum .cartography-number { color: var(--quantum-blue); }
-        .cartography-card.quantum .cartography-title { color: var(--quantum-blue); }
-        [data-theme="dark"] .cartography-card.quantum .cartography-title { color: #7ab8e8; }
-        .cartography-card.quantum .cartography-subtitle { color: var(--quantum-deep); }
-        .cartography-card.quantum .cartography-meta span::before { background: var(--quantum-blue); }
-
-        /* ----- Pullquote ----- */
-        .pullquote-section { position: relative; overflow: hidden; background: var(--hero-bg); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
-        .pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
-        .pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--text-primary); line-height: 1.68; margin-bottom: 1.5rem; }
-        .pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--text-muted); text-transform: uppercase; }
-        .pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
-        .pullquote-attr a:hover { color: var(--gold); }
-
-        .chapter-nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 3rem; }
-        .continue-link { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
-        .continue-link:hover { gap: 1rem; }
-
-        /* ----- Footer ----- */
-        .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2rem 3rem; text-align: center; }
-        .footer-emblem { width: 40px; height: 40px; margin: 0 auto 1.5rem; position: relative; }
-        .footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
-        .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
-        [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
-        [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
-        [data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
-        [data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
-        .footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 0.5rem; }
-        .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.95rem; margin-bottom: 2rem; }
-        .footer-links { display: flex; justify-content: center; gap: 2.5rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem; flex-wrap: wrap; }
-        .footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--gold); }
-        .footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.45; }
-        .footer-version { font-family: 'Cinzel', serif; font-size: 0.45rem; letter-spacing: 0.2em; color: var(--stone); margin-top: 1rem; opacity: 0.35; }
-        .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
-
-        /* ----- Scroll Reveal & Fade In ----- */
-        .scroll-reveal { opacity: 0; transform: translateY(45px); transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1); }
-        .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
-        .scroll-fade-up { opacity: 0; transform: translateY(35px); transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1); }
-        .scroll-fade-up.revealed { opacity: 1; transform: translateY(0); }
-        .fade-in { opacity: 0; transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1); }
-        .fade-in.visible { opacity: 1; }
-
-        @media (max-width: 800px) {
-            .cartographies-grid { grid-template-columns: 1fr; gap: 1px; border-radius: 16px; }
-            .cartography-card { padding: 2rem 1.75rem; }
-            .cartography-title { font-size: 1.4rem; }
-            .hero-title { font-size: 2.4rem; }
-            .hero-epithet { font-size: 0.85rem; }
-            .cartography-meta { flex-direction: column; gap: 0.6rem; }
-            .hero-divider-line { width: 40px; }
-            .content-section { padding: 60px 20px; }
-            .scripture-panels { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 480px) {
-            .cartographies-section { padding: 3rem 1rem; }
-            .hero { padding: 4rem 1rem 5rem; }
-            .content-section { padding: 40px 16px; }
-            .hero-title { font-size: 2rem; }
-            .hero-eyemark { font-size: 0.55rem; letter-spacing: 0.3em; }
-            .hero-subtitle-top { font-size: 1rem; }
-            .theme-toggle { width: 44px; height: 44px; bottom: 1rem; right: 1rem; }
-            .toggle-tooltip { display: none; }
-            .back-to-top { width: 44px; height: 44px; bottom: 5rem; right: 1rem; }
-            .nav-brand { font-size: 0.6rem; }
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .text-reveal-inner {
+                transform: translateY(0) !important;
+            }
+            .section-separator {
+                opacity: 1 !important;
+                transform: scaleX(1) !important;
+            }
+            .hero-emblem {
+                animation: none !important;
+            }
+            .hero-emblem svg {
+                animation: none !important;
+            }
+            .cursor-glow {
+                display: none !important;
+            }
         }
     </style>
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/XOaMcONc54yNpL2hVi1pTccNcUsSV8ufj8YaDYjjxpUshsRxpz-feH70xAvmhCVBjsMTUkHDF45Et0lmZ0eh9W2O5W-Uok1a4CLRIVLp_O9RfUDNUi-cHbKYnfZnesvmiX2X9Dh0XWT3eC4NtBw_opJeEs36kHIN3JxuOavtYIXmjxZthmZly3VDm-qRu_eeJKF3j1x3ZWc6g3u_KMVeQpPYE-36QD0SQhS85hiOspd0IOHg5MLUbnxsHeAmeZGE2sjuYESeCR1FgsKNS-GSIgUG0m2A9onCJaIHcAwCiZNuyP67LqfNWge5G8nf4NJrHK5R1swz8L4z3oK8oF_7TEX9Cmbfv3KKFiFTdxuNAKSMOYGBDQdsllVIvE9ce7HbUYfSCT1N3sp3KpMUufjbY3Vg4ri7xzf8e_zD6Ykzo8XU_nwDePqtbGtLMJdNkGpiOJ43GKwjA9w81LDrPJ5wPtWlDpUnVRtbtntgFGnPeOf6JgPieIoD_shyNtRkRRU4ejQEiu2HgdedKGs1fbEOsn81XGBE_9siyxBs_XKJdZVqbL7NB0rs-Ft-yfZdVmXOLn1uX-Kc_aO701JVehetUD3Z62sSJKaV7q_1BGwn761ufsu-wCAU8kyPBkgcJ5kETtPxqJtas4ngQWYEzkYp0VgYssTLIYt2krN3wu-VzEDJXsTjw__y0wi5Kr_oV3Q1Uix1PGZx0Bboc_3RXcNU2DHiyOqfRsg0EPw3Xaw5lUB6BH5pHIcLuHpKUJAnoWk0wg4Tio7eCiKVaCWRBwCK2WwfzVLnTnuol3DpyVg5DKfxOJPWm0-rJTdtPA60fVqVGSqMDuKH60Nf1srhqq5gAmyfYKRT7R6nso_ey-akXpv5iW0CcYIGAy7BowE2CmLBz23ofwqKfI1D8i-pqTFu-wb3227KnXJiBDwplvR9xNyjwbQ8mNBbx-WLD7yIchdwh2_9qSIhMU8dGUOyX2DOcBY_Y0GPfMXiNlmWlVmcIb_7BOu4v60IptreqCpXatGAYWOcVfhaBMPxnjB0yIaqoD81rRQe12J0wvUTvnaLL9NXvlZ8QwXXq6635_nDlAgJ'></script><base >
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/9fY4qloPsRrNhY4wPe_X7Av_LSxzHq90Ghb_Ja-Gqw2m-jEuy4Tmz9DCH01p7p9Z9RxyWMAifElAVy3DinG1-zwbEcnTD5tZW7bAnBejUKqZ4eZaNPTTLfBvhWG_eHH8TdE7BFQBlxN0SwiK4KXIH0TYVvr_ZEj_az8AzkI1bDfJy5_-Nr_x8MVagXZvOKrVsQXdGytOMFChVl6D-4GMguwRxYZOcyK2bJ0ipKW0wgDAN6t3dqAXamUF3vyC4JuGiJI_Hh8PD8j9p7zFICTgFGZbVq1z9CH_hTpx8LbZXlXrUr0F2UPc2_w1yTFcPpj3FvAMs9ypk7Em_UoxhffXjTjXZFIOcWHio_h3sdzQ5Dd7BNu4FsdsNNLkqAz_1uZKVozbzBhdblfQyakvDpxDMI7nVfPK_okFiC5ViOG5E08ZVw7VnPypEBtX0jFBNWO8VvS3nmxHkuvHNiQzD378OQbOEuCgKwWPmsZlI_F2OjoaERa0Ko2PKWnt6JbYCb1TFM-go5DGai_hUs1osMcyG4zgl7UD_8r0ELKo2WTdt-qNTM33OJizqkSzlKRvl1kyxjP8X0JYAwb27BLvR7I8gxcZeBk-1heQVV0h0_ba5tJYIaeOaz0GJFYrKHTyv9wqH-Izm2coGWxFr_gpo38vQfRqRaQo2Xd00f-bSq3_v2JVFfoHE7P6P3ZD-ue72Qhae8E3PUbzQXpEycLgu0EJJUi5Xeu419EpVbsQkyh2sLZY9m5comCT4mQ2eT-KhuE51LDqacNhogEqWUcDpxjCxynYzbfLA4ItB8iyhr-6mVjvWA0ow-x0HJ1K-2DfAdCTjz3mQVOMocQvFxFUOoUoZxwVqBZqLieZMxedpTrcmirMAh3Pc-m7n5wb2J3GfpIexZjIT0Zcsplnrgz4-fPTzOhxfYtaYU_vsjyfg2Docsg5_QZZ4qnkwmXYuW16_5MsH7sl0__6IIZIzFJmJ6ErHPMf7uyZlopfkDxohwxU9onr-RSdpcEp2djboxhEWwaeJ5HwH1rY48oZ-5-0GVr-Wjq0Z8ciEHYikwUQDSoOMFq_wZEQyrUcYk3tZSNz2HmFF5R2gWHPYXjHUKvi3wg'></script><base target="_blank">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="site-nav" id="siteNav">
-        <a href="#hero" class="nav-brand">Vedantic Mappings</a>
-        <ul class="nav-links">
-            <li><a href="#introduction" data-section="introduction">Introduction</a></li>
-            <li><a href="#cartographies" data-section="cartographies">Cartographies</a></li>
-            <li><a href="#diagrams" data-section="diagrams">Diagrams</a></li>
-            <li><a href="#pullquote" data-section="pullquote">Contemplation</a></li>
-        </ul>
-        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu">&#9776;</button>
-    </nav>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-    <div class="nav-drawer-overlay" id="navDrawerOverlay"></div>
-    <div class="nav-drawer" id="navDrawer">
-        <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">&#10005;</button>
-        <a href="#introduction">Introduction</a>
-        <a href="#cartographies">Cartographies</a>
-        <a href="#diagrams">Diagrams</a>
-        <a href="#pullquote">Contemplation</a>
-        <div class="nav-divider" style="margin: 1rem 0;"></div>
-        <a href="advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-        <a href="messiah/messiah-threshold.html">The Vedantic Messiah</a>
-        <a href="kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-        <a href="gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
-        <a href="taoism/taoism-threshold.html">Taoism &middot; The Unnamed Way</a>
-        <a href="quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+    <!-- NAVIGATION COMPASS -->
+    <div class="nav-compass">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-section-title">This Page</div>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon">✦</span><span>Overview</span></a>
+            <a href="#introduction" class="nav-item" data-section="introduction"><span class="nav-item-icon">◈</span><span>Introduction</span></a>
+            <a href="#diagrams" class="nav-item" data-section="diagrams"><span class="nav-item-icon">◉</span><span>Structural Diagrams</span></a>
+            <a href="#cartographies" class="nav-item" data-section="cartographies"><span class="nav-item-icon">⌂</span><span>Six Cartographies</span></a>
+            <a href="#pullquote" class="nav-item" data-section="pullquote"><span class="nav-item-icon">❝</span><span>Contemplation</span></a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Cartographies</div>
+            <a href="advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+            <a href="messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
+            <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Kabbalah</span></a>
+            <a href="gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
+            <a href="taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
+            <a href="quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
+        </div>
     </div>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-toggle-icon theme-toggle-icon-sun">&#9788;</span>
-        <span class="theme-toggle-icon theme-toggle-icon-moon">&#9790;</span>
+        <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+        <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
     </button>
-    <span class="toggle-tooltip">Light / Dark</span>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
-
-    <!-- HERO -->
+    <!-- ═══════════════════════════════════════════════════════════════
+    HERO
+    ═══════════════════════════════════════════════════════════════ -->
     <header class="hero" id="hero">
-        <div class="hero-horizon"></div>
-        <div class="mandala-ring"></div>
-        <div class="mandala-ring"></div>
-        <div class="mandala-ring"></div>
-        <div class="mandala-ring"></div>
-        <div class="hero-ripple"></div>
-        <div class="hero-ripple"></div>
-        <div class="hero-ripple"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:auto" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g style="animation:mandalaRotate 60s linear infinite">
+                <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+                <circle cx="600" cy="400" r="300" fill="none" stroke="var(--violet)" stroke-width="0.5" opacity="0.10"/>
+                <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.07"/>
+                <circle cx="600" cy="400" r="200" fill="none" stroke="var(--violet)" stroke-width="0.3" opacity="0.06"/>
+            </g>
+        </svg>
+        <div class="hero-mountain" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="hero-ripple" aria-hidden="true"></div>
+        <div class="hero-ripple" aria-hidden="true"></div>
+        <div class="hero-ripple" aria-hidden="true"></div>
 
         <p class="hero-eyemark">Cartographies of the Non-Dual Path</p>
-
-        <div class="hero-emblem">
-            <div class="hero-emblem-circle"></div>
-            <div class="hero-emblem-circle2"></div>
-            <div class="hero-emblem-dot"></div>
-        </div>
-
         <p class="hero-label">Six Complete Maps</p>
-        <p class="hero-subtitle-top">For those who have sensed there is more&mdash;but are not sure where to begin.</p>
+        <p class="hero-subtitle-top">For those who have sensed there is more—but are not sure where to begin.</p>
 
         <h1 class="hero-title">Vedantic Mappings</h1>
-        <p class="hero-epithet">Advaita Vedanta &middot; The Vedantic Messiah &middot; Kabbalah &middot; Gnosticism &middot; Taoism &middot; Quantum Mechanics</p>
+        <p class="hero-epithet">Advaita Vedanta · The Vedantic Messiah · Kabbalah · Gnosticism · Taoism · Quantum Mechanics</p>
 
-        <div class="hero-divider">
+        <div class="hero-divider" aria-hidden="true">
             <div class="hero-divider-line"></div>
             <div class="hero-divider-diamond"></div>
             <div class="hero-divider-line"></div>
         </div>
 
-        <p class="hero-thesis">&ldquo;The seeker is the sought. The path is the destination. These are the maps that point to what is already here.&rdquo;</p>
+        <p class="hero-quote">&ldquo;The seeker is the sought. The path is the destination. These are the maps that point to what is already here.&rdquo;</p>
+
+        <div class="hero-scroll-cue" onclick="document.getElementById('introduction').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
+            <span>Enter</span>
+            <div class="scroll-line" aria-hidden="true"></div>
+        </div>
     </header>
 
-    <main id="main-content">
-
-        <!-- INTRODUCTION -->
-        <section class="content-section fade-in" id="introduction">
-            <div class="section-header">
-                <div class="section-separator"></div>
-                <p class="section-eyemark">What Is This Place?</p>
-                <h2><span class="text-reveal"><span class="text-reveal-inner">Cartographies of the Non-Dual Path</span></span></h2>
-                <p>Vedanta &middot; Maps &middot; The Unnameable</p>
+    <!-- ═══════════════════════════════════════════════════════════════
+    INTRODUCTION — Full essay content
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="stages-wrap" id="introduction">
+        <section class="stage-section">
+            <div class="stage-wm" aria-hidden="true">VEDANTA</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Introduction</span>
+                    <span class="stage-skt">What Is This Place?</span>
+                    <span class="stage-deva-title">Cartographies of the Non-Dual Path</span>
+                </div>
+                <h2 class="stage-h2">Vedanta · Maps · The Unnameable</h2>
+                <span class="stage-subtitle-label">Six cartographies · One mountain</span>
+                <span class="stage-rule"></span>
             </div>
+            <div class="stage-body">
 
-            <div class="content-introduction">
-                <h3 class="stagger-1">What is Vedanta?</h3>
-                <p class="stagger-1"><strong><span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Vedanta</span></strong> (Sanskrit <em>veda</em> &ndash; knowledge, <em>anta</em> &ndash; end) is the philosophical culmination of the Upanishads. It teaches that the individual self (<strong><span class="sanskrit-term" title="The individual self or soul; the true consciousness within every being">Ātman</span></strong>) is ultimately identical with the absolute reality (<strong><span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span></strong>). This is non-duality (<strong><span class="sanskrit-term" title="Non-duality; the teaching that Ātman and Brahman are one">Advaita</span></strong>): not one-ness as a number, but the recognition that separation was never real.</p>
+                <p><strong>W</strong>hat is Vedanta? <span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Vedanta</span> (Sanskrit <em>veda</em> – knowledge, <em>anta</em> – end) is the philosophical culmination of the Upanishads. It teaches that the individual self (<strong><span class="sanskrit-term" title="The individual self or soul; the true consciousness within every being">Ātman</span></strong>) is ultimately identical with the absolute reality (<strong><span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span></strong>). This is non-duality (<strong><span class="sanskrit-term" title="Non-duality; the teaching that Ātman and Brahman are one">Advaita</span></strong>): not one-ness as a number, but the recognition that separation was never real.</p>
 
-                <h3 class="stagger-2">Why Maps?</h3>
-                <p class="stagger-2">Every tradition, every realized master, every scripture is a <em>map</em>&mdash;not the territory. The territory is the Self, the Absolute, the Tao. It cannot be drawn. But a good map, drawn from authentic experience, can orient the seeker and reveal the pitfalls of the journey.</p>
+                <p class="fade-in stagger-1"><strong>Why Maps?</strong> Every tradition, every realized master, every scripture is a <em>map</em>—not the territory. The territory is the Self, the Absolute, the Tao. It cannot be drawn. But a good map, drawn from authentic experience, can orient the seeker and reveal the pitfalls of the journey.</p>
 
-                <p class="stagger-3">The six cartographies here&mdash;<span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta &mdash; the non-dual metaphysics within Christian mysticism">The Vedantic Messiah</span>, <span class="sanskrit-term" title="Jewish mysticism and the Tree of Life &mdash; the ten sefirot and the path from Ein Sof to Malkhut">Kabbalah</span>, <span class="sanskrit-term" title="Gnostic cosmology and theology &mdash; the Unknown Father, the Pleroma, and the divine spark">Gnosticism</span>, <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi &mdash; the Way that cannot be named">Taoism &middot; The Unnamed Way</span>, and <span class="sanskrit-term" title="Quantum mechanics as a contemporary cartography &mdash; superposition, entanglement, and the observer effect as modern expressions of non-dual recognition">Quantum Mechanics</span>&mdash;are not competitors. They are different paths up the same mountain, each with its own language, its own silences, its own precision.</p>
+                <p class="fade-in stagger-2">The six cartographies here—<span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta — the non-dual metaphysics within Christian mysticism">The Vedantic Messiah</span>, <span class="sanskrit-term" title="Jewish mysticism and the Tree of Life — the ten sefirot and the path from Ein Sof to Malkhut">Kabbalah</span>, <span class="sanskrit-term" title="Gnostic cosmology and theology — the Unknown Father, the Pleroma, and the divine spark">Gnosticism</span>, <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi — the Way that cannot be named">Taoism · The Unnamed Way</span>, and <span class="sanskrit-term" title="Quantum mechanics as a contemporary cartography — superposition, entanglement, and the observer effect as modern expressions of non-dual recognition">Quantum Mechanics</span>—are not competitors. They are different paths up the same mountain, each with its own language, its own silences, its own precision.</p>
 
-                <div class="tension-box stagger-4">
-                    <p>&ldquo;The Self is the only Guru. All outer gurus merely point back to that inner Guru.&rdquo;</p>
+                <div class="tension-box fade-in stagger-1">
+                    <p>&ldquo;The Self is the only Guru. All outer gurus merely point back to that inner Guru.&rdquo; — Ramana Maharshi</p>
                 </div>
 
-                <p class="stagger-4">As Ramana Maharshi said: <em>&ldquo;The Self is the only Guru. All outer gurus merely point back to that inner Guru.&rdquo;</em> Nisargadatta Maharaj reminds us: <em>&ldquo;Give up all questions except one: &lsquo;Who am I?&rsquo; After all, the only fact you are sure of is that you are. The &lsquo;I am&rsquo; is certain. The &lsquo;I am this&rsquo; is not.&rdquo;</em></p>
+                <p class="fade-in stagger-2">As Ramana Maharshi said: <em>&ldquo;The Self is the only Guru. All outer gurus merely point back to that inner Guru.&rdquo;</em> Nisargadatta Maharaj reminds us: <em>&ldquo;Give up all questions except one: &lsquo;Who am I?&rsquo; After all, the only fact you are sure of is that you are. The &lsquo;I am&rsquo; is certain. The &lsquo;I am this&rsquo; is not.&rdquo;</em></p>
 
-                <p class="stagger-4">And from the quantum realm, the physicist John Wheeler&mdash;who coined the term &ldquo;black hole&rdquo; and developed the &ldquo;participatory universe&rdquo; hypothesis after studying mystical traditions&mdash;observed: <em>&ldquo;No phenomenon is a real phenomenon until it is an observed phenomenon.&rdquo;</em> Schr&ouml;dinger, steeped in Vedantic texts, wrote that the apparent multiplicity of selves is &ldquo;only an illusion.&rdquo; David Bohm, after dialogues with Jiddu Krishnamurti, proposed the &ldquo;implicate order&rdquo;&mdash;a holographic universe where every part contains the whole, echoing the ancient holographic wisdom of the <em>vākyavṛtti</em>.</p>
+                <p class="fade-in stagger-3">And from the quantum realm, physicist John Wheeler—who coined the term &ldquo;black hole&rdquo; and developed the &ldquo;participatory universe&rdquo; hypothesis—observed: <em>&ldquo;No phenomenon is a real phenomenon until it is an observed phenomenon.&rdquo;</em> Schrödinger, steeped in Vedantic texts, wrote that the apparent multiplicity of selves is &ldquo;only an illusion.&rdquo; David Bohm, after dialogues with Jiddu Krishnamurti, proposed the &ldquo;implicate order&rdquo;—a holographic universe where every part contains the whole, echoing the ancient wisdom of the <em>vākyavṛtti</em>.</p>
 
-                <div class="scripture-panels fade-in stagger-5" style="margin-top: 2rem;">
+                <div class="scripture-panels fade-in stagger-4" style="margin-top: 2rem;">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">The Invitation</div>
                         <p class="scripture-panel-text">&ldquo;You are already That. The seeker is the sought. The perceiver is the perceived. There is no gap.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Nisargadatta Maharaj</p>
+                        <p class="scripture-panel-ref">— Nisargadatta Maharaj</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">The Method</div>
                         <p class="scripture-panel-text">&ldquo;The Tao that can be spoken is not the eternal Tao. The name that can be named is not the eternal name.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Lao Tzu, Tao Te Ching, Chapter 1</p>
+                        <p class="scripture-panel-ref">— Lao Tzu, Tao Te Ching, Chapter 1</p>
                     </div>
                 </div>
+
+                <p class="fade-in stagger-5" style="margin-top:2rem;">The invitation is simple: you are already That. The seeker is the sought. The perceiver is the perceived. There is no gap. These maps are not intended to replace the territory, but to help you recognize that you have never left it.</p>
+
             </div>
         </section>
+    </div>
 
-        <!-- SVG DIAGRAMS SECTION -->
-        <section class="content-section fade-in" id="diagrams">
-            <div class="section-header">
-                <div class="section-separator"></div>
-                <p class="section-eyemark">Visual Cartographies</p>
-                <h2><span class="text-reveal"><span class="text-reveal-inner">Structural Diagrams</span></span></h2>
-                <p>Five Maps &middot; One Mountain</p>
+    
+
+    <!-- ═══════════════════════════════════════════════════════════════
+    DIAGRAMS SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="stage-section" id="diagrams">
+        <div class="stage-wm" aria-hidden="true">◈</div>
+        <div class="stage-header">
+            <div class="stage-eyeline">
+                <span class="stage-n">Visual Cartographies</span>
+                <span class="stage-skt">Structural Diagrams</span>
+                <span class="stage-deva-title">Two Maps · One Mountain</span>
             </div>
+            <h2 class="stage-h2">The Architecture of Recognition</h2>
+            <span class="stage-subtitle-label">Visualizing the non-dual structure across traditions</span>
+            <span class="stage-rule"></span>
+        </div>
+        <div class="stage-body">
+
+            <p class="fade-in stagger-1">These diagrams are not the territory. They are sketches for the inner eye—orienting devices to help you recognize what the traditions point toward. The first map shows the underlying structure common to all six cartographies. The second shows how each tradition approaches that same structure from its own angle.</p>
 
             <!-- Diagram 1: The Non-Dual Structure -->
-            <div class="diagram-container scroll-reveal">
+            <div class="diagram-container fade-in stagger-1">
                 <div class="diagram-title">I. The Non-Dual Structure</div>
                 <svg class="diagram-svg" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" width="600" height="320">
                     <defs>
@@ -467,17 +1882,17 @@
                     <rect width="600" height="320" fill="transparent"/>
                     <ellipse cx="300" cy="80" rx="180" ry="45" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
                     <text x="300" y="75" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="500" letter-spacing="0.15em">BRAHMAN</text>
-                    <text x="300" y="95" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Absolute &middot; Pure Consciousness</text>
+                    <text x="300" y="95" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Absolute · Pure Consciousness</text>
                     <line x1="300" y1="125" x2="300" y2="165" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
                     <text x="310" y="148" fill="#b8960c" font-size="8" font-style="italic" opacity="0.8">=</text>
                     <ellipse cx="300" cy="200" rx="120" ry="35" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
                     <text x="300" y="195" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="500" letter-spacing="0.15em">ĀTMAN</text>
                     <text x="300" y="215" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Individual Self</text>
                     <path d="M 180 140 Q 300 170 420 140" stroke="#b8960c" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="6,3"/>
-                    <text x="300" y="165" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.6">MAYA &middot; The Veil of Appearance</text>
+                    <text x="300" y="165" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.6">MĀYĀ · The Veil of Appearance</text>
                     <ellipse cx="300" cy="280" rx="80" ry="25" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.5"/>
                     <text x="300" y="275" text-anchor="middle" fill="#7c8ea0" font-size="10" letter-spacing="0.1em">JĪVA</text>
-                    <text x="300" y="290" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.05em">Body &middot; Mind &middot; Ego</text>
+                    <text x="300" y="290" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.05em">Body · Mind · Ego</text>
                     <line x1="300" y1="235" x2="300" y2="255" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
                     <polygon points="300,258 297,252 303,252" fill="#7c8ea0" opacity="0.4"/>
                     <text x="80" y="160" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.5">PARAMĀRTHIKA</text>
@@ -485,11 +1900,13 @@
                     <text x="480" y="160" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.5">VYĀVAHĀRIKA</text>
                     <text x="480" y="172" fill="#7c8ea0" font-size="7" opacity="0.4">(Conventional Reality)</text>
                 </svg>
-                <p class="diagram-caption">The Advaitic structure: Brahman (absolute) and Ātman (individual self) are identical. Māyā is the apparent veil that creates the illusion of separation.</p>
+                <p class="diagram-caption">The Advaitic structure: Brahman (absolute) and Ātman (individual self) are identical. Māyā is the apparent veil that creates the illusion of separation. The other five cartographies describe this same structure in their own languages.</p>
             </div>
 
+            <p class="fade-in stagger-2">This structure is not unique to Advaita. Kabbalah calls the Absolute <em>Ein Sof</em> and the veil <em>Tzimtzum</em>. Gnosticism speaks of the <em>Unknown Father</em> and the <em>Demiurge</em>. Taoism names it the <em>Tao</em> and the ten thousand things. Quantum mechanics describes it as the <em>wavefunction</em> and <em>measurement</em>. The names change; the structure does not.</p>
+
             <!-- Diagram 2: Six Paths Convergence -->
-            <div class="diagram-container scroll-reveal">
+            <div class="diagram-container fade-in stagger-3">
                 <div class="diagram-title">II. Six Paths to the Absolute</div>
                 <svg class="diagram-svg" viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" width="600" height="420">
                     <defs>
@@ -505,7 +1922,7 @@
                     <rect width="600" height="420" fill="transparent"/>
                     <circle cx="300" cy="60" r="45" fill="url(#centerGlow)" stroke="url(#goldGrad2)" stroke-width="2"/>
                     <text x="300" y="55" text-anchor="middle" fill="#d4af37" font-size="11" font-weight="500" letter-spacing="0.15em">THE ABSOLUTE</text>
-                    <text x="300" y="72" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.1em">Brahman &middot; Ein Sof &middot; Tao &middot; Wavefunction</text>
+                    <text x="300" y="72" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.1em">Brahman · Ein Sof · Tao · Wavefunction</text>
                     <path d="M 100 360 Q 180 220 260 95" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.8"/>
                     <circle cx="100" cy="360" r="28" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
                     <text x="100" y="355" text-anchor="middle" fill="#d4af37" font-size="8" letter-spacing="0.1em">ADVAITA</text>
@@ -513,7 +1930,7 @@
                     <path d="M 500 360 Q 420 220 340 95" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.8"/>
                     <circle cx="500" cy="360" r="28" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
                     <text x="500" y="355" text-anchor="middle" fill="#d4af37" font-size="8" letter-spacing="0.1em">MESSIAH</text>
-                    <text x="500" y="368" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">Gospel &middot; Vedanta</text>
+                    <text x="500" y="368" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">Gospel · Vedanta</text>
                     <path d="M 180 380 Q 230 240 280 105" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.6"/>
                     <circle cx="180" cy="380" r="24" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
                     <text x="180" y="375" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">KABBALAH</text>
@@ -532,234 +1949,112 @@
                     <text x="340" y="397" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">The Implicate Order</text>
                     <text x="300" y="180" text-anchor="middle" fill="#7c8ea0" font-size="8" font-style="italic" opacity="0.4">Different paths, one mountain</text>
                 </svg>
-                <p class="diagram-caption">Six traditions converging on the same Absolute. Each path uses distinct language and methodology, yet all point to the same non-dual recognition.</p>
+                <p class="diagram-caption">Six traditions converging on the same Absolute. Each path uses distinct language and methodology, yet all point to the same non-dual recognition. The detailed maps for each tradition are found in their respective cartographies below.</p>
             </div>
 
-            <!-- Diagram 3: The Journey from Jīva to Brahman -->
-            <div class="diagram-container scroll-reveal">
-                <div class="diagram-title">III. The Journey of Recognition</div>
-                <svg class="diagram-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" width="600" height="200">
-                    <defs>
-                        <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#7c8ea0;stop-opacity:0.5" />
-                            <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <rect width="600" height="200" fill="transparent"/>
-                    <line x1="80" y1="100" x2="520" y2="100" stroke="url(#pathGrad)" stroke-width="2" stroke-dasharray="8,4"/>
-                    <circle cx="80" cy="100" r="35" fill="none" stroke="#7c8ea0" stroke-width="1.5" opacity="0.6"/>
-                    <text x="80" y="95" text-anchor="middle" fill="#7c8ea0" font-size="10" letter-spacing="0.1em">JĪVA</text>
-                    <text x="80" y="108" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.6">Mistaken Identity</text>
-                    <circle cx="220" cy="100" r="30" fill="none" stroke="#b8960c" stroke-width="1.5" opacity="0.5"/>
-                    <text x="220" y="95" text-anchor="middle" fill="#b8960c" font-size="9" letter-spacing="0.1em">SĀDHANA</text>
-                    <text x="220" y="107" text-anchor="middle" fill="#b8960c" font-size="7" opacity="0.6">Practice &middot; Inquiry</text>
-                    <circle cx="380" cy="100" r="30" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.7"/>
-                    <text x="380" y="95" text-anchor="middle" fill="#d4af37" font-size="9" letter-spacing="0.1em">VIVEKA</text>
-                    <text x="380" y="107" text-anchor="middle" fill="#d4af37" font-size="7" opacity="0.7">Discrimination</text>
-                    <circle cx="520" cy="100" r="35" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.9"/>
-                    <text x="520" y="95" text-anchor="middle" fill="#d4af37" font-size="10" font-weight="500" letter-spacing="0.1em">MOKṢA</text>
-                    <text x="520" y="108" text-anchor="middle" fill="#d4af37" font-size="7" opacity="0.8">Liberation</text>
-                    <polygon points="150,97 160,100 150,103" fill="#7c8ea0" opacity="0.5"/>
-                    <polygon points="290,97 300,100 290,103" fill="#b8960c" opacity="0.6"/>
-                    <polygon points="450,97 460,100 450,103" fill="#d4af37" opacity="0.8"/>
-                    <text x="300" y="150" text-anchor="middle" fill="#7c8ea0" font-size="8" font-style="italic" opacity="0.4">Not a journey through space, but a dissolution of the illusion of distance</text>
-                </svg>
-                <p class="diagram-caption">The Advaitic path from mistaken identity (Jīva) to liberation (Mokṣa). The journey is not spatial but a shift in recognition: what was always true is seen.</p>
-            </div>
+        </div>
+    </section>
+<!-- ═══════════════════════════════════════════════════════════════
+    CARTOGRAPHIES SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="cartographies-section" id="cartographies">
+        <div class="cartographies-container">
+            <div class="section-numeral">The Cartographies</div>
+            <h2 class="section-title">Six Paths to<br>the Absolute</h2>
+            <p class="section-subtitle">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions — Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics.</p>
 
-            <!-- Diagram 4: The Sefirot Tree (Simplified) -->
-            <div class="diagram-container scroll-reveal">
-                <div class="diagram-title">IV. The Tree of Life (Kabbalah)</div>
-                <svg class="diagram-svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" width="400" height="500">
-                    <defs>
-                        <linearGradient id="sefGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:0.4" />
-                        </linearGradient>
-                    </defs>
-                    <rect width="400" height="500" fill="transparent"/>
-                    <line x1="200" y1="60" x2="200" y2="440" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
-                    <line x1="120" y1="140" x2="280" y2="140" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
-                    <line x1="120" y1="220" x2="280" y2="220" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
-                    <line x1="120" y1="300" x2="280" y2="300" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
-                    <line x1="120" y1="380" x2="280" y2="380" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
-                    <line x1="120" y1="140" x2="200" y2="220" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <line x1="280" y1="140" x2="200" y2="220" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <line x1="120" y1="220" x2="200" y2="300" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <line x1="280" y1="220" x2="200" y2="300" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <line x1="120" y1="300" x2="200" y2="380" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <line x1="280" y1="300" x2="200" y2="380" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <line x1="200" y1="300" x2="200" y2="380" stroke="#7c8ea0" stroke-width="1" opacity="0.2"/>
-                    <circle cx="200" cy="40" r="22" fill="url(#sefGrad)" stroke="#d4af37" stroke-width="1.5" opacity="0.9"/>
-                    <text x="200" y="44" text-anchor="middle" fill="#d4af37" font-size="8" font-weight="500" letter-spacing="0.1em">KETER</text>
-                    <circle cx="120" cy="120" r="18" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.7"/>
-                    <text x="120" y="124" text-anchor="middle" fill="#d4af37" font-size="7" letter-spacing="0.05em">ḤOKHMAH</text>
-                    <circle cx="280" cy="120" r="18" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.7"/>
-                    <text x="280" y="124" text-anchor="middle" fill="#d4af37" font-size="7" letter-spacing="0.05em">BINAH</text>
-                    <circle cx="200" cy="200" r="18" fill="none" stroke="#b8960c" stroke-width="1.2" opacity="0.6"/>
-                    <text x="200" y="204" text-anchor="middle" fill="#b8960c" font-size="7" letter-spacing="0.05em">DAʿAT</text>
-                    <circle cx="120" cy="280" r="18" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
-                    <text x="120" y="284" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">ḤESED</text>
-                    <circle cx="280" cy="280" r="18" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
-                    <text x="280" y="284" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">GEVURAH</text>
-                    <circle cx="200" cy="280" r="18" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.6"/>
-                    <text x="200" y="284" text-anchor="middle" fill="#d4af37" font-size="7" letter-spacing="0.05em">TIFERET</text>
-                    <circle cx="120" cy="360" r="16" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
-                    <text x="120" y="363" text-anchor="middle" fill="#7c8ea0" font-size="6" letter-spacing="0.05em">NETZAḤ</text>
-                    <circle cx="280" cy="360" r="16" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
-                    <text x="280" y="363" text-anchor="middle" fill="#7c8ea0" font-size="6" letter-spacing="0.05em">HOD</text>
-                    <circle cx="200" cy="360" r="16" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
-                    <text x="200" y="363" text-anchor="middle" fill="#7c8ea0" font-size="6" letter-spacing="0.05em">YESOD</text>
-                    <circle cx="200" cy="440" r="22" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.8"/>
-                    <text x="200" y="444" text-anchor="middle" fill="#d4af37" font-size="8" font-weight="500" letter-spacing="0.1em">MALKHUT</text>
-                    <text x="200" y="485" text-anchor="middle" fill="#7c8ea0" font-size="7" font-style="italic" opacity="0.4">From Ein Sof (Infinite) to embodied manifestation</text>
-                </svg>
-                <p class="diagram-caption">The Kabbalistic Tree of Life: ten sefirot (divine emanations) from Keter (Crown) to Malkhut (Kingdom). The path of ascent and descent between the Infinite and the manifest world.</p>
-            </div>
+            <div class="cartographies-grid">
 
-            <!-- Diagram 5: Quantum Superposition & The Unmeasured -->
-            <div class="diagram-container scroll-reveal">
-                <div class="diagram-title">V. The Unmeasured &mdash; Superposition &amp; The Wavefunction</div>
-                <svg class="diagram-svg" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" width="600" height="320">
-                    <defs>
-                        <linearGradient id="quantumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#4a90d9;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#2e5a8a;stop-opacity:0.4" />
-                        </linearGradient>
-                        <radialGradient id="superGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#4a90d9;stop-opacity:0.2" />
-                            <stop offset="100%" style="stop-color:#4a90d9;stop-opacity:0" />
-                        </radialGradient>
-                    </defs>
-                    <rect width="600" height="320" fill="transparent"/>
-                    <!-- Superposition cloud -->
-                    <ellipse cx="300" cy="160" rx="200" ry="80" fill="url(#superGlow)" stroke="#4a90d9" stroke-width="1" opacity="0.6"/>
-                    <ellipse cx="300" cy="160" rx="140" ry="55" fill="none" stroke="#6ab0e8" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,3"/>
-                    <ellipse cx="300" cy="160" rx="80" ry="30" fill="none" stroke="#8ec8f0" stroke-width="0.6" opacity="0.3"/>
-                    <!-- Wavefunction -->
-                    <path d="M 80 160 Q 140 80 200 160 Q 260 240 320 160 Q 380 80 440 160 Q 500 240 560 160" stroke="#4a90d9" stroke-width="1.5" fill="none" opacity="0.7"/>
-                    <text x="300" y="145" text-anchor="middle" fill="#6ab0e8" font-size="11" font-weight="500" letter-spacing="0.15em">SUPERPOSITION</text>
-                    <text x="300" y="162" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">All states coexist &middot; The wavefunction</text>
-                    <!-- Measurement arrows -->
-                    <line x1="200" y1="240" x2="200" y2="270" stroke="#7c8ea0" stroke-width="1" opacity="0.5"/>
-                    <polygon points="200,273 197,267 203,267" fill="#7c8ea0" opacity="0.5"/>
-                    <text x="200" y="285" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">STATE A</text>
-                    <line x1="400" y1="240" x2="400" y2="270" stroke="#7c8ea0" stroke-width="1" opacity="0.5"/>
-                    <polygon points="400,273 397,267 403,267" fill="#7c8ea0" opacity="0.5"/>
-                    <text x="400" y="285" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">STATE B</text>
-                    <text x="300" y="310" text-anchor="middle" fill="#7c8ea0" font-size="8" font-style="italic" opacity="0.4">Measurement &ldquo;collapses&rdquo; the wavefunction into definite states</text>
-                    <!-- Labels -->
-                    <text x="80" y="120" fill="#4a90d9" font-size="8" letter-spacing="0.1em" opacity="0.6">UNMEASURED</text>
-                    <text x="80" y="132" fill="#4a90d9" font-size="7" opacity="0.4">(Pure Potential)</text>
-                    <text x="480" y="120" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.6">MEASURED</text>
-                    <text x="480" y="132" fill="#7c8ea0" font-size="7" opacity="0.4">(Definite Outcome)</text>
-                </svg>
-                <p class="diagram-caption">The quantum wavefunction: a mathematical description of superposition where all possible states coexist until observation. The &ldquo;collapse&rdquo; is the central mystery of quantum mechanics&mdash;and a striking parallel to the Vedantic concept of māyā.</p>
-            </div>
-        </section>
+                <a href="advaita-vedanta/advaita-gaudapada.html" class="cartography-card">
+                    <span class="cartography-number">I</span>
+                    <h3 class="cartography-title">Advaita Vedanta</h3>
+                    <p class="cartography-subtitle">The Non-Dual Tradition</p>
+                    <p class="cartography-description">A comprehensive mapping of the Advaita Vedanta lineage from Gaudapada's ajata vada to modern masters. Includes Ramana Maharshi's Self-enquiry, Nisargadatta's "I Am" teaching, and comparative analysis with Adyashanti. Grounded in the Upanishadic tradition.</p>
+                    <div class="cartography-meta">
+                        <span>Ancient to Modern</span>
+                        <span>Lineage Tradition</span>
+                        <span>Advaita Vedanta</span>
+                    </div>
+                </a>
 
-        <!-- CARTOGRAPHIES SECTION -->
-        <section class="cartographies-section scroll-reveal" id="cartographies">
-            <div class="cartographies-container">
-                <div class="section-numeral scroll-fade-up stagger-1">The Cartographies</div>
-                <h2 class="section-title scroll-fade-up stagger-2">Six Paths to<br>the Absolute</h2>
-                <p class="section-subtitle scroll-fade-up stagger-3">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions &mdash; Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics.</p>
+                <a href="messiah/messiah-threshold.html" class="cartography-card">
+                    <span class="cartography-number">II</span>
+                    <h3 class="cartography-title">The Vedantic Messiah</h3>
+                    <p class="cartography-subtitle">Gospel &amp; Upanishad</p>
+                    <p class="cartography-description">A mystical synthesis of the Gospel of Jesus and non-dual Upanishadic wisdom, explored through silent contemplation (hesychia) and the recognition that <em>"I and the Father are one."</em> Five pages mapping resonances between Christian mysticism and Advaita — not a merger, but illumination.</p>
+                    <div class="cartography-meta">
+                        <span>Contemplative</span>
+                        <span>Comparative</span>
+                        <span>Christian · Vedantic</span>
+                    </div>
+                </a>
 
-                <div class="cartographies-grid scroll-reveal stagger-4">
+                <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="cartography-card">
+                    <span class="cartography-number">III</span>
+                    <h3 class="cartography-title">Kabbalah</h3>
+                    <p class="cartography-subtitle">The Tree of Life</p>
+                    <p class="cartography-description">A meditative journey into Jewish mysticism, mapping the ten sefirot and the path from Ein Sof to Malkhut through contemplative visualization and the meditative recitation of divine names. The mystical journey up and down the Tree of Life.</p>
+                    <div class="cartography-meta">
+                        <span>Ancient Tradition</span>
+                        <span>Jewish Mysticism</span>
+                        <span>Kabbalistic</span>
+                    </div>
+                </a>
 
-                    <a href="advaita-vedanta/advaita-gaudapada.html" class="cartography-card scroll-fade-up stagger-5">
-                        <span class="cartography-number">I</span>
-                        <h3 class="cartography-title">Advaita Vedanta</h3>
-                        <p class="cartography-subtitle">The Non-Dual Tradition</p>
-                        <p class="cartography-description">A comprehensive mapping of the Advaita Vedanta lineage from Gaudapada's ajata vada to modern masters. Includes Ramana Maharshi's Self-enquiry, Nisargadatta's "I Am" teaching, and comparative analysis with Adyashanti. Grounded in the Upanishadic tradition.</p>
-                        <div class="cartography-meta">
-                            <span>Ancient to Modern</span>
-                            <span>Lineage Tradition</span>
-                            <span>Advaita Vedanta</span>
-                        </div>
-                    </a>
+                <a href="gnosticism/gnosticism-unknown-father.html" class="cartography-card">
+                    <span class="cartography-number">IV</span>
+                    <h3 class="cartography-title">Gnosticism</h3>
+                    <p class="cartography-subtitle">The Unknown Father</p>
+                    <p class="cartography-description">A comprehensive cartography of Gnostic cosmology and theology, mapping the Unknown Father, the Pleroma, the Silence, and the journey of the divine spark through the material prison. Four pages exploring the Nag Hammadi texts and the apophatic path beyond the Demiurge.</p>
+                    <div class="cartography-meta">
+                        <span>c. 2nd century CE</span>
+                        <span>Nag Hammadi</span>
+                        <span>Gnostic · Apophatic</span>
+                    </div>
+                </a>
 
-                    <a href="messiah/messiah-threshold.html" class="cartography-card scroll-fade-up stagger-5">
-                        <span class="cartography-number">II</span>
-                        <h3 class="cartography-title">The Vedantic Messiah</h3>
-                        <p class="cartography-subtitle">Gospel &amp; Upanishad</p>
-                        <p class="cartography-description">A mystical synthesis of the Gospel of Jesus and non-dual Upanishadic wisdom, explored through silent contemplation (hesychia) and the recognition that <em>"I and the Father are one."</em> Five pages mapping resonances between Christian mysticism and Advaita &mdash; not a merger, but illumination.</p>
-                        <div class="cartography-meta">
-                            <span>Contemplative</span>
-                            <span>Comparative</span>
-                            <span>Christian &middot; Vedantic</span>
-                        </div>
-                    </a>
+                <a href="taoism/taoism-threshold.html" class="cartography-card">
+                    <span class="cartography-number">V</span>
+                    <h3 class="cartography-title">Lao Tzu · Taoism</h3>
+                    <p class="cartography-subtitle">The Uncarved Block &amp; The Way</p>
+                    <p class="cartography-description">A complete apophatic cartography from the Tao Te Ching and Zhuangzi. The Tao that cannot be named, the practice of wu wei (effortless action), and the recognition that the ten thousand things and the self are one root — a parallel non-dual path.</p>
+                    <div class="cartography-meta">
+                        <span>6th–4th c. BCE</span>
+                        <span>Ancient China</span>
+                        <span>Taoism · Philosophical</span>
+                    </div>
+                </a>
 
-                    <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="cartography-card scroll-fade-up stagger-5">
-                        <span class="cartography-number">III</span>
-                        <h3 class="cartography-title">Kabbalah</h3>
-                        <p class="cartography-subtitle">The Tree of Life</p>
-                        <p class="cartography-description">A meditative journey into Jewish mysticism, mapping the ten sefirot and the path from Ein Sof to Malkhut through contemplative visualization and the meditative recitation of divine names. The mystical journey up and down the Tree of Life.</p>
-                        <div class="cartography-meta">
-                            <span>Ancient Tradition</span>
-                            <span>Jewish Mysticism</span>
-                            <span>Kabbalistic</span>
-                        </div>
-                    </a>
+                <a href="quantum_mechanics/quantum-unmeasured.html" class="cartography-card quantum">
+                    <span class="cartography-number">VI</span>
+                    <h3 class="cartography-title">Quantum Mechanics</h3>
+                    <p class="cartography-subtitle">The Implicate Order</p>
+                    <p class="cartography-description">A contemplative cartography of quantum foundations — superposition, the observer effect, entanglement, and the implicate order. Four pages mapping Copenhagen, Many-Worlds, QBism, and Bohm's holomovement as modern expressions of non-dual recognition. The wavefunction as Ein Sof; collapse as Tzimtzum; entanglement as the One without a second.</p>
+                    <div class="cartography-meta">
+                        <span>20th–21st Century</span>
+                        <span>Contemporary Physics</span>
+                        <span>Quantum · Non-Dual</span>
+                    </div>
+                </a>
 
-                    <a href="gnosticism/gnosticism-unknown-father.html" class="cartography-card scroll-fade-up stagger-5">
-                        <span class="cartography-number">IV</span>
-                        <h3 class="cartography-title">Gnosticism</h3>
-                        <p class="cartography-subtitle">The Unknown Father</p>
-                        <p class="cartography-description">A comprehensive cartography of Gnostic cosmology and theology, mapping the Unknown Father, the Pleroma, the Silence, and the journey of the divine spark through the material prison. Four pages exploring the Nag Hammadi texts and the apophatic path beyond the Demiurge.</p>
-                        <div class="cartography-meta">
-                            <span>c. 2nd century CE</span>
-                            <span>Nag Hammadi</span>
-                            <span>Gnostic &middot; Apophatic</span>
-                        </div>
-                    </a>
-
-                    <a href="taoism/taoism-threshold.html" class="cartography-card scroll-fade-up stagger-5">
-                        <span class="cartography-number">V</span>
-                        <h3 class="cartography-title">Lao Tzu &middot; Taoism</h3>
-                        <p class="cartography-subtitle">The Uncarved Block &amp; The Way</p>
-                        <p class="cartography-description">A complete apophatic cartography from the Tao Te Ching and Zhuangzi. The Tao that cannot be named, the practice of wu wei (effortless action), and the recognition that the ten thousand things and the self are one root &mdash; a parallel non-dual path.</p>
-                        <div class="cartography-meta">
-                            <span>6th&ndash;4th c. BCE</span>
-                            <span>Ancient China</span>
-                            <span>Taoism &middot; Philosophical</span>
-                        </div>
-                    </a>
-
-                    <a href="quantum_mechanics/quantum-unmeasured.html" class="cartography-card quantum scroll-fade-up stagger-5">
-                        <span class="cartography-number">VI</span>
-                        <h3 class="cartography-title">Quantum Mechanics</h3>
-                        <p class="cartography-subtitle">The Implicate Order</p>
-                        <p class="cartography-description">A contemplative cartography of quantum foundations &mdash; superposition, the observer effect, entanglement, and the implicate order. Four pages mapping Copenhagen, Many-Worlds, QBism, and Bohm's holomovement as modern expressions of non-dual recognition. The wavefunction as Ein Sof; collapse as Tzimtzum; entanglement as the One without a second.</p>
-                        <div class="cartography-meta">
-                            <span>20th&ndash;21st Century</span>
-                            <span>Contemporary Physics</span>
-                            <span>Quantum &middot; Non-Dual</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- PULLQUOTE / CTA -->
-        <div class="pullquote-section scroll-fade-up stagger-5" id="pullquote">
-            <div class="pullquote-glow"></div>
-            <div class="pullquote">
-                <p class="pullquote-text">The journey from mistaken identity to liberation begins with a single step into the mystery of being.</p>
-                <p class="pullquote-attr"><a href="#cartographies">Explore the Cartographies &rarr;</a></p>
             </div>
         </div>
+    </section>
 
-    </main>
+    <!-- ═══════════════════════════════════════════════════════════════
+    PULLQUOTE BANNER
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="pq-section" id="pullquote">
+        <div class="pq-glow" aria-hidden="true"></div>
+        <p class="pq-text">The journey from mistaken identity to liberation begins with a single step into the mystery of being.</p>
+        <p class="pq-attr"><a href="#cartographies">Explore the Cartographies →</a></p>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="footer scroll-fade-up stagger-5">
-        <div class="footer-emblem">
-            <div class="footer-emblem-outer"></div>
-            <div class="footer-emblem-inner"></div>
-        </div>
+    <!-- ═══════════════════════════════════════════════════════════════
+    FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
         <div class="footer-links">
@@ -771,195 +2066,118 @@
             <a href="taoism/taoism-threshold.html">Taoism</a>
             <a href="quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
-        <div class="footer-credit">Researched and composed - .</div>
+        <div class="footer-credit">Researched and composed</div>
         <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
+    <!-- ═══════════════════════════════════════════════════════════════
+    JAVASCRIPT
+    ═══════════════════════════════════════════════════════════════ -->
     <script>
-    (function() {
-        'use strict';
+        (function() {
+            'use strict';
 
-        document.documentElement.classList.remove('no-js');
-
-        // 1. Theme Toggle (with try/catch for localStorage)
-        const toggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        function setTheme(theme) {
-            html.setAttribute('data-theme', theme);
-            try {
-                localStorage.setItem('theme', theme);
-            } catch (e) {
-                // localStorage blocked, ignore
-            }
-        }
-
-        function initTheme() {
-            let saved;
-            try {
-                saved = localStorage.getItem('theme');
-            } catch (e) {
-                saved = null;
-            }
-            if (saved === 'light' || saved === 'dark') {
-                setTheme(saved);
-                return;
-            }
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            setTheme(prefersDark ? 'dark' : 'light');
-        }
-        initTheme();
-
-        if (toggle) {
-            toggle.addEventListener('click', function() {
+            /* THEME */
+            const html = document.documentElement;
+            (function initTheme() {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
+                html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' :
+                    'light');
+            })();
+            const themeBtn = document.getElementById('themeToggle');
+            if (themeBtn) themeBtn.addEventListener('click', () => {
                 const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                setTheme(next);
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
             });
-        }
 
-        // 2. Navigation scroll visibility
-        const siteNav = document.getElementById('siteNav');
-        let lastScrollY = 0;
-        window.addEventListener('scroll', function() {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > 100) {
-                siteNav.classList.add('visible');
-            } else {
-                siteNav.classList.remove('visible');
+            /* NAV */
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+                document.addEventListener('click', e => {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove(
+                        'open');
+                });
             }
-            lastScrollY = currentScrollY;
-        }, { passive: true });
 
-        // 3. Active nav highlighting on scroll
-        const sections = document.querySelectorAll('section[id], div[id]');
-        const navLinks = document.querySelectorAll('.nav-links a[data-section]');
-        const navObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(function(link) {
-                        link.classList.remove('active');
-                        if (link.getAttribute('data-section') === entry.target.id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
-        sections.forEach(function(section) {
-            navObserver.observe(section);
-        });
+            /* BACK TO TOP */
+            const btt = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window
+                    .innerHeight * 0.6); }, { passive: true });
+            if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // 4. Mobile nav drawer
-        const navMenuBtn = document.getElementById('navMenuBtn');
-        const navDrawer = document.getElementById('navDrawer');
-        const navDrawerOverlay = document.getElementById('navDrawerOverlay');
-        const navDrawerClose = document.getElementById('navDrawerClose');
-
-        function openDrawer() {
-            navDrawer.classList.add('open');
-            navDrawerOverlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeDrawer() {
-            navDrawer.classList.remove('open');
-            navDrawerOverlay.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        if (navMenuBtn) navMenuBtn.addEventListener('click', openDrawer);
-        if (navDrawerClose) navDrawerClose.addEventListener('click', closeDrawer);
-        if (navDrawerOverlay) navDrawerOverlay.addEventListener('click', closeDrawer);
-        navDrawer.querySelectorAll('a').forEach(function(a) {
-            a.addEventListener('click', closeDrawer);
-        });
-
-        // 5. Touch swipe for nav
-        let touchStartX = 0;
-        let touchEndX = 0;
-        document.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        document.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            const diff = touchEndX - touchStartX;
-            const screenWidth = window.innerWidth;
-            if (touchStartX > screenWidth - 40 && diff < -50 && !navDrawer.classList.contains('open')) {
-                openDrawer();
-            }
-            if (touchStartX < 40 && diff > 50 && navDrawer.classList.contains('open')) {
-                closeDrawer();
-            }
-        }, { passive: true });
-
-        // 6. Back to top button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 600) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        }, { passive: true });
-        if (backToTop) {
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-
-        // 7. Scroll Reveal Observers
-        const scrollObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    scrollObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-        document.querySelectorAll('.scroll-reveal, .scroll-fade-up').forEach(function(el) {
-            scrollObserver.observe(el);
-        });
-
-        // 8. Fade Observer
-        const fadeObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(e) {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    fadeObserver.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.fade-in, .section-separator').forEach(function(el) {
-            fadeObserver.observe(el);
-        });
-
-        // 9. Text-reveal observer
-        const textRevealObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(e) {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    textRevealObserver.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.text-reveal').forEach(function(el) {
-            textRevealObserver.observe(el);
-        });
-
-        // 10. Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
+            /* SMOOTH SCROLL */
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', function(e) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                    const t = document.querySelector(this.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
             });
-        });
 
-    })();
+            /* INTERSECTION OBSERVER for fade-in */
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+
+            /* TEXT REVEAL */
+            const textObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        textObserver.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+
+            /* ACTIVE NAV HIGHLIGHTING */
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const navItems = document.querySelectorAll('.nav-item[data-section]');
+
+            function updateActiveNav() {
+                let current = '';
+                const scrollPos = window.scrollY + window.innerHeight * 0.35;
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const height = section.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navItems.forEach(item => {
+                    item.classList.toggle('active', item.getAttribute('data-section') === current);
+                });
+            }
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+            updateActiveNav();
+
+            /* CURSOR GLOW */
+            const cursorGlow = document.getElementById('cursorGlow');
+            if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+                let mx = 0,
+                    my = 0,
+                    cx = 0,
+                    cy = 0;
+                document.addEventListener('mousemove', e => { mx = e.clientX;
+                    my = e.clientY; }, { passive: true });
+
+                function animateCursor() {
+                    cx += (mx - cx) * 0.08;
+                    cy += (my - cy) * 0.08;
+                    cursorGlow.style.left = cx + 'px';
+                    cursorGlow.style.top = cy + 'px';
+                    requestAnimationFrame(animateCursor);
+                }
+                animateCursor();
+            }
+        })();
     </script>
+
 </body>
 </html>
