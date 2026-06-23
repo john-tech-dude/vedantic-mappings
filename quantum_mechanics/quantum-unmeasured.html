@@ -340,6 +340,57 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 
 /* Diagram Cards */
 .diagram-card {
+
+/* SVG Diagram Color Fixes for Light Theme */
+[data-theme="light"] .diagram-card svg [fill="##5a6a9a"],
+[data-theme="light"] .diagram-card svg [stroke="##5a6a9a"] {
+  fill: #4a5a7a;
+  stroke: #4a5a7a;
+}
+[data-theme="light"] .diagram-card svg text[fill="##5a6a9a"] {
+  fill: #4a5a7a;
+}
+[data-theme="light"] .diagram-card svg [fill="##7a8aba"],
+[data-theme="light"] .diagram-card svg [stroke="##7a8aba"] {
+  fill: #5a6a8a;
+  stroke: #5a6a8a;
+}
+[data-theme="light"] .diagram-card svg text[fill="##7a8aba"] {
+  fill: #5a6a8a;
+}
+[data-theme="light"] .diagram-card svg [fill="##8a9ab8"],
+[data-theme="light"] .diagram-card svg [stroke="##8a9ab8"] {
+  fill: #4a5070;
+  stroke: #4a5070;
+}
+[data-theme="light"] .diagram-card svg text[fill="##8a9ab8"] {
+  fill: #4a5070;
+}
+[data-theme="light"] .diagram-card svg [fill="##c4a855"],
+[data-theme="light"] .diagram-card svg [stroke="##c4a855"] {
+  fill: #7a6020;
+  stroke: #7a6020;
+}
+[data-theme="light"] .diagram-card svg text[fill="##c4a855"] {
+  fill: #7a6020;
+}
+[data-theme="light"] .diagram-card svg [fill="##e0c878"],
+[data-theme="light"] .diagram-card svg [stroke="##e0c878"] {
+  fill: #8a7030;
+  stroke: #8a7030;
+}
+[data-theme="light"] .diagram-card svg text[fill="##e0c878"] {
+  fill: #8a7030;
+}
+[data-theme="light"] .diagram-card svg [fill="##fff"],
+[data-theme="light"] .diagram-card svg [stroke="##fff"] {
+  fill: #e8ecf4;
+  stroke: #e8ecf4;
+}
+[data-theme="light"] .diagram-card svg text[fill="##fff"] {
+  fill: #e8ecf4;
+}
+
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -574,7 +625,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
 }
 </style>
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/-bbyKO9VLYnZndwVbJmBwAko2zvHfU-mmHh7ZJp9fRdk9fbM5b6axRgoBptHheV1ssYFBGqSQI83V4dWqQNqhWFy1vcsOuVj-hD8g90CFOFC1VecfQGlOuwbV0QoaQiFbhNnXQXSGE8gbz4Y5gcp0cNhKqhXz1hdDKRvH2KlBo3we6PSkfvSuDy4dSTjqJD12dQU75x4LAT0If3I1cbmPvIr4G7KO_2pkJIRRk4CVzr2YMy8GKz12sOYXBNRGTcx48jkBIJRSblo8RJVZkv4omutuL4uWzqGAE_JQ0pVZhbq2DLt0vv11MqK_b4fJgT5ntdMGQXHXfRcPPuBK7Tr7L-xqFNggSSpq6tFKVQ0LMWK-iO34qjfm4SGZ71A5k8L4mnygSdepfXL6ULX8FSMb4fW3uxNUDCGnRLZ1UJqpJ6YdRRuMXy15sXh7q9Jc1VNoSGvXPoVMmiKPaLKAWRFV3DOkiVDvcUBwJX53-9KP4d0p_w1G3Hi5IkggIBC8mMtwLEYanQqzbwiv7-0IICfjmvf-DZrMPqOdNEjbT9cg5XmsDUOeJbVKAKKN2FWivA1n8CzbZLyg6IRv4L7qmzMUXdAS_RV-pKa1W8LYbkRyG0dogInRG9T-Vi9zFA3dMqNRslHC6wsPvXeL1zK80hVRPZm_2O_jdpg_N6Qzeeq7pninMXhdMSREkzSQoN61Z4dT1mxwl0svKuYrhhKdOZty820jWpCKiON6Nc0FgtqP3VxyEO8xkC13sOWP1jvs-AbCv6O4Zv5D4Ywis9RgBxoQVaN8HoIVSP56nVQW-Qku0TGToFjn8a2-t43dL6AIoOC85ov_fjlw3Nxp6c2qkp6iUAoGr3xPVlQfRiWPIDDx6C2Jgc59ry2c9fbDVvmLhNSw8HVENvmcE32iUrMI8ptMNL-DnPas_dFpGS8f4SzTDQyB4B3AE9q0LGi2757umxGhBKmOS0sW4M0tX9URiVuPu11XY3qdpRlJtHtuYkbwD4BJAX1DQ66IcNAxoJZXwnE2GxjA7rgyQUfUDWLf6_fZUHbMB5bbi0ADxPu7N6VTxCJoGqS2VAqOxKw5sc'></script><base >
 </head>
 <body>
 
@@ -1122,7 +1172,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
       <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
       <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="gnosticism-unknown-father.html">Gnosticism</a>
+      <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
       <a href="../taoism/taoism-threshold.html">Taoism</a>
       <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
   </div>

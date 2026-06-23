@@ -315,7 +315,50 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .scripture-panel:hover { background: var(--surface2); }
 
 /* ===== DIAGRAMS ===== */
-.diagram-container { margin: 40px 0; padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); text-align: center; }
+.diagram-container {
+
+/* SVG Diagram Color Fixes for Light Theme */
+[data-theme="light"] .diagram-container svg [fill="##7c8ea0"],
+[data-theme="light"] .diagram-container svg [stroke="##7c8ea0"] {
+  fill: #4a5060;
+  stroke: #4a5060;
+}
+[data-theme="light"] .diagram-container svg text[fill="##7c8ea0"] {
+  fill: #4a5060;
+}
+[data-theme="light"] .diagram-container svg [fill="##9aaebf"],
+[data-theme="light"] .diagram-container svg [stroke="##9aaebf"] {
+  fill: #5a6080;
+  stroke: #5a6080;
+}
+[data-theme="light"] .diagram-container svg text[fill="##9aaebf"] {
+  fill: #5a6080;
+}
+[data-theme="light"] .diagram-container svg [fill="##d4af37"],
+[data-theme="light"] .diagram-container svg [stroke="##d4af37"] {
+  fill: #8a7030;
+  stroke: #8a7030;
+}
+[data-theme="light"] .diagram-container svg text[fill="##d4af37"] {
+  fill: #8a7030;
+}
+[data-theme="light"] .diagram-container svg [fill="##e6c86e"],
+[data-theme="light"] .diagram-container svg [stroke="##e6c86e"] {
+  fill: #a08840;
+  stroke: #a08840;
+}
+[data-theme="light"] .diagram-container svg text[fill="##e6c86e"] {
+  fill: #a08840;
+}
+[data-theme="light"] .diagram-container svg [fill="##fff"],
+[data-theme="light"] .diagram-container svg [stroke="##fff"] {
+  fill: #e8ecf4;
+  stroke: #e8ecf4;
+}
+[data-theme="light"] .diagram-container svg text[fill="##fff"] {
+  fill: #e8ecf4;
+}
+ margin: 40px 0; padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); text-align: center; }
 .diagram-title { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
 .diagram-svg { max-width: 100%; height: auto; }
 .diagram-caption { font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: var(--stone); margin-top: 16px; font-style: italic; }
@@ -402,7 +445,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   html { scroll-behavior: auto; }
 }
 </style>
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/hMkZuCORRLnNKC9pauYsWrzyhvUz8Un630_UTuIiJqBVRIJeNZ5RzTaOlcqqZ8_rlPzilPNW9l-Lp9L5_RP2zOxWr5_KZG47IdFoAkf9-sApW-1CILHQUrXMbon6jpY1DRUhZbe3Ho62eg3QW_9-bBooWKKh6ZexG9r2fRg5V__SmYCX3OlaFca0nTgJHdJoduphN2XAzU-tLmepszGndgOVauiWjyqn_Vhsjobt717RMRghIim9clBTANbsefv-FjdMH4KpmKfxT1V-WMZVIOmX_PnA0Ylck0oBFPlAT5M_q8I1MjUk--YlHd3368DZ-bd4IPl91Dto4aZqG4GooJWB5tLCNHzt8VFbLm3WfZRtRoJVtOtzDS6VnZrtX4urVgHq4qkaq-OV1iCsmDWY1ANWqNSMR-rxldl8sMyDZ0KdoERF8TBRJ6WAl_lEKyqpO22VXVgLmZtQZhvAvxDd7eMQIk8pXyfUdXbkNgQ8vYlB2ERJwk4Kjpq93xvCm-Ytz9jFJLNt_oPZ2uZ7p2i7x94grdJjQKGxMuMLaX9UH926xylu--_yjnC5spzt2yGYyvIc9TF41Zjf828gWxKyZWFpXtcID59nY1Xwd3n_yajPYaw5Fo7U2zdUkgrELLdMO3Ffc5FxEwLbO38D1anSasdrgpLo4o7ZlDwbHJXWKhC0BFRwWYE6Sz8y1cDSnp8qDCKWTw6PVEJVLcZyC_aAxxDPhADwpSZ3JjU9FB2tagKK5t4fFKwCFrDLWu0KkIIvvnlMaWjxPrzvGIs4WK60VAGnEvbHTdzL6uCfhQWAwbBSoYjBV2p9pxXmCgn-xP44YJJ8lcNxLNm3Iq9JAN2n4MfQAFXD5V8pFSG11EdtMDz8o7VoavBhI2L5Yrt_DcCQu2OcMt7RwWCcT2D8iPGBvXC6_sucQcyN-A5wwu0OAhyCfYcKXrNCrRQiBxaSZjNBJlvcIeYU3z7FE88YeHMJ4ne9SJEjCjAbVc-9Vs06uL4Kfd2MvsyZ1zXymBz1lQtoDHTNGjEcW_PALjzxRgiaOQtzcPdPPXH4rU-a0N6J3pINE8aklXBI_vWyCgW6CArN4oM'></script><base >
 </head>
 <body>
 
@@ -868,7 +910,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
    <a href="../index.html">⌂ Vedantic Mappings</a>
     <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
     <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-    <a href="kabbalah-sefer-yetzirah.html">Kabbalah</a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
     <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
     <a href="../taoism/taoism-threshold.html">Taoism</a>
     <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
