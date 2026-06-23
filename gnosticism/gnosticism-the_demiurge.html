@@ -1290,6 +1290,22 @@
             color: var(--gold-light);
             border-bottom-color: var(--gold-light);
         }
+        .pq-attr .continue-link {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .pq-attr .continue-link:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+        }
+        .pq-sep {
+            color: var(--border-strong);
+            opacity: 0.5;
+            margin: 0 0.5rem;
+        }
 
         /* ═══════════════════════════════════════════════════════════════
            COMPARATIVE TABLE
@@ -1414,19 +1430,38 @@
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            padding: 2rem 0;
-            flex-wrap: wrap;
+            padding: 2rem 1rem;
+            overflow-x: auto;
+            flex-wrap: nowrap;
             font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             max-width: 740px;
             margin: 0 auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--stone) var(--border);
+        }
+        .chapter-nav::-webkit-scrollbar {
+            height: 6px;
+        }
+        .chapter-nav::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .chapter-nav::-webkit-scrollbar-thumb {
+            background: var(--stone);
+            border-radius: 3px;
+        }
+        .chapter-nav::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
         }
         .chapter-link {
             color: var(--stone);
             text-decoration: none;
             transition: color 0.3s;
             font-family: 'Cinzel', serif;
+            white-space: nowrap;
         }
         .chapter-link:hover {
             color: var(--gold);
@@ -1434,6 +1469,7 @@
         .chapter-sep {
             color: var(--violet);
             opacity: 0.3;
+            flex-shrink: 0;
         }
         .chapter-link.active {
             color: var(--gold);
@@ -1876,6 +1912,11 @@
                 <span class="toc-b-title">The Craftsman Compared — Plato, Kabbalah, Manichaeism</span>
                 <span class="toc-b-skt">Δημιουργός</span>
             </a>
+            <a href="gnostic_syzygy_nymphon.html" class="toc-book-item">
+                <span class="toc-b-num">→</span>
+                <span class="toc-b-title">Syzygy Theology — A Deep Dive</span>
+                <span class="toc-b-skt">Συζυγία</span>
+            </a>
         </nav>
     </section>
 
@@ -2301,7 +2342,7 @@
         <div class="pq-glow" aria-hidden="true"></div>
         <div class="pullquote">
             <p class="pq-text">From the prison of the Demiurge, we now turn to the prisoner &mdash; the divine spark trapped in matter, the sleeper who must awaken, and the path of gnosis that leads home.</p>
-            <p class="pq-attr"><a href="gnosticism-the_divine_spark.html" class="continue-link" style="display:inline-block;padding:0.75rem 1.5rem;border:1px solid var(--border-strong);border-radius:var(--radius-sm);transition:all 0.35s var(--ease-out-expo);margin-top:0.5rem;color:var(--gold);text-decoration:none;">→ Continue to The Divine Spark</a></p>
+            <p class="pq-attr"><a href="gnosticism-unknown-father.html" class="continue-link">&larr; Return to The Unknown Father</a> <span class="pq-sep">·</span> <a href="gnosticism-the_divine_spark.html" class="continue-link">Continue to The Divine Spark &rarr;</a></p>
         </div>
     </div>
 
@@ -2309,16 +2350,18 @@
     CHAPTER NAVIGATION
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
-        <a href="../index.html" class="chapter-link">⌂ Home</a>
-        <span class="chapter-sep">✦</span>
-        <a href="gnosticism-unknown-father.html" class="chapter-link">I · The Unknown Father</a>
-        <span class="chapter-sep">✦</span>
-        <a href="gnosticism-the_demiurge.html" class="chapter-link active">II · The Demiurge</a>
-        <span class="chapter-sep">✦</span>
-        <a href="gnosticism-the_divine_spark.html" class="chapter-link">III · The Divine Spark</a>
-        <span class="chapter-sep">✦</span>
-        <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV · The Bridal Chamber</a>
-    </div>
+  <a href="../index.html" class="chapter-link">&#8962; Home</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-unknown-father.html" class="chapter-link">I &middot; The Unknown Father</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-the_demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism_the_bridal_chamber.html" class="chapter-link active">IV &middot; The Bridal Chamber</a>
+  <span class="chapter-sep">&rarr;</span>
+  <a href="gnostic_syzygy_nymphon.html" class="chapter-link">Syzygy Theology (Deep Dive)</a>
+</div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER

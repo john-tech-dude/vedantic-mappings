@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bridal Chamber · Syzygy & the Gnostic Nymphon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        /* =====================================================
+           GNOSTICISM — THE BRIDAL CHAMBER (Syzygy Deep Dive)
+           Cosmic Edition — Deep Indigo, Violet, Silver, Amber
+           ===================================================== */
+
+        :root {
+            --bg: #090c18;
+            --bg2: #0f1324;
+            --bg3: #060814;
+            --surface: #141a2e;
+            --surface2: #1c2238;
+            --ink: #e6e9f0;
+            --ink2: #8a9abf;
+            --stone: #5e6d8a;
+            --stone-light: #8a9ab0;
+            --gold: #c9a84c;
+            --gold-light: #e0c46e;
+            --gold-deep: #a08030;
+            --gold-glow: rgba(201, 168, 76, 0.08);
+            --sun-glow: rgba(201, 168, 76, 0.18);
+            --violet: #7c6fae;
+            --violet-light: #a090d0;
+            --violet-deep: #4a4080;
+            --violet-glow: rgba(124, 111, 174, 0.15);
+            --copper: #b87333;
+            --copper-light: #cd7f32;
+            --copper-deep: #8b4513;
+            --copper-glow: rgba(184, 115, 51, 0.12);
+            --silver: #a0a8b8;
+            --border: rgba(255, 255, 255, 0.05);
+            --border-strong: rgba(255, 255, 255, 0.10);
+            --border-subtle: rgba(255, 255, 255, 0.025);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+            --shadow-gold: 0 0 40px var(--gold-glow);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            --diagram-gold: #e8c97a;
+            --diagram-gold-dim: #d4b05c;
+            --diagram-violet: #8c7fbe;
+            --diagram-violet-dim: #5a5090;
+            --diagram-stone: #6e7d9a;
+            --diagram-stone-dark: #4a5060;
+            --diagram-pleroma-outer: #5a5090;
+            --diagram-pleroma-inner: #e8c97a;
+        }
+
+        [data-theme="light"] {
+            --bg: #f0f1f5;
+            --bg2: #e4e6ee;
+            --bg3: #d8dbe6;
+            --surface: #ffffff;
+            --surface2: #f2f3f8;
+            --ink: #12152a;
+            --ink2: #3a3f5c;
+            --stone: #5a6080;
+            --stone-light: #7a80a0;
+            --gold: #8a6a2a;
+            --gold-light: #a08040;
+            --gold-deep: #6a5020;
+            --border: rgba(0, 0, 0, 0.07);
+            --border-strong: rgba(0, 0, 0, 0.12);
+            --border-subtle: rgba(0, 0, 0, 0.03);
+            --gold-glow: rgba(138, 106, 42, 0.06);
+            --sun-glow: rgba(138, 106, 42, 0.14);
+            --violet: #5a5080;
+            --violet-light: #8a78b0;
+            --violet-deep: #3a3070;
+            --copper: #8b4513;
+            --copper-light: #a0522d;
+            --copper-deep: #6b3410;
+            --diagram-gold: #5a4015;
+            --diagram-gold-dim: #7a5525;
+            --diagram-violet: #2a2060;
+            --diagram-violet-dim: #4a4070;
+            --diagram-stone: #2a3050;
+            --diagram-stone-dark: #1a2030;
+            --diagram-pleroma-outer: #4a4070;
+            --diagram-pleroma-inner: #5a4015;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
+            font-size: 18px;
+            line-height: 1.78;
+            transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--violet-deep), var(--violet), var(--gold)); border-radius: 2px; }
+
+        ::selection { background: rgba(124,111,174,0.20); color: var(--ink); }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 4px; }
+
+        /* =====================================================
+           KEYFRAMES
+           ===================================================== */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scroll-bounce {
+            0%,100% { opacity: 1; transform: scaleY(1); }
+            50%     { opacity: 0.3; transform: scaleY(0.5); }
+        }
+
+        @keyframes breathe {
+            0%,100% { transform: scale(1); }
+            50%     { transform: scale(1.04); }
+        }
+
+        @keyframes pleroma-breathe {
+            0%,100% { opacity: 0.3; transform: translate(-50%,-50%) scale(1); }
+            50%     { opacity: 0.7; transform: translate(-50%,-50%) scale(1.015); }
+        }
+
+        @keyframes ripple-out {
+            0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
+            100% { opacity: 0;    transform: translate(-50%,-50%) scale(4.5); }
+        }
+
+        @keyframes emblem-pulse {
+            0%,100% { filter: drop-shadow(0 0 8px rgba(201,168,76,0.15)); }
+            50%     { filter: drop-shadow(0 0 28px rgba(201,168,76,0.45)) drop-shadow(0 0 48px rgba(201,168,76,0.20)); }
+        }
+
+        @keyframes lineReveal {
+            from { transform: scaleX(0); }
+            to   { transform: scaleX(1); }
+        }
+
+        @keyframes diamondReveal {
+            from { opacity: 0; transform: rotate(45deg) scale(0); }
+            to   { opacity: 1; transform: rotate(45deg) scale(1); }
+        }
+
+        @keyframes ambientDrift {
+            0%,100% { transform: translate(0,0) scale(1); opacity: 0.35; }
+            33%     { transform: translate(2%,-1%) scale(1.02); opacity: 0.55; }
+            66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.25; }
+        }
+
+        @keyframes pleroma-rot-cw {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes pleroma-rot-ccw {
+            to { transform: translate(-50%, -50%) rotate(-360deg); }
+        }
+
+        @keyframes nymphon-pulse {
+            0%,100% { opacity: 0.5; filter: drop-shadow(0 0 12px var(--gold)); transform: translate(-50%, -50%) scale(1); }
+            50%     { opacity: 1; filter: drop-shadow(0 0 36px var(--gold-light)); transform: translate(-50%, -50%) scale(1.06); }
+        }
+
+        @keyframes glow-pulse {
+            0%,100% { box-shadow: 0 0 20px var(--gold-glow); }
+            50%     { box-shadow: 0 0 60px var(--sun-glow); }
+        }
+
+        @keyframes ouroboros-glow {
+            0%,100% { filter: drop-shadow(0 0 6px rgba(201,168,76,0.20)) drop-shadow(0 0 18px rgba(201,168,76,0.10)); }
+            50%     { filter: drop-shadow(0 0 16px rgba(201,168,76,0.50)) drop-shadow(0 0 40px rgba(201,168,76,0.25)) drop-shadow(0 0 60px rgba(201,168,76,0.12)); }
+        }
+
+        @keyframes scroll-drop {
+            0%,100% { transform: scaleY(1); opacity: 1; }
+            50%     { transform: scaleY(0.3); opacity: 0.2; }
+        }
+
+        /* =====================================================
+           NAV COMPASS
+           ===================================================== */
+        .nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+        .nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--violet-light); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+        .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+        .nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 260px; }
+        .nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+        .nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+        .nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+        .nav-item.active { color: var(--gold-light); background: rgba(201,168,76,0.08); border-left-color: var(--gold); font-weight: 500; }
+        .nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
+        .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+        .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+        .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+        .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+        .theme-toggle:active { transform: scale(0.95); }
+        .theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+        [data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+        [data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+        [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+        [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+        .back-to-top { position: fixed; bottom: 5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+        .back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+        .back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+        .progress-bar {
+            position: fixed; top: 0; left: 0; width: 0%; height: 2.5px;
+            background: linear-gradient(90deg, var(--violet-deep), var(--violet), var(--gold), var(--gold-light));
+            z-index: 2000; transition: width 0.08s linear;
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        /* =====================================================
+           HERO
+           ===================================================== */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; }
+        [data-theme="dark"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 25%, #12183a 0%, var(--bg) 35%, #060814 70%, var(--bg) 100%); }
+        [data-theme="light"] .hero { background: radial-gradient(ellipse 100% 90% at 50% 25%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #7880a0 100%); }
+
+        .hero::after {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 50% 50% at 25% 35%, rgba(124,111,174,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 75% 55%, rgba(201,168,76,0.05) 0%, transparent 70%);
+            animation: ambientDrift 20s ease-in-out infinite;
+            pointer-events: none; z-index: 1;
+        }
+
+        .pleroma-ring { position: absolute; top: 50%; left: 50%; border-radius: 50%; border: 1px solid var(--violet); transform: translate(-50%,-50%); pointer-events: none; animation: pleroma-breathe 14s ease-in-out infinite; }
+        .pleroma-ring:nth-of-type(1) { width: 220px; height: 220px; opacity: 0.22; }
+        .pleroma-ring:nth-of-type(2) { width: 360px; height: 360px; opacity: 0.15; animation-delay: 2s; animation-duration: 16s; }
+        .pleroma-ring:nth-of-type(3) { width: 520px; height: 520px; opacity: 0.10; animation-delay: 4s; animation-duration: 18s; }
+        .pleroma-ring:nth-of-type(4) { width: 700px; height: 700px; opacity: 0.06; animation-delay: 6s; animation-duration: 20s; }
+
+        .hero-ripple { position: absolute; top: 50%; left: 50%; width: 200px; height: 200px; border-radius: 50%; border: 1px solid var(--violet-light); transform: translate(-50%,-50%); pointer-events: none; animation: ripple-out 10s ease-out infinite; }
+        .hero-ripple:nth-of-type(2) { animation-delay: 3.3s; }
+        .hero-ripple:nth-of-type(3) { animation-delay: 6.6s; }
+
+        .hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+
+        .hero-emblem { width: 140px; height: 140px; margin: 0 auto 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, emblem-pulse 5s ease-in-out infinite; }
+        .hero-emblem svg { width: 100%; height: 100%; overflow: visible; animation: ouroboros-glow 4s ease-in-out infinite; }
+
+        .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(124,111,174,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+        [data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(201,168,76,0.2); }
+
+        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--violet-light); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+
+        .hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 620px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
+        [data-theme="dark"] .hero-quote { color: var(--stone-light); }
+
+        .hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone-light); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; }
+
+        .hero-divider { display: flex; align-items: center; gap: 1.25rem; margin: 0 auto 2.5rem; width: fit-content; opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards; position: relative; z-index: 2; }
+        .hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
+        .hero-divider-line:last-child { background: linear-gradient(90deg, var(--violet), transparent); transform-origin: right; }
+        .hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+
+        .hero-scroll-cue { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; cursor: pointer; z-index: 2; transition: transform 0.3s var(--ease-out-expo); }
+        .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+        .hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone-light); text-transform: uppercase; }
+        .scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--violet-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+
+        /* =====================================================
+           LAYOUT & CONTENT
+           ===================================================== */
+        .content-section { padding: 80px 24px; max-width: 780px; margin: 0 auto; position: relative; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 0.75rem; }
+        .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
+        .section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
+
+        .section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent); margin: 0 auto 20px; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); position: relative; }
+        .section-separator.visible { opacity: 1; transform: scaleX(1); }
+        .section-separator::after { content: '✦'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: var(--gold); font-size: 0.72rem; background: var(--bg); padding: 0 6px; }
+
+        .content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+        .content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+        .content-essay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
+        .content-essay h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--violet-light); margin: 2rem 0 0.75rem; }
+        .content-essay blockquote { border-left: 3px solid var(--violet); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+        .content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--violet); opacity: 0.10; line-height: 1; }
+        .content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+
+        .pull-q { border-left: 2px solid var(--gold); margin: 3rem 0; padding: 0.75rem 0 0.75rem 2rem; position: relative; z-index: 1; transition: border-color 0.4s ease; }
+        .pull-q:hover { border-left-color: var(--gold-light); }
+        .pull-q::before { content: ''; position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--violet), var(--gold), var(--gold-light)); border-radius: 2px; }
+        .pull-q p { font-family: 'IM Fell English', serif; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-style: italic; font-weight: 300; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.55; }
+        .pull-q cite { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; font-style: normal; }
+
+        .tension-box { margin: 2rem 0; padding: 1.5rem 1.75rem; background: linear-gradient(135deg, var(--surface2), var(--surface)); border-left: 3px solid var(--violet); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; position: relative; }
+        .tension-box::before { content: '◈'; position: absolute; top: -10px; left: 14px; font-size: 1rem; color: var(--violet); background: var(--bg); padding: 0 4px; }
+        .tension-box p { font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.7; margin: 0 !important; }
+
+        .resonance-callout { margin: 2rem 0; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); text-align: center; position: relative; }
+        .resonance-callout::before { content: '✦'; display: block; font-size: 1.2rem; color: var(--violet); margin-bottom: 0.75rem; opacity: 0.6; }
+        .resonance-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--ink2); line-height: 1.7; margin: 0 !important; }
+
+        .pullquote-section { position: relative; overflow: hidden; padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        [data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #12183a 0%, var(--bg) 40%, #060814 70%, var(--bg) 100%); }
+        [data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #7880a0 100%); }
+        .pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+        .pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
+        .pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+        .pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+        .pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
+        .pullquote-attr a:hover { color: var(--gold); }
+
+        /* =====================================================
+           SCRIPTURE PANELS
+           ===================================================== */
+        .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-strong); box-shadow: 0 4px 20px rgba(124, 111, 174, 0.15); }
+        .scripture-panel { background: linear-gradient(145deg, var(--surface), var(--surface2)); padding: 32px; transition: all 0.3s var(--ease-smooth); position: relative; }
+        .scripture-panel::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, var(--gold), var(--violet)); opacity: 0; transition: opacity 0.3s var(--ease-smooth); }
+        .scripture-panel:hover { background: linear-gradient(145deg, var(--surface2), var(--surface)); transform: translateY(-2px); }
+        .scripture-panel:hover::before { opacity: 1; }
+        .scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; }
+        .scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+        .scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--violet-light); text-transform: uppercase; }
+
+        /* =====================================================
+           DIAGRAMS
+           ===================================================== */
+        .diagram-container { margin: 2.5rem 0; padding: 2rem; background: linear-gradient(145deg, var(--surface), var(--surface2)); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 40px var(--violet-glow), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+        .diagram-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent); opacity: 0.6; }
+        .diagram-container::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3; }
+        .diagram-title { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-light); text-align: center; margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(201, 168, 76, 0.3); }
+        .diagram-svg { width: 100%; height: auto; display: block; margin: 0 auto; }
+        .diagram-caption { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 0.88rem; color: var(--stone); text-align: center; margin-top: 1.25rem; line-height: 1.6; padding: 0.75rem; background: rgba(124, 111, 174, 0.08); border-radius: var(--radius-sm); border-left: 2px solid var(--violet-light); }
+
+        /* =====================================================
+           SYZYGY STRIP (custom grid)
+           ===================================================== */
+        .syzygy-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin: 3rem 0; background: var(--border-subtle); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; position: relative; z-index: 1; }
+        .syzygy-tile { background: var(--surface); padding: 1.75rem 1.5rem; transition: all 0.4s var(--ease-out-expo); text-align: center; position: relative; }
+        .syzygy-tile:hover { background: var(--surface2); transform: translateY(-2px); }
+        .syzygy-tile-role { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+        .syzygy-tile-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 0.3rem; }
+        .syzygy-tile-grk { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--gold-light); opacity: .75; margin-bottom: 0.85rem; display: block; }
+        .syzygy-tile p { font-size: 0.85rem; color: var(--stone); line-height: 1.62; margin: 0; }
+        .syzygy-tile.feminine { background: rgba(124, 111, 174, .06); border-left: 2px solid var(--violet); }
+        .syzygy-tile.feminine .syzygy-tile-name { color: var(--violet-light); }
+        .syzygy-tile.masculine { background: rgba(201, 168, 76, .05); border-right: 2px solid var(--gold); }
+        .syzygy-tile.masculine .syzygy-tile-name { color: var(--gold-light); }
+
+        /* =====================================================
+           LEVELS GRID
+           ===================================================== */
+        .levels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 3rem 0; background: var(--border-subtle); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; position: relative; z-index: 1; }
+        .level-tile { background: var(--surface); padding: 2rem 1.5rem; transition: all 0.4s var(--ease-out-expo); }
+        .level-tile:hover { background: var(--surface2); transform: translateY(-3px); }
+        .level-n { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.32em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+        .level-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
+        .level-skt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--stone-light); margin-bottom: 1rem; display: block; }
+        .level-tile p { font-size: 0.88rem; color: var(--stone); line-height: 1.65; }
+        .level-tile.cosmic { border-top: 3px solid var(--gold); }
+        .level-tile.anthropological { border-top: 3px solid var(--violet); }
+        .level-tile.ritual { border-top: 3px solid var(--copper); }
+
+        /* =====================================================
+           DISTINCTION PANEL
+           ===================================================== */
+        .dist-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 3rem 0; background: var(--border-subtle); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; position: relative; z-index: 1; }
+        .dist-col { background: var(--surface); padding: 2.25rem 2rem; transition: all 0.4s var(--ease-out-expo); }
+        .dist-col:hover { background: var(--surface2); }
+        .dist-col-head { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--ink); }
+        .dist-col-label { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; margin-bottom: 1.75rem; display: block; }
+        .dist-items { list-style: none; padding: 0; margin: 0; }
+        .dist-items li { padding: 0.7rem 0; border-bottom: 1px solid var(--border-subtle); font-size: 0.9rem; color: var(--stone); display: flex; align-items: baseline; gap: 0.6rem; line-height: 1.5; }
+        .dist-items li:last-child { border-bottom: none; }
+        .dist-items li::before { content: '—'; color: var(--gold); font-size: 0.75rem; flex-shrink: 0; opacity: .55; }
+        .dist-items li strong { color: var(--ink); font-weight: 500; }
+
+        /* =====================================================
+           TEXT ACCORDION
+           ===================================================== */
+        .text-accord { margin: 2.5rem 0; border-top: 1px solid var(--border-subtle); position: relative; z-index: 1; }
+        .text-row { border-bottom: 1px solid var(--border-subtle); cursor: pointer; transition: background 0.3s ease; }
+        .text-row:hover { background: var(--surface2); }
+        .text-row-head { display: flex; align-items: baseline; justify-content: space-between; padding: 1.1rem 0; gap: 1rem; transition: color 0.3s; }
+        .text-row-name { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--ink); display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+        .text-row-tradition { font-family: 'Cinzel', serif; font-size: 0.46rem; letter-spacing: 0.26em; color: var(--gold); text-transform: uppercase; display: inline-block; padding: 0.15rem 0.6rem; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--gold-glow); }
+        .text-row-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+        .text-row-type { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.85rem; color: var(--stone); }
+        .text-arrow { color: var(--gold); font-size: 0.7rem; transition: transform 0.4s var(--ease-out-expo); opacity: .55; flex-shrink: 0; }
+        .text-row.open .text-arrow { transform: rotate(180deg); }
+        .text-body { padding: 0 0 1.5rem; display: none; animation: fadeInUp 0.4s var(--ease-out-expo); }
+        .text-row.open .text-body { display: block; }
+        .text-body-label { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+        .text-body p { font-size: 0.93rem; line-height: 1.74; margin-bottom: 0.5rem; color: var(--stone); }
+        .text-body p em { color: var(--ink2); }
+        .text-body p strong { color: var(--ink); font-weight: 500; }
+        .passage-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+        .passage-table td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+        .passage-table td:first-child { font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink2); width: 60%; line-height: 1.6; }
+        .passage-table td:last-child { color: var(--stone); font-size: 0.82rem; width: 40%; padding-left: 1rem; }
+        .passage-table tr:last-child td { border-bottom: none; }
+
+        /* =====================================================
+           TIMELINE
+           ===================================================== */
+        .lin-timeline { margin-top: 3.5rem; position: relative; }
+        .lin-timeline::before { content: ''; position: absolute; left: 10px; top: 22px; bottom: 0; width: 1.5px; background: linear-gradient(to bottom, var(--gold-light), transparent); opacity: .25; }
+        .lin-entry { position: relative; padding: 0 0 3.5rem 3.5rem; }
+        .lin-entry:last-child { padding-bottom: 1.5rem; }
+        .lin-dot { position: absolute; left: 2px; top: 8px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--gold); background: var(--bg); transition: all 0.4s var(--ease-out-expo); box-shadow: 0 0 20px var(--gold-glow); }
+        .lin-entry:hover .lin-dot { background: var(--gold); transform: scale(1.2); box-shadow: 0 0 40px var(--sun-glow); }
+        .lin-entry h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; color: var(--ink); margin-bottom: 4px; line-height: 1.2; }
+        .lin-entry .lin-dates { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; margin-bottom: 1rem; }
+        .lin-entry p { font-size: 0.98rem; color: var(--stone); line-height: 1.76; max-width: 580px; }
+
+        /* =====================================================
+           GLOSSARY
+           ===================================================== */
+        .gloss-section { padding: 80px 24px 80px; max-width: 780px; margin: 0 auto; }
+        .gloss-search-wrap { position: relative; max-width: 380px; margin: 2.5rem auto; }
+        .gloss-search { width: 100%; padding: 0.8rem 3rem 0.8rem 2.75rem; background: var(--surface); border: 1px solid var(--border-strong); border-radius: 100px; font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--ink); outline: none; transition: all 0.4s var(--ease-out-expo); backdrop-filter: blur(4px); }
+        .gloss-search:focus { border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-glow), 0 0 40px var(--gold-glow); }
+        .gloss-search-ico { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); color: var(--stone); font-size: 0.88rem; pointer-events: none; }
+        .gloss-clear { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%; background: var(--surface2); border: 1px solid var(--border); color: var(--stone); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; opacity: 0; pointer-events: none; transition: all 0.35s var(--ease-out-expo); }
+        .gloss-clear.vis { opacity: 1; pointer-events: all; }
+        .gloss-clear:hover { background: var(--gold-glow); border-color: var(--gold); color: var(--gold); transform: translateY(-50%) scale(1.1); }
+        .gloss-no-results { text-align: center; color: var(--stone); font-style: italic; padding: 2rem; display: none; }
+        .gloss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); overflow: hidden; }
+        .gloss-entry { background: var(--surface); padding: 1.75rem 1.5rem; transition: all 0.4s var(--ease-out-expo); cursor: default; }
+        .gloss-entry:hover { background: var(--surface2); transform: translateY(-2px); }
+        .gloss-term { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; font-weight: 400; color: var(--ink); display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
+        .gloss-term-grk { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-light); opacity: .7; }
+        .gloss-cat { font-family: 'Cinzel', serif; font-size: 0.46rem; letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.7rem; display: block; }
+        .gloss-def { font-size: 0.88rem; color: var(--stone); line-height: 1.65; }
+
+        /* =====================================================
+           TABLE OF CONTENTS
+           ===================================================== */
+        .toc-section { padding: 80px 24px; max-width: 780px; margin: 0 auto; }
+        .toc-book { margin-top: 3rem; border-top: 1px solid var(--border-subtle); max-height: 72vh; overflow-y: auto; padding-right: 8px; scrollbar-width: thin; scrollbar-color: var(--gold) transparent; }
+        .toc-book::-webkit-scrollbar { width: 3px; }
+        .toc-book::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+        .toc-book-item { display: grid; grid-template-columns: 52px 1fr auto; align-items: baseline; gap: 0 1.5rem; padding: 1.15rem 0; border-bottom: 1px solid var(--border-subtle); text-decoration: none; transition: all 0.4s var(--ease-out-expo); position: relative; }
+        .toc-book-item::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.5s var(--ease-out-expo); }
+        .toc-book-item:hover::after { width: 100%; }
+        .toc-book-item:hover .toc-b-title { color: var(--gold); }
+        .toc-book-item:hover .toc-b-num { opacity: 1; transform: translateX(4px); }
+        .toc-b-num { font-family: 'Cinzel', serif; font-size: 0.62rem; color: var(--gold); letter-spacing: 0.15em; text-align: right; opacity: .45; transition: all 0.35s var(--ease-out-expo); padding-top: 2px; }
+        .toc-b-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ink); transition: color 0.35s; line-height: 1.3; }
+        .toc-b-skt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--stone); text-align: right; white-space: nowrap; }
+
+        /* =====================================================
+           FOOTER & NAV
+           ===================================================== */
+        .nav-advaita { display: flex; justify-content: center; align-items: center; gap: 1.25rem; padding: 2.25rem 2rem 1.75rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-subtle); background: var(--bg); }
+        .nav-advaita-link { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.12em; color: var(--stone); text-decoration: none; transition: all 0.4s var(--ease-out-expo); display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.2rem 0.1rem; position: relative; }
+        .nav-advaita-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.4s var(--ease-out-expo); }
+        .nav-advaita-link:hover { color: var(--gold); transform: translateY(-1px); }
+        .nav-advaita-link:hover::after { width: 100%; }
+        .nav-advaita-link.active { color: var(--gold); }
+        .nav-advaita-link.active::after { width: 100%; }
+        .nav-advaita-sep { color: var(--border-strong); font-size: 0.5rem; opacity: .35; user-select: none; }
+
+        .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+        .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+        .footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+        .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+        [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+        [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+        [data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
+        [data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
+        .footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--violet-light); text-transform: uppercase; margin-bottom: 0.5rem; }
+        .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+        .footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+        .footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+        .footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+        .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+
+        /* =====================================================
+           SCROLL REVEAL
+           ===================================================== */
+        .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.35s; }
+        .stagger-4 { transition-delay: 0.5s; }
+        .stagger-5 { transition-delay: 0.65s; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+        @media (max-width: 768px) {
+            .nav-menu { min-width: 180px; }
+            .back-to-top { right: 1.5rem; bottom: 5rem; }
+            .footer-links { gap: 1.5rem; }
+            .scripture-panels { grid-template-columns: 1fr; }
+            .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+            .hero-emblem { width: 110px; height: 110px; }
+            .diagram-container { padding: 1.25rem; }
+            .levels-grid { grid-template-columns: 1fr; }
+            .dist-panel { grid-template-columns: 1fr; }
+            .syzygy-strip { grid-template-columns: 1fr; }
+            .lin-timeline::before { left: 6px; }
+            .lin-entry { padding-left: 2.5rem; }
+            .lin-dot { left: -1px; }
+            .toc-book-item { grid-template-columns: 38px 1fr; }
+            .toc-b-skt { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            body { font-size: 16px; line-height: 1.72; }
+            .content-section { padding: 48px 16px; }
+            .gloss-section { padding: 48px 16px; }
+            .toc-section { padding: 48px 16px; }
+            .hero { padding: 4rem 1rem 5rem; }
+            .hero-emblem { width: 95px; height: 95px; }
+            .nav-compass { top: 0.75rem; left: 0.75rem; }
+            .nav-toggle { width: 40px; height: 40px; }
+            .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
+            .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
+            .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+            .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
+            .scripture-panel { padding: 20px; }
+            .pullquote-section { padding: 3rem 1rem; }
+            .footer { padding: 3rem 1rem 2rem; }
+            .footer-links { gap: 1rem; font-size: 0.7rem; }
+            .content-essay blockquote { padding: 16px 18px; }
+            .diagram-container { padding: 1rem; margin: 1.5rem 0; }
+            .level-tile { padding: 1.25rem; }
+            .dist-col { padding: 1.25rem; }
+            .syzygy-tile { padding: 1.25rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .fade-in { opacity: 1 !important; transform: none !important; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+            .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
+            .hero-emblem svg { animation: none !important; }
+            .section-separator { opacity: 1 !important; transform: scaleX(1) !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- NAV COMPASS -->
+    <div class="nav-compass">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-section-title">Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home</span></a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Gnostic Bridal Chamber</div>
+            <a href="#hero" class="nav-item active"><span class="nav-item-icon">✦</span><span>The Pleroma</span></a>
+            <a href="#syzygy" class="nav-item"><span class="nav-item-icon">⊕</span><span>Syzygy Theology</span></a>
+            <a href="#fall" class="nav-item"><span class="nav-item-icon">↓</span><span>The Fall of Sophia</span></a>
+            <a href="#corpus" class="nav-item"><span class="nav-item-icon">📜</span><span>The Corpus</span></a>
+            <a href="#nymphon" class="nav-item"><span class="nav-item-icon">♡</span><span>The Nymphon</span></a>
+            <a href="#restoration" class="nav-item"><span class="nav-item-icon">↑</span><span>Restoration</span></a>
+            <a href="#convergences" class="nav-item"><span class="nav-item-icon">◈</span><span>Convergences</span></a>
+            <a href="#glossary" class="nav-item"><span class="nav-item-icon">📖</span><span>Glossary</span></a>
+        </div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle-icon theme-toggle-icon-sun"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+        <span class="theme-toggle-icon theme-toggle-icon-moon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+
+    <!-- HERO -->
+    <header class="hero" id="hero">
+        <div class="pleroma-ring"></div><div class="pleroma-ring"></div>
+        <div class="pleroma-ring"></div><div class="pleroma-ring"></div>
+        <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+
+        <p class="hero-eyemark">A Cartography of the Gnostic Mysteries</p>
+
+        <!-- Ouroboros Emblem -->
+        <div class="hero-emblem" aria-hidden="true">
+            <svg viewBox="0 0 615 614" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(7.5,607.5) scale(0.6,-0.6)" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round">
+                    <path fill="var(--gold-light)" stroke="var(--gold)" stroke-width="3" d="M604,24
+                    c231,47,396,246,396,476
+                    c0,276,-224,500,-500,500
+                    c-276,0,-500,-224,-500,-500
+                    c0,-217,146,-408,358,-470
+                    c5,-1,7,-2,12,-2
+                    c18,0,33,-13,53,-13
+                    c10,0,35,3,45,3
+                    c30,0,74,-18,104,-18
+                    c13,0,28,10,32,24Z
+                    M342,136
+                    c-150,62,-247,205,-247,364
+                    c0,224,181,405,405,405
+                    c224,0,405,-181,405,-405
+                    c0,-172,-110,-324,-273,-380
+                    c1,18,-22,29,-48,29
+                    c-14,0,-27,-5,-34,-5
+                    c-10,0,-28,11,-46,11
+                    c-20,0,-54,-8,-84,-13
+                    c-30,-5,-63,-12,-78,-6Z"/>
+                    <path fill="var(--bg)" stroke="var(--gold)" stroke-width="2" d="M604,24
+                    c231,47,396,246,396,476
+                    c0,276,-224,500,-500,500
+                    c-276,0,-500,-224,-500,-500
+                    c0,-217,146,-408,358,-470
+                    c5,-1,7,-2,12,-2
+                    c18,0,33,-13,53,-13
+                    c10,0,35,3,45,3
+                    c30,0,74,-18,104,-18
+                    c13,0,28,10,32,24Z
+                    M357,43
+                    c-205,61,-345,247,-345,457
+                    c0,270,218,488,488,488
+                    c270,0,488,-218,488,-488
+                    c0,-231,-170,-428,-403,-468
+                    c-36,-6,-86,16,-86,23
+                    c0,5,21,12,25,14
+                    c239,12,426,201,426,431
+                    c0,249,-201,450,-450,450
+                    c-249,0,-450,-201,-450,-450
+                    c0,-154,83,-298,218,-377
+                    c13,-6,37,-7,47,-7
+                    c10,0,46,2,56,7
+                    c10,5,49,10,69,15
+                    c20,5,47,9,62,9
+                    c25,0,48,-15,56,-14
+                    v2
+                    c0,3,9,5,27,5
+                    c20,0,41,-7,39,-23
+                    l-24,-9
+                    c-20,-6,-29,-5,-39,-9
+                    c-25,-8,-31,-19,-54,-29
+                    c-23,-10,-57,-10,-57,-15
+                    c0,-3,15,-4,25,-5
+                    c25,-3,50,-23,80,-26
+                    c20,-2,25,-1,39,0
+                    c-1,-5,-9,-15,-22,-15
+                    c-32,0,-72,19,-99,19
+                    c-15,0,-26,-6,-41,-6
+                    c-22,0,-47,18,-67,30
+                    c-5,3,-10,6,-15,6
+                    c-5,0,-5,-1,-5,-2
+                    c0,-4,20,-10,20,-13
+                    c0,-2,-3,-1,-8,0Z
+                    M572,92
+                    c200,35,345,207,345,408
+                    c0,230,-187,417,-417,417
+                    c-230,0,-417,-187,-417,-417
+                    c0,-163,100,-311,254,-375
+                    c-24,-3,-52,-1,-65,5
+                    c-133,78,-214,218,-214,370
+                    c0,244,198,442,442,442
+                    c244,0,442,-198,442,-442
+                    c0,-220,-175,-403,-403,-422
+                    c5,2,13,12,33,14Z
+                    M342,136
+                    c-150,62,-247,205,-247,364
+                    c0,224,181,405,405,405
+                    c224,0,405,-181,405,-405
+                    c0,-172,-110,-324,-273,-380
+                    c1,18,-22,29,-48,29
+                    c-14,0,-27,-5,-34,-5
+                    c-10,0,-28,11,-46,11
+                    c-20,0,-54,-8,-84,-13
+                    c-30,-5,-63,-12,-78,-6Z
+                    M446,120
+                    c0,-2,4,-3,14,-3
+                    c15,-1,18,-13,30,-13
+                    c21,0,30,9,37,9
+                    l10,-2
+                    l1,2
+                    c-10,7,-25,17,-35,17
+                    c-5,0,-10,-1,-20,-4
+                    c-15,-4,-37,-4,-37,-6Z
+                    M580,127
+                    c18,-3,17,-9,27,-9
+                    c3,0,5,2,5,5
+                    c0,3,-12,6,-31,7
+                    l-1,-3Z"/>
+                    <path fill="var(--gold)" stroke="var(--gold-deep)" stroke-width="1.5" d="M472,119
+                    l15,3
+                    c0,-5,3,-10,5,-13
+                    c-9,0,-15,8,-20,10Z
+                    M522,117
+                    l-17,-7
+                    c1,5,1,10,0,15
+                    c8,-2,12,-5,17,-8Z"/>
+                </g>
+            </svg>
+        </div>
+
+        <p class="hero-label">Syzygy · Pleroma · Nymphon</p>
+        <p class="hero-subtitle-top">The Sacrament of the Bridal Chamber</p>
+        <h1 class="hero-title">
+            The Nymphon
+            <span class="hero-title-greek">νυμφών · Domus Nuptialis</span>
+        </h1>
+        <p class="hero-epithet">Syzygy Theology in the Gnostic Traditions</p>
+
+        <div class="hero-divider" aria-hidden="true">
+            <div class="hero-divider-line"></div>
+            <div class="hero-divider-diamond"></div>
+            <div class="hero-divider-line"></div>
+        </div>
+
+        <p class="hero-quote">"The bridal chamber is superior to baptism and anointing — it is the holy of holies."</p>
+        <p class="hero-quote-attr">— Gospel of Philip · Nag Hammadi Codex II</p>
+
+        <div class="hero-scroll-cue" id="heroScroll" tabindex="0" role="button" aria-label="Scroll to content">
+            <span>Descend</span>
+            <div class="scroll-line" aria-hidden="true"></div>
+        </div>
+    </header>
+
+    <!-- TABLE OF CONTENTS -->
+    <section class="toc-section" id="toc">
+        <div class="section-header">
+            <div class="section-separator"></div>
+            <p class="section-eyemark">Contents · νυμφών</p>
+            <h2>The Cartography</h2>
+            <p>A complete study of syzygy theology — from the eternal pairs of the Pleroma, through the catastrophe of their rupture, to the sacramental restoration of the bridal chamber.</p>
+        </div>
+        <nav class="toc-book" aria-label="Page contents">
+            <a href="#syzygy" class="toc-book-item">
+                <span class="toc-b-num">I</span>
+                <span class="toc-b-title">Syzygy — The Sacred Pair</span>
+                <span class="toc-b-skt">συζυγία</span>
+            </a>
+            <a href="#pleroma" class="toc-book-item">
+                <span class="toc-b-num">II</span>
+                <span class="toc-b-title">The Pleroma — Fullness of Aeons</span>
+                <span class="toc-b-skt">πλήρωμα</span>
+            </a>
+            <a href="#fall" class="toc-book-item">
+                <span class="toc-b-num">III</span>
+                <span class="toc-b-title">The Fall of Sophia</span>
+                <span class="toc-b-skt">σοφία</span>
+            </a>
+            <a href="#corpus" class="toc-book-item">
+                <span class="toc-b-num">IV</span>
+                <span class="toc-b-title">The Gnostic Corpus — Texts & Traditions</span>
+                <span class="toc-b-skt">corpus</span>
+            </a>
+            <a href="#nymphon" class="toc-book-item">
+                <span class="toc-b-num">V</span>
+                <span class="toc-b-title">The Bridal Chamber — The Nymphon</span>
+                <span class="toc-b-skt">νυμφών</span>
+            </a>
+            <a href="#restoration" class="toc-book-item">
+                <span class="toc-b-num">VI</span>
+                <span class="toc-b-title">Restoration — The Three Levels</span>
+                <span class="toc-b-skt">ἀποκατάστασις</span>
+            </a>
+            <a href="#convergences" class="toc-book-item">
+                <span class="toc-b-num">VII</span>
+                <span class="toc-b-title">Convergences — Kabbalah & Advaita</span>
+                <span class="toc-b-skt">correspondences</span>
+            </a>
+            <a href="#glossary" class="toc-book-item">
+                <span class="toc-b-num">★</span>
+                <span class="toc-b-title">Glossary of Greek & Gnostic Terms</span>
+                <span class="toc-b-skt">γλωσσάριον</span>
+            </a>
+        </nav>
+    </section>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote-section">
+        <div class="pullquote-glow"></div>
+        <div class="pullquote">
+            <p class="pullquote-text">"When Eve was in Adam there was no death. When she was separated from him, death came into being. If he enters again and takes her to himself, there will be no death."</p>
+            <p class="pullquote-attr">— Gospel of Philip · NHC II,3 · 68.22–26</p>
+        </div>
+    </div>
+
+    <!-- STAGES WRAP -->
+    <div class="stages-wrap" id="stages">
+
+        <!-- STAGE I — SYZYGY -->
+        <section class="content-section" id="syzygy">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage I · The Foundation</p>
+                <h2>Syzygy — The Sacred Pair</h2>
+                <p>Syzygia · The Conjugal Yoke · σύζυγος</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>S</strong>yzygy — from the Greek <span class="grk">συζυγία</span>, "yoking together" — is the structural principle underlying all Gnostic cosmogony. Reality, at its most primordial level, is not monadic but dyadic: gendered pairs co-arising in mutual necessity, each incomplete without the other, together constituting the fullness of being.</p>
+                <p>This is not a sexual metaphor imposed on theology. It is a theological claim about the structure of emanation itself. The divine Pleroma does not unfold in a simple cascade from One to Many, as in Neoplatonic emanationism; it unfolds as <em>pairs</em>. Every aeon has its consort. Every power has its complement. The union of each pair is the creative act; their separation is catastrophe.</p>
+
+                <h3>The Core Logic of Syzygy</h3>
+
+                <div class="dist-panel">
+                    <div class="dist-col">
+                        <div class="dist-col-head">The Masculine Pole</div>
+                        <span class="dist-col-label">Dynamis · Power · δύναμις</span>
+                        <ul class="dist-items">
+                            <li><strong>The projecting principle</strong></li>
+                            <li>emits toward the Other</li>
+                            <li>Depth, Father, Invisible Spirit</li>
+                            <li>Structural, formal, ordering</li>
+                            <li>Silent — pre-linguistic</li>
+                            <li>Complete only in relation</li>
+                        </ul>
+                    </div>
+                    <div class="dist-col">
+                        <div class="dist-col-head">The Feminine Pole</div>
+                        <span class="dist-col-label">Ennoia · Thought · ἔννοια</span>
+                        <ul class="dist-items">
+                            <li><strong>The receiving principle</strong></li>
+                            <li>receives and names</li>
+                            <li>Grace, Silence, Barbelo, Sophia</li>
+                            <li>Generative, expressive, revealing</li>
+                            <li>The first Word — Speech itself</li>
+                            <li>Complete only in relation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pull-q">
+                    <p>"No one can know when the husband and wife have sex with each other except the two of them. The bridal chamber is like this."</p>
+                    <cite>— Gospel of Philip · NHC II,3</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- STAGE II — PLEROMA -->
+        <section class="content-section" id="pleroma">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage II · The Divine Fullness</p>
+                <h2>The Pleroma</h2>
+                <p>Pleroma · Fullness · Thirty Aeons in Fifteen Pairs</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>T</strong>he Valentinian <span class="grk">Πλήρωμα</span> — Fullness — is the divine realm, the totality of divine being. It is not a place but a relational structure: thirty aeons arranged in fifteen syzygies, emanating from the Invisible Spirit and his first thought, Barbelo. This is the eternal world before the fall, before time, before matter.</p>
+                <p>Irenaeus of Lyon, hostile but meticulous, records the Valentinian system in enough detail that its architecture can be reconstructed. The first pair, the Father and Silence, projects the second pair; each successive emission produces a pair, until the Dodecad and the Decad are complete, forming the thirty aeons of the Pleroma.</p>
+
+                <h3>The Primary Syzygies · The First Tetrad</h3>
+
+                <div class="syzygy-strip">
+                    <div class="syzygy-tile masculine">
+                        <span class="syzygy-tile-role">First Masculine</span>
+                        <div class="syzygy-tile-name">The Father</div>
+                        <span class="syzygy-tile-grk">Bythos · Βυθός — Depth</span>
+                        <p>The Invisible Spirit. Pre-linguistic, unfathomable. Generates only through Barbelo.</p>
+                    </div>
+                    <div class="syzygy-tile feminine">
+                        <span class="syzygy-tile-role">First Feminine</span>
+                        <div class="syzygy-tile-name">Silence</div>
+                        <span class="syzygy-tile-grk">Sigē · Σιγή — Grace</span>
+                        <p>The primordial Silence and Grace. The womb of the Pleroma. First thought of the Father.</p>
+                    </div>
+                </div>
+                <div class="syzygy-strip">
+                    <div class="syzygy-tile masculine">
+                        <span class="syzygy-tile-role">Second Masculine</span>
+                        <div class="syzygy-tile-name">Mind</div>
+                        <span class="syzygy-tile-grk">Nous · Νοῦς — Father</span>
+                        <p>Also called the Only-Begotten. The first fully articulable divine principle.</p>
+                    </div>
+                    <div class="syzygy-tile feminine">
+                        <span class="syzygy-tile-role">Second Feminine</span>
+                        <div class="syzygy-tile-name">Truth</div>
+                        <span class="syzygy-tile-grk">Alētheia · Ἀλήθεια</span>
+                        <p>Truth as divine partner of Mind. Together they generate Word and Life.</p>
+                    </div>
+                </div>
+                <div class="syzygy-strip">
+                    <div class="syzygy-tile masculine">
+                        <span class="syzygy-tile-role">Third Masculine</span>
+                        <div class="syzygy-tile-name">Word</div>
+                        <span class="syzygy-tile-grk">Logos · Λόγος</span>
+                        <p>The creative principle. Cosmic structuring power. Christ is identified with this aeon.</p>
+                    </div>
+                    <div class="syzygy-tile feminine">
+                        <span class="syzygy-tile-role">Third Feminine</span>
+                        <div class="syzygy-tile-name">Life</div>
+                        <span class="syzygy-tile-grk">Zōē · Ζωή</span>
+                        <p>Life as the animating feminine counterpart to the ordering Word. Together generate Humanity and Church.</p>
+                    </div>
+                </div>
+
+                <h3>The Sethian Pleroma</h3>
+                <p>The Sethian tradition, attested in the <em>Apocryphon of John</em>, structures the Pleroma differently but retains the syzygy architecture. Here the Invisible Spirit is paired with Barbelo — his First Thought, <span class="grk">Πρόνοια</span> — who is herself the womb of all subsequent aeons.</p>
+
+                <div class="syzygy-strip">
+                    <div class="syzygy-tile masculine">
+                        <span class="syzygy-tile-role">Sethian Root</span>
+                        <div class="syzygy-tile-name">Invisible Spirit</div>
+                        <span class="syzygy-tile-grk">Patēr · Pneuma Aoraton</span>
+                        <p>The ineffable, unknowable source. Beyond all names and attributes.</p>
+                    </div>
+                    <div class="syzygy-tile feminine">
+                        <span class="syzygy-tile-role">Sethian Root</span>
+                        <div class="syzygy-tile-name">Barbelo</div>
+                        <span class="syzygy-tile-grk">Barbēlō · Βαρβηλώ</span>
+                        <p>The First Thought, Forethought. The womb of all aeons. "Perfect in glory."</p>
+                    </div>
+                </div>
+
+                <div class="pull-q">
+                    <p>"Barbelo is the first power, the glory, Barbelo, the perfect glory in the aeons, the glory of the revelation. She glorified the virginal Spirit and it was she who praised him."</p>
+                    <cite>— Apocryphon of John · NHC II,1 · 4.34–5.4</cite>
+                </div>
+
+                <div class="tension-box">
+                    <p><strong>The structural claim:</strong> Irenaeus reports that the Valentinians held the Pleroma to contain thirty aeons in fifteen syzygies. The number thirty reflects the age of Christ at his baptism — every cosmological structure is a cipher for soteriological reality.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- STAGE III — THE FALL -->
+        <section class="content-section" id="fall">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage III · The Catastrophe</p>
+                <h2>The Fall of Sophia</h2>
+                <p>Sophia · Wisdom · The Syzygy Ruptured</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>T</strong>he Gnostic catastrophe is, at its root, a syzygy catastrophe. Sophia — the last and most distant aeon in the Pleroma, <span class="grk">Σοφία</span>, Wisdom — acts without her syzygy partner. She attempts to know the Father directly, without the mediation of her consort. This autonomous desire — <span class="grk">ἐνθύμησις</span>, "intention gone astray" — produces something deficient: the Demiurge, <span class="grk">Δημιουργός</span>.</p>
+                <p>The theological logic is precise: a syzygy that splits does not produce nothing — it produces something <em>incomplete</em>. The Demiurge is not evil; he is a truncated expression of divine power without divine wisdom. His creation — the material cosmos — reflects this truncation: it has structure but lacks fullness; it has time but not eternity; it has life but not light.</p>
+
+                <h3>The Mechanics of the Fall</h3>
+
+                <div class="levels-grid">
+                    <div class="level-tile cosmic">
+                        <span class="level-n">The Rupture</span>
+                        <div class="level-title">Sophia's Solo Act</div>
+                        <span class="level-skt">Ἐνθύμησις — wayward desire</span>
+                        <p>Sophia wills to know the ineffable Father without her consort Theletos. The incomplete knowing produces a formless abortion — the Demiurge Yaldabaoth.</p>
+                    </div>
+                    <div class="level-tile anthropological">
+                        <span class="level-n">The Product</span>
+                        <div class="level-title">Yaldabaoth</div>
+                        <span class="level-skt">Ἰαλδαβαώθ — the Demiurge</span>
+                        <p>Lion-headed, ignorant of higher realms. Declares himself the only god. Creates the seven archons and the material cosmos. Contains a spark of Sophia's power he does not comprehend.</p>
+                    </div>
+                    <div class="level-tile ritual">
+                        <span class="level-n">The Consequence</span>
+                        <div class="level-title">Humanity as Battleground</div>
+                        <span class="level-skt">Πνεῦμα — the light-spark</span>
+                        <p>The Demiurge unconsciously transmits Sophia's stolen light-power into the human pneuma. Human beings carry divine fullness within them without knowing it — which is why gnosis can restore what fell.</p>
+                    </div>
+                </div>
+
+                <div class="pull-q">
+                    <p>"She wanted to bring forth in herself alone, without her consort, a likeness. Because of the invincible power in her, her thought was not an idle thought, but a product came forth — imperfect and different in appearance from her."</p>
+                    <cite>— Apocryphon of John · on Sophia's fall</cite>
+                </div>
+
+                <h3>The Sethian Account — Hypostasis of the Archons</h3>
+                <p>The <em>Hypostasis of the Archons</em> elaborates the Eve-Adam syzygy in the aftermath of the fall. Eve is not a subordinate addition to Adam; she is his spiritual syzygy — sent from the Pleroma to <em>awaken</em> him from the archons' deception. When the archons attempt to violate her, she escapes upward, leaving only her shadow. This gives rise to the "two Eves" — the earthly and the spiritual — mirroring the torn syzygy at the cosmic level.</p>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- STAGE IV — THE CORPUS -->
+        <section class="content-section" id="corpus">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage IV · The Texts</p>
+                <h2>The Gnostic Corpus</h2>
+                <p>Traditions, Texts & Syzygy Types</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>S</strong>yzygy theology permeates the Gnostic corpus across traditions, with each school elaborating the theme at a different register — sacramental, cosmogonic, mythic, or ritualistic. The following texts represent the full spectrum.</p>
+
+                <h3>Nag Hammadi Texts · The Primary Sources</h3>
+
+                <div class="text-accord">
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Gospel of Philip
+                                <span class="text-row-tradition">Valentinian</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Sacramental Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">NHC II,3 · 2nd–3rd Century</span>
+                            <p>The most explicit treatment of syzygy and the nymphon in the entire Nag Hammadi corpus. Philip systematizes what Thomas hints at: the bridal chamber as sacramental re-enactment of primordial androgyny.</p>
+                            <table class="passage-table">
+                                <tr><td>"The bridal chamber is superior to baptism and anointing — it is the holy of holies"</td><td>Nymphon as highest sacrament, exceeding baptism</td></tr>
+                                <tr><td>"No one can know when the husband and wife have sex with each other except the two of them"</td><td>Esoteric union as hidden, irreducibly interior reality</td></tr>
+                                <tr><td>"When Eve was in Adam there was no death. When she was separated from him, death came into being"</td><td>Separation and reunion as origin and solution to mortality</td></tr>
+                                <tr><td>"The companion of the Savior is Mary Magdalene. He loved her more than all the disciples"</td><td>Possible earthly reflection of a divine syzygy</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Apocryphon of John
+                                <span class="text-row-tradition">Sethian</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Cosmogonic Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">NHC II,1; III,1; IV,1; BG 2 · 2nd Century</span>
+                            <p>A fully elaborated Sethian Pleroma myth. The text is explicit: every cosmic rupture is a broken syzygy; every salvation is its restoration. The first syzygy is the Invisible Spirit and Barbelo. The fall occurs when <strong>Sophia acts without her syzygy partner</strong>, producing the deficient Demiurge Yaldabaoth.</p>
+                            <p>Human salvation involves the reunion of the pneumatic soul with its <em>angelic twin</em> — the light-power that descended into matter when Sophia fell.</p>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Hypostasis of the Archons
+                                <span class="text-row-tradition">Sethian</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Mythic Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">NHC II,4 · 3rd Century</span>
+                            <p>Eve is the spiritual syzygy of Adam, sent from the Pleroma to awaken him from the archons' deception. When the archons try to seize her, she ascends, leaving only a likeness — producing the carnal Eve and the spiritual Eve. This split mirrors the cosmic syzygy disruption at the anthropological level.</p>
+                            <p>The text dramatizes what Philip states theologically: <em>the separation of the syzygy is the catastrophe; its restoration is liberation.</em></p>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Trimorphic Protennoia
+                                <span class="text-row-tradition">Barbeloite</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Revelatory Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">NHC XIII,1 · 2nd–3rd Century</span>
+                            <p>Spoken in the voice of the First Thought (<span class="grk">Πρώτη Ἔννοια</span>), Protennoia descends three times as Voice, Speech, and Word — a triadic syzygy of self-revelation. The feminine revealer is the eternal partner of the transcendent Father, descending into the world to restore what was lost.</p>
+                            <p>Baptismal language closes the text: the initiate is sealed, anointed, and led to the bridal chamber.</p>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Gospel of the Egyptians
+                                <span class="text-row-tradition">Sethian</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Aeonological Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">NHC III,2; IV,2 · 2nd–3rd Century</span>
+                            <p>The four great luminaries — Harmozel, Oroiael, Daveithai, Eleleth — each possess a syzygy partner. The Sethian "great generation" is itself a collective syzygy, distinct from the deficient seed of Cain. Ascent is ritually enacted through five baptismal seals (<span class="grk">πέντε σφραγῖδες</span>), culminating in union with the light.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Non-Nag Hammadi & Related Traditions</h3>
+
+                <div class="text-accord">
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Pistis Sophia
+                                <span class="text-row-tradition">Alexandrian</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Repentant Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">3rd Century Coptic · Alexandrian Gnosticism</span>
+                            <p><em>Pistis Sophia</em> ("Faith-Wisdom") falls from the thirteenth aeon through her unguarded desire. She cries out thirteen laments, each a plea for restoration. Jesus descends, teaches her the mysteries of repentance, and gradually restores her upward through the aeons. Less ontologically rigid than Sethian systems, but the syzygy structure remains: Sophia without her partner is in chaos; with the Savior's mediation, she is reintegrated.</p>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Manichaean Texts
+                                <span class="text-row-tradition">Manichaean</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Dualistic Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">3rd Century · Mani · Mesopotamia</span>
+                            <p>Manichaeism is not Gnostic in the narrow sense but shares the syzygy structure. The Primal Man is sent by the Father of Greatness; his five garments of light are devoured by darkness. The cosmos is the mixture. Salvation is the gradual separation and return of light-particles through the Column of Glory — the Milky Way as ascending light.</p>
+                            <p>The Living Self in humans is a fragment of the Primal Man; its reunion with the divine is the Manichaean eschatological goal. The syzygy here is the primordial pair: <em>light and darkness</em>, with the cosmos as their catastrophic mixing.</p>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Corpus Hermeticum
+                                <span class="text-row-tradition">Hermetic</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Philosophical Syzygy</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">2nd–3rd Century Egypt · Not strictly Gnostic</span>
+                            <p>The Corpus Hermeticum shares the Gnostic milieu without its elaborate Pleroma. In <em>Poimandres</em> (CH I), the Anthropos descends, becomes entangled in nature through erotic fascination with his own reflection, and must reascend through gnosis and the dissolution of the material garments. The goal is reunion with the androgynous Father.</p>
+                            <p><em>The Key</em> (CH XI) states that "God is a father in the sensible and a mother in the intelligible" — an androgynous divine that mirrors Gnostic syzygy without the narrative superstructure.</p>
+                        </div>
+                    </div>
+                    <div class="text-row" onclick="toggleText(this)">
+                        <div class="text-row-head">
+                            <span class="text-row-name">
+                                Patristic Reports
+                                <span class="text-row-tradition">Secondary</span>
+                            </span>
+                            <span class="text-row-right">
+                                <span class="text-row-type">Hostile Witnesses</span>
+                                <span class="text-arrow">▾</span>
+                            </span>
+                        </div>
+                        <div class="text-body">
+                            <span class="text-body-label">Irenaeus · Hippolytus · Epiphanius · 2nd–4th Century</span>
+                            <p><strong>Irenaeus</strong> (<em>Against Heresies</em>): Detailed account of the Valentinian Pleroma — thirty aeons in fifteen syzygies; the fall of Sophia; the demiurge. The most complete external description of Valentinian syzygy theology.</p>
+                            <p><strong>Hippolytus</strong> (<em>Refutation of All Heresies</em>): Reports on Naassenes, Peratae, Sethians — all with syzygy or serpent-mysticism at their core.</p>
+                            <p><strong>Epiphanius</strong> (<em>Panarion</em>): Describes the "Phibionites" and other groups allegedly practicing sexual sacraments as syzygy re-enactment. Hostile accounts, but they confirm the pervasiveness of the nymphon theology across schools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- STAGE V — THE NYMPHON -->
+        <section class="content-section" id="nymphon">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage V · The Mystery</p>
+                <h2>The Bridal Chamber</h2>
+                <p>Nymphon · The Highest Sacrament · Holy of Holies</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>T</strong>he <span class="grk">νυμφών</span> — the bridal chamber, <em>domus nuptialis</em> — is the supreme sacramental category in Valentinian Gnosticism, surpassing baptism and the eucharist. It is not a ritual of symbolic pointing; it is the direct enactment of the primordial syzygy, the re-union of what the fall separated.</p>
+                <p>The Gospel of Philip establishes a clear hierarchy of sacraments. Baptism relates the initiate to the water of forgetfulness or of remembrance; chrism unites the initiate to the light; the eucharist is the bread of life and the cup of the Spirit. But the bridal chamber is different in kind, not merely in degree: it is the place where the pneumatic soul is united with its angelic twin, its syzygy partner in the Pleroma, dissolving the duality that produced the fall.</p>
+
+                <h3>The Three Sacramental Grades</h3>
+
+                <div class="levels-grid">
+                    <div class="level-tile cosmic">
+                        <span class="level-n">First Grade</span>
+                        <div class="level-title">Baptism</div>
+                        <span class="level-skt">Βάπτισμα · Purification</span>
+                        <p>Water of forgetfulness (for the psychic) or water of remembrance (for the pneumatic). Cleansing — preparatory.</p>
+                    </div>
+                    <div class="level-tile anthropological">
+                        <span class="level-n">Second Grade</span>
+                        <div class="level-title">Chrism</div>
+                        <span class="level-skt">Χρῖσμα · Anointing</span>
+                        <p>Anointing with oil. Union with the light. Superior to baptism — spiritual illumination. The apostolic church's confirmation.</p>
+                    </div>
+                    <div class="level-tile ritual" style="border-top-color:var(--gold)">
+                        <span class="level-n">Supreme</span>
+                        <div class="level-title">The Bridal Chamber</div>
+                        <span class="level-skt">Νυμφών · Holy of Holies</span>
+                        <p>Not water, not oil. The direct union of pneuma with its angelic counterpart. The fall reversed. Death undone.</p>
+                    </div>
+                </div>
+
+                <h3>What Happens in the Bridal Chamber?</h3>
+
+                <p>The Gospel of Philip is deliberately opaque: <em>"No one can know when the husband and wife have sex with each other except the two of them."</em> The reticence is not prudishness but precision — the nymphon is the holy of holies, the innermost chamber of the Jerusalem temple, which only the High Priest entered, alone, once per year. Its content exceeds representation.</p>
+                <p>Several interpretive traditions exist. The most psychologically compelling reads the bridal chamber as the restoration of a pre-fall androgyny: the pneumatic soul, which fell into gendered, separated embodiment, recognizes its original unity with its angelic image. This is not sexual in the ordinary sense — it is the reversal of the separation that made sexuality necessary in the first place.</p>
+
+                <div class="pull-q">
+                    <p>"The Lord did everything in a mystery: a baptism and a chrism and a eucharist and a redemption and a bridal chamber. He said: 'I came to make the things below like the things above, and the things outside like those inside.'"</p>
+                    <cite>— Gospel of Philip · NHC II,3 · 67.27–30</cite>
+                </div>
+
+                <div class="tension-box">
+                    <p><strong>The Temple Typology:</strong> Philip explicitly maps the bridal chamber onto the Holy of Holies. Just as the sanctuary housed the Ark — the meeting place between heaven and earth, the cherubim touching wings over the mercy seat — the nymphon is the site where the human pneuma and its divine syzygy meet. The veil of the temple is the veil of the flesh.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- STAGE VI — RESTORATION -->
+        <section class="content-section" id="restoration">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage VI · The Pattern</p>
+                <h2>Restoration</h2>
+                <p>Apokatastasis · Universal Reconstitution · The Three Registers</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>A</strong>cross all the Gnostic traditions — Valentinian, Sethian, Barbeloite, Manichaean — the syzygy operates at three simultaneous registers. The catastrophe is singular; its healing is threefold. To understand any Gnostic text, one must identify where it is operating in this structure and how its particular narrative serves the total project of restoration.</p>
+
+                <h3>The Three Registers of Syzygy</h3>
+
+                <div class="levels-grid">
+                    <div class="level-tile cosmic">
+                        <span class="level-n">Register I</span>
+                        <div class="level-title">Cosmic</div>
+                        <span class="level-skt">Πλήρωμα — The Pleroma</span>
+                        <p>The divine fullness is structured by gendered pairs. Their disruption causes the material world. The restoration of the Pleroma — the <em>apokatastasis</em> — is the eschatological horizon of all Gnostic soteriology.</p>
+                    </div>
+                    <div class="level-tile anthropological">
+                        <span class="level-n">Register II</span>
+                        <div class="level-title">Anthropological</div>
+                        <span class="level-skt">Ψυχή — The Human Soul</span>
+                        <p>The human pneuma is a fragment or fallen portion of a divine syzygy, seeking reunion with its angelic counterpart. Gnosis — the <em>knowledge</em> of one's true origin — is the moment of recognition that initiates this reunion.</p>
+                    </div>
+                    <div class="level-tile ritual" style="border-top-color:var(--gold)">
+                        <span class="level-n">Register III</span>
+                        <div class="level-title">Ritual / Soteriological</div>
+                        <span class="level-skt">Μυστήριον — The Mystery</span>
+                        <p>Baptism, anointing, the bridal chamber, or mystical ascent re-enacts and effects the primordial union. The ritual is not merely symbolic — it is productive. The nymphon <em>is</em> the restoration, not just a figure for it.</p>
+                    </div>
+                </div>
+
+                <h3>Thomas as Proto-Syzygy</h3>
+
+                <p>The <em>Gospel of Thomas</em> stands at the beginning of this trajectory — suggestive, not systematic. Logion 22 encodes the entire program in a single saying: <em>"When you make the two one, and when you make the inside as the outside, and the outside as the inside, and the upper as the lower, and when you make the male and female into a single one, so that the male is not male and the female is not female... then shall you enter the Kingdom."</em> Thomas does not explain the mechanism. Philip, Apocryphon of John, and the later corpus show what happens when the theme is fully elaborated.</p>
+
+                <div class="pull-q">
+                    <p>"When you make the male and the female into a single one, so that the male will not be male nor the female be female... then you will enter the kingdom."</p>
+                    <cite>— Gospel of Thomas · Logion 22</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- STAGE VII — CONVERGENCES -->
+        <section class="content-section" id="convergences">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage VII · The Convergences</p>
+                <h2>Kabbalah & Advaita</h2>
+                <p>Independent Convergence on the Syzygy Structure</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>K</strong>abbalah, arriving centuries after the Gnostic corpus, independently converges on strikingly similar structures. The Lurianic system maps the Sephiroth in masculine-feminine pairs — <span class="grk">זיווג</span> (zivug), "coupling" — with Tiferet and Malkhut as the primary cosmic syzygy. The <em>Shekhinah's exile</em> is the Kabbalistic version of Sophia's fall: the feminine divine presence separated from her partner. The Sabbath is the syzygy restored.</p>
+                <p>The Etz Chaim's ten Sephiroth arrange themselves into three pillars: masculine (Chesed, right), feminine (Gevurah, left), and median (Rachamim, center). The union of the right and left pillars through the central is the structural equivalent of the Gnostic nymphon: the joining of opposing principles through the mediating axis.</p>
+
+                <div class="lin-timeline">
+                    <div class="lin-entry">
+                        <div class="lin-dot"></div>
+                        <h4>Gnostic Syzygy <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--gold-light)">2nd–4th Century</span></h4>
+                        <div class="lin-dates">Valentinian · Sethian · Alexandrian</div>
+                        <p>Thirty aeons in fifteen pairs; Sophia's fall without her syzygy; the bridal chamber as restoration. The Pleroma as the fully relational divine.</p>
+                    </div>
+                    <div class="lin-entry">
+                        <div class="lin-dot"></div>
+                        <h4>Lurianic Kabbalah <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--gold-light)">16th Century</span></h4>
+                        <div class="lin-dates">Isaac Luria · Safed, Galilee</div>
+                        <p>The <em>zivug</em> (coupling) of Partzufim — divine countenances paired as masculine-feminine: Abba-Ima, Ze'ir Anpin-Nukvah. The Shekhinah's exile from her partner as the cosmic fall. <em>Tikkun</em> as restoration of the cosmic syzygy.</p>
+                    </div>
+                    <div class="lin-entry">
+                        <div class="lin-dot"></div>
+                        <h4>Advaita Vedanta <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--gold-light)">8th Century onward</span></h4>
+                        <div class="lin-dates">Shankara · Ramana Maharshi · Nisargadatta</div>
+                        <p>Shiva-Shakti as the primordial pair; the <em>ardhanarishvara</em> — the half-male, half-female form of Shiva — as the image of non-dual origin. Advaita does not posit a fall but does posit a forgetting: <em>avidya</em> as the failure to recognize the already-present unity.</p>
+                    </div>
+                    <div class="lin-entry">
+                        <div class="lin-dot"></div>
+                        <h4>The Pattern <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--violet-light)">The Convergence</span></h4>
+                        <div class="lin-dates">Cross-Traditional Recognition</div>
+                        <p>Independently, three major esoteric traditions arrive at the same structure: <em>primordial unity is dyadic; the fall is a rupture of the pair; restoration is reunion; the sacred highest moment — nymphon, Shabbat, sahaja samadhi — is the experience of the primordial unity restored.</em></p>
+                    </div>
+                </div>
+
+                <div class="pull-q">
+                    <p>"Kabbalah, arriving centuries later, independently converges on strikingly similar structures — the syzygy of Partzufim, the Shekhinah's exile, the zivug of Shabbat. The structure, it seems, is not historical but ontological."</p>
+                    <cite>— Research note</cite>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SECOND PULLQUOTE -->
+    <div class="pullquote-section">
+        <div class="pullquote-glow"></div>
+        <div class="pullquote">
+            <p class="pullquote-text">"The Pleroma is structured by gendered pairs. Their disruption causes the material world. Their restoration is the eschatological horizon of all Gnostic soteriology."</p>
+            <p class="pullquote-attr">— Structural Analysis of Gnostic Syzygy Theology</p>
+        </div>
+    </div>
+
+    <!-- GLOSSARY -->
+    <section class="gloss-section" id="glossary">
+        <div class="section-header">
+            <div class="section-separator"></div>
+            <p class="section-eyemark">Glossary · γλωσσάριον</p>
+            <h2>Key Terms</h2>
+            <p>Greek, Coptic, and technical terms used throughout this study of Gnostic syzygy theology.</p>
+        </div>
+
+        <div class="gloss-search-wrap">
+            <span class="gloss-search-ico">🔍</span>
+            <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms…" autocomplete="off"/>
+            <button class="gloss-clear" id="glossClear" aria-label="Clear">✕</button>
+        </div>
+        <p class="gloss-no-results" id="glossNoResults">No matching terms found.</p>
+
+        <div class="gloss-grid" id="glossGrid">
+            <div class="gloss-entry" data-terms="syzygy pair couple yoke conjugal">
+                <div class="gloss-term">Syzygy <span class="gloss-term-grk">συζυγία</span></div>
+                <span class="gloss-cat">Structural Pair</span>
+                <p class="gloss-def">From the Greek "yoking together." The structural principle of Gnostic cosmogony: gendered divine pairs co-arising in mutual necessity, each incomplete without the other.</p>
+            </div>
+            <div class="gloss-entry" data-terms="pleroma fullness divine realm aeons">
+                <div class="gloss-term">Pleroma <span class="gloss-term-grk">πλήρωμα</span></div>
+                <span class="gloss-cat">Divine Fullness</span>
+                <p class="gloss-def">The divine realm, the totality of divine being. In Valentinian theology: thirty aeons in fifteen syzygies, constituting the fullness before the fall.</p>
+            </div>
+            <div class="gloss-entry" data-terms="nymphon bridal chamber holy holies sacrament">
+                <div class="gloss-term">Nymphon <span class="gloss-term-grk">νυμφών</span></div>
+                <span class="gloss-cat">Bridal Chamber</span>
+                <p class="gloss-def">The highest Valentinian sacrament, surpassing baptism and chrism. The direct union of the pneumatic soul with its angelic syzygy partner. The Holy of Holies.</p>
+            </div>
+            <div class="gloss-entry" data-terms="sophia wisdom fall demiurge aeon">
+                <div class="gloss-term">Sophia <span class="gloss-term-grk">σοφία</span></div>
+                <span class="gloss-cat">Wisdom / The Fallen Aeon</span>
+                <p class="gloss-def">The last and most distant aeon of the Pleroma. Her act without her syzygy partner produces the Demiurge and the fall. Simultaneously the origin of the catastrophe and the seed of restoration.</p>
+            </div>
+            <div class="gloss-entry" data-terms="demiurge creator yaldabaoth archon lion">
+                <div class="gloss-term">Demiurge <span class="gloss-term-grk">Δημιουργός</span></div>
+                <span class="gloss-cat">The Creator-Ignorant God</span>
+                <p class="gloss-def">The product of Sophia's unpartnered act. Lion-headed, ignorant of the higher Pleroma. Creator of the material cosmos. Not evil per se — incomplete and deluded.</p>
+            </div>
+            <div class="gloss-entry" data-terms="barbelo first thought forethought mother father">
+                <div class="gloss-term">Barbelo <span class="gloss-term-grk">Βαρβηλώ</span></div>
+                <span class="gloss-cat">The First Thought</span>
+                <p class="gloss-def">In Sethian theology: the Invisible Spirit's first thought, his eternal feminine partner. The womb of all subsequent aeons. "Perfect in glory, the first power."</p>
+            </div>
+            <div class="gloss-entry" data-terms="aeon eternal divine emanation being">
+                <div class="gloss-term">Aeon <span class="gloss-term-grk">αἰών</span></div>
+                <span class="gloss-cat">Divine Emanation</span>
+                <p class="gloss-def">An eternal divine being, one of the thirty that constitute the Valentinian Pleroma. Each aeon exists in a syzygy pair. The word means both "age" and "eternal being."</p>
+            </div>
+            <div class="gloss-entry" data-terms="gnosis knowledge recognition self spiritual">
+                <div class="gloss-term">Gnosis <span class="gloss-term-grk">γνῶσις</span></div>
+                <span class="gloss-cat">Knowledge / Recognition</span>
+                <p class="gloss-def">Not intellectual knowledge but direct recognition of one's divine origin. The moment of gnosis is the beginning of the return to the Pleroma and the restoration of the syzygy.</p>
+            </div>
+            <div class="gloss-entry" data-terms="pneuma spirit pneumatic spiritual class">
+                <div class="gloss-term">Pneuma <span class="gloss-term-grk">πνεῦμα</span></div>
+                <span class="gloss-cat">Spirit / Light-Spark</span>
+                <p class="gloss-def">The divine light-substance within certain humans, descended from Sophia. The pneumatic is capable of full restoration to the Pleroma through the bridal chamber sacrament.</p>
+            </div>
+            <div class="gloss-entry" data-terms="hylic material earthy matter lowest class">
+                <div class="gloss-term">Hylics, Psychics, Pneumatics</div>
+                <span class="gloss-cat">Three Human Types</span>
+                <p class="gloss-def">Gnostic anthropological taxonomy. Hylics (material) cannot be saved; psychics (soul-bearing) are partially saved through faith; pneumatics (spiritual) attain full restoration through gnosis and the nymphon.</p>
+            </div>
+            <div class="gloss-entry" data-terms="theletos consort partner sophia fall">
+                <div class="gloss-term">Theletos <span class="gloss-term-grk">Θελητός</span></div>
+                <span class="gloss-cat">Sophia's Consort</span>
+                <p class="gloss-def">The syzygy partner of Sophia. His absence from Sophia's act of willing is the proximate cause of the Gnostic fall. Named differently across traditions: Patēr, Sitos, or simply her unnamed consort.</p>
+            </div>
+            <div class="gloss-entry" data-terms="kenoma emptiness deficiency void matter cosmos">
+                <div class="gloss-term">Kenoma <span class="gloss-term-grk">κένωμα</span></div>
+                <span class="gloss-cat">Emptiness / Deficiency</span>
+                <p class="gloss-def">The opposite of Pleroma. The void or deficiency — the material cosmos as the absence of fullness. What the nymphon ultimately overcomes by filling the kenoma with gnosis and light.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSITION PULLQUOTE -->
+    <div class="pullquote-section">
+        <div class="pullquote-glow"></div>
+        <div class="pullquote">
+            <p class="pullquote-text">"The syzygy structure — gendered divine pairs in mutual necessity — appears across the non-dual traditions. From the Gnostic bridal chamber to the Taoist union of yin and yang, the pattern persists: primordial unity, fall through separation, restoration through recognition."</p>
+            <p class="pullquote-attr"><a href="gnosticism_the_bridal_chamber.html" class="continue-link">&larr; Return to The Bridal Chamber</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../taoism/taoism-threshold.html" class="continue-link">Continue to Taoism &rarr;</a></p>
+        </div>
+    </div>
+
+    <!-- TRADITION NAV -->
+    <nav class="nav-advaita" aria-label="Gnostic tradition navigation">
+        <a href="../index.html" class="nav-advaita-link">Home</a>
+        <span class="nav-advaita-sep" aria-hidden="true">I ·</span>
+        <a href="gnosticism-unknown-father.html" class="nav-advaita-link">The Unknown Father</a>
+        <span class="nav-advaita-sep" aria-hidden="true">☯</span>
+        <span class="nav-advaita-sep" aria-hidden="true">II ·</span>
+        <a href="gnosticism-the_demiurge.html" class="nav-advaita-link">The Demiurge</a>
+        <span class="nav-advaita-sep" aria-hidden="true">☯</span>
+        <span class="nav-advaita-sep" aria-hidden="true">III ·</span>
+        <a href="gnosticism-the_divine_spark.html" class="nav-advaita-link">The Divine Spark</a>
+        <span class="nav-advaita-sep" aria-hidden="true">☯</span>
+        <span class="nav-advaita-sep" aria-hidden="true">IV ·</span>
+        <a href="gnosticism_the_bridal_chamber.html" class="nav-advaita-link">The Bridal Chamber (Overview)</a>
+        <span class="nav-advaita-sep" aria-hidden="true">→</span>
+        <span class="nav-advaita-link active">Syzygy Theology (Deep Dive)</span>
+    </nav>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-name">Vedantic Mappings</div>
+        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched & Composed</div>
+        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+            /* THEME */
+            const html = document.documentElement;
+            (function initTheme() {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
+                html.setAttribute('data-theme', 'dark');
+            })();
+            const themeBtn = document.getElementById('themeToggle');
+            if (themeBtn) themeBtn.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+
+            /* PROGRESS BAR */
+            const pb = document.getElementById('progressBar');
+            window.addEventListener('scroll', () => {
+                if (!pb) return;
+                const docH = document.documentElement.scrollHeight - window.innerHeight;
+                pb.style.width = (window.scrollY / docH * 100) + '%';
+            }, { passive: true });
+
+            /* NAV */
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+                document.addEventListener('click', e => {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove(
+                    'open');
+                });
+            }
+
+            /* BACK TO TOP */
+            const btt = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window
+                    .innerHeight * 0.6); }, { passive: true });
+            if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            /* HERO SCROLL CUE */
+            const heroScroll = document.getElementById('heroScroll');
+            if (heroScroll) heroScroll.addEventListener('click', () => {
+                const toc = document.getElementById('toc');
+                if (toc) toc.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            /* SMOOTH SCROLL for anchor links */
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const t = document.querySelector(this.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            /* ACTIVE NAV on scroll */
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const navItems = document.querySelectorAll('.nav-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navItems.forEach(ni => ni.classList.remove('active'));
+                        const active = document.querySelector('.nav-item[href="#' + entry.target.id + '"]');
+                        if (active) active.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.3 });
+            sections.forEach(s => observer.observe(s));
+
+            /* TEXT ACCORDION */
+            window.toggleText = function(row) {
+                const isOpen = row.classList.contains('open');
+                document.querySelectorAll('.text-row.open').forEach(r => r.classList.remove('open'));
+                if (!isOpen) row.classList.add('open');
+            };
+
+            /* GLOSSARY SEARCH */
+            const searchInput = document.getElementById('glossSearch');
+            const clearBtn = document.getElementById('glossClear');
+            const glossItems = document.querySelectorAll('#glossGrid .gloss-entry');
+            const noResults = document.getElementById('glossNoResults');
+            function norm(s) {
+                return s.toLowerCase()
+                    .replace(/[āàáâ]/g, 'a').replace(/[ēèéê]/g, 'e').replace(/[īìíî]/g, 'i')
+                    .replace(/[ōòóô]/g, 'o').replace(/[ūùúû]/g, 'u')
+                    .replace(/[άέήίόύώ]/g, c => ({ ά: 'a', έ: 'e', ή: 'e', ί: 'i', ό: 'o', ύ: 'u', ώ: 'o' } [c] || c))
+                    .replace(/[αβγδεζηθικλμνξοπρστυφχψω]/g, c => c);
+            }
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = norm(searchInput.value.trim());
+                    if (clearBtn) clearBtn.classList.toggle('vis', searchInput.value.length > 0);
+                    let count = 0;
+                    glossItems.forEach(item => {
+                        const text = norm(item.textContent + ' ' + (item.dataset.terms || ''));
+                        const show = !q || text.includes(q);
+                        item.style.display = show ? '' : 'none';
+                        if (show) count++;
+                    });
+                    if (noResults) noResults.style.display = count === 0 ? 'block' : 'none';
+                });
+                if (clearBtn) clearBtn.addEventListener('click', () => {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                    searchInput.focus();
+                });
+            }
+
+            /* SCROLL REVEAL — Intersection Observer */
+            const revealElements = document.querySelectorAll('.reveal, .fade-in');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.08,
+                rootMargin: '0px 0px -30px 0px'
+            });
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            /* SMOOTH NAV LINK HIGHLIGHT — improved */
+            const navLinks = document.querySelectorAll('.toc-book-item, .nav-item');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navMenu) navMenu.classList.remove('open');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -49,6 +49,15 @@
   --radius-lg: 20px;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  /* Diagram colors - dark theme */
+  --diagram-gold: #e8c97a;
+  --diagram-gold-dim: #d4b05c;
+  --diagram-violet: #8c7fbe;
+  --diagram-violet-dim: #5a5090;
+  --diagram-stone: #6e7d9a;
+  --diagram-stone-dark: #4a5060;
+  --diagram-pleroma-outer: #5a5090;
+  --diagram-pleroma-inner: #e8c97a;
 }
 
 [data-theme="light"] {
@@ -75,6 +84,15 @@
   --copper: #8b4513;
   --copper-light: #a0522d;
   --copper-deep: #6b3410;
+  /* Diagram colors - light theme */
+  --diagram-gold: #5a4015;
+  --diagram-gold-dim: #7a5525;
+  --diagram-violet: #2a2060;
+  --diagram-violet-dim: #4a4070;
+  --diagram-stone: #2a3050;
+  --diagram-stone-dark: #1a2030;
+  --diagram-pleroma-outer: #4a4070;
+  --diagram-pleroma-inner: #5a4015;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -446,6 +464,18 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .diagram-svg path, .diagram-svg circle, .diagram-svg line, .diagram-svg rect, .diagram-svg text {
   vector-effect: non-scaling-stroke;
 }
+[data-theme="dark"] .diagram-svg path,
+[data-theme="dark"] .diagram-svg circle,
+[data-theme="dark"] .diagram-svg line,
+[data-theme="dark"] .diagram-svg rect {
+  filter: drop-shadow(0 0 1px rgba(255,255,255,0.1));
+}
+[data-theme="light"] .diagram-svg path,
+[data-theme="light"] .diagram-svg circle,
+[data-theme="light"] .diagram-svg line,
+[data-theme="light"] .diagram-svg rect {
+  filter: drop-shadow(0 0 1px rgba(0,0,0,0.1));
+}
 .diagram-caption {
   font-family: 'Crimson Pro', serif;
   font-style: italic;
@@ -574,10 +604,37 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   transform: translateX(4px);
 }
 
-.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) var(--border);
+}
+.chapter-nav::-webkit-scrollbar {
+  height: 6px;
+}
+.chapter-nav::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: 3px;
+}
+.chapter-nav::-webkit-scrollbar-thumb {
+  background: var(--stone);
+  border-radius: 3px;
+}
+.chapter-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; white-space: nowrap; }
 .chapter-link:hover { color: var(--gold); }
-.chapter-sep { color: var(--violet); opacity: 0.3; }
+.chapter-sep { color: var(--violet); opacity: 0.3; flex-shrink: 0; }
 .chapter-link.active { color: var(--gold); font-weight: 500; }
 
 .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
@@ -868,12 +925,12 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <svg class="diagram-svg" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="pleromaGrad2" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.15"/>
-            <stop offset="100%" stop-color="#4a4080" stop-opacity="0.03"/>
+            <stop offset="0%" stop-color="var(--diagram-pleroma-inner)" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="var(--diagram-pleroma-outer)" stop-opacity="0.1"/>
           </radialGradient>
           <linearGradient id="syzygyLine" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#7c6fae" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.6"/>
+            <stop offset="0%" stop-color="var(--diagram-violet)" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="var(--diagram-gold-dim)" stop-opacity="0.8"/>
           </linearGradient>
           <filter id="syzygyGlow2" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -882,74 +939,74 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
         </defs>
 
         <!-- Outer Pleroma -->
-        <ellipse cx="400" cy="280" rx="360" ry="240" fill="url(#pleromaGrad2)" stroke="#4a4080" stroke-width="0.4" opacity="0.3"/>
-        <text x="400" y="65" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="10" letter-spacing="0.18em" opacity="0.7">THE PLEROMA &middot; THE NUPTIAL CHAMBER</text>
+        <ellipse cx="400" cy="280" rx="360" ry="240" fill="url(#pleromaGrad2)" stroke="var(--diagram-pleroma-outer)" stroke-width="0.8" opacity="0.5"/>
+        <text x="400" y="65" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.18em" opacity="0.9">THE PLEROMA &middot; THE NUPTIAL CHAMBER</text>
 
         <!-- Primal Syzygy: Father + Silence -->
-        <circle cx="400" cy="140" r="35" fill="none" stroke="#e0c46e" stroke-width="1" opacity="0.8" filter="url(#syzygyGlow2)"/>
-        <circle cx="400" cy="140" r="28" fill="none" stroke="#e0c46e" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,5"/>
-        <text x="400" y="137" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.9">THE FATHER</text>
-        <text x="400" y="150" text-anchor="middle" fill="#a090d0" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.6">&amp; Silence (Sige)</text>
+        <circle cx="400" cy="140" r="35" fill="none" stroke="var(--diagram-gold)" stroke-width="1.5" opacity="1.0" filter="url(#syzygyGlow2)"/>
+        <circle cx="400" cy="140" r="28" fill="none" stroke="var(--diagram-gold)" stroke-width="0.6" opacity="0.5" stroke-dasharray="3,5"/>
+        <text x="400" y="137" text-anchor="middle" fill="var(--diagram-gold)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="1.0">THE FATHER</text>
+        <text x="400" y="150" text-anchor="middle" fill="var(--violet-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.8">&amp; Silence (Sige)</text>
 
         <!-- Connection line down -->
-        <line x1="400" y1="175" x2="400" y2="205" stroke="url(#syzygyLine)" stroke-width="0.8" opacity="0.5" stroke-dasharray="4,3"/>
-        <polygon points="400,212 394,202 406,202" fill="#c9a84c" opacity="0.4"/>
+        <line x1="400" y1="175" x2="400" y2="205" stroke="url(#syzygyLine)" stroke-width="1.2" opacity="0.7" stroke-dasharray="4,3"/>
+        <polygon points="400,212 394,202 406,202" fill="var(--diagram-gold-dim)" opacity="0.7"/>
 
         <!-- Second Syzygy: Only-Begotten + Church -->
-        <circle cx="320" cy="240" r="30" fill="none" stroke="#7c6fae" stroke-width="0.8" opacity="0.7"/>
-        <text x="320" y="237" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.85">ONLY-BEGOTTEN</text>
-        <text x="320" y="248" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">(Masculine)</text>
+        <circle cx="320" cy="240" r="30" fill="none" stroke="var(--diagram-violet)" stroke-width="1.2" opacity="0.9"/>
+        <text x="320" y="237" text-anchor="middle" fill="var(--diagram-violet)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="1.0">ONLY-BEGOTTEN</text>
+        <text x="320" y="248" text-anchor="middle" fill="var(--diagram-violet)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.75">(Masculine)</text>
 
-        <circle cx="480" cy="240" r="30" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/>
-        <text x="480" y="237" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.85">THE CHURCH</text>
-        <text x="480" y="248" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">(Feminine)</text>
+        <circle cx="480" cy="240" r="30" fill="none" stroke="var(--diagram-gold-dim)" stroke-width="1.2" opacity="0.9"/>
+        <text x="480" y="237" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="1.0">THE CHURCH</text>
+        <text x="480" y="248" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.75">(Feminine)</text>
 
         <!-- Union line -->
-        <line x1="350" y1="240" x2="450" y2="240" stroke="url(#syzygyLine)" stroke-width="0.6" opacity="0.5"/>
-        <circle cx="400" cy="240" r="5" fill="#e0c46e" opacity="0.6"/>
+        <line x1="350" y1="240" x2="450" y2="240" stroke="url(#syzygyLine)" stroke-width="1.0" opacity="0.7"/>
+        <circle cx="400" cy="240" r="5" fill="var(--diagram-gold)" opacity="0.8"/>
 
         <!-- Third tier syzygies -->
-        <circle cx="220" cy="340" r="25" fill="none" stroke="#7c6fae" stroke-width="0.6" opacity="0.5"/>
-        <text x="220" y="338" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.7">AUTOGENES</text>
+        <circle cx="220" cy="340" r="25" fill="none" stroke="var(--diagram-violet)" stroke-width="1.0" opacity="0.75"/>
+        <text x="220" y="338" text-anchor="middle" fill="var(--diagram-violet)" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.9">AUTOGENES</text>
 
-        <circle cx="300" cy="340" r="25" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
-        <text x="300" y="338" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.7">TRUTH</text>
+        <circle cx="300" cy="340" r="25" fill="none" stroke="var(--diagram-gold-dim)" stroke-width="1.0" opacity="0.75"/>
+        <text x="300" y="338" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.9">TRUTH</text>
 
-        <circle cx="500" cy="340" r="25" fill="none" stroke="#7c6fae" stroke-width="0.6" opacity="0.5"/>
-        <text x="500" y="338" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.7">WORD</text>
+        <circle cx="500" cy="340" r="25" fill="none" stroke="var(--diagram-violet)" stroke-width="1.0" opacity="0.75"/>
+        <text x="500" y="338" text-anchor="middle" fill="var(--diagram-violet)" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.9">WORD</text>
 
-        <circle cx="580" cy="340" r="25" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
-        <text x="580" y="338" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.7">LIFE</text>
+        <circle cx="580" cy="340" r="25" fill="none" stroke="var(--diagram-gold-dim)" stroke-width="1.0" opacity="0.75"/>
+        <text x="580" y="338" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.9">LIFE</text>
 
         <!-- Union lines third tier -->
-        <line x1="245" y1="340" x2="275" y2="340" stroke="url(#syzygyLine)" stroke-width="0.4" opacity="0.4"/>
-        <line x1="525" y1="340" x2="555" y2="340" stroke="url(#syzygyLine)" stroke-width="0.4" opacity="0.4"/>
+        <line x1="245" y1="340" x2="275" y2="340" stroke="url(#syzygyLine)" stroke-width="0.8" opacity="0.6"/>
+        <line x1="525" y1="340" x2="555" y2="340" stroke="url(#syzygyLine)" stroke-width="0.8" opacity="0.6"/>
 
         <!-- Connection from second to third -->
-        <line x1="320" y1="270" x2="260" y2="315" stroke="#7c6fae" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
-        <line x1="320" y1="270" x2="300" y2="315" stroke="#7c6fae" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
-        <line x1="480" y1="270" x2="500" y2="315" stroke="#c9a84c" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
-        <line x1="480" y1="270" x2="540" y2="315" stroke="#c9a84c" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3"/>
+        <line x1="320" y1="270" x2="260" y2="315" stroke="var(--diagram-violet)" stroke-width="0.6" opacity="0.5" stroke-dasharray="3,3"/>
+        <line x1="320" y1="270" x2="300" y2="315" stroke="var(--diagram-violet)" stroke-width="0.6" opacity="0.5" stroke-dasharray="3,3"/>
+        <line x1="480" y1="270" x2="500" y2="315" stroke="var(--diagram-gold-dim)" stroke-width="0.6" opacity="0.5" stroke-dasharray="3,3"/>
+        <line x1="480" y1="270" x2="540" y2="315" stroke="var(--diagram-gold-dim)" stroke-width="0.6" opacity="0.5" stroke-dasharray="3,3"/>
 
         <!-- Sophia (fallen, outside the syzygy) -->
-        <circle cx="400" cy="440" r="28" fill="none" stroke="#5e6d8a" stroke-width="0.5" opacity="0.4" stroke-dasharray="4,4"/>
-        <text x="400" y="437" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.6">SOPHIA</text>
-        <text x="400" y="448" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.4">The Fallen &middot; Outside the Syzygy</text>
+        <circle cx="400" cy="440" r="28" fill="none" stroke="var(--diagram-stone)" stroke-width="0.9" opacity="0.6" stroke-dasharray="4,4"/>
+        <text x="400" y="437" text-anchor="middle" fill="var(--diagram-stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em" opacity="0.8">SOPHIA</text>
+        <text x="400" y="448" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.6">The Fallen &middot; Outside the Syzygy</text>
 
         <!-- Dashed line showing fall -->
-        <line x1="400" y1="280" x2="400" y2="412" stroke="#5e6d8a" stroke-width="0.4" opacity="0.25" stroke-dasharray="5,4"/>
-        <polygon points="400,420 394,410 406,410" fill="#5e6d8a" opacity="0.25"/>
+        <line x1="400" y1="280" x2="400" y2="412" stroke="var(--diagram-stone)" stroke-width="0.7" opacity="0.4" stroke-dasharray="5,4"/>
+        <polygon points="400,420 394,410 406,410" fill="var(--diagram-stone)" opacity="0.4"/>
 
         <!-- Demiurge (product of failed union) -->
-        <circle cx="400" cy="510" r="22" fill="none" stroke="#3a4050" stroke-width="0.4" opacity="0.3"/>
-        <text x="400" y="508" text-anchor="middle" fill="#3a4050" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.4">DEMIURGE</text>
-        <text x="400" y="518" text-anchor="middle" fill="#3a4050" font-family="Crimson Pro, serif" font-size="5" font-style="italic" opacity="0.3">Without Syzygy</text>
+        <circle cx="400" cy="510" r="22" fill="none" stroke="var(--diagram-stone-dark)" stroke-width="0.8" opacity="0.5"/>
+        <text x="400" y="508" text-anchor="middle" fill="var(--diagram-stone-dark)" font-family="Cinzel, serif" font-size="6" letter-spacing="0.06em" opacity="0.6">DEMIURGE</text>
+        <text x="400" y="518" text-anchor="middle" fill="var(--diagram-stone-dark)" font-family="Crimson Pro, serif" font-size="5" font-style="italic" opacity="0.5">Without Syzygy</text>
 
-        <line x1="400" y1="468" x2="400" y2="488" stroke="#3a4050" stroke-width="0.3" opacity="0.2" stroke-dasharray="4,3"/>
-        <polygon points="400,495 394,485 406,485" fill="#3a4050" opacity="0.2"/>
+        <line x1="400" y1="468" x2="400" y2="488" stroke="var(--diagram-stone-dark)" stroke-width="0.6" opacity="0.4" stroke-dasharray="4,3"/>
+        <polygon points="400,495 394,485 406,485" fill="var(--diagram-stone-dark)" opacity="0.4"/>
 
         <!-- Annotation -->
-        <text x="720" y="280" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.35" transform="rotate(90, 720, 280)">Each syzygy mirrors the primal union</text>
+        <text x="720" y="280" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5" transform="rotate(90, 720, 280)">Each syzygy mirrors the primal union</text>
       </svg>
       <p class="diagram-caption">The Pleroma is structured as a fabric of interlocking syzygies &mdash; masculine and feminine aeons in perpetual union. Sophia&rsquo;s fall is the rupture of this structure: she steps outside the syzygy and produces the Demiurge, a being without his feminine counterpart.</p>
     </div>
@@ -1022,74 +1079,74 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <svg class="diagram-svg" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="houseGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#4a4080" stop-opacity="0.05"/>
+            <stop offset="0%" stop-color="var(--diagram-gold-dim)" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="var(--diagram-violet-dim)" stop-opacity="0.12"/>
           </radialGradient>
           <radialGradient id="worldGrad2" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.15"/>
-            <stop offset="100%" stop-color="#141a2e" stop-opacity="0.05"/>
+            <stop offset="0%" stop-color="var(--diagram-stone)" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="var(--surface)" stop-opacity="0.1"/>
           </radialGradient>
           <linearGradient id="journeyLine" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.7"/>
-            <stop offset="50%" stop-color="#7c6fae" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#5e6d8a" stop-opacity="0.2"/>
+            <stop offset="0%" stop-color="var(--diagram-gold-dim)" stop-opacity="0.9"/>
+            <stop offset="50%" stop-color="var(--diagram-violet)" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="var(--diagram-stone)" stop-opacity="0.4"/>
           </linearGradient>
         </defs>
 
         <!-- Father's House (top) -->
-        <rect x="320" y="40" width="160" height="70" rx="12" fill="url(#houseGrad)" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/>
-        <text x="400" y="68" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="9" letter-spacing="0.14em" opacity="0.9">THE FATHER&rsquo;S HOUSE</text>
-        <text x="400" y="85" text-anchor="middle" fill="#a090d0" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.6">The Pleroma &middot; Original Wholeness</text>
+        <rect x="320" y="40" width="160" height="70" rx="12" fill="url(#houseGrad)" stroke="var(--diagram-gold-dim)" stroke-width="1.2" opacity="0.9"/>
+        <text x="400" y="68" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.14em" opacity="1.0">THE FATHER&rsquo;S HOUSE</text>
+        <text x="400" y="85" text-anchor="middle" fill="var(--violet-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.8">The Pleroma &middot; Original Wholeness</text>
 
         <!-- Arrow down: The Fall -->
-        <line x1="400" y1="110" x2="400" y2="160" stroke="#7c6fae" stroke-width="0.6" opacity="0.4" stroke-dasharray="5,4"/>
-        <polygon points="400,168 394,158 406,158" fill="#7c6fae" opacity="0.4"/>
-        <text x="430" y="142" text-anchor="start" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">The Fall</text>
+        <line x1="400" y1="110" x2="400" y2="160" stroke="var(--diagram-violet)" stroke-width="1.0" opacity="0.6" stroke-dasharray="5,4"/>
+        <polygon points="400,168 394,158 406,158" fill="var(--diagram-violet)" opacity="0.6"/>
+        <text x="430" y="142" text-anchor="start" fill="var(--diagram-violet)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.7">The Fall</text>
 
         <!-- The World (middle) -->
-        <ellipse cx="400" cy="240" rx="280" ry="65" fill="url(#worldGrad2)" stroke="#5e6d8a" stroke-width="0.5" opacity="0.5"/>
-        <text x="400" y="225" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.8">THE WORLD OF MATTER</text>
-        <text x="400" y="242" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">Prostitution &middot; Forgetting &middot; Weeping</text>
+        <ellipse cx="400" cy="240" rx="280" ry="65" fill="url(#worldGrad2)" stroke="var(--diagram-stone)" stroke-width="0.9" opacity="0.7"/>
+        <text x="400" y="225" text-anchor="middle" fill="var(--diagram-stone)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">THE WORLD OF MATTER</text>
+        <text x="400" y="242" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.7">Prostitution &middot; Forgetting &middot; Weeping</text>
 
         <!-- Soul in the world -->
-        <circle cx="400" cy="270" r="18" fill="none" stroke="#7c6fae" stroke-width="0.6" opacity="0.5"/>
-        <text x="400" y="274" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="7" opacity="0.7">SOUL</text>
+        <circle cx="400" cy="270" r="18" fill="none" stroke="var(--diagram-violet)" stroke-width="1.0" opacity="0.7"/>
+        <text x="400" y="274" text-anchor="middle" fill="var(--diagram-violet)" font-family="Cinzel, serif" font-size="7" opacity="0.9">SOUL</text>
 
         <!-- Lovers/adulterers around the soul -->
-        <circle cx="280" cy="240" r="14" fill="none" stroke="#3a4050" stroke-width="0.4" opacity="0.3"/>
-        <text x="280" y="244" text-anchor="middle" fill="#3a4050" font-family="Cinzel, serif" font-size="5" opacity="0.4">PASSION</text>
-        <circle cx="520" cy="240" r="14" fill="none" stroke="#3a4050" stroke-width="0.4" opacity="0.3"/>
-        <text x="520" y="244" text-anchor="middle" fill="#3a4050" font-family="Cinzel, serif" font-size="5" opacity="0.4">SENSE</text>
-        <circle cx="320" cy="290" r="14" fill="none" stroke="#3a4050" stroke-width="0.4" opacity="0.3"/>
-        <text x="320" y="294" text-anchor="middle" fill="#3a4050" font-family="Cinzel, serif" font-size="5" opacity="0.4">DESIRE</text>
-        <circle cx="480" cy="290" r="14" fill="none" stroke="#3a4050" stroke-width="0.4" opacity="0.3"/>
-        <text x="480" y="294" text-anchor="middle" fill="#3a4050" font-family="Cinzel, serif" font-size="5" opacity="0.4">MATTER</text>
+        <circle cx="280" cy="240" r="14" fill="none" stroke="var(--diagram-stone-dark)" stroke-width="0.8" opacity="0.5"/>
+        <text x="280" y="244" text-anchor="middle" fill="var(--diagram-stone-dark)" font-family="Cinzel, serif" font-size="5" opacity="0.6">PASSION</text>
+        <circle cx="520" cy="240" r="14" fill="none" stroke="var(--diagram-stone-dark)" stroke-width="0.8" opacity="0.5"/>
+        <text x="520" y="244" text-anchor="middle" fill="var(--diagram-stone-dark)" font-family="Cinzel, serif" font-size="5" opacity="0.6">SENSE</text>
+        <circle cx="320" cy="290" r="14" fill="none" stroke="var(--diagram-stone-dark)" stroke-width="0.8" opacity="0.5"/>
+        <text x="320" y="294" text-anchor="middle" fill="var(--diagram-stone-dark)" font-family="Cinzel, serif" font-size="5" opacity="0.6">DESIRE</text>
+        <circle cx="480" cy="290" r="14" fill="none" stroke="var(--diagram-stone-dark)" stroke-width="0.8" opacity="0.5"/>
+        <text x="480" y="294" text-anchor="middle" fill="var(--diagram-stone-dark)" font-family="Cinzel, serif" font-size="5" opacity="0.6">MATTER</text>
 
         <!-- Dashed lines showing prostitution -->
-        <line x1="382" y1="270" x2="294" y2="250" stroke="#3a4050" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
-        <line x1="418" y1="270" x2="506" y2="250" stroke="#3a4050" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
-        <line x1="400" y1="288" x2="334" y2="290" stroke="#3a4050" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
-        <line x1="400" y1="288" x2="466" y2="290" stroke="#3a4050" stroke-width="0.3" opacity="0.2" stroke-dasharray="3,3"/>
+        <line x1="382" y1="270" x2="294" y2="250" stroke="var(--diagram-stone-dark)" stroke-width="0.6" opacity="0.4" stroke-dasharray="3,3"/>
+        <line x1="418" y1="270" x2="506" y2="250" stroke="var(--diagram-stone-dark)" stroke-width="0.6" opacity="0.4" stroke-dasharray="3,3"/>
+        <line x1="400" y1="288" x2="334" y2="290" stroke="var(--diagram-stone-dark)" stroke-width="0.6" opacity="0.4" stroke-dasharray="3,3"/>
+        <line x1="400" y1="288" x2="466" y2="290" stroke="var(--diagram-stone-dark)" stroke-width="0.6" opacity="0.4" stroke-dasharray="3,3"/>
 
         <!-- Arrow down: Weeping -->
-        <line x1="400" y1="320" x2="400" y2="350" stroke="#c9a84c" stroke-width="0.6" opacity="0.5" stroke-dasharray="4,3"/>
-        <polygon points="400,358 394,348 406,348" fill="#c9a84c" opacity="0.5"/>
-        <text x="430" y="342" text-anchor="start" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">Weeping &middot; Memory</text>
+        <line x1="400" y1="320" x2="400" y2="350" stroke="var(--diagram-gold-dim)" stroke-width="1.0" opacity="0.7" stroke-dasharray="4,3"/>
+        <polygon points="400,358 394,348 406,348" fill="var(--diagram-gold-dim)" opacity="0.7"/>
+        <text x="430" y="342" text-anchor="start" fill="var(--diagram-gold-dim)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.7">Weeping &middot; Memory</text>
 
         <!-- Bridal Chamber (bottom) -->
-        <rect x="300" y="380" width="200" height="70" rx="12" fill="url(#houseGrad)" stroke="#e0c46e" stroke-width="1" opacity="0.8"/>
-        <text x="400" y="408" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="0.14em" opacity="0.95">THE BRIDAL CHAMBER</text>
-        <text x="400" y="425" text-anchor="middle" fill="#a090d0" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.6">Restoration &middot; Single Unity</text>
+        <rect x="300" y="380" width="200" height="70" rx="12" fill="url(#houseGrad)" stroke="var(--diagram-gold)" stroke-width="1.5" opacity="1.0"/>
+        <text x="400" y="408" text-anchor="middle" fill="var(--diagram-gold)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.14em" opacity="1.0">THE BRIDAL CHAMBER</text>
+        <text x="400" y="425" text-anchor="middle" fill="var(--violet-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.8">Restoration &middot; Single Unity</text>
 
         <!-- Soul and Bridegroom in union -->
-        <circle cx="380" cy="435" r="10" fill="none" stroke="#7c6fae" stroke-width="0.5" opacity="0.6"/>
-        <text x="380" y="438" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="5" opacity="0.7">SOUL</text>
-        <circle cx="420" cy="435" r="10" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.6"/>
-        <text x="420" y="438" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="5" opacity="0.7">BRIDEGROOM</text>
-        <line x1="390" y1="435" x2="410" y2="435" stroke="#e0c46e" stroke-width="0.5" opacity="0.5"/>
+        <circle cx="380" cy="435" r="10" fill="none" stroke="var(--diagram-violet)" stroke-width="0.9" opacity="0.8"/>
+        <text x="380" y="438" text-anchor="middle" fill="var(--diagram-violet)" font-family="Cinzel, serif" font-size="5" opacity="0.9">SOUL</text>
+        <circle cx="420" cy="435" r="10" fill="none" stroke="var(--diagram-gold-dim)" stroke-width="0.9" opacity="0.8"/>
+        <text x="420" y="438" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="5" opacity="0.9">BRIDEGROOM</text>
+        <line x1="390" y1="435" x2="410" y2="435" stroke="var(--diagram-gold)" stroke-width="0.9" opacity="0.7"/>
 
         <!-- Side annotation -->
-        <text x="120" y="240" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.35" transform="rotate(-90, 120, 240)">The soul does not find the bridegroom; the bridegroom finds her</text>
+        <text x="120" y="240" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5" transform="rotate(-90, 120, 240)">The soul does not find the bridegroom; the bridegroom finds her</text>
       </svg>
       <p class="diagram-caption">The soul falls from the Father&rsquo;s house into the world of matter, prostitutes herself to the passions, weeps in her exile, and is restored through the bridegroom in the bridal chamber. The initiative is always from above; the soul&rsquo;s task is to weep, to remember, to desire.</p>
     </div>
@@ -1152,51 +1209,51 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <svg class="diagram-svg" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="baptismGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.15"/>
-            <stop offset="100%" stop-color="#3a4050" stop-opacity="0.05"/>
+            <stop offset="0%" stop-color="var(--diagram-stone)" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="var(--diagram-stone-dark)" stop-opacity="0.1"/>
           </linearGradient>
           <linearGradient id="chrismGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#7c6fae" stop-opacity="0.15"/>
-            <stop offset="100%" stop-color="#4a4080" stop-opacity="0.05"/>
+            <stop offset="0%" stop-color="var(--diagram-violet)" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="var(--diagram-violet-dim)" stop-opacity="0.1"/>
           </linearGradient>
           <linearGradient id="bridalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.2"/>
-            <stop offset="100%" stop-color="#a08030" stop-opacity="0.05"/>
+            <stop offset="0%" stop-color="var(--diagram-gold-dim)" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="var(--diagram-gold)" stop-opacity="0.12"/>
           </linearGradient>
           <linearGradient id="ascendLine2" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stop-color="#5e6d8a" stop-opacity="0.4"/>
-            <stop offset="50%" stop-color="#7c6fae" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.8"/>
+            <stop offset="0%" stop-color="var(--diagram-stone)" stop-opacity="0.6"/>
+            <stop offset="50%" stop-color="var(--diagram-violet)" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="var(--diagram-gold-dim)" stop-opacity="1.0"/>
           </linearGradient>
         </defs>
 
         <!-- Baptism (bottom) -->
-        <rect x="60" y="280" width="200" height="100" rx="12" fill="url(#baptismGrad)" stroke="#5e6d8a" stroke-width="0.6" opacity="0.5"/>
-        <text x="160" y="310" text-anchor="middle" fill="#5e6d8a" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.8">BAPTISM</text>
-        <text x="160" y="330" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">The Holy Building</text>
-        <text x="160" y="348" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="7" opacity="0.45">Washing &middot; Entry &middot; Resurrection</text>
+        <rect x="60" y="280" width="200" height="100" rx="12" fill="url(#baptismGrad)" stroke="var(--diagram-stone)" stroke-width="0.6" opacity="0.5"/>
+        <text x="160" y="310" text-anchor="middle" fill="var(--diagram-stone)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.8">BAPTISM</text>
+        <text x="160" y="330" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">The Holy Building</text>
+        <text x="160" y="348" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="7" opacity="0.45">Washing &middot; Entry &middot; Resurrection</text>
 
         <!-- Chrism (middle) -->
-        <rect x="300" y="160" width="200" height="100" rx="12" fill="url(#chrismGrad)" stroke="#7c6fae" stroke-width="0.8" opacity="0.6"/>
-        <text x="400" y="190" text-anchor="middle" fill="#7c6fae" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.85">CHRISM</text>
-        <text x="400" y="210" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Holy of the Holy</text>
-        <text x="400" y="228" text-anchor="middle" fill="#7c6fae" font-family="Crimson Pro, serif" font-size="7" opacity="0.5">Anointing &middot; Seal &middot; Recognition</text>
+        <rect x="300" y="160" width="200" height="100" rx="12" fill="url(#chrismGrad)" stroke="var(--diagram-violet)" stroke-width="0.8" opacity="0.6"/>
+        <text x="400" y="190" text-anchor="middle" fill="var(--diagram-violet)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.85">CHRISM</text>
+        <text x="400" y="210" text-anchor="middle" fill="var(--diagram-violet)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Holy of the Holy</text>
+        <text x="400" y="228" text-anchor="middle" fill="var(--diagram-violet)" font-family="Crimson Pro, serif" font-size="7" opacity="0.5">Anointing &middot; Seal &middot; Recognition</text>
 
         <!-- Bridal Chamber (top) -->
-        <rect x="540" y="40" width="200" height="100" rx="12" fill="url(#bridalGrad)" stroke="#c9a84c" stroke-width="1" opacity="0.8"/>
-        <text x="640" y="70" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.95">THE BRIDAL CHAMBER</text>
-        <text x="640" y="90" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.7">The Holy of Holies</text>
-        <text x="640" y="108" text-anchor="middle" fill="#c9a84c" font-family="Crimson Pro, serif" font-size="7" opacity="0.6">Union &middot; Single Unity &middot; Superior to All</text>
+        <rect x="540" y="40" width="200" height="100" rx="12" fill="url(#bridalGrad)" stroke="var(--diagram-gold-dim)" stroke-width="1" opacity="0.8"/>
+        <text x="640" y="70" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.14em" opacity="0.95">THE BRIDAL CHAMBER</text>
+        <text x="640" y="90" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.7">The Holy of Holies</text>
+        <text x="640" y="108" text-anchor="middle" fill="var(--diagram-gold-dim)" font-family="Crimson Pro, serif" font-size="7" opacity="0.6">Union &middot; Single Unity &middot; Superior to All</text>
 
         <!-- Arrows showing ascent -->
         <line x1="260" y1="280" x2="340" y2="260" stroke="url(#ascendLine2)" stroke-width="0.6" opacity="0.4" stroke-dasharray="4,3"/>
-        <polygon points="345,258 335,264 338,254" fill="#7c6fae" opacity="0.4"/>
+        <polygon points="345,258 335,264 338,254" fill="var(--diagram-violet)" opacity="0.4"/>
 
         <line x1="500" y1="160" x2="580" y2="140" stroke="url(#ascendLine2)" stroke-width="0.8" opacity="0.6" stroke-dasharray="4,3"/>
-        <polygon points="585,138 575,144 578,134" fill="#c9a84c" opacity="0.6"/>
+        <polygon points="585,138 575,144 578,134" fill="var(--diagram-gold-dim)" opacity="0.6"/>
 
         <!-- Annotation -->
-        <text x="400" y="390" text-anchor="middle" fill="#5e6d8a" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The Father anointed the Son in the bridal chamber; the Son anointed the apostles; the apostles anoint us.&rdquo;</text>
+        <text x="400" y="390" text-anchor="middle" fill="var(--diagram-stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.45">&ldquo;The Father anointed the Son in the bridal chamber; the Son anointed the apostles; the apostles anoint us.&rdquo;</text>
       </svg>
       <p class="diagram-caption">The three sacraments form an ascending hierarchy: baptism is the entry, chrism is the seal, and the bridal chamber is the fulfillment. The bridal chamber is not merely a ritual but the ontological reality of union that transcends all distinction.</p>
     </div>
@@ -1375,7 +1432,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
     <p class="pullquote-text">From the awakening of the spark, we have come to the fulfillment &mdash; the Bridal Chamber, the sacred marriage, and the final restoration of the syzygy in the Pleroma. The spark, once awakened, recognizes itself as the bridegroom; the soul, once weeping, recognizes itself as the bride; and the two, once separate, become a single unity in the Holy of Holies.</p>
-    <p class="pullquote-attr"><a href="gnosticism-the_divine_spark.html" class="continue-link">&larr; Return to The Divine Spark &middot; The Awakening</a></p>
+    <p class="pullquote-attr"><a href="gnosticism-the_divine_spark.html" class="continue-link">&larr; Return to The Divine Spark &middot; The Awakening</a> <span class="pullquote-sep">&middot;</span> <a href="gnostic_syzygy_nymphon.html" class="continue-link">Continue to Syzygy Theology &rarr;</a></p>
   </div>
 </div>
 
@@ -1392,6 +1449,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
   <span class="chapter-sep">&#9775;</span>
   <a href="gnosticism_the_bridal_chamber.html" class="chapter-link active">IV &middot; The Bridal Chamber</a>
+  <span class="chapter-sep">&rarr;</span>
+  <a href="gnostic_syzygy_nymphon.html" class="chapter-link">Syzygy Theology (Deep Dive)</a>
 </div>
 
 <!-- =====================================================

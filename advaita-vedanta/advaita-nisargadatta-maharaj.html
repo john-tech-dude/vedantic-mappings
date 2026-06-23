@@ -150,12 +150,19 @@
     .nav-compass{position:fixed;top:1.5rem;left:1.5rem;z-index:1010;display:flex;flex-direction:column;gap:.5rem}
     .nav-toggle{width:44px;height:44px;background:var(--surface);border:1px solid var(--border);border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all .35s var(--ease-out-expo);box-shadow:var(--shadow)}
     .nav-toggle:hover{background:var(--gold-glow);border-color:var(--gold);transform:scale(1.08)}
-    .nav-menu{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 0;box-shadow:var(--shadow-deep);opacity:0;transform:translateY(-8px) scale(0.96);pointer-events:none;transition:all .4s var(--ease-out-expo);min-width:240px}
+    .nav-menu{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 0;box-shadow:var(--shadow-deep);opacity:0;transform:translateY(-8px) scale(0.96);pointer-events:none;transition:all .4s var(--ease-out-expo);min-width:240px;max-height:80vh;overflow-y:auto}
     .nav-menu.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+	.nav-menu::-webkit-scrollbar{width:6px}
+	.nav-menu::-webkit-scrollbar-track{background:transparent}
+	.nav-menu::-webkit-scrollbar-thumb{background:var(--gold-deep);border-radius:3px}
     .nav-item{display:flex;align-items:center;gap:.75rem;padding:.6rem 1.25rem;color:var(--stone);text-decoration:none;font-size:.88rem;line-height:1.35;transition:all .3s var(--ease-out-expo);border-left:3px solid transparent}
     .nav-item:hover{color:var(--ink);background:var(--gold-glow);padding-left:1.5rem}
     .nav-item.active{color:var(--gold-light);background:rgba(154,122,58,0.08);border-left-color:var(--gold);font-weight:500}
-    .nav-item-icon{font-size:.8rem;flex-shrink:0;width:18px;text-align:center}
+    .nav-item-icon{font-size:.8rem;flex-shrink:0;width:18px;text-align:center;display:flex;align-items:center;justify-content:center}
+.nav-item-icon svg{width:16px;height:16px;color:var(--stone);transition:color .3s var(--ease-out-expo);stroke-width:1.5}
+.icon-om, .icon-home{color:var(--stone);transition:color .3s}
+.nav-item:hover .icon-om, .nav-item:hover .icon-home, .nav-item:hover .nav-item-icon svg{color:var(--gold)}
+.nav-item.active .nav-item-icon svg{color:var(--gold-light)}
     .nav-section-title{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase;padding:.6rem 1.25rem .3rem}
     .nav-divider{height:1px;background:var(--border);margin:.5rem 1rem}
 
@@ -519,6 +526,14 @@
       text-transform: uppercase;
       position: relative;
       z-index: 1;
+    }
+    .pq-attr a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .pq-attr a:hover {
+      color: var(--gold-light);
     }
 
     /* ═══════════════════════════════════════
@@ -1355,6 +1370,53 @@
     .fade-in.anim.vis { opacity: 1; transform: translateY(0); }
 
     /* ═══════════════════════════════════════
+       ADV AITA NAV — added above footer
+       ═══════════════════════════════════════ */
+    .nav-advaita {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 2rem 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      flex-wrap: wrap;
+    }
+    .nav-advaita-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.35s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.2rem 0.1rem;
+      position: relative;
+    }
+    .nav-advaita-link svg {
+      color: var(--stone);
+      transition: color 0.35s var(--ease-out-expo);
+    }
+    .nav-advaita-link:hover svg {
+      color: var(--gold);
+    }
+    .nav-advaita-link.active {
+      color: var(--gold);
+    }
+    .nav-advaita-link.active svg {
+      color: var(--gold);
+    }
+    .nav-advaita-sep {
+      color: var(--gold-deep);
+      opacity: 0.3;
+      font-weight: 300;
+    }
+
+    /* ═══════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════ */
     .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2rem; text-align: center; }
@@ -1368,8 +1430,10 @@
     .footer-name { font-family: 'Cinzel', serif; font-size: .92rem; letter-spacing: .2em; color: var(--gold); margin-bottom: .5rem; }
     .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: .95rem; margin-bottom: 2rem; }
     .footer-links { display: flex; justify-content: center; gap: 2rem; font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 2rem; flex-wrap: wrap; }
-    .footer-links a { color: var(--stone); text-decoration: none; font-family: 'Cinzel', serif; transition: color .3s; }
+    .footer-links a { color: var(--stone); text-decoration: none; font-family: 'Cinzel', serif; transition: color .3s; display: flex; align-items: center; gap: 0.4rem; }
     .footer-links a:hover { color: var(--gold); }
+    .nav-icon { width: 14px; height: 14px; color: var(--stone); transition: color .3s; }
+    .footer-links a:hover .nav-icon { color: var(--gold); }
     .footer-credit { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; }
     .footer-version { font-family: 'Cinzel', serif; font-size: .45rem; letter-spacing: .2em; color: var(--stone); margin-top: 1rem; opacity: .35; }
     .footer-copyright { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; margin-top: 1rem; }
@@ -1409,10 +1473,10 @@
   </button>
   <div class="nav-menu" id="navMenu">
     <div class="nav-section-title">This Page</div>
-    <a href="#hero" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15 9 20 9 17 14 22 14 17 19 20 19 15 22 12 19 9 17 9 20 15 14 9 9 14 7 4 9 7 9 4 12 2z"/></svg></span><span>Overview</span></a>
-    <a href="#lineage" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></span><span>Lineage · परम्परा</span></a>
+    <a href="#hero" class="nav-item active"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span>Overview</span></a>
+    <a href="#lineage" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg></span><span>Lineage · परम्परा</span></a>
     <div class="nav-divider"></div>
-    <div class="nav-section-title">सप्त स्तर — Seven Stages</div>
+    <div class="nav-section-title">Seven Stages — सप्त स्तर</div>
     <a href="#stage1" class="nav-item"><span class="nav-item-icon">I</span><span>Mistaken Identity</span></a>
     <a href="#stage2" class="nav-item"><span class="nav-item-icon">II</span><span>Nisarga Yoga · अस्मि</span></a>
     <a href="#stage3" class="nav-item"><span class="nav-item-icon">III</span><span>Three Obstacles</span></a>
@@ -1422,21 +1486,21 @@
     <a href="#stage7" class="nav-item"><span class="nav-item-icon">VII</span><span>Love &amp; Liberation</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Reference</div>
-    <a href="#glossary" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span>Glossary · शब्दकोश</span></a>
-    <a href="#practice" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="3"/></svg></span><span>Sadhana · साधना</span></a>
+    <a href="#glossary" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Glossary · शब्दकोश</span></a>
+    <a href="#practice" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Sadhana · साधना</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Advaita Vedanta</div>
-    <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41 1.41"/></svg></span><span>Gaudapada</span></a>
-    <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z"/></svg></span><span>Adi Shankara</span></a>
-    <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="3"/></svg></span><span>Ramana Maharshi</span></a>
-    <a href="advaita-nisargadatta-maharaj.html" class="nav-item active"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M6 12h12"/><path d="M12 6v12"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Nisargadatta Maharaj</span></a>
-    <a href="advaita-adyashanti-comparison.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z"/><path d="M12 8v4M12 14v2"/></svg></span><span>Adyashanti Comparison</span></a>
+    <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Gaudapada</span></a>
+    <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Adi Shankara</span></a>
+    <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ramana Maharshi</span></a>
+    <a href="advaita-nisargadatta-maharaj.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Nisargadatta Maharaj</span></a>
+    <a href="advaita-adyashanti-comparison.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></span><span>Adyashanti Comparison</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · Vedantic Mappings</span></a>
-    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span>The Vedantic Messiah</span></a>
-    <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="4" r="2"/><circle cx="8" cy="10" r="2"/><circle cx="16" cy="10" r="2"/><circle cx="12" cy="16" r="2"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="20" r="2"/><path d="M12 6v10M8 12l4 4M16 12l-4 4"/></svg></span><span>Kabbalah</span></a>
-    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10"/><path d="M2 12h20"/></svg></span><span>Taoism · The Unnamed Way</span></a>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span>Home · Vedantic Mappings</span></a>
+    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>The Vedantic Messiah</span></a>
+    <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span>Kabbalah</span></a>
+    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10"/><path d="M2 12h20"/></svg></span><span>Taoism · The Unnamed Way</span></a>
   </div>
 </div>
 
@@ -2191,7 +2255,31 @@
   </div>
 </section>
 
+<!-- ═════════════════════
+     TRANSITION PULLQUOTE
+     ═════════════════════ -->
+<div class="pq-section">
+  <div class="pq-glow"></div>
+  <div class="pullquote">
+    <p class="pq-text">"Nisargadatta Maharaj's direct pointing to the 'I Am' as the final abode offers a radical approach to self-realization that transcends traditional practices."</p>
+    <p class="pq-attr"><a href="advaita-ramana-maharshi.html" class="continue-link">&larr; Return to Ramana Maharshi</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="advaita-adyashanti-comparison.html" class="continue-link">Continue to Adyashanti Comparison &rarr;</a></p>
+  </div>
+</div>
 
+<!-- ═════════════════════════════════
+     ADV AITA NAV — added above footer
+     ═════════════════════════════════ -->
+<nav class="nav-advaita" aria-label="Advaita Vedanta navigation">
+  <a href="../index.html" class="nav-advaita-link"><svg class="icon-home" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-gaudapada.html" class="nav-advaita-link"><svg class="icon-om" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg> Gaudapada</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-adi-shankara.html" class="nav-advaita-link"><svg class="icon-om" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg> Adi Shankara</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-ramana-maharshi.html" class="nav-advaita-link"><svg class="icon-om" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg> Ramana Maharshi</a>
+  <span class="nav-advaita-sep" aria-hidden="true">·</span>
+  <a href="advaita-nisargadatta-maharaj.html" class="nav-advaita-link active"><svg class="icon-om" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg> Nisargadatta Maharaj</a>
+</nav>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -2199,7 +2287,7 @@
   <div class="footer-name">Vedantic Mappings</div>
   <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
   <div class="footer-links">
-    <a href="../index.html">⌂ Vedantic Mappings</a>
+    <a href="../index.html"><svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Vedantic Mappings</a>
     <a href="advaita-gaudapada.html">Advaita Vedanta</a>
     <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
     <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>

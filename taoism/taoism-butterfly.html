@@ -386,10 +386,37 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 
-.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) var(--border);
+}
+.chapter-nav::-webkit-scrollbar {
+  height: 6px;
+}
+.chapter-nav::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: 3px;
+}
+.chapter-nav::-webkit-scrollbar-thumb {
+  background: var(--stone);
+  border-radius: 3px;
+}
+.chapter-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; white-space: nowrap; }
 .chapter-link:hover { color: var(--gold); }
-.chapter-sep { color: var(--gold-deep); opacity: 0.3; }
+.chapter-sep { color: var(--gold-deep); opacity: 0.3; flex-shrink: 0; }
 .chapter-link.active { color: var(--gold); font-weight: 500; }
 
 
@@ -710,8 +737,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">From the butterfly dream and the pivot of the Tao, we now return to the root — where the sage abides in the eternal Tao, and the ten thousand things come and go without trace.</p>
-    <p class="pullquote-attr"><a href="taoism-return.html">→ Continue to Returning to the Root · The Eternal Tao</a></p>
+    <p class="pullquote-text">"Zhuangzi's butterfly dream reveals that the boundary between self and other, dream and reality, is a construct of the mind — in the Tao, all is one."</p>
+    <p class="pullquote-attr"><a href="taoism-practices.html" class="continue-link">&larr; Return to The Uncarved Block</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="taoism-return.html" class="continue-link">Continue to Returning to the Root &rarr;</a></p>
   </div>
 </div>
 
