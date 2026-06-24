@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           TOKENS (from Gaudapada design system)
+           TOKENS — premium design system
            ═══════════════════════════════════════════════════════════════ */
         :root {
             --bg: #faf7f2;
@@ -50,7 +50,9 @@
             --ring-color: rgba(122, 90, 42, 0.22);
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
             --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
         }
         [data-theme="dark"] {
             --bg: #0c0f14;
@@ -117,112 +119,7 @@
             pointer-events: none;
             z-index: 9999;
             opacity: var(--grain-opacity);
-        }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
-            border-radius: 2px;
-        }
-        ::selection {
-            background: rgba(181, 130, 42, 0.22);
-            color: var(--ink);
-        }
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--gold);
-            outline-offset: 2px;
-            border-radius: 4px;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           KEYFRAMES
-           ═══════════════════════════════════════════════════════════════ */
-        @keyframes hero-rise {
-            from {
-                opacity: 0;
-                transform: translateY(22px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes mandalaRotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        @keyframes breathe {
-            0%,
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 40px var(--gold-glow);
-            }
-            50% {
-                transform: scale(1.04);
-                box-shadow: 0 0 64px var(--gold-glow);
-            }
-        }
-        @keyframes mandala-breathe {
-            0%,
-            100% {
-                opacity: 0.35;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                opacity: 0.75;
-                transform: translate(-50%, -50%) scale(1.012);
-            }
-        }
-        @keyframes scroll-bounce {
-            0%,
-            100% {
-                transform: scaleY(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scaleY(.5);
-                opacity: .3;
-            }
-        }
-        @keyframes ripple-out {
-            0% {
-                opacity: 0.55;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(4.2);
-            }
-        }
-        @keyframes emblem-rotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        @keyframes emblem-pulse {
-            0%,
-            100% {
-                box-shadow: 0 0 20px 5px var(--sun-glow);
-            }
-            50% {
-                box-shadow: 0 0 35px 12px var(--sun-glow);
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            animation: grainShift 8s steps(10) infinite;
         }
         @keyframes grainShift {
             0%,
@@ -257,19 +154,257 @@
                 transform: translate(-2%, -1%);
             }
         }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+            border-radius: 2px;
+        }
+        ::selection {
+            background: rgba(181, 130, 42, 0.22);
+            color: var(--ink);
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           KEYFRAMES — premium, bug-free
+           ═══════════════════════════════════════════════════════════════ */
+        @keyframes heroRise {
+            from {
+                opacity: 0;
+                transform: translateY(28px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes heroRiseSlow {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes mandalaRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes breathe {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 40px var(--gold-glow);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 72px var(--gold-glow);
+            }
+        }
+        @keyframes breatheDark {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 50px rgba(212, 175, 55, 0.10);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 90px rgba(212, 175, 55, 0.18);
+            }
+        }
+        @keyframes mandalaBreathe {
+            0%,
+            100% {
+                opacity: 0.35;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.75;
+                transform: translate(-50%, -50%) scale(1.015);
+            }
+        }
+        @keyframes scrollBounce {
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scaleY(0.4);
+                opacity: 0.2;
+            }
+        }
+        @keyframes rippleOut {
+            0% {
+                opacity: 0.55;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(4.2);
+            }
+        }
+        @keyframes emblemRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes emblemPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 20px 5px var(--sun-glow);
+            }
+            50% {
+                box-shadow: 0 0 40px 14px var(--sun-glow);
+            }
+        }
         @keyframes ambientDrift {
             0%,
             100% {
                 transform: translate(0, 0) scale(1);
-                opacity: 0.55;
+                opacity: .55;
             }
             33% {
                 transform: translate(2%, -1%) scale(1.02);
-                opacity: 0.75;
+                opacity: .75;
             }
             66% {
                 transform: translate(-1%, 2%) scale(0.98);
-                opacity: 0.45;
+                opacity: .45;
+            }
+        }
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes centerPulse3D {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 30px rgba(181, 130, 42, 0.25), 0 0 60px rgba(181, 130, 42, 0.08);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.04);
+                box-shadow: 0 0 50px rgba(181, 130, 42, 0.40), 0 0 90px rgba(181, 130, 42, 0.14);
+            }
+        }
+        @keyframes ringGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(181, 130, 42, 0.12), inset 0 0 20px rgba(181, 130, 42, 0.04);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(181, 130, 42, 0.22), inset 0 0 40px rgba(181, 130, 42, 0.08);
+            }
+        }
+        @keyframes diagramFloat3D {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) scale(1);
+            }
+            25% {
+                transform: translate(-50%, -50%) rotateX(2deg) rotateY(3deg) scale(1.01);
+            }
+            75% {
+                transform: translate(-50%, -50%) rotateX(-1deg) rotateY(-2deg) scale(0.99);
+            }
+        }
+        @keyframes turiyaGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 30px rgba(181, 130, 42, 0.15), inset 0 0 30px rgba(181, 130, 42, 0.05);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(181, 130, 42, 0.30), inset 0 0 50px rgba(181, 130, 42, 0.10);
+            }
+        }
+        @keyframes rayPulse {
+            0%,
+            100% {
+                opacity: 0.4;
+                stroke-width: 0.8;
+            }
+            50% {
+                opacity: 0.8;
+                stroke-width: 1.5;
+            }
+        }
+        @keyframes nodeGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(181, 130, 42, 0.06);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(181, 130, 42, 0.14);
+            }
+        }
+        @keyframes stackPulse {
+            0%,
+            100% {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.02);
+            }
+        }
+        @keyframes mahavakyaFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CURSOR GLOW
+           ═══════════════════════════════════════════════════════════════ */
+        @media (pointer:fine) {
+            .cursor-glow {
+                position: fixed;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+                pointer-events: none;
+                z-index: 9998;
+                transform: translate(-50%, -50%);
+                transition: opacity .3s ease;
+                opacity: 0;
+                mix-blend-mode: screen;
+            }
+            body:hover .cursor-glow {
+                opacity: 1;
             }
         }
 
@@ -372,11 +507,14 @@
             transition: color .3s var(--ease-out-expo);
             stroke-width: 1.5;
         }
-        .icon-home, .icon-om {
+        .icon-home,
+        .icon-om {
             color: var(--stone);
             transition: color .3s;
         }
-        .nav-item:hover .icon-home, .nav-item:hover .icon-om, .nav-item:hover .nav-item-icon svg {
+        .nav-item:hover .icon-home,
+        .nav-item:hover .icon-om,
+        .nav-item:hover .nav-item-icon svg {
             color: var(--gold);
         }
         .nav-item.active .nav-item-icon svg {
@@ -414,7 +552,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            transition: all .45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all .45s var(--ease-elastic);
             box-shadow: var(--shadow-gold), 0 2px 8px rgba(0, 0, 0, .1);
             overflow: hidden;
         }
@@ -487,7 +625,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           HERO
+           HERO — PREMIUM REFACTOR (explicit classes, no nth-child)
            ═══════════════════════════════════════════════════════════════ */
         .hero {
             min-height: 100vh;
@@ -500,7 +638,7 @@
             padding: 5rem 2rem 6rem;
             text-align: center;
             background: var(--hero-bg);
-            perspective: 1200px;
+            perspective: 1500px;
         }
         .hero::after {
             content: '';
@@ -517,6 +655,20 @@
             inset: 0;
             background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181, 130, 42, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 130, 42, .025) 29px);
             pointer-events: none;
+            z-index: 0;
+        }
+        [data-theme="dark"] .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(212, 175, 55, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(212, 175, 55, .025) 29px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        [data-theme="dark"] .hero::after {
+            background: radial-gradient(ellipse 55% 45% at 20% 40%, rgba(212, 175, 55, .14) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 80% 60%, rgba(212, 175, 55, .10) 0%, transparent 70%);
+            box-shadow: 0 0 50px rgba(212, 175, 55, .10);
+            animation: breatheDark 18s ease-in-out infinite;
         }
         .hero-mountain {
             position: absolute;
@@ -525,11 +677,24 @@
             transform: translateX(-50%);
             width: 120%;
             height: 52%;
-            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(181, 133, 58, .3) 80%);
+            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(181, 133, 58, .30) 80%);
             clip-path: polygon(0% 100%, 8% 85%, 15% 78%, 20% 65%, 25% 55%, 30% 48%, 35% 40%, 38% 32%, 42% 22%, 45% 14%, 48% 8%, 50% 0%, 52% 8%, 55% 14%, 58% 22%, 62% 32%, 65% 40%, 70% 48%, 75% 55%, 80% 65%, 85% 72%, 92% 82%, 100% 100%);
             opacity: .12;
+            z-index: 0;
+            pointer-events: none;
         }
-        .mandala-ring {
+        [data-theme="dark"] .hero-mountain {
+            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(212, 175, 55, .30) 80%);
+        }
+
+        /* Mandala rings — explicit classes */
+        .hero-rings {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-ring {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -537,33 +702,41 @@
             border: 1px solid var(--ring-color);
             transform: translate(-50%, -50%);
             pointer-events: none;
-            animation: mandala-breathe 12s ease-in-out infinite;
+            animation: mandalaBreathe 12s ease-in-out infinite;
+            will-change: transform, opacity;
         }
-        .mandala-ring:nth-child(1) {
+        .hero-ring.r1 {
             width: 260px;
             height: 260px;
             opacity: 0.18;
         }
-        .mandala-ring:nth-child(2) {
+        .hero-ring.r2 {
             width: 400px;
             height: 400px;
             opacity: 0.12;
             animation-delay: 1.5s;
             animation-duration: 14s;
         }
-        .mandala-ring:nth-child(3) {
+        .hero-ring.r3 {
             width: 560px;
             height: 560px;
             opacity: 0.08;
             animation-delay: 3s;
             animation-duration: 16s;
         }
-        .mandala-ring:nth-child(4) {
+        .hero-ring.r4 {
             width: 740px;
             height: 740px;
             opacity: 0.05;
             animation-delay: 4.5s;
             animation-duration: 18s;
+        }
+
+        .hero-ripples {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
         }
         .hero-ripple {
             position: absolute;
@@ -575,20 +748,26 @@
             border: 1px solid var(--ring-color);
             transform: translate(-50%, -50%);
             pointer-events: none;
-            animation: ripple-out 9s ease-out infinite;
+            animation: rippleOut 9s ease-out infinite;
+            will-change: transform, opacity;
         }
-        .hero-ripple:nth-child(5) {
+        .hero-ripple.rip1 {
             animation-delay: 0s;
         }
-        .hero-ripple:nth-child(6) {
+        .hero-ripple.rip2 {
             animation-delay: 3s;
         }
+        .hero-ripple.rip3 {
+            animation-delay: 6s;
+        }
+
         .hero-emblem {
             width: 72px;
             height: 72px;
             margin: 0 auto 2rem;
             position: relative;
-            opacity: 1;
+            opacity: 0;
+            animation: heroRise 1.2s 0.5s forwards;
             z-index: 3;
         }
         .hero-emblem-circle {
@@ -597,7 +776,7 @@
             border-radius: 50%;
             border: 1px solid var(--gold-deep);
             opacity: .6;
-            animation: emblem-rotate 30s linear infinite;
+            animation: emblemRotate 30s linear infinite;
         }
         .hero-emblem-circle2 {
             position: absolute;
@@ -605,7 +784,7 @@
             border-radius: 50%;
             border: 1px solid var(--gold);
             opacity: .4;
-            animation: emblem-rotate 20s linear infinite reverse;
+            animation: emblemRotate 20s linear infinite reverse;
         }
         .hero-emblem-dot {
             position: absolute;
@@ -613,7 +792,7 @@
             border-radius: 50%;
             background: radial-gradient(circle, var(--gold-light), var(--gold));
             box-shadow: 0 0 20px 5px var(--sun-glow);
-            animation: emblem-pulse 4s ease-in-out infinite;
+            animation: emblemPulse 4s ease-in-out infinite;
         }
         .hero-eyemark {
             font-family: 'Cinzel', serif;
@@ -623,9 +802,9 @@
             text-transform: uppercase;
             margin-bottom: 2rem;
             opacity: 0;
+            animation: heroRise 1.1s .3s forwards;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s .3s forwards;
         }
         .hero-label {
             font-family: 'Cinzel', serif;
@@ -634,9 +813,9 @@
             color: var(--gold-deep);
             margin-bottom: .5rem;
             opacity: 0;
+            animation: heroRise 1.1s .9s forwards;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s .9s forwards;
         }
         .hero-subtitle-top {
             font-family: 'Cormorant Garamond', serif;
@@ -646,9 +825,9 @@
             letter-spacing: .08em;
             margin-bottom: .8rem;
             opacity: 0;
+            animation: heroRise 1.1s 1.1s forwards;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 1.1s forwards;
         }
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
@@ -657,16 +836,16 @@
             letter-spacing: .06em;
             line-height: 1.05;
             color: var(--ink);
-            text-shadow: 0 2px 40px rgba(181, 130, 42, .2);
+            text-shadow: 0 2px 40px rgba(181, 130, 42, .20);
             opacity: 0;
+            animation: heroRise 1.3s 1.3s forwards;
             margin-bottom: .2em;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.3s 1.3s forwards;
         }
         [data-theme="dark"] .hero-title {
             color: var(--gold-light);
-            text-shadow: 0 0 80px rgba(212, 164, 74, .3);
+            text-shadow: 0 0 80px rgba(230, 200, 110, .35);
         }
         .hero-epithet {
             font-family: 'Cormorant Garamond', serif;
@@ -675,10 +854,10 @@
             color: var(--gold-deep);
             letter-spacing: .12em;
             opacity: 0;
+            animation: heroRise 1.1s 1.6s forwards;
             margin-bottom: 2.5rem;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 1.6s forwards;
         }
         .hero-divider {
             display: flex;
@@ -687,9 +866,9 @@
             margin: 0 auto 2.5rem;
             width: fit-content;
             opacity: 0;
+            animation: heroRise 1.1s 1.8s forwards;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 1.8s forwards;
         }
         .hero-divider-line {
             width: 70px;
@@ -715,9 +894,9 @@
             margin: 0 auto .7rem;
             line-height: 1.85;
             opacity: 0;
+            animation: heroRise 1.1s 2s forwards;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 2s forwards;
         }
         .hero-quote-attr {
             font-family: 'Cinzel', serif;
@@ -726,10 +905,10 @@
             color: var(--stone);
             text-transform: uppercase;
             opacity: 0;
+            animation: heroRise 1.1s 2.2s forwards;
             margin-bottom: 3.5rem;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 2.2s forwards;
         }
         .hero-dates {
             font-family: 'Cormorant Garamond', serif;
@@ -737,9 +916,9 @@
             color: var(--stone);
             letter-spacing: .18em;
             opacity: 0;
+            animation: heroRise 1.1s 2.4s forwards;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 2.4s forwards;
         }
         .hero-scroll-cue {
             position: absolute;
@@ -751,9 +930,9 @@
             align-items: center;
             gap: .5rem;
             opacity: 0;
+            animation: heroRise 1.1s 2.8s forwards;
             cursor: pointer;
             z-index: 3;
-            animation: hero-rise 1.1s 2.8s forwards;
         }
         .hero-scroll-cue span {
             font-family: 'Cinzel', serif;
@@ -766,7 +945,7 @@
             width: 1px;
             height: 36px;
             background: linear-gradient(180deg, var(--gold-deep), transparent);
-            animation: scroll-bounce 2.5s ease-in-out infinite;
+            animation: scrollBounce 2.5s ease-in-out infinite;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -776,6 +955,18 @@
             max-width: 740px;
             margin: 0 auto;
             padding: 0 32px;
+        }
+        .deva {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.82em;
+            color: var(--stone-light);
+            margin-left: 0.35em;
+            opacity: 0.7;
+            letter-spacing: 0;
+            vertical-align: baseline;
+        }
+        [data-theme="dark"] .deva {
+            opacity: 0.85;
         }
         .skt-divider {
             text-align: center;
@@ -807,18 +998,6 @@
             opacity: 0.28;
             letter-spacing: 1em;
             padding-left: 1em;
-        }
-        .deva {
-            font-family: 'Noto Serif Devanagari', serif;
-            font-size: 0.82em;
-            color: var(--stone-light);
-            margin-left: 0.35em;
-            opacity: 0.7;
-            letter-spacing: 0;
-            vertical-align: baseline;
-        }
-        [data-theme="dark"] .deva {
-            opacity: 0.85;
         }
         .ed-section-label {
             font-family: 'Cinzel', serif;
@@ -944,13 +1123,13 @@
            PULLQUOTE BANNER
            ═══════════════════════════════════════════════════════════════ */
         .pq-section {
+            padding: 100px 32px;
+            text-align: center;
             position: relative;
             overflow: hidden;
             background: linear-gradient(180deg, var(--bg2), var(--bg));
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 6rem 2rem;
-            text-align: center;
         }
         .pq-glow {
             position: absolute;
@@ -962,6 +1141,7 @@
             background: radial-gradient(ellipse, var(--gold-glow), transparent 60%);
             pointer-events: none;
             animation: breathe 10s ease-in-out infinite;
+            transform-origin: center center;
         }
         .pq-mark {
             font-family: 'Cormorant Garamond', serif;
@@ -997,13 +1177,10 @@
         .pq-attr a {
             color: var(--gold);
             text-decoration: none;
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
         .pq-attr a:hover {
             color: var(--gold-light);
-            border-bottom-color: var(--gold-light);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1174,34 +1351,620 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           DIAGRAM CONTAINER
+           3D PREMIUM DIAGRAMS — unified system
            ═══════════════════════════════════════════════════════════════ */
-        .diagram-container {
-            margin: 2.5rem 0;
-            text-align: center;
+        .diagram-3d-container {
             position: relative;
+            width: 100%;
+            max-width: 520px;
+            margin: 3rem auto 2.5rem;
+            aspect-ratio: 1;
+            overflow: visible;
             z-index: 1;
+            perspective: 1200px;
+            transform-style: preserve-3d;
         }
-        .diagram-title {
+        .diagram-3d-container .diagram-title {
             font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             letter-spacing: 0.3em;
             color: var(--gold);
             text-transform: uppercase;
-            margin-bottom: 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
-        .diagram-svg {
-            max-width: 100%;
-            height: auto;
+
+        /* ── Diagram 1: Six Pramanas (radiating) ── */
+        .diagram-pramana .ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            will-change: transform, box-shadow;
+            backface-visibility: hidden;
+        }
+        .diagram-pramana .ring-outer {
+            width: 100%;
+            height: 100%;
+            border: 1.5px solid var(--border-medium);
+            background: radial-gradient(ellipse at 30% 30%, rgba(181, 130, 42, 0.03), transparent 70%);
+            box-shadow: 0 0 30px rgba(181, 130, 42, 0.04), inset 0 0 60px rgba(181, 130, 42, 0.02);
+            animation: ringGlow 8s ease-in-out infinite;
+        }
+        [data-theme="dark"] .diagram-pramana .ring-outer {
+            border-color: rgba(212, 175, 55, 0.15);
+            background: radial-gradient(ellipse at 30% 30%, rgba(212, 175, 55, 0.04), transparent 70%);
+        }
+        .diagram-pramana .ring-mid {
+            width: 52%;
+            height: 52%;
+            border: 1.5px solid var(--gold-light);
+            opacity: 0.55;
+            background: radial-gradient(ellipse at 40% 40%, rgba(181, 130, 42, 0.04), transparent 70%);
+        }
+        [data-theme="dark"] .diagram-pramana .ring-mid {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .diagram-pramana .ring-center {
+            width: 18%;
+            height: 18%;
+            background: radial-gradient(circle at 35% 35%, var(--gold-light), var(--gold-deep));
+            border: 2px solid var(--gold-light);
+            box-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(181, 130, 42, 0.10), inset 0 2px 20px rgba(255, 215, 140, 0.3);
+            animation: centerPulse3D 5s ease-in-out infinite;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            will-change: transform, box-shadow;
+        }
+        [data-theme="dark"] .diagram-pramana .ring-center {
+            background: radial-gradient(circle at 35% 35%, #d4af37, #8a6a1a);
+            border-color: var(--gold-light);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.25), 0 0 80px rgba(212, 175, 55, 0.12), inset 0 2px 20px rgba(255, 215, 140, 0.2);
+        }
+        .diagram-pramana .ring-center span {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.45rem, 1.2vw, 0.55rem);
+            color: rgba(255, 255, 255, 0.92);
+            text-align: center;
+            line-height: 1.25;
+            padding: 2px 6px;
+            letter-spacing: 0.04em;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            user-select: none;
+        }
+        .diagram-pramana .ring-center span .hl {
+            font-weight: 600;
+            color: #fff8ee;
+            text-shadow: 0 0 16px rgba(255, 215, 140, 0.4);
+        }
+        [data-theme="dark"] .diagram-pramana .ring-center span .hl {
+            color: #fff5e0;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Pramana nodes */
+        .diagram-pramana .pnode {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--surface);
+            border: 1.5px solid var(--border-medium);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 0.4rem;
+            min-width: 72px;
+            max-width: 90px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s var(--ease-out-expo);
+            animation: nodeGlow 4s ease-in-out infinite;
+            z-index: 3;
+            will-change: transform, box-shadow;
+        }
+        .diagram-pramana .pnode:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 24px rgba(181, 130, 42, 0.12);
+            border-color: var(--gold);
+        }
+        .diagram-pramana .pnode .num {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            opacity: 0.7;
+        }
+        .diagram-pramana .pnode .label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.2;
+        }
+        .diagram-pramana .pnode .sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.55rem;
+            color: var(--stone);
+            opacity: 0.8;
+            line-height: 1.2;
+        }
+        .diagram-pramana .pnode .deva-label {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.6rem;
+            color: var(--stone-light);
+            opacity: 0.6;
+        }
+        [data-theme="dark"] .diagram-pramana .pnode .label {
+            color: var(--ink);
+        }
+        [data-theme="dark"] .diagram-pramana .pnode {
+            background: var(--surface2);
+            border-color: var(--border);
+        }
+
+        .diagram-pramana .pnode.shabda {
+            border-color: var(--gold);
+            border-width: 2px;
+            background: rgba(181, 130, 42, 0.04);
+        }
+        [data-theme="dark"] .diagram-pramana .pnode.shabda {
+            background: rgba(212, 175, 55, 0.06);
+            border-color: var(--gold-light);
+        }
+        .diagram-pramana .pnode.shabda .label {
+            color: var(--gold);
+        }
+        [data-theme="dark"] .diagram-pramana .pnode.shabda .label {
+            color: var(--gold-light);
+        }
+
+        .diagram-pramana .ray {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 100px;
+            transform-origin: center center;
+            background: linear-gradient(180deg, var(--gold), transparent);
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 1;
+            animation: rayPulse 3s ease-in-out infinite;
+        }
+        .diagram-pramana .ray:nth-child(2) {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        .diagram-pramana .ray:nth-child(3) {
+            transform: translate(-50%, -50%) rotate(60deg);
+            animation-delay: 0.5s;
+        }
+        .diagram-pramana .ray:nth-child(4) {
+            transform: translate(-50%, -50%) rotate(120deg);
+            animation-delay: 1s;
+        }
+        .diagram-pramana .ray:nth-child(5) {
+            transform: translate(-50%, -50%) rotate(180deg);
+            animation-delay: 1.5s;
+        }
+        .diagram-pramana .ray:nth-child(6) {
+            transform: translate(-50%, -50%) rotate(240deg);
+            animation-delay: 2s;
+        }
+        .diagram-pramana .ray:nth-child(7) {
+            transform: translate(-50%, -50%) rotate(300deg);
+            animation-delay: 2.5s;
+        }
+
+        /* ── Diagram 2: Two Levels of Reality (stacked 3D) ── */
+        .diagram-levels {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        .diagram-levels .level-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        .diagram-levels .level {
+            position: absolute;
+            left: 50%;
+            border-radius: var(--radius-md);
+            transform: translateX(-50%);
+            padding: 0.8rem 1rem;
+            text-align: center;
+            width: 92%;
+            transition: all 0.4s var(--ease-out-expo);
+            will-change: transform, box-shadow;
+        }
+        .diagram-levels .level-param {
+            top: 6%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181, 130, 42, 0.08), transparent 80%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 40px rgba(181, 130, 42, 0.06), inset 0 0 60px rgba(181, 130, 42, 0.03);
+            animation: turiyaGlow 6s ease-in-out infinite;
+            z-index: 3;
+        }
+        [data-theme="dark"] .diagram-levels .level-param {
+            background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.06), transparent 80%);
+            border-color: var(--gold-light);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.06);
+        }
+        .diagram-levels .level-param .lbl {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .diagram-levels .level-param .main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            font-weight: 500;
+            color: var(--ink);
+            margin-top: 0.15rem;
+        }
+        .diagram-levels .level-param .sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.65rem;
+            color: var(--stone);
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+        [data-theme="dark"] .diagram-levels .level-param .main {
+            color: var(--gold-light);
+        }
+        [data-theme="dark"] .diagram-levels .level-param .sub {
+            color: var(--stone-light);
+        }
+
+        .diagram-levels .level-vyav {
+            bottom: 6%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181, 130, 42, 0.04), transparent 80%);
+            border: 1.5px solid var(--border-medium);
+            box-shadow: 0 0 20px rgba(181, 130, 42, 0.02);
+            z-index: 2;
+        }
+        [data-theme="dark"] .diagram-levels .level-vyav {
+            border-color: rgba(212, 175, 55, 0.12);
+            background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.03), transparent 80%);
+        }
+        .diagram-levels .level-vyav .lbl {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+        .diagram-levels .level-vyav .main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            font-weight: 400;
+            color: var(--ink2);
+            margin-top: 0.15rem;
+        }
+        .diagram-levels .level-vyav .sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.6rem;
+            color: var(--stone);
+            font-style: italic;
+            opacity: 0.7;
+            margin-top: 0.1rem;
+        }
+        [data-theme="dark"] .diagram-levels .level-vyav .main {
+            color: var(--stone-light);
+        }
+
+        .diagram-levels .level-connector {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 30%;
+            background: linear-gradient(180deg, transparent, var(--gold), transparent);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .diagram-levels .level-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            color: var(--gold);
+            opacity: 0.25;
+            letter-spacing: 0.2em;
+            pointer-events: none;
+            z-index: 1;
+            text-transform: uppercase;
+            margin-top: 2.5rem;
+        }
+        [data-theme="dark"] .diagram-levels .level-arrow {
+            color: var(--gold-light);
+            opacity: 0.2;
+        }
+
+        .diagram-levels .level-rope {
+            position: absolute;
+            bottom: 18%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+            opacity: 0.4;
+            text-transform: uppercase;
+            pointer-events: none;
+            z-index: 1;
+        }
+        [data-theme="dark"] .diagram-levels .level-rope {
+            color: var(--stone);
+            opacity: 0.3;
+        }
+
+        /* ── Diagram 3: Nirguna & Saguna (split 3D) ── */
+        .diagram-nirguna {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        .diagram-nirguna .split {
+            position: absolute;
+            left: 50%;
+            border-radius: var(--radius-md);
+            transform: translateX(-50%);
+            padding: 0.8rem 1rem;
+            text-align: center;
+            width: 92%;
+            transition: all 0.4s var(--ease-out-expo);
+            will-change: transform, box-shadow;
+        }
+        .diagram-nirguna .split-top {
+            top: 4%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181, 130, 42, 0.08), transparent 80%);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 40px rgba(181, 130, 42, 0.06);
+            animation: turiyaGlow 6s ease-in-out infinite;
+            z-index: 3;
+        }
+        [data-theme="dark"] .diagram-nirguna .split-top {
+            background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.06), transparent 80%);
+            border-color: var(--gold-light);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.06);
+        }
+        .diagram-nirguna .split-top .lbl {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .diagram-nirguna .split-top .main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 500;
+            color: var(--ink);
+            margin-top: 0.15rem;
+        }
+        .diagram-nirguna .split-top .sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.6rem;
+            color: var(--stone);
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+        [data-theme="dark"] .diagram-nirguna .split-top .main {
+            color: var(--gold-light);
+        }
+
+        .diagram-nirguna .split-mirror {
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            opacity: 0.25;
+            text-transform: uppercase;
+            pointer-events: none;
+            z-index: 1;
+            text-align: center;
+            width: 100%;
+        }
+        .diagram-nirguna .split-mirror .sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.5rem;
+            color: var(--stone-light);
+            opacity: 0.5;
+            font-style: italic;
             display: block;
-            margin: 0 auto;
+            margin-top: 0.1rem;
         }
+        [data-theme="dark"] .diagram-nirguna .split-mirror {
+            color: var(--gold-light);
+            opacity: 0.2;
+        }
+        [data-theme="dark"] .diagram-nirguna .split-mirror .sub {
+            color: var(--stone);
+        }
+
+        .diagram-nirguna .split-bottom {
+            bottom: 4%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181, 130, 42, 0.04), transparent 80%);
+            border: 1.5px solid var(--border-medium);
+            box-shadow: 0 0 20px rgba(181, 130, 42, 0.02);
+            z-index: 2;
+        }
+        [data-theme="dark"] .diagram-nirguna .split-bottom {
+            border-color: rgba(212, 175, 55, 0.12);
+            background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.03), transparent 80%);
+        }
+        .diagram-nirguna .split-bottom .lbl {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+        .diagram-nirguna .split-bottom .main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            font-weight: 400;
+            color: var(--ink2);
+            margin-top: 0.15rem;
+        }
+        .diagram-nirguna .split-bottom .sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.6rem;
+            color: var(--stone);
+            font-style: italic;
+            opacity: 0.7;
+            margin-top: 0.1rem;
+        }
+        [data-theme="dark"] .diagram-nirguna .split-bottom .main {
+            color: var(--stone-light);
+        }
+
+        /* ── Diagram 4: Four Mahavakyas (quadrant 3D) ── */
+        .diagram-mahavakya {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        .diagram-mahavakya .quad {
+            position: absolute;
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.5rem;
+            text-align: center;
+            width: 46%;
+            background: var(--surface);
+            border: 1.5px solid var(--border-medium);
+            transition: all 0.4s var(--ease-out-expo);
+            will-change: transform, box-shadow;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+        }
+        .diagram-mahavakya .quad:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 8px 24px rgba(181, 130, 42, 0.08);
+            border-color: var(--gold);
+            z-index: 4;
+        }
+        [data-theme="dark"] .diagram-mahavakya .quad {
+            background: var(--surface2);
+            border-color: var(--border);
+        }
+        [data-theme="dark"] .diagram-mahavakya .quad:hover {
+            border-color: var(--gold-light);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.06);
+        }
+        .diagram-mahavakya .quad .skt {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.6vw, 1.05rem);
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1.2;
+        }
+        .diagram-mahavakya .quad .trans {
+            font-family: 'Crimson Pro', serif;
+            font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+            color: var(--ink);
+            line-height: 1.3;
+            margin-top: 0.15rem;
+        }
+        .diagram-mahavakya .quad .src {
+            font-family: 'Cinzel', serif;
+            font-size: 0.4rem;
+            letter-spacing: 0.15em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+            opacity: 0.6;
+        }
+        [data-theme="dark"] .diagram-mahavakya .quad .trans {
+            color: var(--ink);
+        }
+        [data-theme="dark"] .diagram-mahavakya .quad .src {
+            color: var(--stone);
+        }
+        .diagram-mahavakya .quad.veda {
+            border-color: var(--gold);
+            background: rgba(181, 130, 42, 0.03);
+        }
+        [data-theme="dark"] .diagram-mahavakya .quad.veda {
+            background: rgba(212, 175, 55, 0.04);
+            border-color: var(--gold-light);
+        }
+        .diagram-mahavakya .quad.veda .skt {
+            color: var(--gold-deep);
+        }
+        [data-theme="dark"] .diagram-mahavakya .quad.veda .skt {
+            color: var(--gold-light);
+        }
+
+        .diagram-mahavakya .quad-tl {
+            top: 2%;
+            left: 2%;
+        }
+        .diagram-mahavakya .quad-tr {
+            top: 2%;
+            right: 2%;
+        }
+        .diagram-mahavakya .quad-bl {
+            bottom: 2%;
+            left: 2%;
+        }
+        .diagram-mahavakya .quad-br {
+            bottom: 2%;
+            right: 2%;
+        }
+
+        .diagram-mahavakya .center-aum {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            color: var(--gold);
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+            letter-spacing: 0.1em;
+        }
+        [data-theme="dark"] .diagram-mahavakya .center-aum {
+            color: var(--gold-light);
+            opacity: 0.08;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           DIAGRAM CAPTION
+           ═══════════════════════════════════════════════════════════════ */
         .diagram-caption {
             font-family: 'Crimson Pro', serif;
             font-size: 0.85rem;
             color: var(--stone);
             margin-top: 0.75rem;
             font-style: italic;
+            text-align: center;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1248,6 +2011,13 @@
             font-size: 0.92rem;
             color: var(--stone);
             line-height: 1.6;
+        }
+        .pramana-item.shabda-highlight {
+            background: var(--surface2);
+            border-left: 2px solid var(--gold);
+        }
+        [data-theme="dark"] .pramana-item.shabda-highlight {
+            background: rgba(212, 175, 55, 0.04);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1652,25 +2422,6 @@
             transform: translateY(0);
         }
 
-        @media (pointer: fine) {
-            .cursor-glow {
-                position: fixed;
-                width: 320px;
-                height: 320px;
-                border-radius: 50%;
-                background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
-                pointer-events: none;
-                z-index: 9998;
-                transform: translate(-50%, -50%);
-                transition: opacity 0.3s ease;
-                opacity: 0;
-                mix-blend-mode: screen;
-            }
-            body:hover .cursor-glow {
-                opacity: 1;
-            }
-        }
-
         /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
@@ -1709,6 +2460,49 @@
             .ed-wrap {
                 padding: 0 24px;
             }
+            .diagram-3d-container {
+                max-width: 400px;
+            }
+            .diagram-pramana .pnode {
+                min-width: 56px;
+                padding: 0.3rem 0.2rem;
+            }
+            .diagram-pramana .pnode .label {
+                font-size: 0.6rem;
+            }
+            .diagram-pramana .pnode .sub {
+                font-size: 0.45rem;
+            }
+            .diagram-pramana .pnode .deva-label {
+                font-size: 0.5rem;
+            }
+            .diagram-levels .level {
+                padding: 0.5rem 0.6rem;
+            }
+            .diagram-levels .level-param .main {
+                font-size: clamp(0.9rem, 2vw, 1.1rem);
+            }
+            .diagram-levels .level-vyav .main {
+                font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+            }
+            .diagram-nirguna .split {
+                padding: 0.5rem 0.6rem;
+            }
+            .diagram-nirguna .split-top .main {
+                font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+            }
+            .diagram-nirguna .split-bottom .main {
+                font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+            }
+            .diagram-mahavakya .quad .skt {
+                font-size: clamp(0.65rem, 1.4vw, 0.85rem);
+            }
+            .diagram-mahavakya .quad .trans {
+                font-size: clamp(0.5rem, 1vw, 0.65rem);
+            }
+            .diagram-mahavakya .quad {
+                padding: 0.4rem 0.3rem;
+            }
         }
         @media (max-width: 500px) {
             .pramana-grid {
@@ -1727,6 +2521,68 @@
             .works-roman {
                 min-width: 1.5rem;
                 font-size: 0.7rem;
+            }
+            .diagram-3d-container {
+                max-width: 320px;
+            }
+            .diagram-pramana .pnode {
+                min-width: 48px;
+                padding: 0.2rem 0.15rem;
+            }
+            .diagram-pramana .pnode .label {
+                font-size: 0.5rem;
+            }
+            .diagram-pramana .pnode .sub {
+                font-size: 0.4rem;
+            }
+            .diagram-pramana .pnode .deva-label {
+                font-size: 0.45rem;
+            }
+            .diagram-pramana .pnode .num {
+                font-size: 0.45rem;
+            }
+            .diagram-levels .level-param .main {
+                font-size: clamp(0.75rem, 2.2vw, 0.9rem);
+            }
+            .diagram-levels .level-vyav .main {
+                font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+            }
+            .diagram-levels .level-param .lbl {
+                font-size: 0.45rem;
+            }
+            .diagram-levels .level-vyav .lbl {
+                font-size: 0.4rem;
+            }
+            .diagram-levels .level-arrow {
+                font-size: 0.4rem;
+                margin-top: 1.8rem;
+            }
+            .diagram-nirguna .split-top .main {
+                font-size: clamp(0.7rem, 2vw, 0.85rem);
+            }
+            .diagram-nirguna .split-bottom .main {
+                font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+            }
+            .diagram-nirguna .split-top .lbl {
+                font-size: 0.45rem;
+            }
+            .diagram-nirguna .split-bottom .lbl {
+                font-size: 0.4rem;
+            }
+            .diagram-mahavakya .quad .skt {
+                font-size: clamp(0.55rem, 1.6vw, 0.7rem);
+            }
+            .diagram-mahavakya .quad .trans {
+                font-size: clamp(0.45rem, 1.2vw, 0.55rem);
+            }
+            .diagram-mahavakya .quad .src {
+                font-size: 0.35rem;
+            }
+            .diagram-mahavakya .quad {
+                padding: 0.3rem 0.2rem;
+            }
+            .diagram-mahavakya .center-aum {
+                font-size: clamp(1rem, 3.5vw, 1.6rem);
             }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -1787,11 +2643,11 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    HERO
+    HERO — PREMIUM REFACTOR
     ═══════════════════════════════════════════════════════════════ -->
     <header class="hero" id="hero">
-        <svg style="position:absolute;inset:0;width:100%;height:auto" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <g style="animation:mandalaRotate 60s linear infinite">
+        <svg style="position:absolute;inset:0;width:100%;height:auto;z-index:0;pointer-events:none;" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g style="animation:mandalaRotate 60s linear infinite;transform-origin:center;">
                 <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
                 <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
                 <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
@@ -1799,12 +2655,21 @@
             </g>
         </svg>
         <div class="hero-mountain" aria-hidden="true"></div>
-        <div class="mandala-ring" aria-hidden="true"></div>
-        <div class="mandala-ring" aria-hidden="true"></div>
-        <div class="mandala-ring" aria-hidden="true"></div>
-        <div class="mandala-ring" aria-hidden="true"></div>
-        <div class="hero-ripple" aria-hidden="true"></div>
-        <div class="hero-ripple" aria-hidden="true"></div>
+
+        <!-- Mandala rings — explicit classes -->
+        <div class="hero-rings" aria-hidden="true">
+            <div class="hero-ring r1"></div>
+            <div class="hero-ring r2"></div>
+            <div class="hero-ring r3"></div>
+            <div class="hero-ring r4"></div>
+        </div>
+
+        <!-- Ripples — explicit classes -->
+        <div class="hero-ripples" aria-hidden="true">
+            <div class="hero-ripple rip1"></div>
+            <div class="hero-ripple rip2"></div>
+            <div class="hero-ripple rip3"></div>
+        </div>
 
         <p class="hero-eyemark">The Great Expositor of Advaita</p>
         <div class="hero-emblem" aria-hidden="true">
@@ -1891,7 +2756,7 @@
     ═══════════════════════════════════════════════════════════════ -->
     <div class="stages-wrap">
 
-        <!-- SECTION 1: SIX PRAMANAS -->
+        <!-- SECTION 1: SIX PRAMANAS — 3D PREMIUM DIAGRAM -->
         <section class="stage-section" id="pramanas">
             <div class="stage-wm" aria-hidden="true">प्रमाण</div>
             <div class="stage-header">
@@ -1907,76 +2772,67 @@
             <div class="stage-body">
                 <p><strong>A</strong>di Shankara systematised the six <span class="sanskrit-term" title="Means of valid knowledge in Indian epistemology">pramāṇas</span>, the means by which knowledge is reliably acquired. They are foundational to Advaita epistemology and distinguish it from other Indian schools.</p>
 
-                <!-- SVG DIAGRAM 1: Six Pramanas -->
-                <div class="diagram-container">
+                <!-- ★ 3D PREMIUM DIAGRAM: Six Pramanas ★ -->
+                <div class="diagram-3d-container diagram-pramana">
                     <div class="diagram-title">The Six Pramāṇas · Six Means of Knowledge</div>
-                    <svg class="diagram-svg" viewBox="0 0 740 380" width="740" height="380" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="goldGradP" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="goldGradP2" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.12" />
-                                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.03" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="740" height="380" fill="var(--bg, #faf7f2)" rx="12"/>
-                        <!-- Center circle: Brahman / Consciousness -->
-                        <circle cx="370" cy="190" r="28" fill="none" stroke="url(#goldGradP)" stroke-width="1.5" opacity="0.5"/>
-                        <circle cx="370" cy="190" r="18" fill="url(#goldGradP)" opacity="0.15"/>
-                        <text x="370" y="186" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" font-weight="600">CHIT</text>
-                        <text x="370" y="200" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="6" opacity="0.7">Consciousness</text>
 
-                        <!-- Six rays -->
-                        <!-- 1. Pratyaksha - top left -->
-                        <line x1="370" y1="190" x2="180" y2="80" stroke="url(#goldGradP)" stroke-width="0.8" opacity="0.4"/>
-                        <circle cx="180" cy="80" r="40" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="180" y="68" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="8" font-weight="600">I</text>
-                        <text x="180" y="82" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="9" font-weight="500">Pratyakṣa</text>
-                        <text x="180" y="98" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7">Perception</text>
+                    <!-- Outer ring -->
+                    <div class="ring ring-outer"></div>
+                    <!-- Mid ring -->
+                    <div class="ring ring-mid"></div>
+                    <!-- Center -->
+                    <div class="ring ring-center">
+                        <span><span class="hl">CHIT</span><br>Consciousness</span>
+                    </div>
 
-                        <!-- 2. Anumana - top -->
-                        <line x1="370" y1="190" x2="370" y2="55" stroke="url(#goldGradP)" stroke-width="0.8" opacity="0.4"/>
-                        <circle cx="370" cy="55" r="40" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="370" y="43" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="8" font-weight="600">II</text>
-                        <text x="370" y="57" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="9" font-weight="500">Anumāṇa</text>
-                        <text x="370" y="73" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7">Inference</text>
+                    <!-- Rays -->
+                    <div class="ray" style="transform:translate(-50%,-50%) rotate(0deg) translateY(-120px);height:140px;"></div>
+                    <div class="ray" style="transform:translate(-50%,-50%) rotate(60deg) translateY(-120px);height:140px;"></div>
+                    <div class="ray" style="transform:translate(-50%,-50%) rotate(120deg) translateY(-120px);height:140px;"></div>
+                    <div class="ray" style="transform:translate(-50%,-50%) rotate(180deg) translateY(-120px);height:140px;"></div>
+                    <div class="ray" style="transform:translate(-50%,-50%) rotate(240deg) translateY(-120px);height:140px;"></div>
+                    <div class="ray" style="transform:translate(-50%,-50%) rotate(300deg) translateY(-120px);height:140px;"></div>
 
-                        <!-- 3. Upamana - top right -->
-                        <line x1="370" y1="190" x2="560" y2="80" stroke="url(#goldGradP)" stroke-width="0.8" opacity="0.4"/>
-                        <circle cx="560" cy="80" r="40" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="560" y="68" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="8" font-weight="600">III</text>
-                        <text x="560" y="82" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="9" font-weight="500">Upamāṇa</text>
-                        <text x="560" y="98" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7">Comparison</text>
-
-                        <!-- 4. Arthapatti - bottom right -->
-                        <line x1="370" y1="190" x2="560" y2="300" stroke="url(#goldGradP)" stroke-width="0.8" opacity="0.4"/>
-                        <circle cx="560" cy="300" r="40" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="560" y="288" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="8" font-weight="600">IV</text>
-                        <text x="560" y="302" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="9" font-weight="500">Arthāpatti</text>
-                        <text x="560" y="318" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7">Postulation</text>
-
-                        <!-- 5. Anupalabdhi - bottom -->
-                        <line x1="370" y1="190" x2="370" y2="325" stroke="url(#goldGradP)" stroke-width="0.8" opacity="0.4"/>
-                        <circle cx="370" cy="325" r="40" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="370" y="313" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="8" font-weight="600">V</text>
-                        <text x="370" y="327" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="9" font-weight="500">Anupalabdhi</text>
-                        <text x="370" y="343" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7">Non-Apprehension</text>
-
-                        <!-- 6. Shabda - bottom left -->
-                        <line x1="370" y1="190" x2="180" y2="300" stroke="url(#goldGradP)" stroke-width="1.2" opacity="0.6"/>
-                        <circle cx="180" cy="300" r="44" fill="var(--surface)" stroke="url(#goldGradP)" stroke-width="1.5" opacity="0.6"/>
-                        <text x="180" y="286" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="9" font-weight="700">VI</text>
-                        <text x="180" y="302" text-anchor="middle" fill="var(--gold)" font-family="Crimson Pro, serif" font-size="10" font-weight="600">Śabda</text>
-                        <text x="180" y="318" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7">Verbal Testimony</text>
-                        <text x="180" y="332" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Sole means for Brahman</text>
-
-                        <!-- Outer ring -->
-                        <circle cx="370" cy="190" r="170" fill="none" stroke="url(#goldGradP)" stroke-width="0.3" opacity="0.15"/>
-                    </svg>
-                    <div class="diagram-caption">The six pramāṇas radiate from consciousness. Śabda (scriptural testimony) is the sole means for knowing Brahman, which transcends perception and inference.</div>
+                    <!-- Nodes -->
+                    <div class="pnode" style="top:4%;left:50%;transform:translateX(-50%);">
+                        <span class="num">II</span>
+                        <span class="label">Anumāṇa</span>
+                        <span class="deva-label">अनुमान</span>
+                        <span class="sub">Inference</span>
+                    </div>
+                    <div class="pnode" style="top:20%;right:2%;transform:translateY(-50%);">
+                        <span class="num">III</span>
+                        <span class="label">Upamāṇa</span>
+                        <span class="deva-label">उपमान</span>
+                        <span class="sub">Comparison</span>
+                    </div>
+                    <div class="pnode" style="bottom:20%;right:2%;transform:translateY(50%);">
+                        <span class="num">IV</span>
+                        <span class="label">Arthāpatti</span>
+                        <span class="deva-label">अर्थापत्ति</span>
+                        <span class="sub">Postulation</span>
+                    </div>
+                    <div class="pnode" style="bottom:4%;left:50%;transform:translateX(-50%);">
+                        <span class="num">V</span>
+                        <span class="label">Anupalabdhi</span>
+                        <span class="deva-label">अनुपलब्धि</span>
+                        <span class="sub">Non-Apprehension</span>
+                    </div>
+                    <div class="pnode" style="bottom:20%;left:2%;transform:translateY(50%);">
+                        <span class="num">I</span>
+                        <span class="label">Pratyakṣa</span>
+                        <span class="deva-label">प्रत्यक्ष</span>
+                        <span class="sub">Perception</span>
+                    </div>
+                    <div class="pnode shabda" style="top:20%;left:2%;transform:translateY(-50%);">
+                        <span class="num">VI</span>
+                        <span class="label">Śabda</span>
+                        <span class="deva-label">शब्द</span>
+                        <span class="sub">Verbal Testimony</span>
+                    </div>
                 </div>
+
+                <div class="diagram-caption">The six pramāṇas radiate from consciousness. Śabda (scriptural testimony) is the sole means for knowing Brahman, which transcends perception and inference.</div>
 
                 <div class="pramana-grid">
                     <div class="pramana-item">
@@ -2004,7 +2860,7 @@
                         <div class="pramana-term"><span class="sanskrit-term" title="Non-apprehension; knowledge of absence through non-perception">Anupalabdhi</span> — Non-Apprehension</div>
                         <div class="pramana-desc">Knowledge of absence through non-perception. "There is no pot on the ground" is itself a valid cognition.</div>
                     </div>
-                    <div class="pramana-item" style="background:var(--surface2);border-left:2px solid var(--gold);">
+                    <div class="pramana-item shabda-highlight">
                         <div class="pramana-num">VI</div>
                         <div class="pramana-term"><span class="sanskrit-term" title="Verbal testimony; knowledge from reliable scripture, especially the Upaniṣads">Śabda</span> — Verbal Testimony</div>
                         <div class="pramana-desc">Knowledge from reliable scripture, especially the Upaniṣads. For Shankara, śabda is the sole means for knowing Brahman, which transcends both sense and reason.</div>
@@ -2030,7 +2886,7 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 2: TWO LEVELS OF REALITY -->
+        <!-- SECTION 2: TWO LEVELS OF REALITY — 3D PREMIUM DIAGRAM -->
         <section class="stage-section" id="two-levels">
             <div class="stage-wm" aria-hidden="true">सत्ता</div>
             <div class="stage-header">
@@ -2048,46 +2904,34 @@
 
                 <p>This distinction resolves the apparent contradiction between the Upaniṣads' declaration of non‑duality and our everyday perception of a manifold world. The world is not absolutely false (like a rabbit's horn), nor is it absolutely real (like Brahman). It is <em><span class="sanskrit-term" title="Neither real nor unreal; dependent appearance, like a mirage or a rope mistaken for a snake">mithyā</span></em> – neither real nor unreal, but a dependent appearance.</p>
 
-                <!-- SVG DIAGRAM 2: Two Levels of Reality -->
-                <div class="diagram-container">
+                <!-- ★ 3D PREMIUM DIAGRAM: Two Levels ★ -->
+                <div class="diagram-3d-container diagram-levels" style="max-width:480px;aspect-ratio:4/3;">
                     <div class="diagram-title">Two Orders of Reality · द्विविध सत्ता</div>
-                    <svg class="diagram-svg" viewBox="0 0 700 340" width="700" height="340" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="goldGradL" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="vyavGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.08" />
-                                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.02" />
-                            </linearGradient>
-                            <linearGradient id="paramGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.2" />
-                                <stop offset="100%" style="stop-color:#e6c86e;stop-opacity:0.05" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="700" height="340" fill="var(--bg, #faf7f2)" rx="12"/>
-                        <!-- Paramarthika layer (top) -->
-                        <rect x="40" y="24" width="620" height="100" rx="8" fill="url(#paramGrad)" stroke="url(#goldGradL)" stroke-width="1.5" opacity="0.7"/>
-                        <text x="350" y="55" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.3em">PĀRAMĀRTHIKA SATTĀ</text>
-                        <text x="350" y="78" text-anchor="middle" fill="var(--ink)" font-family="Cormorant Garamond, serif" font-size="18" font-weight="500">BRAHMAN — THE ABSOLUTE</text>
-                        <text x="350" y="105" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Non-dual, unchanging, attributeless, pure consciousness</text>
+                    <div class="level-stack">
+                        <!-- Paramarthika -->
+                        <div class="level level-param" style="top:4%;">
+                            <div class="lbl">PĀRAMĀRTHIKA SATTĀ</div>
+                            <div class="main">BRAHMAN — THE ABSOLUTE</div>
+                            <div class="sub">Non-dual, unchanging, attributeless, pure consciousness</div>
+                        </div>
 
-                        <!-- Divider arrow -->
-                        <text x="350" y="155" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="14" opacity="0.4">▼</text>
-                        <text x="350" y="175" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Superimposition (adhyāsa) · Avidyā</text>
+                        <!-- Connector -->
+                        <div class="level-connector" style="top:50%;height:28%;"></div>
+                        <div class="level-arrow">Superimposition · अध्यास</div>
 
-                        <!-- Vyavaharika layer (bottom) -->
-                        <rect x="40" y="190" width="620" height="100" rx="8" fill="url(#vyavGrad)" stroke="rgba(181,130,42,0.25)" stroke-width="1" opacity="0.8"/>
-                        <text x="350" y="222" text-anchor="middle" fill="var(--stone-light)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.3em" opacity="0.8">VYĀVAHĀRIKA SATTĀ</text>
-                        <text x="350" y="246" text-anchor="middle" fill="var(--ink2)" font-family="Cormorant Garamond, serif" font-size="17" font-weight="400">THE EMPIRICAL WORLD — MITHYĀ</text>
-                        <text x="350" y="273" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Names and forms, cause and effect, the waking-dreaming-deep sleep states</text>
+                        <!-- Vyavaharika -->
+                        <div class="level level-vyav" style="bottom:4%;">
+                            <div class="lbl">VYĀVAHĀRIKA SATTĀ</div>
+                            <div class="main">THE EMPIRICAL WORLD — MITHYĀ</div>
+                            <div class="sub">Names and forms, cause and effect, the waking-dreaming-deep sleep states</div>
+                        </div>
 
-                        <!-- Rope-snake analogy callout -->
-                        <text x="350" y="320" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.2em" opacity="0.6">— THE ROPE MISTAKEN FOR A SNAKE —</text>
-                    </svg>
-                    <div class="diagram-caption">The empirical world (vyāvahārika) is a superimposition on the absolute (pāramārthika). Just as a rope is mistaken for a snake, Brahman is mistaken for the manifold world.</div>
+                        <!-- Rope-snake analogy -->
+                        <div class="level-rope">— THE ROPE MISTAKEN FOR A SNAKE —</div>
+                    </div>
                 </div>
+
+                <div class="diagram-caption">The empirical world (vyāvahārika) is a superimposition on the absolute (pāramārthika). Just as a rope is mistaken for a snake, Brahman is mistaken for the manifold world.</div>
 
                 <div class="pull-q">
                     <p>"The world is real as long as the cause of its appearance (avidyā) persists. When avidyā is destroyed by knowledge, the world ceases to appear as separate from Brahman."</p>
@@ -2098,7 +2942,7 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 3: NIRGUNA AND SAGUNA BRAHMAN -->
+        <!-- SECTION 3: NIRGUNA & SAGUNA — 3D PREMIUM DIAGRAM -->
         <section class="stage-section" id="nirguna-saguna">
             <div class="stage-wm" aria-hidden="true">ब्रह्म</div>
             <div class="stage-header">
@@ -2116,47 +2960,32 @@
 
                 <p>For Shankara, devotion to Saguṇa Brahman is a valid and necessary step for most seekers. It purifies the mind and leads eventually to the direct realisation of Nirguṇa Brahman. This is the basis of the classical Advaita path: first, worship and devotion (bhakti); later, discriminative knowledge (jñāna) that transcends all forms.</p>
 
-                <!-- SVG DIAGRAM 3: Nirguna vs Saguna -->
-                <div class="diagram-container">
+                <!-- ★ 3D PREMIUM DIAGRAM: Nirguna & Saguna ★ -->
+                <div class="diagram-3d-container diagram-nirguna" style="max-width:480px;aspect-ratio:4/3;">
                     <div class="diagram-title">Nirguṇa &amp; Saguṇa Brahman · निर्गुण · सगुण</div>
-                    <svg class="diagram-svg" viewBox="0 0 700 300" width="700" height="300" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="goldGradN" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="nirGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.15" />
-                                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.04" />
-                            </linearGradient>
-                            <linearGradient id="sagGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.08" />
-                                <stop offset="100%" style="stop-color:#e6c86e;stop-opacity:0.02" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="700" height="300" fill="var(--bg, #faf7f2)" rx="12"/>
-                        <!-- Nirguna (top) -->
-                        <rect x="40" y="24" width="620" height="90" rx="8" fill="url(#nirGrad)" stroke="url(#goldGradN)" stroke-width="1.5"/>
-                        <text x="350" y="52" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="12" letter-spacing="0.35em">NIRGUṆA BRAHMAN</text>
-                        <text x="350" y="76" text-anchor="middle" fill="var(--ink)" font-family="Cormorant Garamond, serif" font-size="16" font-weight="400">Attributeless · Formless · Unchanging</text>
-                        <text x="350" y="98" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Pure consciousness, beyond all description, the ultimate reality</text>
 
-                        <!-- Mirror / lens -->
-                        <text x="350" y="142" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.25em" opacity="0.5">◈ THE SAME REALITY ◈</text>
-                        <text x="350" y="160" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">seen through the lens of avidyā (ignorance)</text>
+                    <!-- Nirguna -->
+                    <div class="split split-top">
+                        <div class="lbl">NIRGUṆA BRAHMAN</div>
+                        <div class="main">Attributeless · Formless · Unchanging</div>
+                        <div class="sub">Pure consciousness, beyond all description, the ultimate reality</div>
+                    </div>
 
-                        <!-- Saguna (bottom) -->
-                        <rect x="40" y="178" width="620" height="90" rx="8" fill="url(#sagGrad)" stroke="rgba(181,130,42,0.3)" stroke-width="1"/>
-                        <text x="350" y="206" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="12" letter-spacing="0.35em">SAGUṆA BRAHMAN</text>
-                        <text x="350" y="230" text-anchor="middle" fill="var(--ink2)" font-family="Cormorant Garamond, serif" font-size="16" font-weight="400">Īśvara · The Personal God</text>
-                        <text x="350" y="252" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Creator, preserver, destroyer — worshipped through devotion (bhakti)</text>
+                    <!-- Mirror text -->
+                    <div class="split-mirror">
+                        ◈ THE SAME REALITY ◈
+                        <span class="sub">seen through the lens of avidyā (ignorance)</span>
+                    </div>
 
-                        <!-- Connecting lines -->
-                        <line x1="350" y1="114" x2="350" y2="130" stroke="url(#goldGradN)" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
-                        <line x1="350" y1="170" x2="350" y2="178" stroke="url(#goldGradN)" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
-                    </svg>
-                    <div class="diagram-caption">Nirguṇa and Saguṇa Brahman are not two different realities. Saguṇa is Nirguṇa reflected through the mind of the devotee — the same sun seen through different clouds.</div>
+                    <!-- Saguna -->
+                    <div class="split split-bottom">
+                        <div class="lbl">SAGUṆA BRAHMAN</div>
+                        <div class="main">Īśvara · The Personal God</div>
+                        <div class="sub">Creator, preserver, destroyer — worshipped through devotion (bhakti)</div>
+                    </div>
                 </div>
+
+                <div class="diagram-caption">Nirguṇa and Saguṇa Brahman are not two different realities. Saguṇa is Nirguṇa reflected through the mind of the devotee — the same sun seen through different clouds.</div>
 
                 <div class="scripture-panels">
                     <div class="scripture-panel">
@@ -2175,7 +3004,7 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 4: THE FOUR MAHAVAKYAS -->
+        <!-- SECTION 4: FOUR MAHAVAKYAS — 3D PREMIUM DIAGRAM -->
         <section class="stage-section" id="mahavakyas">
             <div class="stage-wm" aria-hidden="true">महावाक्य</div>
             <div class="stage-header">
@@ -2191,52 +3020,37 @@
             <div class="stage-body">
                 <p><strong>S</strong>hankara identified four "great sayings" (mahāvākyas) from the four Vedas, each declaring the identity of the individual self with Brahman. These are the central mantras of Advaita meditation:</p>
 
-                <!-- SVG DIAGRAM 4: Four Mahavakyas -->
-                <div class="diagram-container">
+                <!-- ★ 3D PREMIUM DIAGRAM: Four Mahavakyas ★ -->
+                <div class="diagram-3d-container diagram-mahavakya" style="max-width:520px;aspect-ratio:1;">
                     <div class="diagram-title">The Four Mahāvākyas · चत्वारि महावाक्यानि</div>
-                    <svg class="diagram-svg" viewBox="0 0 700 340" width="700" height="340" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="goldGradM" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="700" height="340" fill="var(--bg, #faf7f2)" rx="12"/>
-                        <!-- Four quadrants -->
-                        <!-- Top-left -->
-                        <rect x="30" y="24" width="300" height="120" rx="8" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="180" y="52" text-anchor="middle" fill="var(--gold)" font-family="Cormorant Garamond, serif" font-size="18" font-weight="500" font-style="italic">Prajñānaṁ Brahma</text>
-                        <text x="180" y="78" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="12">Consciousness is Brahman</text>
-                        <text x="180" y="100" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.2em">AITAREYA UPANIṢAD</text>
-                        <text x="180" y="122" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Rig Veda</text>
 
-                        <!-- Top-right -->
-                        <rect x="370" y="24" width="300" height="120" rx="8" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="520" y="52" text-anchor="middle" fill="var(--gold)" font-family="Cormorant Garamond, serif" font-size="18" font-weight="500" font-style="italic">Aham Brahmāsmi</text>
-                        <text x="520" y="78" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="12">I am Brahman</text>
-                        <text x="520" y="100" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.2em">BṚHADĀRAṆYAKA UPANIṢAD</text>
-                        <text x="520" y="122" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Yajur Veda</text>
+                    <!-- Quadrants -->
+                    <div class="quad quad-tl veda">
+                        <div class="skt">Prajñānaṁ Brahma</div>
+                        <div class="trans">Consciousness is Brahman</div>
+                        <div class="src">Aitareya Upaniṣad · Rig Veda</div>
+                    </div>
+                    <div class="quad quad-tr veda">
+                        <div class="skt">Aham Brahmāsmi</div>
+                        <div class="trans">I am Brahman</div>
+                        <div class="src">Bṛhadāraṇyaka Upaniṣad · Yajur Veda</div>
+                    </div>
+                    <div class="quad quad-bl veda">
+                        <div class="skt">Tat Tvam Asi</div>
+                        <div class="trans">That thou art</div>
+                        <div class="src">Chāndogya Upaniṣad · Sāma Veda</div>
+                    </div>
+                    <div class="quad quad-br veda">
+                        <div class="skt">Ayam Ātmā Brahma</div>
+                        <div class="trans">This self is Brahman</div>
+                        <div class="src">Māṇḍūkya Upaniṣad · Atharva Veda</div>
+                    </div>
 
-                        <!-- Bottom-left -->
-                        <rect x="30" y="175" width="300" height="120" rx="8" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="180" y="203" text-anchor="middle" fill="var(--gold)" font-family="Cormorant Garamond, serif" font-size="18" font-weight="500" font-style="italic">Tat Tvam Asi</text>
-                        <text x="180" y="229" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="12">That thou art</text>
-                        <text x="180" y="251" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.2em">CHĀNDOGYA UPANIṢAD</text>
-                        <text x="180" y="273" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Sāma Veda</text>
-
-                        <!-- Bottom-right -->
-                        <rect x="370" y="175" width="300" height="120" rx="8" fill="var(--surface)" stroke="rgba(181,130,42,0.2)" stroke-width="1"/>
-                        <text x="520" y="203" text-anchor="middle" fill="var(--gold)" font-family="Cormorant Garamond, serif" font-size="18" font-weight="500" font-style="italic">Ayam Ātmā Brahma</text>
-                        <text x="520" y="229" text-anchor="middle" fill="var(--ink)" font-family="Crimson Pro, serif" font-size="12">This self is Brahman</text>
-                        <text x="520" y="251" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.2em">MĀṆḌŪKYA UPANIṢAD</text>
-                        <text x="520" y="273" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Atharva Veda</text>
-
-                        <!-- Center diamond -->
-                        <polygon points="350,135 340,150 350,165 360,150" fill="var(--gold)" opacity="0.4"/>
-                        <text x="350" y="142" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="6" letter-spacing="0.2em" opacity="0.8">A</text>
-                    </svg>
-                    <div class="diagram-caption">The four Mahāvākyas — each from a different Veda — all point to the identity of Ātman and Brahman. They are not mere statements but direct pointers for meditation.</div>
+                    <!-- Center AUM -->
+                    <div class="center-aum">AUM</div>
                 </div>
+
+                <div class="diagram-caption">The four Mahāvākyas — each from a different Veda — all point to the identity of Ātman and Brahman. They are not mere statements but direct pointers for meditation.</div>
 
                 <p>These sayings are not merely philosophical statements; they are direct pointers for meditation (nididhyāsana). By constantly reflecting on them, the mind becomes saturated with the identity of Atman and Brahman, and finally the direct realisation dawns.</p>
 
@@ -2573,6 +3387,13 @@
                 }
                 animateCursor();
             }
+
+            /* FALLBACK for fade-in */
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 1500);
         })();
     </script>
 

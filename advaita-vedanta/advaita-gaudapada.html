@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
 /* ═══════════════════════════════════════════════════════════════
-   TOKENS (from Ramana Maharshi design system)
+   TOKENS — premium design system
    ═══════════════════════════════════════════════════════════════ */
 :root {
   --bg:        #faf7f2;
@@ -43,7 +43,9 @@
   --ring-color: rgba(122,90,42,0.22);
   --ease-out-expo:  cubic-bezier(0.16,1,0.3,1);
   --ease-out-quart: cubic-bezier(0.25,1,0.5,1);
+  --ease-elastic:   cubic-bezier(0.68,-0.55,0.265,1.55);
   --ease-smooth:    cubic-bezier(0.45,0.05,0.55,0.95);
+  --ease-premium:   cubic-bezier(0.22,1,0.36,1);
 }
 
 [data-theme="dark"] {
@@ -96,6 +98,12 @@ body::before {
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
   pointer-events:none; z-index:9999;
   opacity:var(--grain-opacity);
+  animation:grainShift 8s steps(10) infinite;
+}
+@keyframes grainShift {
+  0%,100%{transform:translate(0,0)} 10%{transform:translate(-2%,-2%)} 20%{transform:translate(2%,1%)}
+  30%{transform:translate(-1%,2%)} 40%{transform:translate(1%,-1%)} 50%{transform:translate(-2%,1%)}
+  60%{transform:translate(2%,-2%)} 70%{transform:translate(-1%,-1%)} 80%{transform:translate(1%,2%)} 90%{transform:translate(-2%,-1%)}
 }
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -104,30 +112,102 @@ body::before {
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
 
 /* ═══════════════════════════════════════════════════════════════
-   KEYFRAMES
+   KEYFRAMES — premium, bug-free
    ═══════════════════════════════════════════════════════════════ */
-@keyframes hero-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes mandalaRotate{to{transform:rotate(360deg)}}
-@keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 40px var(--gold-glow)}50%{transform:scale(1.04);box-shadow:0 0 64px var(--gold-glow)}}
-@keyframes mandala-breathe{0%,100%{opacity:0.35;transform:translate(-50%,-50%) scale(1)}50%{opacity:0.75;transform:translate(-50%,-50%) scale(1.012)}}
-@keyframes scroll-bounce{0%,100%{transform:scaleY(1);opacity:1}50%{transform:scaleY(.5);opacity:.3}}
-@keyframes ripple-out{0%{opacity:0.55;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(4.2)}}
-@keyframes emblem-rotate{to{transform:rotate(360deg)}}
-@keyframes emblem-pulse{0%,100%{box-shadow:0 0 20px 5px var(--sun-glow)}50%{box-shadow:0 0 35px 12px var(--sun-glow)}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes grainShift {
-  0%,100% { transform: translate(0,0); }
-  10% { transform: translate(-2%,-2%); }
-  20% { transform: translate(2%,1%); }
-  30% { transform: translate(-1%,2%); }
-  40% { transform: translate(1%,-1%); }
-  50% { transform: translate(-2%,1%); }
-  60% { transform: translate(2%,-2%); }
-  70% { transform: translate(-1%,-1%); }
-  80% { transform: translate(1%,2%); }
-  90% { transform: translate(-2%,-1%); }
+@keyframes heroRise {
+  from { opacity:0; transform:translateY(28px) scale(0.98); }
+  to { opacity:1; transform:translateY(0) scale(1); }
 }
-@keyframes ambientDrift { 0%,100% { transform: translate(0,0) scale(1); opacity: 0.55; } 33% { transform: translate(2%,-1%) scale(1.02); opacity: 0.75; } 66% { transform: translate(-1%,2%) scale(0.98); opacity: 0.45; } }
+@keyframes heroRiseSlow {
+  from { opacity:0; transform:translateY(40px) scale(0.96); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes mandalaRotate { to { transform:rotate(360deg); } }
+@keyframes breathe {
+  0%,100% { transform:scale(1); box-shadow:0 0 40px var(--gold-glow); }
+  50% { transform:scale(1.04); box-shadow:0 0 72px var(--gold-glow); }
+}
+@keyframes breatheDark {
+  0%,100% { transform:scale(1); box-shadow:0 0 50px rgba(212,175,55,0.10); }
+  50% { transform:scale(1.04); box-shadow:0 0 90px rgba(212,175,55,0.18); }
+}
+@keyframes mandalaBreathe {
+  0%,100% { opacity:0.35; transform:translate(-50%,-50%) scale(1); }
+  50% { opacity:0.75; transform:translate(-50%,-50%) scale(1.015); }
+}
+@keyframes scrollBounce {
+  0%,100% { transform:scaleY(1); opacity:1; }
+  50% { transform:scaleY(0.4); opacity:0.2; }
+}
+@keyframes rippleOut {
+  0% { opacity:0.55; transform:translate(-50%,-50%) scale(1); }
+  100% { opacity:0; transform:translate(-50%,-50%) scale(4.2); }
+}
+@keyframes emblemRotate { to { transform:rotate(360deg); } }
+@keyframes emblemPulse {
+  0%,100% { box-shadow:0 0 20px 5px var(--sun-glow); }
+  50% { box-shadow:0 0 40px 14px var(--sun-glow); }
+}
+@keyframes ambientDrift {
+  0%,100% { transform:translate(0,0) scale(1); opacity:.55; }
+  33% { transform:translate(2%,-1%) scale(1.02); opacity:.75; }
+  66% { transform:translate(-1%,2%) scale(0.98); opacity:.45; }
+}
+@keyframes shimmer {
+  0% { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(18px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes centerPulse3D {
+  0%,100% { transform:translate(-50%,-50%) scale(1); box-shadow:0 0 30px rgba(181,130,42,0.25),0 0 60px rgba(181,130,42,0.08); }
+  50% { transform:translate(-50%,-50%) scale(1.04); box-shadow:0 0 50px rgba(181,130,42,0.40),0 0 90px rgba(181,130,42,0.14); }
+}
+@keyframes ringGlow {
+  0%,100% { box-shadow:0 0 20px rgba(181,130,42,0.12), inset 0 0 20px rgba(181,130,42,0.04); }
+  50% { box-shadow:0 0 50px rgba(181,130,42,0.22), inset 0 0 40px rgba(181,130,42,0.08); }
+}
+@keyframes diagramFloat3D {
+  0%,100% { transform:translate(-50%,-50%) rotateX(0deg) rotateY(0deg) scale(1); }
+  25% { transform:translate(-50%,-50%) rotateX(2deg) rotateY(3deg) scale(1.01); }
+  75% { transform:translate(-50%,-50%) rotateX(-1deg) rotateY(-2deg) scale(0.99); }
+}
+@keyframes fireSpin {
+  from { transform:translate(-50%,-50%) rotate(0deg); }
+  to { transform:translate(-50%,-50%) rotate(360deg); }
+}
+@keyframes firePulse {
+  0%,100% { opacity:0.7; r:18; }
+  50% { opacity:1; r:24; }
+}
+@keyframes statePulse {
+  0%,100% { opacity:0.6; }
+  50% { opacity:1; }
+}
+@keyframes turiyaGlow {
+  0%,100% { box-shadow:0 0 30px rgba(181,130,42,0.15), inset 0 0 30px rgba(181,130,42,0.05); }
+  50% { box-shadow:0 0 60px rgba(181,130,42,0.30), inset 0 0 50px rgba(181,130,42,0.10); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CURSOR GLOW
+   ═══════════════════════════════════════════════════════════════ */
+@media (pointer:fine) {
+  .cursor-glow {
+    position:fixed;
+    width:320px; height:320px;
+    border-radius:50%;
+    background:radial-gradient(circle,var(--gold-glow) 0%,transparent 70%);
+    pointer-events:none; z-index:9998;
+    transform:translate(-50%,-50%);
+    transition:opacity .3s ease;
+    opacity:0;
+    mix-blend-mode:screen;
+  }
+  body:hover .cursor-glow { opacity:1; }
+}
 
 /* ═══════════════════════════════════════════════════════════════
    NAV COMPASS
@@ -137,16 +217,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .nav-toggle:hover{background:var(--gold-glow);border-color:var(--gold);transform:scale(1.08)}
 .nav-menu{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 0;box-shadow:var(--shadow-deep);opacity:0;transform:translateY(-8px) scale(0.96);pointer-events:none;transition:all .4s var(--ease-out-expo);min-width:240px;max-height:80vh;overflow-y:auto}
 .nav-menu.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
-	.nav-menu::-webkit-scrollbar{width:6px}
-	.nav-menu::-webkit-scrollbar-track{background:transparent}
-	.nav-menu::-webkit-scrollbar-thumb{background:var(--gold-deep);border-radius:3px}
+.nav-menu::-webkit-scrollbar{width:6px}
+.nav-menu::-webkit-scrollbar-track{background:transparent}
+.nav-menu::-webkit-scrollbar-thumb{background:var(--gold-deep);border-radius:3px}
 .nav-item{display:flex;align-items:center;gap:.75rem;padding:.6rem 1.25rem;color:var(--stone);text-decoration:none;font-size:.88rem;line-height:1.35;transition:all .3s var(--ease-out-expo);border-left:3px solid transparent}
 .nav-item:hover{color:var(--ink);background:var(--gold-glow);padding-left:1.5rem}
 .nav-item.active{color:var(--gold-light);background:rgba(154,122,58,0.08);border-left-color:var(--gold);font-weight:500}
 .nav-item-icon{font-size:.8rem;flex-shrink:0;width:18px;text-align:center;display:flex;align-items:center;justify-content:center}
 .nav-item-icon svg{width:16px;height:16px;color:var(--stone);transition:color .3s var(--ease-out-expo);stroke-width:1.5}
-.icon-om, .icon-home{color:var(--stone);transition:color .3s}
-.nav-item:hover .icon-om, .nav-item:hover .icon-home, .nav-item:hover .nav-item-icon svg{color:var(--gold)}
+.icon-om,.icon-home{color:var(--stone);transition:color .3s}
+.nav-item:hover .icon-om,.nav-item:hover .icon-home,.nav-item:hover .nav-item-icon svg{color:var(--gold)}
 .nav-item.active .nav-item-icon svg{color:var(--gold-light)}
 .nav-section-title{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase;padding:.6rem 1.25rem .3rem}
 .nav-divider{height:1px;background:var(--border);margin:.5rem 1rem}
@@ -154,7 +234,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 /* ═══════════════════════════════════════════════════════════════
    CONTROLS
    ═══════════════════════════════════════════════════════════════ */
-.theme-toggle{position:fixed;bottom:1.75rem;right:1.75rem;z-index:1000;width:52px;height:52px;border-radius:50%;background:var(--surface);border:1px solid var(--border-medium);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:all .45s cubic-bezier(0.68,-0.55,0.265,1.55);box-shadow:var(--shadow-gold),0 2px 8px rgba(0,0,0,.1);overflow:hidden}
+.theme-toggle{position:fixed;bottom:1.75rem;right:1.75rem;z-index:1000;width:52px;height:52px;border-radius:50%;background:var(--surface);border:1px solid var(--border-medium);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:all .45s var(--ease-elastic);box-shadow:var(--shadow-gold),0 2px 8px rgba(0,0,0,.1);overflow:hidden}
 .theme-toggle:hover{transform:scale(1.12);border-color:var(--gold);box-shadow:0 0 30px var(--gold-glow)}
 .theme-toggle:active{transform:scale(0.95)}
 .theme-toggle-icon{position:absolute;transition:transform .5s var(--ease-out-expo),opacity .35s ease;color:var(--gold);display:flex;align-items:center;justify-content:center;width:100%;height:100%}
@@ -167,63 +247,62 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .back-to-top:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-3px) scale(1.08);box-shadow:var(--shadow-gold)}
 
 /* ═══════════════════════════════════════════════════════════════
-   HERO — FIXED RING POSITIONING
+   HERO — PREMIUM REFACTOR (fixed rings, no nth-child issues)
    ═══════════════════════════════════════════════════════════════ */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);perspective:1200px}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);perspective:1500px}
 .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 20% 40%,rgba(181,130,42,.07) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 60%,rgba(181,130,42,.05) 0%,transparent 70%);animation:ambientDrift 18s ease-in-out infinite;pointer-events:none;z-index:1}
-[data-theme="light"] .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,130,42,.035) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,130,42,.025) 29px);pointer-events:none}
-.hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12}
+[data-theme="light"] .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,130,42,.035) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,130,42,.025) 29px);pointer-events:none;z-index:0}
+[data-theme="dark"] .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(212,175,55,.035) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(212,175,55,.025) 29px);pointer-events:none;z-index:0}
+[data-theme="dark"] .hero::after{background:radial-gradient(ellipse 55% 45% at 20% 40%,rgba(212,175,55,.14) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 60%,rgba(212,175,55,.10) 0%,transparent 70%);box-shadow:0 0 50px rgba(212,175,55,.10);animation:breatheDark 18s ease-in-out infinite}
+.hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.30) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12;z-index:0;pointer-events:none}
+[data-theme="dark"] .hero-mountain{background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(212,175,55,.30) 80%)}
 
-/* ── Mandala rings (fixed nth-child selectors) ── */
-.mandala-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandala-breathe 12s ease-in-out infinite;will-change:transform,opacity}
-/* Child 2 = ring 1 (SVG is child 1) */
-.mandala-ring:nth-child(2){width:260px;height:260px;opacity:0.18}
-/* Child 3 = ring 2 */
-.mandala-ring:nth-child(3){width:400px;height:400px;opacity:0.12;animation-delay:1.5s;animation-duration:14s}
-/* Child 4 = ring 3 */
-.mandala-ring:nth-child(4){width:560px;height:560px;opacity:0.08;animation-delay:3s;animation-duration:16s}
-/* Child 5 = ring 4 (the large one that was drifting) */
-.mandala-ring:nth-child(5){width:740px;height:740px;opacity:0.05;animation-delay:4.5s;animation-duration:18s}
+/* Mandala rings — explicit classes, no nth-child dependency */
+.hero-rings{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandalaBreathe 12s ease-in-out infinite;will-change:transform,opacity}
+.hero-ring.r1{width:260px;height:260px;opacity:0.18}
+.hero-ring.r2{width:400px;height:400px;opacity:0.12;animation-delay:1.5s;animation-duration:14s}
+.hero-ring.r3{width:560px;height:560px;opacity:0.08;animation-delay:3s;animation-duration:16s}
+.hero-ring.r4{width:740px;height:740px;opacity:0.05;animation-delay:4.5s;animation-duration:18s}
 
-/* ── Hero ripples (fixed nth-child selectors) ── */
-.hero-ripple{position:absolute;top:50%;left:50%;width:180px;height:180px;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:ripple-out 9s ease-out infinite;will-change:transform,opacity}
-/* Child 6 = ripple 1 */
-.hero-ripple:nth-child(6){animation-delay:0s}
-/* Child 7 = ripple 2 */
-.hero-ripple:nth-child(7){animation-delay:3s}
+.hero-ripples{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-ripple{position:absolute;top:50%;left:50%;width:180px;height:180px;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:rippleOut 9s ease-out infinite;will-change:transform,opacity}
+.hero-ripple.rip1{animation-delay:0s}
+.hero-ripple.rip2{animation-delay:3s}
+.hero-ripple.rip3{animation-delay:6s}
 
-.hero-emblem{width:72px;height:72px;margin:0 auto 2rem;position:relative;opacity:1;z-index:3}
-.hero-emblem-circle{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-deep);opacity:.6;animation:emblem-rotate 30s linear infinite}
-.hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblem-rotate 20s linear infinite reverse}
-.hero-emblem-dot{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle,var(--gold-light),var(--gold));box-shadow:0 0 20px 5px var(--sun-glow);animation:emblem-pulse 4s ease-in-out infinite}
-.hero-eyemark{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:2rem;opacity:0;position:relative;z-index:3;animation:hero-rise 1.1s .3s forwards}
-.hero-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);margin-bottom:.5rem;opacity:0;position:relative;z-index:3;animation:hero-rise 1.1s .9s forwards}
-.hero-subtitle-top{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--stone);letter-spacing:.08em;margin-bottom:.8rem;opacity:0;position:relative;z-index:3;animation:hero-rise 1.1s 1.1s forwards}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:400;letter-spacing:.06em;line-height:1.05;color:var(--ink);text-shadow:0 2px 40px rgba(181,130,42,.2);opacity:0;margin-bottom:.2em;position:relative;z-index:3;animation:hero-rise 1.3s 1.3s forwards}
-[data-theme="dark"] .hero-title{color:var(--gold-light);text-shadow:0 0 80px rgba(212,164,74,.3)}
-.hero-epithet{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-deep);letter-spacing:.12em;opacity:0;margin-bottom:2.5rem;position:relative;z-index:3;animation:hero-rise 1.1s 1.6s forwards}
-.hero-divider{display:flex;align-items:center;gap:1.5rem;margin:0 auto 2.5rem;width:fit-content;opacity:0;position:relative;z-index:3;animation:hero-rise 1.1s 1.8s forwards}
+.hero-emblem{width:72px;height:72px;margin:0 auto 2rem;position:relative;opacity:0;animation:heroRise 1.2s 0.5s forwards;z-index:3}
+.hero-emblem-circle{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-deep);opacity:.6;animation:emblemRotate 30s linear infinite}
+.hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblemRotate 20s linear infinite reverse}
+.hero-emblem-dot{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle,var(--gold-light),var(--gold));box-shadow:0 0 20px 5px var(--sun-glow);animation:emblemPulse 4s ease-in-out infinite}
+.hero-eyemark{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.5em;color:var(--gold-deep);text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:heroRise 1.1s .3s forwards;position:relative;z-index:3}
+.hero-label{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.5em;color:var(--gold-deep);margin-bottom:.5rem;opacity:0;animation:heroRise 1.1s .9s forwards;position:relative;z-index:3}
+.hero-subtitle-top{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--stone);letter-spacing:.08em;margin-bottom:.8rem;opacity:0;animation:heroRise 1.1s 1.1s forwards;position:relative;z-index:3}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.8rem);font-weight:400;letter-spacing:.06em;line-height:1.05;color:var(--ink);text-shadow:0 2px 40px rgba(181,130,42,.20);opacity:0;animation:heroRise 1.3s 1.3s forwards;margin-bottom:.2em;position:relative;z-index:3}
+[data-theme="dark"] .hero-title{color:var(--gold-light);text-shadow:0 0 80px rgba(230,200,110,.35)}
+.hero-epithet{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.35rem);color:var(--gold-deep);letter-spacing:.12em;opacity:0;animation:heroRise 1.1s 1.6s forwards;margin-bottom:2.5rem;position:relative;z-index:3}
+.hero-divider{display:flex;align-items:center;gap:1.5rem;margin:0 auto 2.5rem;width:fit-content;opacity:0;animation:heroRise 1.1s 1.8s forwards;position:relative;z-index:3}
 .hero-divider-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep))}
 .hero-divider-line:last-child{background:linear-gradient(90deg,var(--gold-deep),transparent)}
 .hero-divider-diamond{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 8px var(--sun-glow)}
-.hero-quote{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--ink2);max-width:570px;margin:0 auto .7rem;line-height:1.85;opacity:0;position:relative;z-index:3;animation:hero-rise 1.1s 2s forwards}
-.hero-quote-attr{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.35em;color:var(--stone);text-transform:uppercase;opacity:0;margin-bottom:3.5rem;position:relative;z-index:3;animation:hero-rise 1.1s 2.2s forwards}
-.hero-dates{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--stone);letter-spacing:.18em;opacity:0;position:relative;z-index:3;animation:hero-rise 1.1s 2.4s forwards}
-.hero-scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;cursor:pointer;z-index:3;animation:hero-rise 1.1s 2.8s forwards}
+.hero-quote{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--ink2);max-width:570px;margin:0 auto .7rem;line-height:1.85;opacity:0;animation:heroRise 1.1s 2s forwards;position:relative;z-index:3}
+.hero-quote-attr{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.35em;color:var(--stone);text-transform:uppercase;opacity:0;animation:heroRise 1.1s 2.2s forwards;margin-bottom:3.5rem;position:relative;z-index:3}
+.hero-dates{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--stone);letter-spacing:.18em;opacity:0;animation:heroRise 1.1s 2.4s forwards;position:relative;z-index:3}
+.hero-scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:heroRise 1.1s 2.8s forwards;cursor:pointer;z-index:3}
 .hero-scroll-cue span{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.5em;color:var(--stone);text-transform:uppercase}
-.scroll-line{width:1px;height:36px;background:linear-gradient(180deg,var(--gold-deep),transparent);animation:scroll-bounce 2.5s ease-in-out infinite}
+.scroll-line{width:1px;height:36px;background:linear-gradient(180deg,var(--gold-deep),transparent);animation:scrollBounce 2.5s ease-in-out infinite}
 
 /* ═══════════════════════════════════════════════════════════════
    EDITORIAL LAYOUT SYSTEM
    ═══════════════════════════════════════════════════════════════ */
 .ed-wrap { max-width: 740px; margin: 0 auto; padding: 0 32px; }
+.deva { font-family: 'Noto Serif Devanagari', serif; font-size: 0.82em; color: var(--stone-light); margin-left: 0.35em; opacity: 0.7; letter-spacing: 0; vertical-align: baseline; }
+[data-theme="dark"] .deva { opacity: 0.85; }
 .skt-divider { text-align: center; padding: 56px 0 48px; position: relative; overflow: hidden; }
 .skt-divider::before, .skt-divider::after { content: ''; position: absolute; top: 50%; width: 28%; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); opacity: 0.15; }
 .skt-divider::before { left: 0; background: linear-gradient(to left, transparent, var(--gold)); }
 .skt-divider::after  { right: 0; }
 .skt-divider-inner { font-family: 'Noto Serif Devanagari', serif; font-size: 1.6rem; color: var(--gold); opacity: 0.28; letter-spacing: 1em; padding-left: 1em; }
-.deva { font-family: 'Noto Serif Devanagari', serif; font-size: 0.82em; color: var(--stone-light); margin-left: 0.35em; opacity: 0.7; letter-spacing: 0; vertical-align: baseline; }
-[data-theme="dark"] .deva { opacity: 0.85; }
 .ed-section-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 1.25rem; }
 .ed-section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--gold), transparent); opacity: 0.22; max-width: 160px; }
 .ed-section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 0.6rem; letter-spacing: -0.01em; }
@@ -239,20 +318,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .ed-list li:last-child { border-bottom: none; }
 .ed-list li::before { content: '◆'; position: absolute; left: 0; top: 1rem; font-size: 0.4rem; color: var(--gold); opacity: 0.55; }
 .ed-list li strong { color: var(--ink); font-weight: 500; }
-
-/* ═══════════════════════════════════════════════════════════════
-   LINEAGE TIMELINE
-   ═══════════════════════════════════════════════════════════════ */
-.lineage-section { padding: 100px 32px; max-width: 740px; margin: 0 auto; }
-.lin-timeline { margin-top: 3.5rem; position: relative; }
-.lin-timeline::before { content: ''; position: absolute; left: 10px; top: 22px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold-light), transparent); opacity: 0.35; }
-.lin-entry { position: relative; padding: 0 0 3.5rem 3.5rem; }
-.lin-dot { position: absolute; left: 4px; top: 8px; width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid var(--gold); background: var(--bg); transition: all 0.35s var(--ease-out-expo); }
-.lin-entry:hover .lin-dot { background: var(--gold); }
-.lin-entry h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.2; }
-.lin-entry .lin-dates { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; margin-bottom: 1rem; }
-.lin-entry p { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--stone); line-height: 1.75; max-width: 580px; }
-.lin-entry p em { color: var(--ink2); }
+.pull-q { border-left: 2px solid var(--gold); margin: 3rem 0; padding: 0.75rem 0 0.75rem 2rem; position: relative; z-index: 1; }
+.pull-q p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2.4vw, 1.5rem); font-style: italic; font-weight: 300; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.52; }
+.pull-q cite { font-family: 'Cinzel', serif; font-size: 0.57rem; letter-spacing: 0.3em; color: var(--stone-light); text-transform: uppercase; font-style: normal; }
 
 /* ═══════════════════════════════════════════════════════════════
    TABLE OF CONTENTS
@@ -268,39 +336,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .toc-b-skt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--stone-light); text-align: right; white-space: nowrap; }
 
 /* ═══════════════════════════════════════════════════════════════
-   KOSHA ACCORDION
-   ═══════════════════════════════════════════════════════════════ */
-.kosha-accord { margin: 2.5rem 0; border-top: 1px solid var(--border-subtle); position: relative; z-index: 1; }
-.kosha-row { border-bottom: 1px solid var(--border-subtle); cursor: pointer; }
-.kosha-row-head { display: flex; align-items: baseline; justify-content: space-between; padding: 1.1rem 0; gap: 1rem; transition: color 0.3s; }
-.kosha-row:hover .kosha-row-head { color: var(--ink); }
-.kosha-row-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
-.kosha-row-skt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: var(--stone-light); }
-.kosha-row-right { display: flex; align-items: center; gap: 1rem; }
-.kosha-row-deva { font-family: 'Noto Serif Devanagari', serif; font-size: 0.9rem; color: var(--stone-light); opacity: 0.6; }
-.kosha-arrow { color: var(--gold); font-size: 0.72rem; transition: transform 0.3s var(--ease-out-expo); opacity: 0.6; flex-shrink: 0; }
-.kosha-row.open .kosha-arrow { transform: rotate(180deg); }
-.kosha-body { padding: 0 0 1.5rem 0; display: none; animation: fadeInUp 0.3s var(--ease-out-expo); }
-.kosha-row.open .kosha-body { display: block; }
-.kosha-body-skt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--gold-light); margin-bottom: 0.5rem; }
-.kosha-body p { font-size: 0.93rem !important; line-height: 1.7 !important; margin-bottom: 0.4rem !important; color: var(--stone); }
-.kosha-body-cite { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-top: 0.75rem; display: block; }
-
-/* ═══════════════════════════════════════════════════════════════
    PULLQUOTE BANNER
    ═══════════════════════════════════════════════════════════════ */
-.pq-section { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--bg2), var(--bg)); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 6rem 2rem; text-align: center; }
-.pq-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 600px; height: 400px; background: radial-gradient(ellipse, var(--gold-glow), transparent 60%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+.pq-section { padding: 100px 32px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(180deg, var(--bg2), var(--bg)); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.pq-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 600px; height: 400px; background: radial-gradient(ellipse, var(--gold-glow), transparent 60%); pointer-events: none; animation: breathe 10s ease-in-out infinite; transform-origin: center center; }
 .pq-mark { font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: var(--gold); opacity: 0.06; line-height: 0.8; display: block; pointer-events: none; user-select: none; margin-bottom: -2.5rem; }
 .pq-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.2rem, 2.8vw, 1.7rem); color: var(--ink); line-height: 1.65; max-width: 660px; margin: 0 auto 1.25rem; position: relative; z-index: 1; }
 .pq-attr { font-family: 'Cinzel', serif; font-size: 0.57rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; position: relative; z-index: 1; }
+.pq-attr a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
+.pq-attr a:hover { color: var(--gold-light); }
 
 /* ═══════════════════════════════════════════════════════════════
-   PULL QUOTE INLINE
+   LINEAGE
    ═══════════════════════════════════════════════════════════════ */
-.pull-q { border-left: 2px solid var(--gold); margin: 3rem 0; padding: 0.75rem 0 0.75rem 2rem; position: relative; z-index: 1; }
-.pull-q p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2.4vw, 1.5rem); font-style: italic; font-weight: 300; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.52; }
-.pull-q cite { font-family: 'Cinzel', serif; font-size: 0.57rem; letter-spacing: 0.3em; color: var(--stone-light); text-transform: uppercase; font-style: normal; }
+.lineage-section { padding: 100px 32px; max-width: 740px; margin: 0 auto; }
+.lin-timeline { margin-top: 3.5rem; position: relative; }
+.lin-timeline::before { content: ''; position: absolute; left: 10px; top: 22px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--gold-light), transparent); opacity: 0.35; }
+.lin-entry { position: relative; padding: 0 0 3.5rem 3.5rem; }
+.lin-dot { position: absolute; left: 4px; top: 8px; width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid var(--gold); background: var(--bg); transition: all 0.35s var(--ease-out-expo); }
+.lin-entry:hover .lin-dot { background: var(--gold); }
+.lin-entry h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.2; }
+.lin-entry .lin-dates { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; margin-bottom: 1rem; }
+.lin-entry p { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--stone); line-height: 1.75; max-width: 580px; }
+.lin-entry p em { color: var(--ink2); }
 
 /* ═══════════════════════════════════════════════════════════════
    STAGE SECTIONS
@@ -336,7 +394,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .state-tile-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
 .state-tile-skt { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.22em; color: var(--stone); text-transform: uppercase; margin-bottom: 0.75rem; }
 .state-tile p { font-size: 0.83rem; color: var(--stone); line-height: 1.6; margin: 0; }
-.state-tile.turiya { background: rgba(181, 130, 42, 0.05); border-left: 2px solid var(--gold); }
+.state-tile.turiya { background: rgba(181,130,42,0.05); border-left: 2px solid var(--gold); }
 .state-tile.turiya .state-tile-name { color: var(--gold); }
 .state-tile.turiya .state-tile-ghost { opacity: 0.2; }
 
@@ -386,7 +444,508 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .gloss-def { font-size: 0.88rem; color: var(--stone); line-height: 1.65; }
 
 /* ═══════════════════════════════════════════════════════════════
-   FOOTER
+   SCRIPTURE PANELS & SACRED CARDS
+   ═══════════════════════════════════════════════════════════════ */
+.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.scripture-panel { background: var(--surface); padding: 32px; transition: background 0.3s ease; }
+.scripture-panel:hover { background: var(--surface2); }
+.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+.sacred-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; margin: 2.5rem 0; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; }
+.sacred-card { background: var(--surface); padding: 2rem 1.75rem; transition: all 0.4s var(--ease-out-expo); position: relative; overflow: hidden; }
+.sacred-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold)); opacity: 0; transition: opacity 0.3s ease; }
+.sacred-card:hover::before { opacity: 1; }
+.sacred-card:hover { background: var(--surface2); transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+.sacred-card-sanskrit { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: var(--gold); margin-bottom: 0.75rem; line-height: 1.4; font-weight: 500; }
+.sacred-card-translation { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--stone); line-height: 1.7; margin-bottom: 1rem; }
+.sacred-card-source { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.25em; color: var(--stone-light); text-transform: uppercase; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-subtle); }
+
+/* ═══════════════════════════════════════════════════════════════
+   3D PREMIUM DIAGRAMS
+   ═══════════════════════════════════════════════════════════════ */
+.diagram-3d-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 3rem auto 2.5rem;
+  aspect-ratio: 1;
+  overflow: visible;
+  z-index: 1;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.diagram-3d-container .diagram-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Diagram 1: Mirage of Creation (concentric 3D) ── */
+.diagram-mirage .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+.diagram-mirage .ring-outer {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--border-medium);
+  background: radial-gradient(ellipse at 30% 30%, rgba(181,130,42,0.03), transparent 70%);
+  box-shadow: 0 0 30px rgba(181,130,42,0.04), inset 0 0 60px rgba(181,130,42,0.02);
+  animation: ringGlow 8s ease-in-out infinite;
+}
+[data-theme="dark"] .diagram-mirage .ring-outer {
+  border-color: rgba(212,175,55,0.15);
+  background: radial-gradient(ellipse at 30% 30%, rgba(212,175,55,0.04), transparent 70%);
+}
+.diagram-mirage .ring-mid {
+  width: 68%;
+  height: 68%;
+  border: 1.5px solid var(--s2);
+  opacity: 0.55;
+  background: radial-gradient(ellipse at 40% 40%, rgba(74,127,165,0.04), transparent 70%);
+}
+[data-theme="dark"] .diagram-mirage .ring-mid {
+  border-color: rgba(106,170,200,0.5);
+}
+.diagram-mirage .ring-inner {
+  width: 38%;
+  height: 38%;
+  border: 1.5px solid var(--gold-light);
+  opacity: 0.85;
+  background: radial-gradient(ellipse at 45% 45%, rgba(181,130,42,0.06), transparent 70%);
+  box-shadow: 0 0 30px var(--gold-glow), inset 0 0 40px rgba(181,130,42,0.04);
+  animation: ringGlow 6s ease-in-out infinite 1s;
+}
+[data-theme="dark"] .diagram-mirage .ring-inner {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(212,175,55,0.12), inset 0 0 40px rgba(212,175,55,0.04);
+}
+.diagram-mirage .ring-center {
+  width: 20%;
+  height: 20%;
+  background: radial-gradient(circle at 35% 35%, #f0d080, var(--gold-deep));
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(181,130,42,0.10), inset 0 2px 20px rgba(255,215,140,0.3);
+  animation: centerPulse3D 5s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+[data-theme="dark"] .diagram-mirage .ring-center {
+  background: radial-gradient(circle at 35% 35%, #d4af37, #8a6a1a);
+  border-color: var(--gold-light);
+  box-shadow: 0 0 40px rgba(212,175,55,0.25), 0 0 80px rgba(212,175,55,0.12), inset 0 2px 20px rgba(255,215,140,0.2);
+}
+.diagram-mirage .ring-center span {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.4rem, 1.2vw, 0.5rem);
+  color: rgba(255,255,255,0.92);
+  text-align: center;
+  line-height: 1.3;
+  padding: 2px 6px;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+  pointer-events: none;
+  user-select: none;
+}
+.diagram-mirage .ring-center span .hl { font-weight:600; color:#fff8ee; text-shadow:0 0 16px rgba(255,215,140,0.4); }
+[data-theme="dark"] .diagram-mirage .ring-center span .hl { color:#fff5e0; text-shadow:0 0 20px rgba(212,175,55,0.3); }
+
+.diagram-mirage .label {
+  position: absolute;
+  font-family: 'Cinzel', serif;
+  font-size: 0.48rem;
+  color: var(--stone);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 3;
+}
+.diagram-mirage .label .ls { font-family: 'Noto Serif Devanagari', serif; font-size: 0.6rem; opacity:0.6; letter-spacing:0.08em; font-weight:300; }
+.diagram-mirage .label .sub { font-size:0.38rem; opacity:0.5; letter-spacing:0.2em; font-weight:300; }
+.diagram-mirage .label-outer { top:-28px; left:50%; transform:translateX(-50%); color:var(--stone-light); }
+.diagram-mirage .label-outer .ls { color:var(--gold); opacity:0.6; }
+.diagram-mirage .label-mid { top:50%; right:101%; transform:translateY(-50%); color:var(--s2); text-align:right; align-items:flex-end; }
+.diagram-mirage .label-mid .ls { color:var(--s2); opacity:0.6; }
+.diagram-mirage .label-inner { top:50%; left:101%; transform:translateY(-50%); color:var(--gold-light); text-align:left; align-items:flex-start; }
+.diagram-mirage .label-inner .ls { color:var(--gold); opacity:0.6; }
+[data-theme="dark"] .diagram-mirage .label-inner { color:var(--gold); }
+
+.diagram-mirage .dot {
+  position:absolute; width:4px; height:4px; border-radius:50%; background:var(--gold); opacity:0.12; pointer-events:none;
+}
+.diagram-mirage .dot.d1 { top:0%; left:50%; transform:translateX(-50%); }
+.diagram-mirage .dot.d2 { bottom:0%; left:50%; transform:translateX(-50%); }
+.diagram-mirage .dot.d3 { top:50%; left:0%; transform:translateY(-50%); }
+.diagram-mirage .dot.d4 { top:50%; right:0%; transform:translateY(-50%); }
+
+.diagram-caption {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.85rem;
+  color: var(--stone);
+  margin-top: 0.75rem;
+  font-style: italic;
+  text-align: center;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Diagram 2: Four States (3D layered) ── */
+.diagram-states .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+.diagram-states .ring-turiya {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--gold);
+  background: radial-gradient(ellipse at 50% 50%, rgba(181,130,42,0.04), transparent 70%);
+  box-shadow: 0 0 40px rgba(181,130,42,0.06), inset 0 0 60px rgba(181,130,42,0.03);
+  animation: turiyaGlow 6s ease-in-out infinite;
+}
+[data-theme="dark"] .diagram-states .ring-turiya {
+  border-color: var(--gold-light);
+  background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.06), transparent 70%);
+}
+.diagram-states .ring-waking {
+  width: 72%;
+  height: 72%;
+  border: 1.5px solid var(--s2);
+  opacity: 0.5;
+  background: radial-gradient(ellipse at 40% 40%, rgba(74,127,165,0.04), transparent 70%);
+}
+[data-theme="dark"] .diagram-states .ring-waking { border-color: rgba(106,170,200,0.4); }
+.diagram-states .ring-dreaming {
+  width: 46%;
+  height: 46%;
+  border: 1.5px solid var(--s6);
+  opacity: 0.4;
+  background: radial-gradient(ellipse at 45% 45%, rgba(138,92,154,0.04), transparent 70%);
+}
+[data-theme="dark"] .diagram-states .ring-dreaming { border-color: rgba(170,124,200,0.4); }
+.diagram-states .ring-sleep {
+  width: 22%;
+  height: 22%;
+  border: 1.5px solid var(--s4);
+  opacity: 0.35;
+  background: radial-gradient(ellipse at 45% 45%, rgba(74,138,114,0.04), transparent 70%);
+}
+[data-theme="dark"] .diagram-states .ring-sleep { border-color: rgba(106,170,146,0.4); }
+.diagram-states .ring-center {
+  width: 10%;
+  height: 10%;
+  background: radial-gradient(circle at 35% 35%, var(--gold-light), var(--gold));
+  border: 1.5px solid var(--gold-light);
+  box-shadow: 0 0 30px var(--gold-glow);
+  animation: centerPulse3D 4s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+[data-theme="dark"] .diagram-states .ring-center {
+  background: radial-gradient(circle at 35% 35%, #d4af37, #8a6a1a);
+}
+.diagram-states .ring-center span {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.35rem, 1vw, 0.45rem);
+  color: rgba(255,255,255,0.92);
+  text-align: center;
+  line-height: 1.2;
+  padding: 2px 4px;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+  pointer-events: none;
+  user-select: none;
+}
+.diagram-states .ring-center span .hl { font-weight:600; color:#fff8ee; text-shadow:0 0 16px rgba(255,215,140,0.4); }
+[data-theme="dark"] .diagram-states .ring-center span .hl { color:#fff5e0; text-shadow:0 0 20px rgba(212,175,55,0.3); }
+
+.diagram-states .label {
+  position: absolute;
+  font-family: 'Cinzel', serif;
+  font-size: 0.45rem;
+  color: var(--stone);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 3;
+}
+.diagram-states .label .ls { font-family: 'Noto Serif Devanagari', serif; font-size: 0.55rem; opacity:0.6; letter-spacing:0.08em; font-weight:300; }
+.diagram-states .label .sub { font-size:0.35rem; opacity:0.5; letter-spacing:0.15em; font-weight:300; }
+.diagram-states .label-turiya { top:-26px; left:50%; transform:translateX(-50%); color:var(--gold); }
+.diagram-states .label-turiya .ls { color:var(--gold); opacity:0.7; }
+.diagram-states .label-waking { top:50%; right:102%; transform:translateY(-50%); color:var(--s2); text-align:right; align-items:flex-end; }
+.diagram-states .label-waking .ls { color:var(--s2); opacity:0.6; }
+.diagram-states .label-dreaming { top:20%; right:102%; transform:translateY(-50%); color:var(--s6); text-align:right; align-items:flex-end; font-size:0.4rem; }
+.diagram-states .label-dreaming .ls { color:var(--s6); opacity:0.6; }
+.diagram-states .label-sleep { bottom:20%; right:102%; transform:translateY(-50%); color:var(--s4); text-align:right; align-items:flex-end; font-size:0.4rem; }
+.diagram-states .label-sleep .ls { color:var(--s4); opacity:0.6; }
+.diagram-states .label-center { top:50%; left:102%; transform:translateY(-50%); color:var(--gold-light); text-align:left; align-items:flex-start; }
+.diagram-states .label-center .ls { color:var(--gold); opacity:0.6; }
+[data-theme="dark"] .diagram-states .label-center { color:var(--gold); }
+
+.diagram-states .state-dot {
+  position:absolute; width:4px; height:4px; border-radius:50%; background:var(--gold); opacity:0.1; pointer-events:none;
+}
+.diagram-states .state-dot.sd1 { top:0%; left:50%; transform:translateX(-50%); }
+.diagram-states .state-dot.sd2 { bottom:0%; left:50%; transform:translateX(-50%); }
+.diagram-states .state-dot.sd3 { top:50%; left:0%; transform:translateY(-50%); }
+.diagram-states .state-dot.sd4 { top:50%; right:0%; transform:translateY(-50%); }
+
+/* ── Diagram 3: Fire-brand (animated 3D) ── */
+.diagram-fire {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 3rem auto 2.5rem;
+  aspect-ratio: 1;
+  overflow: visible;
+  z-index: 1;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.diagram-fire .fire-brand {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #ff8c00, #cc4400);
+  box-shadow: 0 0 30px rgba(255,100,0,0.4), 0 0 60px rgba(255,50,0,0.2);
+  z-index: 2;
+  animation: firePulse 1.2s ease-in-out infinite;
+}
+.diagram-fire .fire-brand::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 40px;
+  background: linear-gradient(180deg, #8b4513, transparent);
+  border-radius: 2px;
+}
+[data-theme="dark"] .diagram-fire .fire-brand {
+  background: radial-gradient(circle at 40% 40%, #ffaa33, #cc5500);
+  box-shadow: 0 0 30px rgba(255,150,50,0.4), 0 0 60px rgba(255,100,20,0.2);
+}
+.diagram-fire .fire-trail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  border: 2px dashed rgba(212,175,55,0.15);
+  animation: fireSpin 12s linear infinite;
+}
+.diagram-fire .fire-trail2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(212,175,55,0.08);
+  animation: fireSpin 18s linear infinite reverse;
+}
+.diagram-fire .fire-spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.diagram-fire .fire-spark:nth-child(4) { top:15%; left:50%; transform:translateX(-50%); }
+.diagram-fire .fire-spark:nth-child(5) { bottom:15%; left:50%; transform:translateX(-50%); }
+.diagram-fire .fire-spark:nth-child(6) { top:50%; left:15%; transform:translateY(-50%); }
+.diagram-fire .fire-spark:nth-child(7) { top:50%; right:15%; transform:translateY(-50%); }
+
+.diagram-fire .fire-label {
+  position: absolute;
+  font-family: 'Cinzel', serif;
+  font-size: 0.45rem;
+  color: var(--stone);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  z-index: 3;
+}
+.diagram-fire .fire-label .ls { font-family: 'Noto Serif Devanagari', serif; font-size: 0.55rem; opacity:0.6; letter-spacing:0.08em; font-weight:300; }
+.diagram-fire .fire-label .sub { font-size:0.35rem; opacity:0.5; letter-spacing:0.15em; font-weight:300; }
+.diagram-fire .fire-label-brand { top:50%; left:12%; transform:translateY(-50%); color:var(--s3); text-align:right; align-items:flex-end; }
+.diagram-fire .fire-label-brand .ls { color:var(--s3); opacity:0.6; }
+.diagram-fire .fire-label-circle { top:50%; right:8%; transform:translateY(-50%); color:var(--gold-light); text-align:left; align-items:flex-start; }
+.diagram-fire .fire-label-circle .ls { color:var(--gold); opacity:0.6; }
+[data-theme="dark"] .diagram-fire .fire-label-circle { color:var(--gold); }
+
+.diagram-fire .fire-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16%;
+  height: 16%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(212,175,55,0.08), transparent 80%);
+  border: 1px solid rgba(212,175,55,0.05);
+  pointer-events: none;
+  animation: breathe 6s ease-in-out infinite;
+}
+
+.diagram-fire .fire-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.35rem, 1vw, 0.45rem);
+  color: var(--gold-light);
+  text-align: center;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+[data-theme="dark"] .diagram-fire .fire-center-label { color: var(--gold); opacity:0.5; }
+
+.diagram-fire .fire-arc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,0.06);
+  animation: fireSpin 8s linear infinite;
+}
+.diagram-fire .fire-arc2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,0.04);
+  animation: fireSpin 12s linear infinite reverse;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .states-strip { grid-template-columns: 1fr 1fr; }
+  .dist-panel { grid-template-columns: 1fr; }
+  .prac-step { grid-template-columns: 44px 1fr; gap: 1.25rem; }
+  .prac-n { font-size: 2.5rem; }
+  .lin-timeline::before { left: 6px; }
+  .lin-entry { padding-left: 2.5rem; }
+  .lin-dot { left: 0; }
+  .scripture-panels { grid-template-columns: 1fr; }
+  .diagram-3d-container { max-width: 360px; }
+  .diagram-fire { max-width: 360px; }
+  .diagram-mirage .label { font-size: 0.4rem; }
+  .diagram-mirage .label .ls { font-size: 0.5rem; }
+  .diagram-mirage .label-outer { top: -22px; }
+  .diagram-mirage .label-mid { right: 100%; }
+  .diagram-mirage .label-inner { left: 100%; }
+  .diagram-mirage .ring-center span { font-size: clamp(0.3rem, 1.6vw, 0.4rem); }
+  .diagram-states .label { font-size: 0.38rem; }
+  .diagram-states .label .ls { font-size: 0.45rem; }
+  .diagram-states .label-turiya { top: -22px; }
+  .diagram-states .label-waking { right: 100%; }
+  .diagram-states .label-dreaming { right: 100%; font-size: 0.35rem; }
+  .diagram-states .label-sleep { right: 100%; font-size: 0.35rem; }
+  .diagram-states .label-center { left: 100%; }
+  .diagram-states .ring-center span { font-size: clamp(0.3rem, 1.4vw, 0.38rem); }
+  .diagram-fire .fire-label { font-size: 0.38rem; }
+  .diagram-fire .fire-label .ls { font-size: 0.45rem; }
+  .diagram-fire .fire-center-label { font-size: clamp(0.3rem, 1.2vw, 0.38rem); }
+}
+@media (max-width: 500px) {
+  .states-strip { grid-template-columns: 1fr; }
+  .gloss-grid { grid-template-columns: 1fr; }
+  .toc-book-item { grid-template-columns: 38px 1fr; }
+  .toc-b-skt { display: none; }
+  .stage-section { padding: 80px 24px; }
+  .diagram-3d-container { max-width: 280px; }
+  .diagram-fire { max-width: 280px; }
+  .diagram-mirage .label { font-size: 0.32rem; }
+  .diagram-mirage .label .ls { font-size: 0.4rem; }
+  .diagram-mirage .ring-center span { font-size: clamp(0.25rem, 2vw, 0.32rem); }
+  .diagram-states .label { font-size: 0.32rem; }
+  .diagram-states .label .ls { font-size: 0.38rem; }
+  .diagram-states .ring-center span { font-size: clamp(0.25rem, 1.8vw, 0.32rem); }
+  .diagram-states .label-dreaming { display: none; }
+  .diagram-states .label-sleep { display: none; }
+  .diagram-fire .fire-label { font-size: 0.32rem; }
+  .diagram-fire .fire-label .ls { font-size: 0.38rem; }
+  .diagram-fire .fire-center-label { font-size: clamp(0.25rem, 1.6vw, 0.32rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER & CHAPTER NAV
    ═══════════════════════════════════════════════════════════════ */
 .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 2rem; text-align: center; }
 .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
@@ -406,95 +965,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .footer-credit { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; }
 .footer-copyright { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; margin-top: 1rem; }
 
-/* ═══════════════════════════════════════════════════════════════
-   GAUDAPADA-SPECIFIC ADDITIONS
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Cursor glow (fine pointer only) */
-@media (pointer: fine) {
-  .cursor-glow { position: fixed; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%); pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: opacity 0.3s ease; opacity: 0; mix-blend-mode: screen; }
-  body:hover .cursor-glow { opacity: 1; }
-}
-
-/* Sanskrit terms */
-.sanskrit-term, .biblical-ref { cursor: help; border-bottom: 1px dotted var(--gold); text-decoration: none; color: var(--gold-light); font-weight: 400; transition: all 0.3s var(--ease-smooth); }
-.sanskrit-term:hover, .biblical-ref:hover { color: var(--gold); border-bottom-color: var(--gold-deep); }
-
-/* Diagram containers */
-.diagram-container { margin: 2.5rem 0; text-align: center; }
-.diagram-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
-.diagram-svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-.diagram-caption { font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: var(--stone); margin-top: 0.75rem; font-style: italic; }
-
-/* Chapter navigation */
 .chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; max-width: 740px; margin: 0 auto; }
 .chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; font-family: 'Cinzel', serif; }
 .chapter-link:hover { color: var(--gold); }
 .chapter-sep { color: var(--gold-deep); opacity: 0.3; }
 .chapter-link.active { color: var(--gold); font-weight: 500; }
-
-/* Continue link */
 .continue-link { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: all 0.3s ease; }
 .continue-link:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
 
-/* Scripture panels (adapted to Ramana tokens) */
-.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
-.scripture-panel { background: var(--surface); padding: 32px; transition: background 0.3s ease; }
-.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
-.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
-.scripture-panel:hover { background: var(--surface2); }
-
-/* Sacred cards grid (adapted to Ramana tokens) */
-.sacred-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; margin: 2.5rem 0; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; }
-.sacred-card { background: var(--surface); padding: 2rem 1.75rem; transition: all 0.4s var(--ease-out-expo); position: relative; overflow: hidden; }
-.sacred-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold)); opacity: 0; transition: opacity 0.3s ease; }
-.sacred-card:hover::before { opacity: 1; }
-.sacred-card:hover { background: var(--surface2); transform: translateY(-2px); box-shadow: var(--shadow-gold); }
-.sacred-card-sanskrit { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; color: var(--gold); margin-bottom: 0.75rem; line-height: 1.4; font-weight: 500; }
-.sacred-card-translation { font-family: 'Crimson Pro', serif; font-size: 1rem; color: var(--stone); line-height: 1.7; margin-bottom: 1rem; }
-.sacred-card-source { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.25em; color: var(--stone-light); text-transform: uppercase; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-subtle); }
-
-/* Stage quote (inline block quote variant) */
-.stage-quote { background: var(--surface2); border-left: 3px solid var(--gold); padding: 1.5rem; margin: 1.5rem 0; }
-.stage-quote p { color: var(--stone); line-height: 1.7; font-style: italic; margin-bottom: 0.5rem; font-family: 'IM Fell English', serif; }
-.stage-quote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; font-style: normal; }
-
-/* Fade-in utility */
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .states-strip { grid-template-columns: 1fr 1fr; }
-  .dist-panel   { grid-template-columns: 1fr; }
-  .prac-step    { grid-template-columns: 44px 1fr; gap: 1.25rem; }
-  .prac-n       { font-size: 2.5rem; }
-  .lin-timeline::before { left: 6px; }
-  .lin-entry { padding-left: 2.5rem; }
-  .lin-dot { left: 0; }
-  .scripture-panels { grid-template-columns: 1fr; }
-  .chapter-nav { gap: 0.75rem; font-size: 0.6rem; }
-}
-@media (max-width: 500px) {
-  .states-strip { grid-template-columns: 1fr; }
-  .gloss-grid   { grid-template-columns: 1fr; }
-  .toc-book-item { grid-template-columns: 38px 1fr; }
-  .toc-b-skt    { display: none; }
-  .stage-section { padding: 80px 24px; }
-  .ed-wrap { padding: 0 24px; }
-  .sacred-cards-grid { grid-template-columns: 1fr; }
-  .scripture-panel { padding: 20px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .fade-in { opacity: 1 !important; transform: none !important; }
-}
+.sanskrit-term, .biblical-ref { cursor: help; border-bottom: 1px dotted var(--gold); text-decoration: none; color: var(--gold-light); font-weight: 400; transition: all 0.3s var(--ease-smooth); }
+.sanskrit-term:hover, .biblical-ref:hover { color: var(--gold); border-bottom-color: var(--gold-deep); }
 </style>
 </head>
-
 <body>
 
 <div class="cursor-glow" id="cursorGlow"></div>
@@ -507,7 +991,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="nav-menu" id="navMenu">
     <div class="nav-section-title">This Page</div>
     <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span>Overview</span></a>
-    <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span>Table of Contents</span></a>
+    <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span>Contents</span></a>
     <a href="#ajata" class="nav-item" data-section="ajata"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ajata Vada</span></a>
     <a href="#states" class="nav-item" data-section="states"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><span>Four States</span></a>
     <a href="#no-duality" class="nav-item" data-section="no-duality"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8"/></svg></span><span>No Duality</span></a>
@@ -532,19 +1016,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 </div>
 
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-  <span class="theme-toggle-icon theme-toggle-icon-sun">&#9788;</span>
-  <span class="theme-toggle-icon theme-toggle-icon-moon">&#9790;</span>
+  <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
 </button>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
 <div class="main-content">
 
 <!-- ═════════════════════════════════
-     HERO
+     HERO — PREMIUM REFACTOR
      ═════════════════════════════════ -->
 <header class="hero" id="hero">
-  <svg style="position:absolute;inset:0;width:100%;height:auto" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g style="animation:mandalaRotate 60s linear infinite">
+  <svg style="position:absolute;inset:0;width:100%;height:auto;z-index:0;pointer-events:none;" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g style="animation:mandalaRotate 60s linear infinite;transform-origin:center;">
       <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
       <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
       <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
@@ -552,12 +1036,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </g>
   </svg>
   <div class="hero-mountain" aria-hidden="true"></div>
-  <div class="mandala-ring" aria-hidden="true"></div>
-  <div class="mandala-ring" aria-hidden="true"></div>
-  <div class="mandala-ring" aria-hidden="true"></div>
-  <div class="mandala-ring" aria-hidden="true"></div>
-  <div class="hero-ripple" aria-hidden="true"></div>
-  <div class="hero-ripple" aria-hidden="true"></div>
+
+  <!-- Mandala rings — explicit classes, no nth-child issues -->
+  <div class="hero-rings" aria-hidden="true">
+    <div class="hero-ring r1"></div>
+    <div class="hero-ring r2"></div>
+    <div class="hero-ring r3"></div>
+    <div class="hero-ring r4"></div>
+  </div>
+
+  <!-- Ripples — explicit classes -->
+  <div class="hero-ripples" aria-hidden="true">
+    <div class="hero-ripple rip1"></div>
+    <div class="hero-ripple rip2"></div>
+    <div class="hero-ripple rip3"></div>
+  </div>
 
   <p class="hero-eyemark">The Architect of <span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">Ajata Vada</span></p>
   <div class="hero-emblem" aria-hidden="true">
@@ -636,7 +1129,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 </div>
 
 <!-- ═════════════════════════════════
-     SECTION 1: AJATA VADA
+     SECTION 1: AJATA VADA — 3D DIAGRAM
      ═════════════════════════════════ -->
 <div class="stages-wrap">
 
@@ -658,54 +1151,44 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
     <p>The entire phenomenal universe — all names, forms, objects, and even the sense of a separate self — is a superimposition, like a rope mistaken for a snake, or a dream seen by a sleeping mind. Just as a dream has no independent reality apart from the dreamer, so the waking world has no reality apart from pure consciousness, <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>. Gaudapada uses the analogy of a mirage: water that appears in the desert never actually exists. Similarly, the world appears but never truly arises.</p>
 
-    <p>This teaching is not nihilism. It is the recognition that the only reality is the formless, unchanging awareness in which all appearances come and go. The world is not false in the sense of being utterly non-existent, but it is not real in the sense of being self-subsistent. It is <em><span class="sanskrit-term" title="Different from both real and unreal; indescribable">sad-asad-vilaksana</span></em> — different from both real and unreal, like a dream.</p>
+    <!-- ★ 3D PREMIUM DIAGRAM: Mirage of Creation ★ -->
+    <div class="diagram-3d-container diagram-mirage">
+      <div class="diagram-title">The Mirage of Creation · माया</div>
 
-    <div class="pull-q">
-      <p>"There is no dissolution, no origination, no one in bondage, no one striving for liberation, and no one liberated. This is the highest truth."</p>
-      <cite>— Mandukya Karika 2.32</cite>
+      <div class="ring ring-outer">
+        <span class="label label-outer">
+          Māyā · माया
+          <span class="sub">Phenomenal Universe</span>
+        </span>
+        <span class="dot d1"></span>
+        <span class="dot d2"></span>
+        <span class="dot d3"></span>
+        <span class="dot d4"></span>
+      </div>
+
+      <div class="ring ring-mid">
+        <span class="label label-mid">
+          Spontaneous Arising
+          <span class="ls">स्वयम्भू</span>
+        </span>
+      </div>
+
+      <div class="ring ring-inner">
+        <span class="label label-inner">
+          The Witness
+          <span class="ls">साक्षी</span>
+        </span>
+      </div>
+
+      <div class="ring ring-center">
+        <span>
+          <span class="hl">Brahman</span>
+          <br>— <span class="hl">You</span> —
+        </span>
+      </div>
     </div>
 
-    <!-- SVG Diagram 1: The Mirage of Creation -->
-    <div class="diagram-container">
-      <div class="diagram-title">The Mirage of Creation</div>
-      <svg class="diagram-svg" viewBox="0 0 640 280" width="640" height="280" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-          </linearGradient>
-          <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.3" />
-            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.05" />
-          </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <rect width="640" height="280" fill="var(--bg, #faf7f2)" rx="12"/>
-        <path d="M0 220 Q160 200 320 210 Q480 220 640 200 L640 280 L0 280 Z" fill="url(#goldGradLight)" opacity="0.4"/>
-        <ellipse cx="320" cy="215" rx="140" ry="12" fill="url(#goldGradLight)" opacity="0.6"/>
-        <ellipse cx="320" cy="218" rx="100" ry="8" fill="url(#goldGradLight)" opacity="0.4"/>
-        <circle cx="320" cy="80" r="35" fill="url(#goldGrad)" filter="url(#glow)" opacity="0.9"/>
-        <circle cx="320" cy="80" r="50" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.3"/>
-        <circle cx="320" cy="80" r="65" fill="none" stroke="url(#goldGrad)" stroke-width="0.3" opacity="0.15"/>
-        <line x1="320" y1="35" x2="320" y2="15" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
-        <line x1="320" y1="125" x2="320" y2="145" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
-        <line x1="275" y1="80" x2="255" y2="80" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
-        <line x1="365" y1="80" x2="385" y2="80" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
-        <line x1="288" y1="48" x2="274" y2="34" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
-        <line x1="352" y1="48" x2="366" y2="34" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
-        <line x1="288" y1="112" x2="274" y2="126" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
-        <line x1="352" y1="112" x2="366" y2="126" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4"/>
-        <text x="320" y="80" text-anchor="middle" dominant-baseline="central" fill="#0e1a2a" font-family="Cinzel, serif" font-size="10" font-weight="600">BRAHMAN</text>
-        <text x="320" y="160" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="9" letter-spacing="0.15em" opacity="0.7">MAYA — APPEARANCE</text>
-        <text x="320" y="250" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.6">The mirage appears but water is never born</text>
-        <path d="M320 125 Q320 160 320 190" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-        <polygon points="320,195 316,187 324,187" fill="url(#goldGrad)" opacity="0.5"/>
-      </svg>
-      <div class="diagram-caption">Brahman, the sole reality, projects the appearance of the world through maya — yet nothing is ever truly created.</div>
-    </div>
+    <div class="diagram-caption">Brahman, the sole reality, projects the appearance of the world through maya — yet nothing is ever truly created.</div>
 
     <div class="scripture-panels">
       <div class="scripture-panel">
@@ -725,7 +1208,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <hr class="stage-sep"/>
 
 <!-- ═════════════════════════════════
-     SECTION 2: THE FOUR STATES
+     SECTION 2: THE FOUR STATES — 3D DIAGRAM
      ═════════════════════════════════ -->
 <section class="stage-section" id="states">
   <div class="stage-wm" aria-hidden="true">तुरीय</div>
@@ -743,57 +1226,60 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="stage-body">
     <p><strong>G</strong>audapada's commentary on the <strong><span class="sanskrit-term" title="The shortest of the principal Upanishads; twelve verses on OM and the four states">Mandukya Upanisad</span></strong> (the shortest of the principal Upanisads, only twelve verses) is the first systematic exposition of the four states of consciousness. He shows that all three ordinary states — waking (<em><span class="sanskrit-term" title="The waking state of consciousness">jagrat</span></em>), dreaming (<em><span class="sanskrit-term" title="The dream state of consciousness">svapna</span></em>), and deep sleep (<em><span class="sanskrit-term" title="Deep sleep; the state of unconsciousness without dreams">susupti</span></em>) — are appearances within the single, unchanging awareness that is <strong><span class="sanskrit-term" title="The Fourth; pure consciousness beyond the three states">Turiya</span></strong> (the "fourth").</p>
 
-    <p>Turiya is not a fourth state in sequence; it is the substratum that underlies and witnesses the other three. It is pure consciousness without any object, the Self that never comes and goes. Gaudapada identifies this Turiya with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>, the absolute reality. The realisation of Turiya is the direct recognition that one is never born, never dies, and never touched by the events of the world.</p>
+    <p>Turiya is not a fourth state in sequence; it is the substratum that underlies and witnesses the other three. It is pure consciousness without any object, the Self that never comes and goes. Gaudapada identifies this Turiya with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>, the absolute reality.</p>
 
-    <!-- SVG Diagram 2: The Four States -->
-    <div class="diagram-container">
-      <div class="diagram-title">The Four States of Consciousness</div>
-      <svg class="diagram-svg" viewBox="0 0 640 360" width="640" height="360" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-          </linearGradient>
-          <linearGradient id="turiyaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.12" />
-            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.03" />
-          </linearGradient>
-          <linearGradient id="turiyaBar" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.6" />
-            <stop offset="50%" style="stop-color:#e6c86e;stop-opacity:0.9" />
-            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.6" />
-          </linearGradient>
-        </defs>
-        <rect width="640" height="360" fill="var(--bg, #faf7f2)" rx="12"/>
-        <rect x="40" y="24" width="560" height="56" rx="8" fill="url(#turiyaGrad)" stroke="url(#goldGrad2)" stroke-width="1" opacity="0.8"/>
-        <line x1="40" y1="52" x2="600" y2="52" stroke="url(#turiyaBar)" stroke-width="2" opacity="0.7"/>
-        <text x="320" y="44" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="11" font-weight="600" letter-spacing="0.25em">TURIYA</text>
-        <text x="320" y="64" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.8">Pure consciousness, the witness of all three states</text>
-        <line x1="140" y1="80" x2="140" y2="110" stroke="url(#goldGrad2)" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
-        <line x1="320" y1="80" x2="320" y2="110" stroke="url(#goldGrad2)" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
-        <line x1="500" y1="80" x2="500" y2="110" stroke="url(#goldGrad2)" stroke-width="1" opacity="0.5" stroke-dasharray="4,3"/>
-        <rect x="40" y="110" width="180" height="90" rx="6" fill="var(--surface, #ffffff)" stroke="rgba(181,130,42,0.25)" stroke-width="1"/>
-        <text x="130" y="135" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="10" letter-spacing="0.15em">JAGRAT</text>
-        <text x="130" y="155" text-anchor="middle" fill="#1a2d4d" font-family="Crimson Pro, serif" font-size="9">Waking</text>
-        <text x="130" y="175" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">Gross objects, external world</text>
-        <rect x="230" y="110" width="180" height="90" rx="6" fill="var(--surface, #ffffff)" stroke="rgba(181,130,42,0.25)" stroke-width="1"/>
-        <text x="320" y="135" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="10" letter-spacing="0.15em">SVAPNA</text>
-        <text x="320" y="155" text-anchor="middle" fill="#1a2d4d" font-family="Crimson Pro, serif" font-size="9">Dreaming</text>
-        <text x="320" y="175" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">Subtle images, internal world</text>
-        <rect x="420" y="110" width="180" height="90" rx="6" fill="var(--surface, #ffffff)" stroke="rgba(181,130,42,0.25)" stroke-width="1"/>
-        <text x="510" y="135" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="10" letter-spacing="0.15em">SUSHUPTI</text>
-        <text x="510" y="155" text-anchor="middle" fill="#1a2d4d" font-family="Crimson Pro, serif" font-size="9">Deep Sleep</text>
-        <text x="510" y="175" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">No objects, causal seed state</text>
-        <line x1="130" y1="210" x2="510" y2="210" stroke="url(#goldGrad2)" stroke-width="0.5" opacity="0.3"/>
-        <text x="320" y="250" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="14" letter-spacing="0.4em" opacity="0.6">AUM</text>
-        <text x="320" y="275" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">The three states arise and dissolve within Turiya, the unchanging witness</text>
-        <text x="320" y="300" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" opacity="0.5">Turiya is not a fourth state — it is the substratum that underlies all three</text>
-        <circle cx="130" cy="240" r="2" fill="#b5822a" opacity="0.3"/>
-        <circle cx="320" cy="240" r="2.5" fill="#d4a44a" opacity="0.4"/>
-        <circle cx="510" cy="240" r="2" fill="#b5822a" opacity="0.3"/>
-      </svg>
-      <div class="diagram-caption">Turiya, the silent witness, abides above and within the three states — they arise from it, persist in it, and dissolve back into it.</div>
+    <!-- ★ 3D PREMIUM DIAGRAM: The Four States ★ -->
+    <div class="diagram-3d-container diagram-states">
+      <div class="diagram-title">The Four States of Consciousness · चतुः स्थिति</div>
+
+      <div class="ring ring-turiya">
+        <span class="label label-turiya">
+          TURIYA
+          <span class="ls">तुरीय</span>
+          <span class="sub">The Witness</span>
+        </span>
+        <span class="state-dot sd1"></span>
+        <span class="state-dot sd2"></span>
+        <span class="state-dot sd3"></span>
+        <span class="state-dot sd4"></span>
+      </div>
+
+      <div class="ring ring-waking">
+        <span class="label label-waking">
+          Jagrat
+          <span class="ls">जाग्रत्</span>
+          <span class="sub">Waking</span>
+        </span>
+      </div>
+
+      <div class="ring ring-dreaming">
+        <span class="label label-dreaming">
+          Svapna
+          <span class="ls">स्वप्न</span>
+          <span class="sub">Dreaming</span>
+        </span>
+      </div>
+
+      <div class="ring ring-sleep">
+        <span class="label label-sleep">
+          Sushupti
+          <span class="ls">सुषुप्ति</span>
+          <span class="sub">Deep Sleep</span>
+        </span>
+      </div>
+
+      <div class="ring ring-center">
+        <span>
+          <span class="hl">AUM</span>
+        </span>
+        <span class="label label-center">
+          The Fourth
+          <span class="ls">तुरीय</span>
+        </span>
+      </div>
     </div>
+
+    <div class="diagram-caption">Turiya, the silent witness, abides above and within the three states — they arise from it, persist in it, and dissolve back into it.</div>
 
     <div class="states-strip">
       <div class="state-tile">
@@ -832,7 +1318,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <hr class="stage-sep"/>
 
 <!-- ═════════════════════════════════
-     SECTION 3: NO DUALITY
+     SECTION 3: NO DUALITY — 3D FIRE-BRAND DIAGRAM
      ═════════════════════════════════ -->
 <section class="stage-section" id="no-duality">
   <div class="stage-wm" aria-hidden="true">अद्वैत</div>
@@ -850,45 +1336,43 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="stage-body">
     <p><strong>G</strong>audapada dedicates the fourth chapter of his Karika, the <em><span class="sanskrit-term" title="The Extinction of the Fire-brand; the fourth chapter of the Mandukya Karika">Alatasanti</span></em> (the "Extinction of the Fire-brand"), to a thorough refutation of causality. He uses the famous analogy of a fire-brand (<em>alata</em>) swung in a circle: it appears to produce a circle of fire, but no circle is ever actually created. Similarly, consciousness appears to produce the world of cause and effect, but in truth nothing is ever produced.</p>
 
-    <p>He shows that the very concept of causation is a mental projection. If the world is an illusion, then there is no real creator, no real creation, and no real dissolution. The only reality is the non-dual <span class="sanskrit-term" title="The individual self; the true consciousness within">Self</span>, which is free from all attributes and all relationships. This is the highest teaching of Advaita: <strong><span class="sanskrit-term" title="Non-duality; the teaching that Atman and Brahman are one">advaita</span></strong> means not-two; there is no second thing. Therefore, there can be no birth of a second thing.</p>
+    <p>He shows that the very concept of causation is a mental projection. If the world is an illusion, then there is no real creator, no real creation, and no real dissolution. The only reality is the non-dual <span class="sanskrit-term" title="The individual self; the true consciousness within">Self</span>, which is free from all attributes and all relationships.</p>
 
-    <!-- SVG Diagram 3: The Fire-brand Analogy -->
-    <div class="diagram-container">
-      <div class="diagram-title">The Fire-brand Analogy (Alata)</div>
-      <svg class="diagram-svg" viewBox="0 0 640 260" width="640" height="260" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
-          </linearGradient>
-          <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" style="stop-color:#d4844a;stop-opacity:0.8" />
-            <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.5" />
-            <stop offset="100%" style="stop-color:#e6c86e;stop-opacity:0.1" />
-          </linearGradient>
-        </defs>
-        <rect width="640" height="260" fill="var(--bg, #faf7f2)" rx="12"/>
-        <line x1="120" y1="180" x2="120" y2="100" stroke="#8b4513" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="120" cy="95" r="8" fill="#d4844a" opacity="0.9"/>
-        <circle cx="120" cy="95" r="12" fill="url(#fireGrad)" opacity="0.6"/>
-        <ellipse cx="320" cy="130" rx="140" ry="35" fill="none" stroke="url(#goldGrad3)" stroke-width="1.5" opacity="0.6" stroke-dasharray="6,3"/>
-        <ellipse cx="320" cy="130" rx="110" ry="28" fill="none" stroke="url(#goldGrad3)" stroke-width="1" opacity="0.4" stroke-dasharray="4,2"/>
-        <ellipse cx="320" cy="130" rx="80" ry="20" fill="none" stroke="url(#goldGrad3)" stroke-width="0.5" opacity="0.3"/>
-        <circle cx="200" cy="110" r="2" fill="#b5822a" opacity="0.7"/>
-        <circle cx="250" cy="95" r="1.5" fill="#d4a44a" opacity="0.5"/>
-        <circle cx="380" cy="100" r="2" fill="#b5822a" opacity="0.6"/>
-        <circle cx="430" cy="115" r="1.5" fill="#d4a44a" opacity="0.5"/>
-        <circle cx="460" cy="140" r="2" fill="#b5822a" opacity="0.4"/>
-        <text x="120" y="210" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">ALATA</text>
-        <text x="120" y="224" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" opacity="0.6">Fire-brand (consciousness)</text>
-        <text x="320" y="185" text-anchor="middle" fill="#b5822a" font-family="Cinzel, serif" font-size="9" letter-spacing="0.15em">APPARENT CIRCLE</text>
-        <text x="320" y="200" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="8" opacity="0.6">The world of cause and effect (vivarta)</text>
-        <text x="320" y="245" text-anchor="middle" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">No circle is ever created; only the fire-brand moves</text>
-        <path d="M145 110 Q180 100 200 115" fill="none" stroke="url(#goldGrad3)" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/>
-        <text x="170" y="105" fill="#6b7f94" font-family="Crimson Pro, serif" font-size="7" opacity="0.5">movement</text>
-      </svg>
-      <div class="diagram-caption">The swinging fire-brand creates the illusion of a circle — yet no circle ever exists. So too, the world of cause and effect is a projection of consciousness.</div>
+    <!-- ★ 3D PREMIUM DIAGRAM: Fire-brand Analogy ★ -->
+    <div class="diagram-fire">
+      <div class="diagram-title" style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:1.5rem;">The Fire-brand Analogy · अलात</div>
+
+      <div class="fire-brand"></div>
+
+      <div class="fire-trail"></div>
+      <div class="fire-trail2"></div>
+
+      <div class="fire-arc"></div>
+      <div class="fire-arc2"></div>
+
+      <div class="fire-core"></div>
+
+      <span class="fire-spark"></span>
+      <span class="fire-spark"></span>
+      <span class="fire-spark"></span>
+      <span class="fire-spark"></span>
+
+      <span class="fire-label fire-label-brand">
+        Alata
+        <span class="ls">अलात</span>
+        <span class="sub">Fire-brand</span>
+      </span>
+
+      <span class="fire-label fire-label-circle">
+        Apparent Circle
+        <span class="ls">भ्रम</span>
+        <span class="sub">The World</span>
+      </span>
+
+      <span class="fire-center-label">No circle is ever created</span>
     </div>
+
+    <div class="diagram-caption">The swinging fire-brand creates the illusion of a circle — yet no circle ever exists. So too, the world of cause and effect is a projection of consciousness.</div>
 
     <div class="pull-q">
       <p>"The fire-brand when it is moving produces the illusion of a straight line, a circle, a curve, etc. Similarly, consciousness appears to generate the manifold universe through its own movement. But when the movement ceases, the illusion disappears. The Self alone remains."</p>
@@ -917,7 +1401,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <cite>— Ashtavakra Gita 2.6</cite>
     </div>
 
-    <p><span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span>'s teaching — "The world is unreal, you are pure awareness" — is the very same that Gaudapada systematised and that Shankara later defended. Though the Ashtavakra Gita is difficult to date, its content is a pure expression of ajata vada, and it stands as a parallel stream of the same living wisdom.</p>
+    <p><span class="sanskrit-term" title="The sage with eight bends; author of the Ashtavakra Gita">Ashtavakra</span>'s teaching — "The world is unreal, you are pure awareness" — is the very same that Gaudapada systematised and that Shankara later defended.</p>
   </div>
 
   <div class="ed-h3">The Golden Thread · सुवर्ण सूत्र</div>
@@ -996,7 +1480,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="prac-n">III</div>
       <div class="prac-content">
         <h5>Effortless Resting <span class="deva">सहज</span></h5>
-        <p>He contrasts this with other yogas that involve effort, breath control, or meditation on forms. Asparsa yoga is the natural, effortless resting in one's own true nature. It is identical to Ramana Maharshi's <span class="sanskrit-term" title="Atma Vichara; the practice of tracing the I-thought to its source">Self-enquiry</span> when pursued to its source.</p>
+        <p>He contrasts this with other yogas that involve effort, breath control, or meditation on forms. Asparsa yoga is the natural, effortless resting in one's own true nature.</p>
       </div>
     </div>
     <div class="prac-step">
@@ -1007,7 +1491,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       </div>
     </div>
     <div class="prac-step">
-      <div class="prac-n">&#10022;</div>
+      <div class="prac-n">✦</div>
       <div class="prac-content">
         <h5>Cessation of Movement <span class="deva">विराम</span></h5>
         <p>"The wise man, having realised that the Self is the only reality, abides in the Self and does not return to the false perception of the world. He is like the fire-brand that has ceased moving — only light remains."</p>
@@ -1074,20 +1558,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="pq-glow"></div>
   <div class="pullquote">
     <p class="pq-text">"Gaudapada's Mandukya Karika stands as the foundational text of Advaita Vedanta, establishing the non-dual perspective through rigorous philosophical argument."</p>
-    <p class="pq-attr"><a href="../index.html" class="continue-link">&larr; Return to Home</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="advaita-adi-shankara.html" class="continue-link">Continue to Adi Shankara &rarr;</a></p>
+    <p class="pq-attr"><a href="../index.html" class="continue-link">← Return to Home</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="advaita-adi-shankara.html" class="continue-link">Continue to Adi Shankara →</a></p>
   </div>
 </div>
 
 <!-- CHAPTER NAVIGATION -->
 <div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">&#8962; Home</a>
-  <span class="chapter-sep">&#x1F549;</span>
+  <a href="../index.html" class="chapter-link">⌂ Home</a>
+  <span class="chapter-sep">ॐ</span>
   <a href="advaita-gaudapada.html" class="chapter-link active">Gaudapada</a>
-  <span class="chapter-sep">&#x1F549;</span>
+  <span class="chapter-sep">ॐ</span>
   <a href="advaita-adi-shankara.html" class="chapter-link">Adi Shankara</a>
-  <span class="chapter-sep">&#x1F549;</span>
+  <span class="chapter-sep">ॐ</span>
   <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
-  <span class="chapter-sep">&#x1F549;</span>
+  <span class="chapter-sep">ॐ</span>
   <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
 </div>
 
@@ -1163,13 +1647,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     });
   });
 
-  /* KOSHA ACCORDION */
-  window.toggleKosha = function(row){
-    const isOpen = row.classList.contains('open');
-    document.querySelectorAll('.kosha-row.open').forEach(r=> r.classList.remove('open'));
-    if(!isOpen) row.classList.add('open');
-  };
-
   /* INTERSECTION OBSERVER for fade-in */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -1206,6 +1683,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     }
     animateCursor();
   }
+
+  /* FALLBACK for fade-in */
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 2000);
 })();
 </script>
 

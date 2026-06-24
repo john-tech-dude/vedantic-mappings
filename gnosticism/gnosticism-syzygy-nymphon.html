@@ -317,6 +317,88 @@
         .resonance-callout::before { content: '✦'; display: block; font-size: 1.2rem; color: var(--violet); margin-bottom: 0.75rem; opacity: 0.6; }
         .resonance-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--ink2); line-height: 1.7; margin: 0 !important; }
 
+        /* ═══════════════════════════════════════════════════════════════
+           PULLQUOTE BANNER
+           ═══════════════════════════════════════════════════════════════ */
+        .pq-section {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg2), var(--bg));
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .pq-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--gold-glow), transparent 60%);
+            pointer-events: none;
+            animation: breathe 10s ease-in-out infinite;
+        }
+        .pq-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.06;
+            line-height: 0.8;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            margin-bottom: -2.5rem;
+        }
+        .pq-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--ink);
+            line-height: 1.65;
+            max-width: 660px;
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.57rem;
+            letter-spacing: 0.4em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr a {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .pq-attr a:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+        }
+        .pq-attr .continue-link {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .pq-attr .continue-link:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+        }
+        .pq-sep {
+            color: var(--stone-light);
+            opacity: 0.5;
+            margin: 0 0.5rem;
+        }
+
         .pullquote-section { position: relative; overflow: hidden; padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
         [data-theme="dark"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #12183a 0%, var(--bg) 40%, #060814 70%, var(--bg) 100%); }
         [data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #d8dce8 0%, #c8cde0 40%, #a8b0d0 70%, #7880a0 100%); }
@@ -466,17 +548,40 @@
         .toc-b-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ink); transition: color 0.35s; line-height: 1.3; }
         .toc-b-skt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--stone); text-align: right; white-space: nowrap; }
 
-        /* =====================================================
-           FOOTER & NAV
-           ===================================================== */
-        .nav-advaita { display: flex; justify-content: center; align-items: center; gap: 1.25rem; padding: 2.25rem 2rem 1.75rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-subtle); background: var(--bg); }
-        .nav-advaita-link { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.12em; color: var(--stone); text-decoration: none; transition: all 0.4s var(--ease-out-expo); display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.2rem 0.1rem; position: relative; }
-        .nav-advaita-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.4s var(--ease-out-expo); }
-        .nav-advaita-link:hover { color: var(--gold); transform: translateY(-1px); }
-        .nav-advaita-link:hover::after { width: 100%; }
-        .nav-advaita-link.active { color: var(--gold); }
-        .nav-advaita-link.active::after { width: 100%; }
-        .nav-advaita-sep { color: var(--border-strong); font-size: 0.5rem; opacity: .35; user-select: none; }
+        /* ═══════════════════════════════════════════════════════════════
+           CHAPTER NAVIGATION
+           ═══════════════════════════════════════════════════════════════ */
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
+            flex-wrap: wrap;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .chapter-link {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+            white-space: nowrap;
+        }
+        .chapter-link:hover {
+            color: var(--gold);
+        }
+        .chapter-sep {
+            color: var(--border-strong);
+            opacity: 0.3;
+            flex-shrink: 0;
+        }
+        .chapter-link.active {
+            color: var(--gold);
+            font-weight: 500;
+        }
 
         .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
         .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
@@ -1413,47 +1518,48 @@
     </section>
 
     <!-- TRANSITION PULLQUOTE -->
-    <div class="pullquote-section">
-        <div class="pullquote-glow"></div>
+    <div class="pq-section">
+        <div class="pq-glow" aria-hidden="true"></div>
         <div class="pullquote">
-            <p class="pullquote-text">"The syzygy structure — gendered divine pairs in mutual necessity — appears across the non-dual traditions. From the Gnostic bridal chamber to the Taoist union of yin and yang, the pattern persists: primordial unity, fall through separation, restoration through recognition."</p>
-            <p class="pullquote-attr"><a href="gnosticism_the_bridal_chamber.html" class="continue-link">&larr; Return to The Bridal Chamber</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../taoism/taoism-threshold.html" class="continue-link">Continue to Taoism &rarr;</a></p>
+            <p class="pq-text">"The syzygies are the male and female pairs that exist together in the Pleroma, united in perfect harmony. When the soul recognizes its syzygy, it returns to its original unity." — Tripartite Tractate, Nag Hammadi Library (I,5)</p>
+            <p class="pq-attr"><a href="gnosticism_the_bridal_chamber.html" class="continue-link">&larr; Return to The Bridal Chamber</a> <span class="pq-sep">·</span> <a href="../taoism/taoism-threshold.html" class="continue-link">Continue to Taoism &rarr;</a></p>
         </div>
     </div>
 
-    <!-- TRADITION NAV -->
-    <nav class="nav-advaita" aria-label="Gnostic tradition navigation">
-        <a href="../index.html" class="nav-advaita-link">Home</a>
-        <span class="nav-advaita-sep" aria-hidden="true">I ·</span>
-        <a href="gnosticism-unknown-father.html" class="nav-advaita-link">The Unknown Father</a>
-        <span class="nav-advaita-sep" aria-hidden="true">☯</span>
-        <span class="nav-advaita-sep" aria-hidden="true">II ·</span>
-        <a href="gnosticism-the_demiurge.html" class="nav-advaita-link">The Demiurge</a>
-        <span class="nav-advaita-sep" aria-hidden="true">☯</span>
-        <span class="nav-advaita-sep" aria-hidden="true">III ·</span>
-        <a href="gnosticism-the_divine_spark.html" class="nav-advaita-link">The Divine Spark</a>
-        <span class="nav-advaita-sep" aria-hidden="true">☯</span>
-        <span class="nav-advaita-sep" aria-hidden="true">IV ·</span>
-        <a href="gnosticism_the_bridal_chamber.html" class="nav-advaita-link">The Bridal Chamber (Overview)</a>
-        <span class="nav-advaita-sep" aria-hidden="true">→</span>
-        <span class="nav-advaita-link active">Syzygy Theology (Deep Dive)</span>
-    </nav>
+   <!-- ═══════════════════════════════════════════════════════════════
+    CHAPTER NAVIGATION
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="chapter-nav">
+  <a href="../index.html" class="chapter-link">&#8962; Home</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-unknown-father.html" class="chapter-link">I &middot; The Unknown Father</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-the_demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
+  <span class="chapter-sep">&#9775;</span>
+  <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV &middot; The Bridal Chamber</a>
+  <span class="chapter-sep">&rarr;</span>
+  <a href="gnosticism-syzygy-nymphon.html" class="chapter-link active">V &middot; Syzygy Theology</a>
+</div>
 
-    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════════════
+    FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
     <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-        <div class="footer-links">
-            <a href="../index.html">⌂ Vedantic Mappings</a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="gnosticism-unknown-father.html">Gnosticism</a>
-            <a href="../taoism/taoism-threshold.html">Taoism</a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-        </div>
-        <div class="footer-credit">Researched & Composed</div>
+            <div class="footer-links">
+      <a href="../index.html">⌂ Vedantic Mappings</a>
+      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+      <a href="gnosticism-unknown-father.html">Gnosticism</a>
+      <a href="../taoism/taoism-threshold.html">Taoism</a>
+      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+    </div>
+        <div class="footer-credit">Researched and composed - .</div>
         <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>

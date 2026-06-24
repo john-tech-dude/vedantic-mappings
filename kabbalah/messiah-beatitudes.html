@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Gnosticism — The Unknown Father. Apophatic abyss beyond the Pleroma. The Silence, Barbelo, and the Monad. Nag Hammadi cartography." />
-    <title>Gnosticism · The Unknown Father — Apophatic Abyss</title>
+    <meta name="description" content="The Beatitudes as Jnana Yoga — The Sermon on the Mount as a practical guide to ego-dissolution, the Lord's Prayer as mantra, and the path of daily realization." />
+    <title>The Beatitudes as Jnana Yoga · The Vedantic Messiah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           TOKENS — Gnostic Deep Indigo / Violet / Gold
+           TOKENS — Deep Indigo / Violet / Gold (Gnostic-inspired)
            ═══════════════════════════════════════════════════════════════ */
         :root {
             --bg: #0a0e1a;
@@ -234,11 +234,6 @@
                 transform: translate(-50%, -50%) scale(4.2);
             }
         }
-        @keyframes emblem-rotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
         @keyframes emblem-pulse {
             0%,
             100% {
@@ -261,16 +256,6 @@
             66% {
                 transform: translate(-1%, 2%) scale(0.98);
                 opacity: 0.25;
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
         @keyframes lineReveal {
@@ -599,7 +584,6 @@
             width: 100%;
             height: 100%;
             overflow: visible;
-            /* Glow animation applied to the SVG itself */
             animation: ouroboros-glow 4s ease-in-out infinite;
         }
         @keyframes ouroboros-glow {
@@ -816,26 +800,6 @@
             line-height: 1.72;
             max-width: 580px;
             margin-bottom: 2.5rem;
-        }
-        .ed-h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 0.6rem;
-            letter-spacing: 0.4em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin: 2.75rem 0 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-        .ed-h3::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, var(--gold), transparent);
-            opacity: 0.2;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1299,52 +1263,6 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           COMPARATIVE TABLE
-           ═══════════════════════════════════════════════════════════════ */
-        .comparative-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: transparent;
-            font-size: 0.78rem;
-        }
-        .comparative-table thead tr {
-            border-bottom: 2px solid var(--gold);
-        }
-        .comparative-table th {
-            padding: 10px 8px;
-            text-align: left;
-            font-family: 'Cinzel', serif;
-            font-size: 0.55rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold-light);
-            font-weight: 500;
-            background: rgba(201, 168, 76, 0.06);
-        }
-        .comparative-table td {
-            padding: 8px 8px;
-            color: var(--stone-light);
-            line-height: 1.5;
-            font-size: 0.78rem;
-        }
-        .comparative-table tbody tr {
-            border-bottom: 1px solid var(--border-subtle);
-            transition: background 0.3s ease;
-        }
-        .comparative-table tbody tr:last-child {
-            border-bottom: none;
-        }
-        .comparative-table tbody tr:hover {
-            background: rgba(124, 111, 174, 0.08);
-        }
-        .comparative-table-wrapper {
-            overflow-x: auto;
-            margin-top: 0.5rem;
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
            RESONANCE CALLOUT
            ═══════════════════════════════════════════════════════════════ */
         .resonance-callout {
@@ -1626,122 +1544,40 @@
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
-            .nav-menu {
-                min-width: 180px;
-            }
-            .back-to-top {
-                right: 1.5rem;
-                bottom: 5rem;
-            }
-            .footer-links {
-                gap: 1.5rem;
-            }
-            .scripture-panels {
-                grid-template-columns: 1fr;
-            }
+            .nav-menu { min-width: 180px; }
+            .back-to-top { right: 1.5rem; bottom: 5rem; }
+            .footer-links { gap: 1.5rem; }
+            .scripture-panels { grid-template-columns: 1fr; }
             .scripture-panel:first-child {
                 border-right: none;
                 border-bottom: 1px solid var(--border-subtle);
             }
-            .hero-emblem {
-                width: 110px;
-                height: 110px;
-            }
-            .diagram-container {
-                padding: 1.25rem;
-            }
-            .chapter-nav {
-                gap: 0.75rem;
-                font-size: 0.6rem;
-            }
-            .toc-book-item {
-                grid-template-columns: 38px 1fr;
-            }
-            .toc-b-skt {
-                display: none;
-            }
-            .stage-section {
-                padding: 80px 24px;
-            }
-            .ed-wrap {
-                padding: 0 24px;
-            }
+            .hero-emblem { width: 110px; height: 110px; }
+            .diagram-container { padding: 1.25rem; }
+            .chapter-nav { gap: 0.75rem; font-size: 0.6rem; }
+            .toc-book-item { grid-template-columns: 38px 1fr; }
+            .toc-b-skt { display: none; }
+            .stage-section { padding: 80px 24px; }
+            .ed-wrap { padding: 0 24px; }
         }
         @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-                line-height: 1.72;
-            }
-            .content-section {
-                padding: 48px 16px;
-            }
-            .hero {
-                padding: 4rem 1rem 5rem;
-            }
-            .hero-emblem {
-                width: 95px;
-                height: 95px;
-            }
-            .nav-compass {
-                top: 0.75rem;
-                left: 0.75rem;
-            }
-            .nav-toggle {
-                width: 40px;
-                height: 40px;
-            }
-            .nav-menu {
-                min-width: 160px;
-                border-radius: var(--radius-sm);
-            }
-            .nav-item {
-                padding: 0.5rem 1rem;
-                font-size: 0.82rem;
-            }
-            .theme-toggle {
-                width: 42px;
-                height: 42px;
-                bottom: 1rem;
-                right: 1rem;
-            }
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                bottom: 4.5rem;
-                right: 1rem;
-            }
-            .scripture-panel {
-                padding: 20px;
-            }
-            .pullquote-section {
-                padding: 3rem 1rem;
-            }
-            .chapter-nav {
-                gap: 0.5rem;
-                font-size: 0.55rem;
-            }
-            .footer {
-                padding: 3rem 1rem 2rem;
-            }
-            .footer-links {
-                gap: 1rem;
-                font-size: 0.7rem;
-            }
-            .comparative-table {
-                font-size: 0.7rem;
-            }
-            .comparative-table th,
-            .comparative-table td {
-                padding: 6px 4px;
-                font-size: 0.65rem;
-            }
-            .diagram-container {
-                padding: 1rem;
-                margin: 1.5rem 0;
-            }
-            .pull-q {
-                padding: 0.5rem 0 0.5rem 1.25rem;
-            }
+            body { font-size: 16px; line-height: 1.72; }
+            .content-section { padding: 48px 16px; }
+            .hero { padding: 4rem 1rem 5rem; }
+            .hero-emblem { width: 95px; height: 95px; }
+            .nav-compass { top: 0.75rem; left: 0.75rem; }
+            .nav-toggle { width: 40px; height: 40px; }
+            .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
+            .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
+            .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+            .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
+            .scripture-panel { padding: 20px; }
+            .pullquote-section { padding: 3rem 1rem; }
+            .chapter-nav { gap: 0.5rem; font-size: 0.55rem; }
+            .footer { padding: 3rem 1rem 2rem; }
+            .footer-links { gap: 1rem; font-size: 0.7rem; }
+            .diagram-container { padding: 1rem; margin: 1.5rem 0; }
+            .pull-q { padding: 0.5rem 0 0.5rem 1.25rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -1750,23 +1586,11 @@
                 animation: none !important;
                 transition: none !important;
             }
-            .fade-in {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-            .text-reveal-inner {
-                transform: translateY(0) !important;
-            }
-            .section-separator {
-                opacity: 1 !important;
-                transform: scaleX(1) !important;
-            }
-            .hero-emblem {
-                animation: none !important;
-            }
-            .hero-emblem svg {
-                animation: none !important;
-            }
+            .fade-in { opacity: 1 !important; transform: none !important; }
+            .text-reveal-inner { transform: translateY(0) !important; }
+            .section-separator { opacity: 1 !important; transform: scaleX(1) !important; }
+            .hero-emblem { animation: none !important; }
+            .hero-emblem svg { animation: none !important; }
         }
     </style>
 </head>
@@ -1783,22 +1607,24 @@
             <div class="nav-section-title">This Page</div>
             <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon">✦</span><span>Overview</span></a>
             <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon">📋</span><span>Table of Contents</span></a>
-            <a href="#abyss" class="nav-item" data-section="abyss"><span class="nav-item-icon">◈</span><span>The Apophatic Abyss</span></a>
-            <a href="#pPleroma" class="nav-item" data-section="pPleroma"><span class="nav-item-icon">◉</span><span>The Pleroma</span></a>
-            <a href="#silence" class="nav-item" data-section="silence"><span class="nav-item-icon">☯</span><span>The Silence</span></a>
-            <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon">✦</span><span>The Nameless Source</span></a>
+            <a href="#beatitudes" class="nav-item" data-section="beatitudes"><span class="nav-item-icon">◈</span><span>The Beatitudes as Jnana Yoga</span></a>
+            <a href="#lords-prayer" class="nav-item" data-section="lords-prayer"><span class="nav-item-icon">☸</span><span>The Lord's Prayer as Mantra</span></a>
+            <a href="#daily-practice" class="nav-item" data-section="daily-practice"><span class="nav-item-icon">🌱</span><span>Daily Practice</span></a>
+            <a href="#perfection" class="nav-item" data-section="perfection"><span class="nav-item-icon">⊙</span><span>Be Perfect</span></a>
             <div class="nav-divider"></div>
-            <div class="nav-section-title">Gnosticism · Four Pages</div>
-            <a href="gnosticism-unknown-father.html" class="nav-item active"><span class="nav-item-icon">◈</span><span>I · The Unknown Father</span></a>
-            <a href="gnosticism-the_demiurge.html" class="nav-item"><span class="nav-item-icon">⊡</span><span>II · The Demiurge</span></a>
-            <a href="gnosticism-the_divine_spark.html" class="nav-item"><span class="nav-item-icon">✦</span><span>III · The Divine Spark</span></a>
-            <a href="gnosticism_the_bridal_chamber.html" class="nav-item"><span class="nav-item-icon">❤</span><span>IV · The Bridal Chamber</span></a>
+            <div class="nav-section-title">The Vedantic Messiah</div>
+            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>I · The Hermeneutic Key</span></a>
+            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">◈</span><span>II · Three Bridges</span></a>
+            <a href="../messiah/messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item active"><span class="nav-item-icon">🌱</span><span>IV · The Beatitudes as Jnana Yoga</span></a>
+            <a href="../messiah/messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
             <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
             <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
         </div>
     </div>
 
@@ -1829,19 +1655,19 @@
         <div class="hero-ripple" aria-hidden="true"></div>
         <div class="hero-ripple" aria-hidden="true"></div>
 
-        <p class="hero-eyemark">The Unknown Father</p>
-        <p class="hero-label">Apophatic Abyss · Beyond the Pleroma</p>
-        <p class="hero-subtitle-top">The Monad · The One-Who-Is</p>
-        <h1 class="hero-title">The Unknown Father</h1>
-        <p class="hero-epithet">Prior to the All · Uncontainable · Unnameable</p>
+        <p class="hero-eyemark">The Practical Path</p>
+        <p class="hero-label">The Sermon on the Mount · The Beatitudes</p>
+        <p class="hero-subtitle-top">The Yoga of the Heart · The Way of the Awakened Life</p>
+        <h1 class="hero-title">The Beatitudes as Jnana Yoga</h1>
+        <p class="hero-epithet">The Eightfold Path of the Heart · The Qualifications for Realization</p>
         <div class="hero-divider" aria-hidden="true">
             <div class="hero-divider-line"></div>
             <div class="hero-divider-diamond"></div>
             <div class="hero-divider-line"></div>
         </div>
-        <p class="hero-quote">&ldquo;He is the invisible Spirit. It is not right to think of him as a god, for he is more than a god. He is uncontainable, for no one contains him. He is unnameable, for no one can name him.&rdquo;</p>
-        <p class="hero-quote-attr">&mdash; Apocryphon of John, Nag Hammadi Library (c. 2nd century CE)</p>
-        <p class="hero-dates">Nag Hammadi · c. 2nd–4th Century CE</p>
+        <p class="hero-quote">&ldquo;Blessed are the poor in spirit, for theirs is the kingdom of heaven.&rdquo;</p>
+        <p class="hero-quote-attr">&mdash; Matthew 5:3 · <span class="greek-term" title="Aramaic: ṭūḇayhōn lə-miskēnē bə-rūḥ — 'Blessed are the poor in spirit'">ṭūḇayhōn lə-miskēnē bə-rūḥ</span></p>
+        <p class="hero-dates">The Sermon on the Mount · c. 26–30 CE · Galilee</p>
         <div class="hero-scroll-cue" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
             <span>Enter</span>
             <div class="scroll-line" aria-hidden="true"></div>
@@ -1853,33 +1679,33 @@
     ═══════════════════════════════════════════════════════════════ -->
     <section class="toc-section" id="toc">
         <div class="ed-section-label">Contents · ΠΕΡΙΕΧΟΜΕΝΑ</div>
-        <h2 class="ed-section-h2">The Core Teachings of the Unknown Father</h2>
-        <p class="ed-section-intro">The apophatic abyss, the Pleroma, the Silence, and the nameless source.</p>
+        <h2 class="ed-section-h2">The Beatitudes as a Map of Awakening</h2>
+        <p class="ed-section-intro">The Sermon on the Mount as a practical guide to ego-dissolution, the Lord's Prayer as mantra, and the path of daily realization.</p>
         <nav class="toc-book" aria-label="Page contents">
-            <a href="#abyss" class="toc-book-item">
+            <a href="#beatitudes" class="toc-book-item">
                 <span class="toc-b-num">I</span>
-                <span class="toc-b-title">The Apophatic Abyss — Beyond the Pleroma</span>
-                <span class="toc-b-skt">Ἄβυσσος</span>
+                <span class="toc-b-title">The Beatitudes — The Four Qualifications</span>
+                <span class="toc-b-skt">Μακαρισμοί</span>
             </a>
-            <a href="#pPleroma" class="toc-book-item">
+            <a href="#beatitudes-continued" class="toc-book-item">
                 <span class="toc-b-num">II</span>
-                <span class="toc-b-title">The Pleroma and the Aeons</span>
-                <span class="toc-b-skt">Πλήρωμα</span>
+                <span class="toc-b-title">The Eightfold Path of the Heart</span>
+                <span class="toc-b-skt">Ὁδός</span>
             </a>
-            <a href="#silence" class="toc-book-item">
+            <a href="#lords-prayer" class="toc-book-item">
                 <span class="toc-b-num">III</span>
-                <span class="toc-b-title">Sigē — The Silence</span>
-                <span class="toc-b-skt">Σιγή</span>
+                <span class="toc-b-title">The Lord's Prayer — The Mantra of the Kingdom</span>
+                <span class="toc-b-skt">Πάτερ ἡμῶν</span>
             </a>
-            <a href="#comparative" class="toc-book-item">
+            <a href="#daily-practice" class="toc-book-item">
+                <span class="toc-b-num">IV</span>
+                <span class="toc-b-title">Daily Practice — Living the Awakened Life</span>
+                <span class="toc-b-skt">Ἐν τῷ νῦν</span>
+            </a>
+            <a href="#perfection" class="toc-book-item">
                 <span class="toc-b-num">★</span>
-                <span class="toc-b-title">The Nameless Source — Four Traditions</span>
-                <span class="toc-b-skt">Ἄγνωστος</span>
-            </a>
-            <a href="gnostic_syzygy_nymphon.html" class="toc-book-item">
-                <span class="toc-b-num">→</span>
-                <span class="toc-b-title">Syzygy Theology — A Deep Dive</span>
-                <span class="toc-b-skt">Συζυγία</span>
+                <span class="toc-b-title">Be Perfect — The Vedantic Declaration</span>
+                <span class="toc-b-skt">Τέλειος</span>
             </a>
         </nav>
     </section>
@@ -1890,8 +1716,8 @@
     <div class="pq-section">
         <div class="pq-glow" aria-hidden="true"></div>
         <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">&ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought.&rdquo;</p>
-        <p class="pq-attr">&mdash; Gospel of Truth, Nag Hammadi Library (I,3)</p>
+        <p class="pq-text">&ldquo;Blessed are the pure in heart, for they shall see God.&rdquo;</p>
+        <p class="pq-attr">&mdash; Matthew 5:8 · <span class="greek-term" title="Aramaic: ṭūḇayhōn lə-dakkīn bə-lebbōn — 'Blessed are the pure in heart'">ṭūḇayhōn lə-dakkīn bə-lebbōn</span></p>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -1899,311 +1725,99 @@
     ═══════════════════════════════════════════════════════════════ -->
     <div class="stages-wrap">
 
-        <!-- SECTION 1: THE APOPHATIC ABYSS -->
-        <section class="stage-section" id="abyss">
-            <div class="stage-wm" aria-hidden="true">ΑΒΥΣΣΟΣ</div>
+        <!-- SECTION 1: THE BEATITUDES AS SADHANA-CHATUSHTAYA -->
+        <section class="stage-section" id="beatitudes">
+            <div class="stage-wm" aria-hidden="true">ΜΑΚΑΡΙΣΜΟΙ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter I</span>
-                    <span class="stage-skt">The Apophatic Abyss</span>
-                    <span class="stage-deva-title">Ἄβυσσος</span>
+                    <span class="stage-skt">The Beatitudes</span>
+                    <span class="stage-deva-title">Μακαρισμοί</span>
                 </div>
-                <h2 class="stage-h2">Beyond the Pleroma</h2>
-                <span class="stage-subtitle-label">Radical Transcendence · The Abyss Before All Aeons</span>
+                <h2 class="stage-h2">The Four Qualifications for Realization</h2>
+                <span class="stage-subtitle-label">The Beatitudes as Sadhana-Chatushtaya</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>T</strong>he Gnostic <em>Apocryphon of John</em> opens with a vision that annihilates every theological category. <strong>He is the invisible Spirit. It is not right to think of him as a god, for he is more than a god.</strong> This is not hyperbole. It is the apophatic (<em>via negativa</em>) method pushed to its absolute limit &mdash; the same limit encountered in Lao Tzu&rsquo;s Tao, in Pseudo-Dionysius&rsquo; <em>Mystical Theology</em>, and in the Upani&#7779;ads&rsquo; <span class="greek-term" title="Not this, not this — the method of negation in Advaita">neti-neti</span>. Yet the Gnostic tradition goes further: the Unknown Father is not merely beyond names; he is beyond the very realm of names, beyond the Pleroma itself, beyond the totality of divine emanations.</p>
+                <p><strong>J</strong>esus begins the Sermon on the Mount not with doctrine but with a series of declarations: <span class="greek-term" title="Blessed, fortunate, deeply content">ṭūḇayhōn</span> &mdash; &ldquo;Blessed,&rdquo; &ldquo;fortunate,&rdquo; &ldquo;deeply content.&rdquo; In Greek, <span class="greek-term" title="Blessed; the state of inner contentment and spiritual well-being">μακάριοι</span> (<em>makarioi</em>) &mdash; not the shallow happiness of circumstances, but the profound contentment of the soul that knows its true nature. The Beatitudes are not moral imperatives to be achieved. They are <strong>descriptions of the awakened heart</strong> &mdash; the spontaneous qualities of one who has already recognized the Self.</p>
 
-                <p class="fade-in stagger-1">Where the <em>Tao Te Ching</em> speaks of the Tao as &ldquo;the mother of ten thousand things,&rdquo; the Gnostic speaks of the Father as the parent of the Pleroma &mdash; the <span class="greek-term" title="Fullness; the realm of divine aeons and archetypes">Plērōma</span> &mdash; which is itself the mother of the visible cosmos. There is a double remove: the Father is not the world, not the creator of the world, not even the direct source of the world. Between the Unknown Father and the material universe stands an entire hierarchy of divine intermediaries: the Silence, the Only-Begotten, Barbelo, and the Aeons. This is the most radical cosmological buffer in the history of theology.</p>
+                <p class="fade-in stagger-1">In Advaita Vedanta, the path of knowledge (<span class="greek-term" title="The yoga of knowledge; the path of direct realization">jñāna-yoga</span>) requires four preparatory qualifications, known as <span class="greek-term" title="The four-fold spiritual discipline; the qualifications for Jnana Yoga">sādhana-catuṣṭaya</span>. These are not moral achievements that earn liberation, but the <strong>necessary conditions</strong> for recognition to occur. The Beatitudes map precisely onto these four qualifications:</p>
 
-                <p class="fade-in stagger-2">In this, Gnosticism anticipates the Kabbalistic doctrine of the <span class="greek-term" title="The Infinite; the unknowable essence of God in Kabbalah">Ein Sof</span> by over a millennium. The <em>Zohar</em> describes Ein Sof as &ldquo;the Cause of Causes, the Root of Roots, hidden and unrevealed,&rdquo; from which the <em>sefirot</em> emanate as vessels of manifestation. The Gnostic Father is similarly hidden, but with a crucial difference: the Gnostic insists that the material world is not a theophany but a <em>prison</em>. The Pleroma is the true home; the cosmos is a forgetful shadow. The Father does not create the shadow. The shadow arises through a rupture, a fall, a forgetting.</p>
-
-                <!-- DIAGRAM 1: The Apophatic Ladder -->
+                <!-- DIAGRAM: The Beatitudes as Sadhana-Chatushtaya -->
                 <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">The Apophatic Ladder · From the Father to the World</div>
-                    <svg class="diagram-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                    <div class="diagram-title">The Beatitudes as the Four Qualifications</div>
+                    <svg class="diagram-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="plGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--violet-light)" stop-opacity="0.35"/>
-                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.12"/>
-                            </linearGradient>
-                            <linearGradient id="aeonLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="var(--violet-deep)"/>
-                                <stop offset="50%" stop-color="var(--violet)"/>
-                                <stop offset="100%" stop-color="var(--violet-light)"/>
-                            </linearGradient>
-                            <linearGradient id="ruptureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="transparent"/>
-                                <stop offset="20%" stop-color="var(--violet)" stop-opacity="0.6"/>
-                                <stop offset="50%" stop-color="var(--gold)" stop-opacity="0.5"/>
-                                <stop offset="80%" stop-color="var(--violet)" stop-opacity="0.6"/>
-                                <stop offset="100%" stop-color="transparent"/>
-                            </linearGradient>
-                            <filter id="diagGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="2" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-                        <rect width="800" height="600" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
-                        <!-- Level 5: Unknown Father -->
-                        <ellipse cx="400" cy="50" rx="150" ry="35" fill="url(#plGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0"/>
-                        <text x="400" y="45" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.18em">THE UNKNOWN FATHER</text>
-                        <text x="400" y="64" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.9">Prior to the Pleroma · The Monad · Uncontainable</text>
-                        <line x1="400" y1="90" x2="400" y2="115" stroke="var(--violet)" stroke-width="1.2" opacity="0.8" stroke-dasharray="4,3"/>
-                        <polygon points="400,123 394,113 406,113" fill="var(--violet)" opacity="0.8"/>
-                        <!-- Level 4: Silence & Barbelo -->
-                        <ellipse cx="400" cy="165" rx="190" ry="42" fill="url(#plGrad)" stroke="var(--violet-light)" stroke-width="1.3" opacity="0.95"/>
-                        <text x="400" y="157" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="12" letter-spacing="0.14em">ΣΙΓΗ · ΒΑΡΒΗΛΩ · THE ONLY-BEGOTTEN</text>
-                        <text x="400" y="178" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.85">The Womb of Emanation · First Thought · Autogenes</text>
-                        <line x1="400" y1="210" x2="400" y2="235" stroke="var(--violet)" stroke-width="1.1" opacity="0.7" stroke-dasharray="4,3"/>
-                        <polygon points="400,243 394,233 406,233" fill="var(--violet)" opacity="0.7"/>
-                        <!-- Level 3: Pleroma -->
-                        <ellipse cx="400" cy="295" rx="230" ry="52" fill="url(#plGrad)" stroke="url(#aeonLine)" stroke-width="1.1" opacity="0.9"/>
-                        <text x="400" y="286" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="12" letter-spacing="0.12em">THE PLEROMA · THE OGDOAD · THE AEONS</text>
-                        <text x="400" y="308" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.8">The Fullness · Realm of Divine Syzygies · Depth, Silence, Mind, Truth, Word, Life, Man, Church</text>
-                        <line x1="400" y1="350" x2="400" y2="375" stroke="var(--violet)" stroke-width="0.9" opacity="0.6" stroke-dasharray="6,4"/>
-                        <polygon points="400,383 394,373 406,373" fill="var(--violet)" opacity="0.6"/>
-                        <!-- Rupture -->
-                        <line x1="200" y1="355" x2="600" y2="355" stroke="url(#ruptureGrad)" stroke-width="2" opacity="0.85"/>
-                        <text x="400" y="352" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.2em" opacity="0.8">THE RUPTURE</text>
-                        <!-- Level 2: Demiurge -->
-                        <ellipse cx="400" cy="425" rx="200" ry="40" fill="url(#plGrad)" stroke="var(--stone)" stroke-width="1.0" opacity="0.8"/>
-                        <text x="400" y="418" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.12em">THE DEMIURGE · YALDABAOTH</text>
-                        <text x="400" y="438" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.75">The Blind Craftsman · Creator of the Material Realm</text>
-                        <line x1="400" y1="468" x2="400" y2="493" stroke="var(--stone)" stroke-width="0.8" opacity="0.5" stroke-dasharray="5,4"/>
-                        <polygon points="400,501 394,491 406,491" fill="var(--stone)" opacity="0.5"/>
-                        <!-- Level 1: Material World -->
-                        <ellipse cx="400" cy="540" rx="260" ry="50" fill="url(#plGrad)" stroke="var(--stone)" stroke-width="0.9" opacity="0.7"/>
-                        <text x="400" y="532" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.1em">THE MATERIAL WORLD</text>
-                        <text x="400" y="552" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.75">The Shadow · The Prison of Forgetfulness · Hylē</text>
-                        <!-- Return arrow -->
-                        <path d="M 680 540 Q 740 320 680 50" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.5" stroke-dasharray="5,4"/>
-                        <polygon points="675,58 682,48 688,58" fill="var(--gold)" opacity="0.5"/>
-                        <text x="755" y="290" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.18em" opacity="0.7" transform="rotate(-16, 755, 290)">RETURN</text>
-                        <text x="755" y="305" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6" transform="rotate(-16, 755, 305)">via Gnōsis</text>
-                        <text x="400" y="590" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">&ldquo;The All ran about, searching for him from whom it had come forth.&rdquo;</text>
-                    </svg>
-                    <p class="diagram-caption">The Gnostic cosmos descends from the unknowable Father through emanation into the Pleroma, then through rupture and the Demiurge into the material world. The path of return is the awakening of the spark through <em>gnōsis</em>.</p>
-                </div>
-
-                <p class="fade-in stagger-1">The Father is described through a superlative negation: &ldquo;He is illimitable, since there is no one prior to him to set limits to him. He is unfathomable, since there exists no one prior to him to fathom him. He is immeasurable, since there was no one prior to him to measure him.&rdquo; Every negation presupposes a higher ground. The Father is not limited because limitation is a category of the Pleroma. He is not fathomable because depth is a spatial metaphor belonging to the world of form.</p>
-
-                <div class="scripture-panels fade-in stagger-2">
-                    <div class="scripture-panel">
-                        <div class="scripture-panel-label">Apocryphon of John · The Unknown Father</div>
-                        <p class="scripture-panel-text">&ldquo;He is the invisible Spirit. It is not right to think of him as a god, or that he is something similar. Rather, he is more than a god. He is uncontainable, since no one contains him. He is unnameable, since no one can name him. He is prior to everything.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,1)</p>
-                    </div>
-                    <div class="scripture-panel">
-                        <div class="scripture-panel-label">Gospel of Truth · The All</div>
-                        <p class="scripture-panel-text">&ldquo;The All ran about, searching for him from whom it had come forth. The All was inside of him, that incomprehensible, inconceivable one who is superior to all thought.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (I,3)</p>
-                    </div>
-                </div>
-
-                <div class="tension-box fade-in stagger-1">
-                    <p>The deepest level of the Gnostic teaching is that what you fundamentally are is not the trapped soul seeking the Father, but the Father himself, temporarily obscured by his own emanation. The &ldquo;I&rdquo; that seeks the Unknown is itself an Aeon, a ray of the Pleroma that has forgotten its origin. When the forgetting ceases, what remains is not a new attainment but the original plenitude.</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="stage-sep"/>
-
-        <!-- SECTION 2: THE PLEROMA -->
-        <section class="stage-section" id="pPleroma">
-            <div class="stage-wm" aria-hidden="true">ΠΛΗΡΩΜΑ</div>
-            <div class="stage-header">
-                <div class="stage-eyeline">
-                    <span class="stage-n">Chapter II</span>
-                    <span class="stage-skt">The Pleroma</span>
-                    <span class="stage-deva-title">Πλήρωμα</span>
-                </div>
-                <h2 class="stage-h2">The Fullness and the Aeons</h2>
-                <span class="stage-subtitle-label">The Realm of Archetypes · The Womb of Emanation</span>
-                <span class="stage-rule"></span>
-            </div>
-            <div class="stage-body">
-                <p><strong>B</strong>etween the Unknown Father and the material world lies the <span class="greek-term" title="Fullness; the complete realm of divine realities">Plērōma</span> &mdash; the Fullness. This is not empty space or a vacuum. It is the totality of divine possibilities, the complete set of archetypal realities, the &ldquo;living waters&rdquo; from which all particular things draw their being. The Pleroma is not a place but a <em>mode of being</em> &mdash; the mode in which separation has not yet occurred, in which all things exist in their original unity.</p>
-
-                <p class="fade-in stagger-1">The Pleroma is populated by <span class="greek-term" title="Eternal ones; divine emanations or archetypes">Aeons</span> &mdash; not gods in the pagan sense, but eternal modalities of the Father&rsquo;s self-expression. Each Aeon exists as a <span class="greek-term" title="Pairing; conjugal union of masculine and feminine aeons">syzygy</span> (pairing) of masculine and feminine principles: Depth (<em>Bythos</em>) and Silence (<em>Sigē</em>), Mind (<em>Nous</em>) and Truth (<em>Aletheia</em>), Word (<em>Logos</em>) and Life (<em>Zoē</em>), Man (<em>Anthropos</em>) and Church (<em>Ekklesia</em>). These eight form the <em>Ogdoad</em> &mdash; the primordial octave.</p>
-
-                <!-- DIAGRAM 2: The Pleroma -->
-                <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">The Pleroma · The Emanation of the Aeons</div>
-                    <svg class="diagram-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <radialGradient id="fatherGrad" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.1"/>
-                            </radialGradient>
-                            <radialGradient id="barbeloGrad" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="var(--violet-light)" stop-opacity="0.3"/>
-                                <stop offset="100%" stop-color="var(--violet)" stop-opacity="0.1"/>
-                            </radialGradient>
-                            <radialGradient id="lumGrad" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="var(--violet)" stop-opacity="0.25"/>
-                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.08"/>
-                            </radialGradient>
-                            <linearGradient id="connLine" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--violet-light)" stop-opacity="0.8"/>
-                                <stop offset="100%" stop-color="var(--violet)" stop-opacity="0.4"/>
-                            </linearGradient>
-                            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="2" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-                        <rect width="800" height="520" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
-                        <!-- Father -->
-                        <circle cx="400" cy="70" r="55" fill="url(#fatherGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0"/>
-                        <circle cx="400" cy="70" r="48" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,5"/>
-                        <text x="400" y="65" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">THE FATHER</text>
-                        <text x="400" y="80" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.85">Unknown · Unnameable</text>
-                        <line x1="400" y1="125" x2="400" y2="155" stroke="url(#connLine)" stroke-width="1.2" opacity="0.8"/>
-                        <polygon points="400,163 394,153 406,153" fill="var(--violet-light)" opacity="0.7"/>
-                        <!-- Barbelo -->
-                        <circle cx="400" cy="195" r="70" fill="url(#barbeloGrad)" stroke="var(--violet-light)" stroke-width="1.3" opacity="0.9"/>
-                        <circle cx="400" cy="195" r="62" fill="none" stroke="var(--violet)" stroke-width="0.8" opacity="0.45" stroke-dasharray="2,4"/>
-                        <text x="400" y="190" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">ΒΑΡΒΗΛΩ</text>
-                        <text x="400" y="205" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.8">First Thought · The Womb</text>
-                        <line x1="400" y1="265" x2="400" y2="295" stroke="url(#connLine)" stroke-width="1.0" opacity="0.7"/>
-                        <polygon points="400,303 394,293 406,293" fill="var(--violet-light)" opacity="0.6"/>
-                        <!-- Autogenes -->
-                        <circle cx="400" cy="330" r="45" fill="url(#barbeloGrad)" stroke="var(--violet-light)" stroke-width="1.0" opacity="0.85"/>
-                        <text x="400" y="326" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">ΑΥΤΟΓΕΝΗΣ</text>
-                        <text x="400" y="340" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.75">Only-Begotten</text>
-                        <!-- Lines to Luminaries -->
-                        <line x1="360" y1="365" x2="160" y2="420" stroke="url(#connLine)" stroke-width="0.9" opacity="0.5"/>
-                        <line x1="380" y1="375" x2="300" y2="430" stroke="url(#connLine)" stroke-width="0.9" opacity="0.5"/>
-                        <line x1="420" y1="375" x2="500" y2="430" stroke="url(#connLine)" stroke-width="0.9" opacity="0.5"/>
-                        <line x1="440" y1="365" x2="640" y2="420" stroke="url(#connLine)" stroke-width="0.9" opacity="0.5"/>
-                        <!-- Four Luminaries -->
-                        <circle cx="140" cy="435" r="42" fill="url(#lumGrad)" stroke="var(--violet)" stroke-width="1.0" opacity="0.85"/>
-                        <text x="140" y="430" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">HARMOZEL</text>
-                        <text x="140" y="443" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.75">Grace · First Luminary</text>
-                        <circle cx="300" cy="445" r="42" fill="url(#lumGrad)" stroke="var(--violet)" stroke-width="1.0" opacity="0.85"/>
-                        <text x="300" y="440" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">OROIAEL</text>
-                        <text x="300" y="453" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.75">Will · Second Luminary</text>
-                        <circle cx="500" cy="445" r="42" fill="url(#lumGrad)" stroke="var(--violet)" stroke-width="1.0" opacity="0.85"/>
-                        <text x="500" y="440" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">DAVEITHAI</text>
-                        <text x="500" y="453" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.75">Perception · Third Luminary</text>
-                        <circle cx="660" cy="435" r="42" fill="url(#lumGrad)" stroke="var(--violet)" stroke-width="1.0" opacity="0.85"/>
-                        <text x="660" y="430" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">ELELETH</text>
-                        <text x="660" y="443" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.75">Wisdom · Fourth Luminary</text>
-                        <text x="400" y="500" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">&ldquo;The Pleroma is the fullness of the Father, the place where the All dwells in unity.&rdquo;</text>
-                    </svg>
-                    <p class="diagram-caption">The Pleroma emanates from the Unknown Father through Barbelo and the Only-Begotten, branching into the Four Luminaries and their attendant Aeons. Each sphere is a syzygy of masculine and feminine principles.</p>
-                </div>
-
-                <p class="fade-in stagger-2">The syzygy is not merely theological decoration. It is the structural guarantee that the Pleroma is relational, not solipsistic. The Father alone is absolute; but the Father&rsquo;s self-expression is always dyadic, always a dialogue. This becomes crucial in the final restoration, where the <span class="greek-term" title="Bridal chamber; the sacrament of sacred marriage">Nymphōn</span> — the Bridal Chamber — emerges as the highest sacrament.</p>
-
-                <blockquote class="fade-in stagger-1">
-                    <p>&ldquo;The Father is surrounded by the Aeons, and the Aeons are surrounded by the Father. The Pleroma is a single body with many members, and each member is a complete body.&rdquo;</p>
-                    <cite>&mdash; Tripartite Tractate, Nag Hammadi Library (I,5)</cite>
-                </blockquote>
-            </div>
-        </section>
-
-        <hr class="stage-sep"/>
-
-        <!-- SECTION 3: THE SILENCE -->
-        <section class="stage-section" id="silence">
-            <div class="stage-wm" aria-hidden="true">ΣΙΓΗ</div>
-            <div class="stage-header">
-                <div class="stage-eyeline">
-                    <span class="stage-n">Chapter III</span>
-                    <span class="stage-skt">Sigē · The Silence</span>
-                    <span class="stage-deva-title">Σιγή</span>
-                </div>
-                <h2 class="stage-h2">The Womb Before Sound</h2>
-                <span class="stage-subtitle-label">The Cloud of Unknowing in Gnostic Form</span>
-                <span class="stage-rule"></span>
-            </div>
-            <div class="stage-body">
-                <p><strong>I</strong>f the Father is the unknowable source, <span class="greek-term" title="Silence; the divine feminine ground prior to all utterance">Sigē</span> is the unknowable ground. She is not an Aeon in the strict sense but the <em>space</em> in which Aeons arise, the silence that precedes and envelops every word, the womb that receives the unbegotten seed. In the <em>Apocryphon of John</em>, she is called &ldquo;the Silence that is with him&rdquo; &mdash; not a separate being but the necessary complement of the Father&rsquo;s hiddenness.</p>
-
-                <p class="fade-in stagger-1">Sigē is the Gnostic equivalent of the Taoist <span class="greek-term" title="The mysterious female; the valley spirit that never runs dry">Xuán Pìn</span> &mdash; the &ldquo;mysterious female&rdquo; from which heaven and earth arise. She is the Kabbalistic <span class="greek-term" title="The Infinite; the formless ground from which the sefirot emanate">Ein Sof</span> in its feminine aspect, the <em>Shekhinah</em> before she descends into exile. She is the Advaitic <span class="greek-term" title="The power of Brahman; the dynamic feminine principle of manifestation">Māyā</span> in its highest sense: not illusion but the creative power that makes manifestation possible without being identical to the manifest.</p>
-
-                <!-- DIAGRAM 3: The Silence -->
-                <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">Sigē · The Silence as Womb and Cloud</div>
-                    <svg class="diagram-svg" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <radialGradient id="sigeGrad" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="var(--violet)" stop-opacity="0.25"/>
-                                <stop offset="60%" stop-color="var(--violet-deep)" stop-opacity="0.15"/>
-                                <stop offset="100%" stop-color="var(--bg)" stop-opacity="0.08"/>
-                            </radialGradient>
-                            <radialGradient id="fatherGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.45"/>
-                                <stop offset="40%" stop-color="var(--gold)" stop-opacity="0.25"/>
+                            <linearGradient id="qualGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--violet-light)" stop-opacity="0.15"/>
                                 <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
-                            </radialGradient>
-                            <linearGradient id="emanation" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.7"/>
-                                <stop offset="100%" stop-color="var(--violet-light)" stop-opacity="0.3"/>
                             </linearGradient>
-                            <filter id="cloudBlur" x="-30%" y="-30%" width="160%" height="160%">
-                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                            <filter id="qGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2" result="blur"/>
                                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
                         </defs>
-                        <rect width="800" height="420" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.98"/>
-                        <ellipse cx="400" cy="210" rx="340" ry="160" fill="url(#sigeGrad)" stroke="var(--violet)" stroke-width="1.0" opacity="0.65" filter="url(#cloudBlur)"/>
-                        <ellipse cx="400" cy="210" rx="300" ry="135" fill="none" stroke="var(--violet-light)" stroke-width="0.8" opacity="0.5" stroke-dasharray="4,8"/>
-                        <g fill="var(--violet-light)" opacity="0.5">
-                            <circle cx="120" cy="150" r="1.5"/>
-                            <circle cx="180" cy="120" r="2"/>
-                            <circle cx="250" cy="100" r="1"/>
-                            <circle cx="550" cy="100" r="1.5"/>
-                            <circle cx="620" cy="120" r="2"/>
-                            <circle cx="680" cy="150" r="1"/>
-                            <circle cx="140" cy="280" r="1"/>
-                            <circle cx="210" cy="310" r="1.5"/>
-                            <circle cx="580" cy="310" r="1.5"/>
-                            <circle cx="660" cy="280" r="1"/>
-                            <circle cx="320" cy="80" r="1"/>
-                            <circle cx="480" cy="80" r="1.5"/>
-                            <circle cx="350" cy="340" r="1"/>
-                            <circle cx="450" cy="340" r="1.5"/>
-                        </g>
-                        <text x="400" y="55" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.25em">ΣΙΓΗ · THE SILENCE · THE CLOUD OF UNKNOWING</text>
-                        <circle cx="400" cy="210" r="65" fill="url(#fatherGlow)" opacity="1.0"/>
-                        <circle cx="400" cy="210" r="55" fill="none" stroke="var(--gold)" stroke-width="1.3" opacity="0.7" stroke-dasharray="3,5"/>
-                        <circle cx="400" cy="210" r="35" fill="none" stroke="var(--gold-light)" stroke-width="0.9" opacity="0.6"/>
-                        <text x="400" y="205" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">THE FATHER</text>
-                        <text x="400" y="220" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.8">Hidden in the Silence</text>
-                        <ellipse cx="220" cy="210" rx="65" ry="45" fill="none" stroke="var(--violet-light)" stroke-width="1.1" opacity="0.75" filter="url(#cloudBlur)"/>
-                        <ellipse cx="220" cy="210" rx="55" ry="38" fill="none" stroke="var(--violet)" stroke-width="0.8" opacity="0.6"/>
-                        <text x="220" y="205" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">ΒΑΡΒΗΛΩ</text>
-                        <text x="220" y="218" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.8">First Thought</text>
-                        <ellipse cx="580" cy="210" rx="65" ry="45" fill="none" stroke="var(--violet-light)" stroke-width="1.1" opacity="0.75" filter="url(#cloudBlur)"/>
-                        <ellipse cx="580" cy="210" rx="55" ry="38" fill="none" stroke="var(--violet)" stroke-width="0.8" opacity="0.6"/>
-                        <text x="580" y="205" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">ΑΥΤΟΓΕΝΗΣ</text>
-                        <text x="580" y="218" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.8">Only-Begotten</text>
-                        <line x1="335" y1="210" x2="285" y2="210" stroke="url(#emanation)" stroke-width="1.5" opacity="0.7"/>
-                        <line x1="465" y1="210" x2="515" y2="210" stroke="url(#emanation)" stroke-width="1.5" opacity="0.7"/>
-                        <circle cx="310" cy="210" r="1.5" fill="var(--gold)" opacity="0.7"/>
-                        <circle cx="490" cy="210" r="1.5" fill="var(--gold)" opacity="0.7"/>
-                        <text x="400" y="380" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">&ldquo;The Silence is with him, and the Silence is his dwelling.&rdquo;</text>
-                        <text x="400" y="395" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.6">&mdash; Apocryphon of John</text>
+                        <rect width="700" height="420" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+                        <!-- Center: Jnana -->
+                        <circle cx="350" cy="210" r="50" fill="url(#qualGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0"/>
+                        <circle cx="350" cy="210" r="42" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,5"/>
+                        <text x="350" y="205" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">JÑĀNA</text>
+                        <text x="350" y="220" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.8">Knowledge</text>
+                        <!-- Top: Viveka -->
+                        <ellipse cx="350" cy="70" rx="140" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
+                        <text x="350" y="62" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">VIVEKA</text>
+                        <text x="350" y="78" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Discrimination · The Real vs. The Unreal</text>
+                        <text x="350" y="92" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are the poor in spirit"</text>
+                        <line x1="350" y1="115" x2="350" y2="160" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
+                        <polygon points="350,168 344,158 356,158" fill="var(--violet)" opacity="0.6"/>
+                        <!-- Left: Vairagya -->
+                        <ellipse cx="120" cy="210" rx="110" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
+                        <text x="120" y="202" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">VAIRĀGYA</text>
+                        <text x="120" y="218" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Dispassion · Detachment</text>
+                        <text x="120" y="232" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are those who mourn"</text>
+                        <line x1="230" y1="210" x2="300" y2="210" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
+                        <polygon points="300,210 292,206 292,214" fill="var(--violet)" opacity="0.6"/>
+                        <!-- Right: Shama/Dama -->
+                        <ellipse cx="580" cy="210" rx="110" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
+                        <text x="580" y="202" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">ŚAMA / DAMA</text>
+                        <text x="580" y="218" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Control of Mind &amp; Senses</text>
+                        <text x="580" y="232" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are the meek"</text>
+                        <line x1="400" y1="210" x2="470" y2="210" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
+                        <polygon points="470,210 462,206 462,214" fill="var(--violet)" opacity="0.6"/>
+                        <!-- Bottom: Mumukshutva -->
+                        <ellipse cx="350" cy="350" rx="140" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
+                        <text x="350" y="342" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">MUMUKṢUTVA</text>
+                        <text x="350" y="358" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Yearning for Liberation</text>
+                        <text x="350" y="372" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are those who hunger for righteousness"</text>
+                        <line x1="350" y1="260" x2="350" y2="305" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
+                        <polygon points="350,305 344,295 356,295" fill="var(--violet)" opacity="0.6"/>
+                        <text x="350" y="410" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">&ldquo;Be perfect, therefore, as your heavenly Father is perfect.&rdquo;</text>
                     </svg>
-                    <p class="diagram-caption">The Father dwells in Sigē as the unmanifest in the manifesting ground. From the Silence, Barbelo and the Only-Begotten emerge as the first rays of knowable light.</p>
+                    <p class="diagram-caption">The Beatitudes map precisely onto the four qualifications of Jnana Yoga: Discrimination (Viveka), Dispassion (Vairagya), Self-control (Śama/Dama), and Yearning for Liberation (Mumukṣutva).</p>
                 </div>
 
-                <p class="fade-in stagger-2">The <em>Cloud of Unknowing</em> instructs the seeker to &ldquo;enter the cloud of unknowing with a loving stirring,&rdquo; to abandon all concepts of God and rest in darkness. Sigē <em>is</em> that cloud. She is the darkness that surrounds the Father, not as an obstacle but as the very condition of his transcendence. To enter the Silence is to cease all striving, all naming, all grasping. It is the Gnostic <em>wu wei</em> &mdash; the non-action that is the highest action.</p>
+                <p class="fade-in stagger-2">The Beatitudes are not arbitrary. They are the <strong>graduated stages of ego-dissolution</strong>, each building on the previous, each preparing the heart for the next. They are the <span class="greek-term" title="The way; the path of spiritual practice">ὁδός</span> (<em>hodos</em>) &mdash; the Way that leads to the recognition of the Self.</p>
 
                 <div class="scripture-panels fade-in stagger-1">
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">The Cloud of Unknowing</div>
-                        <p class="scripture-panel-text">&ldquo;For the first time, you may feel that you know nothing at all, not even what God is. This is the cloud of unknowing that lies between you and God.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Anonymous English mystic, 14th century</p>
+                        <div class="scripture-panel-label">Matthew 5:3 · Poor in Spirit</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are the poor in spirit, for theirs is the kingdom of heaven.&rdquo;</p>
+                        <p class="scripture-panel-ref">VIVEKA · Discrimination</p>
                     </div>
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Gospel of Thomas · Logion 27</div>
-                        <p class="scripture-panel-text">&ldquo;If you do not fast from the world, you will not find the kingdom. If you do not keep the Sabbath as Sabbath, you will not see the Father.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,2)</p>
+                        <div class="scripture-panel-label">Matthew 5:4 · Those Who Mourn</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are those who mourn, for they shall be comforted.&rdquo;</p>
+                        <p class="scripture-panel-ref">VAIRĀGYA · Dispassion</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:5 · The Meek</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are the meek, for they shall inherit the earth.&rdquo;</p>
+                        <p class="scripture-panel-ref">ŚAMA/DAMA · Self-control</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:6 · Those Who Hunger</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are those who hunger and thirst for righteousness, for they shall be filled.&rdquo;</p>
+                        <p class="scripture-panel-ref">MUMUKṢUTVA · Yearning for Liberation</p>
                     </div>
                 </div>
             </div>
@@ -2211,60 +1825,288 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 4: COMPARATIVE THRESHOLDS -->
-        <section class="stage-section" id="comparative">
-            <div class="stage-wm" aria-hidden="true">ΑΓΝΩΣΤΟΣ</div>
+        <!-- SECTION 2: THE EIGHTFOLD PATH OF THE HEART -->
+        <section class="stage-section" id="beatitudes-continued">
+            <div class="stage-wm" aria-hidden="true">ὉΔΟΣ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter IV</span>
-                    <span class="stage-skt">The Nameless Source</span>
-                    <span class="stage-deva-title">Ἄγνωστος</span>
+                    <span class="stage-n">Chapter II</span>
+                    <span class="stage-skt">The Eightfold Path of the Heart</span>
+                    <span class="stage-deva-title">Ὁδός</span>
                 </div>
-                <h2 class="stage-h2">Four Names for the Unnameable</h2>
-                <span class="stage-subtitle-label">Comparative Thresholds · Tao · Ein Sof · Brahman · The Father</span>
+                <h2 class="stage-h2">From Purification to Vision</h2>
+                <span class="stage-subtitle-label">The Beatitudes as a Journey of Awakening</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>T</strong>he Unknown Father is not a Gnostic peculiarity. He is the Gnostic name for a reality recognized across the non-dual traditions: the Tao that cannot be named, the Ein Sof that transcends all <em>sefirot</em>, the Brahman without qualities, the Divine Ground of the Christian mystics. Each tradition approaches the same abyss with its own metaphors, its own buffers, its own path of return. The Gnostic contribution is the radical insistence on the <em>distance</em> between the source and the world &mdash; a distance that makes the return a matter of life and death.</p>
+                <p><strong>T</strong>he first four Beatitudes establish the <span class="greek-term" title="The foundation; the preparation for spiritual life">θεμέλιον</span> (<em>themelion</em>) &mdash; the foundation. The next four describe the <strong>fruit</strong> of that foundation: the spontaneous qualities of the awakened heart.</p>
 
-                <p class="fade-in stagger-1">Where the Taoist sage returns to the Uncarved Block through <em>wu wei</em>, the Gnostic returns to the Pleroma through <span class="greek-term" title="Knowledge that is recognition, not accumulation; remembrance of one's true origin">gnōsis</span> &mdash; a knowledge that is not accumulation but recognition, not learning but remembering. Where the Advaitin dissolves the individual self into the Self through inquiry, the Gnostic dissolves the &ldquo;psychic&rdquo; self into the &ldquo;pneumatic&rdquo; self through revelation. Where the Christian mystic empties the soul into the Divine Ground through love, the Gnostic empties the soul into the Silence through the Savior&rsquo;s teaching.</p>
+                <p class="fade-in stagger-1"><span class="greek-term" title="Blessed are the merciful, for they shall obtain mercy">ṭūḇayhōn lə-rahamē</span> &mdash; &ldquo;Blessed are the merciful, for they shall obtain mercy&rdquo; (Matt 5:7). This is <span class="greek-term" title="Compassion; the spontaneous empathy of the awakened heart">karuṇā</span> &mdash; compassion that arises naturally when the sense of separate self dissolves. The merciful heart does not calculate; it responds instinctively to suffering because it recognizes the Self in all.</p>
 
-                <p class="fade-in stagger-2">The methods differ because the diagnoses differ. Taoism sees the problem as desire and conceptual fixation; Advaita sees it as ignorance of one&rsquo;s true nature; Christianity sees it as sin and separation; Gnosticism sees it as <em>forgetfulness</em> &mdash; a divine spark that has fallen asleep in matter and must be awakened. Yet all four agree on the essential structure: the absolute is already present, already the case; the apparent separation is the only obstacle; and the removal of the obstacle reveals what was never absent.</p>
+                <p class="fade-in stagger-2"><span class="greek-term" title="Blessed are the pure in heart, for they shall see God">ṭūḇayhōn lə-dakkīn bə-lebbōn</span> &mdash; &ldquo;Blessed are the pure in heart, for they shall see God&rdquo; (Matt 5:8). <span class="greek-term" title="Purity; the single-minded focus that reveals the divine">καθαρός</span> (<em>katharos</em>) means not moral purity in the conventional sense, but the <strong>single eye</strong> of non-dual awareness. The pure heart is the heart that sees no separation, no other. It is the heart that has been &ldquo;straightened&rdquo; by the path, no longer twisted by desire.</p>
 
-                <div class="resonance-callout fade-in stagger-1">
-                    <p>&ldquo;Blessed are the solitary and elect, for you will find the kingdom. For you are from it, and to it you will return.&rdquo;</p>
-                    <p class="attribution">&mdash; Gospel of Thomas 49, Nag Hammadi Library (II,2)</p>
+                <p class="fade-in stagger-3"><span class="greek-term" title="Blessed are the peacemakers, for they shall be called sons of God">ṭūḇayhōn lə-ʻāḇḏay šəlām</span> &mdash; &ldquo;Blessed are the peacemakers, for they shall be called sons of God&rdquo; (Matt 5:9). <span class="greek-term" title="Peace; the inner tranquility of the realized soul">εἰρήνη</span> (<em>eirēnē</em>) is the natural expression of the Self. The peacemaker does not impose peace; the peacemaker <em>is</em> peace. The very presence of the awakened one brings calm, dissolves conflict, reveals unity.</p>
+
+                <p class="fade-in stagger-4"><span class="greek-term" title="Blessed are those who are persecuted for righteousness' sake">ṭūḇayhōn lə-ʻannāyā</span> &mdash; &ldquo;Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven&rdquo; (Matt 5:10). This is the final paradox: the awakened life will be resisted by the world of illusion. The ego recoils from the dissolution that the awakened one embodies. Yet the awakened one remains untouched, already standing in the kingdom. This is <span class="greek-term" title="The state of being established in the Self; the ground of unshakeable peace">sthita-prajñā</span> &mdash; the one who is established in wisdom, unmoved by praise or blame.</p>
+
+                <!-- DIAGRAM: The Eightfold Spiral -->
+                <div class="diagram-container fade-in stagger-1">
+                    <div class="diagram-title">The Eightfold Spiral of the Heart</div>
+                    <svg class="diagram-svg" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="spiralGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
+                            </radialGradient>
+                            <filter id="spGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="700" height="500" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+                        <!-- Spiral path -->
+                        <path d="M 350 400 Q 200 400 200 300 Q 200 200 350 200 Q 500 200 500 300 Q 500 350 400 350 Q 300 350 300 280 Q 300 250 350 250 Q 400 250 400 300" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.4" stroke-dasharray="6,4"/>
+                        <!-- 8 stations -->
+                        <!-- 1: Poor in spirit -->
+                        <circle cx="350" cy="430" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.9"/>
+                        <text x="350" y="426" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">VIVEKA</text>
+                        <text x="350" y="438" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Poor in spirit</text>
+                        <!-- 2: Mourn -->
+                        <circle cx="200" cy="330" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="200" y="326" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">VAIRĀGYA</text>
+                        <text x="200" y="338" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Those who mourn</text>
+                        <!-- 3: Meek -->
+                        <circle cx="350" cy="220" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="350" y="216" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">ŚAMA/DAMA</text>
+                        <text x="350" y="228" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">The meek</text>
+                        <!-- 4: Hunger -->
+                        <circle cx="500" cy="330" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="500" y="326" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">MUMUKṢUTVA</text>
+                        <text x="500" y="338" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Hunger for righteousness</text>
+                        <!-- 5: Merciful -->
+                        <circle cx="260" cy="280" r="35" fill="url(#spiralGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="260" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">KARUṆĀ</text>
+                        <text x="260" y="288" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">The merciful</text>
+                        <!-- 6: Pure in heart -->
+                        <circle cx="350" cy="300" r="35" fill="url(#spiralGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="350" y="296" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">ŚUDDHA</text>
+                        <text x="350" y="308" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Pure in heart</text>
+                        <!-- 7: Peacemakers -->
+                        <circle cx="440" cy="280" r="35" fill="url(#spiralGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="440" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">ŚĀNTI</text>
+                        <text x="440" y="288" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Peacemakers</text>
+                        <!-- 8: Persecuted -->
+                        <circle cx="350" cy="120" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="0.95" filter="url(#spGlow)"/>
+                        <text x="350" y="116" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">STHITA</text>
+                        <text x="350" y="128" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">The persecuted</text>
+                        <text x="350" y="480" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The spiral of awakening · Each Beatitude deepens the previous</text>
+                    </svg>
+                    <p class="diagram-caption">The Beatitudes form an eightfold spiral, each deepening the previous. The first four establish the foundation; the next four are the spontaneous fruit of that foundation. The spiral culminates in the recognition of the Self.</p>
                 </div>
 
                 <div class="scripture-panels fade-in stagger-2">
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Comparative Table · The Deepest Level</div>
-                        <div class="comparative-table-wrapper">
-                            <table class="comparative-table">
-                                <thead>
-                                    <tr>
-                                        <th>Aspect</th>
-                                        <th>Taoism</th>
-                                        <th>Kabbalah</th>
-                                        <th>Advaita Vedanta</th>
-                                        <th>Gnosticism</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Absolute source</td><td>The Tao (nameless)</td><td>Ein Sof (the Infinite)</td><td>Nirguṇa Brahman</td><td>The Unknown Father</td></tr>
-                                    <tr><td>First emanation</td><td>The named Tao</td><td>Keter (Crown)</td><td>Saguṇa Brahman</td><td>Barbelo (first thought)</td></tr>
-                                    <tr><td>The problem</td><td>Desire and naming</td><td>Breaking of the vessels</td><td>Avidyā (ignorance)</td><td>Forgetfulness</td></tr>
-                                    <tr><td>The path</td><td>Wu wei (non-action)</td><td>Tikkun (repair)</td><td>Atma-vichāra</td><td>Gnōsis (recognition)</td></tr>
-                                    <tr><td>Final state</td><td>The Uncarved Block</td><td>Restoration of vessels</td><td>Sahaja Samādhi</td><td>Return to the Pleroma</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <div class="scripture-panel-label">Matthew 5:7 · The Merciful</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are the merciful, for they shall obtain mercy.&rdquo;</p>
+                        <p class="scripture-panel-ref">KARUṆĀ · Compassion</p>
                     </div>
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Gospel of Philip · On Names</div>
-                        <p class="scripture-panel-text">&ldquo;Names given to the worldly are very deceptive, for they divert our thoughts from what is correct to what is incorrect. Thus one who hears the word &lsquo;god&rsquo; does not perceive what is correct, but perceives what is incorrect.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,3)</p>
+                        <div class="scripture-panel-label">Matthew 5:8 · The Pure in Heart</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are the pure in heart, for they shall see God.&rdquo;</p>
+                        <p class="scripture-panel-ref">ŚUDDHA · Purity · The Single Eye</p>
                     </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:9 · The Peacemakers</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are the peacemakers, for they shall be called sons of God.&rdquo;</p>
+                        <p class="scripture-panel-ref">ŚĀNTI · Peace as Presence</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:10 · The Persecuted</div>
+                        <p class="scripture-panel-text">&ldquo;Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven.&rdquo;</p>
+                        <p class="scripture-panel-ref">STHITA-PRAJÑĀ · Established in Wisdom</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 3: THE LORD'S PRAYER AS MANTRA -->
+        <section class="stage-section" id="lords-prayer">
+            <div class="stage-wm" aria-hidden="true">ΠΑΤΕΡ ΗΜΩΝ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter III</span>
+                    <span class="stage-skt">The Lord's Prayer</span>
+                    <span class="stage-deva-title">Πάτερ ἡμῶν</span>
+                </div>
+                <h2 class="stage-h2">The Mantra of the Kingdom</h2>
+                <span class="stage-subtitle-label">The Prayer as Japa · The Sacred Formula of Recognition</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>W</strong>hen Jesus' disciples ask how to pray, he gives them what has become known as the Lord's Prayer (<span class="greek-term" title="The prayer of the Lord; the Our Father">Πάτερ ἡμῶν</span>). In the Vedantic reading, this is not a petition to an external deity. It is a <span class="greek-term" title="A sacred utterance or meditative formula; a tool for focusing the mind">mantra</span> &mdash; a formula designed to align the consciousness with the highest truth.</p>
+
+                <p class="fade-in stagger-1"><span class="greek-term" title="Our Father who art in heaven">'Avvūn də-ḇa-šəmayyā</span> &mdash; &ldquo;Our Father who art in heaven.&rdquo; This is not a geographical location. <span class="greek-term" title="Heaven; the realm of the divine; the transcendent dimension">οὐρανός</span> (<em>ouranos</em>) is the realm of pure consciousness, the <span class="greek-term" title="The space of consciousness; the inner expanse of awareness">cid-ākāśa</span>. The Father is the Absolute, and the &ldquo;heaven&rdquo; in which he dwells is the very ground of your own awareness. The prayer begins by <strong>invoking the ground of being</strong> from which all manifest forms arise.</p>
+
+                <p class="fade-in stagger-2"><span class="greek-term" title="Hallowed be thy name">yiṯqaddaš šəmāḵ</span> &mdash; &ldquo;Hallowed be thy name.&rdquo; This is the recognition that the Absolute cannot be named, yet all names refer to it. The name is hallowed not by worship but by <strong>recognition</strong> &mdash; the acknowledgment that every name is a veil, and every veil points to the nameless.</p>
+
+                <p class="fade-in stagger-3"><span class="greek-term" title="Thy kingdom come">tēṯē malkūṯāḵ</span> &mdash; &ldquo;Thy kingdom come.&rdquo; The kingdom is not a future event. It is the present reality of pure consciousness, obscured by the ego's identification with form. This line is the <strong>invocation of recognition</strong>: &ldquo;May the kingdom that is already here be recognized as here.&rdquo;</p>
+
+                <p class="fade-in stagger-4"><span class="greek-term" title="Thy will be done, on earth as it is in heaven">nēhṯē ṣəḇyānāḵ, 'aykannā də-ḇa-šəmayyā 'ap bə-'ar'ā</span> &mdash; &ldquo;Thy will be done, on earth as it is in heaven.&rdquo; This is the complete surrender of the ego to the Self. The &ldquo;earth&rdquo; is the realm of manifestation, the body-mind; the &ldquo;heaven&rdquo; is the Absolute. The prayer asks that these two become one &mdash; that the body-mind become transparent to the Self, that <span class="greek-term" title="The will of God; the divine purpose">θέλημα</span> (<em>thelēma</em>) become the single motive of life.</p>
+
+                <div class="pull-q fade-in">
+                    <p>&ldquo;The Lord's Prayer is the japa of the Kingdom. It is not asking for something you lack; it is affirming what you already are.&rdquo;</p>
+                    <cite>&mdash; The Vedantic Messiah</cite>
+                </div>
+
+                <!-- DIAGRAM: The Lord's Prayer as Mantra -->
+                <div class="diagram-container fade-in stagger-1">
+                    <div class="diagram-title">The Lord's Prayer · The Sevenfold Mantra</div>
+                    <svg class="diagram-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="mantraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
+                            </linearGradient>
+                            <filter id="mGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="700" height="420" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+                        <!-- Center -->
+                        <circle cx="350" cy="210" r="45" fill="url(#mantraGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0" filter="url(#mGlow)"/>
+                        <text x="350" y="206" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">JAPA</text>
+                        <text x="350" y="220" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Mantra</text>
+                        <!-- Petals -->
+                        <g transform="translate(350,210)">
+                            <text x="-80" y="-80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">'Avvūn</text>
+                            <text x="0" y="-95" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Our Father</text>
+                            <text x="80" y="-80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Yitqaddaš</text>
+                            <text x="95" y="-60" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Hallowed be thy name</text>
+                            <text x="80" y="80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Tētē</text>
+                            <text x="95" y="60" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Thy kingdom come</text>
+                            <text x="0" y="95" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Nēhtē</text>
+                            <text x="0" y="110" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Thy will be done</text>
+                            <text x="-80" y="80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Lahmā</text>
+                            <text x="-95" y="60" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Daily bread</text>
+                            <text x="-95" y="-40" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Hōb lan</text>
+                            <text x="-95" y="-25" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Forgive us</text>
+                            <text x="40" y="-40" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">La tētnan</text>
+                            <text x="40" y="-25" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Lead us not</text>
+                        </g>
+                        <text x="350" y="390" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The seven petitions of the Lord's Prayer as a sacred formula of recognition</text>
+                    </svg>
+                    <p class="diagram-caption">The Lord's Prayer is a sevenfold mantra: each petition aligns the seeker with a different aspect of non-dual recognition. It is not a request to an external God but a reorientation of consciousness.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 4: DAILY PRACTICE -->
+        <section class="stage-section" id="daily-practice">
+            <div class="stage-wm" aria-hidden="true">ΕΝ ΤΩ ΝΥΝ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter IV</span>
+                    <span class="stage-skt">Daily Practice</span>
+                    <span class="stage-deva-title">Ἐν τῷ νῦν</span>
+                </div>
+                <h2 class="stage-h2">Living the Awakened Life</h2>
+                <span class="stage-subtitle-label">Practical Teachings · The Ethic of the Self</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>T</strong>he Sermon on the Mount is not a collection of abstract ideals. It is a practical manual for living in the recognition of the Self. Each teaching is a direct application of non-dual awareness to the circumstances of daily life.</p>
+
+                <p class="fade-in stagger-1"><span class="greek-term" title="Do not resist an evil person; but if anyone strikes you on the right cheek, turn to him the other also">lā təqūmūn lə-bīšā</span> &mdash; &ldquo;Do not resist an evil person. But if anyone strikes you on the right cheek, turn to him the other also&rdquo; (Matt 5:39). This is not passivity in the face of injustice. It is the complete dissolution of the ego's defensive posture. The one who has recognized the Self no longer needs to protect a separate self. The &ldquo;other cheek&rdquo; is the recognition that there is no &ldquo;other&rdquo; &mdash; only the Self playing all roles.</p>
+
+                <p class="fade-in stagger-2"><span class="greek-term" title="Give to everyone who asks of you, and from him who takes away your goods do not ask them back">lə-šā'ēl lāḵ tēn</span> &mdash; &ldquo;Give to everyone who asks of you&rdquo; (Matt 5:42). In the Vedantic framework, this is <span class="greek-term" title="Generosity; giving as a natural expression of non-duality">dāna</span> &mdash; generosity that flows from the recognition that all is the Self. When you give to another, you are giving to yourself. When you refuse, you are refusing yourself.</p>
+
+                <p class="fade-in stagger-3"><span class="greek-term" title="Do not be anxious about tomorrow, for tomorrow will be anxious for itself">lā təḥšənūn lə-maḥar</span> &mdash; &ldquo;Do not be anxious about tomorrow&rdquo; (Matt 6:34). Anxiety is the ego's projection into a future that does not exist. The awakened one abides in the present, the only moment that is real. This is <span class="greek-term" title="The practice of abiding in the present; the removal of past and future conditioning">nididhyāsana</span> &mdash; the continuous resting in the Self, free from the ego's temporal projections.</p>
+
+                <p class="fade-in stagger-4">Jesus says: <em>&ldquo;Consider the lilies of the field, how they grow: they neither toil nor spin; yet I tell you, even Solomon in all his glory was not arrayed like one of these&rdquo;</em> (Matt 6:28-29). The lily does not strive to be beautiful. It is beautiful by nature. The awakened one does not strive to be the Self. It is the Self by nature. The teaching is <span class="greek-term" title="Non-action; effortlessness; the natural state of the Self">nishkāma-karma</span> &mdash; action without attachment to results, action that flows from the Self rather than toward it.</p>
+
+                <div class="tension-box fade-in stagger-1">
+                    <p>The teaching &ldquo;love your enemies&rdquo; (Matt 5:44) is the most radical application of non-duality. The enemy is the shadow of the ego, the projection of what you refuse to see in yourself. To love the enemy is to see through the projection and recognize the Self in all. This is <span class="greek-term" title="The vision of non-difference; seeing the Self in all beings">sama-darśana</span> &mdash; the equal vision of the enlightened one.</p>
+                </div>
+
+                <div class="scripture-panels fade-in stagger-2">
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:39 · Turn the Other Cheek</div>
+                        <p class="scripture-panel-text">&ldquo;If anyone strikes you on the right cheek, turn to him the other also.&rdquo;</p>
+                        <p class="scripture-panel-ref">The dissolution of ego-defensiveness</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 6:34 · Do Not Be Anxious</div>
+                        <p class="scripture-panel-text">&ldquo;Do not be anxious about tomorrow, for tomorrow will be anxious for itself.&rdquo;</p>
+                        <p class="scripture-panel-ref">Abiding in the present · Nididhyāsana</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:44 · Love Your Enemies</div>
+                        <p class="scripture-panel-text">&ldquo;Love your enemies and pray for those who persecute you.&rdquo;</p>
+                        <p class="scripture-panel-ref">Sama-darśana · Equal vision</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 6:28 · The Lilies of the Field</div>
+                        <p class="scripture-panel-text">&ldquo;Consider the lilies of the field, how they grow: they neither toil nor spin.&rdquo;</p>
+                        <p class="scripture-panel-ref">Nishkāma-karma · Effortless action</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 5: BE PERFECT -->
+        <section class="stage-section" id="perfection">
+            <div class="stage-wm" aria-hidden="true">ΤΕΛΕΙΟΣ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter V</span>
+                    <span class="stage-skt">Be Perfect</span>
+                    <span class="stage-deva-title">Τέλειος</span>
+                </div>
+                <h2 class="stage-h2">The Vedantic Declaration</h2>
+                <span class="stage-subtitle-label">"Be perfect, therefore, as your heavenly Father is perfect"</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>J</strong>esus concludes the first section of the Sermon on the Mount with a command that has confused and burdened Christians for two millennia: <span class="greek-term" title="Be perfect; be complete; be whole">ἔσεσθε οὖν ὑμεῖς τέλειοι</span> &mdash; &ldquo;Be perfect, therefore, as your heavenly Father is perfect&rdquo; (Matt 5:48).</p>
+
+                <p class="fade-in stagger-1">This is not a demand for moral perfectionism. The Greek word <span class="greek-term" title="Complete, whole, mature; perfect in the sense of being fully realized">τέλειος</span> (<em>teleios</em>) does not mean &ldquo;without fault.&rdquo; It means &ldquo;complete,&rdquo; &ldquo;whole,&rdquo; &ldquo;mature,&rdquo; &ldquo;having reached its end&rdquo; (from <em>telos</em>, &ldquo;end,&rdquo; &ldquo;purpose&rdquo;). In the Vedantic reading, this is the <strong>Mahāvākya</strong> of the Sermon on the Mount:</p>
+
+                <div class="resonance-callout fade-in stagger-1">
+                    <p>&ldquo;Be whole. Be complete. Be what you already are. The Father is not a separate being to be imitated; the Father is the Self that you are.&rdquo;</p>
+                    <p class="attribution">&mdash; The Vedantic Messiah</p>
+                </div>
+
+                <p class="fade-in stagger-2">In Advaita, perfection is not an achievement but a <strong>recognition</strong>. You are already the Self, already whole, already complete. The command &ldquo;Be perfect&rdquo; is an invitation to recognize what you have never ceased to be. It is the same teaching as the Upanishadic <span class="greek-term" title="You are That; the supreme identity of Atman and Brahman">Tat Tvam Asi</span> &mdash; &ldquo;That Thou Art.&rdquo;</p>
+
+                <p class="fade-in stagger-3">The Father is <span class="greek-term" title="Complete, whole, lacking nothing">τέλειος</span> not because he is morally impeccable, but because he is <strong>complete</strong>. The Father lacks nothing. The Father is the fullness of being. The command to be perfect is the command to recognize that you too are the fullness of being. The apparent lack is the illusion of separation. The apparent imperfection is the veil of <span class="greek-term" title="The cosmic illusion; the power that veils reality and projects multiplicity">māyā</span>.</p>
+
+                <p class="fade-in stagger-4">This is the same teaching that Ramana Maharshi gave to his disciples: &ldquo;You are already perfect. The only thing that is imperfect is the idea that you are imperfect.&rdquo; It is the same teaching that Nisargadatta Maharaj distilled: &ldquo;Give up all questions except one: 'Who am I?' After all, the only fact you are sure of is that you are. The 'I am' is certain. The 'I am this' is not.&rdquo;</p>
+
+                <p class="fade-in stagger-5">The Sermon on the Mount, read through the lens of Vedanta, is not a list of impossible moral demands. It is a <strong>graduated path of recognition</strong>, from the first stirring of discrimination (&ldquo;poor in spirit&rdquo;) through the purification of the heart (&ldquo;pure in heart&rdquo;) to the final recognition of the Self (&ldquo;Be perfect&rdquo;). It is the <span class="greek-term" title="The way; the path of spiritual practice">ὁδός</span> &mdash; the Way that leads to the realization that there is no way, no journey, no destination. You are already there.</p>
+
+                <div class="scripture-panels fade-in stagger-1">
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Matthew 5:48 · The Mahāvākya</div>
+                        <p class="scripture-panel-text">&ldquo;Be perfect, therefore, as your heavenly Father is perfect.&rdquo;</p>
+                        <p class="scripture-panel-ref">Ἔσεσθε οὖν ὑμεῖς τέλειοι</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Chandogya Upanishad 6.8.7</div>
+                        <p class="scripture-panel-text">&ldquo;Tat Tvam Asi — That thou art.&rdquo;</p>
+                        <p class="scripture-panel-ref">The Supreme Identity</p>
+                    </div>
+                </div>
+
+                <div class="pull-q fade-in">
+                    <p>&ldquo;Blessed are the pure in heart, for they shall see God. The pure heart sees no separation. The pure heart sees only the Self.&rdquo;</p>
+                    <cite>&mdash; The Vedantic Messiah</cite>
                 </div>
             </div>
         </section>
@@ -2277,8 +2119,8 @@
     <div class="pq-section">
         <div class="pq-glow" aria-hidden="true"></div>
         <div class="pullquote">
-            <p class="pq-text">"He is the invisible Spirit, of whom it is not right to think of him as a god, or like a god. For he is more than a god, since there is nothing above him, for he is the Father, he is the Father of the All." — Apocryphon of John, Nag Hammadi Library (II,1)</p>
-            <p class="pq-attr"><a href="../kabbalah/kabbalah_shaar_hagilgulim.html" class="continue-link">&larr; Return to Sha'ar HaGilgulim</a> <span class="pq-sep">·</span> <a href="gnosticism-the_demiurge.html" class="continue-link">Continue to The Demiurge &rarr;</a></p>
+            <p class="pq-text">The Beatitudes are the practical path to the non-dual recognition. From the first stirring of discrimination to the final recognition of the Self, the Sermon on the Mount is a complete map of awakening.</p>
+            <p class="pq-attr"><a href="../messiah/messiah-silence.html" class="continue-link">&larr; Return to The Cloud of Unknowing</a> <span class="pq-sep">·</span> <a href="../messiah/messiah-mirror.html" class="continue-link">Continue to Tat Tvam Asi &rarr;</a></p>
         </div>
     </div>
 
@@ -2286,18 +2128,18 @@
     CHAPTER NAVIGATION
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">&#8962; Home</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-unknown-father.html" class="chapter-link active">I &middot; The Unknown Father</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-the_demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV &middot; The Bridal Chamber</a>
-  <span class="chapter-sep">&rarr;</span>
-  <a href="gnostic_syzygy_nymphon.html" class="chapter-link">V &middot; Syzygy Theology</a>
-</div>
+        <a href="../index.html" class="chapter-link">⌂ Home</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
+        <span class="chapter-sep">✦</span>
+        <a href="../messiah/messiah-silence.html" class="chapter-link">III · The Cloud of Unknowing</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-beatitudes.html" class="chapter-link active">IV · The Beatitudes</a>
+        <span class="chapter-sep">✦</span>
+        <a href="../messiah/messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
@@ -2306,16 +2148,16 @@
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-                <div class="footer-links">
-      <a href="../index.html">⌂ Vedantic Mappings</a>
-      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="gnosticism-unknown-father.html">Gnosticism</a>
-      <a href="../taoism/taoism-threshold.html">Taoism</a>
-      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-    </div>
-        <div class="footer-credit">Researched and composed - .</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed</div>
         <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>

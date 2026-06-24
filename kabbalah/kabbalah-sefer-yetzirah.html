@@ -759,7 +759,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   inset: 0;
   background: rgba(10, 12, 20, 0.85);
   backdrop-filter: blur(8px);
-  z-index: 2000;
+  z-index: 99999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s var(--ease-out-expo), visibility 0.4s;
@@ -767,6 +767,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  isolation: isolate;
 }
 .sefirah-modal-overlay.active {
   opacity: 1;
@@ -960,6 +961,10 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       <span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>IV · The Baal Shem Tov</span></a>
     <a href="kabbalah-mystical-union.html" class="nav-item">
       <span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="9" cy="12" r="7"/><circle cx="15" cy="12" r="7"/></svg></span><span>V · Mystical Union</span></a>
+    <a href="kabbalah_zivug_haneshamot.html" class="nav-item">
+      <span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="8" r="2"/><circle cx="16" cy="16" r="2"/><line x1="8" y1="16" x2="16" y2="8"/></svg></span><span>VI · Zivug HaNeshamot</span></a>
+    <a href="kabbalah_shaar_hagilgulim.html" class="nav-item">
+      <span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2"/></svg></span><span>VII · Sha'ar HaGilgulim</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
     <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
@@ -1870,7 +1875,11 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
             <span class="chapter-sep">·</span>
             <a href="kabbalah-mystical-union.html" class="chapter-link">V · Mystical Union</a>
             <span class="chapter-sep">·</span>
-            <a href="kabbalah-luria-soul-mate.html" class="chapter-link active">VI ·Zivug HaNeshamot</a>
+            <a href="kabbalah_zivug_haneshamot.html" class="chapter-link">VI · Zivug HaNeshamot</a>
+             <span class="chapter-sep">·</span>
+        <a href="kabbalah_shaar_hagilgulim.html" class="chapter-link">VII · Sha'ar HaGilgulim</a>
+    </div>
+
         </div>
 
 <!-- FOOTER -->
@@ -1990,248 +1999,234 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   }, { passive: true });
 })();
 
-
-  // Interactive Sefirot Tooltips
-  (function() {
-    const sefirahData = {
-      keter: {
-        number: '1',
-        title: 'The Crown',
-        name: 'Keter',
-        hebrew: 'כתר',
-        desc: 'The primordial will, the first stirring of the Infinite toward creation. It is the point before the point, the intention before the act. Keter is so close to Ein Sof that it is sometimes called "the nothing that is something." Beyond all color and form, the Ancient of Days sits in the highest palace.'
-      },
-      chokhmah: {
-        number: '2',
-        title: 'Wisdom',
-        name: 'Chokhmah',
-        hebrew: 'חכמה',
-        desc: 'The flash of insight, the primordial point of light that emerges from the darkness of Keter. The "father" principle, the seed of all knowing. Chokhmah is the undifferentiated flash before thought becomes structured — the moment before the word becomes sentence.'
-      },
-      binah: {
-        number: '3',
-        title: 'Understanding',
-        name: 'Binah',
-        hebrew: 'בינה',
-        desc: 'The "mother" principle, the womb that receives the flash of Chokhmah and gives it form, structure, and duration. Binah is the palace, the palace of the King, the container that makes the flash sustainable. The divine feminine that gestates all creation.'
-      },
-      chesed: {
-        number: '4',
-        title: 'Loving-kindness',
-        name: 'Chesed',
-        hebrew: 'חסד',
-        desc: 'The expansive force, the outflowing of divine generosity that seeks to give without limit. The right hand of the divine, the arm that reaches out to create and sustain. Chesed would pour infinitely, but needs Gevurah to say "enough."'
-      },
-      gevurah: {
-        number: '5',
-        title: 'Severity / Strength',
-        name: 'Gevurah',
-        hebrew: 'גבורה',
-        desc: 'The contractive force, the boundary that says "enough," the discipline that prevents the infinite outpouring from dissipating into chaos. The left hand, the judgment that gives form its integrity. Without Gevurah, Chesed would flood the world.'
-      },
-      tiferet: {
-        number: '6',
-        title: 'Beauty / Harmony',
-        name: 'Tiferet',
-        hebrew: 'תפארת',
-        desc: 'The heart of the Tree, the balance point where Chesed and Gevurah meet in perfect proportion. The sun at the center, the radiance that makes the whole structure visible and desirable. Tiferet is the Blessed Holy One, the God of Israel who speaks from the burning bush.'
-      },
-      netzach: {
-        number: '7',
-        title: 'Victory / Endurance',
-        name: 'Netzach',
-        hebrew: 'נצח',
-        desc: 'The force of persistence, the divine quality that sustains creation through time. The right leg, the pillar of mercy extended into action. Netzach is the victory that comes not from conquest but from enduring — the quality that keeps the flame burning.'
-      },
-      hod: {
-        number: '8',
-        title: 'Splendor / Glory',
-        name: 'Hod',
-        hebrew: 'הוד',
-        desc: 'The force of submission, the divine quality that yields and reflects. The left leg, the pillar of severity extended into receptivity. Hod is the splendor that does not claim its own light but reflects the greater light. Together with Netzach, the legs that carry the divine body through history.'
-      },
-      yesod: {
-        number: '9',
-        title: 'Foundation',
-        name: 'Yesod',
-        hebrew: 'יסוד',
-        desc: 'The channel through which all the upper sefirot flow into the final vessel. The covenant, the point of transmission where the entire Tree concentrates its energy before delivering it to the world. Yesod is the bridge between heaven and earth, the foundation stone of all creation.'
-      },
-      malkhut: {
-        number: '10',
-        title: 'Kingdom',
-        name: 'Malkhut',
-        hebrew: 'מלכות',
-        desc: 'The final sefirah, the world itself, the Shekhinah, the divine presence as it dwells in matter and time. The bride, the earth, the Sabbath, the point at which the Infinite finally touches the finite and makes it holy. Malkhut is where all the upper sefirot become manifest in the world we inhabit.'
-      }
-    };
-
-    const tooltip = document.getElementById('sefirahTooltip');
-    const container = document.getElementById('treeContainer');
-    if (!tooltip || !container) return;
-
-    const sefirot = container.querySelectorAll('.sefirah-group');
-    let activeSefirah = null;
-
-    function positionTooltip(sefirah) {
-      const svg = container.querySelector('svg');
-      const svgRect = svg.getBoundingClientRect();
-
-      // Get the sefirah's translate position from the transform attribute
-      const transform = sefirah.getAttribute('transform');
-      const match = transform.match(/translate\(([^,]+),\s*([^)]+)\)/);
-      if (!match) return;
-
-      const sx = parseFloat(match[1]);
-      const sy = parseFloat(match[2]);
-
-      // Convert SVG coordinates (600x720 viewBox) to viewport pixels
-      const scaleX = svgRect.width / 600;
-      const scaleY = svgRect.height / 720;
-
-      const viewportX = svgRect.left + (sx * scaleX);
-      const viewportY = svgRect.top + (sy * scaleY);
-
-      // Position tooltip below the sefirah for top ones, above for bottom ones
-      const tooltipHeight = tooltip.offsetHeight || 200;
-      const tooltipWidth = tooltip.offsetWidth || 300;
-
-      let top, left;
-
-      // For top sefirot (Keter, Chokhmah, Binah), show below
-      if (sy < 250) {
-        top = viewportY + (40 * scaleY) + 10;
-      } else {
-        // For others, show above
-        top = viewportY - (40 * scaleY) - tooltipHeight - 10;
-      }
-
-      // Center horizontally on the sefirah
-      left = viewportX;
-
-      // Clamp to viewport edges
-      const margin = 16;
-      if (left - tooltipWidth/2 < margin) {
-        left = tooltipWidth/2 + margin;
-      }
-      if (left + tooltipWidth/2 > window.innerWidth - margin) {
-        left = window.innerWidth - tooltipWidth/2 - margin;
-      }
-      if (top < margin) {
-        top = viewportY + (40 * scaleY) + 10;
-      }
-      if (top + tooltipHeight > window.innerHeight - margin) {
-        top = viewportY - (40 * scaleY) - tooltipHeight - 10;
-      }
-
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
-      tooltip.style.transform = 'translate(-50%, 0)';
-    }
-
-    function showTooltip(sefirah) {
-      const data = sefirahData[sefirah.dataset.sefirah];
-      if (!data) return;
-
-      document.getElementById('tooltipNumber').textContent = data.number;
-      document.getElementById('tooltipTitle').textContent = data.title;
-      document.getElementById('tooltipName').textContent = data.name;
-      document.getElementById('tooltipHebrew').textContent = data.hebrew;
-      document.getElementById('tooltipDesc').textContent = data.desc;
-
-      activeSefirah = sefirah;
-      tooltip.classList.add('active');
-
-      // Position after a brief delay to let tooltip render
-      requestAnimationFrame(() => {
-        positionTooltip(sefirah);
-      });
-    }
-
-    function hideTooltip() {
-      tooltip.classList.remove('active');
-      activeSefirah = null;
-    }
-
-    sefirot.forEach(s => {
-      // Mouse events for desktop
-      s.addEventListener('mouseenter', () => showTooltip(s));
-      s.addEventListener('mouseleave', hideTooltip);
-
-      // Click for mobile/desktop
-      s.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (activeSefirah === s) {
-          hideTooltip();
-        } else {
-          showTooltip(s);
-        }
-      });
-    });
-
-    // Hide tooltip when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.sefirah-group') && !e.target.closest('.sefirah-tooltip')) {
-        hideTooltip();
-      }
-    });
-
-    // Hide tooltip on scroll
-    window.addEventListener('scroll', hideTooltip, { passive: true });
-
-    // Reposition on resize
-    window.addEventListener('resize', () => {
-      if (activeSefirah) {
-        positionTooltip(activeSefirah);
-      }
-    });
-  })();
-</script>
-
-<!-- SEFIROT MODAL -->
-<div class="sefirah-modal-overlay" id="sefirahModal">
-  <div class="sefirah-modal">
-    <div class="sefirah-modal-header">
-      <div class="sefirah-modal-number" id="modalNumber"></div>
-      <div class="sefirah-modal-title" id="modalTitle"></div>
-      <div class="sefirah-modal-hebrew" id="modalHebrew"></div>
-      <button class="sefirah-modal-close" id="modalClose" aria-label="Close">×</button>
-    </div>
-    <div class="sefirah-modal-body" id="modalBody"></div>
-    <div class="sefirah-modal-footer" id="modalFooter"></div>
-  </div>
-</div>
-
-<script>
+// ============================================
+// SEFIROT TOOLTIP SYSTEM — FIXED POSITIONING
+// ============================================
 (function() {
-  'use strict';
+  const sefirahData = {
+    keter: {
+      number: '1',
+      title: 'The Crown',
+      name: 'Keter',
+      hebrew: 'כתר',
+      desc: 'The primordial will, the first stirring of the Infinite toward creation. It is the point before the point, the intention before the act. Keter is so close to Ein Sof that it is sometimes called "the nothing that is something."'
+    },
+    chokhmah: {
+      number: '2',
+      title: 'Wisdom',
+      name: 'Chokhmah',
+      hebrew: 'חכמה',
+      desc: 'The flash of insight, the primordial point of light that emerges from the darkness of Keter. The "father" principle, the seed of all knowing. Chokhmah is the undifferentiated flash before thought becomes structured.'
+    },
+    binah: {
+      number: '3',
+      title: 'Understanding',
+      name: 'Binah',
+      hebrew: 'בינה',
+      desc: 'The "mother" principle, the womb that receives the flash of Chokhmah and gives it form, structure, and duration. Binah is the palace, the palace of the King, the container that makes the flash sustainable.'
+    },
+    chesed: {
+      number: '4',
+      title: 'Loving-kindness',
+      name: 'Chesed',
+      hebrew: 'חסד',
+      desc: 'The expansive force, the outflowing of divine generosity that seeks to give without limit. The right hand of the divine, the arm that reaches out to create and sustain.'
+    },
+    gevurah: {
+      number: '5',
+      title: 'Severity / Strength',
+      name: 'Gevurah',
+      hebrew: 'גבורה',
+      desc: 'The contractive force, the boundary that says "enough," the discipline that prevents the infinite outpouring from dissipating into chaos. The left hand, the judgment that gives form its integrity.'
+    },
+    tiferet: {
+      number: '6',
+      title: 'Beauty / Harmony',
+      name: 'Tiferet',
+      hebrew: 'תפארת',
+      desc: 'The heart of the Tree, the balance point where Chesed and Gevurah meet in perfect proportion. The sun at the center, the radiance that makes the whole structure visible and desirable.'
+    },
+    netzach: {
+      number: '7',
+      title: 'Victory / Endurance',
+      name: 'Netzach',
+      hebrew: 'נצח',
+      desc: 'The force of persistence, the divine quality that sustains creation through time. The right leg, the pillar of mercy extended into action.'
+    },
+    hod: {
+      number: '8',
+      title: 'Splendor / Glory',
+      name: 'Hod',
+      hebrew: 'הוד',
+      desc: 'The force of submission, the divine quality that yields and reflects. The left leg, the pillar of severity extended into receptivity. Hod is the splendor that does not claim its own light but reflects the greater light.'
+    },
+    yesod: {
+      number: '9',
+      title: 'Foundation',
+      name: 'Yesod',
+      hebrew: 'יסוד',
+      desc: 'The channel through which all the upper sefirot flow into the final vessel. The covenant, the point of transmission where the entire Tree concentrates its energy before delivering it to the world.'
+    },
+    malkhut: {
+      number: '10',
+      title: 'Kingdom',
+      name: 'Malkhut',
+      hebrew: 'מלכות',
+      desc: 'The final sefirah, the world itself, the Shekhinah, the divine presence as it dwells in matter and time. The bride, the earth, the Sabbath, the point at which the Infinite finally touches the finite and makes it holy.'
+    }
+  };
 
+  const tooltip = document.getElementById('sefirahTooltip');
+  const container = document.getElementById('treeContainer');
+  if (!tooltip || !container) return;
+
+  const sefirot = container.querySelectorAll('.sefirah-group');
+  let activeSefirah = null;
+  let hideTimeout = null;
+
+  function positionTooltip(sefirah) {
+    const svg = container.querySelector('svg');
+    if (!svg) return;
+    const svgRect = svg.getBoundingClientRect();
+
+    // Get the sefirah's translate position from the transform attribute
+    const transform = sefirah.getAttribute('transform');
+    const match = transform.match(/translate\(([^,]+),\s*([^)]+)\)/);
+    if (!match) return;
+
+    const sx = parseFloat(match[1]);
+    const sy = parseFloat(match[2]);
+
+    // Convert SVG coordinates to viewport pixels
+    const viewBox = svg.viewBox.baseVal;
+    const scaleX = svgRect.width / viewBox.width;
+    const scaleY = svgRect.height / viewBox.height;
+
+    const viewportX = svgRect.left + (sx * scaleX);
+    const viewportY = svgRect.top + (sy * scaleY);
+
+    // Calculate tooltip dimensions
+    const tooltipWidth = tooltip.offsetWidth || 300;
+    const tooltipHeight = tooltip.offsetHeight || 200;
+
+    // Determine position: show below for top sefirot, above for bottom
+    let top, left;
+    const isTopSefirah = (sy < 300);
+
+    if (isTopSefirah) {
+      top = viewportY + (30 * scaleY) + 12;
+    } else {
+      top = viewportY - (30 * scaleY) - tooltipHeight - 12;
+    }
+
+    left = viewportX;
+
+    // Clamp to viewport
+    const margin = 16;
+    if (left - tooltipWidth/2 < margin) {
+      left = tooltipWidth/2 + margin;
+    }
+    if (left + tooltipWidth/2 > window.innerWidth - margin) {
+      left = window.innerWidth - tooltipWidth/2 - margin;
+    }
+    if (top < margin) {
+      top = viewportY + (30 * scaleY) + 12;
+    }
+    if (top + tooltipHeight > window.innerHeight - margin) {
+      top = viewportY - (30 * scaleY) - tooltipHeight - 12;
+    }
+
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = top + 'px';
+    tooltip.style.transform = 'translate(-50%, 0)';
+  }
+
+  function showTooltip(sefirah) {
+    const key = sefirah.dataset.sefirah;
+    const data = sefirahData[key];
+    if (!data) return;
+
+    document.getElementById('tooltipNumber').textContent = data.number;
+    document.getElementById('tooltipTitle').textContent = data.title;
+    document.getElementById('tooltipName').textContent = data.name;
+    document.getElementById('tooltipHebrew').textContent = data.hebrew;
+    document.getElementById('tooltipDesc').textContent = data.desc;
+
+    activeSefirah = sefirah;
+    tooltip.classList.add('active');
+
+    // Position after a brief delay
+    requestAnimationFrame(() => {
+      positionTooltip(sefirah);
+    });
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove('active');
+    activeSefirah = null;
+  }
+
+  // Mouse events
+  sefirot.forEach(s => {
+    s.addEventListener('mouseenter', () => {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+      showTooltip(s);
+    });
+    s.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(hideTooltip, 200);
+    });
+
+    // Click for mobile
+    s.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (activeSefirah === s) {
+        hideTooltip();
+      } else {
+        showTooltip(s);
+      }
+    });
+  });
+
+  // Hide on outside click
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.sefirah-group') && !e.target.closest('.sefirah-tooltip')) {
+      hideTooltip();
+    }
+  });
+
+  // Reposition on resize and scroll
+  window.addEventListener('resize', () => {
+    if (activeSefirah) positionTooltip(activeSefirah);
+  });
+  window.addEventListener('scroll', () => {
+    if (activeSefirah) positionTooltip(activeSefirah);
+  }, { passive: true });
+
+})();
+
+// ============================================
+// SEFIROT MODAL
+// ============================================
+(function() {
   const sefirotData = {
     1: {
       name: 'Keter',
       hebrew: 'כתר',
       subtitle: 'The Crown',
-      body: '<p><strong>Keter</strong> is the primordial will, the first stirring of the Infinite toward creation. It is the point before the point, the intention before the act. Keter is so close to Ein Sof that it is sometimes called "the nothing that is something."</p><p>In the Zohar, Keter is called the <em>Ancient of Days</em> (Atika Kadisha) — the white-haired elder who sits beyond all color and form. No thought can grasp him. He is the "desire within desire," the will that precedes all willing.</p><p>As the first sefirah, Keter contains all the others in potential. It is the white light before it passes through the prism. The mystic who touches Keter touches the edge of the Infinite itself.</p>',
-      attrs: {
-        'Divine Name': 'Ehyeh (I Will Be)',
-        'Archangel': 'Metatron',
-        'Soul Level': 'Yechidah (Unique One)',
-        'Body Part': 'Crown of the head'
-      },
-      quote: '"The Ancient of Days is hidden and concealed. No thought can grasp Him at all. He is the desire within desire, the will within will, the mystery within mystery."',
+      body: '<p><strong>Keter</strong> is the primordial will, the first stirring of the Infinite toward creation. It is the point before the point, the intention before the act. Keter is so close to Ein Sof that it is sometimes called "the nothing that is something."</p><p>In the Zohar, Keter is called the <em>Ancient of Days</em> (Atika Kadisha) — the white-haired elder who sits beyond all color and form. No thought can grasp him. He is the "desire within desire," the will that precedes all willing.</p>',
+      attrs: { 'Divine Name': 'Ehyeh (I Will Be)', 'Archangel': 'Metatron', 'Soul Level': 'Yechidah (Unique One)' },
+      quote: '"The Ancient of Days is hidden and concealed. No thought can grasp Him at all."',
       quoteRef: '— Zohar, I:15a'
     },
     2: {
       name: 'Chokhmah',
       hebrew: 'חכמה',
       subtitle: 'Wisdom',
-      body: '<p><strong>Chokhmah</strong> is the flash of insight, the primordial point of light that emerges from the darkness of Keter. It is the "father" principle, the seed of all knowing, the undifferentiated flash before thought becomes structured.</p><p>In the Sefer Yetzirah, Chokhmah is the second sefirah, emerging directly from Keter as the first differentiation. Where Keter is pure will, Chokhmah is the content of that will — the what that is willed, the idea before it becomes an idea.</p><p>Chokhmah is masculine, active, explosive. It is the Big Bang in cognitive form — the moment when the Infinite becomes finite, when unity becomes duality, when silence becomes speech.</p>',
-      attrs: {
-        'Divine Name': 'Yah',
-        'Archangel': 'Raziel',
-        'Soul Level': 'Chayah (Living One)',
-        'Body Part': 'Right hemisphere of the brain'
-      },
+      body: '<p><strong>Chokhmah</strong> is the flash of insight, the primordial point of light that emerges from the darkness of Keter. It is the "father" principle, the seed of all knowing.</p><p>Chokhmah is masculine, active, explosive. It is the Big Bang in cognitive form — the moment when the Infinite becomes finite, when unity becomes duality.</p>',
+      attrs: { 'Divine Name': 'Yah', 'Archangel': 'Raziel', 'Soul Level': 'Chayah (Living One)' },
       quote: '"Wisdom cries aloud in the street; in the markets she raises her voice."',
       quoteRef: '— Proverbs 1:20'
     },
@@ -2239,13 +2234,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Binah',
       hebrew: 'בינה',
       subtitle: 'Understanding',
-      body: '<p><strong>Binah</strong> is the "mother" principle, the womb that receives the flash of Chokhmah and gives it form, structure, and duration. Binah is the palace, the palace of the King, the container that makes the flash sustainable.</p><p>Where Chokhmah is the flash, Binah is the understanding of the flash. Where Chokhmah is insight, Binah is analysis. Where Chokhmah is the seed, Binah is the womb that gestates it. Their union is the first divine marriage, the template for all creation.</p><p>Binah is called the "Upper Mother" (Imma Ila\'ah). She is the source of all structure, all grammar, all law. The Torah, in its deepest sense, is a garment of Binah.</p>',
-      attrs: {
-        'Divine Name': 'YHVH Elohim',
-        'Archangel': 'Tzaphkiel',
-        'Soul Level': 'Neshamah (Divine Soul)',
-        'Body Part': 'Left hemisphere of the brain'
-      },
+      body: '<p><strong>Binah</strong> is the "mother" principle, the womb that receives the flash of Chokhmah and gives it form, structure, and duration. Binah is the palace that makes the flash sustainable.</p><p>Binah is called the "Upper Mother" (Imma Ila\'ah). She is the source of all structure, all grammar, all law.</p>',
+      attrs: { 'Divine Name': 'YHVH Elohim', 'Archangel': 'Tzaphkiel', 'Soul Level': 'Neshamah (Divine Soul)' },
       quote: '"The Torah was created two thousand years before the world was created."',
       quoteRef: '— Talmud, Pesachim 54a'
     },
@@ -2253,13 +2243,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Chesed',
       hebrew: 'חסד',
       subtitle: 'Loving-kindness',
-      body: '<p><strong>Chesed</strong> is the expansive force, the outflowing of divine generosity that seeks to give without limit. It is the right hand of the divine, the arm that reaches out to create and sustain.</p><p>Chesed is the first of the emotional sefirot, the heart of the divine as it opens toward the world. It is the love that would give everything, the mercy that would forgive everything, the grace that would bless everything.</p><p>But Chesed without its counterpart (Gevurah) would be chaos. It would dissolve all form in an infinite outpouring. The mystic must learn to channel Chesed through Gevurah — to give with measure, to love with wisdom.</p>',
-      attrs: {
-        'Divine Name': 'El',
-        'Archangel': 'Tzadkiel',
-        'Soul Level': 'Neshamah (Divine Soul)',
-        'Body Part': 'Right arm'
-      },
+      body: '<p><strong>Chesed</strong> is the expansive force, the outflowing of divine generosity that seeks to give without limit. It is the right hand of the divine.</p><p>Chesed without Gevurah would be chaos. The mystic must learn to channel Chesed through Gevurah — to give with measure, to love with wisdom.</p>',
+      attrs: { 'Divine Name': 'El', 'Archangel': 'Tzadkiel', 'Soul Level': 'Neshamah (Divine Soul)' },
       quote: '"For His mercy endures forever."',
       quoteRef: '— Psalm 136'
     },
@@ -2267,13 +2252,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Gevurah',
       hebrew: 'גבורה',
       subtitle: 'Severity / Strength',
-      body: '<p><strong>Gevurah</strong> is the contractive force, the boundary that says "enough," the discipline that prevents the infinite outpouring from dissipating into chaos. It is the left hand, the judgment that gives form its integrity.</p><p>Gevurah is not cruelty. It is the necessary counterpart to Chesed — the form that makes love possible. Without Gevurah, Chesed would be a flood; without Chesed, Gevurah would be a desert. Together they are the breath of creation.</p><p>In the Zohar, Gevurah is associated with the left arm of the divine, with the power of judgment, and with the quality of divine strength that says "no" so that "yes" can mean something.</p>',
-      attrs: {
-        'Divine Name': 'Elohim Gibor',
-        'Archangel': 'Camael',
-        'Soul Level': 'Neshamah (Divine Soul)',
-        'Body Part': 'Left arm'
-      },
+      body: '<p><strong>Gevurah</strong> is the contractive force, the boundary that says "enough," the discipline that prevents the infinite outpouring from dissipating into chaos.</p><p>Gevurah is the necessary counterpart to Chesed — the form that makes love possible. Together they are the breath of creation.</p>',
+      attrs: { 'Divine Name': 'Elohim Gibor', 'Archangel': 'Camael', 'Soul Level': 'Neshamah (Divine Soul)' },
       quote: '"The Lord is a man of war; the Lord is His name."',
       quoteRef: '— Exodus 15:3'
     },
@@ -2281,13 +2261,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Tiferet',
       hebrew: 'תפארת',
       subtitle: 'Beauty / Harmony',
-      body: '<p><strong>Tiferet</strong> is the heart of the Tree, the balance point where Chesed and Gevurah meet in perfect proportion. Tiferet is the sun at the center, the radiance that makes the whole structure visible and desirable.</p><p>Tiferet is the God of Israel, the personal God, the God who speaks from the burning bush and leads through the wilderness. He is the Blessed Holy One (HaKadosh Barukh Hu), the bridegroom who longs for union with the Shekhinah.</p><p>In the Zohar, Tiferet is the central figure of the divine drama. He is the son of the supernal mother and father, the heart that beats between the right and left arms, the beauty that harmonizes mercy and judgment.</p>',
-      attrs: {
-        'Divine Name': 'YHVH',
-        'Archangel': 'Raphael',
-        'Soul Level': 'Ruach (Spirit)',
-        'Body Part': 'Heart / Torso'
-      },
+      body: '<p><strong>Tiferet</strong> is the heart of the Tree, the balance point where Chesed and Gevurah meet in perfect proportion. Tiferet is the sun at the center.</p><p>Tiferet is the Blessed Holy One, the bridegroom who longs for union with the Shekhinah. He is the beauty that harmonizes mercy and judgment.</p>',
+      attrs: { 'Divine Name': 'YHVH', 'Archangel': 'Raphael', 'Soul Level': 'Ruach (Spirit)' },
       quote: '"He has made everything beautiful in its time."',
       quoteRef: '— Ecclesiastes 3:11'
     },
@@ -2295,13 +2270,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Netzach',
       hebrew: 'נצח',
       subtitle: 'Victory / Endurance',
-      body: '<p><strong>Netzach</strong> is the force of persistence, the divine quality that sustains creation through time. Netzach is the right leg, the pillar of mercy extended into action.</p><p>Netzach is the quality of endurance, of victory, of the long patience that outlasts all obstacles. It is the divine force that keeps the world turning, that maintains the covenant despite all human failure.</p><p>Together with Hod, Netzach forms the lower pillars that carry the divine body through history. Netzach is active, outward, victorious; Hod is receptive, inward, glorifying.</p>',
-      attrs: {
-        'Divine Name': 'YHVH Tzvaot',
-        'Archangel': 'Haniel',
-        'Soul Level': 'Ruach (Spirit)',
-        'Body Part': 'Right leg'
-      },
+      body: '<p><strong>Netzach</strong> is the force of persistence, the divine quality that sustains creation through time. The right leg, the pillar of mercy extended into action.</p><p>Netzach is the victory that comes not from conquest but from enduring.</p>',
+      attrs: { 'Divine Name': 'YHVH Tzvaot', 'Archangel': 'Haniel', 'Soul Level': 'Ruach (Spirit)' },
       quote: '"His mercy is everlasting, and His faithfulness to all generations."',
       quoteRef: '— Psalm 100:5'
     },
@@ -2309,27 +2279,17 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Hod',
       hebrew: 'הוד',
       subtitle: 'Splendor / Glory',
-      body: '<p><strong>Hod</strong> is the force of submission, the divine quality that yields and reflects. Hod is the left leg, the pillar of severity extended into receptivity.</p><p>Hod is the glory that acknowledges a greater glory, the splendor that reflects rather than generates, the humility that makes room for the other. It is the quality of prayer, of praise, of the soul that bows before the Infinite.</p><p>Netzach and Hod together are the legs that carry the divine body through history. They are the active and passive principles of the lower world, the doing and the receiving that make human life possible.</p>',
-      attrs: {
-        'Divine Name': 'Elohim Tzvaot',
-        'Archangel': 'Michael',
-        'Soul Level': 'Ruach (Spirit)',
-        'Body Part': 'Left leg'
-      },
-      quote: '"The heavens declare the glory of God; and the firmament shows His handiwork."',
+      body: '<p><strong>Hod</strong> is the force of submission, the divine quality that yields and reflects. The left leg, the pillar of severity extended into receptivity.</p><p>Hod is the glory that acknowledges a greater glory, the splendor that reflects rather than generates.</p>',
+      attrs: { 'Divine Name': 'Elohim Tzvaot', 'Archangel': 'Michael', 'Soul Level': 'Ruach (Spirit)' },
+      quote: '"The heavens declare the glory of God."',
       quoteRef: '— Psalm 19:1'
     },
     9: {
       name: 'Yesod',
       hebrew: 'יסוד',
       subtitle: 'Foundation',
-      body: '<p><strong>Yesod</strong> is the channel through which all the upper sefirot flow into the final vessel. Yesod is the phallus, the covenant, the point of transmission where the entire Tree concentrates its energy before delivering it to the world.</p><p>Yesod is the divine foundation, the righteous one (Tzaddik) who maintains the covenant between heaven and earth. It is the quality of faithfulness, of sexual purity, of the channel that remains open so that the divine flow can reach Malkhut.</p><p>Yesod is the penultimate sefirah, the last gate before the divine enters the world. It is the dream before waking, the prayer before answer, the covenant before fulfillment.</p>',
-      attrs: {
-        'Divine Name': 'El Chai',
-        'Archangel': 'Gabriel',
-        'Soul Level': 'Ruach (Spirit)',
-        'Body Part': 'Generative organ'
-      },
+      body: '<p><strong>Yesod</strong> is the channel through which all the upper sefirot flow into the final vessel. The covenant, the point of transmission where the entire Tree concentrates its energy.</p><p>Yesod is the righteous one (Tzaddik) who maintains the covenant between heaven and earth.</p>',
+      attrs: { 'Divine Name': 'El Chai', 'Archangel': 'Gabriel', 'Soul Level': 'Ruach (Spirit)' },
       quote: '"The righteous is the foundation of the world."',
       quoteRef: '— Proverbs 10:25'
     },
@@ -2337,14 +2297,9 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       name: 'Malkhut',
       hebrew: 'מלכות',
       subtitle: 'Kingdom',
-      body: '<p><strong>Malkhut</strong> is the final sefirah, the world itself, the Shekhinah, the divine presence as it dwells in matter and time. Malkhut is the bride, the earth, the Sabbath, the point at which the Infinite finally touches the finite and makes it holy.</p><p>Malkhut is not less divine than the other sefirot. It is the culmination of all of them — the point where the entire Tree becomes actual, where the divine breath becomes the world we inhabit. In Malkhut, the Infinite becomes immanent.</p><p>The Zohar calls Malkhut the Shekhinah — the divine feminine, the bride of Tiferet, the indwelling presence that accompanies Israel into exile. She is the moon that reflects the sun, the queen who rules the lower world, the gate through which the mystic returns to the Infinite.</p>',
-      attrs: {
-        'Divine Name': 'Adonai',
-        'Archangel': 'Sandalphon',
-        'Soul Level': 'Nefesh (Animal Soul)',
-        'Body Part': 'Feet / Mouth'
-      },
-      quote: '"And the glory of the Lord shall be revealed, and all flesh shall see it together."',
+      body: '<p><strong>Malkhut</strong> is the final sefirah, the world itself, the Shekhinah, the divine presence as it dwells in matter and time.</p><p>Malkhut is the bride, the earth, the Sabbath, the point at which the Infinite finally touches the finite and makes it holy.</p>',
+      attrs: { 'Divine Name': 'Adonai', 'Archangel': 'Sandalphon', 'Soul Level': 'Nefesh (Animal Soul)' },
+      quote: '"And the glory of the Lord shall be revealed."',
       quoteRef: '— Isaiah 40:5'
     }
   };
@@ -2366,7 +2321,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     modalHebrew.textContent = data.hebrew;
     modalBody.innerHTML = data.body;
 
-    // Build attributes
     let attrsHtml = '<div class="sefirah-modal-attrs">';
     for (const [key, val] of Object.entries(data.attrs)) {
       attrsHtml += '<div class="sefirah-modal-attr"><span class="sefirah-modal-attr-label">' + key + '</span><span class="sefirah-modal-attr-value">' + val + '</span></div>';
@@ -2374,7 +2328,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     attrsHtml += '</div>';
     modalBody.insertAdjacentHTML('beforeend', attrsHtml);
 
-    // Build quote
     modalFooter.innerHTML = '<blockquote class="sefirah-modal-quote"><p>' + data.quote + '</p><cite>' + data.quoteRef + '</cite></blockquote>';
 
     modal.classList.add('active');
@@ -2386,7 +2339,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     document.body.style.overflow = '';
   }
 
-  // Attach click handlers to all clickable sefirot
   document.querySelectorAll('.sefirah-clickable').forEach(el => {
     el.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -2403,6 +2355,25 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
   });
 })();
+
+// ============================================
+// SEFIROT MODAL HTML
+// ============================================
 </script>
+
+<!-- SEFIROT MODAL - Placed outside diagram-section to avoid clipping -->
+<div class="sefirah-modal-overlay" id="sefirahModal">
+  <div class="sefirah-modal">
+    <div class="sefirah-modal-header">
+      <div class="sefirah-modal-number" id="modalNumber"></div>
+      <div class="sefirah-modal-title" id="modalTitle"></div>
+      <div class="sefirah-modal-hebrew" id="modalHebrew"></div>
+      <button class="sefirah-modal-close" id="modalClose" aria-label="Close">×</button>
+    </div>
+    <div class="sefirah-modal-body" id="modalBody"></div>
+    <div class="sefirah-modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+
 </body>
 </html>
