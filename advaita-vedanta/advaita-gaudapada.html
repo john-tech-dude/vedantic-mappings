@@ -167,20 +167,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .back-to-top:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-3px) scale(1.08);box-shadow:var(--shadow-gold)}
 
 /* ═══════════════════════════════════════════════════════════════
-   HERO
+   HERO — FIXED RING POSITIONING
    ═══════════════════════════════════════════════════════════════ */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);perspective:1200px}
 .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 20% 40%,rgba(181,130,42,.07) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 60%,rgba(181,130,42,.05) 0%,transparent 70%);animation:ambientDrift 18s ease-in-out infinite;pointer-events:none;z-index:1}
 [data-theme="light"] .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(181,130,42,.035) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(181,130,42,.025) 29px);pointer-events:none}
 .hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.3) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12}
-.mandala-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandala-breathe 12s ease-in-out infinite}
-.mandala-ring:nth-child(1){width:260px;height:260px;opacity:0.18}
-.mandala-ring:nth-child(2){width:400px;height:400px;opacity:0.12;animation-delay:1.5s;animation-duration:14s}
-.mandala-ring:nth-child(3){width:560px;height:560px;opacity:0.08;animation-delay:3s;animation-duration:16s}
-.mandala-ring:nth-child(4){width:740px;height:740px;opacity:0.05;animation-delay:4.5s;animation-duration:18s}
-.hero-ripple{position:absolute;top:50%;left:50%;width:180px;height:180px;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:ripple-out 9s ease-out infinite}
-.hero-ripple:nth-child(5){animation-delay:0s}
-.hero-ripple:nth-child(6){animation-delay:3s}
+
+/* ── Mandala rings (fixed nth-child selectors) ── */
+.mandala-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandala-breathe 12s ease-in-out infinite;will-change:transform,opacity}
+/* Child 2 = ring 1 (SVG is child 1) */
+.mandala-ring:nth-child(2){width:260px;height:260px;opacity:0.18}
+/* Child 3 = ring 2 */
+.mandala-ring:nth-child(3){width:400px;height:400px;opacity:0.12;animation-delay:1.5s;animation-duration:14s}
+/* Child 4 = ring 3 */
+.mandala-ring:nth-child(4){width:560px;height:560px;opacity:0.08;animation-delay:3s;animation-duration:16s}
+/* Child 5 = ring 4 (the large one that was drifting) */
+.mandala-ring:nth-child(5){width:740px;height:740px;opacity:0.05;animation-delay:4.5s;animation-duration:18s}
+
+/* ── Hero ripples (fixed nth-child selectors) ── */
+.hero-ripple{position:absolute;top:50%;left:50%;width:180px;height:180px;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:ripple-out 9s ease-out infinite;will-change:transform,opacity}
+/* Child 6 = ripple 1 */
+.hero-ripple:nth-child(6){animation-delay:0s}
+/* Child 7 = ripple 2 */
+.hero-ripple:nth-child(7){animation-delay:3s}
+
 .hero-emblem{width:72px;height:72px;margin:0 auto 2rem;position:relative;opacity:1;z-index:3}
 .hero-emblem-circle{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-deep);opacity:.6;animation:emblem-rotate 30s linear infinite}
 .hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblem-rotate 20s linear infinite reverse}
