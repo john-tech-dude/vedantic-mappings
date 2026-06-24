@@ -318,45 +318,62 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .diagram-container {
 
 /* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-container svg [fill="##7c8ea0"],
-[data-theme="light"] .diagram-container svg [stroke="##7c8ea0"] {
+[data-theme="light"] .diagram-container svg [fill="#7c8ea0"],
+[data-theme="light"] .diagram-container svg [stroke="#7c8ea0"] {
   fill: #4a5060;
   stroke: #4a5060;
 }
-[data-theme="light"] .diagram-container svg text[fill="##7c8ea0"] {
+[data-theme="light"] .diagram-container svg text[fill="#7c8ea0"] {
   fill: #4a5060;
 }
-[data-theme="light"] .diagram-container svg [fill="##9aaebf"],
-[data-theme="light"] .diagram-container svg [stroke="##9aaebf"] {
+[data-theme="light"] .diagram-container svg [fill="#9aaebf"],
+[data-theme="light"] .diagram-container svg [stroke="#9aaebf"] {
   fill: #5a6080;
   stroke: #5a6080;
 }
-[data-theme="light"] .diagram-container svg text[fill="##9aaebf"] {
+[data-theme="light"] .diagram-container svg text[fill="#9aaebf"] {
   fill: #5a6080;
 }
-[data-theme="light"] .diagram-container svg [fill="##d4af37"],
-[data-theme="light"] .diagram-container svg [stroke="##d4af37"] {
+[data-theme="light"] .diagram-container svg [fill="#d4af37"],
+[data-theme="light"] .diagram-container svg [stroke="#d4af37"] {
   fill: #8a7030;
   stroke: #8a7030;
 }
-[data-theme="light"] .diagram-container svg text[fill="##d4af37"] {
+[data-theme="light"] .diagram-container svg text[fill="#d4af37"] {
   fill: #8a7030;
 }
-[data-theme="light"] .diagram-container svg [fill="##e6c86e"],
-[data-theme="light"] .diagram-container svg [stroke="##e6c86e"] {
+[data-theme="light"] .diagram-container svg [fill="#e6c86e"],
+[data-theme="light"] .diagram-container svg [stroke="#e6c86e"] {
   fill: #a08840;
   stroke: #a08840;
 }
-[data-theme="light"] .diagram-container svg text[fill="##e6c86e"] {
+[data-theme="light"] .diagram-container svg text[fill="#e6c86e"] {
   fill: #a08840;
 }
-[data-theme="light"] .diagram-container svg [fill="##fff"],
-[data-theme="light"] .diagram-container svg [stroke="##fff"] {
+[data-theme="light"] .diagram-container svg [fill="#fff"],
+[data-theme="light"] .diagram-container svg [stroke="#fff"] {
   fill: #e8ecf4;
   stroke: #e8ecf4;
 }
-[data-theme="light"] .diagram-container svg text[fill="##fff"] {
+[data-theme="light"] .diagram-container svg text[fill="#fff"] {
   fill: #e8ecf4;
+}
+
+/* Increase opacity and stroke-width for light theme visibility */
+[data-theme="light"] .diagram-container svg circle[opacity],
+[data-theme="light"] .diagram-container svg path[opacity],
+[data-theme="light"] .diagram-container svg line[opacity],
+[data-theme="light"] .diagram-container svg g[opacity] {
+  opacity: 0.8 !important;
+}
+[data-theme="light"] .diagram-container svg circle[stroke],
+[data-theme="light"] .diagram-container svg path[stroke],
+[data-theme="light"] .diagram-container svg line[stroke] {
+  stroke-width: 1.2 !important;
+}
+[data-theme="light"] .diagram-container svg circle[fill],
+[data-theme="light"] .diagram-container svg path[fill] {
+  opacity: 0.85 !important;
 }
  margin: 40px 0; padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); text-align: center; }
 .diagram-title { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
@@ -870,20 +887,15 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   </div>
 </section>
 
-<!-- FINAL PULLQUOTE -->
-<div class="pullquote-section fade-in">
-  <div class="pullquote-glow"></div>
-  <div class="pullquote fade-in">
-    <p class="pullquote-text">"The Tao is hidden by partial understanding. Words are hidden by flowery rhetoric. Therefore the sage abides in the undivided, not in the distinctions. He uses the light that comes from the Tao itself — the light that sees all things as one."</p>
-    <p class="pullquote-attr">— Zhuangzi, Chapter 2 · The Pivot of the Tao</p>
-  </div>
-</div>
+
 
 <!-- TRANSITION BACK TO INDEX -->
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">"Returning to the root is returning to the Tao — the eternal source from which all things arise and to which all things return, yet which never moves."</p>
+    <p class="pullquote-text">"Returning to the root is partial understanding. Words are hidden by flowery rhetoric. Therefore the sage abides in the undivided, not in the distinctions. He uses the light that comes from the Tao itself — the light that sees all things as one." 
+
+— Zhuangzi, Chapter 2 · The Pivot of the Tao"</p>
     <p class="pullquote-attr"><a href="taoism-butterfly.html" class="continue-link">&larr; Return to The Butterfly Dream</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../quantum_mechanics/quantum-unmeasured.html" class="continue-link">Continue to Quantum Mechanics &rarr;</a></p>
   </div>
 </div>

@@ -52,9 +52,9 @@
   --surface: #ffffff;
   --surface2: #f5f0e8;
   --ink: #1a1510;
-  --ink2: #4a3f30;
-  --stone: #7a6e5e;
-  --stone-light: #9a8e7a;
+  --ink2: #2a2015;
+  --stone: #5a4e3e;
+  --stone-light: #7a6e5e;
   --gold: #9a7a3a;
   --gold-light: #b8964a;
   --gold-deep: #7a5a22;
@@ -394,45 +394,62 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .diagram-container {
 
 /* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-container svg [fill="##7c8ea0"],
-[data-theme="light"] .diagram-container svg [stroke="##7c8ea0"] {
+[data-theme="light"] .diagram-container svg [fill="#7c8ea0"],
+[data-theme="light"] .diagram-container svg [stroke="#7c8ea0"] {
   fill: #4a5060;
   stroke: #4a5060;
 }
-[data-theme="light"] .diagram-container svg text[fill="##7c8ea0"] {
+[data-theme="light"] .diagram-container svg text[fill="#7c8ea0"] {
   fill: #4a5060;
 }
-[data-theme="light"] .diagram-container svg [fill="##9aaebf"],
-[data-theme="light"] .diagram-container svg [stroke="##9aaebf"] {
+[data-theme="light"] .diagram-container svg [fill="#9aaebf"],
+[data-theme="light"] .diagram-container svg [stroke="#9aaebf"] {
   fill: #5a6080;
   stroke: #5a6080;
 }
-[data-theme="light"] .diagram-container svg text[fill="##9aaebf"] {
+[data-theme="light"] .diagram-container svg text[fill="#9aaebf"] {
   fill: #5a6080;
 }
-[data-theme="light"] .diagram-container svg [fill="##d4af37"],
-[data-theme="light"] .diagram-container svg [stroke="##d4af37"] {
+[data-theme="light"] .diagram-container svg [fill="#d4af37"],
+[data-theme="light"] .diagram-container svg [stroke="#d4af37"] {
   fill: #8a7030;
   stroke: #8a7030;
 }
-[data-theme="light"] .diagram-container svg text[fill="##d4af37"] {
+[data-theme="light"] .diagram-container svg text[fill="#d4af37"] {
   fill: #8a7030;
 }
-[data-theme="light"] .diagram-container svg [fill="##e6c86e"],
-[data-theme="light"] .diagram-container svg [stroke="##e6c86e"] {
+[data-theme="light"] .diagram-container svg [fill="#e6c86e"],
+[data-theme="light"] .diagram-container svg [stroke="#e6c86e"] {
   fill: #a08840;
   stroke: #a08840;
 }
-[data-theme="light"] .diagram-container svg text[fill="##e6c86e"] {
+[data-theme="light"] .diagram-container svg text[fill="#e6c86e"] {
   fill: #a08840;
 }
-[data-theme="light"] .diagram-container svg [fill="##fff"],
-[data-theme="light"] .diagram-container svg [stroke="##fff"] {
+[data-theme="light"] .diagram-container svg [fill="#fff"],
+[data-theme="light"] .diagram-container svg [stroke="#fff"] {
   fill: #e8ecf4;
   stroke: #e8ecf4;
 }
-[data-theme="light"] .diagram-container svg text[fill="##fff"] {
+[data-theme="light"] .diagram-container svg text[fill="#fff"] {
   fill: #e8ecf4;
+}
+
+/* Increase opacity and stroke-width for light theme visibility */
+[data-theme="light"] .diagram-container svg circle[opacity],
+[data-theme="light"] .diagram-container svg path[opacity],
+[data-theme="light"] .diagram-container svg line[opacity],
+[data-theme="light"] .diagram-container svg g[opacity] {
+  opacity: 0.8 !important;
+}
+[data-theme="light"] .diagram-container svg circle[stroke],
+[data-theme="light"] .diagram-container svg path[stroke],
+[data-theme="light"] .diagram-container svg line[stroke] {
+  stroke-width: 1.2 !important;
+}
+[data-theme="light"] .diagram-container svg circle[fill],
+[data-theme="light"] .diagram-container svg path[fill] {
+  opacity: 0.85 !important;
 }
  
   margin: 2.5rem 0; 
@@ -514,28 +531,33 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 }
 
 /* =====================================================
-   CONTINUE LINK
+   CONTINUE LINK — refined minimal style
    ===================================================== */
 
-.continue-link { 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 0.5rem; 
-  color: var(--gold); 
-  text-decoration: none; 
-  font-family: 'Cinzel', serif; 
-  font-size: 0.75rem; 
-  letter-spacing: 0.2em; 
-  text-transform: uppercase; 
-  transition: all 0.3s var(--ease-out-expo); 
-  padding: 0.5rem 1rem; 
-  border: 1px solid var(--border); 
-  border-radius: var(--radius-sm); 
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-top: 0.75rem;
 }
-.continue-link:hover { 
-  border-color: var(--gold); 
-  background: var(--gold-glow); 
-  transform: translateX(4px); 
+.nav-links a {
+  color: var(--stone-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.nav-links .sep {
+  color: var(--border-strong);
+  opacity: 0.3;
 }
 
 /* =====================================================
@@ -589,6 +611,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
   .hero-emblem { width: 64px; height: 64px; }
   .diagram-container { padding: 1.25rem; }
+  .nav-links { gap: 1rem 1.5rem; font-size: 0.6rem; }
 }
 
 @media (max-width: 480px) {
@@ -609,6 +632,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .chapter-nav { gap: 0.75rem; font-size: 0.6rem; }
   .footer { padding: 3rem 1rem 2rem; }
   .footer-links { gap: 1rem; font-size: 0.7rem; }
+  .nav-links { flex-direction: column; gap: 0.35rem; }
 }
 
 @media (prefers-reduced-motion: reduce) { 
@@ -738,7 +762,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <h1 class="hero-title">The Uncarved Block</h1>
   <p class="hero-subtitle">Practice &middot; Virtue &middot; Simplicity</p>
   <p class="hero-quote">&ldquo;The sage embraces the uncarved block. He does not show off, therefore he shines. He does not assert, therefore he is acknowledged.&rdquo;</p>
-  <p class="hero-quote-attr">&mdash; Tao Te Ching, Chapter 22</p>
+  <p class="hero-quote-attr">&mdash; Lao Tzu, Tao Te Ching, Chapter 22</p>
 
   <div class="hero-divider">
     <div class="hero-divider-line"></div>
@@ -787,8 +811,12 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">"The practice of wu wei — effortless action — reveals that the sage acts without acting, accomplishing without striving, in harmony with the natural flow of the Tao."</p>
-    <p class="pullquote-attr"><a href="taoism-threshold.html" class="continue-link">&larr; Return to The Unnamed Way</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="taoism-butterfly.html" class="continue-link">Continue to The Butterfly Dream &rarr;</a></p>
+    <p class="pullquote-text">&ldquo;The practice of wu wei — effortless action — reveals that the sage acts without acting, accomplishing without striving, in harmony with the natural flow of the Tao.&rdquo;</p>
+    <div class="nav-links">
+      <a href="taoism-threshold.html">&larr; Return to The Unnamed Way</a>
+      <span class="sep">·</span>
+      <a href="taoism-butterfly.html">Continue to The Butterfly Dream &rarr;</a>
+    </div>
   </div>
 </div>
 
@@ -876,7 +904,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     </blockquote>
     <blockquote class="fade-in stagger-4">
       <p>&ldquo;He who does nothing leaves nothing undone.&rdquo;</p>
-      <cite>&mdash; Tao Te Ching, Chapter 48</cite>
+      <cite>&mdash; Lao Tzu, Tao Te Ching, Chapter 48</cite>
     </blockquote>
   </div>
 </section>
@@ -920,7 +948,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
     <p class="pullquote-text">&ldquo;The sage acts by non-action. He teaches without speaking. All things flourish without his intervention. He gives life without possessing; he acts without expecting; he accomplishes without dwelling. It is only because he does not dwell that he is never left.&rdquo;</p>
-    <p class="pullquote-attr">&mdash; Tao Te Ching, Chapter 2 &middot; The Economy of Wu Wei</p>
+    <p class="pullquote-attr">&mdash; Lao Tzu, Tao Te Ching, Chapter 2 &middot; The Economy of Wu Wei</p>
   </div>
 </div>
 
@@ -999,7 +1027,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 
     <blockquote class="fade-in stagger-3">
       <p>&ldquo;I have three treasures which I hold and keep. The first is compassion; the second is frugality; the third is humility. Compassion leads to courage; frugality leads to generosity; humility leads to leadership.&rdquo;</p>
-      <cite>&mdash; Tao Te Ching, Chapter 67</cite>
+      <cite>&mdash; Lao Tzu, Tao Te Ching, Chapter 67</cite>
     </blockquote>
   </div>
 </section>
@@ -1079,7 +1107,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 
     <blockquote class="fade-in stagger-3">
       <p>&ldquo;The Tao of heaven is to act without striving, to respond without speaking, to attract without calling, to plan without being obvious.&rdquo;</p>
-      <cite>&mdash; Tao Te Ching, Chapter 73</cite>
+      <cite>&mdash; Lao Tzu, Tao Te Ching, Chapter 73</cite>
     </blockquote>
   </div>
 </section>
@@ -1172,8 +1200,13 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">Having practiced the uncarved block, we now enter the dream &mdash; where self and other, butterfly and Zhuangzi, dissolve into the pivot of the Tao.</p>
-    <p class="pullquote-attr"><a href="taoism-butterfly.html" class="continue-link">&#8594; Continue to The Butterfly Dream &middot; Non-Duality</a></p>
+    <p class="pullquote-text">"Be empty, and you shall be full. Wear out, and you shall be renewed. Have little, and you shall gain. Have much, and you shall be confused."</p>
+    <p class="pullquote-attr">— Lao Tzu, Tao Te Ching, Chapter 22</p>
+    <div class="nav-links">
+      <a href="taoism-threshold.html">&larr; Return to The Unnamed Way</a>
+      <span class="sep">·</span>
+      <a href="taoism-butterfly.html">Continue to The Butterfly Dream &middot; Non-Duality &rarr;</a>
+    </div>
   </div>
 </div>
 

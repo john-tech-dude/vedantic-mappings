@@ -53,9 +53,9 @@
   --surface: #ffffff;
   --surface2: #f5f0e8;
   --ink: #1a1510;
-  --ink2: #4a3f30;
-  --stone: #7a6e5e;
-  --stone-light: #9a8e7a;
+  --ink2: #2a2015;
+  --stone: #5a4e3e;
+  --stone-light: #7a6e5e;
   --gold: #9a7a3a;
   --gold-light: #b8964a;
   --gold-deep: #7a5a22;
@@ -410,53 +410,70 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .diagram-container {
 
 /* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-container svg [fill="##7c8ea0"],
-[data-theme="light"] .diagram-container svg [stroke="##7c8ea0"] {
+[data-theme="light"] .diagram-container svg [fill="#7c8ea0"],
+[data-theme="light"] .diagram-container svg [stroke="#7c8ea0"] {
   fill: #4a5060;
   stroke: #4a5060;
 }
-[data-theme="light"] .diagram-container svg text[fill="##7c8ea0"] {
+[data-theme="light"] .diagram-container svg text[fill="#7c8ea0"] {
   fill: #4a5060;
 }
-[data-theme="light"] .diagram-container svg [fill="##9aaebf"],
-[data-theme="light"] .diagram-container svg [stroke="##9aaebf"] {
+[data-theme="light"] .diagram-container svg [fill="#9aaebf"],
+[data-theme="light"] .diagram-container svg [stroke="#9aaebf"] {
   fill: #5a6080;
   stroke: #5a6080;
 }
-[data-theme="light"] .diagram-container svg text[fill="##9aaebf"] {
+[data-theme="light"] .diagram-container svg text[fill="#9aaebf"] {
   fill: #5a6080;
 }
-[data-theme="light"] .diagram-container svg [fill="##b8960c"],
-[data-theme="light"] .diagram-container svg [stroke="##b8960c"] {
+[data-theme="light"] .diagram-container svg [fill="#b8960c"],
+[data-theme="light"] .diagram-container svg [stroke="#b8960c"] {
   fill: #6a5010;
   stroke: #6a5010;
 }
-[data-theme="light"] .diagram-container svg text[fill="##b8960c"] {
+[data-theme="light"] .diagram-container svg text[fill="#b8960c"] {
   fill: #6a5010;
 }
-[data-theme="light"] .diagram-container svg [fill="##d4af37"],
-[data-theme="light"] .diagram-container svg [stroke="##d4af37"] {
+[data-theme="light"] .diagram-container svg [fill="#d4af37"],
+[data-theme="light"] .diagram-container svg [stroke="#d4af37"] {
   fill: #8a7030;
   stroke: #8a7030;
 }
-[data-theme="light"] .diagram-container svg text[fill="##d4af37"] {
+[data-theme="light"] .diagram-container svg text[fill="#d4af37"] {
   fill: #8a7030;
 }
-[data-theme="light"] .diagram-container svg [fill="##e6c86e"],
-[data-theme="light"] .diagram-container svg [stroke="##e6c86e"] {
+[data-theme="light"] .diagram-container svg [fill="#e6c86e"],
+[data-theme="light"] .diagram-container svg [stroke="#e6c86e"] {
   fill: #a08840;
   stroke: #a08840;
 }
-[data-theme="light"] .diagram-container svg text[fill="##e6c86e"] {
+[data-theme="light"] .diagram-container svg text[fill="#e6c86e"] {
   fill: #a08840;
 }
-[data-theme="light"] .diagram-container svg [fill="##fff"],
-[data-theme="light"] .diagram-container svg [stroke="##fff"] {
+[data-theme="light"] .diagram-container svg [fill="#fff"],
+[data-theme="light"] .diagram-container svg [stroke="#fff"] {
   fill: #e8ecf4;
   stroke: #e8ecf4;
 }
-[data-theme="light"] .diagram-container svg text[fill="##fff"] {
+[data-theme="light"] .diagram-container svg text[fill="#fff"] {
   fill: #e8ecf4;
+}
+
+/* Increase opacity and stroke-width for light theme visibility */
+[data-theme="light"] .diagram-container svg circle[opacity],
+[data-theme="light"] .diagram-container svg path[opacity],
+[data-theme="light"] .diagram-container svg line[opacity],
+[data-theme="light"] .diagram-container svg g[opacity] {
+  opacity: 0.8 !important;
+}
+[data-theme="light"] .diagram-container svg circle[stroke],
+[data-theme="light"] .diagram-container svg path[stroke],
+[data-theme="light"] .diagram-container svg line[stroke] {
+  stroke-width: 1.2 !important;
+}
+[data-theme="light"] .diagram-container svg circle[fill],
+[data-theme="light"] .diagram-container svg path[fill] {
+  opacity: 0.85 !important;
 }
 
   margin: 2.5rem 0;
@@ -600,29 +617,33 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .pullquote-attr a:hover { color: var(--gold); }
 
 /* =====================================================
-   CONTINUE LINK
+   CONTINUE LINK — refined minimal style
    ===================================================== */
 
-.continue-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 3rem;
   font-family: 'Cinzel', serif;
   font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  transition: all 0.35s var(--ease-out-expo);
-  margin-top: 1rem;
+  padding-top: 0.75rem;
 }
-.continue-link:hover {
-  background: var(--gold-glow);
-  border-color: var(--gold);
-  transform: translateX(4px);
+.nav-links a {
+  color: var(--stone-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.nav-links .sep {
+  color: var(--border-strong);
+  opacity: 0.3;
 }
 
 /* =====================================================
@@ -708,6 +729,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
   .hero-emblem { width: 64px; height: 64px; }
   .diagram-container { padding: 1.25rem; }
+  .nav-links { gap: 1rem 1.5rem; font-size: 0.6rem; }
 }
 
 @media (max-width: 480px) {
@@ -726,6 +748,7 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .chapter-nav { gap: 0.75rem; font-size: 0.6rem; }
   .footer { padding: 3rem 1rem 2rem; }
   .footer-links { gap: 1rem; font-size: 0.7rem; }
+  .nav-links { flex-direction: column; gap: 0.35rem; }
   .content-essay blockquote { padding: 16px 18px; }
   .diagram-container { padding: 1rem; margin: 1.5rem 0; }
 }
@@ -1282,8 +1305,13 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 <div class="pullquote-section fade-in">
   <div class="pullquote-glow"></div>
   <div class="pullquote fade-in">
-    <p class="pullquote-text">"There is something formless yet complete, that existed before heaven and earth. It is silent and empty, solitary and unchanging. It moves in cycles and never tires. It can be considered the mother of the universe. I do not know its name, so I call it the Tao."</p>
-    <p class="pullquote-attr">— Tao Te Ching, Chapter 25 (Lao Tzu, 6th–4th century BCE) &middot; <a href="../gnosticism/gnostic_syzygy_nymphon.html" class="continue-link">&larr; Return to Gnosticism</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="taoism-practices.html" class="continue-link">Continue to The Uncarved Block &rarr;</a></p>
+    <p class="pullquote-text">"There is something formless yet complete, that existed before heaven and earth. It is silent and empty, solitary and unchanging. It moves in cycles and never tires. It can be considered the mother of the universe. I do not know its name, so I call it the Tao." </p>
+    <p class="pullquote-attr">— Tao Te Ching, Chapter 25 (Lao Tzu, 6th–4th century BCE)</p>
+    <div class="nav-links">
+      <a href="../gnosticism/gnostic_syzygy_nymphon.html">&larr; Return to Gnosticism</a>
+      <span class="sep">·</span>
+      <a href="taoism-practices.html">Continue to The Uncarved Block &rarr;</a>
+    </div>
   </div>
 </div>
 

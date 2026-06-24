@@ -342,53 +342,70 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .diagram-card {
 
 /* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-card svg [fill="##5a6a9a"],
-[data-theme="light"] .diagram-card svg [stroke="##5a6a9a"] {
+[data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
+[data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
   fill: #4a5a7a;
   stroke: #4a5a7a;
 }
-[data-theme="light"] .diagram-card svg text[fill="##5a6a9a"] {
+[data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
   fill: #4a5a7a;
 }
-[data-theme="light"] .diagram-card svg [fill="##7a8aba"],
-[data-theme="light"] .diagram-card svg [stroke="##7a8aba"] {
+[data-theme="light"] .diagram-card svg [fill="#7a8aba"],
+[data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
   fill: #5a6a8a;
   stroke: #5a6a8a;
 }
-[data-theme="light"] .diagram-card svg text[fill="##7a8aba"] {
+[data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
   fill: #5a6a8a;
 }
-[data-theme="light"] .diagram-card svg [fill="##8a9ab8"],
-[data-theme="light"] .diagram-card svg [stroke="##8a9ab8"] {
+[data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
+[data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
   fill: #4a5070;
   stroke: #4a5070;
 }
-[data-theme="light"] .diagram-card svg text[fill="##8a9ab8"] {
+[data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
   fill: #4a5070;
 }
-[data-theme="light"] .diagram-card svg [fill="##c4a855"],
-[data-theme="light"] .diagram-card svg [stroke="##c4a855"] {
+[data-theme="light"] .diagram-card svg [fill="#c4a855"],
+[data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
   fill: #7a6020;
   stroke: #7a6020;
 }
-[data-theme="light"] .diagram-card svg text[fill="##c4a855"] {
+[data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
   fill: #7a6020;
 }
-[data-theme="light"] .diagram-card svg [fill="##e0c878"],
-[data-theme="light"] .diagram-card svg [stroke="##e0c878"] {
+[data-theme="light"] .diagram-card svg [fill="#e0c878"],
+[data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
   fill: #8a7030;
   stroke: #8a7030;
 }
-[data-theme="light"] .diagram-card svg text[fill="##e0c878"] {
+[data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
   fill: #8a7030;
 }
-[data-theme="light"] .diagram-card svg [fill="##fff"],
-[data-theme="light"] .diagram-card svg [stroke="##fff"] {
+[data-theme="light"] .diagram-card svg [fill="#fff"],
+[data-theme="light"] .diagram-card svg [stroke="#fff"] {
   fill: #e8ecf4;
   stroke: #e8ecf4;
 }
-[data-theme="light"] .diagram-card svg text[fill="##fff"] {
+[data-theme="light"] .diagram-card svg text[fill="#fff"] {
   fill: #e8ecf4;
+}
+
+/* Increase opacity and stroke-width for light theme visibility */
+[data-theme="light"] .diagram-card svg circle[opacity],
+[data-theme="light"] .diagram-card svg path[opacity],
+[data-theme="light"] .diagram-card svg line[opacity],
+[data-theme="light"] .diagram-card svg g[opacity] {
+  opacity: 0.7 !important;
+}
+[data-theme="light"] .diagram-card svg circle[stroke],
+[data-theme="light"] .diagram-card svg path[stroke],
+[data-theme="light"] .diagram-card svg line[stroke] {
+  stroke-width: 1.5 !important;
+}
+[data-theme="light"] .diagram-card svg circle[fill],
+[data-theme="light"] .diagram-card svg path[fill] {
+  opacity: 0.8 !important;
 }
 
   background: var(--surface);
