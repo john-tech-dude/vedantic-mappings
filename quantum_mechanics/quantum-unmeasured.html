@@ -1,1292 +1,1295 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="The Unmeasured Ground — Before observation, before collapse, before the world divides into this and that. A contemplation of quantum superposition, the double-slit experiment, and the mystery of being prior to measurement." />
-<title>Quantum · The Unmeasured Ground</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
-<style>
-/* =====================================================
-   QUANTUM MECHANICS — PAGE I: THE UNMEASURED GROUND
-   Cosmic indigo, particle-wave diagrams, asymmetry
-   ===================================================== */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Unmeasured Ground — Before observation, before collapse, before the world divides into this and that. A contemplation of quantum superposition, the double-slit experiment, and the mystery of being prior to measurement." />
+  <title>Quantum · The Unmeasured Ground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* =====================================================
+       QUANTUM MECHANICS — PAGE I: THE UNMEASURED GROUND
+       Cosmic indigo, particle-wave diagrams, asymmetry
+       ===================================================== */
 
-:root {
-  --bg: #0a0c14;
-  --bg2: #0f1220;
-  --surface: #161a2a;
-  --surface2: #1e2338;
-  --ink: #e8ecf4;
-  --ink2: #8a9ab8;
-  --stone: #6a7a9a;
-  --stone-light: #8a9ab8;
-  --gold: #c4a855;
-  --gold-light: #e0c878;
-  --gold-deep: #a08840;
-  --gold-glow: rgba(196, 168, 85, 0.08);
-  --sun-glow: rgba(196, 168, 85, 0.18);
-  --copper: #b87333;
-  --copper-light: #cd7f32;
-  --copper-deep: #8b4513;
-  --copper-glow: rgba(184, 115, 51, 0.12);
-  --indigo: #5a6a9a;
-  --indigo-light: #7a8aba;
-  --indigo-glow: rgba(90, 106, 154, 0.12);
-  --border: rgba(255, 255, 255, 0.05);
-  --border-strong: rgba(255, 255, 255, 0.10);
-  --border-subtle: rgba(255, 255, 255, 0.025);
-  --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
-  --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
-  --shadow-gold: 0 0 40px var(--gold-glow);
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-}
+    :root {
+      --bg: #0a0c14;
+      --bg2: #0f1220;
+      --surface: #161a2a;
+      --surface2: #1e2338;
+      --ink: #e8ecf4;
+      --ink2: #8a9ab8;
+      --stone: #6a7a9a;
+      --stone-light: #8a9ab8;
+      --gold: #c4a855;
+      --gold-light: #e0c878;
+      --gold-deep: #a08840;
+      --gold-glow: rgba(196, 168, 85, 0.08);
+      --sun-glow: rgba(196, 168, 85, 0.18);
+      --copper: #b87333;
+      --copper-light: #cd7f32;
+      --copper-deep: #8b4513;
+      --copper-glow: rgba(184, 115, 51, 0.12);
+      --indigo: #5a6a9a;
+      --indigo-light: #7a8aba;
+      --indigo-glow: rgba(90, 106, 154, 0.12);
+      --border: rgba(255, 255, 255, 0.05);
+      --border-strong: rgba(255, 255, 255, 0.10);
+      --border-subtle: rgba(255, 255, 255, 0.025);
+      --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+      --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+      --shadow-gold: 0 0 40px var(--gold-glow);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    }
 
-[data-theme="dark"] {
-  --bg: #0a0c14;
-  --bg2: #0f1220;
-  --surface: #161a2a;
-  --surface2: #1e2338;
-  --ink: #e8ecf4;
-  --ink2: #8a9ab8;
-  --stone: #6a7a9a;
-  --stone-light: #8a9ab8;
-  --gold: #c4a855;
-  --gold-light: #e0c878;
-  --gold-deep: #a08840;
-  --copper: #b87333;
-  --copper-light: #cd7f32;
-  --copper-deep: #8b4513;
-  --copper-glow: rgba(184, 115, 51, 0.12);
-}
+    [data-theme="dark"] {
+      --bg: #0a0c14;
+      --bg2: #0f1220;
+      --surface: #161a2a;
+      --surface2: #1e2338;
+      --ink: #e8ecf4;
+      --ink2: #8a9ab8;
+      --stone: #6a7a9a;
+      --stone-light: #8a9ab8;
+      --gold: #c4a855;
+      --gold-light: #e0c878;
+      --gold-deep: #a08840;
+      --copper: #b87333;
+      --copper-light: #cd7f32;
+      --copper-deep: #8b4513;
+      --copper-glow: rgba(184, 115, 51, 0.12);
+    }
 
-[data-theme="light"] {
-  --bg: #f0f2f8;
-  --bg2: #e4e7f0;
-  --surface: #ffffff;
-  --surface2: #f5f7fa;
-  --ink: #1a1e2e;
-  --ink2: #3a4058;
-  --stone: #5a6080;
-  --stone-light: #7a80a0;
-  --gold: #8a7030;
-  --gold-light: #a08840;
-  --gold-deep: #6a5820;
-  --copper: #8b4513;
-  --copper-light: #a0522d;
-  --copper-deep: #6b3410;
-  --border: rgba(0, 0, 0, 0.06);
-  --border-strong: rgba(0, 0, 0, 0.12);
-}
+    [data-theme="light"] {
+      --bg: #f0f2f8;
+      --bg2: #e4e7f0;
+      --surface: #ffffff;
+      --surface2: #f5f7fa;
+      --ink: #1a1e2e;
+      --ink2: #3a4058;
+      --stone: #5a6080;
+      --stone-light: #7a80a0;
+      --gold: #8a7030;
+      --gold-light: #a08840;
+      --gold-deep: #6a5820;
+      --copper: #8b4513;
+      --copper-light: #a0522d;
+      --copper-deep: #6b3410;
+      --border: rgba(0, 0, 0, 0.06);
+      --border-strong: rgba(0, 0, 0, 0.12);
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-body {
-  font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
-  background: var(--bg);
-  color: var(--ink);
-  overflow-x: hidden;
-  font-size: 18px;
-  line-height: 1.78;
-  transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
-}
+    body {
+      font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      font-size: 18px;
+      line-height: 1.78;
+      transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+    }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-}
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--indigo), var(--gold-deep), var(--gold));
-  border-radius: 2px;
-}
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--indigo), var(--gold-deep), var(--gold));
+      border-radius: 2px;
+    }
 
-::selection { background: rgba(90,106,154,0.20); color: var(--ink); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+    ::selection { background: rgba(90,106,154,0.20); color: var(--ink); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
 
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInLeft {
-  0% { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-@keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(30px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-@keyframes scroll-bounce {
-  0%,100% { opacity: 1; transform: scaleY(1); }
-  50%     { opacity: 0.3; transform: scaleY(0.5); }
-}
-@keyframes breathe {
-  0%,100% { transform: scale(1); }
-  50%     { transform: scale(1.04); }
-}
-@keyframes ripple-out {
-  0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
-  100% { opacity: 0;    transform: translate(-50%,-50%) scale(5); }
-}
-@keyframes lineReveal {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-@keyframes diamondReveal {
-  from { opacity: 0; transform: rotate(45deg) scale(0); }
-  to   { opacity: 1; transform: rotate(45deg) scale(1); }
-}
-@keyframes ambientDrift {
-  0%,100% { transform: translate(0,0) scale(1); opacity: 0.35; }
-  33%     { transform: translate(3%,-2%) scale(1.03); opacity: 0.55; }
-  66%     { transform: translate(-2%,3%) scale(0.97); opacity: 0.25; }
-}
-@keyframes wavePulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.02); }
-}
-@keyframes particleDrift {
-  0% { transform: translate(0, 0); opacity: 0.8; }
-  25% { transform: translate(8px, -5px); opacity: 0.6; }
-  50% { transform: translate(-5px, 8px); opacity: 0.9; }
-  75% { transform: translate(5px, 5px); opacity: 0.5; }
-  100% { transform: translate(0, 0); opacity: 0.8; }
-}
-@keyframes interferencePattern {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.5; }
-  100% { opacity: 0.2; }
-}
-@keyframes superpositionGlow {
-  0%, 100% { opacity: 0.4; r: 40; }
-  50% { opacity: 0.7; r: 45; }
-}
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(24px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      0% { opacity: 0; transform: translateX(-30px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      0% { opacity: 0; transform: translateX(30px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scroll-bounce {
+      0%,100% { opacity: 1; transform: scaleY(1); }
+      50%     { opacity: 0.3; transform: scaleY(0.5); }
+    }
+    @keyframes breathe {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.04); }
+    }
+    @keyframes ripple-out {
+      0%   { opacity: 0.5; transform: translate(-50%,-50%) scale(1); }
+      100% { opacity: 0;    transform: translate(-50%,-50%) scale(5); }
+    }
+    @keyframes lineReveal {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    @keyframes diamondReveal {
+      from { opacity: 0; transform: rotate(45deg) scale(0); }
+      to   { opacity: 1; transform: rotate(45deg) scale(1); }
+    }
+    @keyframes ambientDrift {
+      0%,100% { transform: translate(0,0) scale(1); opacity: 0.35; }
+      33%     { transform: translate(3%,-2%) scale(1.03); opacity: 0.55; }
+      66%     { transform: translate(-2%,3%) scale(0.97); opacity: 0.25; }
+    }
+    @keyframes wavePulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.02); }
+    }
+    @keyframes particleDrift {
+      0% { transform: translate(0, 0); opacity: 0.8; }
+      25% { transform: translate(8px, -5px); opacity: 0.6; }
+      50% { transform: translate(-5px, 8px); opacity: 0.9; }
+      75% { transform: translate(5px, 5px); opacity: 0.5; }
+      100% { transform: translate(0, 0); opacity: 0.8; }
+    }
+    @keyframes interferencePattern {
+      0% { opacity: 0.2; }
+      50% { opacity: 0.5; }
+      100% { opacity: 0.2; }
+    }
+    @keyframes superpositionGlow {
+      0%, 100% { opacity: 0.4; r: 40; }
+      50% { opacity: 0.7; r: 45; }
+    }
 
-/* Navigation Compass */
-.nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
-.nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
-.nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
-.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 240px; }
-.nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
-.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
-.nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
-.nav-item.active { color: var(--gold-light); background: rgba(154,122,58,0.08); border-left-color: var(--gold); font-weight: 500; }
-.nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
-.nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
-.nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+    /* Navigation Compass */
+    .nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
+    .nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
+    .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+    .nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 240px; }
+    .nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    .nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+    .nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+    .nav-item.active { color: var(--gold-light); background: rgba(154,122,58,0.08); border-left-color: var(--gold); font-weight: 500; }
+    .nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
+    .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
+    .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
 
-/* Theme Toggle */
-.theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
-.theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
-.theme-toggle:active { transform: scale(0.95); }
-.theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
-[data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
-[data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
-[data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
-[data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
+    /* Theme Toggle */
+    .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+    .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+    .theme-toggle:active { transform: scale(0.95); }
+    .theme-toggle-icon { position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease; color: var(--gold); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+    [data-theme="light"] .theme-toggle-icon-sun { opacity: 1; transform: scale(1); }
+    [data-theme="light"] .theme-toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+    [data-theme="dark"] .theme-toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+    [data-theme="dark"] .theme-toggle-icon-moon { opacity: 1; transform: scale(1); }
 
-/* Back to Top */
-.back-to-top { position: fixed; bottom: 6.5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
-.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
-.back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+    /* Back to Top */
+    .back-to-top { position: fixed; bottom: 6.5rem; right: 1.5rem; z-index: 1000; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem; transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9); }
+    .back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+    .back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
 
-/* Hero */
-.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; background: radial-gradient(ellipse 120% 100% at 50% 30%, #1a1e3a 0%, #0f1220 50%, #0a0c14 100%); }
-[data-theme="light"] .hero { background: radial-gradient(ellipse 120% 100% at 50% 30%, #e4e7f0 0%, #d8dce8 50%, #c8cdd8 100%); }
-.hero::after {
-  content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(90,106,154,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 20% 70%, rgba(196,168,85,0.06) 0%, transparent 70%);
-  animation: ambientDrift 20s ease-in-out infinite;
-  pointer-events: none; z-index: 1;
-}
-.hero-ripple {
-  position: absolute; top: 50%; left: 50%;
-  width: 200px; height: 200px; border-radius: 50%;
-  border: 1px solid var(--indigo); transform: translate(-50%,-50%);
-  pointer-events: none; animation: ripple-out 10s ease-out infinite;
-}
-.hero-ripple:nth-of-type(2) { animation-delay: 3.5s; }
-.hero-ripple:nth-of-type(3) { animation-delay: 7s; }
+    /* Hero */
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 5rem 2rem 6rem; text-align: center; background: radial-gradient(ellipse 120% 100% at 50% 30%, #1a1e3a 0%, #0f1220 50%, #0a0c14 100%); }
+    [data-theme="light"] .hero { background: radial-gradient(ellipse 120% 100% at 50% 30%, #e4e7f0 0%, #d8dce8 50%, #c8cdd8 100%); }
+    .hero::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(90,106,154,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(196,168,85,0.06) 0%, transparent 70%);
+      animation: ambientDrift 20s ease-in-out infinite;
+      pointer-events: none; z-index: 1;
+    }
+    .hero-ripple {
+      position: absolute; top: 50%; left: 50%;
+      width: 200px; height: 200px; border-radius: 50%;
+      border: 1px solid var(--indigo); transform: translate(-50%,-50%);
+      pointer-events: none; animation: ripple-out 10s ease-out infinite;
+    }
+    .hero-ripple:nth-of-type(2) { animation-delay: 3.5s; }
+    .hero-ripple:nth-of-type(3) { animation-delay: 7s; }
 
-.hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+    .hero-eyemark { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
 
-/* ===== QUANTUM HERO EMBLEM ===== */
-.hero-emblem {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 2rem;
-  position: relative;
-  z-index: 3;
-  animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
-}
-.hero-emblem svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
+    /* ===== QUANTUM HERO EMBLEM ===== */
+    .hero-emblem {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 3;
+      animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+    }
+    .hero-emblem svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
 
-[data-theme="light"] .hero-emblem svg circle,
-[data-theme="light"] .hero-emblem svg line,
-[data-theme="light"] .hero-emblem svg path {
-  opacity: 1 !important;
-}
-/* ==================================== */
+    [data-theme="light"] .hero-emblem svg circle,
+    [data-theme="light"] .hero-emblem svg line,
+    [data-theme="light"] .hero-emblem svg path {
+      opacity: 1 !important;
+    }
+    /* ==================================== */
 
-.hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(90,106,154,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
-[data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196,168,85,0.20); }
-.hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--indigo-light); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
-.hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 520px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
-[data-theme="dark"] .hero-quote { color: var(--stone-light); }
-.hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; margin-bottom: 2rem; }
-.hero-divider {
-  display: flex; align-items: center; gap: 1.25rem;
-  margin: 0 auto 2.5rem; width: fit-content;
-  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
-  position: relative; z-index: 2;
-}
-.hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, var(--indigo), var(--gold-deep)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
-.hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); transform-origin: right; }
-.hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
-.hero-scroll-cue {
-  position: absolute; bottom: 2rem; left: 50%;
-  transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
-  cursor: pointer; z-index: 2;
-  transition: transform 0.3s var(--ease-expo);
-}
-.hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
-.hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone); text-transform: uppercase; }
-.scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--indigo-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
+    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(90,106,154,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+    [data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196,168,85,0.20); }
+    .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--indigo-light); letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+    .hero-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2); max-width: 520px; margin: 0 auto 0.6rem; line-height: 1.88; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; position: relative; z-index: 2; }
+    [data-theme="dark"] .hero-quote { color: var(--stone-light); }
+    .hero-quote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em; color: var(--stone); text-transform: uppercase; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; position: relative; z-index: 2; margin-bottom: 2rem; }
+    .hero-divider {
+      display: flex; align-items: center; gap: 1.25rem;
+      margin: 0 auto 2.5rem; width: fit-content;
+      opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+      position: relative; z-index: 2;
+    }
+    .hero-divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, var(--indigo), var(--gold-deep)); transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0); }
+    .hero-divider-line:last-child { background: linear-gradient(90deg, var(--gold-deep), transparent); transform-origin: right; }
+    .hero-divider-diamond { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); box-shadow: 0 0 8px var(--sun-glow); animation: diamondReveal 0.8s 1.2s forwards; opacity: 0; }
+    .hero-scroll-cue {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+      cursor: pointer; z-index: 2;
+      transition: transform 0.3s var(--ease-expo);
+    }
+    .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+    .hero-scroll-cue span { font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em; color: var(--stone); text-transform: uppercase; }
+    .scroll-line { width: 1px; height: 32px; background: linear-gradient(180deg, var(--indigo-light), transparent); animation: scroll-bounce 2.5s ease-in-out infinite; }
 
-/* Sections */
-section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
-.section-header { text-align: center; margin-bottom: 56px; }
-.section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 0.75rem; }
-.section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
-.section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
+    /* Sections */
+    section { position: relative; transition: background-color 0.6s var(--ease-smooth); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyemark { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.02em; }
+    .section-header p { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-top: 12px; }
 
-.section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, var(--indigo), var(--gold), var(--gold-light)); margin: 0 auto 20px; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
-.section-separator.visible { opacity: 1; transform: scaleX(1); }
+    .section-separator { width: 48px; height: 1px; background: linear-gradient(90deg, var(--indigo), var(--gold), var(--gold-light)); margin: 0 auto 20px; opacity: 0; transform: scaleX(0); transition: all 0.8s var(--ease-out-expo); }
+    .section-separator.visible { opacity: 1; transform: scaleX(1); }
 
-.text-reveal { overflow: hidden; display: block; }
-.text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
-.visible .text-reveal-inner { transform: translateY(0); }
+    .text-reveal { overflow: hidden; display: block; }
+    .text-reveal-inner { display: block; transform: translateY(110%); transition: transform 1s var(--ease-out-expo); }
+    .visible .text-reveal-inner { transform: translateY(0); }
 
-.content-section { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
-.content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
-.content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
-.content-essay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
-.content-essay h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.75rem; }
-.content-essay blockquote { border-left: 3px solid var(--indigo); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
-.content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--indigo); opacity: 0.10; line-height: 1; }
-.content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
-.content-essay ul { margin: 1.5rem 0; padding-left: 0; list-style: none; }
-.content-essay ul li { padding: 0.85rem 0 0.85rem 2rem; position: relative; color: var(--stone); line-height: 1.75; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
-.content-essay ul li:last-child { border-bottom: none; }
-.content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--indigo); opacity: 0.6; }
-.content-essay ul li strong { color: var(--ink); font-weight: 500; }
+    .content-section { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
+    .content-introduction { font-size: 1.05rem; color: var(--stone); line-height: 1.8; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+    .content-essay p { font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+    .content-essay h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 1rem; letter-spacing: 0.015em; }
+    .content-essay h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin: 2rem 0 0.75rem; }
+    .content-essay blockquote { border-left: 3px solid var(--indigo); padding: 20px 24px; margin: 1.5rem 0; background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'IM Fell English', serif; font-style: italic; color: var(--ink); line-height: 1.68; position: relative; }
+    .content-essay blockquote::before { content: '"'; position: absolute; top: -8px; left: 12px; font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--indigo); opacity: 0.10; line-height: 1; }
+    .content-essay blockquote cite { display: block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; margin-top: 12px; font-style: normal; }
+    .content-essay ul { margin: 1.5rem 0; padding-left: 0; list-style: none; }
+    .content-essay ul li { padding: 0.85rem 0 0.85rem 2rem; position: relative; color: var(--stone); line-height: 1.75; font-size: 1rem; border-bottom: 1px solid var(--border-subtle); }
+    .content-essay ul li:last-child { border-bottom: none; }
+    .content-essay ul li::before { content: '◆'; position: absolute; left: 0; top: 0.9rem; font-size: 0.5rem; color: var(--indigo); opacity: 0.6; }
+    .content-essay ul li strong { color: var(--ink); font-weight: 500; }
 
-/* Dark mode specific content styling */
-[data-theme="dark"] .content-essay p { color: var(--stone); }
-[data-theme="dark"] .content-introduction { color: var(--stone); }
-[data-theme="dark"] .content-essay h3 { color: var(--ink); }
-[data-theme="dark"] .content-essay h4 { color: var(--gold); }
-[data-theme="dark"] .content-essay ul li { color: var(--stone); }
-[data-theme="dark"] .content-essay ul li strong { color: var(--ink); }
+    /* Dark mode specific content styling */
+    [data-theme="dark"] .content-essay p { color: var(--stone); }
+    [data-theme="dark"] .content-introduction { color: var(--stone); }
+    [data-theme="dark"] .content-essay h3 { color: var(--ink); }
+    [data-theme="dark"] .content-essay h4 { color: var(--gold); }
+    [data-theme="dark"] .content-essay ul li { color: var(--stone); }
+    [data-theme="dark"] .content-essay ul li strong { color: var(--ink); }
 
-.hebrew-term, .sanskrit-term, .biblical-ref, .physics-term {
-  cursor: help;
-  border-bottom: 1px dotted var(--gold);
-  text-decoration: none;
-  color: var(--gold-light);
-  font-weight: 400;
-  transition: all 0.3s var(--ease-smooth);
-}
-.hebrew-term:hover, .sanskrit-term:hover, .biblical-ref:hover, .physics-term:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold-deep);
-}
+    .hebrew-term, .sanskrit-term, .biblical-ref, .physics-term {
+      cursor: help;
+      border-bottom: 1px dotted var(--gold);
+      text-decoration: none;
+      color: var(--gold-light);
+      font-weight: 400;
+      transition: all 0.3s var(--ease-smooth);
+    }
+    .hebrew-term:hover, .sanskrit-term:hover, .biblical-ref:hover, .physics-term:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold-deep);
+    }
 
-[data-theme="light"] .hebrew-term,
-[data-theme="light"] .sanskrit-term,
-[data-theme="light"] .biblical-ref,
-[data-theme="light"] .physics-term {
-  border-bottom-color: var(--copper);
-  color: var(--copper-light);
-}
-[data-theme="light"] .hebrew-term:hover,
-[data-theme="light"] .sanskrit-term:hover,
-[data-theme="light"] .biblical-ref:hover,
-[data-theme="light"] .physics-term:hover {
-  color: var(--copper);
-  border-bottom-color: var(--copper-deep);
-}
+    [data-theme="light"] .hebrew-term,
+    [data-theme="light"] .sanskrit-term,
+    [data-theme="light"] .biblical-ref,
+    [data-theme="light"] .physics-term {
+      border-bottom-color: var(--copper);
+      color: var(--copper-light);
+    }
+    [data-theme="light"] .hebrew-term:hover,
+    [data-theme="light"] .sanskrit-term:hover,
+    [data-theme="light"] .biblical-ref:hover,
+    [data-theme="light"] .physics-term:hover {
+      color: var(--copper);
+      border-bottom-color: var(--copper-deep);
+    }
 
-/* Diagram Cards */
-.diagram-card {
+    /* Diagram Cards - Premium Visibility */
+    .diagram-card {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin: 36px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .diagram-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--indigo), var(--gold), var(--indigo));
+      opacity: 0.7;
+    }
+    .diagram-card-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .diagram-card svg {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+    }
+    .diagram-card-caption {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--stone-light);
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
 
-/* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
-[data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
-  fill: #4a5a7a;
-  stroke: #4a5a7a;
-}
-[data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
-  fill: #4a5a7a;
-}
-[data-theme="light"] .diagram-card svg [fill="#7a8aba"],
-[data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
-  fill: #5a6a8a;
-  stroke: #5a6a8a;
-}
-[data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
-  fill: #5a6a8a;
-}
-[data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
-[data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
-  fill: #4a5070;
-  stroke: #4a5070;
-}
-[data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
-  fill: #4a5070;
-}
-[data-theme="light"] .diagram-card svg [fill="#c4a855"],
-[data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
-  fill: #7a6020;
-  stroke: #7a6020;
-}
-[data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
-  fill: #7a6020;
-}
-[data-theme="light"] .diagram-card svg [fill="#e0c878"],
-[data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
-  fill: #8a7030;
-  stroke: #8a7030;
-}
-[data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
-  fill: #8a7030;
-}
-[data-theme="light"] .diagram-card svg [fill="#fff"],
-[data-theme="light"] .diagram-card svg [stroke="#fff"] {
-  fill: #e8ecf4;
-  stroke: #e8ecf4;
-}
-[data-theme="light"] .diagram-card svg text[fill="#fff"] {
-  fill: #e8ecf4;
-}
+    /* Light Theme Diagram Overrides - Premium Visibility */
+    [data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
+    [data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
+      fill: #3a4a6a !important;
+      stroke: #3a4a6a !important;
+    }
+    [data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
+      fill: #3a4a6a !important;
+    }
+    [data-theme="light"] .diagram-card svg [fill="#7a8aba"],
+    [data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
+      fill: #4a5a7a !important;
+      stroke: #4a5a7a !important;
+    }
+    [data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
+      fill: #4a5a7a !important;
+    }
+    [data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
+    [data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
+      fill: #3a4060 !important;
+      stroke: #3a4060 !important;
+    }
+    [data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
+      fill: #3a4060 !important;
+    }
+    [data-theme="light"] .diagram-card svg [fill="#c4a855"],
+    [data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
+      fill: #7a6020 !important;
+      stroke: #7a6020 !important;
+    }
+    [data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
+      fill: #7a6020 !important;
+    }
+    [data-theme="light"] .diagram-card svg [fill="#e0c878"],
+    [data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
+      fill: #8a7030 !important;
+      stroke: #8a7030 !important;
+    }
+    [data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
+      fill: #8a7030 !important;
+    }
+    [data-theme="light"] .diagram-card svg [fill="#fff"],
+    [data-theme="light"] .diagram-card svg [stroke="#fff"] {
+      fill: #e8ecf4 !important;
+      stroke: #e8ecf4 !important;
+    }
+    [data-theme="light"] .diagram-card svg text[fill="#fff"] {
+      fill: #e8ecf4 !important;
+    }
+    [data-theme="light"] .diagram-card svg circle,
+    [data-theme="light"] .diagram-card svg path,
+    [data-theme="light"] .diagram-card svg line {
+      opacity: 0.85 !important;
+    }
+    [data-theme="light"] .diagram-card svg circle[stroke],
+    [data-theme="light"] .diagram-card svg path[stroke],
+    [data-theme="light"] .diagram-card svg line[stroke] {
+      stroke-width: 1.8 !important;
+    }
+    [data-theme="light"] .diagram-card svg circle[fill],
+    [data-theme="light"] .diagram-card svg path[fill] {
+      opacity: 0.9 !important;
+    }
+    [data-theme="light"] .diagram-card svg [stroke-opacity] {
+      stroke-opacity: 0.8 !important;
+    }
+    [data-theme="light"] .diagram-card svg [fill-opacity] {
+      fill-opacity: 0.8 !important;
+    }
 
-/* Increase opacity and stroke-width for light theme visibility */
-[data-theme="light"] .diagram-card svg circle[opacity],
-[data-theme="light"] .diagram-card svg path[opacity],
-[data-theme="light"] .diagram-card svg line[opacity],
-[data-theme="light"] .diagram-card svg g[opacity] {
-  opacity: 0.7 !important;
-}
-[data-theme="light"] .diagram-card svg circle[stroke],
-[data-theme="light"] .diagram-card svg path[stroke],
-[data-theme="light"] .diagram-card svg line[stroke] {
-  stroke-width: 1.5 !important;
-}
-[data-theme="light"] .diagram-card svg circle[fill],
-[data-theme="light"] .diagram-card svg path[fill] {
-  opacity: 0.8 !important;
-}
+    .comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
+    .comparative-table thead tr { border-bottom: 1px solid var(--indigo); }
+    .comparative-table th { padding: 10px 8px; text-align: left; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+    .comparative-table td { padding: 8px; color: var(--stone); line-height: 1.5; }
+    .comparative-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
+    .comparative-table tbody tr:last-child { border-bottom: none; }
+    .comparative-table tbody tr:hover { background: var(--indigo-glow); }
+    .comparative-table-wrapper { overflow-x: auto; margin-top: 1rem; }
 
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  margin: 36px 0;
-  position: relative;
-  overflow: hidden;
-}
-.diagram-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--indigo), var(--gold), var(--indigo));
-  opacity: 0.5;
-}
-.diagram-card-label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-.diagram-card svg {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  display: block;
-}
-.diagram-card-caption {
-  font-family: 'IM Fell English', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--stone);
-  text-align: center;
-  margin-top: 20px;
-  line-height: 1.6;
-}
+    .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+    .scripture-panel { background: var(--surface); padding: 32px; }
+    .scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+    .scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+    .scripture-panel:hover { background: var(--surface2); }
+    .scripture-panels.margin-top { margin-top: 2rem; }
 
-.comparative-table { width: 100%; border-collapse: collapse; background: transparent; font-size: 0.8rem; }
-.comparative-table thead tr { border-bottom: 1px solid var(--indigo); }
-.comparative-table th { padding: 10px 8px; text-align: left; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-.comparative-table td { padding: 8px; color: var(--stone); line-height: 1.5; }
-.comparative-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
-.comparative-table tbody tr:last-child { border-bottom: none; }
-.comparative-table tbody tr:hover { background: var(--indigo-glow); }
-.comparative-table-wrapper { overflow-x: auto; margin-top: 1rem; }
+    .pullquote-section { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    [data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #e4e7f0 0%, #d8dce8 40%, #c8cdd8 100%); }
+    .pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
+    .pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
+    .pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
+    .pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
+    .pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
+    .pullquote-attr a:hover { color: var(--gold); }
 
-.scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 36px 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
-.scripture-panel { background: var(--surface); padding: 32px; }
-.scripture-panel-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-.scripture-panel-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
-.scripture-panel-ref { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
-.scripture-panel:hover { background: var(--surface2); }
-.scripture-panels.margin-top { margin-top: 2rem; }
+    .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+    .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+    .footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+    .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+    [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+    [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+    [data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
+    [data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
+    .footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+    .footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+    .footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+    .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
 
-.pullquote-section { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 100%); padding: 5rem 2rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-[data-theme="light"] .pullquote-section { background: radial-gradient(ellipse 90% 80% at 50% 35%, #e4e7f0 0%, #d8dce8 40%, #c8cdd8 100%); }
-.pullquote-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); width: 500px; height: 500px; background: radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 55%); pointer-events: none; animation: breathe 10s ease-in-out infinite; }
-.pullquote { max-width: 640px; margin: 0 auto; position: relative; padding-top: 2rem; }
-.pullquote-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68; margin-bottom: 1.5rem; }
-.pullquote-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; }
-.pullquote-attr a { color: inherit; text-decoration: none; transition: color 0.3s; }
-.pullquote-attr a:hover { color: var(--gold); }
+    .chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+    .chapter-link:hover { color: var(--gold); }
+    .chapter-sep { color: var(--indigo); opacity: 0.3; }
+    .chapter-link.active { color: var(--gold); font-weight: 500; }
 
-.footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
-.footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
-.footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
-.footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
-[data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
-[data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
-[data-theme="light"] .footer-emblem-outer { border-color: var(--copper); }
-[data-theme="light"] .footer-emblem-inner { border-color: var(--copper-light); }
-.footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
-.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
-.footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
-.footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
-.footer-links a:hover { color: var(--gold); }
-.footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
-.footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-.chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; }
-.chapter-link:hover { color: var(--gold); }
-.chapter-sep { color: var(--indigo); opacity: 0.3; }
-.chapter-link.active { color: var(--gold); font-weight: 500; }
+    /* Interpretation voice cards */
+    .voice-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin: 20px 0;
+      position: relative;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+    .voice-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .voice-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .voice-card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold-glow);
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .voice-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0;
+    }
+    .voice-card-body {
+      font-size: 0.95rem;
+      color: var(--stone);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .voice-card-body strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
 
-.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+    /* Dialogue section */
+    .dialogue-section {
+      margin: 2.5rem 0;
+      padding: 0;
+    }
+    .dialogue-line {
+      position: relative;
+      padding: 1rem 0 1rem 2rem;
+      border-left: 2px solid var(--border);
+      margin-left: 1rem;
+    }
+    .dialogue-line:last-child {
+      border-left: 2px solid transparent;
+    }
+    .dialogue-speaker {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .dialogue-text {
+      font-size: 1rem;
+      color: var(--stone);
+      line-height: 1.75;
+      font-style: italic;
+    }
+    .dialogue-marker {
+      position: absolute;
+      left: -6px;
+      top: 1.2rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg);
+    }
 
-/* Interpretation voice cards */
-.voice-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 32px;
-  margin: 20px 0;
-  position: relative;
-  transition: all 0.3s var(--ease-out-expo);
-}
-.voice-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-.voice-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-.voice-card-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--gold-glow);
-  border: 1px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.voice-card-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0;
-}
-.voice-card-body {
-  font-size: 0.95rem;
-  color: var(--stone);
-  line-height: 1.75;
-  margin: 0;
-}
-.voice-card-body strong {
-  color: var(--ink);
-  font-weight: 500;
-}
+    @media (max-width: 768px) {
+      .hero { padding: 5rem 2rem 6rem 2rem; text-align: center; align-items: center; }
+      .hero-scroll-cue { left: 50%; transform: translateX(-50%); align-items: center; }
+      .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+      .nav-compass { right: 1rem; }
+      .nav-menu { min-width: 180px; }
+      .back-to-top { right: 1.5rem; bottom: 6.5rem; }
+      .theme-toggle { right: 1.5rem; }
+      .footer-links { gap: 1.5rem; }
+      .scripture-panels { grid-template-columns: 1fr; }
+      .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+      .section-header { text-align: center; padding-left: 0; border-left: none; border-top: 2px solid var(--gold); padding-top: 24px; }
+      .section-separator { margin-left: auto; margin-right: auto; }
+      .voice-card { padding: 20px 24px; }
+      .dialogue-line { margin-left: 0.5rem; padding-left: 1.5rem; }
+    }
 
-/* Dialogue section */
-.dialogue-section {
-  margin: 2.5rem 0;
-  padding: 0;
-}
-.dialogue-line {
-  position: relative;
-  padding: 1rem 0 1rem 2rem;
-  border-left: 2px solid var(--border);
-  margin-left: 1rem;
-}
-.dialogue-line:last-child {
-  border-left: 2px solid transparent;
-}
-.dialogue-speaker {
-  font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.4rem;
-}
-.dialogue-text {
-  font-size: 1rem;
-  color: var(--stone);
-  line-height: 1.75;
-  font-style: italic;
-}
-.dialogue-marker {
-  position: absolute;
-  left: -6px;
-  top: 1.2rem;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 2px solid var(--bg);
-}
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .hero { padding: 4rem 1.5rem 5rem; }
+      .hero-title { font-size: 2rem; }
+      .hero-emblem { width: 100px; height: 100px; }
+      .content-section { padding: 48px 16px; max-width: 100%; }
+      .section-header h2 { font-size: 1.6rem; }
+      .content-essay p { font-size: 0.95rem; line-height: 1.7; }
+      .content-introduction { font-size: 1.05rem; }
+      .diagram-container, .diagram-card { padding: 24px; }
+      .scripture-panels { margin: 24px 0; }
+      .scripture-panel { padding: 24px; }
+      .pullquote-section { padding: 3rem 1.5rem; }
+      .pullquote-text { font-size: 1.1rem; }
+      .nav-compass { top: 1rem; left: 1rem; }
+      .nav-toggle { width: 40px; height: 40px; }
+      .nav-menu { min-width: 160px; }
+      .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
+      .back-to-top { width: 40px; height: 40px; bottom: 5.5rem; right: 1rem; }
+      .chapter-nav { gap: 1rem; font-size: 0.6rem; }
+      .footer { padding: 3rem 1.5rem 2rem; }
+      .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+      .voice-card { padding: 16px 20px; }
+      .voice-card-header { gap: 0.5rem; }
+      .voice-card-icon { width: 28px; height: 28px; font-size: 0.55rem; }
+    }
 
-@media (max-width: 768px) {
-  .hero { padding: 5rem 2rem 6rem 2rem; text-align: center; align-items: center; }
-  .hero-scroll-cue { left: 50%; transform: translateX(-50%); align-items: center; }
-  .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
-  .nav-compass { right: 1rem; }
-  .nav-menu { min-width: 180px; }
-  .back-to-top { right: 1.5rem; bottom: 6.5rem; }
-  .theme-toggle { right: 1.5rem; }
-  .footer-links { gap: 1.5rem; }
-  .scripture-panels { grid-template-columns: 1fr; }
-  .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
-  .section-header { text-align: center; padding-left: 0; border-left: none; border-top: 2px solid var(--gold); padding-top: 24px; }
-  .section-separator { margin-left: auto; margin-right: auto; }
-  .voice-card { padding: 20px 24px; }
-  .dialogue-line { margin-left: 0.5rem; padding-left: 1.5rem; }
-}
-
-@media (max-width: 480px) {
-  body { font-size: 16px; }
-  .hero { padding: 4rem 1.5rem 5rem; }
-  .hero-title { font-size: 2rem; }
-  .hero-emblem { width: 100px; height: 100px; }
-  .content-section { padding: 48px 16px; max-width: 100%; }
-  .section-header h2 { font-size: 1.6rem; }
-  .content-essay p { font-size: 0.95rem; line-height: 1.7; }
-  .content-introduction { font-size: 1.05rem; }
-  .diagram-container, .diagram-card { padding: 24px; }
-  .scripture-panels { margin: 24px 0; }
-  .scripture-panel { padding: 24px; }
-  .pullquote-section { padding: 3rem 1.5rem; }
-  .pullquote-text { font-size: 1.1rem; }
-  .nav-compass { top: 1rem; left: 1rem; }
-  .nav-toggle { width: 40px; height: 40px; }
-  .nav-menu { min-width: 160px; }
-  .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
-  .back-to-top { width: 40px; height: 40px; bottom: 5.5rem; right: 1rem; }
-  .chapter-nav { gap: 1rem; font-size: 0.6rem; }
-  .footer { padding: 3rem 1.5rem 2rem; }
-  .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
-  .voice-card { padding: 16px 20px; }
-  .voice-card-header { gap: 0.5rem; }
-  .voice-card-icon { width: 28px; height: 28px; font-size: 0.55rem; }
-}
-
-@media (prefers-reduced-motion: reduce) { 
-  *, *::before, *::after { animation: none !important; transition: none !important; } 
-  .fade-in { opacity: 1 !important; transform: none !important; } 
-  .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
-}
-</style>
+    @media (prefers-reduced-motion: reduce) { 
+      *, *::before, *::after { animation: none !important; transition: none !important; } 
+      .fade-in { opacity: 1 !important; transform: none !important; } 
+      .hero-emblem { animation: fadeInUp 1.1s 0.6s both !important; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAVIGATION COMPASS -->
-<div class="nav-compass">
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-  </button>
-  <div class="nav-menu" id="navMenu">
-    <div class="nav-section-title">This Page</div>
-    <a href="#hero" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></span><span>Overview</span></a>
-    <a href="#superposition" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10"/><path d="M2 12h20"/></svg></span><span>Superposition</span></a>
-    <a href="#doubleslit" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 10a.5.5 0 0 1 .5.5v.5a.5.5 0 0 1-1 0v-.5a.5.5 0 0 1 .5-.5"/></svg></span><span>The Double Slit</span></a>
-    <a href="#interpretations" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m1.4-1.4l2.8-2.8m11.3 11.3l2.8-2.8M3.5 17.5l2.8 2.8m11.3-11.3l2.8-2.8"/></svg></span><span>Interpretations</span></a>
-    <a href="#mystical" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>Mystical Parallels</span></a>
-    <div class="nav-divider"></div>
-    <div class="nav-section-title">Quantum · Four Pages</div>
-    <a href="quantum-unmeasured.html" class="nav-item active"><span class="nav-item-icon">⚛</span><span>I · The Unmeasured Ground</span></a>
-    <a href="quantum-observer.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="4"/></svg></span><span>II · The Act of Looking</span></a>
-    <a href="quantum-entanglement.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m1.4-1.4l2.8-2.8m11.3 11.3l2.8-2.8M3.5 17.5l2.8 2.8m11.3-11.3l2.8-2.8"/></svg></span><span>III · The Hidden Connection</span></a>
-    <a href="quantum-implicate.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>IV · The Implicate Order</span></a>
-    <div class="nav-divider"></div>
-    <div class="nav-section-title">Other Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
-    <a href="../kabbalah/kabbalah-luria.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah · Isaac Luria</span></a>
-    <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-    <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
-    <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
-  </div>
-</div>
-
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-  <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
-  <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
-</button>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
-<!-- HERO -->
-<header class="hero" id="hero">
-  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
-  <p class="hero-eyemark">Quantum Mechanics · Page I</p>
-  <div class="hero-emblem">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="qGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="4" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <radialGradient id="superpositionGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#e0c878" stop-opacity="0.3"/>
-          <stop offset="40%" stop-color="#7a8aba" stop-opacity="0.15"/>
-          <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#5a6a9a" stop-opacity="0"/>
-          <stop offset="50%" stop-color="#7a8aba" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <!-- Central superposition cloud -->
-      <circle cx="100" cy="100" r="45" fill="url(#superpositionGrad)" opacity="0.6">
-        <animate attributeName="r" values="45;50;45" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;0.8;0.6" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="100" cy="100" r="35" fill="none" stroke="#7a8aba" stroke-width="0.5" opacity="0.3">
-        <animate attributeName="r" values="35;40;35" dur="5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="100" cy="100" r="25" fill="none" stroke="#8a9ab8" stroke-width="0.3" opacity="0.2">
-        <animate attributeName="r" values="25;30;25" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Wavefunction rings -->
-      <circle cx="100" cy="100" r="65" fill="none" stroke="#5a6a9a" stroke-width="0.4" opacity="0.2">
-        <animate attributeName="r" values="65;70;65" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.2;0.35;0.2" dur="6s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="100" cy="100" r="80" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.15">
-        <animate attributeName="r" values="80;85;80" dur="7s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.15;0.25;0.15" dur="7s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Wave interference patterns -->
-      <g opacity="0.3">
-        <path d="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" fill="none" stroke="url(#waveGrad)" stroke-width="0.8" stroke-linecap="round">
-          <animate attributeName="d" values="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100;M 30 100 Q 50 115, 70 100 Q 90 85, 110 100 Q 130 115, 150 100 Q 170 85, 190 100;M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" dur="3s" repeatCount="indefinite"/>
-        </path>
-        <path d="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" fill="none" stroke="url(#waveGrad)" stroke-width="0.6" stroke-linecap="round" transform="rotate(60 100 100)">
-          <animate attributeName="d" values="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100;M 30 100 Q 50 115, 70 100 Q 90 85, 110 100 Q 130 115, 150 100 Q 170 85, 190 100;M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" dur="3s" begin="1s" repeatCount="indefinite"/>
-        </path>
-        <path d="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" fill="none" stroke="url(#waveGrad)" stroke-width="0.6" stroke-linecap="round" transform="rotate(120 100 100)">
-          <animate attributeName="d" values="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100;M 30 100 Q 50 115, 70 100 Q 90 85, 110 100 Q 130 115, 150 100 Q 170 85, 190 100;M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" dur="3s" begin="2s" repeatCount="indefinite"/>
-        </path>
-      </g>
-      <!-- Central point — the unmeasured potential -->
-      <circle cx="100" cy="100" r="4" fill="#e0c878" opacity="0.8" filter="url(#qGlow)">
-        <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.8;0.5;0.8" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="100" cy="100" r="1.5" fill="#fff" opacity="0.5"/>
-      <!-- Orbiting particles in superposition -->
-      <g opacity="0.5">
-        <circle cx="100" cy="55" r="2.5" fill="#c4a855" opacity="0.7">
-          <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="8s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="55" r="2" fill="#7a8aba" opacity="0.6">
-          <animateTransform attributeName="transform" type="rotate" from="120 100 100" to="480 100 100" dur="8s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="55" r="1.8" fill="#e0c878" opacity="0.5">
-          <animateTransform attributeName="transform" type="rotate" from="240 100 100" to="600 100 100" dur="8s" repeatCount="indefinite"/>
-        </circle>
-      </g>
-      <!-- Radiating lines -->
-      <g stroke="#c4a855" stroke-width="0.25" opacity="0.15" stroke-linecap="round">
-        <line x1="100" y1="5" x2="100" y2="15"/>
-        <line x1="100" y1="195" x2="100" y2="185"/>
-        <line x1="5" y1="100" x2="15" y2="100"/>
-        <line x1="195" y1="100" x2="185" y2="100"/>
-        <line x1="32" y1="32" x2="40" y2="40"/>
-        <line x1="168" y1="168" x2="160" y2="160"/>
-        <line x1="32" y1="168" x2="40" y2="160"/>
-        <line x1="168" y1="32" x2="160" y2="40"/>
-      </g>
-      <!-- Diamond markers -->
-      <g fill="#c4a855" opacity="0.3">
-        <rect x="98" y="3" width="4" height="4" transform="rotate(45 100 5)"/>
-        <rect x="98" y="193" width="4" height="4" transform="rotate(45 100 195)"/>
-        <rect x="3" y="98" width="4" height="4" transform="rotate(45 5 100)"/>
-        <rect x="193" y="98" width="4" height="4" transform="rotate(45 195 100)"/>
-      </g>
-    </svg>
-  </div>
-
-  <h1 class="hero-title">The Unmeasured Ground</h1>
-  <p class="hero-subtitle">Superposition · Wavefunction · The State Before Observation</p>
-  <div class="hero-divider">
-    <div class="hero-divider-line"></div>
-    <div class="hero-divider-diamond"></div>
-    <div class="hero-divider-line"></div>
-  </div>
-  <p class="hero-quote">"The electron is not a particle, not a wave, but something more subtle — a probability amplitude that encompasses all possibilities until the act of observation forces it to choose."</p>
-  <p class="hero-quote-attr">— Richard Feynman · The Character of Physical Law</p>
-  <div class="hero-scroll-cue" onclick="document.getElementById('superposition').scrollIntoView({behavior:'smooth'})">
-    <span>Enter</span><div class="scroll-line"></div>
-  </div>
-</header>
-
-<!-- SECTION: SUPERPOSITION -->
-<section class="content-section fade-in" id="superposition">
-  <div class="section-header">
-    <div class="section-separator"></div>
-    <p class="section-eyemark">The Quantum Mystery</p>
-    <h2><span class="text-reveal"><span class="text-reveal-inner">What Exists Before Observation?</span></span></h2>
-    <p>Superposition · The Wavefunction · The Double-Slit Experiment</p>
-  </div>
-  <div class="content-essay fade-in">
-    <p class="content-introduction"><strong>Quantum mechanics</strong> is the most precisely tested theory in the history of science. It predicts the magnetic moment of the electron to one part in a trillion. It powers the transistors in your phone, the lasers in your eyes, the MRI that reads your brain. And yet — after a century of debate — we still do not agree on what it <em>means</em>. The mathematics is unambiguous. The interpretation is not.</p>
-
-    <p>The heart of the mystery is <span class="physics-term" title="A quantum state in which a particle exists in multiple states simultaneously until measured">superposition</span> — the claim that a quantum system can exist in multiple states at once, not as a mixture (like a coin spinning in the air) but as a genuine coexistence of all possibilities. An electron is not "here or there" before measurement. It is here <em>and</em> there, in a state described by a <span class="physics-term" title="A mathematical description of the quantum state of a system; its square gives the probability density">wavefunction</span> that assigns probability amplitudes to every possible outcome.</p>
-
-    <p>This is not a limitation of our knowledge. It is not that we don't know where the electron is. According to the standard formulation, the electron <em>has no definite position</em> until a measurement is performed. The wavefunction is not a description of our ignorance; it is the complete description of the physical system. Everything that can be known about the electron is encoded in its wavefunction. And the wavefunction says: it is in many places at once.</p>
-
-    <div class="scripture-panels fade-in">
-      <div class="scripture-panel">
-        <div class="scripture-panel-label">Quantum Mechanics · Postulate I</div>
-        <p class="scripture-panel-text">"The state of a quantum system is completely specified by its wavefunction Ψ(x,t), which contains all the information that can be known about the system. The wavefunction evolves deterministically according to the Schrödinger equation."</p>
-        <p class="scripture-panel-ref">— Standard Formulation</p>
-      </div>
-      <div class="scripture-panel">
-        <div class="scripture-panel-label">Chandogya Upanishad · 6.2.1</div>
-        <p class="scripture-panel-text">"In the beginning, my dear, this world was just Being, one only, without a second. To be sure, some people say: 'In the beginning this world was just non-being, one only, without a second; from that non-being, being was produced.' But how could that be?"</p>
-        <p class="scripture-panel-ref">— Uddalaka to Svetaketu</p>
-      </div>
+  <!-- NAVIGATION COMPASS -->
+  <div class="nav-compass">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-menu" id="navMenu">
+      <div class="nav-section-title">This Page</div>
+      <a href="#hero" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></span><span>Overview</span></a>
+      <a href="#superposition" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10"/><path d="M2 12h20"/></svg></span><span>Superposition</span></a>
+      <a href="#doubleslit" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 10a.5.5 0 0 1 .5.5v.5a.5.5 0 0 1-1 0v-.5a.5.5 0 0 1 .5-.5"/></svg></span><span>The Double Slit</span></a>
+      <a href="#interpretations" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m1.4-1.4l2.8-2.8m11.3 11.3l2.8-2.8M3.5 17.5l2.8 2.8m11.3-11.3l2.8-2.8"/></svg></span><span>Interpretations</span></a>
+      <a href="#mystical" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>Mystical Parallels</span></a>
+      <div class="nav-divider"></div>
+      <div class="nav-section-title">Quantum · Four Pages</div>
+      <a href="quantum-unmeasured.html" class="nav-item active"><span class="nav-item-icon">⚛</span><span>I · The Unmeasured Ground</span></a>
+      <a href="quantum-observer.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="4"/></svg></span><span>II · The Act of Looking</span></a>
+      <a href="quantum-entanglement.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m1.4-1.4l2.8-2.8m11.3 11.3l2.8-2.8M3.5 17.5l2.8 2.8m11.3-11.3l2.8-2.8"/></svg></span><span>III · The Hidden Connection</span></a>
+      <a href="quantum-implicate.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>IV · The Implicate Order</span></a>
+      <div class="nav-divider"></div>
+      <div class="nav-section-title">Other Cartographies</div>
+      <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+      <a href="../kabbalah/kabbalah-luria.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah · Isaac Luria</span></a>
+      <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+      <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
+      <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
     </div>
+  </div>
 
-    <h3>The Double-Slit Experiment — A Meditation</h3>
-    <p>Imagine a wall with two narrow slits. Behind it, a screen. You fire electrons one at a time — single particles, separated by seconds, each traveling alone through the apparatus. Common sense says each electron must pass through either the left slit or the right slit. The screen should show two bands, corresponding to the two paths.</p>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="theme-toggle-icon theme-toggle-icon-sun">☀</span>
+    <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+  </button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-    <p>It does not. The screen shows an <strong>interference pattern</strong> — alternating bright and dark bands, the signature of waves passing through both slits simultaneously and interfering with themselves. The electron, fired alone, behaves as if it passes through both slits at once. It interferes with itself. The pattern on the screen is the mathematical superposition of two wavefunctions — one from each slit — adding and canceling.</p>
-
-    <p>Now place a detector at one slit. Ask: which path did the electron take? The moment you know, the interference pattern vanishes. The screen shows two bands — the classical result. The act of observation, of acquiring which-path information, destroys the superposition. The wavefunction "collapses" from a superposition of both paths to a definite single path.</p>
-
-    <!-- DIAGRAM: DOUBLE-SLIT -->
-    <div class="diagram-card fade-in">
-      <div class="diagram-card-label">Diagram · The Double-Slit Experiment</div>
-      <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
+    <p class="hero-eyemark">Quantum Mechanics · Page I</p>
+    <div class="hero-emblem">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <filter id="dsGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <filter id="qGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="4" result="blur"/>
             <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
-          <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#e0c878" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="#7a8aba" stop-opacity="0.2"/>
-          </linearGradient>
-          <radialGradient id="interferenceGrad" cx="50%" cy="50%" r="50%">
+          <radialGradient id="superpositionGrad" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#e0c878" stop-opacity="0.3"/>
-            <stop offset="30%" stop-color="#c4a855" stop-opacity="0.15"/>
+            <stop offset="40%" stop-color="#7a8aba" stop-opacity="0.15"/>
             <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
           </radialGradient>
-        </defs>
-        <!-- Source -->
-        <circle cx="40" cy="140" r="8" fill="#e0c878" opacity="0.8" filter="url(#dsGlow)"/>
-        <text x="40" y="165" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="9" letter-spacing="0.15em" opacity="0.7">SOURCE</text>
-        <!-- Barrier with two slits -->
-        <rect x="140" y="40" width="4" height="85" fill="#5a6a9a" opacity="0.6"/>
-        <rect x="140" y="155" width="4" height="85" fill="#5a6a9a" opacity="0.6"/>
-        <text x="142" y="30" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.6">BARRIER</text>
-        <!-- Wave paths from slits -->
-        <path d="M 144 82 Q 200 82, 260 82 Q 320 82, 380 82" fill="none" stroke="url(#beamGrad)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
-        <path d="M 144 197 Q 200 197, 260 197 Q 320 197, 380 197" fill="none" stroke="url(#beamGrad)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
-        <!-- Interference arcs -->
-        <ellipse cx="260" cy="140" rx="80" ry="60" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.2"/>
-        <ellipse cx="260" cy="140" rx="60" ry="45" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.2"/>
-        <ellipse cx="260" cy="140" rx="40" ry="30" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.2"/>
-        <!-- Screen with interference pattern -->
-        <rect x="380" y="40" width="2" height="200" fill="#5a6a9a" opacity="0.5"/>
-        <!-- Bright bands on screen -->
-        <circle cx="380" cy="90" r="3" fill="#e0c878" opacity="0.6" filter="url(#dsGlow)"/>
-        <circle cx="380" cy="115" r="2" fill="#c4a855" opacity="0.4"/>
-        <circle cx="380" cy="140" r="4" fill="#e0c878" opacity="0.8" filter="url(#dsGlow)"/>
-        <circle cx="380" cy="165" r="2" fill="#c4a855" opacity="0.4"/>
-        <circle cx="380" cy="190" r="3" fill="#e0c878" opacity="0.6" filter="url(#dsGlow)"/>
-        <text x="380" y="255" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.6">INTERFERENCE</text>
-        <!-- Single electron traveling -->
-        <circle cx="100" cy="140" r="2.5" fill="#e0c878" opacity="0.9">
-          <animate attributeName="cx" values="40;140;260;380" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.9;0.7;0.5;0.3" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <!-- Labels -->
-        <text x="260" y="275" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="9" letter-spacing="0.2em" opacity="0.5">WAVE BEHAVIOR · NO DETECTOR</text>
-        <!-- Corner marks -->
-        <g stroke="#5a6a9a" stroke-width="0.4" opacity="0.15" stroke-linecap="round">
-          <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
-          <line x1="405" y1="15" x2="385" y2="15"/><line x1="405" y1="15" x2="405" y2="35"/>
-          <line x1="15" y1="265" x2="35" y2="265"/><line x1="15" y1="265" x2="15" y2="245"/>
-          <line x1="405" y1="265" x2="385" y2="265"/><line x1="405" y1="265" x2="405" y2="245"/>
-        </g>
-      </svg>
-      <div class="diagram-card-caption">A single electron, fired alone, passes through both slits simultaneously and interferes with itself — creating an interference pattern of bright and dark bands.</div>
-    </div>
-
-    <p>But the strangeness does not end there. The <strong>delayed-choice</strong> experiments of John Wheeler show that you can decide <em>after</em> the electron has passed the slits whether to measure which path it took. The decision, made after the fact, still determines the result. The electron seems to "know" in advance whether you will ask the question. Or rather: the question you ask determines what the electron "was" all along.</p>
-
-    <p>This is not a trick of language. It is the empirical result of decades of careful experiment. The electron does not have a hidden path that we merely fail to detect. Bell's theorem and the Aspect experiments have ruled out "local hidden variables" — the idea that the electron has a definite but unknown state before measurement. The superposition is not a description of our ignorance. It is, according to the standard formulation, the complete and final description of the physical reality.</p>
-
-    <!-- DIAGRAM: DELAYED CHOICE -->
-    <div class="diagram-card fade-in">
-      <div class="diagram-card-label">Diagram · Delayed-Choice Experiment</div>
-      <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="dcGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <linearGradient id="choiceBeam" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#e0c878" stop-opacity="0.8"/>
-            <stop offset="50%" stop-color="#c4a855" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#7a8aba" stop-opacity="0.2"/>
+          <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#5a6a9a" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#7a8aba" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
           </linearGradient>
         </defs>
-        <!-- Beam splitter -->
-        <rect x="120" y="100" width="4" height="80" fill="#5a6a9a" opacity="0.6" transform="rotate(45 122 140)"/>
-        <text x="122" y="90" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.6">BEAM SPLITTER</text>
-        <!-- Path A (upper) -->
-        <line x1="124" y1="100" x2="260" y2="60" stroke="url(#choiceBeam)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
-        <!-- Path B (lower) -->
-        <line x1="124" y1="180" x2="260" y2="220" stroke="url(#choiceBeam)" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
-        <!-- Second beam splitter (optional) -->
-        <rect x="260" y="60" width="4" height="160" fill="#5a6a9a" opacity="0.4" transform="rotate(45 262 140)"/>
-        <text x="262" y="50" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.5">SECOND SPLITTER</text>
-        <!-- Detectors -->
-        <circle cx="340" cy="80" r="6" fill="#e0c878" opacity="0.6" filter="url(#dcGlow)"/>
-        <circle cx="340" cy="200" r="6" fill="#e0c878" opacity="0.6" filter="url(#dcGlow)"/>
-        <text x="340" y="100" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.6">D1</text>
-        <text x="340" y="220" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.6">D2</text>
-        <!-- Photon -->
-        <circle cx="80" cy="140" r="2.5" fill="#e0c878" opacity="0.9">
-          <animate attributeName="cx" values="80;122;260;340" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="140;140;80;80" dur="3s" repeatCount="indefinite"/>
+        <!-- Central superposition cloud -->
+        <circle cx="100" cy="100" r="45" fill="url(#superpositionGrad)" opacity="0.6">
+          <animate attributeName="r" values="45;50;45" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0.8;0.6" dur="4s" repeatCount="indefinite"/>
         </circle>
-        <!-- Choice indicator -->
-        <rect x="240" y="235" width="40" height="16" rx="4" fill="none" stroke="#c4a855" stroke-width="0.6" opacity="0.5"/>
-        <text x="260" y="246" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.7">CHOICE</text>
-        <!-- Labels -->
-        <text x="80" y="165" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.6">PHOTON</text>
-        <text x="210" y="20" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="9" letter-spacing="0.2em" opacity="0.5">THE CHOICE IS MADE AFTER THE PHOTON HAS PASSED</text>
-        <!-- Corner marks -->
-        <g stroke="#5a6a9a" stroke-width="0.4" opacity="0.15" stroke-linecap="round">
-          <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
-          <line x1="405" y1="15" x2="385" y2="15"/><line x1="405" y1="15" x2="405" y2="35"/>
-          <line x1="15" y1="245" x2="35" y2="245"/><line x1="15" y1="245" x2="15" y2="225"/>
-          <line x1="405" y1="245" x2="385" y2="245"/><line x1="405" y1="245" x2="405" y2="225"/>
+        <circle cx="100" cy="100" r="35" fill="none" stroke="#7a8aba" stroke-width="0.5" opacity="0.3">
+          <animate attributeName="r" values="35;40;35" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="25" fill="none" stroke="#8a9ab8" stroke-width="0.3" opacity="0.2">
+          <animate attributeName="r" values="25;30;25" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Wavefunction rings -->
+        <circle cx="100" cy="100" r="65" fill="none" stroke="#5a6a9a" stroke-width="0.4" opacity="0.2">
+          <animate attributeName="r" values="65;70;65" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.2;0.35;0.2" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.15">
+          <animate attributeName="r" values="80;85;80" dur="7s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.15;0.25;0.15" dur="7s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Wave interference patterns -->
+        <g opacity="0.3">
+          <path d="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" fill="none" stroke="url(#waveGrad)" stroke-width="0.8" stroke-linecap="round">
+            <animate attributeName="d" values="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100;M 30 100 Q 50 115, 70 100 Q 90 85, 110 100 Q 130 115, 150 100 Q 170 85, 190 100;M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <path d="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" fill="none" stroke="url(#waveGrad)" stroke-width="0.6" stroke-linecap="round" transform="rotate(60 100 100)">
+            <animate attributeName="d" values="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100;M 30 100 Q 50 115, 70 100 Q 90 85, 110 100 Q 130 115, 150 100 Q 170 85, 190 100;M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" dur="3s" begin="1s" repeatCount="indefinite"/>
+          </path>
+          <path d="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" fill="none" stroke="url(#waveGrad)" stroke-width="0.6" stroke-linecap="round" transform="rotate(120 100 100)">
+            <animate attributeName="d" values="M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100;M 30 100 Q 50 115, 70 100 Q 90 85, 110 100 Q 130 115, 150 100 Q 170 85, 190 100;M 30 100 Q 50 85, 70 100 Q 90 115, 110 100 Q 130 85, 150 100 Q 170 115, 190 100" dur="3s" begin="2s" repeatCount="indefinite"/>
+          </path>
+        </g>
+        <!-- Central point — the unmeasured potential -->
+        <circle cx="100" cy="100" r="4" fill="#e0c878" opacity="0.8" filter="url(#qGlow)">
+          <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.8;0.5;0.8" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="1.5" fill="#fff" opacity="0.5"/>
+        <!-- Orbiting particles in superposition -->
+        <g opacity="0.5">
+          <circle cx="100" cy="55" r="2.5" fill="#c4a855" opacity="0.7">
+            <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="100" cy="55" r="2" fill="#7a8aba" opacity="0.6">
+            <animateTransform attributeName="transform" type="rotate" from="120 100 100" to="480 100 100" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="100" cy="55" r="1.8" fill="#e0c878" opacity="0.5">
+            <animateTransform attributeName="transform" type="rotate" from="240 100 100" to="600 100 100" dur="8s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <!-- Radiating lines -->
+        <g stroke="#c4a855" stroke-width="0.25" opacity="0.15" stroke-linecap="round">
+          <line x1="100" y1="5" x2="100" y2="15"/>
+          <line x1="100" y1="195" x2="100" y2="185"/>
+          <line x1="5" y1="100" x2="15" y2="100"/>
+          <line x1="195" y1="100" x2="185" y2="100"/>
+          <line x1="32" y1="32" x2="40" y2="40"/>
+          <line x1="168" y1="168" x2="160" y2="160"/>
+          <line x1="32" y1="168" x2="40" y2="160"/>
+          <line x1="168" y1="32" x2="160" y2="40"/>
+        </g>
+        <!-- Diamond markers -->
+        <g fill="#c4a855" opacity="0.3">
+          <rect x="98" y="3" width="4" height="4" transform="rotate(45 100 5)"/>
+          <rect x="98" y="193" width="4" height="4" transform="rotate(45 100 195)"/>
+          <rect x="3" y="98" width="4" height="4" transform="rotate(45 5 100)"/>
+          <rect x="193" y="98" width="4" height="4" transform="rotate(45 195 100)"/>
         </g>
       </svg>
-      <div class="diagram-card-caption">In Wheeler's delayed-choice experiment, the decision to insert a second beam splitter — determining whether the photon took one path or both — is made after the photon has already passed the first splitter. The choice retroactively determines what the photon "was."</div>
     </div>
 
-    <p>What are we to make of this? The interpretations of quantum mechanics are not competing theories in the usual scientific sense. They make the same predictions for all experiments. They are, rather, <strong>competing metaphysics</strong> — different ways of understanding what the mathematics means, what kind of reality it describes, what the relationship is between the observer and the observed.</p>
-
-    <h3 id="interpretations">The Interpretations — Four Voices</h3>
-    <p>The mathematics of quantum mechanics is fixed. The meaning is not. Here are four of the most influential interpretations, each offering a different metaphysics of the unmeasured ground.</p>
-
-    <div class="voice-card fade-in">
-      <div class="voice-card-header">
-        <div class="voice-card-icon">C</div>
-        <h4 class="voice-card-title">Copenhagen · The Instrumentalist View</h4>
-      </div>
-      <p class="voice-card-body"><strong>Niels Bohr and Werner Heisenberg.</strong> The wavefunction is not a description of reality but a tool for prediction. It encodes the probabilities of measurement outcomes, nothing more. The "quantum realm" has no independent existence; it is defined only by the classical apparatus that measures it. The boundary between quantum and classical is movable but unavoidable. There is no deeper reality to be found. As Bohr famously said: "There is no quantum world. There is only an abstract quantum physical description."</p>
+    <h1 class="hero-title">The Unmeasured Ground</h1>
+    <p class="hero-subtitle">Superposition · Wavefunction · The State Before Observation</p>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-line"></div>
     </div>
-
-    <div class="voice-card fade-in">
-      <div class="voice-card-header">
-        <div class="voice-card-icon">M</div>
-        <h4 class="voice-card-title">Many-Worlds · The Realist View</h4>
-      </div>
-      <p class="voice-card-body"><strong>Hugh Everett III (1957).</strong> The wavefunction is real, and it never collapses. Every quantum measurement causes the universe to branch into parallel worlds, one for each possible outcome. You see the electron here; your other self sees it there. Both are equally real. The appearance of collapse is an illusion created by the branching of consciousness. The universe is an unimaginably vast tree of worlds, all equally actual, all evolving deterministically according to the Schrödinger equation. No special role for the observer. No mystery — just an infinity of worlds.</p>
+    <p class="hero-quote">"The electron is not a particle, not a wave, but something more subtle — a probability amplitude that encompasses all possibilities until the act of observation forces it to choose."</p>
+    <p class="hero-quote-attr">— Richard Feynman · The Character of Physical Law</p>
+    <div class="hero-scroll-cue" onclick="document.getElementById('superposition').scrollIntoView({behavior:'smooth'})">
+      <span>Enter</span><div class="scroll-line"></div>
     </div>
+  </header>
 
-    <div class="voice-card fade-in">
-      <div class="voice-card-header">
-        <div class="voice-card-icon">Q</div>
-        <h4 class="voice-card-title">QBism · The Agent-Centric View</h4>
-      </div>
-      <p class="voice-card-body"><strong>Christopher Fuchs and collaborators.</strong> The wavefunction encodes <em>your</em> beliefs as an agent navigating an uncertain world. It is not about the electron; it is about what you should expect. Quantum mechanics is a user's manual for an agent embedded in a world that does not reduce to objective states. The "collapse" is simply the update of your beliefs upon gaining new information. The universe is not a wavefunction; it is a set of experiences, and the wavefunction is how we reason about them. This is the most radical interpretation: it makes quantum mechanics about <em>us</em>, not about the world.</p>
+  <!-- SECTION: SUPERPOSITION -->
+  <section class="content-section fade-in" id="superposition">
+    <div class="section-header">
+      <div class="section-separator"></div>
+      <p class="section-eyemark">The Quantum Mystery</p>
+      <h2><span class="text-reveal"><span class="text-reveal-inner">What Exists Before Observation?</span></span></h2>
+      <p>Superposition · The Wavefunction · The Double-Slit Experiment</p>
     </div>
+    <div class="content-essay fade-in">
+      <p class="content-introduction"><strong>Quantum mechanics</strong> is the most precisely tested theory in the history of science. It predicts the magnetic moment of the electron to one part in a trillion. It powers the transistors in your phone, the lasers in your eyes, the MRI that reads your brain. And yet — after a century of debate — we still do not agree on what it <em>means</em>. The mathematics is unambiguous. The interpretation is not.</p>
 
-    <div class="voice-card fade-in">
-      <div class="voice-card-header">
-        <div class="voice-card-icon">R</div>
-        <h4 class="voice-card-title">Relational QM · The Network View</h4>
+      <p>The heart of the mystery is <span class="physics-term" title="A quantum state in which a particle exists in multiple states simultaneously until measured">superposition</span> — the claim that a quantum system can exist in multiple states at once, not as a mixture (like a coin spinning in the air) but as a genuine coexistence of all possibilities. An electron is not "here or there" before measurement. It is here <em>and</em> there, in a state described by a <span class="physics-term" title="A mathematical description of the quantum state of a system; its square gives the probability density">wavefunction</span> that assigns probability amplitudes to every possible outcome.</p>
+
+      <p>This is not a limitation of our knowledge. It is not that we don't know where the electron is. According to the standard formulation, the electron <em>has no definite position</em> until a measurement is performed. The wavefunction is not a description of our ignorance; it is the complete description of the physical system. Everything that can be known about the electron is encoded in its wavefunction. And the wavefunction says: it is in many places at once.</p>
+
+      <div class="scripture-panels fade-in">
+        <div class="scripture-panel">
+          <div class="scripture-panel-label">Quantum Mechanics · Postulate I</div>
+          <p class="scripture-panel-text">"The state of a quantum system is completely specified by its wavefunction Ψ(x,t), which contains all the information that can be known about the system. The wavefunction evolves deterministically according to the Schrödinger equation."</p>
+          <p class="scripture-panel-ref">— Standard Formulation</p>
+        </div>
+        <div class="scripture-panel">
+          <div class="scripture-panel-label">Chandogya Upanishad · 6.2.1</div>
+          <p class="scripture-panel-text">"In the beginning, my dear, this world was just Being, one only, without a second. To be sure, some people say: 'In the beginning this world was just non-being, one only, without a second; from that non-being, being was produced.' But how could that be?"</p>
+          <p class="scripture-panel-ref">— Uddalaka to Svetaketu</p>
+        </div>
       </div>
-      <p class="voice-card-body"><strong>Carlo Rovelli.</strong> There is no absolute quantum state. An electron has a position relative to a detector, a momentum relative to another apparatus. Properties are always <em>relations</em>, never intrinsic. The universe is a network of events, not a container of objects. This echoes the Buddhist doctrine of <em>pratītyasamutpāda</em> (dependent origination) and the relational metaphysics of Leibniz. The "state" is not a property of the system but a property of the <em>relation</em> between system and observer. Remove the observer, and you remove not the electron but the <em>position</em> of the electron.</p>
+
+      <h3>The Double-Slit Experiment — A Meditation</h3>
+      <p>Imagine a wall with two narrow slits. Behind it, a screen. You fire electrons one at a time — single particles, separated by seconds, each traveling alone through the apparatus. Common sense says each electron must pass through either the left slit or the right slit. The screen should show two bands, corresponding to the two paths.</p>
+
+      <p>It does not. The screen shows an <strong>interference pattern</strong> — alternating bright and dark bands, the signature of waves passing through both slits simultaneously and interfering with themselves. The electron, fired alone, behaves as if it passes through both slits at once. It interferes with itself. The pattern on the screen is the mathematical superposition of two wavefunctions — one from each slit — adding and canceling.</p>
+
+      <p>Now place a detector at one slit. Ask: which path did the electron take? The moment you know, the interference pattern vanishes. The screen shows two bands — the classical result. The act of observation, of acquiring which-path information, destroys the superposition. The wavefunction "collapses" from a superposition of both paths to a definite single path.</p>
+
+      <!-- DIAGRAM: DOUBLE-SLIT - Premium -->
+      <div class="diagram-card fade-in">
+        <div class="diagram-card-label">Diagram · The Double-Slit Experiment</div>
+        <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="dsGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#e0c878" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#7a8aba" stop-opacity="0.2"/>
+            </linearGradient>
+            <radialGradient id="interferenceGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e0c878" stop-opacity="0.3"/>
+              <stop offset="30%" stop-color="#c4a855" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#5a6a9a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- Source -->
+          <circle cx="40" cy="140" r="8" fill="#e0c878" opacity="0.9" filter="url(#dsGlow)"/>
+          <text x="40" y="165" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="9" letter-spacing="0.15em" opacity="0.8">SOURCE</text>
+          <!-- Barrier with two slits -->
+          <rect x="140" y="40" width="4" height="85" fill="#5a6a9a" opacity="0.7"/>
+          <rect x="140" y="155" width="4" height="85" fill="#5a6a9a" opacity="0.7"/>
+          <text x="142" y="30" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.7">BARRIER</text>
+          <!-- Wave paths from slits -->
+          <path d="M 144 82 Q 200 82, 260 82 Q 320 82, 380 82" fill="none" stroke="url(#beamGrad)" stroke-width="1.8" opacity="0.6" stroke-linecap="round"/>
+          <path d="M 144 197 Q 200 197, 260 197 Q 320 197, 380 197" fill="none" stroke="url(#beamGrad)" stroke-width="1.8" opacity="0.6" stroke-linecap="round"/>
+          <!-- Interference arcs -->
+          <ellipse cx="260" cy="140" rx="80" ry="60" fill="none" stroke="#7a8aba" stroke-width="0.6" opacity="0.3"/>
+          <ellipse cx="260" cy="140" rx="60" ry="45" fill="none" stroke="#7a8aba" stroke-width="0.6" opacity="0.3"/>
+          <ellipse cx="260" cy="140" rx="40" ry="30" fill="none" stroke="#7a8aba" stroke-width="0.6" opacity="0.3"/>
+          <!-- Screen with interference pattern -->
+          <rect x="380" y="40" width="2" height="200" fill="#5a6a9a" opacity="0.6"/>
+          <!-- Bright bands on screen -->
+          <circle cx="380" cy="90" r="3.5" fill="#e0c878" opacity="0.8" filter="url(#dsGlow)"/>
+          <circle cx="380" cy="115" r="2.5" fill="#c4a855" opacity="0.6"/>
+          <circle cx="380" cy="140" r="4.5" fill="#e0c878" opacity="0.9" filter="url(#dsGlow)"/>
+          <circle cx="380" cy="165" r="2.5" fill="#c4a855" opacity="0.6"/>
+          <circle cx="380" cy="190" r="3.5" fill="#e0c878" opacity="0.8" filter="url(#dsGlow)"/>
+          <text x="380" y="255" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.7">INTERFERENCE</text>
+          <!-- Single electron traveling -->
+          <circle cx="100" cy="140" r="3" fill="#e0c878" opacity="0.9">
+            <animate attributeName="cx" values="40;140;260;380" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.9;0.7;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Labels -->
+          <text x="260" y="275" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="9" letter-spacing="0.2em" opacity="0.6">WAVE BEHAVIOR · NO DETECTOR</text>
+          <!-- Corner marks -->
+          <g stroke="#5a6a9a" stroke-width="0.6" opacity="0.2" stroke-linecap="round">
+            <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
+            <line x1="405" y1="15" x2="385" y2="15"/><line x1="405" y1="15" x2="405" y2="35"/>
+            <line x1="15" y1="265" x2="35" y2="265"/><line x1="15" y1="265" x2="15" y2="245"/>
+            <line x1="405" y1="265" x2="385" y2="265"/><line x1="405" y1="265" x2="405" y2="245"/>
+          </g>
+        </svg>
+        <div class="diagram-card-caption">A single electron, fired alone, passes through both slits simultaneously and interferes with itself — creating an interference pattern of bright and dark bands.</div>
+      </div>
+
+      <p>But the strangeness does not end there. The <strong>delayed-choice</strong> experiments of John Wheeler show that you can decide <em>after</em> the electron has passed the slits whether to measure which path it took. The decision, made after the fact, still determines the result. The electron seems to "know" in advance whether you will ask the question. Or rather: the question you ask determines what the electron "was" all along.</p>
+
+      <p>This is not a trick of language. It is the empirical result of decades of careful experiment. The electron does not have a hidden path that we merely fail to detect. Bell's theorem and the Aspect experiments have ruled out "local hidden variables" — the idea that the electron has a definite but unknown state before measurement. The superposition is not a description of our ignorance. It is, according to the standard formulation, the complete and final description of the physical reality.</p>
+
+      <!-- DIAGRAM: DELAYED CHOICE - Premium -->
+      <div class="diagram-card fade-in">
+        <div class="diagram-card-label">Diagram · Delayed-Choice Experiment</div>
+        <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="dcGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <linearGradient id="choiceBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#e0c878" stop-opacity="0.8"/>
+              <stop offset="50%" stop-color="#c4a855" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#7a8aba" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+          <!-- Beam splitter -->
+          <rect x="120" y="100" width="4" height="80" fill="#5a6a9a" opacity="0.7" transform="rotate(45 122 140)"/>
+          <text x="122" y="90" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.7">BEAM SPLITTER</text>
+          <!-- Path A (upper) -->
+          <line x1="124" y1="100" x2="260" y2="60" stroke="url(#choiceBeam)" stroke-width="1.8" opacity="0.6" stroke-linecap="round"/>
+          <!-- Path B (lower) -->
+          <line x1="124" y1="180" x2="260" y2="220" stroke="url(#choiceBeam)" stroke-width="1.8" opacity="0.6" stroke-linecap="round"/>
+          <!-- Second beam splitter (optional) -->
+          <rect x="260" y="60" width="4" height="160" fill="#5a6a9a" opacity="0.5" transform="rotate(45 262 140)"/>
+          <text x="262" y="50" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.6">SECOND SPLITTER</text>
+          <!-- Detectors -->
+          <circle cx="340" cy="80" r="7" fill="#e0c878" opacity="0.8" filter="url(#dcGlow)"/>
+          <circle cx="340" cy="200" r="7" fill="#e0c878" opacity="0.8" filter="url(#dcGlow)"/>
+          <text x="340" y="100" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.7">D1</text>
+          <text x="340" y="220" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.7">D2</text>
+          <!-- Photon -->
+          <circle cx="80" cy="140" r="3" fill="#e0c878" opacity="0.9">
+            <animate attributeName="cx" values="80;122;260;340" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="cy" values="140;140;80;80" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Choice indicator -->
+          <rect x="240" y="235" width="40" height="16" rx="4" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.6"/>
+          <text x="260" y="246" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.8">CHOICE</text>
+          <!-- Labels -->
+          <text x="80" y="165" text-anchor="middle" fill="#8a9ab8" font-family="Cinzel" font-size="8" letter-spacing="0.15em" opacity="0.7">PHOTON</text>
+          <text x="210" y="20" text-anchor="middle" fill="#5a6a9a" font-family="Cinzel" font-size="9" letter-spacing="0.2em" opacity="0.6">THE CHOICE IS MADE AFTER THE PHOTON HAS PASSED</text>
+          <!-- Corner marks -->
+          <g stroke="#5a6a9a" stroke-width="0.6" opacity="0.2" stroke-linecap="round">
+            <line x1="15" y1="15" x2="35" y2="15"/><line x1="15" y1="15" x2="15" y2="35"/>
+            <line x1="405" y1="15" x2="385" y2="15"/><line x1="405" y1="15" x2="405" y2="35"/>
+            <line x1="15" y1="245" x2="35" y2="245"/><line x1="15" y1="245" x2="15" y2="225"/>
+            <line x1="405" y1="245" x2="385" y2="245"/><line x1="405" y1="245" x2="405" y2="225"/>
+          </g>
+        </svg>
+        <div class="diagram-card-caption">In Wheeler's delayed-choice experiment, the decision to insert a second beam splitter — determining whether the photon took one path or both — is made after the photon has already passed the first splitter. The choice retroactively determines what the photon "was."</div>
+      </div>
+
+      <p>What are we to make of this? The interpretations of quantum mechanics are not competing theories in the usual scientific sense. They make the same predictions for all experiments. They are, rather, <strong>competing metaphysics</strong> — different ways of understanding what the mathematics means, what kind of reality it describes, what the relationship is between the observer and the observed.</p>
+
+      <h3 id="interpretations">The Interpretations — Four Voices</h3>
+      <p>The mathematics of quantum mechanics is fixed. The meaning is not. Here are four of the most influential interpretations, each offering a different metaphysics of the unmeasured ground.</p>
+
+      <div class="voice-card fade-in">
+        <div class="voice-card-header">
+          <div class="voice-card-icon">C</div>
+          <h4 class="voice-card-title">Copenhagen · The Instrumentalist View</h4>
+        </div>
+        <p class="voice-card-body"><strong>Niels Bohr and Werner Heisenberg.</strong> The wavefunction is not a description of reality but a tool for prediction. It encodes the probabilities of measurement outcomes, nothing more. The "quantum realm" has no independent existence; it is defined only by the classical apparatus that measures it. The boundary between quantum and classical is movable but unavoidable. There is no deeper reality to be found. As Bohr famously said: "There is no quantum world. There is only an abstract quantum physical description."</p>
+      </div>
+
+      <div class="voice-card fade-in">
+        <div class="voice-card-header">
+          <div class="voice-card-icon">M</div>
+          <h4 class="voice-card-title">Many-Worlds · The Realist View</h4>
+        </div>
+        <p class="voice-card-body"><strong>Hugh Everett III (1957).</strong> The wavefunction is real, and it never collapses. Every quantum measurement causes the universe to branch into parallel worlds, one for each possible outcome. You see the electron here; your other self sees it there. Both are equally real. The appearance of collapse is an illusion created by the branching of consciousness. The universe is an unimaginably vast tree of worlds, all equally actual, all evolving deterministically according to the Schrödinger equation. No special role for the observer. No mystery — just an infinity of worlds.</p>
+      </div>
+
+      <div class="voice-card fade-in">
+        <div class="voice-card-header">
+          <div class="voice-card-icon">Q</div>
+          <h4 class="voice-card-title">QBism · The Agent-Centric View</h4>
+        </div>
+        <p class="voice-card-body"><strong>Christopher Fuchs and collaborators.</strong> The wavefunction encodes <em>your</em> beliefs as an agent navigating an uncertain world. It is not about the electron; it is about what you should expect. Quantum mechanics is a user's manual for an agent embedded in a world that does not reduce to objective states. The "collapse" is simply the update of your beliefs upon gaining new information. The universe is not a wavefunction; it is a set of experiences, and the wavefunction is how we reason about them. This is the most radical interpretation: it makes quantum mechanics about <em>us</em>, not about the world.</p>
+      </div>
+
+      <div class="voice-card fade-in">
+        <div class="voice-card-header">
+          <div class="voice-card-icon">R</div>
+          <h4 class="voice-card-title">Relational QM · The Network View</h4>
+        </div>
+        <p class="voice-card-body"><strong>Carlo Rovelli.</strong> There is no absolute quantum state. An electron has a position relative to a detector, a momentum relative to another apparatus. Properties are always <em>relations</em>, never intrinsic. The universe is a network of events, not a container of objects. This echoes the Buddhist doctrine of <em>pratītyasamutpāda</em> (dependent origination) and the relational metaphysics of Leibniz. The "state" is not a property of the system but a property of the <em>relation</em> between system and observer. Remove the observer, and you remove not the electron but the <em>position</em> of the electron.</p>
+      </div>
+
+      <div class="scripture-panels fade-in margin-top">
+        <div class="scripture-panel">
+          <div class="scripture-panel-label">Erwin Schrödinger · 1926</div>
+          <p class="scripture-panel-text">"If we are going to be so austere as to describe a physical system by a wavefunction, then we must accept that the system can be in a superposition of states. But if a system can be in a superposition, then a cat can be both alive and dead. And that is absurd."</p>
+          <p class="scripture-panel-ref">— The Schrödinger's Cat Paradox</p>
+        </div>
+        <div class="scripture-panel">
+          <div class="scripture-panel-label">Niels Bohr · 1927</div>
+          <p class="scripture-panel-text">"The quantum postulate implies that any observation of atomic phenomena will involve an interaction with the agency of observation not to be neglected. Consequently, evidence obtained under different experimental conditions cannot be comprehended within a single picture."</p>
+          <p class="scripture-panel-ref">— The Complementarity Principle</p>
+        </div>
+      </div>
+
+      <h3 id="mystical">The Mystical Parallels — The Unmeasured in Contemplative Traditions</h3>
+      <p>The superposition is not merely a physical curiosity. It is a <strong>metaphysical threshold</strong> — the place where the apparent world dissolves into possibility, where the distinction between "this" and "that" has not yet been drawn. Every mystical tradition has a name for this threshold.</p>
+
+      <h4>Advaita Vedanta — Brahman Before Māyā</h4>
+      <p>In Advaita Vedanta, the ultimate reality is <span class="sanskrit-term" title="The ultimate, unchanging reality; pure consciousness; the non-dual ground of all being">Brahman</span> — pure consciousness, without attributes, without division. The world of multiplicity is <span class="sanskrit-term" title="The power of illusion that makes the one appear as many; the superimposition of the world on Brahman">māyā</span>, a superimposition upon the non-dual ground. The individual self (<em>ātman</em>) is non-different from Brahman; the appearance of separation is the fundamental ignorance (<em>avidyā</em>).</p>
+
+      <p>The superposition is the <strong>unmanifest Brahman</strong> — the state before vivarta (superimposition), before the wavefunction "collapses" into the apparent world. The electron in superposition is not "here or there"; Brahman is not "this or that." The measurement is the act of <em>vivarta</em> — the superimposition of name and form upon the formless. The <em>jñāni</em> (knower) is the one who sees through the superimposition, who recognizes that the multiplicity was never real, that the superposition was always the truth.</p>
+
+      <blockquote>
+        <p>"Brahman is the only reality, the world is illusion, and the individual soul is non-different from Brahman."</p>
+        <cite>— Adi Shankara · Brahma Sutra Bhashya</cite>
+      </blockquote>
+
+      <h4>Kabbalah — Ein Sof Before Tzimtzum</h4>
+      <p>In Lurianic Kabbalah, the Infinite (<span class="hebrew-term" title="The Infinite; the boundless; God as unlimited, beyond all attributes and names">Ein Sof</span>) is the ground of all being, prior to all differentiation. The <span class="hebrew-term" title="Contraction; withdrawal; the primordial act of self-limitation by which Ein Sof creates the space for finite existence">Tzimtzum</span> is the primordial contraction — the Infinite withdrawing from a point within itself to create the void in which the finite world can appear. The wavefunction is the Ein Sof in its uncontracted state: infinite possibility, all states coexisting, no distinction drawn.</p>
+
+      <p>The "collapse" of the wavefunction is the Tzimtzum in microcosm — the drawing of a boundary, the creation of a "this" by excluding a "that." Every measurement is a repetition of the primordial contraction. The <em>tzimtzum</em> is not a one-time event but the ongoing process by which the infinite becomes finite, the unmeasured becomes measured, the superposition becomes the world.</p>
+
+      <blockquote>
+        <p>"Before the creation of the world, the Infinite filled all. When it arose in His simple will to create worlds, He constricted His infinity, and a void was formed."</p>
+        <cite>— Etz Chaim · Introduction</cite>
+      </blockquote>
+
+      <h4>Jesus' Teaching — "Before Abraham Was, I Am"</h4>
+      <p>In the Gospel of John, Jesus declares: "Before Abraham was, I am" (John 8:58). The Greek is <em>prin Abraham genesthai, egō eimi</em> — not "I was" but "I am," the eternal present, the name of God revealed to Moses at the burning bush. This is the unconditioned "I" prior to all particular identities, prior to all historical becoming.</p>
+
+      <p>The superposition is the "I am" before the world divides into "I am this" and "I am that." The measurement is the fall into particularity — the "I am a carpenter," "I am a Jew," "I am the Son of Man." The mystical teaching is that beneath all these particular identities, the unconditioned "I am" remains. The electron does not lose its superposition by being measured; it simply <em>appears</em> to have a definite state. The mystic does not lose the infinite by being born; she simply <em>appears</em> to be a finite self.</p>
+
+      <blockquote>
+        <p>"The light shines in the darkness, and the darkness has not comprehended it."</p>
+        <cite>— John 1:5</cite>
+      </blockquote>
+
+      <h4>Gnosticism — The Pleroma Before the Fall</h4>
+      <p>In Gnostic cosmology, the <span class="hebrew-term" title="The fullness; the totality of divine powers and aeons; the realm of perfect unity before the fall">Pleroma</span> (Fullness) is the realm of the divine Aeons — perfect, undifferentiated, complete. The "fall" is the emergence of deficiency, the creation of the material world by the <span class="hebrew-term" title="The demiurge; the creator god of the material world; often identified with the God of the Old Testament; a lower power who mistakenly believes himself to be the supreme God">Demiurge</span> (Yaldabaoth), who mistakenly believes himself to be the supreme God. The material world is the "collapse" of the Pleroma into multiplicity — the superposition reduced to a single, deficient outcome.</p>
+
+      <p>The Gnostic's task is <em>anamnesis</em> (recollection) — the recognition that the material world is not the true reality, that the Pleroma remains intact behind the illusion of separation. The "measurement" is the Demiurge's error; the "superposition" is the truth that the Gnostic recovers. The scattered sparks of the Pleroma are the entangled remnants of the original unity, waiting to be gathered and returned.</p>
+
+      <blockquote>
+        <p>"The kingdom is inside you and outside you. When you know yourselves, then you will be known, and you will understand that you are children of the living Father. But if you do not know yourselves, then you live in poverty, and you are the poverty."</p>
+        <cite>— Gospel of Thomas · Logion 3</cite>
+      </blockquote>
+
+      <!-- COMPARATIVE TABLE -->
+      <div class="diagram-card fade-in">
+        <div class="diagram-card-label">Comparative Table · The Unmeasured Ground</div>
+        <div class="comparative-table-wrapper">
+          <table class="comparative-table">
+            <thead>
+              <tr>
+                <th>Tradition</th>
+                <th>The Unmeasured</th>
+                <th>The Act of Measurement</th>
+                <th>The Return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Quantum Mechanics</strong></td>
+                <td>Superposition — all states coexist as probability amplitudes</td>
+                <td>Measurement "collapses" the wavefunction to a definite outcome</td>
+                <td>Reversibility in principle; the superposition can be restored</td>
+              </tr>
+              <tr>
+                <td><strong>Advaita Vedanta</strong></td>
+                <td>Brahman — pure consciousness, non-dual, without attributes</td>
+                <td>Māyā (vivarta) superimposes name and form upon the formless</td>
+                <td>Jñāna (knowledge) dissolves the superimposition; "Brahman alone is real"</td>
+              </tr>
+              <tr>
+                <td><strong>Lurianic Kabbalah</strong></td>
+                <td>Ein Sof — the Infinite, prior to all contraction and differentiation</td>
+                <td>Tzimtzum — the primordial withdrawal that creates the void</td>
+                <td>Tikkun — the repair that restores the vessels and raises the sparks</td>
+              </tr>
+              <tr>
+                <td><strong>Jesus' Teaching</strong></td>
+                <td>"I am" — the unconditioned self prior to all particular identities</td>
+                <td>The fall into "I am this" — the identification with name and form</td>
+                <td>"The kingdom of God is within you" — the return to the unconditioned</td>
+              </tr>
+              <tr>
+                <td><strong>Gnosticism</strong></td>
+                <td>Pleroma — the Fullness, the undifferentiated realm of the Aeons</td>
+                <td>The Demiurge's error — the false creation of the material world</td>
+                <td>Anamnesis — the recollection that returns the scattered sparks to the Pleroma</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h4>The "Shut Up and Calculate" Interlude</h4>
+      <p>Not all physicists engage with interpretation. Many adopt what David Mermin called the <strong>"shut up and calculate"</strong> approach — use the mathematics, make predictions, verify experiments, and leave the metaphysics to philosophers. This is a respectable position. Quantum mechanics works. It is the most successful theory in the history of science. Why worry about what it "means"?</p>
+
+      <p>But the question does not go away. The mathematics is not self-interpreting. Every physicist, in choosing how to teach the theory, in deciding what language to use, in framing the experiments, is making interpretive commitments. The "shut up and calculate" physicist is not avoiding interpretation; she is adopting a <em>pragmatic</em> interpretation — the mathematics is a tool, and tools do not need to be understood, only used.</p>
+
+      <p>The contemplative traditions would recognize this as a form of <em>vairāgya</em> (dispassion) — the refusal to be caught in the net of concepts. But they would also warn that the refusal to ask the question can become a refusal to see. The physicist who calculates without asking what the calculation means is like the mystic who meditates without asking what the meditation reveals. Both are valid practices. Both have limits.</p>
     </div>
+  </section>
 
-    <div class="scripture-panels fade-in margin-top">
-      <div class="scripture-panel">
-        <div class="scripture-panel-label">Erwin Schrödinger · 1926</div>
-        <p class="scripture-panel-text">"If we are going to be so austere as to describe a physical system by a wavefunction, then we must accept that the system can be in a superposition of states. But if a system can be in a superposition, then a cat can be both alive and dead. And that is absurd."</p>
-        <p class="scripture-panel-ref">— The Schrödinger's Cat Paradox</p>
-      </div>
-      <div class="scripture-panel">
-        <div class="scripture-panel-label">Niels Bohr · 1927</div>
-        <p class="scripture-panel-text">"The quantum postulate implies that any observation of atomic phenomena will involve an interaction with the agency of observation not to be neglected. Consequently, evidence obtained under different experimental conditions cannot be comprehended within a single picture."</p>
-        <p class="scripture-panel-ref">— The Complementarity Principle</p>
-      </div>
+  <!-- PULLQUOTE -->
+  <div class="pullquote-section fade-in">
+    <div class="pullquote-glow"></div>
+    <div class="pullquote fade-in">
+      <p class="pullquote-text">"I think I can safely say that nobody understands quantum mechanics. Do not keep saying to yourself, if you can possibly avoid it, 'But how can it be like that?' because you will get 'down the drain' into a blind alley from which nobody has yet escaped."</p>
+      <p class="pullquote-attr">— Richard Feynman · The Character of Physical Law (1965)</p>
     </div>
-
-    <h3 id="mystical">The Mystical Parallels — The Unmeasured in Contemplative Traditions</h3>
-    <p>The superposition is not merely a physical curiosity. It is a <strong>metaphysical threshold</strong> — the place where the apparent world dissolves into possibility, where the distinction between "this" and "that" has not yet been drawn. Every mystical tradition has a name for this threshold.</p>
-
-    <h4>Advaita Vedanta — Brahman Before Māyā</h4>
-    <p>In Advaita Vedanta, the ultimate reality is <span class="sanskrit-term" title="The ultimate, unchanging reality; pure consciousness; the non-dual ground of all being">Brahman</span> — pure consciousness, without attributes, without division. The world of multiplicity is <span class="sanskrit-term" title="The power of illusion that makes the one appear as many; the superimposition of the world on Brahman">māyā</span>, a superimposition upon the non-dual ground. The individual self (<em>ātman</em>) is non-different from Brahman; the appearance of separation is the fundamental ignorance (<em>avidyā</em>).</p>
-
-    <p>The superposition is the <strong>unmanifest Brahman</strong> — the state before vivarta (superimposition), before the wavefunction "collapses" into the apparent world. The electron in superposition is not "here or there"; Brahman is not "this or that." The measurement is the act of <em>vivarta</em> — the superimposition of name and form upon the formless. The <em>jñāni</em> (knower) is the one who sees through the superimposition, who recognizes that the multiplicity was never real, that the superposition was always the truth.</p>
-
-    <blockquote>
-      <p>"Brahman is the only reality, the world is illusion, and the individual soul is non-different from Brahman."</p>
-      <cite>— Adi Shankara · Brahma Sutra Bhashya</cite>
-    </blockquote>
-
-    <h4>Kabbalah — Ein Sof Before Tzimtzum</h4>
-    <p>In Lurianic Kabbalah, the Infinite (<span class="hebrew-term" title="The Infinite; the boundless; God as unlimited, beyond all attributes and names">Ein Sof</span>) is the ground of all being, prior to all differentiation. The <span class="hebrew-term" title="Contraction; withdrawal; the primordial act of self-limitation by which Ein Sof creates the space for finite existence">Tzimtzum</span> is the primordial contraction — the Infinite withdrawing from a point within itself to create the void in which the finite world can appear. The wavefunction is the Ein Sof in its uncontracted state: infinite possibility, all states coexisting, no distinction drawn.</p>
-
-    <p>The "collapse" of the wavefunction is the Tzimtzum in microcosm — the drawing of a boundary, the creation of a "this" by excluding a "that." Every measurement is a repetition of the primordial contraction. The <em>tzimtzum</em> is not a one-time event but the ongoing process by which the infinite becomes finite, the unmeasured becomes measured, the superposition becomes the world.</p>
-
-    <blockquote>
-      <p>"Before the creation of the world, the Infinite filled all. When it arose in His simple will to create worlds, He constricted His infinity, and a void was formed."</p>
-      <cite>— Etz Chaim · Introduction</cite>
-    </blockquote>
-
-    <h4>Jesus' Teaching — "Before Abraham Was, I Am"</h4>
-    <p>In the Gospel of John, Jesus declares: "Before Abraham was, I am" (John 8:58). The Greek is <em>prin Abraham genesthai, egō eimi</em> — not "I was" but "I am," the eternal present, the name of God revealed to Moses at the burning bush. This is the unconditioned "I" prior to all particular identities, prior to all historical becoming.</p>
-
-    <p>The superposition is the "I am" before the world divides into "I am this" and "I am that." The measurement is the fall into particularity — the "I am a carpenter," "I am a Jew," "I am the Son of Man." The mystical teaching is that beneath all these particular identities, the unconditioned "I am" remains. The electron does not lose its superposition by being measured; it simply <em>appears</em> to have a definite state. The mystic does not lose the infinite by being born; she simply <em>appears</em> to be a finite self.</p>
-
-    <blockquote>
-      <p>"The light shines in the darkness, and the darkness has not comprehended it."</p>
-      <cite>— John 1:5</cite>
-    </blockquote>
-
-    <h4>Gnosticism — The Pleroma Before the Fall</h4>
-    <p>In Gnostic cosmology, the <span class="hebrew-term" title="The fullness; the totality of divine powers and aeons; the realm of perfect unity before the fall">Pleroma</span> (Fullness) is the realm of the divine Aeons — perfect, undifferentiated, complete. The "fall" is the emergence of deficiency, the creation of the material world by the <span class="hebrew-term" title="The demiurge; the creator god of the material world; often identified with the God of the Old Testament; a lower power who mistakenly believes himself to be the supreme God">Demiurge</span> (Yaldabaoth), who mistakenly believes himself to be the supreme God. The material world is the "collapse" of the Pleroma into multiplicity — the superposition reduced to a single, deficient outcome.</p>
-
-    <p>The Gnostic's task is <em>anamnesis</em> (recollection) — the recognition that the material world is not the true reality, that the Pleroma remains intact behind the illusion of separation. The "measurement" is the Demiurge's error; the "superposition" is the truth that the Gnostic recovers. The scattered sparks of the Pleroma are the entangled remnants of the original unity, waiting to be gathered and returned.</p>
-
-    <blockquote>
-      <p>"The kingdom is inside you and outside you. When you know yourselves, then you will be known, and you will understand that you are children of the living Father. But if you do not know yourselves, then you live in poverty, and you are the poverty."</p>
-      <cite>— Gospel of Thomas · Logion 3</cite>
-    </blockquote>
-
-    <!-- COMPARATIVE TABLE -->
-    <div class="diagram-card fade-in">
-      <div class="diagram-card-label">Comparative Table · The Unmeasured Ground</div>
-      <div class="comparative-table-wrapper">
-        <table class="comparative-table">
-          <thead>
-            <tr>
-              <th>Tradition</th>
-              <th>The Unmeasured</th>
-              <th>The Act of Measurement</th>
-              <th>The Return</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Quantum Mechanics</strong></td>
-              <td>Superposition — all states coexist as probability amplitudes</td>
-              <td>Measurement "collapses" the wavefunction to a definite outcome</td>
-              <td>Reversibility in principle; the superposition can be restored</td>
-            </tr>
-            <tr>
-              <td><strong>Advaita Vedanta</strong></td>
-              <td>Brahman — pure consciousness, non-dual, without attributes</td>
-              <td>Māyā (vivarta) superimposes name and form upon the formless</td>
-              <td>Jñāna (knowledge) dissolves the superimposition; "Brahman alone is real"</td>
-            </tr>
-            <tr>
-              <td><strong>Lurianic Kabbalah</strong></td>
-              <td>Ein Sof — the Infinite, prior to all contraction and differentiation</td>
-              <td>Tzimtzum — the primordial withdrawal that creates the void</td>
-              <td>Tikkun — the repair that restores the vessels and raises the sparks</td>
-            </tr>
-            <tr>
-              <td><strong>Jesus' Teaching</strong></td>
-              <td>"I am" — the unconditioned self prior to all particular identities</td>
-              <td>The fall into "I am this" — the identification with name and form</td>
-              <td>"The kingdom of God is within you" — the return to the unconditioned</td>
-            </tr>
-            <tr>
-              <td><strong>Gnosticism</strong></td>
-              <td>Pleroma — the Fullness, the undifferentiated realm of the Aeons</td>
-              <td>The Demiurge's error — the false creation of the material world</td>
-              <td>Anamnesis — the recollection that returns the scattered sparks to the Pleroma</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <h4>The "Shut Up and Calculate" Interlude</h4>
-    <p>Not all physicists engage with interpretation. Many adopt what David Mermin called the <strong>"shut up and calculate"</strong> approach — use the mathematics, make predictions, verify experiments, and leave the metaphysics to philosophers. This is a respectable position. Quantum mechanics works. It is the most successful theory in the history of science. Why worry about what it "means"?</p>
-
-    <p>But the question does not go away. The mathematics is not self-interpreting. Every physicist, in choosing how to teach the theory, in deciding what language to use, in framing the experiments, is making interpretive commitments. The "shut up and calculate" physicist is not avoiding interpretation; she is adopting a <em>pragmatic</em> interpretation — the mathematics is a tool, and tools do not need to be understood, only used.</p>
-
-    <p>The contemplative traditions would recognize this as a form of <em>vairāgya</em> (dispassion) — the refusal to be caught in the net of concepts. But they would also warn that the refusal to ask the question can become a refusal to see. The physicist who calculates without asking what the calculation means is like the mystic who meditates without asking what the meditation reveals. Both are valid practices. Both have limits.</p>
   </div>
-</section>
 
-<!-- PULLQUOTE -->
-<div class="pullquote-section fade-in">
-  <div class="pullquote-glow"></div>
-  <div class="pullquote fade-in">
-    <p class="pullquote-text">"I think I can safely say that nobody understands quantum mechanics. Do not keep saying to yourself, if you can possibly avoid it, 'But how can it be like that?' because you will get 'down the drain' into a blind alley from which nobody has yet escaped."</p>
-    <p class="pullquote-attr">— Richard Feynman · The Character of Physical Law (1965)</p>
-  </div>
-</div>
+  <!-- SECTION: THE PHYSICISTS' JOURNEYS -->
+  <section class="content-section fade-in" id="physicists">
+    <div class="section-header">
+      <div class="section-separator"></div>
+      <p class="section-eyemark">The Human Thread</p>
+      <h2><span class="text-reveal"><span class="text-reveal-inner">The Physicists Who Sought the Mystical</span></span></h2>
+      <p>Schrödinger · Bohm · Wheeler · Capra</p>
+    </div>
+    <div class="content-essay fade-in">
+      <p class="content-introduction">The engagement between quantum mechanics and mysticism is not merely an analogy imposed by outsiders. Several of the most influential physicists of the twentieth century were explicit about the connection. Their journeys — intellectual, spiritual, sometimes tortured — form a hidden thread in the history of physics.</p>
 
-<!-- SECTION: THE PHYSICISTS' JOURNEYS -->
-<section class="content-section fade-in" id="physicists">
-  <div class="section-header">
-    <div class="section-separator"></div>
-    <p class="section-eyemark">The Human Thread</p>
-    <h2><span class="text-reveal"><span class="text-reveal-inner">The Physicists Who Sought the Mystical</span></span></h2>
-    <p>Schrödinger · Bohm · Wheeler · Capra</p>
-  </div>
-  <div class="content-essay fade-in">
-    <p class="content-introduction">The engagement between quantum mechanics and mysticism is not merely an analogy imposed by outsiders. Several of the most influential physicists of the twentieth century were explicit about the connection. Their journeys — intellectual, spiritual, sometimes tortured — form a hidden thread in the history of physics.</p>
+      <h4>Erwin Schrödinger and Vedanta</h4>
+      <p><strong>Erwin Schrödinger</strong> (1887–1961), the creator of the wave equation that bears his name, was deeply influenced by Vedanta. In his essay "What is Life?" and later in "My View of the World," he argued that the apparent multiplicity of consciousness is an illusion — that there is only one consciousness, one Self, which appears as many through the mechanism of individuation. He explicitly identified this with the Advaita doctrine of <em>Brahman</em> and <em>ātman</em>.</p>
 
-    <h4>Erwin Schrödinger and Vedanta</h4>
-    <p><strong>Erwin Schrödinger</strong> (1887–1961), the creator of the wave equation that bears his name, was deeply influenced by Vedanta. In his essay "What is Life?" and later in "My View of the World," he argued that the apparent multiplicity of consciousness is an illusion — that there is only one consciousness, one Self, which appears as many through the mechanism of individuation. He explicitly identified this with the Advaita doctrine of <em>Brahman</em> and <em>ātman</em>.</p>
+      <p>"The multiplicity is only apparent," he wrote. "In truth, there is only one mind." This was not a poetic afterthought. It was the philosophical framework within which he understood his own equation. The wavefunction, describing a single quantum system that encompasses all possibilities, was for Schrödinger a mathematical image of the non-dual consciousness he had found in the Upanishads.</p>
 
-    <p>"The multiplicity is only apparent," he wrote. "In truth, there is only one mind." This was not a poetic afterthought. It was the philosophical framework within which he understood his own equation. The wavefunction, describing a single quantum system that encompasses all possibilities, was for Schrödinger a mathematical image of the non-dual consciousness he had found in the Upanishads.</p>
+      <h4>David Bohm and the Implicate Order</h4>
+      <p><strong>David Bohm</strong> (1917–1992) was a student of Oppenheimer, a collaborator with Einstein, and — after his exile from McCarthy-era America — a close associate of Jiddu Krishnamurti. Their dialogues, published as "The Ending of Time" and "The Limits of Thought," are among the most remarkable encounters between a physicist and a mystic in the twentieth century.</p>
 
-    <h4>David Bohm and the Implicate Order</h4>
-    <p><strong>David Bohm</strong> (1917–1992) was a student of Oppenheimer, a collaborator with Einstein, and — after his exile from McCarthy-era America — a close associate of Jiddu Krishnamurti. Their dialogues, published as "The Ending of Time" and "The Limits of Thought," are among the most remarkable encounters between a physicist and a mystic in the twentieth century.</p>
+      <p>Bohm's <strong>implicate order</strong> is the idea that the apparent world of separate objects (the "explicate order") is a projection of a deeper, enfolded reality in which everything is connected to everything else. The quantum potential, which guides particles in his pilot-wave theory, is a manifestation of the implicate order. The universe is not a collection of things but a process of enfoldment and unfoldment — a cosmic dance in which the whole is present in every part.</p>
 
-    <p>Bohm's <strong>implicate order</strong> is the idea that the apparent world of separate objects (the "explicate order") is a projection of a deeper, enfolded reality in which everything is connected to everything else. The quantum potential, which guides particles in his pilot-wave theory, is a manifestation of the implicate order. The universe is not a collection of things but a process of enfoldment and unfoldment — a cosmic dance in which the whole is present in every part.</p>
+      <p>This is not merely physics. It is a metaphysics that Bohm developed in dialogue with Krishnamurti's teaching on the ending of psychological time, the dissolution of the self, and the direct perception of "what is." Bohm's physics and Krishnamurti's meditation were, for both men, aspects of the same inquiry.</p>
 
-    <p>This is not merely physics. It is a metaphysics that Bohm developed in dialogue with Krishnamurti's teaching on the ending of psychological time, the dissolution of the self, and the direct perception of "what is." Bohm's physics and Krishnamurti's meditation were, for both men, aspects of the same inquiry.</p>
+      <h4>John Wheeler and the Participatory Universe</h4>
+      <p><strong>John Wheeler</strong> (1911–2008) coined the term "black hole," supervised Richard Feynman's doctoral thesis, and in his later years developed the doctrine of the <strong>participatory universe</strong>. The universe, Wheeler argued, is not a machine that runs independently of observers. It is a "self-excited circuit" — a loop in which the observer participates in the creation of the reality that creates the observer.</p>
 
-    <h4>John Wheeler and the Participatory Universe</h4>
-    <p><strong>John Wheeler</strong> (1911–2008) coined the term "black hole," supervised Richard Feynman's doctoral thesis, and in his later years developed the doctrine of the <strong>participatory universe</strong>. The universe, Wheeler argued, is not a machine that runs independently of observers. It is a "self-excited circuit" — a loop in which the observer participates in the creation of the reality that creates the observer.</p>
+      <p>Wheeler's famous question — "Why existence?" — was his dying meditation. He believed that the ultimate explanation of quantum mechanics would require a new understanding of consciousness, information, and the nature of observation. His "it from bit" doctrine — the idea that every physical entity derives its meaning from information — is a form of idealism that would have been recognized by Bishop Berkeley and by the Vedantins.</p>
 
-    <p>Wheeler's famous question — "Why existence?" — was his dying meditation. He believed that the ultimate explanation of quantum mechanics would require a new understanding of consciousness, information, and the nature of observation. His "it from bit" doctrine — the idea that every physical entity derives its meaning from information — is a form of idealism that would have been recognized by Bishop Berkeley and by the Vedantins.</p>
+      <h4>Fritjof Capra and the Tao of Physics</h4>
+      <p><strong>Fritjof Capra's</strong> "The Tao of Physics" (1975) was the book that introduced a generation to the parallels between quantum mechanics and Eastern mysticism. It has been criticized — rightly — for oversimplifying both physics and mysticism, for drawing parallels that are more poetic than rigorous, for ignoring the differences between traditions. But it was also a genuine attempt to bridge two worlds that had been separated by the Cartesian split.</p>
 
-    <h4>Fritjof Capra and the Tao of Physics</h4>
-    <p><strong>Fritjof Capra's</strong> "The Tao of Physics" (1975) was the book that introduced a generation to the parallels between quantum mechanics and Eastern mysticism. It has been criticized — rightly — for oversimplifying both physics and mysticism, for drawing parallels that are more poetic than rigorous, for ignoring the differences between traditions. But it was also a genuine attempt to bridge two worlds that had been separated by the Cartesian split.</p>
+      <p>The critics of "quantum mysticism" — Victor Stenger, Meera Nanda, and others — have pointed out that the parallels are often forced, that the mathematics of quantum mechanics does not require mystical interpretation, that the mystics did not anticipate the physics. These criticisms are valid. But they do not exhaust the question. The question is not whether quantum mechanics <em>proves</em> mysticism, but whether the two forms of knowledge — the mathematical and the contemplative — can illuminate each other. The physicists who sought the mystical were not bad scientists. They were scientists who recognized that the boundaries of their discipline were not the boundaries of reality.</p>
 
-    <p>The critics of "quantum mysticism" — Victor Stenger, Meera Nanda, and others — have pointed out that the parallels are often forced, that the mathematics of quantum mechanics does not require mystical interpretation, that the mystics did not anticipate the physics. These criticisms are valid. But they do not exhaust the question. The question is not whether quantum mechanics <em>proves</em> mysticism, but whether the two forms of knowledge — the mathematical and the contemplative — can illuminate each other. The physicists who sought the mystical were not bad scientists. They were scientists who recognized that the boundaries of their discipline were not the boundaries of reality.</p>
-
-    <div class="scripture-panels fade-in margin-top">
-      <div class="scripture-panel">
-        <div class="scripture-panel-label">David Bohm · 1980</div>
-        <p class="scripture-panel-text">"The implicate order is not merely a physical theory but a way of looking at reality. It suggests that the universe is an unbroken whole, and that the division into parts is an abstraction that we make for practical purposes."</p>
-        <p class="scripture-panel-ref">— Wholeness and the Implicate Order</p>
-      </div>
-      <div class="scripture-panel">
-        <div class="scripture-panel-label">John Wheeler · 1990</div>
-        <p class="scripture-panel-text">"It is not that the universe is a machine that runs independently of us. The universe is a self-excited circuit. The observer is as essential to the creation of the universe as the universe is to the creation of the observer."</p>
-        <p class="scripture-panel-ref">— The Participatory Universe</p>
+      <div class="scripture-panels fade-in margin-top">
+        <div class="scripture-panel">
+          <div class="scripture-panel-label">David Bohm · 1980</div>
+          <p class="scripture-panel-text">"The implicate order is not merely a physical theory but a way of looking at reality. It suggests that the universe is an unbroken whole, and that the division into parts is an abstraction that we make for practical purposes."</p>
+          <p class="scripture-panel-ref">— Wholeness and the Implicate Order</p>
+        </div>
+        <div class="scripture-panel">
+          <div class="scripture-panel-label">John Wheeler · 1990</div>
+          <p class="scripture-panel-text">"It is not that the universe is a machine that runs independently of us. The universe is a self-excited circuit. The observer is as essential to the creation of the universe as the universe is to the creation of the observer."</p>
+          <p class="scripture-panel-ref">— The Participatory Universe</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- TRANSITION PULLQUOTE TO PAGE 2 -->
+  <div class="pullquote-section fade-in">
+    <div class="pullquote-glow"></div>
+    <div class="pullquote fade-in">
+      <p class="pullquote-text">"The quantum realm reveals that reality is not fixed until observed — that the unmeasured ground exists in superposition, all possibilities present until the act of measurement collapses the wave."</p>
+      <p class="pullquote-attr"><a href="../taoism/taoism-return.html" class="continue-link">&larr; Return to Taoism</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="quantum-observer.html" class="continue-link">Continue to The Act of Looking &rarr;</a></p>
+    </div>
   </div>
-</section>
 
-<!-- TRANSITION PULLQUOTE TO PAGE 2 -->
-<div class="pullquote-section fade-in">
-  <div class="pullquote-glow"></div>
-  <div class="pullquote fade-in">
-    <p class="pullquote-text">"The quantum realm reveals that reality is not fixed until observed — that the unmeasured ground exists in superposition, all possibilities present until the act of measurement collapses the wave."</p>
-    <p class="pullquote-attr"><a href="../taoism/taoism-return.html" class="continue-link">&larr; Return to Taoism</a> <span class="pullquote-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="quantum-observer.html" class="continue-link">Continue to The Act of Looking &rarr;</a></p>
+  <!-- CHAPTER NAVIGATION -->
+  <div class="chapter-nav">
+    <a href="../index.html" class="chapter-link">⌂ Home</a>
+    <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+      <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+    </svg></span>
+    <a href="quantum-unmeasured.html" class="chapter-link active">I · The Unmeasured Ground</a>
+    <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+      <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+    </svg></span>
+    <a href="quantum-observer.html" class="chapter-link">II · The Act of Looking</a>
+    <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+      <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+    </svg></span>
+    <a href="quantum-entanglement.html" class="chapter-link">III · The Hidden Connection</a>
+    <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
+      <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
+    </svg></span>
+    <a href="quantum-implicate.html" class="chapter-link">IV · The Implicate Order</a>
   </div>
-</div>
 
-<!-- CHAPTER NAVIGATION -->
-<div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">⌂ Home</a>
-  <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
-    <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
-  </svg></span>
-  <a href="quantum-unmeasured.html" class="chapter-link active">I · The Unmeasured Ground</a>
-  <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
-    <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
-  </svg></span>
-  <a href="quantum-observer.html" class="chapter-link">II · The Act of Looking</a>
-  <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
-    <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
-  </svg></span>
-  <a href="quantum-entanglement.html" class="chapter-link">III · The Hidden Connection</a>
-  <span class="chapter-sep"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7 18C3.13401 18 0 14.866 0 11C0 7.13401 3.13401 4 7 4C10.866 4 14 7.13401 14 11C14 14.866 10.866 18 7 18Z" fill="#c4a855"/>
-    <path d="M7 0C7 0 3.5 4.5 3.5 8C3.5 9.933 5.067 11.5 7 11.5C8.933 11.5 10.5 9.933 10.5 8C10.5 4.5 7 0 7 0Z" fill="#e0c878"/>
-  </svg></span>
-  <a href="quantum-implicate.html" class="chapter-link">IV · The Implicate Order</a>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-  <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-  <div class="footer-links">
-   <a href="../index.html">⌂ Vedantic Mappings</a>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+    <div class="footer-name">Vedantic Mappings</div>
+    <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+    <div class="footer-links">
+      <a href="../index.html">⌂ Vedantic Mappings</a>
       <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
       <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
       <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
       <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
       <a href="../taoism/taoism-threshold.html">Taoism</a>
       <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-  </div>
-  <div class="footer-credit">Researched &amp; Composed</div>
-  <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
-</footer>
+    </div>
+    <div class="footer-credit">Researched &amp; Composed</div>
+    <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
+  </footer>
 
-<script>
-(function() {
-  'use strict';
+  <script>
+    (function() {
+      'use strict';
 
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('open');
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('open');
+        });
+        document.addEventListener('click', (e) => {
+          if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+            navMenu.classList.remove('open');
+          }
+        });
       }
-    });
-  }
 
-  const themeToggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
 
-  function setTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }
-
-  function initTheme() {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light' || saved === 'dark') {
-      setTheme(saved);
-      return;
-    }
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark ? 'dark' : 'light');
-  }
-  initTheme();
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-    });
-  }
-
-  const backToTop = document.getElementById('backToTop');
-  function updateProgress() {
-    if (backToTop) {
-      backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
-    }
-  }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-  if (backToTop) {
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
-
-  const textObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        textObserver.unobserve(e.target);
+      function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
       }
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
+      function initTheme() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          setTheme(saved);
+          return;
+        }
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+      }
+      initTheme();
 
-  let touchStartX = 0;
-  document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  document.addEventListener('touchend', e => {
-    const diff = e.changedTouches[0].screenX - touchStartX;
-    if (diff < -55 && touchStartX > window.innerWidth - 30 && navMenu) navMenu.classList.add('open');
-    if (diff > 55 && navMenu) navMenu.classList.remove('open');
-  }, { passive: true });
-})();
-</script>
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          setTheme(next);
+        });
+      }
+
+      const backToTop = document.getElementById('backToTop');
+      function updateProgress() {
+        if (backToTop) {
+          backToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+        }
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+      if (backToTop) {
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+
+      const textObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            textObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('.text-reveal').forEach(el => textObserver.observe(el));
+
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      let touchStartX = 0;
+      document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+      document.addEventListener('touchend', e => {
+        const diff = e.changedTouches[0].screenX - touchStartX;
+        if (diff < -55 && touchStartX > window.innerWidth - 30 && navMenu) navMenu.classList.add('open');
+        if (diff > 55 && navMenu) navMenu.classList.remove('open');
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>

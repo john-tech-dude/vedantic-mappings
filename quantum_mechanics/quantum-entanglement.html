@@ -516,6 +516,59 @@
             overflow: visible;
         }
 
+        /* Light mode hero SVG overrides */
+        [data-theme="light"] .hero-emblem svg circle,
+        [data-theme="light"] .hero-emblem svg line,
+        [data-theme="light"] .hero-emblem svg path,
+        [data-theme="light"] .hero-emblem svg text,
+        [data-theme="light"] .hero-emblem svg rect {
+            opacity: 1 !important;
+            stroke-opacity: 1 !important;
+            fill-opacity: 1 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#5a6a9a"] {
+            fill: #4a5a7a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#5a6a9a"] {
+            stroke: #4a5a7a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#7a8aba"] {
+            fill: #5a6a8a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#7a8aba"] {
+            stroke: #5a6a8a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#8a9ab8"] {
+            fill: #4a5070 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#8a9ab8"] {
+            stroke: #4a5070 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#c4a855"] {
+            fill: #7a6020 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#c4a855"] {
+            stroke: #7a6020 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#e0c878"] {
+            fill: #8a7030 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#e0c878"] {
+            stroke: #8a7030 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#fff"] {
+            fill: #e8ecf4 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#fff"] {
+            stroke: #e8ecf4 !important;
+        }
+        [data-theme="light"] .hero-emblem svg text[fill="#8a9ab8"] {
+            fill: #4a5070 !important;
+        }
+        [data-theme="light"] .hero-emblem svg text[fill="#5a6a9a"] {
+            fill: #4a5a7a !important;
+        }
+
         .hero-title {
             font-family: 'Cinzel', serif;
             font-size: clamp(2.4rem, 6vw, 5rem);
@@ -829,74 +882,6 @@
 
         /* Diagram Cards */
         .diagram-card {
-
-/* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
-[data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
-  fill: #4a5a7a;
-  stroke: #4a5a7a;
-}
-[data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
-  fill: #4a5a7a;
-}
-[data-theme="light"] .diagram-card svg [fill="#7a8aba"],
-[data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
-  fill: #5a6a8a;
-  stroke: #5a6a8a;
-}
-[data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
-  fill: #5a6a8a;
-}
-[data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
-[data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
-  fill: #4a5070;
-  stroke: #4a5070;
-}
-[data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
-  fill: #4a5070;
-}
-[data-theme="light"] .diagram-card svg [fill="#c4a855"],
-[data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
-  fill: #7a6020;
-  stroke: #7a6020;
-}
-[data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
-  fill: #7a6020;
-}
-[data-theme="light"] .diagram-card svg [fill="#e0c878"],
-[data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
-  fill: #8a7030;
-  stroke: #8a7030;
-}
-[data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
-  fill: #8a7030;
-}
-[data-theme="light"] .diagram-card svg [fill="#fff"],
-[data-theme="light"] .diagram-card svg [stroke="#fff"] {
-  fill: #e8ecf4;
-  stroke: #e8ecf4;
-}
-[data-theme="light"] .diagram-card svg text[fill="#fff"] {
-  fill: #e8ecf4;
-}
-
-/* Increase opacity and stroke-width for light theme visibility */
-[data-theme="light"] .diagram-card svg circle[opacity],
-[data-theme="light"] .diagram-card svg path[opacity],
-[data-theme="light"] .diagram-card svg line[opacity],
-[data-theme="light"] .diagram-card svg g[opacity] {
-  opacity: 0.7 !important;
-}
-[data-theme="light"] .diagram-card svg circle[stroke],
-[data-theme="light"] .diagram-card svg path[stroke],
-[data-theme="light"] .diagram-card svg line[stroke] {
-  stroke-width: 1.5 !important;
-}
-[data-theme="light"] .diagram-card svg circle[fill],
-[data-theme="light"] .diagram-card svg path[fill] {
-  opacity: 0.8 !important;
-}
-
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
@@ -937,6 +922,76 @@
             text-align: center;
             margin-top: 20px;
             line-height: 1.6;
+        }
+
+        /* Light Theme Diagram Overrides - Premium Visibility */
+        [data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
+        [data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
+            fill: #4a5a7a !important;
+            stroke: #4a5a7a !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
+            fill: #4a5a7a !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#7a8aba"],
+        [data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
+            fill: #5a6a8a !important;
+            stroke: #5a6a8a !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
+            fill: #5a6a8a !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
+        [data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
+            fill: #4a5070 !important;
+            stroke: #4a5070 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
+            fill: #4a5070 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#c4a855"],
+        [data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
+            fill: #7a6020 !important;
+            stroke: #7a6020 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
+            fill: #7a6020 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#e0c878"],
+        [data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
+            fill: #8a7030 !important;
+            stroke: #8a7030 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
+            fill: #8a7030 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#fff"],
+        [data-theme="light"] .diagram-card svg [stroke="#fff"] {
+            fill: #e8ecf4 !important;
+            stroke: #e8ecf4 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#fff"] {
+            fill: #e8ecf4 !important;
+        }
+        [data-theme="light"] .diagram-card svg circle,
+        [data-theme="light"] .diagram-card svg path,
+        [data-theme="light"] .diagram-card svg line {
+            opacity: 0.85 !important;
+        }
+        [data-theme="light"] .diagram-card svg circle[stroke],
+        [data-theme="light"] .diagram-card svg path[stroke],
+        [data-theme="light"] .diagram-card svg line[stroke] {
+            stroke-width: 1.8 !important;
+        }
+        [data-theme="light"] .diagram-card svg circle[fill],
+        [data-theme="light"] .diagram-card svg path[fill] {
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-card svg [stroke-opacity] {
+            stroke-opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill-opacity] {
+            fill-opacity: 0.8 !important;
         }
 
         .comparative-table {
@@ -2039,13 +2094,13 @@
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
         <div class="footer-links">
-   <a href="../index.html">⌂ Vedantic Mappings</a>
-      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
-      <a href="../taoism/taoism-threshold.html">Taoism</a>
-      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched &amp; Composed</div>
         <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>
@@ -2118,12 +2173,7 @@
             }
 
             // --- Fade-in / reveal engine ---
-            // We use two strategies:
-            // 1. IntersectionObserver (primary)
-            // 2. Scroll + resize listener (fallback / reinforcement)
-
             var fadeElements = document.querySelectorAll('.fade-in, .section-separator');
-            var revealQueue = [];
 
             function revealElement(el) {
                 if (el.classList.contains('visible')) return;
@@ -2134,8 +2184,6 @@
                 var rect = el.getBoundingClientRect();
                 var winH = window.innerHeight;
                 var winW = window.innerWidth;
-                // Element is considered visible if any part is in the viewport
-                // with a small offset to catch elements just off-screen
                 var top = rect.top;
                 var bottom = rect.bottom;
                 var left = rect.left;
@@ -2177,23 +2225,18 @@
                     observer.observe(el);
                 });
 
-                // Also do an immediate scan for elements already visible
-                // (Observer should catch them, but this is a safety net)
                 requestAnimationFrame(function() {
                     scanAllFadeElements();
                 });
             } else {
-                // Fallback for older browsers: scroll/resize listener
                 var fallbackScan = function() {
                     scanAllFadeElements();
                 };
                 window.addEventListener('scroll', fallbackScan, { passive: true });
                 window.addEventListener('resize', fallbackScan, { passive: true });
-                // Initial check after a short delay
                 setTimeout(fallbackScan, 100);
             }
 
-            // Additional safety: scan again after fonts and layout settle
             if (document.fonts && document.fonts.ready) {
                 document.fonts.ready.then(function() {
                     setTimeout(scanAllFadeElements, 200);
@@ -2202,7 +2245,6 @@
                 setTimeout(scanAllFadeElements, 600);
             }
 
-            // Also scan on load
             window.addEventListener('load', function() {
                 setTimeout(scanAllFadeElements, 300);
             });
@@ -2218,13 +2260,12 @@
                         var offset = 80;
                         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
                         window.scrollTo({ top: top, behavior: 'smooth' });
-                        // Close nav if open
                         if (navMenu) navMenu.classList.remove('open');
                     }
                 });
             });
 
-            // --- Touch swipe to open nav (from right edge) ---
+            // --- Touch swipe to open nav ---
             var touchStartX = 0;
             document.addEventListener('touchstart', function(e) {
                 touchStartX = e.changedTouches[0].screenX;

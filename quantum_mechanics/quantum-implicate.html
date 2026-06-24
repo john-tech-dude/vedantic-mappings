@@ -489,6 +489,65 @@
             overflow: visible;
         }
 
+        /* Light mode hero SVG overrides */
+        [data-theme="light"] .hero-emblem svg circle,
+        [data-theme="light"] .hero-emblem svg line,
+        [data-theme="light"] .hero-emblem svg path,
+        [data-theme="light"] .hero-emblem svg text,
+        [data-theme="light"] .hero-emblem svg rect {
+            opacity: 1 !important;
+            stroke-opacity: 1 !important;
+            fill-opacity: 1 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#5a6a9a"] {
+            fill: #4a5a7a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#5a6a9a"] {
+            stroke: #4a5a7a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#7a8aba"] {
+            fill: #5a6a8a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#7a8aba"] {
+            stroke: #5a6a8a !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#8a9ab8"] {
+            fill: #4a5070 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#8a9ab8"] {
+            stroke: #4a5070 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#c4a855"] {
+            fill: #7a6020 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#c4a855"] {
+            stroke: #7a6020 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#e0c878"] {
+            fill: #8a7030 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#e0c878"] {
+            stroke: #8a7030 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [fill="#fff"] {
+            fill: #e8ecf4 !important;
+        }
+        [data-theme="light"] .hero-emblem svg [stroke="#fff"] {
+            stroke: #e8ecf4 !important;
+        }
+        [data-theme="light"] .hero-emblem svg text[fill="#8a9ab8"] {
+            fill: #4a5070 !important;
+        }
+        [data-theme="light"] .hero-emblem svg text[fill="#5a6a9a"] {
+            fill: #4a5a7a !important;
+        }
+        [data-theme="light"] .hero-emblem svg text[fill="#c4a855"] {
+            fill: #7a6020 !important;
+        }
+        [data-theme="light"] .hero-emblem svg text[fill="#7a8aba"] {
+            fill: #5a6a8a !important;
+        }
+
         .hero-title {
             font-family: 'Cinzel', serif;
             font-size: clamp(2.4rem, 6vw, 5rem);
@@ -773,81 +832,14 @@
 
         /* Diagram Cards */
         .diagram-card {
-
-/* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
-[data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
-  fill: #4a5a7a;
-  stroke: #4a5a7a;
-}
-[data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
-  fill: #4a5a7a;
-}
-[data-theme="light"] .diagram-card svg [fill="#7a8aba"],
-[data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
-  fill: #5a6a8a;
-  stroke: #5a6a8a;
-}
-[data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
-  fill: #5a6a8a;
-}
-[data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
-[data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
-  fill: #4a5070;
-  stroke: #4a5070;
-}
-[data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
-  fill: #4a5070;
-}
-[data-theme="light"] .diagram-card svg [fill="#c4a855"],
-[data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
-  fill: #7a6020;
-  stroke: #7a6020;
-}
-[data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
-  fill: #7a6020;
-}
-[data-theme="light"] .diagram-card svg [fill="#e0c878"],
-[data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
-  fill: #8a7030;
-  stroke: #8a7030;
-}
-[data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
-  fill: #8a7030;
-}
-[data-theme="light"] .diagram-card svg [fill="#fff"],
-[data-theme="light"] .diagram-card svg [stroke="#fff"] {
-  fill: #e8ecf4;
-  stroke: #e8ecf4;
-}
-[data-theme="light"] .diagram-card svg text[fill="#fff"] {
-  fill: #e8ecf4;
-}
-
-/* Increase opacity and stroke-width for light theme visibility */
-[data-theme="light"] .diagram-card svg circle[opacity],
-[data-theme="light"] .diagram-card svg path[opacity],
-[data-theme="light"] .diagram-card svg line[opacity],
-[data-theme="light"] .diagram-card svg g[opacity] {
-  opacity: 0.7 !important;
-}
-[data-theme="light"] .diagram-card svg circle[stroke],
-[data-theme="light"] .diagram-card svg path[stroke],
-[data-theme="light"] .diagram-card svg line[stroke] {
-  stroke-width: 1.5 !important;
-}
-[data-theme="light"] .diagram-card svg circle[fill],
-[data-theme="light"] .diagram-card svg path[fill] {
-  opacity: 0.8 !important;
-}
-
             background: var(--surface);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-strong);
             border-radius: var(--radius-lg);
             padding: 40px;
             margin: 36px 0;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
         .diagram-card::before {
             content: '';
@@ -877,10 +869,80 @@
             font-family: 'IM Fell English', serif;
             font-style: italic;
             font-size: 0.95rem;
-            color: var(--stone);
+            color: var(--stone-light);
             text-align: center;
             margin-top: 20px;
             line-height: 1.6;
+        }
+
+        /* Light Theme Diagram Overrides - Premium Visibility */
+        [data-theme="light"] .diagram-card svg [fill="#5a6a9a"],
+        [data-theme="light"] .diagram-card svg [stroke="#5a6a9a"] {
+            fill: #4a5a7a !important;
+            stroke: #4a5a7a !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#5a6a9a"] {
+            fill: #4a5a7a !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#7a8aba"],
+        [data-theme="light"] .diagram-card svg [stroke="#7a8aba"] {
+            fill: #5a6a8a !important;
+            stroke: #5a6a8a !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#7a8aba"] {
+            fill: #5a6a8a !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#8a9ab8"],
+        [data-theme="light"] .diagram-card svg [stroke="#8a9ab8"] {
+            fill: #4a5070 !important;
+            stroke: #4a5070 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#8a9ab8"] {
+            fill: #4a5070 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#c4a855"],
+        [data-theme="light"] .diagram-card svg [stroke="#c4a855"] {
+            fill: #7a6020 !important;
+            stroke: #7a6020 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#c4a855"] {
+            fill: #7a6020 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#e0c878"],
+        [data-theme="light"] .diagram-card svg [stroke="#e0c878"] {
+            fill: #8a7030 !important;
+            stroke: #8a7030 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#e0c878"] {
+            fill: #8a7030 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill="#fff"],
+        [data-theme="light"] .diagram-card svg [stroke="#fff"] {
+            fill: #e8ecf4 !important;
+            stroke: #e8ecf4 !important;
+        }
+        [data-theme="light"] .diagram-card svg text[fill="#fff"] {
+            fill: #e8ecf4 !important;
+        }
+        [data-theme="light"] .diagram-card svg circle,
+        [data-theme="light"] .diagram-card svg path,
+        [data-theme="light"] .diagram-card svg line {
+            opacity: 0.85 !important;
+        }
+        [data-theme="light"] .diagram-card svg circle[stroke],
+        [data-theme="light"] .diagram-card svg path[stroke],
+        [data-theme="light"] .diagram-card svg line[stroke] {
+            stroke-width: 1.8 !important;
+        }
+        [data-theme="light"] .diagram-card svg circle[fill],
+        [data-theme="light"] .diagram-card svg path[fill] {
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-card svg [stroke-opacity] {
+            stroke-opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-card svg [fill-opacity] {
+            fill-opacity: 0.8 !important;
         }
 
         /* Scripture Panels */
@@ -1875,7 +1937,7 @@
             <h4>The Open Question — Why Existence?</h4>
             <p>Wheeler asked: "Why existence?" Bohm asked: "What is the nature of wholeness?" The question is the same. The implicate order is not a final answer; it is a deeper question. It is the recognition that reality is not a collection of separate objects but a single, undivided process. The physicist who studies the holographic principle is not solving a puzzle; she is entering a mystery.</p>
 
-            <p>The contemplative traditions have always known this. The <em>jñāni</em> does not "solve" the mystery; she abides in it. The Kabbalist does not "answer" the question; she holds it in her heart. The Gnostic does not "escape" the world; she recognizes that the world was never separate. The Christian mystic does not "achieve" union; she recognizes that union was never absent.</p>
+            <p>The contemplative traditions have always known this. The <em>jñāni</em> does not "solve" the mystery; she abides in it. The Kabbalist does not "answer" the question; he holds it in his heart. The Gnostic does not "escape" the world; she recognizes that the world was never separate. The Christian mystic does not "achieve" union; she recognizes that union was never absent.</p>
 
             <p>The implicate order is the recognition that the universe is not a collection of parts but a single, undivided whole. The explicate order is the appearance of parts. The two are not separate; they are the same reality, seen from different perspectives. The act of looking is the act of creation. The observer is the observed. The implicate and explicate are one.</p>
 
@@ -1936,13 +1998,13 @@
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
         <div class="footer-links">
-      <a href="../index.html">⌂ Vedantic Mappings</a>
-      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
-      <a href="../taoism/taoism-threshold.html">Taoism</a>
-      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched &amp; Composed</div>
         <div class="footer-copyright">© 2026 John M Q. All rights reserved.</div>

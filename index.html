@@ -949,33 +949,6 @@
            DIAGRAM CONTAINER
            ═══════════════════════════════════════════════════════════════ */
         .diagram-container {
-
-/* SVG Diagram Color Fixes for Light Theme */
-[data-theme="light"] .diagram-container svg [fill="##7c8ea0"],
-[data-theme="light"] .diagram-container svg [stroke="##7c8ea0"] {
-  fill: #4a5060;
-  stroke: #4a5060;
-}
-[data-theme="light"] .diagram-container svg text[fill="##7c8ea0"] {
-  fill: #4a5060;
-}
-[data-theme="light"] .diagram-container svg [fill="##b8960c"],
-[data-theme="light"] .diagram-container svg [stroke="##b8960c"] {
-  fill: #6a5010;
-  stroke: #6a5010;
-}
-[data-theme="light"] .diagram-container svg text[fill="##b8960c"] {
-  fill: #6a5010;
-}
-[data-theme="light"] .diagram-container svg [fill="##d4af37"],
-[data-theme="light"] .diagram-container svg [stroke="##d4af37"] {
-  fill: #8a7030;
-  stroke: #8a7030;
-}
-[data-theme="light"] .diagram-container svg text[fill="##d4af37"] {
-  fill: #8a7030;
-}
-
             margin: 2.5rem 0;
             padding: 2rem;
             background: linear-gradient(145deg, var(--surface), var(--surface2));
@@ -1742,6 +1715,45 @@
                 display: none !important;
             }
         }
+
+        /* ─── LIGHT MODE HERO SVG FIXES ─── */
+        [data-theme="light"] .hero-emblem svg circle,
+        [data-theme="light"] .hero-emblem svg line,
+        [data-theme="light"] .hero-emblem svg path,
+        [data-theme="light"] .hero-emblem svg text,
+        [data-theme="light"] .hero-emblem svg rect {
+            opacity: 1 !important;
+            stroke-opacity: 1 !important;
+            fill-opacity: 1 !important;
+        }
+
+        [data-theme="light"] .hero-emblem svg [fill="#5a6a9a"] { fill: #4a5a7a !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#5a6a9a"] { stroke: #4a5a7a !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#5a6a9a"] { fill: #4a5a7a !important; }
+
+        [data-theme="light"] .hero-emblem svg [fill="#7a8aba"] { fill: #5a6a8a !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#7a8aba"] { stroke: #5a6a8a !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#7a8aba"] { fill: #5a6a8a !important; }
+
+        [data-theme="light"] .hero-emblem svg [fill="#8a9ab8"] { fill: #4a5070 !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#8a9ab8"] { stroke: #4a5070 !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#8a9ab8"] { fill: #4a5070 !important; }
+
+        [data-theme="light"] .hero-emblem svg [fill="#c4a855"] { fill: #7a6020 !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#c4a855"] { stroke: #7a6020 !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#c4a855"] { fill: #7a6020 !important; }
+
+        [data-theme="light"] .hero-emblem svg [fill="#e0c878"] { fill: #8a7030 !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#e0c878"] { stroke: #8a7030 !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#e0c878"] { fill: #8a7030 !important; }
+
+        [data-theme="light"] .hero-emblem svg [fill="#fff"] { fill: #e8ecf4 !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#fff"] { stroke: #e8ecf4 !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#fff"] { fill: #e8ecf4 !important; }
+
+        [data-theme="light"] .hero-emblem svg [fill="#ffffff"] { fill: #e8ecf4 !important; }
+        [data-theme="light"] .hero-emblem svg [stroke="#ffffff"] { stroke: #e8ecf4 !important; }
+        [data-theme="light"] .hero-emblem svg text[fill="#ffffff"] { fill: #e8ecf4 !important; }
     </style>
 </head>
 <body>

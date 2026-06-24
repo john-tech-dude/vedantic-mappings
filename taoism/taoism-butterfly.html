@@ -260,18 +260,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   animation: qiPulse 7s ease-in-out infinite;
 }
 
-/* Light mode: darken yinyang SVG for visibility */
+/* Light mode hero SVG overrides */
 [data-theme="light"] .hero-emblem svg circle,
 [data-theme="light"] .hero-emblem svg line,
-[data-theme="light"] .hero-emblem svg path {
+[data-theme="light"] .hero-emblem svg path,
+[data-theme="light"] .hero-emblem svg text,
+[data-theme="light"] .hero-emblem svg rect {
   opacity: 1 !important;
+  stroke-opacity: 1 !important;
+  fill-opacity: 1 !important;
 }
-[data-theme="light"] .hero-emblem svg circle[stroke*="url"] {
-  opacity: 0.9 !important;
-}
-[data-theme="light"] .hero-emblem svg g[stroke*="#d4af37"] {
-  opacity: 0.8 !important;
-}
+[data-theme="light"] .hero-emblem svg [fill="#e6c86e"] { fill: #b8964a !important; }
+[data-theme="light"] .hero-emblem svg [stroke="#e6c86e"] { stroke: #b8964a !important; }
+[data-theme="light"] .hero-emblem svg [fill="#d4af37"] { fill: #9a7a3a !important; }
+[data-theme="light"] .hero-emblem svg [stroke="#d4af37"] { stroke: #9a7a3a !important; }
+[data-theme="light"] .hero-emblem svg [fill="#b8960c"] { fill: #7a5a22 !important; }
+[data-theme="light"] .hero-emblem svg [stroke="#b8960c"] { stroke: #7a5a22 !important; }
+[data-theme="light"] .hero-emblem svg [fill="#fff"] { fill: #e8ecf4 !important; }
+[data-theme="light"] .hero-emblem svg [stroke="#fff"] { stroke: #e8ecf4 !important; }
 /* ==================================== */
 
 .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink); text-shadow: 0 2px 40px rgba(154,122,58,0.2); margin-bottom: 0.2em; position: relative; z-index: 3; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
