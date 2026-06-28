@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Gnosticism — The Demiurge. Yaldabaoth, Saklas, Samael. The blind craftsman, the material prison, and the seven archons. Nag Hammadi cartography." />
+    <meta name="description" content="Gnosticism — The Demiurge. Yaldabaoth, Saklas, Samael. The blind craftsman, the material prison, the seven archons within, and the craftsman compared across traditions. Nag Hammadi cartography." />
     <title>Gnosticism · The Demiurge — The Blind Craftsman</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +13,6 @@
            TOKENS — Gnostic Deep Indigo / Violet / Bronze
            ═══════════════════════════════════════════════════════════════ */
         :root {
-
             --bg: #0a0e1a;
             --bg2: #10162a;
             --bg3: #060a14;
@@ -59,9 +58,9 @@
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
             --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            --tooltip-color: #f0c040;
         }
         [data-theme="light"] {
-
             --bg: #eef0f6;
             --bg2: #e0e4ee;
             --bg3: #d0d4e0;
@@ -99,6 +98,7 @@
             --grain-opacity: 0.02;
             --mountain-fill: rgba(90, 80, 128, 0.06);
             --ring-color: rgba(90, 80, 128, 0.15);
+            --tooltip-color: #b07020;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -248,11 +248,6 @@
                 transform: translate(-50%, -50%) scale(4.2);
             }
         }
-        @keyframes emblem-rotate {
-            to {
-                transform: rotate(360deg);
-            }
-        }
         @keyframes emblem-pulse {
             0%,
             100% {
@@ -275,16 +270,6 @@
             66% {
                 transform: translate(-1%, 2%) scale(0.98);
                 opacity: 0.25;
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
         @keyframes lineReveal {
@@ -764,10 +749,6 @@
         .hero-scroll-cue:hover {
             transform: translateX(-50%) translateY(4px);
         }
-
-
-
-
         .hero-scroll-cue span {
             font-family: 'Cinzel', serif;
             font-size: .48rem;
@@ -1041,44 +1022,48 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           GREEK / TERMS
+           GREEK / TERMS — UPGRADED TOOLTIP
            ═══════════════════════════════════════════════════════════════ */
         .greek-term {
             cursor: help;
-            border-bottom: 1px dotted var(--gold);
+            border-bottom: 2px solid var(--tooltip-color);
             text-decoration: none;
-            color: var(--gold-light);
-            font-weight: 400;
+            color: var(--tooltip-color);
+            font-weight: 500;
             transition: all 0.3s var(--ease-smooth);
+            background: linear-gradient(transparent 60%, rgba(240, 192, 64, 0.12) 100%);
+            padding: 0 0.1em;
         }
         .greek-term:hover {
-            color: var(--gold);
-            border-bottom-color: var(--gold-deep);
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+            background: rgba(240, 192, 64, 0.15);
+            transform: translateY(-1px);
         }
         [data-theme="light"] .greek-term {
-            border-bottom-color: var(--copper);
-            color: var(--copper-light);
+            border-bottom-color: var(--tooltip-color);
+            color: var(--tooltip-color);
+            background: linear-gradient(transparent 60%, rgba(176, 112, 32, 0.10) 100%);
         }
         [data-theme="light"] .greek-term:hover {
             color: var(--copper);
-            border-bottom-color: var(--copper-deep);
+            border-bottom-color: var(--copper);
+            background: rgba(176, 112, 32, 0.15);
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           DIAGRAM CONTAINER
+           DIAGRAM CONTAINER — UPGRADED PREMIUM VISIBILITY
            ═══════════════════════════════════════════════════════════════ */
         .diagram-container {
             margin: 2.5rem 0;
             padding: 2rem;
-            background: linear-gradient(145deg, var(--surface), var(--surface2));
+            background: var(--surface);
             border: 1px solid var(--border-strong);
             border-radius: var(--radius-lg);
             position: relative;
             overflow: hidden;
-            box-shadow:
-                0 4px 24px rgba(0, 0, 0, 0.3),
-                0 0 40px var(--violet-glow),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow);
+            transition: background 0.6s var(--ease-smooth), border-color 0.6s var(--ease-smooth);
         }
         .diagram-container::before {
             content: '';
@@ -1086,9 +1071,9 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--violet), var(--gold), var(--violet), transparent);
-            opacity: 0.6;
+            height: 2px;
+            background: linear-gradient(90deg, var(--violet), var(--bronze), var(--violet));
+            opacity: 0.7;
         }
         .diagram-container::after {
             content: '';
@@ -1097,24 +1082,25 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0.3;
+            background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+            opacity: 0.15;
         }
         .diagram-title {
             font-family: 'Cinzel', serif;
             font-size: 0.65rem;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: var(--gold-light);
+            color: var(--gold);
             text-align: center;
             margin-bottom: 1.5rem;
-            text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+            text-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
         }
         .diagram-svg {
             width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
+            max-width: 100%;
         }
         .diagram-svg path,
         .diagram-svg circle,
@@ -1126,15 +1112,159 @@
         .diagram-caption {
             font-family: 'Crimson Pro', serif;
             font-style: italic;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             color: var(--stone-light);
             text-align: center;
             margin-top: 1.25rem;
             line-height: 1.6;
-            padding: 0.75rem;
-            background: rgba(124, 111, 174, 0.08);
+            padding: 0.75rem 1rem;
+            background: rgba(124, 111, 174, 0.06);
             border-radius: var(--radius-sm);
             border-left: 2px solid var(--violet-light);
+            transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           LIGHT THEME DIAGRAM OVERRIDES — PREMIUM VISIBILITY
+           ═══════════════════════════════════════════════════════════════ */
+        [data-theme="light"] .diagram-container svg [fill="#c9a84c"],
+        [data-theme="light"] .diagram-container svg [stroke="#c9a84c"] {
+            fill: #8a6a2a !important;
+            stroke: #8a6a2a !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#c9a84c"] {
+            fill: #8a6a2a !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#e0c46e"],
+        [data-theme="light"] .diagram-container svg [stroke="#e0c46e"] {
+            fill: #a08040 !important;
+            stroke: #a08040 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#e0c46e"] {
+            fill: #a08040 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#7c6fae"],
+        [data-theme="light"] .diagram-container svg [stroke="#7c6fae"] {
+            fill: #5a5080 !important;
+            stroke: #5a5080 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#7c6fae"] {
+            fill: #5a5080 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#a090d0"],
+        [data-theme="light"] .diagram-container svg [stroke="#a090d0"] {
+            fill: #8a78b0 !important;
+            stroke: #8a78b0 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#a090d0"] {
+            fill: #8a78b0 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#4a4080"],
+        [data-theme="light"] .diagram-container svg [stroke="#4a4080"] {
+            fill: #3a3070 !important;
+            stroke: #3a3070 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#4a4080"] {
+            fill: #3a3070 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#5a6a88"],
+        [data-theme="light"] .diagram-container svg [stroke="#5a6a88"] {
+            fill: #3a4060 !important;
+            stroke: #3a4060 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#5a6a88"] {
+            fill: #3a4060 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#8a9ab0"],
+        [data-theme="light"] .diagram-container svg [stroke="#8a9ab0"] {
+            fill: #5a6080 !important;
+            stroke: #5a6080 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#8a9ab0"] {
+            fill: #5a6080 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#e8ecf4"],
+        [data-theme="light"] .diagram-container svg [stroke="#e8ecf4"] {
+            fill: #12152a !important;
+            stroke: #12152a !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#e8ecf4"] {
+            fill: #12152a !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#8a9abf"],
+        [data-theme="light"] .diagram-container svg [stroke="#8a9abf"] {
+            fill: #3a3f5c !important;
+            stroke: #3a3f5c !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#8a9abf"] {
+            fill: #3a3f5c !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#c17f45"],
+        [data-theme="light"] .diagram-container svg [stroke="#c17f45"] {
+            fill: #8a602a !important;
+            stroke: #8a602a !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#c17f45"] {
+            fill: #8a602a !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#d49a6a"],
+        [data-theme="light"] .diagram-container svg [stroke="#d49a6a"] {
+            fill: #a0703a !important;
+            stroke: #a0703a !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#d49a6a"] {
+            fill: #a0703a !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#8b5a2b"],
+        [data-theme="light"] .diagram-container svg [stroke="#8b5a2b"] {
+            fill: #6a401a !important;
+            stroke: #6a401a !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#8b5a2b"] {
+            fill: #6a401a !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#708090"],
+        [data-theme="light"] .diagram-container svg [stroke="#708090"] {
+            fill: #5a6080 !important;
+            stroke: #5a6080 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#708090"] {
+            fill: #5a6080 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill="#a0aab5"],
+        [data-theme="light"] .diagram-container svg [stroke="#a0aab5"] {
+            fill: #7a80a0 !important;
+            stroke: #7a80a0 !important;
+        }
+        [data-theme="light"] .diagram-container svg text[fill="#a0aab5"] {
+            fill: #7a80a0 !important;
+        }
+        /* General light mode overrides for all SVG elements */
+        [data-theme="light"] .diagram-container svg circle,
+        [data-theme="light"] .diagram-container svg path,
+        [data-theme="light"] .diagram-container svg line,
+        [data-theme="light"] .diagram-container svg rect {
+            opacity: 0.85 !important;
+        }
+        [data-theme="light"] .diagram-container svg circle[stroke],
+        [data-theme="light"] .diagram-container svg path[stroke],
+        [data-theme="light"] .diagram-container svg line[stroke],
+        [data-theme="light"] .diagram-container svg rect[stroke] {
+            stroke-width: 1.8 !important;
+        }
+        [data-theme="light"] .diagram-container svg circle[fill],
+        [data-theme="light"] .diagram-container svg path[fill],
+        [data-theme="light"] .diagram-container svg rect[fill] {
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-container svg [stroke-opacity] {
+            stroke-opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-container svg [fill-opacity] {
+            fill-opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-container svg text {
+            opacity: 0.92 !important;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1150,9 +1280,10 @@
             border: 1px solid var(--border-strong);
             position: relative;
             z-index: 1;
+            transition: border-color 0.6s var(--ease-smooth);
         }
         .scripture-panel {
-            background: linear-gradient(145deg, var(--surface), var(--surface2));
+            background: var(--surface);
             padding: 2rem;
             transition: all 0.4s var(--ease-smooth);
             position: relative;
@@ -1192,7 +1323,7 @@
             text-transform: uppercase;
         }
         .scripture-panel:hover {
-            background: linear-gradient(145deg, var(--surface2), var(--surface));
+            background: var(--surface2);
             box-shadow: 0 4px 20px rgba(124, 111, 174, 0.15);
             transform: translateY(-2px);
         }
@@ -1305,52 +1436,6 @@
             color: var(--border-strong);
             opacity: 0.5;
             margin: 0 0.5rem;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           COMPARATIVE TABLE
-           ═══════════════════════════════════════════════════════════════ */
-        .comparative-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: transparent;
-            font-size: 0.78rem;
-        }
-        .comparative-table thead tr {
-            border-bottom: 2px solid var(--gold);
-        }
-        .comparative-table th {
-            padding: 10px 8px;
-            text-align: left;
-            font-family: 'Cinzel', serif;
-            font-size: 0.55rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold-light);
-            font-weight: 500;
-            background: rgba(201, 168, 76, 0.06);
-        }
-        .comparative-table td {
-            padding: 8px 8px;
-            color: var(--stone-light);
-            line-height: 1.5;
-            font-size: 0.78rem;
-        }
-        .comparative-table tbody tr {
-            border-bottom: 1px solid var(--border-subtle);
-            transition: background 0.3s ease;
-        }
-        .comparative-table tbody tr:last-child {
-            border-bottom: none;
-        }
-        .comparative-table tbody tr:hover {
-            background: rgba(124, 111, 174, 0.08);
-        }
-        .comparative-table-wrapper {
-            overflow-x: auto;
-            margin-top: 0.5rem;
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1738,20 +1823,19 @@
                 gap: 1rem;
                 font-size: 0.7rem;
             }
-            .comparative-table {
-                font-size: 0.7rem;
-            }
-            .comparative-table th,
-            .comparative-table td {
-                padding: 6px 4px;
-                font-size: 0.65rem;
-            }
             .diagram-container {
                 padding: 1rem;
                 margin: 1.5rem 0;
             }
             .pull-q {
                 padding: 0.5rem 0 0.5rem 1.25rem;
+            }
+            .diagram-caption {
+                font-size: 0.82rem;
+                padding: 0.6rem 0.75rem;
+            }
+            .diagram-title {
+                font-size: 0.55rem;
             }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -1777,6 +1861,7 @@
             }
         }
     </style>
+<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/axNKAHtCVpraGkwOHRLHuLGbLdXu2vQTAqJ6k6h2LbH9U-zSfAhs5JLNI-jqOrV2qdn5Uobjtf61LiIQdRVFjiMK8br5mcBtNxq_MXy4jPhG3CxDW0KaDs3oRC5dEJShiV7z6BNoejN_cNGrxk8N2JDPEaC82vkQq_-AvOqBeAs1tzBB3cYUGsGUwDyL45wCi10g-Y7SU689ybfLjxhjkpTAB_wKek-BWkHv-91_d3fkIlZVbIoqsKi6VbRCNaeBt4jXyFI0aXoL2bwwwxIQb_PFGoxvj9pUv2tYZN-rYwndXXTrUk_vHHkKPCuN_HL1kmUPOx7hchAn-QpQNwTbRpZUKiRrGgroVUOitSswVv5znX20McpJ9KaRpUbGc6YYg19tMnR6J_JjYTXXhnwmZH52nJfLjn-NwRTKS8yninuuNep5om2qHUR_YMhELeTfkAH2pHMsbupNyJ3yCl5klU7x_YVfsww5QpVUJqq4jTffmd-0nyaneymBrAlIyn1tG4lTmFU9f8z2pAV0r84bpG6HrVq64RLxEtnjKgjgcr79tdNYng0xGn7LwqcHpZaLCjgU-CXM5j5fl9oXUcT8LE756_mGZV3Dfhv-oFEWhHtk6P6FbT_8yf_9ZQ5ShWC4lB2YLryCmy9dLvm1QMmB1eMUn-jcVhfcnmuqjuWOd8_JAfwUviDeHNM6csRBNdq0ycckfYEBpwagqTehcbjddO-fEk6Ws-EfpLRpy9hf2rk2UItZGEV7hwtE6F_8o3dEewnMLBEI8A270KWXrHK6YoaeMvqJTN0y2S9wgzMqF9egXvm-d_8IexWSxnfbS1IkT2msgAQqqchH2_XnwAlQNoqp0cRG3i7f9EjPmrJnHljI3NhEJc6JycNukBBzhiq1I6elY7diVniQHJneQ4rXMgTUyJCPM3sMDx3eSOFbcqXQYec8UJrwd9NG_8kYFGvVLCAsH2V7to2QVb61DHRz87W9uJsrU0LtywpqGlbXp3VYEOy8CBgw0QytkJFQMtblMWtaj-KPRSGEwQin1m1cBLN6iea284m9jbQglhbv1LnlNJ8YuKvnc4WKpD6Wjfg8G16aLIe-ciPnGOon30s8lv2Ue18'></script><base target="_blank">
 </head>
 <body>
 
@@ -1794,11 +1879,12 @@
             <a href="#birth" class="nav-item" data-section="birth"><span class="nav-item-icon">◈</span><span>The Birth from Anguish</span></a>
             <a href="#names" class="nav-item" data-section="names"><span class="nav-item-icon">⊡</span><span>The Three Names</span></a>
             <a href="#prison" class="nav-item" data-section="prison"><span class="nav-item-icon">◉</span><span>The Material Prison</span></a>
+            <a href="#archons-within" class="nav-item" data-section="archons-within"><span class="nav-item-icon">◉</span><span>The Archons Within</span></a>
             <a href="#repentance" class="nav-item" data-section="repentance"><span class="nav-item-icon">☯</span><span>The Voice &amp; Sabaoth</span></a>
-            <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon">✦</span><span>The Craftsman Compared</span></a>
+            <a href="#compared" class="nav-item" data-section="compared"><span class="nav-item-icon">⚖</span><span>The Craftsman Compared</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Gnosticism · Four Pages</div>
-            <a href="gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>I · The Unknown Father</span></a>
+            <a href="gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>I · The Source</span></a>
             <a href="gnosticism-the_demiurge.html" class="nav-item active"><span class="nav-item-icon">⊡</span><span>II · The Demiurge</span></a>
             <a href="gnosticism-the_divine_spark.html" class="nav-item"><span class="nav-item-icon">✦</span><span>III · The Divine Spark</span></a>
             <a href="gnosticism_the_bridal_chamber.html" class="nav-item"><span class="nav-item-icon">❤</span><span>IV · The Bridal Chamber</span></a>
@@ -1821,7 +1907,7 @@
     HERO
     ═══════════════════════════════════════════════════════════════ -->
     <header class="hero" id="hero">
-        <!-- 🔽 The problematic SVG with the square background has been removed and replaced with a clean, purely decorative element -->
+        <!-- Decorative background -->
         <div style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:0;">
             <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block;">
                 <g style="animation:mandalaRotate 60s linear infinite">
@@ -1842,7 +1928,7 @@
         <div class="hero-ripple" aria-hidden="true"></div>
 
         <p class="hero-eyemark">The Blind Craftsman</p>
-<p class="hero-label">Yaldabaoth · Saklas · Samael</p>
+        <p class="hero-label">Yaldabaoth · Saklas · Samael</p>
         <p class="hero-subtitle-top">The Lion-Faced Serpent · The Ignorant Darkness</p>
         <h1 class="hero-title">The Demiurge</h1>
         <p class="hero-epithet">The Blind Craftsman · The Material Prison</p>
@@ -1866,7 +1952,7 @@
     <section class="toc-section" id="toc">
         <div class="ed-section-label">Contents · ΠΕΡΙΕΧΟΜΕΝΑ</div>
         <h2 class="ed-section-h2">The Core Teachings of the Demiurge</h2>
-        <p class="ed-section-intro">The birth from anguish, the three names, the material prison, the voice from above, and the repentance of Sabaoth.</p>
+        <p class="ed-section-intro">The birth from anguish, the three names, the material prison, the archons within, the voice from above, the repentance of Sabaoth, and the craftsman compared across traditions.</p>
         <nav class="toc-book" aria-label="Page contents">
             <a href="#birth" class="toc-book-item">
                 <span class="toc-b-num">I</span>
@@ -1883,13 +1969,18 @@
                 <span class="toc-b-title">The Material Prison — Hyle and the Psychic Body</span>
                 <span class="toc-b-skt">Ὕλη</span>
             </a>
-            <a href="#repentance" class="toc-book-item">
+            <a href="#archons-within" class="toc-book-item">
                 <span class="toc-b-num">IV</span>
+                <span class="toc-b-title">The Archons Within — The Seven Ego-Layers</span>
+                <span class="toc-b-skt">Ἐγώ</span>
+            </a>
+            <a href="#repentance" class="toc-book-item">
+                <span class="toc-b-num">V</span>
                 <span class="toc-b-title">The Voice &amp; Sabaoth — The Seventh Heaven</span>
                 <span class="toc-b-skt">Σαβαώθ</span>
             </a>
-            <a href="#comparative" class="toc-book-item">
-                <span class="toc-b-num">★</span>
+            <a href="#compared" class="toc-book-item">
+                <span class="toc-b-num">VI</span>
                 <span class="toc-b-title">The Craftsman Compared — Plato, Kabbalah, Manichaeism</span>
                 <span class="toc-b-skt">Δημιουργός</span>
             </a>
@@ -2171,12 +2262,141 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 4: THE VOICE AND SABAOTH -->
+        <!-- SECTION 4: THE ARCHONS WITHIN -->
+        <section class="stage-section" id="archons-within">
+            <div class="stage-wm" aria-hidden="true">ἘΓΩ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter IV</span>
+                    <span class="stage-skt">The Archons Within</span>
+                    <span class="stage-deva-title">Ἐγώ</span>
+                </div>
+                <h2 class="stage-h2">The Seven Ego-Layers</h2>
+                <span class="stage-subtitle-label">Pride · Fear · Desire · Attachment · Aversion · Ignorance · Egoic Will</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>T</strong>he seven archons are not merely cosmic rulers presiding over planetary spheres. In the <em>Exegesis on the Soul</em> (NHC II,6), they are revealed as <em>internal structures</em> — the governing patterns of the embodied psyche, the invisible administrators of human bondage. Each archon corresponds to a specific layer of the ego, a crystallized defense mechanism that prevents the soul from recognizing its true origin in the Pleroma. The Demiurge himself is the <strong>Blind Ego</strong> at the center — the fundamental misidentification that takes the constructed self to be the true self.</p>
+
+                <p class="fade-in stagger-1">The <em>Apocryphon of John</em> describes the archons as installing <strong>the veil over the mind, desire in the body, and fear in the heart</strong> — a threefold binding that operates at the levels of cognition, sensation, and affect. The veil over the mind is <em>ignorance</em> (Eloaiou), the cognitive archon that filters all perception through the lens of separation. Desire in the body is the somatic archon (Yao) that turns the psychic body toward craving and away from stillness. Fear in the heart is the affective archon (Adonin) that contracts consciousness into defensive postures, preventing the openness required for gnosis.</p>
+
+                <!-- DIAGRAM: The Archons Within -->
+                <div class="diagram-container fade-in stagger-1">
+                    <div class="diagram-title">The Archons Within · The Seven Ego-Layers</div>
+                    <svg class="diagram-svg" viewBox="0 0 800 640" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="egoCenter" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="var(--bronze)" stop-opacity="0.35"/>
+                                <stop offset="100%" stop-color="var(--bg)" stop-opacity="0"/>
+                            </radialGradient>
+                            <radialGradient id="layerGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="var(--violet-light)" stop-opacity="0.12"/>
+                                <stop offset="100%" stop-color="var(--bg)" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="egoLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="var(--bronze-deep)" stop-opacity="0.3"/>
+                                <stop offset="50%" stop-color="var(--bronze)" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="var(--bronze-deep)" stop-opacity="0.3"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="640" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+
+                        <!-- Outer ring: Layer 7 — Pride (Sabbateon) -->
+                        <circle cx="400" cy="320" r="280" fill="none" stroke="var(--slate)" stroke-width="0.8" opacity="0.35" stroke-dasharray="6,4"/>
+                        <text x="400" y="55" text-anchor="middle" fill="var(--slate)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.7">SABBATEON · PRIDE · Saturn</text>
+                        <text x="400" y="70" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">The grandiose self-image · "I am superior" · The crown of separation</text>
+
+                        <!-- Layer 6 — Fear (Adonin) -->
+                        <circle cx="400" cy="320" r="235" fill="none" stroke="var(--slate)" stroke-width="0.8" opacity="0.4" stroke-dasharray="5,5"/>
+                        <text x="400" y="115" text-anchor="middle" fill="var(--slate)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.75">ADONIN · FEAR · Jupiter</text>
+                        <text x="400" y="130" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">The protective contraction · "I am threatened" · The fortress of the heart</text>
+
+                        <!-- Layer 5 — Desire (Yao) -->
+                        <circle cx="400" cy="320" r="190" fill="none" stroke="var(--bronze-deep)" stroke-width="0.9" opacity="0.45" stroke-dasharray="4,4"/>
+                        <text x="400" y="175" text-anchor="middle" fill="var(--bronze-deep)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.8">YAO · DESIRE · Mars</text>
+                        <text x="400" y="190" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">The hungry ghost · "I need more" · The fire that consumes itself</text>
+
+                        <!-- Layer 4 — Attachment (Sabaoth) -->
+                        <circle cx="400" cy="320" r="145" fill="none" stroke="var(--bronze)" stroke-width="1" opacity="0.5"/>
+                        <text x="400" y="235" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.85">SABAOTH · ATTACHMENT · Sun</text>
+                        <text x="400" y="250" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">The clinging self · "I cannot let go" · The golden chain of identity</text>
+
+                        <!-- Layer 3 — Aversion (Astaphaios) -->
+                        <circle cx="400" cy="320" r="100" fill="none" stroke="var(--violet)" stroke-width="1" opacity="0.55"/>
+                        <text x="400" y="295" text-anchor="middle" fill="var(--violet)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.9">ASTAPHAIOS · AVERSION · Venus</text>
+                        <text x="400" y="310" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">The rejecting shadow · "I push away" · The mirror of what we deny</text>
+
+                        <!-- Layer 2 — Ignorance (Eloaiou) -->
+                        <circle cx="400" cy="320" r="58" fill="none" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.65"/>
+                        <text x="400" y="355" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.9">ELOAIOU · IGNORANCE · Mercury</text>
+                        <text x="400" y="370" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">The veil over the mind · "I do not know" · The cognitive blind spot</text>
+
+                        <!-- Center: Layer 1 — Egoic Will (Athoth) -->
+                        <circle cx="400" cy="320" r="28" fill="url(#egoCenter)" stroke="var(--bronze)" stroke-width="1.5" opacity="0.9"/>
+                        <text x="400" y="316" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.95">ATHOTH</text>
+                        <text x="400" y="328" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.65">Egoic Will · Moon</text>
+
+                        <!-- Center label below -->
+                        <text x="400" y="410" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.15em" opacity="0.85">THE BLIND EGO</text>
+                        <text x="400" y="428" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">The Demiurge within · The false center · "I am the doer"</text>
+
+                        <!-- Radial lines connecting center to layers -->
+                        <g stroke="var(--bronze)" stroke-width="0.4" opacity="0.25">
+                            <line x1="400" y1="292" x2="400" y2="40"/>
+                            <line x1="400" y1="292" x2="660" y2="180"/>
+                            <line x1="400" y1="292" x2="660" y2="460"/>
+                            <line x1="400" y1="292" x2="400" y2="600"/>
+                            <line x1="400" y1="292" x2="140" y2="460"/>
+                            <line x1="400" y1="292" x2="140" y2="180"/>
+                        </g>
+
+                        <!-- Direction arrows showing liberation path -->
+                        <g opacity="0.4">
+                            <path d="M 720 320 A 320 320 0 0 1 400 40" fill="none" stroke="var(--violet-light)" stroke-width="0.8" stroke-dasharray="3,3"/>
+                            <polygon points="400,35 395,45 405,45" fill="var(--violet-light)" opacity="0.6"/>
+                        </g>
+                        <text x="720" y="200" text-anchor="start" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.6" transform="rotate(-35, 720, 200)">PATH OF LIBERATION</text>
+
+                        <!-- Bottom annotation -->
+                        <text x="400" y="580" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">&ldquo;The archons placed desire in the body and fear in the heart, and covered the mind with a veil.&rdquo;</text>
+                        <text x="400" y="598" text-anchor="middle" fill="var(--slate)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.4">— Exegesis on the Soul, Nag Hammadi Library (II,6)</text>
+                    </svg>
+                    <p class="diagram-caption">The seven planetary archons mapped to the seven layers of the ego. At the center sits Athoth (Egoic Will), the lunar archon of false agency. Each outer ring represents a deeper layer of identification that must be recognized and dissolved through gnosis.</p>
+                </div>
+
+                <p class="fade-in stagger-2">This internal mapping transforms Gnostic cosmology from an antique mythology into a <em>psychological technology</em>. The archons are not external demons to be exorcised but <strong>internal structures to be recognized</strong>. To see Sabbateon (Pride) is to dissolve its grip; to feel Adonin (Fear) without being ruled by it is to transmute its energy; to observe Yao (Desire) without following it is to starve the archon of its sustenance. The Gnostic does not fight the ego — the Gnostic <em>sees through</em> it. Recognition is dissolution. Awareness is liberation.</p>
+
+                <div class="scripture-panels fade-in stagger-2">
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Exegesis on the Soul · The Archons as Internal Structures</div>
+                        <p class="scripture-panel-text">&ldquo;The archons placed desire in the body and fear in the heart, and covered the mind with a veil, so that the soul might not understand the things that are and the things that will be, but might be led astray in every way.&rdquo;</p>
+                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,6)</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Apocryphon of John · The Threefold Binding</div>
+                        <p class="scripture-panel-text">&ldquo;And he made a plan with his powers. He sent his angels to the daughters of men, that they might take some of them for themselves and raise offspring for their enjoyment. And at first they did not succeed.&rdquo;</p>
+                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,1)</p>
+                    </div>
+                </div>
+
+                <p class="fade-in stagger-3">The correspondence is precise: <strong>Athoth</strong> (Moon / Egoic Will) is the fundamental delusion of agency — the belief that "I" am the doer, the thinker, the chooser. <strong>Eloaiou</strong> (Mercury / Ignorance) is the cognitive veil that filters all knowledge through the lens of separation, making the non-dual appear dual. <strong>Astaphaios</strong> (Venus / Aversion) is the rejecting shadow — all that the ego pushes away, denies, or finds repulsive, which is precisely what it needs to integrate. <strong>Sabaoth</strong> (Sun / Attachment) is the golden chain of identity — the clinging to roles, relationships, and self-concepts that define the boundaries of the "I." <strong>Yao</strong> (Mars / Desire) is the hungry ghost, the insatiable craving that drives the wheel of becoming. <strong>Adonin</strong> (Jupiter / Fear) is the protective contraction, the fortress built around the heart to prevent the vulnerability that gnosis requires. And <strong>Sabbateon</strong> (Saturn / Pride) is the crown of separation — the grandiose self-image that places the ego above all others, the final and most subtle archon because it masquerades as spiritual attainment.</p>
+
+                <div class="tension-box fade-in stagger-1">
+                    <p>The archons are not enemies to be destroyed. They are <em>teachers</em> in disguise — each one pointing to a specific knot in the psyche that must be untied. The Gnostic path is not warfare but <strong>discernment</strong>: to recognize the archon is to dissolve its power, for it derives its reality solely from our unconscious identification with it.</p>
+                </div>
+
+                <p class="fade-in stagger-4">The liberation path moves from the periphery inward — or rather, from the outer layers of identification toward the center, where the Blind Ego itself is seen as a <em>construct</em>, a pattern, a habit of attention rather than an ontological reality. When Athoth is recognized as the false center, the entire system collapses. The Demiurge within is dethroned not by force but by <em>insight</em>. The one who sees through the ego is no longer ruled by it. This is the true meaning of <em>metanoia</em> — not repentance in the moral sense, but a <strong>turning of the mind</strong> that reorients attention from the constructed self to the luminous ground beneath all construction.</p>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 5: THE VOICE AND SABAOTH -->
         <section class="stage-section" id="repentance">
             <div class="stage-wm" aria-hidden="true">ΣΑΒΑΩΘ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter IV</span>
+                    <span class="stage-n">Chapter V</span>
                     <span class="stage-skt">The Voice &amp; Sabaoth</span>
                     <span class="stage-deva-title">Σαβαώθ</span>
                 </div>
@@ -2222,18 +2442,18 @@
                         </g>
                         <!-- Lower heavens (1-6) -->
                         <rect x="300" y="260" width="200" height="50" rx="4" fill="none" stroke="var(--stone)" stroke-width="0.7" opacity="0.45"/>
-                        <text x="400" y="280" text-anchor="middle" fill="var(--stone)" font-family="Cinzel" font-size="8" letter-spacing="0.1em" opacity="0.65">THE SIX LOWER HEAVENS</text>
-                        <text x="400" y="295" text-anchor="middle" fill="var(--slate)" font-family="Crimson Pro" font-size="7" font-style="italic" opacity="0.5">Athoth, Eloaiou, Astaphaios, Yao, Adonin, Sabbateon</text>
+                        <text x="400" y="280" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em" opacity="0.65">THE SIX LOWER HEAVENS</text>
+                        <text x="400" y="295" text-anchor="middle" fill="var(--slate)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">Athoth, Eloaiou, Astaphaios, Yao, Adonin, Sabbateon</text>
                         <!-- Tartaros -->
                         <rect x="320" y="330" width="160" height="60" rx="4" fill="url(#tartarosGlow)" stroke="var(--bronze-deep)" stroke-width="0.8" opacity="0.65"/>
-                        <text x="400" y="355" text-anchor="middle" fill="var(--bronze-deep)" font-family="Cinzel" font-size="9" letter-spacing="0.1em" opacity="0.85">TARTAROS</text>
-                        <text x="400" y="375" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro" font-size="8" font-style="italic" opacity="0.55">Yaldabaoth bound · The Abyss below</text>
+                        <text x="400" y="355" text-anchor="middle" fill="var(--bronze-deep)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.85">TARTAROS</text>
+                        <text x="400" y="375" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.55">Yaldabaoth bound · The Abyss below</text>
                         <!-- Connection lines -->
                         <line x1="400" y1="240" x2="400" y2="260" stroke="var(--bronze)" stroke-width="0.5" opacity="0.45"/>
                         <line x1="400" y1="310" x2="400" y2="330" stroke="var(--stone)" stroke-width="0.4" opacity="0.35"/>
                         <!-- Side annotation -->
-                        <text x="720" y="200" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro" font-size="8" font-style="italic" opacity="0.65" transform="rotate(90, 720, 200)">The chariot of cherubim and seraphim</text>
-                        <text x="400" y="420" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro" font-size="9" font-style="italic" opacity="0.5">&ldquo;Sabaoth, his son, was indignant at his father and he repented.&rdquo;</text>
+                        <text x="720" y="200" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.65" transform="rotate(90, 720, 200)">The chariot of cherubim and seraphim</text>
+                        <text x="400" y="420" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">&ldquo;Sabaoth, his son, was indignant at his father and he repented.&rdquo;</text>
                     </svg>
                     <p class="diagram-caption">Sabaoth&rsquo;s repentance elevates him to the seventh heaven, where he rules with a chariot of cherubim and seraphim. Yaldabaoth is cast down to Tartaros, his power confined to the lower abyss.</p>
                 </div>
@@ -2257,62 +2477,155 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
-
-        <!-- SECTION 5: COMPARATIVE THRESHOLDS -->
-        <section class="stage-section" id="comparative">
-            <div class="stage-wm" aria-hidden="true">ΔΗΜΙΟΥΡΓΟΣ</div>
+        <!-- SECTION 6: THE CRAFTSMAN COMPARED -->
+        <section class="stage-section" id="compared">
+            <div class="stage-wm" aria-hidden="true">ΔΗΜΙ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter V</span>
+                    <span class="stage-n">Chapter VI</span>
                     <span class="stage-skt">The Craftsman Compared</span>
                     <span class="stage-deva-title">Δημιουργός</span>
                 </div>
-                <h2 class="stage-h2">Plato · Kabbalah · Manichaeism</h2>
-                <span class="stage-subtitle-label">The Secondary Creator in Four Traditions</span>
+                <h2 class="stage-h2">Plato, Kabbalah, Manichaeism</h2>
+                <span class="stage-subtitle-label">The Demiurge Across Traditions · Comparative Cartography</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>T</strong>he Gnostic Demiurge is not an isolated invention. He stands in a long tradition of <em>secondary creators</em> &mdash; beings who fashion the visible world but do not originate the principles by which it is fashioned. Plato&rsquo;s <span class="greek-term" title="The craftsman; the benevolent but limited creator of the Timaeus">Demiurge</span> in the <em>Timaeus</em> looks to the eternal Forms and copies them as best he can in the recalcitrant medium of matter. He is not omnipotent, not the source of the Forms, and not the highest principle. The Gnostic Yaldabaoth is a dark inversion of this figure: he too looks to higher realities, but he does so <em>unconsciously</em>, through the stolen power of his mother, and what he produces is not a diminished copy but a <em>prison</em>.</p>
+                <p><strong>T</strong>he figure of the Demiurge is not unique to Gnosticism. It appears, under different names and with different valences, across the major esoteric traditions of the ancient world. Understanding these parallels illuminates what is distinctive about the Gnostic formulation — and what is universal about the human recognition that the apparent creator of the visible world is not the ultimate source of being.</p>
 
-                <p class="fade-in stagger-1">In Kabbalah, the <span class="greek-term" title="The other side; the realm of evil and impurity in Kabbalah">Sitra Achra</span> (the Other Side) stands in parallel to the <em>sefirot</em> of holiness, forming a shadow tree of demonic forces. The <em>qlippot</em> (husks) are not independent creations but <em>broken vessels</em> &mdash; the debris of a cosmic catastrophe, the <em>Shevirat Ha-Kelim</em> (breaking of the vessels). Like the Gnostic archons, the <em>qlippot</em> trap divine sparks and must be redeemed through human action. The Gnostic and the Kabbalist share the same diagnosis: the world is not as it should be, not because creation failed but because something <em>interrupted</em> creation.</p>
+                <!-- DIAGRAM: Comparative Table -->
+                <div class="diagram-container fade-in stagger-1">
+                    <div class="diagram-title">The Craftsman Compared · Demiurge Across Traditions</div>
+                    <svg class="diagram-svg" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="tableHeader" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--surface2)" stop-opacity="0.8"/>
+                                <stop offset="100%" stop-color="var(--surface)" stop-opacity="0.6"/>
+                            </linearGradient>
+                            <linearGradient id="tableRow" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--surface)" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="var(--bg)" stop-opacity="0.2"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="580" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
 
-                <div class="resonance-callout fade-in stagger-1">
-                    <p>The Demiurge is not a devil to be fought but a mistake to be understood. He is the cosmic equivalent of the ego: a necessary organizer of experience who has mistaken himself for the whole self. The Gnostic path is not war against the Demiurge but <em>recognition</em> of his limits &mdash; and, in that recognition, the dissolution of his power over the soul.</p>
+                        <!-- Title -->
+                        <text x="400" y="35" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em" opacity="0.9">THE CRAFTSMAN ACROSS TRADITIONS</text>
+
+                        <!-- Header row -->
+                        <rect x="40" y="55" width="720" height="38" fill="url(#tableHeader)" rx="4" stroke="var(--border-strong)" stroke-width="0.5"/>
+                        <text x="140" y="78" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">TRADITION</text>
+                        <text x="340" y="78" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">NAME / FIGURE</text>
+                        <text x="580" y="78" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">KEY CHARACTERISTICS</text>
+
+                        <!-- Row 1: Plato -->
+                        <rect x="40" y="98" width="720" height="72" fill="url(#tableRow)" rx="4" stroke="var(--border)" stroke-width="0.3"/>
+                        <text x="140" y="122" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">PLATONISM</text>
+                        <text x="140" y="138" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Timaeus · c. 360 BCE</text>
+                        <text x="340" y="122" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">ΔΗΜΙΟΥΡΓΟΣ</text>
+                        <text x="340" y="138" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Craftsman · The Maker</text>
+                        <text x="580" y="118" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Benevolent but limited; fashions</text>
+                        <text x="580" y="132" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">cosmos after eternal Forms; not</text>
+                        <text x="580" y="146" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">the highest principle · Nous</text>
+                        <text x="580" y="160" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"He was good, and the good can never</text>
+                        <text x="580" y="172" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">have any jealousy of what is." — Timaeus 29e</text>
+
+                        <!-- Row 2: Gnosticism -->
+                        <rect x="40" y="175" width="720" height="72" fill="none" rx="4" stroke="var(--border)" stroke-width="0.3"/>
+                        <text x="140" y="199" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">GNOSTICISM</text>
+                        <text x="140" y="215" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Nag Hammadi · 2nd–4th c. CE</text>
+                        <text x="340" y="199" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">YALDABAOTH</text>
+                        <text x="340" y="215" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Saklas · Samael · The Blind God</text>
+                        <text x="580" y="195" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Ignorant and arrogant; believes himself</text>
+                        <text x="580" y="209" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">sole god; creates flawed material prison;</text>
+                        <text x="580" y="223" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">product of Sophia's deficiency · Hylic</text>
+                        <text x="580" y="237" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"I am God and there is no other God</text>
+                        <text x="580" y="249" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">beside me." — Apocryphon of John</text>
+
+                        <!-- Row 3: Kabbalah -->
+                        <rect x="40" y="252" width="720" height="72" fill="url(#tableRow)" rx="4" stroke="var(--border)" stroke-width="0.3"/>
+                        <text x="140" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">KABBALAH</text>
+                        <text x="140" y="292" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Zohar · 13th c. CE</text>
+                        <text x="340" y="276" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">METATRON / SAMAEL</text>
+                        <text x="340" y="292" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Lesser YHWH · The Accuser</text>
+                        <text x="580" y="272" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Angel of the Presence; mediator between</text>
+                        <text x="580" y="286" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">infinite and finite; Samael as dark side</text>
+                        <text x="580" y="300" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">of the demiurgic function · Yetzirah</text>
+                        <text x="580" y="314" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"The Holy One, blessed be He, created</text>
+                        <text x="580" y="326" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">the world through the angel Metatron."</text>
+
+                        <!-- Row 4: Manichaeism -->
+                        <rect x="40" y="329" width="720" height="72" fill="none" rx="4" stroke="var(--border)" stroke-width="0.3"/>
+                        <text x="140" y="353" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">MANICHAEISM</text>
+                        <text x="140" y="369" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">3rd c. CE · Mesopotamia</text>
+                        <text x="340" y="353" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">THE PRINCE OF DARKNESS</text>
+                        <text x="340" y="369" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Az · The Archons · The Watchers</text>
+                        <text x="580" y="349" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Active malevolence; not merely ignorant</text>
+                        <text x="580" y="363" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">but hostile; traps light in matter; cosmic</text>
+                        <text x="580" y="377" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">dualism of light and darkness · Hyle</text>
+                        <text x="580" y="391" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"The Princes of Darkness devoured the</text>
+                        <text x="580" y="403" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">light and became pregnant with it."</text>
+
+                        <!-- Row 5: Hermeticism -->
+                        <rect x="40" y="406" width="720" height="72" fill="url(#tableRow)" rx="4" stroke="var(--border)" stroke-width="0.3"/>
+                        <text x="140" y="430" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">HERMETICISM</text>
+                        <text x="140" y="446" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Corpus Hermeticum · 2nd c. CE</text>
+                        <text x="340" y="430" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">POIMANDRES / THE NOUS</text>
+                        <text x="340" y="446" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Divine Mind · The Craftsman</text>
+                        <text x="580" y="426" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Ambiguous — both creator and revealer;</text>
+                        <text x="580" y="440" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">fashions seven planetary governors who</text>
+                        <text x="580" y="454" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">can be transcended through gnosis · Logos</text>
+                        <text x="580" y="468" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"The Nous is god, male and female,</text>
+                        <text x="580" y="480" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">life and light, word and spirit." — CH I</text>
+
+                        <!-- Row 6: Vedanta -->
+                        <rect x="40" y="483" width="720" height="72" fill="none" rx="4" stroke="var(--border)" stroke-width="0.3"/>
+                        <text x="140" y="507" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">VEDANTA</text>
+                        <text x="140" y="523" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Upanishads · c. 800–200 BCE</text>
+                        <text x="340" y="507" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">MAYA / ISHVARA</text>
+                        <text x="340" y="523" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Cosmic Illusion · The Lord</text>
+                        <text x="580" y="503" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Ishvara as qualified Brahman; Maya as</text>
+                        <text x="580" y="517" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">the power of projection that makes the</text>
+                        <text x="580" y="531" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">many appear from the One · Avidya</text>
+                        <text x="580" y="545" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"By whom impelled, by whom compelled</text>
+                        <text x="580" y="557" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">does the mind fly forth?" — Kena Up. 1.1</text>
+
+                        <!-- Bottom annotation -->
+                        <text x="400" y="575" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">&ldquo;The same river is called by different names by those who stand on different banks.&rdquo;</text>
+                    </svg>
+                    <p class="diagram-caption">Comparative cartography of the Demiurge figure across six major traditions. Each tradition names, describes, and evaluates the craftsman differently — yet all recognize the gap between the apparent creator and the ultimate source.</p>
                 </div>
 
-                <div class="scripture-panels fade-in stagger-2">
+                <p class="fade-in stagger-2"><strong>Plato's Demiurge</strong> (Δημιουργός) in the <em>Timaeus</em> is the most benign of these figures. He is not ignorant but <em>limited</em> — a craftsman who looks to the eternal Forms as his model and shapes the receptacle (χώρα) of becoming according to that pattern. He is "good, and the good can never have any jealousy of what is." His limitation is not moral but ontological: he is a secondary cause, not the First Principle. The Gnostics radicalized this figure, transforming benevolent limitation into arrogant ignorance, but the structural parallel is unmistakable.</p>
+
+                <p class="fade-in stagger-3"><strong>Kabbalah</strong> offers the most complex parallel. The Zohar describes <em>Metatron</em> as the "Lesser YHWH," the angel through whom the infinite Ein Sof creates and governs the finite world. But Kabbalah also preserves the figure of <em>Samael</em> — the same name given to the Gnostic Demiurge — as the dark side of the demiurgic function, the accuser, the obstacle that must be transformed. Where Gnosticism sees the Demiurge as a tragic mistake, Kabbalah sees the demiurgic function as a necessary stage in the <em>tzimtzum</em> (contraction) that makes creation possible. The craftsman is not rejected but refined.</p>
+
+                <div class="scripture-panels fade-in stagger-3">
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Comparative Table · The Secondary Creator</div>
-                        <div class="comparative-table-wrapper">
-                            <table class="comparative-table">
-                                <thead>
-                                    <tr>
-                                        <th>Aspect</th>
-                                        <th>Plato&rsquo;s Timaeus</th>
-                                        <th>Kabbalah</th>
-                                        <th>Manichaeism</th>
-                                        <th>Gnosticism</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>The creator</td><td>The Demiurge (benevolent)</td><td>The <em>qlippot</em> (broken vessels)</td><td>The Prince of Darkness</td><td>Yaldabaoth (ignorant)</td></tr>
-                                    <tr><td>Source of form</td><td>The eternal Forms</td><td>The <em>sefirot</em></td><td>The Father of Light</td><td>The Pleroma (stolen likeness)</td></tr>
-                                    <tr><td>The problem</td><td>Matter is recalcitrant</td><td>Breaking of the vessels</td><td>Light trapped in matter</td><td>Forgetfulness</td></tr>
-                                    <tr><td>The solution</td><td>Philosophical contemplation</td><td><em>Tikkun</em> (repair)</td><td>Liberation through asceticism</td><td><em>Gnosis</em> (recognition)</td></tr>
-                                    <tr><td>Final state</td><td>Harmony of soul and cosmos</td><td>Restoration of the vessels</td><td>Return to the Kingdom of Light</td><td>Return to the Pleroma</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <div class="scripture-panel-label">Plato · Timaeus · The Good Craftsman</div>
+                        <p class="scripture-panel-text">&ldquo;Let me tell you then why the creator made this world of generation. He was good, and the good can never have any jealousy of what is. And so, being free from jealousy, he desired that all things should be as like himself as they could be.&rdquo;</p>
+                        <p class="scripture-panel-ref">&mdash; Timaeus 29e</p>
                     </div>
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Second Discourse of the Great Seth</div>
-                        <p class="scripture-panel-text">&ldquo;Moses was a joke... He did not know me, and none of those before him, from Adam to Moses and John the Baptizer knew me or my siblings. They had instruction from Yaldabaoth&rsquo;s angels to observe food laws and submit to bitter slavery.&rdquo;</p>
-                        <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (VII,2)</p>
+                        <div class="scripture-panel-label">Zohar · The Craftsman Angel</div>
+                        <p class="scripture-panel-text">&ldquo;The Holy One, blessed be He, created the world through the angel Metatron, who is the garment of the Shekhinah, the visible manifestation of the invisible God.&rdquo;</p>
+                        <p class="scripture-panel-ref">&mdash; Zohar, Bereshit 126b</p>
                     </div>
                 </div>
+
+                <p class="fade-in stagger-4"><strong>Manichaeism</strong> pushes the demiurgic figure in the opposite direction — toward active malevolence. The Prince of Darkness is not merely ignorant but <em>hostile</em>, a being who deliberately traps particles of divine light in matter and seeks to prevent their liberation. Where the Gnostic Demiurge is a fool who thinks himself wise, the Manichaean archon is a thief who knows exactly what he has stolen. This dualism is more extreme than Gnosticism's qualified monism: in Manichaeism, darkness is a co-eternal principle, not a derivative deficiency.</p>
+
+                <p class="fade-in stagger-5"><strong>Hermeticism</strong> occupies a mediating position. The <em>Corpus Hermeticum</em> describes Poimandres (the Divine Mind) as both creator and revealer — a figure who fashions the seven planetary governors but also provides the gnosis that transcends them. The Hermetic craftsman is not rejected but <em>surpassed</em>: "Rise up through the seven spheres, and you shall leave behind the governance of each, and in the eighth sphere you shall be with the Powers." The archons are stepping stones, not prison guards — though they can become the latter if the soul forgets its origin.</p>
+
+                <div class="tension-box fade-in stagger-1">
+                    <p>The comparative study reveals a universal pattern: <strong>every tradition that distinguishes the apparent from the real, the finite from the infinite, the constructed from the primordial, requires a mediating figure</strong> — a craftsman, a governor, a veil, a limit. The name changes; the function remains. To recognize the Demiurge is to recognize the boundary between what can be known through form and what transcends all form.</p>
+                </div>
+
+                <p class="fade-in stagger-5">The Vedantic parallel is perhaps the most philosophically precise. <strong>Maya</strong> is not a person but a power — the power of projection (<em>vikṣepa</em>) that makes the many appear from the One, and the power of concealment (<em>āvaraṇa</em>) that hides the One within the many. <strong>Ishvara</strong> is the personal God, the qualified Brahman, the cosmic architect who operates within Maya's field. The Gnostic Demiurge is Ishvara without the recognition of Brahman — the personal God who has forgotten the impersonal ground. The Gnostic path is the Vedantic path in reverse: not from the many to the qualified One to the unqualified Absolute, but from the false absolute (the Demiurge) through the qualified One (the redeemed Sabaoth) to the unqualified Pleroma.</p>
             </div>
         </section>
+
+        <hr class="stage-sep"/>
 
     </div><!-- .stages-wrap -->
 
@@ -2323,26 +2636,26 @@
         <div class="pq-glow" aria-hidden="true"></div>
         <div class="pullquote">
             <p class="pq-text">"Yaldabaoth said, 'I am God and there is no other God beside me,' for he is ignorant of his source, the place from which he came." — Hypostasis of the Archons, Nag Hammadi Library (II,4)</p>
-            <p class="pq-attr"><a href="gnosticism-unknown-father.html" class="continue-link">&larr; Return to The Unknown Father</a> <span class="pq-sep">·</span> <a href="gnosticism-the_divine_spark.html" class="continue-link">Continue to The Divine Spark &rarr;</a></p>
+            <p class="pq-attr"><a href="gnosticism-unknown-father.html" class="continue-link">&larr; Return to The Source</a> <span class="pq-sep">·</span> <a href="gnosticism-the_divine_spark.html" class="continue-link">Continue to The Divine Spark &rarr;</a></p>
         </div>
     </div>
 
-   <!-- ═══════════════════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════════════════
     CHAPTER NAVIGATION
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">&#8962; Home</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-unknown-father.html" class="chapter-link active">I &middot; The Unknown Father</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-the_demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV &middot; The Bridal Chamber</a>
-  <span class="chapter-sep">&rarr;</span>
-  <a href="gnosticism-syzygy-nymphon.html" class="chapter-link">V &middot; Syzygy Theology</a>
-</div>
+        <a href="../index.html" class="chapter-link">⌂ Home</a>
+        <span class="chapter-sep">✦</span>
+        <a href="gnosticism-unknown-father.html" class="chapter-link">I · The Source</a>
+        <span class="chapter-sep">✦</span>
+        <a href="gnosticism-the_demiurge.html" class="chapter-link active">II · The Demiurge</a>
+        <span class="chapter-sep">✦</span>
+        <a href="gnosticism-the_divine_spark.html" class="chapter-link">III · The Divine Spark</a>
+        <span class="chapter-sep">✦</span>
+        <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV · The Bridal Chamber</a>
+        <span class="chapter-sep">→</span>
+        <a href="gnostic_syzygy_nymphon.html" class="chapter-link">V · Syzygy Theology</a>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
@@ -2351,17 +2664,17 @@
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-            <div class="footer-links">
-      <a href="../index.html">⌂ Vedantic Mappings</a>
-      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="gnosticism-unknown-father.html">Gnosticism</a>
-      <a href="../taoism/taoism-threshold.html">Taoism</a>
-      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-    </div>
-        <div class="footer-credit">Researched and composed - .</div>
-        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 

@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Gospel of Thomas — A Mystical Exegesis woven with the Nag Hammadi Library." />
+    <title>The Gospel of Thomas · A Mystical Exegesis · Nag Hammadi Woven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ═══════════════════════════════════════════════════════
+           TOKENS — Dark Kabbalistic Theme (FULLY RESTORED)
+           ═══════════════════════════════════════════════════════ */
+        :root {
+            --bg: #0a0c14;
+            --bg2: #0f1220;
+            --surface: #161a2a;
+            --surface2: #1e2338;
+            --ink: #e8ecf4;
+            --ink2: #8a9ab8;
+            --stone: #6a7a9a;
+            --stone-light: #8a9ab8;
+            --gold: #c4a855;
+            --gold-light: #e0c878;
+            --gold-deep: #a08840;
+            --gold-glow: rgba(196, 168, 85, 0.08);
+            --sun-glow: rgba(196, 168, 85, 0.18);
+            --indigo: #5a6a9a;
+            --indigo-light: #7a8aba;
+            --indigo-glow: rgba(90, 106, 154, 0.12);
+            --border: rgba(255, 255, 255, 0.05);
+            --border-strong: rgba(255, 255, 255, 0.10);
+            --border-subtle: rgba(255, 255, 255, 0.025);
+            --border-medium: rgba(255, 255, 255, 0.06);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
+            --shadow-gold: 0 0 40px var(--gold-glow);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            --grain-opacity: 0.03;
+        }
+        [data-theme="light"] {
+            --bg: #f0f2f8;
+            --bg2: #e4e7f0;
+            --surface: #ffffff;
+            --surface2: #f5f7fa;
+            --ink: #1a1e2e;
+            --ink2: #3a4058;
+            --stone: #5a6080;
+            --stone-light: #7a80a0;
+            --gold: #8a7030;
+            --gold-light: #a08840;
+            --gold-deep: #6a5820;
+            --indigo: #5a6a9a;
+            --indigo-light: #7a8aba;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-strong: rgba(0, 0, 0, 0.10);
+            --border-subtle: rgba(0, 0, 0, 0.025);
+            --border-medium: rgba(0, 0, 0, 0.06);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-gold: 0 0 40px rgba(138, 112, 48, 0.12);
+            --grain-opacity: 0.015;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
+            font-size: 18px;
+            line-height: 1.78;
+            transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--indigo), var(--gold-deep), var(--gold));
+            border-radius: 2px;
+        }
+        ::selection { background: rgba(90, 106, 154, 0.20); color: var(--ink); }
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           KEYFRAMES
+           ═══════════════════════════════════════════════════════ */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(24px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scrollBounce {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.3; transform: scaleY(0.5); }
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+        @keyframes rippleOut {
+            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(5); }
+        }
+        @keyframes lineReveal {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        @keyframes diamondReveal {
+            from { opacity: 0; transform: rotate(45deg) scale(0); }
+            to { opacity: 1; transform: rotate(45deg) scale(1); }
+        }
+        @keyframes ambientDrift {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.35; }
+            33% { transform: translate(3%, -2%) scale(1.03); opacity: 0.55; }
+            66% { transform: translate(-2%, 3%) scale(0.97); opacity: 0.25; }
+        }
+        @keyframes diagramFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           NAV COMPASS
+           ═══════════════════════════════════════════════════════ */
+        .nav-compass {
+            position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010;
+            display: flex; flex-direction: column; gap: 0.5rem;
+        }
+        .nav-toggle {
+            width: 44px; height: 44px; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 12px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow);
+        }
+        .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+        .nav-menu {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep);
+            opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none;
+            transition: all 0.4s var(--ease-out-expo); min-width: 240px;
+            max-height: 80vh; overflow-y: auto;
+        }
+        .nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+        .nav-item {
+            display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem;
+            color: var(--stone); text-decoration: none; font-size: 0.82rem; line-height: 1.35;
+            transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent;
+            font-family: 'Cinzel', serif;
+        }
+        .nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
+        .nav-item.active { color: var(--gold-light); background: rgba(154, 122, 58, 0.08); border-left-color: var(--gold); }
+        .nav-section-title {
+            font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.35em;
+            color: var(--gold-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem;
+        }
+        .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+
+        /* ═══════════════════════════════════════════════════════
+           CONTROLS
+           ═══════════════════════════════════════════════════════ */
+        .theme-toggle {
+            position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000;
+            width: 48px; height: 48px; border-radius: 50%; background: var(--surface);
+            border: 1px solid var(--border); cursor: pointer; display: flex;
+            align-items: center; justify-content: center; font-size: 1.2rem;
+            transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: var(--shadow-gold), 0 2px 8px rgba(0, 0, 0, 0.1); overflow: hidden;
+        }
+        .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
+        .theme-toggle:active { transform: scale(0.95); }
+        .theme-toggle-icon {
+            position: absolute; transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
+            color: var(--gold); display: flex; align-items: center; justify-content: center;
+            width: 100%; height: 100%;
+        }
+        [data-theme="light"] .ti-sun { opacity: 1; transform: scale(1); }
+        [data-theme="light"] .ti-moon { opacity: 0; transform: scale(0.5); }
+        [data-theme="dark"] .ti-sun { opacity: 0; transform: scale(0.5); }
+        [data-theme="dark"] .ti-moon { opacity: 1; transform: scale(1); }
+        .back-to-top {
+            position: fixed; bottom: 6.5rem; right: 1.5rem; z-index: 1000;
+            width: 44px; height: 44px; border-radius: 50%; background: var(--surface);
+            border: 1px solid var(--border); cursor: pointer; display: flex;
+            align-items: center; justify-content: center; color: var(--stone); font-size: 1.1rem;
+            transition: all 0.4s var(--ease-out-expo); box-shadow: var(--shadow);
+            opacity: 0; pointer-events: none; transform: translateY(12px) scale(0.9);
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+        .back-to-top:hover { color: var(--gold); border-color: var(--gold); transform: translateY(-3px) scale(1.08); }
+
+        /* ═══════════════════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════════════════ */
+        .hero {
+            min-height: 100vh; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; position: relative;
+            overflow: hidden; padding: 5rem 2rem 6rem; text-align: center;
+            background: radial-gradient(ellipse 120% 100% at 50% 30%, #1a1e3a 0%, #0f1220 50%, #0a0c14 100%);
+        }
+        [data-theme="light"] .hero {
+            background: radial-gradient(ellipse 120% 100% at 50% 30%, #e4e7f0 0%, #d8dce8 50%, #c8cdd8 100%);
+        }
+        .hero::after {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 70% 30%, rgba(90, 106, 154, 0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 20% 70%, rgba(196, 168, 85, 0.06) 0%, transparent 70%);
+            animation: ambientDrift 20s ease-in-out infinite;
+            pointer-events: none; z-index: 1;
+        }
+        .hero-ripples { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+        .hero-ripple {
+            position: absolute; top: 50%; left: 50%; width: 200px; height: 200px;
+            border-radius: 50%; border: 1px solid var(--indigo);
+            transform: translate(-50%, -50%); pointer-events: none;
+            animation: rippleOut 10s ease-out infinite;
+        }
+        .hero-ripple:nth-child(2) { animation-delay: 3.5s; }
+        .hero-ripple:nth-child(3) { animation-delay: 7s; }
+        .hero-eyemark {
+            font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em;
+            color: var(--indigo-light); text-transform: uppercase; margin-bottom: 1.5rem;
+            position: relative; z-index: 3;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; opacity: 0;
+        }
+        .hero-emblem {
+            width: clamp(140px, 20vw, 190px); margin: 0 auto 2.5rem;
+            position: relative; z-index: 3;
+            animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards; opacity: 0;
+        }
+        .hero-emblem svg { width: 100%; height: auto; display: block; }
+        .hero-title {
+            font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5.5vw, 4.6rem);
+            font-weight: 500; letter-spacing: 0.06em; line-height: 1.08; color: var(--ink);
+            text-shadow: 0 2px 40px rgba(90, 106, 154, 0.2); margin-bottom: 0.2em;
+            position: relative; z-index: 3;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; opacity: 0;
+        }
+        [data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196, 168, 85, 0.20); }
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif; font-style: italic;
+            font-size: clamp(0.95rem, 2.2vw, 1.25rem); color: var(--indigo-light);
+            letter-spacing: 0.12em; margin-bottom: 2.5rem; position: relative; z-index: 3;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; opacity: 0;
+            max-width: 560px; line-height: 1.5;
+        }
+        .hero-divider {
+            display: flex; align-items: center; gap: 1.25rem; margin: 0 auto 2.5rem;
+            width: fit-content; opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+            position: relative; z-index: 2;
+        }
+        .hero-divider-line {
+            width: 60px; height: 1px;
+            background: linear-gradient(90deg, var(--indigo), var(--gold-deep));
+            transform-origin: left; animation: lineReveal 1.2s 1s forwards; transform: scaleX(0);
+        }
+        .hero-divider-line:last-child {
+            background: linear-gradient(90deg, var(--gold-deep), transparent); transform-origin: right;
+        }
+        .hero-divider-diamond {
+            width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg);
+            box-shadow: 0 0 8px var(--sun-glow);
+            animation: diamondReveal 0.8s 1.2s forwards; opacity: 0;
+        }
+        .hero-heb-display {
+            font-family: 'Frank Ruhl Libre', 'Times New Roman', serif;
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); color: var(--gold); letter-spacing: 0.08em;
+            opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+            margin-bottom: 0.5rem; position: relative; z-index: 3; direction: rtl;
+        }
+        .hero-quote {
+            font-family: 'IM Fell English', serif; font-style: italic;
+            font-size: clamp(0.9rem, 1.8vw, 1.1rem); color: var(--ink2);
+            max-width: 560px; margin: 0 auto 0.6rem; line-height: 1.88;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
+            position: relative; z-index: 2; opacity: 0;
+        }
+        .hero-attr {
+            font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em;
+            color: var(--stone); text-transform: uppercase;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
+            position: relative; z-index: 2; margin-bottom: 2rem; opacity: 0;
+        }
+        .hero-scroll-cue {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+            opacity: 0; animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
+            cursor: pointer; z-index: 2; transition: transform 0.3s var(--ease-out-expo);
+        }
+        .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+        .hero-scroll-cue span {
+            font-family: 'Cinzel', serif; font-size: 0.48rem; letter-spacing: 0.5em;
+            color: var(--stone); text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px; height: 32px;
+            background: linear-gradient(180deg, var(--indigo-light), transparent);
+            animation: scrollBounce 2.5s ease-in-out infinite;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           EDITORIAL LAYOUT
+           ═══════════════════════════════════════════════════════ */
+        .wrap { max-width: 760px; margin: 0 auto; padding: 0 36px; }
+        .heb { font-family: 'Frank Ruhl Libre', 'Times New Roman', serif; direction: rtl; unicode-bidi: embed; }
+        .heb-inline { font-family: 'Frank Ruhl Libre', 'Times New Roman', serif; font-size: 0.88em; color: var(--gold); opacity: 0.85; margin: 0 0.2em; }
+        .ed-section-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--indigo-light); text-transform: uppercase; margin-bottom: 0.75rem; }
+        .ed-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500; color: var(--ink); margin-bottom: 0.6rem; letter-spacing: 0.02em; }
+        [data-theme="dark"] .ed-h2 { color: var(--gold-light); }
+        .ed-intro { font-family: 'Crimson Pro', serif; font-size: 1.05rem; color: var(--stone); line-height: 1.72; max-width: 580px; margin-bottom: 2.5rem; }
+        .ed-h3 {
+            font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.42em;
+            color: var(--gold); text-transform: uppercase; margin: 3rem 0 1.25rem;
+            display: flex; align-items: center; gap: 1rem; position: relative; z-index: 1;
+        }
+        .ed-h3::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--gold), transparent); opacity: 0.2; }
+        .section-separator {
+            width: 48px; height: 1px;
+            background: linear-gradient(90deg, var(--indigo), var(--gold), var(--gold-light));
+            margin: 0 auto 20px; opacity: 0; transform: scaleX(0);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+        .section-separator.visible { opacity: 1; transform: scaleX(1); }
+
+        /* ═══════════════════════════════════════════════════════
+           STAGE SECTIONS
+           ═══════════════════════════════════════════════════════ */
+        .stages-wrap { background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 20%, var(--bg) 80%, var(--bg2) 100%); }
+        .stage-section { padding: 80px 24px; max-width: 900px; margin: 0 auto; position: relative; overflow: hidden; }
+        .stage-wm {
+            position: absolute; right: -20px; top: 20px;
+            font-family: 'Frank Ruhl Libre', serif; font-size: clamp(100px, 14vw, 180px);
+            line-height: 1; color: var(--gold); opacity: 0.04;
+            pointer-events: none; user-select: none; z-index: 0; direction: rtl;
+        }
+        [data-theme="dark"] .stage-wm { opacity: 0.06; }
+        .stage-header { position: relative; z-index: 1; margin-bottom: 3rem; }
+        .stage-eyeline { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+        .stage-n { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; }
+        .stage-heb-eye { font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; color: var(--stone-light); direction: rtl; }
+        .stage-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+        [data-theme="dark"] .stage-h2 { color: var(--gold-light); }
+        .stage-subtitle { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.38em; color: var(--stone); text-transform: uppercase; margin-bottom: 1.5rem; display: block; }
+        .stage-rule { width: 40px; height: 1.5px; background: var(--gold); display: block; margin-top: 1rem; position: relative; z-index: 1; }
+        .stage-rule::after { content: ''; position: absolute; right: -14px; top: 50%; transform: translateY(-50%) rotate(45deg); width: 5px; height: 5px; background: var(--gold); opacity: 0.6; }
+        .stage-body { position: relative; z-index: 1; }
+        .stage-body > p { font-family: 'Crimson Pro', serif; font-size: 1.02rem; color: var(--stone); line-height: 1.82; margin-bottom: 1.5rem; }
+        .stage-body > p strong { color: var(--ink); font-weight: 500; }
+        .stage-body > p em { color: var(--ink2); font-style: italic; }
+        [data-theme="dark"] .stage-body > p { color: var(--stone); }
+        [data-theme="dark"] .stage-body > p strong { color: var(--ink); }
+        .stage-body > p:first-of-type::first-letter {
+            font-family: 'Cormorant Garamond', serif; font-size: 4.4rem; line-height: 0.7;
+            float: left; margin: 0.08em 0.12em 0 0; color: var(--gold); font-weight: 400;
+        }
+        .stage-sep { border: none; height: 1px; background: linear-gradient(to right, transparent, var(--gold), var(--gold-light), var(--gold), transparent); opacity: 0.1; max-width: 760px; margin: 0 auto; }
+
+        /* ═══════════════════════════════════════════════════════
+           PULL QUOTES
+           ═══════════════════════════════════════════════════════ */
+        .pull-q {
+            border-left: 3px solid var(--indigo); margin: 2.5rem 0;
+            padding: 0.75rem 0 0.75rem 2rem; position: relative; z-index: 1;
+            background: var(--surface2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .pull-q p {
+            font-family: 'IM Fell English', serif; font-style: italic;
+            font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-weight: 300; color: var(--ink);
+            margin-bottom: 0.75rem; line-height: 1.6;
+        }
+        .pull-q cite { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--stone-light); text-transform: uppercase; font-style: normal; }
+        [data-theme="dark"] .pull-q p { color: var(--ink); }
+
+        /* ═══════════════════════════════════════════════════════
+           OPENING BANNER
+           ═══════════════════════════════════════════════════════ */
+        .pq-section {
+            padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden;
+            background: radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 70%, #0a0c14 100%);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        [data-theme="light"] .pq-section {
+            background: radial-gradient(ellipse 90% 80% at 50% 35%, #e4e7f0 0%, #d8dce8 40%, #c8cdd8 70%, #c8cdd8 100%);
+        }
+        .pq-glow {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%);
+            width: 500px; height: 350px;
+            background: radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 55%);
+            pointer-events: none; animation: breathe 10s ease-in-out infinite; transform-origin: center;
+        }
+        .pq-mark {
+            font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: var(--gold);
+            opacity: 0.06; line-height: 0.8; display: block;
+            pointer-events: none; user-select: none; margin-bottom: -2.5rem;
+        }
+        .pq-text {
+            font-family: 'IM Fell English', serif; font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.68;
+            max-width: 640px; margin: 0 auto 1.25rem; position: relative; z-index: 1;
+        }
+        .pq-attr { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; position: relative; z-index: 1; }
+
+        /* ═══════════════════════════════════════════════════════
+           SCRIPTURE PANELS
+           ═══════════════════════════════════════════════════════ */
+        .scripture-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 2.5rem 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+        .scripture-panel { background: var(--surface); padding: 32px; transition: background 0.3s; }
+        .scripture-panel:hover { background: var(--surface2); }
+        .scripture-label { font-family: 'Cinzel', serif; font-size: 0.53rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+        .scripture-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.72; color: var(--ink); margin-bottom: 12px; font-weight: 300; }
+        .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+        .scripture-heb { font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; color: var(--gold); opacity: 0.7; margin-bottom: 10px; direction: rtl; line-height: 1.4; }
+
+        /* ═══════════════════════════════════════════════════════
+           NAG HAMMADI PARALLEL PANEL
+           ═══════════════════════════════════════════════════════ */
+        .nh-panel { margin: 2.5rem 0; border-left: 3px solid var(--gold-light); background: var(--surface2); padding: 1.5rem 2rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+        .nh-panel .nh-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 0.5rem; }
+        .nh-panel .nh-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: 1.05rem; line-height: 1.7; color: var(--ink); margin-bottom: 0.5rem; }
+        .nh-panel .nh-ref { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.2em; color: var(--stone-light); text-transform: uppercase; }
+        .nh-panel .nh-comment { margin-top: 0.8rem; font-size: 0.9rem; color: var(--stone); line-height: 1.6; }
+
+        /* ═══════════════════════════════════════════════════════
+           SUMMARY TABLE
+           ═══════════════════════════════════════════════════════ */
+        .nh-table-wrap { margin: 3rem 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow-x: auto; }
+        .nh-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .nh-table th { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 1rem 1.2rem; text-align: left; background: var(--bg2); border-bottom: 1px solid var(--border); }
+        .nh-table td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--border-subtle); color: var(--stone); line-height: 1.5; }
+        .nh-table tr:last-child td { border-bottom: none; }
+        .nh-table .nh-td-title { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.05em; }
+        .nh-table .nh-td-theme { font-family: 'Crimson Pro', serif; font-weight: 400; color: var(--ink); }
+
+        /* ═══════════════════════════════════════════════════════
+           TOC
+           ═══════════════════════════════════════════════════════ */
+        .toc-section { padding: 90px 24px; max-width: 900px; margin: 0 auto; }
+        .toc-book { margin-top: 3rem; border-top: 1px solid var(--border-subtle); }
+        .toc-item { display: grid; grid-template-columns: 52px 1fr auto; align-items: baseline; gap: 0 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border-subtle); text-decoration: none; transition: all 0.35s var(--ease-out-expo); }
+        .toc-item:hover .toc-b-title { color: var(--gold); }
+        .toc-item:hover .toc-b-num { opacity: 1; }
+        .toc-b-num { font-family: 'Cinzel', serif; font-size: 0.62rem; color: var(--gold); letter-spacing: 0.15em; text-align: right; opacity: 0.4; transition: opacity 0.3s; }
+        .toc-b-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ink); transition: color 0.35s; line-height: 1.3; }
+        .toc-b-heb { font-family: 'Frank Ruhl Libre', serif; font-size: 0.95rem; color: var(--stone-light); text-align: right; direction: rtl; white-space: nowrap; }
+
+        /* ═══════════════════════════════════════════════════════
+           HOTSPOT TOOLTIP
+           ═══════════════════════════════════════════════════════ */
+        .hotspot { position: relative; cursor: help; border-bottom: 1px dotted var(--gold); transition: border-color 0.3s var(--ease-smooth); color: var(--gold-light); }
+        .hotspot:hover { border-bottom-color: var(--gold-deep); }
+        [data-theme="light"] .hotspot { border-bottom-color: #8a7030; color: #8a7030; }
+        [data-theme="light"] .hotspot:hover { border-bottom-color: #6a5820; }
+        .hotspot-tooltip {
+            position: absolute; bottom: calc(100% + 14px); left: 50%;
+            transform: translateX(-50%) scale(0.95); background: var(--surface2);
+            border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px;
+            font-size: 0.85rem; color: var(--stone); line-height: 1.5; width: 280px;
+            white-space: normal; opacity: 0; visibility: hidden;
+            transition: all 0.25s var(--ease-smooth); z-index: 100;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+        .hotspot-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: var(--surface2) transparent transparent transparent; }
+        .hotspot:hover .hotspot-tooltip, .hotspot.active .hotspot-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) scale(1); }
+        @media (pointer: coarse) {
+            .hotspot-tooltip { width: 260px; left: auto; right: -20px; transform: scale(0.96); }
+            .hotspot:hover .hotspot-tooltip, .hotspot.active .hotspot-tooltip { transform: scale(1); }
+        }
+        @media (max-width: 768px) {
+            .hotspot-tooltip { width: 240px; left: auto; right: -20px; transform: scale(0.96); }
+            .hotspot:hover .hotspot-tooltip, .hotspot.active .hotspot-tooltip { transform: scale(1); }
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           DIAGRAM CONTAINERS
+           ═══════════════════════════════════════════════════════ */
+        .diagram-container {
+            width: 100%; max-width: 720px; margin: 2.5rem auto; position: relative;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 2rem; overflow: hidden;
+            animation: diagramFloat 8s ease-in-out infinite;
+        }
+        .diagram-container::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 30%, var(--indigo-glow) 0%, transparent 70%); pointer-events: none; }
+        .diagram-container svg { width: 100%; height: auto; display: block; position: relative; z-index: 1; }
+        .diagram-caption { text-align: center; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-top: 1.25rem; position: relative; z-index: 1; }
+        .diagram-subcaption { text-align: center; font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: var(--stone); margin-top: 0.4rem; font-style: italic; position: relative; z-index: 1; }
+
+        /* ═══════════════════════════════════════════════════════
+           FADE IN
+           ═══════════════════════════════════════════════════════ */
+        .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* ═══════════════════════════════════════════════════════
+           CONCLUDING SYNTHESIS SECTION
+           ═══════════════════════════════════════════════════════ */
+        .concluding-section { padding: 4rem 2rem; background: var(--surface2); border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); }
+        .concluding-section-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+        .concluding-title { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
+        .concluding-quote { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.05rem, 2.5vw, 1.5rem); color: var(--ink); line-height: 1.7; margin-bottom: 2rem; }
+        .concluding-nav { text-align: center; margin: 40px 0; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; font-weight: 400; }
+        .concluding-nav a { color: var(--stone); text-decoration: none; transition: color 0.3s; }
+        .concluding-nav a:hover { color: var(--gold); }
+        .concluding-nav .nav-sep { margin: 0 0.75rem; color: var(--gold); opacity: 0.3; }
+
+        /* ═══════════════════════════════════════════════════════
+           CHAPTER NAV & FOOTER
+           ═══════════════════════════════════════════════════════ */
+        .chapter-nav { display: flex; justify-content: center; gap: 1rem; padding: 2rem 0; flex-wrap: nowrap; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+        .chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; font-family: 'Cinzel', serif; white-space: nowrap; }
+        .chapter-link:hover, .chapter-link.active { color: var(--gold); }
+        .chapter-sep { color: var(--gold-deep); opacity: 0.3; }
+        .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; text-align: center; }
+        .footer-emblem { width: 36px; height: 36px; margin: 0 auto 1.5rem; position: relative; }
+        .footer-emblem-outer { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--border-strong); }
+        .footer-emblem-inner { position: absolute; inset: 8px; border-radius: 50%; border: 1px solid var(--border); }
+        [data-theme="dark"] .footer-emblem-outer { border-color: var(--gold); }
+        [data-theme="dark"] .footer-emblem-inner { border-color: var(--gold-light); }
+        [data-theme="light"] .footer-emblem-outer { border-color: #8a7030; }
+        [data-theme="light"] .footer-emblem-inner { border-color: #a08840; }
+        .footer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+        .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone); font-size: 0.98rem; margin-bottom: 2rem; font-weight: 300; }
+        .footer-links { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+        .footer-links a { color: var(--stone); text-decoration: none; transition: color 0.3s; font-family: 'Cinzel', serif; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-credit { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; }
+        .footer-version { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 1rem; }
+        .footer-copyright { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--stone); text-transform: uppercase; opacity: 0.4; margin-top: 0.5rem; }
+
+        /* ═══════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .scripture-panels { grid-template-columns: 1fr; }
+            .stage-section { padding: 60px 20px; }
+            .wrap { padding: 0 20px; }
+            .toc-item { grid-template-columns: 38px 1fr; }
+            .toc-b-heb { display: none; }
+            .nav-menu { min-width: 180px; }
+            .hero-emblem { width: clamp(120px, 28vw, 160px); }
+            .diagram-container { padding: 1rem; }
+            .footer-links { gap: 1.5rem; flex-direction: column; align-items: center; }
+            .chapter-nav { gap: 1rem; font-size: 0.6rem; }
+            .nh-panel { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 480px) {
+            body { font-size: 16px; }
+            .hero { padding: 4rem 1.5rem 5rem; }
+            .hero-title { font-size: 2rem; }
+            .hero-emblem { width: clamp(100px, 44vw, 140px); }
+            .stage-section { padding: 48px 16px; }
+            .stage-h2 { font-size: 1.6rem; }
+            .pq-section { padding: 3rem 1.5rem; }
+            .pq-text { font-size: 1.1rem; }
+            .nh-table td, .nh-table th { padding: 0.8rem 0.8rem; font-size: 0.75rem; }
+            .footer { padding: 3rem 1.5rem 2rem; }
+            .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .fade-in { opacity: 1 !important; transform: none !important; }
+            .diagram-container { animation: none !important; }
+            .hero-emblem { animation: none !important; opacity: 1 !important; }
+            .hero-title, .hero-subtitle, .hero-eyemark, .hero-divider,
+            .hero-heb-display, .hero-quote, .hero-attr, .hero-scroll-cue { animation: none !important; opacity: 1 !important; }
+            .hero-ripple { animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV COMPASS -->
+    <div class="nav-compass">
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-menu" id="navMenu" role="navigation" aria-label="Page contents">
+            <div class="nav-section-title">This Article</div>
+            <a href="#hero" class="nav-item active" data-section="hero">Overview</a>
+            <a href="#toc" class="nav-item" data-section="toc">Contents</a>
+            <a href="#prologue" class="nav-item" data-section="prologue">Prologue</a>
+            <a href="#forgetting" class="nav-item" data-section="forgetting">I · Forgetting</a>
+            <a href="#logion18" class="nav-item" data-section="logion18">II · Logion 18</a>
+            <a href="#threewords" class="nav-item" data-section="threewords">III · Three Words</a>
+            <a href="#ontology" class="nav-item" data-section="ontology">IV · Living &amp; Dead</a>
+            <a href="#solitary" class="nav-item" data-section="solitary">V · Solitary</a>
+            <a href="#light" class="nav-item" data-section="light">VI · Light</a>
+            <a href="#movement" class="nav-item" data-section="movement">VII · Movement</a>
+            <a href="#end" class="nav-item" data-section="end">VIII · End</a>
+            <a href="#meaning" class="nav-item" data-section="meaning">IX · Meaning</a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Nag Hammadi Parallels</div>
+            <a href="#nhtable" class="nav-item" data-section="nhtable">Summary Table</a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Vedantic Mappings</div>
+            <a href="../index.html" class="nav-item">⌂ Home</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item">Gnosticism</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item">Advaita Vedanta</a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item">Taoism</a>
+        </div>
+    </div>
+
+    <!-- THEME TOGGLE & BACK TO TOP -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle-icon ti-sun">☀</span>
+        <span class="theme-toggle-icon ti-moon">☾</span>
+    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ═══ HERO ═══ -->
+    <header class="hero" id="hero">
+        <div class="hero-ripples" aria-hidden="true">
+            <div class="hero-ripple"></div>
+            <div class="hero-ripple"></div>
+            <div class="hero-ripple"></div>
+        </div>
+        <p class="hero-eyemark">The Gospel of Thomas</p>
+        <div class="hero-emblem" role="img" aria-labelledby="emblemTitle">
+            <title id="emblemTitle">The Light That Is Above Them All</title>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="6" result="blur"/>
+                        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#e0c878" stop-opacity="0.3"/>
+                        <stop offset="60%" stop-color="#c4a855" stop-opacity="0.1"/>
+                        <stop offset="100%" stop-color="#c4a855" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.3"/>
+                <circle cx="100" cy="100" r="90" fill="none" stroke="#5a6a9a" stroke-width="0.5" opacity="0.2"/>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.25"/>
+                <circle cx="100" cy="100" r="60" fill="url(#centerGlow)" opacity="0.5"/>
+                <circle cx="100" cy="100" r="45" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.6"/>
+                <circle cx="100" cy="100" r="28" fill="none" stroke="#e0c878" stroke-width="0.6" opacity="0.4"/>
+                <circle cx="100" cy="100" r="4" fill="#e0c878" opacity="0.7" filter="url(#glow)"/>
+                <circle cx="100" cy="100" r="1.5" fill="#fff" opacity="0.4"/>
+                <g stroke="#c4a855" stroke-width="0.5" opacity="0.25" stroke-linecap="round">
+                    <line x1="30" y1="170" x2="170" y2="30"/>
+                    <line x1="170" y1="170" x2="30" y2="30"/>
+                </g>
+                <g stroke="#7a8aba" stroke-width="0.3" opacity="0.2">
+                    <line x1="100" y1="5" x2="100" y2="195"/>
+                    <line x1="5" y1="100" x2="195" y2="100"/>
+                </g>
+                <polygon points="100,92 108,100 100,108 92,100" fill="#e0c878" opacity="0.3"/>
+            </svg>
+        </div>
+        <h1 class="hero-title">The Gospel of Thomas</h1>
+        <p class="hero-subtitle">A Mystical Exegesis · Illuminated by the Nag Hammadi Library</p>
+        <div class="hero-divider" aria-hidden="true">
+            <div class="hero-divider-line"></div>
+            <div class="hero-divider-diamond"></div>
+            <div class="hero-divider-line"></div>
+        </div>
+        <p class="hero-heb-display" aria-label="Coptic: The Gospel of Thomas">ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲙ̄ⲡⲉ ⲑⲱⲙⲁⲥ</p>
+        <p class="hero-quote">"Whoever finds the meaning of these sayings will not taste death."</p>
+        <p class="hero-attr">— Gospel of Thomas, Logion 1</p>
+        <div class="hero-scroll-cue" id="heroScroll" role="button" tabindex="0" aria-label="Scroll to content">
+            <span aria-hidden="true">Enter</span>
+            <div class="scroll-line" aria-hidden="true"></div>
+        </div>
+    </header>
+
+    <!-- ═══ OPENING PULLQUOTE ═══ -->
+    <div class="pq-section" id="intro">
+        <div class="pq-glow" aria-hidden="true"></div>
+        <span class="pq-mark" aria-hidden="true">"</span>
+        <p class="pq-text">"Ignorance of the Father brought about anguish and terror. And the anguish grew solid like a fog so that no one was able to see. Because of this, error became strong. But it worked on its substance vainly, because it did not know the truth."</p>
+        <p class="pq-attr">— Gospel of Truth · Nag Hammadi Codex I</p>
+    </div>
+
+    <!-- ═══ TABLE OF CONTENTS ═══ -->
+    <section class="toc-section" id="toc">
+        <div class="section-separator"></div>
+        <div class="ed-section-label">Contents · ⲧⲱⲛ ⲙ̄ⲙⲩⲥⲧⲏⲣⲓⲟⲛ</div>
+        <h2 class="ed-h2">The Interior Logic of the Sayings</h2>
+        <p class="ed-intro">A reading of the Gospel of Thomas as what it actually is: not a historical curiosity but a working manual for recognizing what you already are. Logia 1, 2, 3, 5, 11, 13, 18, 22, 24, 28, 29, 42, 49, 50, 56, 70, 75, 77, 82, 97, 98, and 114 are read in sequence, alongside parallel passages from the Nag Hammadi Library — the <em>Gospel of Truth</em>, the <em>Gospel of Philip</em>, the <em>Trimorphic Protennoia</em>, the <em>Book of Thomas the Contender</em>, the <em>Apocryphon of John</em>, and the <em>Hymn of the Pearl</em>.</p>
+        <nav class="toc-book" aria-label="Article contents">
+            <a href="#prologue" class="toc-item"><span class="toc-b-num">I</span><span class="toc-b-title">Prologue</span><span class="toc-b-heb">ⲡⲣⲟⲗⲟⲅⲟⲥ</span></a>
+            <a href="#forgetting" class="toc-item"><span class="toc-b-num">II</span><span class="toc-b-title">The Structure of Forgetting</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲅ · ⲉ · ⲛⲅ</span></a>
+            <a href="#logion18" class="toc-item"><span class="toc-b-num">III</span><span class="toc-b-title">The Beginning and the End</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲏ · ⲙⲃ · ⲕⲑ</span></a>
+            <a href="#threewords" class="toc-item"><span class="toc-b-num">IV</span><span class="toc-b-title">The Three Words</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲅ · ⲕⲏ</span></a>
+            <a href="#ontology" class="toc-item"><span class="toc-b-num">V</span><span class="toc-b-title">The Living and the Dead</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲁ · ⲟ</span></a>
+            <a href="#solitary" class="toc-item"><span class="toc-b-num">VI</span><span class="toc-b-title">The Solitary and the Bridal Chamber</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲕⲃ · ⲙⲑ · ⲟⲉ</span></a>
+            <a href="#light" class="toc-item"><span class="toc-b-num">VII</span><span class="toc-b-title">The Light That Is Above Them All</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲕⲇ · ⲟⲍ</span></a>
+            <a href="#movement" class="toc-item"><span class="toc-b-num">VIII</span><span class="toc-b-title">Movement and Repose</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲛ · ⲥⲍ · ⲥⲏ</span></a>
+            <a href="#end" class="toc-item"><span class="toc-b-num">IX</span><span class="toc-b-title">The End: Making the Male into a Living Spirit</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲣⲓⲇ</span></a>
+            <a href="#meaning" class="toc-item"><span class="toc-b-num">X</span><span class="toc-b-title">The Meaning That Is Not Tasted</span><span class="toc-b-heb">ⲡⲉ ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ</span></a>
+            <a href="#nhtable" class="toc-item"><span class="toc-b-num">XI</span><span class="toc-b-title">Nag Hammadi Parallels · Summary</span><span class="toc-b-heb">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</span></a>
+        </nav>
+    </section>
+
+    <div class="stages-wrap">
+
+        <!-- ═══ PROLOGUE ═══ -->
+        <section class="stage-section" id="prologue">
+            <div class="stage-wm" aria-hidden="true">ⲡⲣⲟⲗⲟⲅⲟⲥ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Prologue</span>
+                    <span class="stage-heb-eye">ⲡⲣⲟⲗⲟⲅⲟⲥ</span>
+                </div>
+                <h2 class="stage-h2">How to Read This Text</h2>
+                <span class="stage-subtitle">The opening promise is not about information</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p>The Gospel of Thomas opens with a strange promise — a promise of not tasting death for those who find the meaning of its sayings. This isn't a puzzle with a hidden answer. The meaning isn't behind the words, waiting to be extracted. The saying works on you, not the other way around — if you let it, something in how you see shifts, and that shift is what the promise points to.</p>
+
+                <p>That's why Thomas has no story. Stories are about time: beginning, middle, end. Thomas works differently. Each saying is a short circuit — a flash that shows you what was always there, but you weren't looking right. The paradox, when there is one, lives in the reader. The saying is just clear.</p>
+
+                <p>Logion 2 maps the territory from the beginning: <em>"Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the all."</em> The sequence is exact — find, trouble, astonishment, reign. Not the smooth progress of accumulating knowledge but the shock of recognition. You find something and it troubles you because it undoes what you thought you were. The astonishment that follows isn't wonder at something new; it's the dislocation of seeing clearly for the first time.</p>
+
+                <p>This kind of reading — letting a text undo your usual way of thinking — has an old name: <span class="hotspot">anamnesis<span class="hotspot-tooltip"><strong>Anamnesis</strong> Remembering what the soul already knows. The Platonic and Gnostic traditions held that true knowledge is not acquired but recovered — recognized, not learned.</span></span>, remembering what you already know but have forgotten. The <em>Gospel of Truth</em> says it plainly: forgetfulness existed because they did not know the Father, and once they come to know him, forgetfulness will cease. Thomas is saying the same thing differently. Knowledge here isn't acquisition. It's recovery.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"The All sought him from whom it had come forth. You see, the All had been inside of him, that illimitable, inconceivable one, who is better than every thought."</p>
+                    <cite>— Gospel of Truth · Nag Hammadi Codex I</cite>
+                </div>
+
+                <div class="scripture-panels fade-in">
+                    <div class="scripture-panel">
+                        <div class="scripture-heb">ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲙ̄ⲡⲉ ⲑⲱⲙⲁⲥ</div>
+                        <div class="scripture-label">Gospel of Thomas · Logion 1</div>
+                        <p class="scripture-text">"Whoever finds the meaning of these sayings will not taste death."</p>
+                        <p class="scripture-ref">— Gospel of Thomas</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-heb">ⲑⲱⲙⲁⲥ</div>
+                        <div class="scripture-label">The Twin · Didymos</div>
+                        <p class="scripture-text">The text is attributed to Thomas — the twin, the one who is double. The name itself is a clue: the Gospel is written by the one who is <em>both</em> the seeker and the found, the two who have become one.</p>
+                        <p class="scripture-ref">— Mystical tradition</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ I — FORGETTING ═══ -->
+        <section class="stage-section" id="forgetting">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲅ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">I</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲅ</span>
+                </div>
+                <h2 class="stage-h2">The Structure of Forgetting</h2>
+                <span class="stage-subtitle">Logia 3, 5, 56 — The Kingdom is inside you and outside you</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 3:</strong> <em>"If your leaders say to you, 'Look, the Kingdom is in the sky,' then the birds of the sky will precede you. If they say to you, 'It is in the sea,' then the fish will precede you. Rather, the Kingdom is inside you and outside you."</em></p>
+
+                <p>The leaders aren't wrong because they've got the wrong location. They're wrong because they think location matters at all. The Kingdom isn't somewhere else. It's how you see.</p>
+
+                <p>Thomas then adds something that sounds simple but isn't: <em>"When you know yourselves, then you will be known, and you will know that you are the sons of the living Father. But if you do not know yourselves, then you are impoverished — and you are poverty itself!"</em></p>
+
+                <p>The self you need to know isn't your personality, your history, your memory of who you've been. It's the awareness in which all of that appears. To not know this is to mistake yourself for the seeker — the one who lacks, the one still searching. But the searching is the lack. Stop, and you see what was never missing.</p>
+
+                <p>Logion 5 closes the same argument from the outside in: <em>"Know what is in front of your face, and what is hidden from you will be disclosed. For there is nothing hidden that will not become manifest."</em> The hidden and the apparent are not two different things. The apparent world, looked at clearly enough, opens onto what's always been there. This is why Thomas doesn't require retreat from the world — the world itself is the teaching, if you're looking at it right.</p>
+
+                <p>Logion 56 goes further: <em>"Whoever has come to know the world has found a corpse, and whoever has found a corpse, of him the world is not worthy."</em> Knowing the world as it truly is — impermanent, constructed, a temporary arrangement of appearances — doesn't make you despise it. It frees you from being owned by it. The corpse isn't an insult; it's a fact. What's built will come apart. Knowing this is not pessimism. It's the beginning of seeing.</p>
+
+                <p>The <em>Apocryphon of John</em> tells the same story mythically: the divine spark is trapped in matter, asleep, waiting to wake up. Thomas cuts out the myth and goes straight to the instruction: <em>know yourselves</em>. The poverty he names is the same ignorance the Apocryphon narrates as the fall of Sophia — one text tells a story about it, the other just says: stop.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"For he who has not known himself has known nothing, but he who has known himself has at the same time already achieved knowledge about the depth of the all."</p>
+                    <cite>— Book of Thomas the Contender · Nag Hammadi Codex II</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ II — LOGION 18 ═══ -->
+        <section class="stage-section" id="logion18">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲓⲏ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">II</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲓⲏ</span>
+                </div>
+                <h2 class="stage-h2">Logion 18: The Beginning and the End</h2>
+                <span class="stage-subtitle">Logia 18, 29, 42 — The disciples want to know what happens later. Jesus redirects them to now.</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+
+                <p><strong>Logion 18:</strong> <em>The disciples said to Jesus: "Tell us how our end will be." Jesus said: "Since you have discovered the beginning, why do you seek the end? For where the beginning is, there will the end be. Blessed is he who shall stand at the beginning, and he shall know the end, and shall not taste death."</em></p>
+
+                <p>The disciples are thinking in time. They want to know what happens later. Jesus points them back to what's here. The "beginning" isn't a past event — it's the present moment of awareness, the ground from which everything arises. Stand there, rest in it, and you don't need to know the end. The end is just the beginning seen from another angle.</p>
+
+                <p>The <em>Trimorphic Protennoia</em> opens with the same claim spoken in the first person: <em>"I am Protennoia, the Thought that dwells in the Light. I am the movement that dwells in the All."</em> The First Thought — the beginning — is also what holds everything in place. What Thomas says as a riddle, Protennoia says as autobiography.</p>
+
+                <p>Logion 42 is the shortest saying in the Gospel, and one of the sharpest: <em>"Become passers-by."</em> Two words. Don't settle in time. Don't install yourself in any moment as though it's where you live. The soul in the Hymn of the Pearl settles in Egypt, eats its food, and forgets the mission entirely. To be a passer-by is to stay awake to the fact that you're in motion — that the beginning is always here, and the end is never the end.</p>
+
+                <p>Logion 29 pushes this further, and strangely: <em>"If the flesh came into being because of spirit, it is a wonder. But if spirit came into being because of the body, it is a wonder of wonders. Indeed, I am amazed at how this great wealth has made its home in this poverty."</em> The body is poverty. The spirit is great wealth. And yet here they are together — the astonishing fact of consciousness inhabiting matter, spirit taking up residence in flesh. Thomas doesn't resolve the strangeness. He just names it. The wonder is that this arrangement exists at all.</p>
+
+                <p>The <em>Hymn of the Pearl</em>, embedded in the Acts of Thomas, narrates the soul's descent, forgetting, and return home. It's the long version of this logion: the soul goes out from the beginning, forgets where it came from, and must remember. But Thomas short-circuits the journey. The Pearl was never lost. You just forgot you were holding it.</p>
+
+                <div class="scripture-panels fade-in" style="grid-template-columns:1fr;">
+                    <div class="scripture-panel">
+                        <div class="scripture-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲏ</div>
+                        <div class="scripture-label">Logion 18 — Blatz Translation</div>
+                        <p class="scripture-text">"Since you have discovered the beginning, why do you seek the end? For where the beginning is, there will the end be. Blessed is he who shall stand at the beginning, and he shall know the end, and shall not taste death."</p>
+                        <p class="scripture-ref">— Gospel of Thomas</p>
+                    </div>
+                </div>
+
+                <div class="pull-q fade-in">
+                    <p>"I am Protennoia, the Thought that dwells in the Light. I am the movement that dwells in the All, she in whom the All takes its stand, the first-born among those who came to be, she who exists before the All."</p>
+                    <cite>— Trimorphic Protennoia · Nag Hammadi Codex XIII</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ III — THREE WORDS ═══ -->
+        <section class="stage-section" id="threewords">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲓⲅ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">III</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲓⲅ</span>
+                </div>
+                <h2 class="stage-h2">The Three Words</h2>
+                <span class="stage-subtitle">Logia 13, 28 — The structural center of the Gospel</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 13:</strong> <em>Jesus said to his disciples, "Compare me to someone and tell me whom I am like." Simon Peter said to him, "You are like a righteous angel." Matthew said to him, "You are like a wise philosopher." Thomas said to him, "Master, my mouth is wholly incapable of saying whom you are like."</em></p>
+
+                <p><em>Jesus said, "I am not your master. Because you have drunk, you have become intoxicated from the bubbling spring which I have measured out." And he took him and withdrew and told him three things. When Thomas returned to his companions, they asked him, "What did Jesus say to you?" Thomas said to them, "If I tell you one of the things which he told me, you will pick up stones and throw them at me; a fire will come out of the stones and burn you up."</em></p>
+
+                <p>Peter and Matthew try to fit Jesus into categories they already understand — an angel, a philosopher. Thomas doesn't. He's drunk from the spring and can no longer speak in ordinary terms. His silence isn't ignorance. It's what happens after the usual frameworks break down.</p>
+
+                <p>We never learn what the three words were. That's the point. They aren't information. The <em>Book of Thomas the Contender</em> expands on this moment: Jesus tells Thomas directly, <em>"Since it has been said that you are my twin and true companion, examine yourself, and learn who you are."</em> The three words can't be reported because they're the act of self-knowledge itself — and that can't be handed over. It can only be undergone.</p>
+
+                <p>Logion 28 gives this the weight of grief: <em>"I stood in the midst of the world, and I appeared to them in flesh. I found all of them drunk; I found none of them thirsty. And my soul ached for the children of humanity, because they are blind in their hearts and do not see. For they came into the world empty, and they also seek to leave the world empty."</em> The unspoken three words and the grief of Logion 28 are the same moment seen differently. Thomas received something he can't transmit. The world is full of people who never asked. The one who has drunk from the spring stands among those who don't know they're thirsty.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"Since it has been said that you are my twin and true companion, examine yourself, and learn who you are, in what way you exist, and how you will come to be. It is not fitting that you be ignorant of yourself."</p>
+                    <cite>— Book of Thomas the Contender · Nag Hammadi Codex II</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ IV — ONTOLOGY ═══ -->
+        <section class="stage-section" id="ontology">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲁⲁ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">IV</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲁⲁ</span>
+                </div>
+                <h2 class="stage-h2">The Ontology of the Living and the Dead</h2>
+                <span class="stage-subtitle">Logia 11, 70 — The living are those who are awake</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 11:</strong> <em>"This heaven will pass away, and the heaven above it will pass away. And the dead are not alive, and the living will not die. In the days when you consumed what was dead, you made it alive. When you are in the light, what will you do? On the day when you were one, you became two. But when you become two, what will you do?"</em></p>
+
+                <p>The reversal here isn't rhetorical. The "dead" are people who are fully alive in the biological sense but are asleep to what they are. The "living" aren't the resurrected — they're the awake. This isn't a future state you earn. It's a present recognition you either have or don't.</p>
+
+                <p>Logion 70 names the consequence directly: <em>"If you bring forth what is within you, what you bring forth will save you. If you do not bring forth what is within you, what you do not bring forth will destroy you."</em> The living and the dead of Logion 11 aren't two kinds of people. They're two possible states of the same person. The difference between them is whether what's inside has been brought out. Not performance — recognition. The failure to bring it forth isn't moral failure; it's the continued ignorance that Logion 3 calls poverty.</p>
+
+                <p>The <em>Gospel of Philip</em> draws the same line: those asleep in the world are buried in it. To eat what is dead and make it alive is the gnostic reversal — transforming the material through perception rather than ritual. Thomas doesn't need the sacrament. The saying does the work.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"In the days before Eve was taken out of Adam, death had not yet come into being. When she was separated from him, death came into being. If she enters again and he receives her, death will cease."</p>
+                    <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ V — SOLITARY ═══ -->
+        <section class="stage-section" id="solitary">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲙⲍ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">V</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲙⲍ / ⲟⲉ</span>
+                </div>
+                <h2 class="stage-h2">The Solitary and the Bridal Chamber</h2>
+                <span class="stage-subtitle">Logia 22, 49, 75 — The single one who enters</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 49:</strong> <em>"Blessed are the solitary and elect, for you will find the Kingdom. For you are from it, and to it you will return."</em></p>
+
+                <p><strong>Logion 75:</strong> <em>"Many are standing at the door, but it is the solitary who will enter the bridal chamber."</em></p>
+
+                <p>Logion 22 is the most explicit description of what the <span class="hotspot">monachos<span class="hotspot-tooltip"><strong>Monachos</strong> The solitary, the single one — not the hermit who lives apart, but the one who has made the two into one.</span></span> actually is. Jesus sees infants being suckled and says: these little ones are like those who enter the Kingdom. The disciples ask whether they too shall enter as little ones. He says: <em>"When you make the two one, and when you make the inside like the outside and the outside like the inside, and the above like the below, and when you make the male and the female one and the same, so that the male not be male nor the female female; and when you fashion eyes in the place of an eye, and a hand in the place of a hand, and a foot in the place of a foot, and a likeness in the place of a likeness; then will you enter the Kingdom."</em></p>
+
+                <p>This is Thomas's most complete anatomy of the single one. Every division listed — inside/outside, above/below, male/female, image/original — is a version of the same division. To enter the Kingdom isn't to cross a threshold. It's to be the one in whom all these divisions have ceased. The bridal chamber in the <em>Gospel of Philip</em> is the space of that resolution: hidden, interior, the Holy in the Holy. Philip calls it a sacrament. Thomas just says: many stand at the door, but only the solitary enters. The crowd outside is still waiting for something to happen. The solitary already knows there's no door.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"The mysteries of truth are revealed, though in type and image. The bridal chamber, however, remains hidden. It is the Holy in the Holy."</p>
+                    <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ VI — LIGHT ═══ -->
+        <section class="stage-section" id="light">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲟⲍ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">VI</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲟⲍ</span>
+                </div>
+                <h2 class="stage-h2">The Light That Is Above Them All</h2>
+                <span class="stage-subtitle">Logia 24, 77 — Split a piece of wood, and I am there</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 77:</strong> <em>"It is I who am the light which is above them all. It is I who am the all. From me did the all come forth, and unto me did the all extend. Split a piece of wood, and I am there. Lift up the stone, and you will find me there."</em></p>
+
+                <p>This is probably the most radical saying in the Gospel. The "I" speaking isn't a person — it's awareness itself, the ground in which wood and stone and the one lifting the stone all appear. God isn't hiding in objects. The objects are arising within the same consciousness that's reading this sentence.</p>
+
+                <p>Logion 24 makes the same point from inside the human being: <em>"There is light within a man of light, and he lights up the whole world. If he does not shine, he is in darkness."</em> The light of Logion 77 that is in the wood and the stone is the same light that a person of light carries. The saying doesn't say the light comes from outside and fills him. It says the light is <em>within</em> him — and that its absence is darkness, not some external punishment but the simple failure to shine. The <em>Trimorphic Protennoia</em> says it from the inside: <em>"I move in every creature."</em> Not behind them. Not above them. In them, as the movement itself. Thomas makes the same claim in two lines about carpentry and again in two lines about a man who either shines or doesn't.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"I am invisible within the Thought of the Invisible One. I am revealed in the immeasurable, ineffable things. I am incomprehensible, dwelling in the incomprehensible. I move in every creature."</p>
+                    <cite>— Trimorphic Protennoia · Nag Hammadi Codex XIII</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ VII — MOVEMENT ═══ -->
+        <section class="stage-section" id="movement">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲛ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">VII</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲛ</span>
+                </div>
+                <h2 class="stage-h2">Movement and Repose</h2>
+                <span class="stage-subtitle">Logia 50, 97, 98 — The sign of the Father in the elect</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 50:</strong> <em>"If they say to you, 'Where did you come from?' say to them, 'We have come from the light, the place where the light came into being on its own accord and established itself and became manifest through their image.' If they say to you, 'Is it you?' say, 'We are its children, we are the elect of the living Father.' If they ask you, 'What is the sign of your Father in you?' say to them, 'It is movement and repose.'"</em></p>
+
+                <p>The sign of the Father isn't a belief or a mark. It's a quality of life that's hard to describe but recognizable: fully active, fully still. Not the stillness of withdrawal, and not the movement of restlessness. The <em>Trimorphic Protennoia</em> embodies exactly this — she is movement in the All, and the All takes its stand in her. The two aren't opposites. They're the same thing seen from two directions. The elect aren't people who hold a correct doctrine. They're people who live in both at once.</p>
+
+                <p>Thomas doesn't always argue directly. Sometimes it just shows you a scene. Logion 97: <em>"The Kingdom of the Father is like a woman who was carrying a jar full of meal. While she was walking on the road, still some distance from home, the handle of the jar broke and the meal emptied out behind her on the road. She did not know it; she had not noticed a problem. When she reached her house, she set the jar down and found it empty."</em> No explanation. The meal is gone before she knows it's going. The Kingdom — or its loss — can happen without announcement. The jar arrives home empty. She had been carrying something the whole way.</p>
+
+                <p>Logion 98 is its pair: <em>"The Kingdom of the Father is like a man who wanted to kill a powerful man. In his house, he drew his sword and stuck it into the wall in order to find out whether his hand could carry through. Then he slew the powerful man."</em> Two parables, one after the other — loss without awareness, victory through preparation. Thomas offers no key. The reader holds both images and works out what they share: that the Kingdom requires something. Either you've been emptied without knowing it, or you've practiced until you're ready. There's no middle option where it just happens.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"He who remains ignorant until the end is a creature of forgetfulness and will perish with it. Those whose name he knew in advance were called at the end, so that one who has knowledge is one whose name the Father has pronounced."</p>
+                    <cite>— Gospel of Truth · Nag Hammadi Codex I</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ VIII — END ═══ -->
+        <section class="stage-section" id="end">
+            <div class="stage-wm" aria-hidden="true">ⲗⲟⲅⲓⲟⲛ ⲣⲓⲇ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">VIII</span>
+                    <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲣⲓⲇ</span>
+                </div>
+                <h2 class="stage-h2">The End: Making the Male into a Living Spirit</h2>
+                <span class="stage-subtitle">Logion 114 — The final saying, read mystically</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Logion 114:</strong> <em>Simon Peter said to them, "Let Mary leave us, for women are not worthy of life." Jesus said, "Look, I will draw her in so as to make her male, so that she too may become a living male spirit, similar to you. For every woman who makes herself male will enter the Kingdom of heaven."</em></p>
+
+                <p>Read as social commentary, this is uncomfortable. Read as the Gospel is asking to be read, "male" and "female" aren't about gender. Female here names the mode of seeking outward — waiting to be filled from outside. Male names the mode of being self-luminous, not because of sex but because of attention: turned inward, recognizing the source rather than searching for it. Mary isn't being elevated to male status. She's being drawn inward — and in that movement, the category collapses.</p>
+
+                <p>Philip says it through the myth of Adam and Eve: death entered when Eve was separated. It will end when they reunite. Thomas says the same thing through Mary. The last saying in the Gospel is about undoing the first separation — returning to the unity that was there before the two became two.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"When Eve was still in Adam death did not exist. When she was separated from him death came into being. If he enters again and attains his former self, death will be no more."</p>
+                    <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ IX — MEANING ═══ -->
+        <section class="stage-section" id="meaning">
+            <div class="stage-wm" aria-hidden="true">ⲡⲉ ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">IX</span>
+                    <span class="stage-heb-eye">ⲡⲉ ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ</span>
+                </div>
+                <h2 class="stage-h2">The Meaning That Is Not Tasted</h2>
+                <span class="stage-subtitle">Logia 82, 1 — Returning to the opening promise</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p>Back to the opening: <em>"Whoever finds the meaning of these sayings will not taste death."</em></p>
+
+                <p>The "meaning" isn't a doctrine you adopt. It's a recognition — the moment you see that the self doing the reading and the self being described are the same one. That the seeker and the sought are not two things. That the Kingdom was never somewhere else. "Not taste death" doesn't mean the body lives forever. It means the one who was afraid of dying is seen through. There's no one there to lose.</p>
+
+                <p>Thomas doesn't promise life after death. It promises that death loses its sting when you see clearly what you are. The bitterness of death is the bitterness of separation — the two believing they were always separate. When they recognize they were always one, the bitterness goes. Not because something changes, but because you finally see what was always true.</p>
+
+                <p>Logion 82 cuts through the accumulated abstraction with a single line: <em>"He who is near me is near the fire, and he who is far from me is far from the Kingdom."</em> The fire and the Kingdom are the same thing. To be near the source is to be near what burns. Recognition isn't a comfortable arrival. It's proximity to something that doesn't leave you as it found you. This is why Logion 2's seeker becomes troubled before becoming astonished — the fire comes first.</p>
+
+                <p>The <em>Gospel of Truth</em> arrives at the same place: <em>"The All had been inside of him, that illimitable, inconceivable one."</em> There was never a gap. Forgetfulness made it feel like one. Thomas and Truth are the same instruction, phrased two different ways.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"What exists in him is knowledge, which was revealed so that forgetfulness might be destroyed and that they might know the Father. Since forgetfulness existed because they did not know the Father, if they then come to know the Father, from that moment on forgetfulness will cease to exist."</p>
+                    <cite>— Gospel of Truth · Nag Hammadi Codex I</cite>
+                </div>
+
+                <p style="margin-top:2rem;font-style:italic;color:var(--gold-light);text-align:center;">For the solitary and elect:</p>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- ═══ NAG HAMMADI SUMMARY TABLE ═══ -->
+        <section class="stage-section" id="nhtable">
+            <div class="stage-wm" aria-hidden="true">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">XI</span>
+                    <span class="stage-heb-eye">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</span>
+                </div>
+                <h2 class="stage-h2">Nag Hammadi Parallels · Summary</h2>
+                <span class="stage-subtitle">Texts that widen the mystical scope</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p>Thomas is sometimes read as an outlier — strange, isolated, un-Jewish, un-Christian. The Nag Hammadi library complicates that. Several other texts from the same cache circle the same territory: self-knowledge, the division between the awake and the asleep, the reunification of what was separated, the light inside the world. The table below maps these connections — not to prove Thomas had sources, but to show the shape of the tradition it belongs to.</p>
+
+                <div class="nh-table-wrap fade-in">
+                    <table class="nh-table">
+                        <thead>
+                            <tr>
+                                <th>Nag Hammadi Text</th>
+                                <th>Paired Logion</th>
+                                <th>Core Theme</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="nh-td-title">Gospel of Philip</td>
+                                <td>Logion 75 (Bridal Chamber) &amp; 114</td>
+                                <td class="nh-td-theme">Sacramental unity, reunion of the male and female</td>
+                            </tr>
+                            <tr>
+                                <td class="nh-td-title">Gospel of Truth</td>
+                                <td>Prologue / Conclusion</td>
+                                <td class="nh-td-theme">Non‑duality, cessation of forgetfulness</td>
+                            </tr>
+                            <tr>
+                                <td class="nh-td-title">Trimorphic Protennoia</td>
+                                <td>Logion 77 (Light) / Logion 50 (Movement)</td>
+                                <td class="nh-td-theme">Divine feminine, light, movement and repose</td>
+                            </tr>
+                            <tr>
+                                <td class="nh-td-title">Book of Thomas the Contender</td>
+                                <td>Logion 13 (Three Words)</td>
+                                <td class="nh-td-theme">Self‑knowledge, the twin</td>
+                            </tr>
+                            <tr>
+                                <td class="nh-td-title">Apocryphon of John</td>
+                                <td>Logion 3 (Forgetting)</td>
+                                <td class="nh-td-theme">Divine spark, cosmological forgetting</td>
+                            </tr>
+                            <tr>
+                                <td class="nh-td-title">Hymn of the Pearl</td>
+                                <td>Logion 18 / Logion 49</td>
+                                <td class="nh-td-theme">Soul's descent and return</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.9rem;color:var(--stone);text-align:center;margin-top:0.5rem;">Discovered at Nag Hammadi, Egypt in 1945. Coptic translations of earlier Greek originals, most dating to the second and third centuries.</p>
+            </div>
+        </section>
+
+    </div><!-- .stages-wrap -->
+
+    <!-- ═══ CLOSING SYNTHESIS ═══ -->
+    <div class="concluding-section">
+        <div class="concluding-section-inner">
+            <h3 class="concluding-title">Synthesis</h3>
+            <p class="concluding-quote">"Whoever finds the meaning of these sayings will not taste death." Not because the body survives. Because the one who was afraid of dying is seen through — and what remains doesn't need the promise anymore.</p>
+            <div class="concluding-nav">
+                <a href="../index.html">← RETURN TO HOME</a>
+                <span class="nav-sep">·</span>
+                <a href="../gnosticism/gnosticism-unknown-father.html">CONTINUE TO THE UNKNOWN FATHER →</a>
+            </div>
+        </div>
+    </div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+    CHAPTER NAVIGATION
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="chapter-nav">
+        <a href="../index.html" class="chapter-link">⌂ Home</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-silence.html" class="chapter-link">III · The Cloud of Unknowing</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-beatitudes.html" class="chapter-link">IV · The Beatitudes</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-gospel-thomas.html" class="chapter-link active">VI · The Gospel of Thomas</a>
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+        <div class="footer-emblem" aria-hidden="true">
+            <div class="footer-emblem-outer"></div>
+            <div class="footer-emblem-inner"></div>
+        </div>
+        <div class="footer-name">Vedantic Mappings</div>
+        <div class="footer-tagline">Cartographies of the Non‑Dual Path</div>
+        <div class="footer-links">
+           <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed — J.M.Q.</div>
+        <div class="footer-copyright">Last updated: June 2026 · Seven cartographies</div>
+        <div class="footer-version" style="margin-top:0.4rem;opacity:0.25">Primary source: The Gospel of Thomas · The Coptic Sayings</div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+
+            /* THEME */
+            const html = document.documentElement;
+            (function initTheme() {
+                const saved = localStorage.getItem('vm-theme');
+                if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
+                html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+            })();
+            const themeBtn = document.getElementById('themeToggle');
+            if (themeBtn) themeBtn.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('vm-theme', next);
+            });
+
+            /* NAV */
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+                document.addEventListener('click', e => {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove('open');
+                });
+            }
+
+            /* BACK TO TOP */
+            const btt = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6); }, { passive: true });
+            if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            /* HERO SCROLL */
+            const heroScroll = document.getElementById('heroScroll');
+            if (heroScroll) {
+                heroScroll.addEventListener('click', () => {
+                    const toc = document.getElementById('toc');
+                    if (toc) toc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                heroScroll.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); heroScroll.click(); }
+                });
+            }
+
+            /* SMOOTH SCROLL for anchor links */
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
+            });
+
+            /* INTERSECTION OBSERVER */
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+
+            /* ACTIVE NAV */
+            const sections = document.querySelectorAll('section[id],header[id]');
+            const navItems = document.querySelectorAll('.nav-item[data-section]');
+            function updateNav() {
+                let current = '';
+                sections.forEach(s => {
+                    if (s.getBoundingClientRect().top <= 160) current = s.getAttribute('id');
+                });
+                navItems.forEach(item => item.classList.toggle('active', item.getAttribute('data-section') === current));
+            }
+            window.addEventListener('scroll', updateNav, { passive: true });
+            updateNav();
+
+            /* FALLBACK visibility */
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+                document.querySelectorAll('.section-separator').forEach(el => el.classList.add('visible'));
+            }, 600);
+
+            /* HOTSPOT TOOLTIP touch fallback */
+            document.querySelectorAll('.hotspot').forEach(el => {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                });
+            });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.hotspot')) {
+                    document.querySelectorAll('.hotspot.active').forEach(el => el.classList.remove('active'));
+                }
+            });
+
+        })();
+    </script>
+
+</body>
+</html>

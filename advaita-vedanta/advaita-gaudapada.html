@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8" />
@@ -112,7 +111,7 @@ body::before {
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
 
 /* ═══════════════════════════════════════════════════════════════
-   KEYFRAMES — premium, bug-free
+   KEYFRAMES
    ═══════════════════════════════════════════════════════════════ */
 @keyframes heroRise {
   from { opacity:0; transform:translateY(28px) scale(0.98); }
@@ -247,7 +246,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .back-to-top:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-3px) scale(1.08);box-shadow:var(--shadow-gold)}
 
 /* ═══════════════════════════════════════════════════════════════
-   HERO — PREMIUM REFACTOR (fixed rings, no nth-child issues)
+   HERO
    ═══════════════════════════════════════════════════════════════ */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:5rem 2rem 6rem;text-align:center;background:var(--hero-bg);perspective:1500px}
 .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 20% 40%,rgba(181,130,42,.07) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 60%,rgba(181,130,42,.05) 0%,transparent 70%);animation:ambientDrift 18s ease-in-out infinite;pointer-events:none;z-index:1}
@@ -257,7 +256,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .hero-mountain{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:52%;background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(181,133,58,.30) 80%);clip-path:polygon(0% 100%,8% 85%,15% 78%,20% 65%,25% 55%,30% 48%,35% 40%,38% 32%,42% 22%,45% 14%,48% 8%,50% 0%,52% 8%,55% 14%,58% 22%,62% 32%,65% 40%,70% 48%,75% 55%,80% 65%,85% 72%,92% 82%,100% 100%);opacity:.12;z-index:0;pointer-events:none}
 [data-theme="dark"] .hero-mountain{background:linear-gradient(175deg,transparent 20%,var(--mountain-fill) 50%,rgba(212,175,55,.30) 80%)}
 
-/* Mandala rings — explicit classes, no nth-child dependency */
 .hero-rings{position:absolute;inset:0;pointer-events:none;z-index:0}
 .hero-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid var(--ring-color);transform:translate(-50%,-50%);pointer-events:none;animation:mandalaBreathe 12s ease-in-out infinite;will-change:transform,opacity}
 .hero-ring.r1{width:260px;height:260px;opacity:0.18}
@@ -276,7 +274,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .hero-emblem-circle2{position:absolute;inset:12px;border-radius:50%;border:1px solid var(--gold);opacity:.4;animation:emblemRotate 20s linear infinite reverse}
 .hero-emblem-dot{position:absolute;inset:26px;border-radius:50%;background:radial-gradient(circle,var(--gold-light),var(--gold));box-shadow:0 0 20px 5px var(--sun-glow);animation:emblemPulse 4s ease-in-out infinite}
 
-/* Light mode hero emblem overrides */
 [data-theme="light"] .hero-emblem-circle { border-color: #8a5e1a; opacity: 0.8; }
 [data-theme="light"] .hero-emblem-circle2 { border-color: #b5822a; opacity: 0.6; }
 [data-theme="light"] .hero-emblem-dot { background: radial-gradient(circle, #d4a44a, #b5822a); box-shadow: 0 0 20px 5px rgba(181,130,42,0.4); }
@@ -420,6 +417,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .dist-items li strong { color: var(--ink); font-weight: 500; }
 
 /* ═══════════════════════════════════════════════════════════════
+   COMPARATIVE TABLE (new)
+   ═══════════════════════════════════════════════════════════════ */
+.comp-table-wrap { overflow-x: auto; margin: 2.5rem 0; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); }
+.comp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; font-family: 'Crimson Pro', serif; }
+.comp-table thead { background: var(--bg2); }
+.comp-table th { padding: 1.25rem 1.25rem 0.75rem; text-align: center; font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stone-light); font-weight: 400; border-bottom: 1px solid var(--border); }
+.comp-table td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-subtle); color: var(--stone); line-height: 1.65; vertical-align: top; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table td:first-child { font-weight: 500; color: var(--ink); font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.comp-table td strong { color: var(--ink); font-weight: 500; }
+.comp-table .highlight-cell { background: var(--gold-glow); }
+.comp-table .highlight-cell strong { color: var(--gold-deep); }
+[data-theme="dark"] .comp-table .highlight-cell { background: rgba(212,175,55,0.08); }
+[data-theme="dark"] .comp-table .highlight-cell strong { color: var(--gold-light); }
+
+.resonance-box { background: var(--surface2); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 1.75rem 2rem; margin: 2.5rem 0; position: relative; }
+.resonance-box::before { content: '⚡'; position: absolute; top: -0.75rem; left: 1.5rem; background: var(--gold); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 2px 12px var(--gold-glow); }
+.resonance-box h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; margin-top: 0.25rem; }
+.resonance-box p { font-family: 'Crimson Pro', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.8; margin: 0; }
+.resonance-box p strong { color: var(--ink); }
+
+/* ═══════════════════════════════════════════════════════════════
    PRACTICE
    ═══════════════════════════════════════════════════════════════ */
 .practice-section { padding: 80px 32px 100px; max-width: 740px; margin: 0 auto; }
@@ -493,7 +512,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   margin-bottom: 1.5rem;
 }
 
-/* ── Diagram 1: Mirage of Creation (concentric 3D) ── */
 .diagram-mirage .ring {
   position: absolute;
   top: 50%;
@@ -620,7 +638,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   margin-right: auto;
 }
 
-/* ── Diagram 2: Four States (3D layered) ── */
 .diagram-states .ring {
   position: absolute;
   top: 50%;
@@ -738,7 +755,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .diagram-states .state-dot.sd3 { top:50%; left:0%; transform:translateY(-50%); }
 .diagram-states .state-dot.sd4 { top:50%; right:0%; transform:translateY(-50%); }
 
-/* ── Diagram 3: Fire-brand (animated 3D) ── */
 .diagram-fire {
   position: relative;
   width: 100%;
@@ -895,6 +911,93 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME DIAGRAM VISIBILITY ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="light"] .diagram-3d-container .ring {
+  border-color: rgba(0,0,0,0.3) !important;
+}
+[data-theme="light"] .diagram-3d-container .ring-outer {
+  border-color: rgba(0,0,0,0.25) !important;
+  background: rgba(181,130,42,0.05) !important;
+}
+[data-theme="light"] .diagram-mirage .ring-mid {
+  border-color: #4a7fa5 !important;
+  opacity: 0.7;
+}
+[data-theme="light"] .diagram-mirage .ring-inner {
+  border-color: #b5822a !important;
+  opacity: 1;
+  background: rgba(181,130,42,0.08) !important;
+}
+[data-theme="light"] .diagram-mirage .ring-center {
+  background: radial-gradient(circle at 35% 35%, #d4a44a, #b5822a) !important;
+  border-color: #8a5e1a !important;
+}
+[data-theme="light"] .diagram-mirage .label {
+  color: #1a1510 !important;
+}
+[data-theme="light"] .diagram-mirage .label .ls {
+  color: #3a2a1a !important;
+}
+[data-theme="light"] .diagram-states .ring-turiya {
+  border-color: #b5822a !important;
+  background: rgba(181,130,42,0.08) !important;
+}
+[data-theme="light"] .diagram-states .ring-waking {
+  border-color: #4a7fa5 !important;
+  opacity: 0.8;
+}
+[data-theme="light"] .diagram-states .ring-dreaming {
+  border-color: #8a5c9a !important;
+  opacity: 0.8;
+}
+[data-theme="light"] .diagram-states .ring-sleep {
+  border-color: #4a8a72 !important;
+  opacity: 0.8;
+}
+[data-theme="light"] .diagram-states .ring-center {
+  background: radial-gradient(circle at 35% 35%, #d4a44a, #b5822a) !important;
+  border-color: #8a5e1a !important;
+}
+[data-theme="light"] .diagram-states .label {
+  color: #1a1510 !important;
+}
+[data-theme="light"] .diagram-states .label .ls {
+  color: #3a2a1a !important;
+}
+[data-theme="light"] .diagram-states .label-turiya {
+  color: #b5822a !important;
+}
+[data-theme="light"] .diagram-fire .fire-brand {
+  background: radial-gradient(circle at 40% 40%, #ff8c00, #cc4400) !important;
+  box-shadow: 0 0 30px rgba(255,100,0,0.4) !important;
+}
+[data-theme="light"] .diagram-fire .fire-trail,
+[data-theme="light"] .diagram-fire .fire-trail2 {
+  border-color: rgba(0,0,0,0.15) !important;
+}
+[data-theme="light"] .diagram-fire .fire-label {
+  color: #1a1510 !important;
+}
+[data-theme="light"] .diagram-fire .fire-label .ls {
+  color: #3a2a1a !important;
+}
+[data-theme="light"] .diagram-fire .fire-center-label {
+  color: #3a2a1a !important;
+  opacity: 0.8 !important;
+}
+[data-theme="light"] .diagram-3d-container .diagram-title {
+  color: #8a5e1a !important;
+}
+[data-theme="light"] .diagram-caption {
+  color: #3a2a1a !important;
+}
+[data-theme="light"] .diagram-fire .fire-spark {
+  background: #b5822a !important;
+  opacity: 0.6 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -916,7 +1019,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   .diagram-mirage .ring-center span { font-size: clamp(0.3rem, 1.6vw, 0.4rem); }
   .diagram-states .label { font-size: 0.38rem; }
   .diagram-states .label .ls { font-size: 0.45rem; }
-  .diagram-states .label-turiya { top: -22px; }
+  .diagram-states .label-turiya { top: -50px; }
   .diagram-states .label-waking { right: 100%; }
   .diagram-states .label-dreaming { right: 100%; font-size: 0.35rem; }
   .diagram-states .label-sleep { right: 100%; font-size: 0.35rem; }
@@ -945,6 +1048,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   .diagram-fire .fire-label { font-size: 0.32rem; }
   .diagram-fire .fire-label .ls { font-size: 0.38rem; }
   .diagram-fire .fire-center-label { font-size: clamp(0.25rem, 1.6vw, 0.32rem); }
+  .comp-table { font-size: 0.7rem; }
+  .comp-table td { padding: 0.6rem 0.75rem; }
+  .comp-table td:first-child { font-size: 0.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -972,7 +1078,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .footer-credit { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; }
 .footer-copyright { font-family: 'Cinzel', serif; font-size: .5rem; letter-spacing: .3em; color: var(--stone); text-transform: uppercase; opacity: .4; margin-top: 1rem; }
 
-.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; flex-wrap: wrap; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; max-width: 740px; margin: 0 auto; }
+.chapter-nav { display: flex; justify-content: center; gap: 1.5rem; padding: 2rem 0; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
 .chapter-link { color: var(--stone); text-decoration: none; transition: color 0.3s; font-family: 'Cinzel', serif; }
 .chapter-link:hover { color: var(--gold); }
 .chapter-sep { color: var(--gold-deep); opacity: 0.3; }
@@ -999,21 +1105,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="nav-section-title">This Page</div>
     <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span>Overview</span></a>
     <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span>Contents</span></a>
+    <a href="#upanishadic-roots" class="nav-item" data-section="upanishadic-roots"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/></svg></span><span>Upanishadic Roots</span></a>
     <a href="#ajata" class="nav-item" data-section="ajata"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ajata Vada</span></a>
     <a href="#states" class="nav-item" data-section="states"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><span>Four States</span></a>
     <a href="#no-duality" class="nav-item" data-section="no-duality"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8"/></svg></span><span>No Duality</span></a>
     <a href="#lineage" class="nav-item" data-section="lineage"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg></span><span>Lineage</span></a>
     <a href="#practice" class="nav-item" data-section="practice"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span><span>Asparsa Yoga</span></a>
     <a href="#sources" class="nav-item" data-section="sources"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span><span>Key Verses</span></a>
+    <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M14 17V5"/><path d="M10 17v-3"/><path d="M6 17v-7"/></svg></span><span>Comparative</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Advaita Vedanta</div>
-    <a href="advaita-gaudapada.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Gaudapada</span></a>
-    <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Adi Shankara</span></a>
-    <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ramana Maharshi</span></a>
-    <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Nisargadatta Maharaj</span></a>
+    <a href="advaita-gaudapada.html" class="nav-item active"><span class="nav-item-icon">ॐ</span><span>I · Gaudapada</span></a> <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>II · Adi Shankara</span></a> <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>III · Ramana Maharshi</span></a> <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>IV · Nisargadatta Maharaj</span></a> <a href="vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>V · The Living Tradition</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span>Home · Vedantic Mappings</span></a>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
     <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>The Vedantic Messiah</span></a>
     <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span>Kabbalah</span></a>
     <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/></svg></span><span>Gnosticism</span></a>
@@ -1031,7 +1136,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <div class="main-content">
 
 <!-- ═════════════════════════════════
-     HERO — PREMIUM REFACTOR
+     HERO
      ═════════════════════════════════ -->
 <header class="hero" id="hero">
   <svg style="position:absolute;inset:0;width:100%;height:auto;z-index:0;pointer-events:none;" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -1044,7 +1149,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </svg>
   <div class="hero-mountain" aria-hidden="true"></div>
 
-  <!-- Mandala rings — explicit classes, no nth-child issues -->
   <div class="hero-rings" aria-hidden="true">
     <div class="hero-ring r1"></div>
     <div class="hero-ring r2"></div>
@@ -1052,7 +1156,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <div class="hero-ring r4"></div>
   </div>
 
-  <!-- Ripples — explicit classes -->
   <div class="hero-ripples" aria-hidden="true">
     <div class="hero-ripple rip1"></div>
     <div class="hero-ripple rip2"></div>
@@ -1089,40 +1192,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <section class="toc-section" id="toc">
   <div class="ed-section-label">Contents · विषयसूची</div>
   <h2 class="ed-section-h2">The Core Teachings of Gaudapada</h2>
-  <p class="ed-section-intro">The four chapters of the Karika — the doctrine that nothing is ever born.</p>
+  <p class="ed-section-intro">Eight chapters tracing the doctrine that nothing is ever born — from its Upanishadic source to its place in the wider non-dual landscape.</p>
 
-  <nav class="toc-book" aria-label="Page contents">
-    <a href="#ajata" class="toc-book-item">
-      <span class="toc-b-num">I</span>
-      <span class="toc-b-title">Ajata Vada — Non-Origination</span>
-      <span class="toc-b-skt">अजात वाद</span>
-    </a>
-    <a href="#states" class="toc-book-item">
-      <span class="toc-b-num">II</span>
-      <span class="toc-b-title">The Four States of Consciousness</span>
-      <span class="toc-b-skt">तुरीय · Turiya</span>
-    </a>
-    <a href="#no-duality" class="toc-book-item">
-      <span class="toc-b-num">III</span>
-      <span class="toc-b-title">No Duality, No Creation</span>
-      <span class="toc-b-skt">अद्वैत · Advaita</span>
-    </a>
-    <a href="#lineage" class="toc-book-item">
-      <span class="toc-b-num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>
-      <span class="toc-b-title">Lineage &amp; Influence — Ashtavakra</span>
-      <span class="toc-b-skt">गुरु परम्परा</span>
-    </a>
-    <a href="#practice" class="toc-book-item">
-      <span class="toc-b-num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span>
-      <span class="toc-b-title">Practice — Asparsa Yoga</span>
-      <span class="toc-b-skt">अस्पर्श योग</span>
-    </a>
-    <a href="#sources" class="toc-book-item">
-      <span class="toc-b-num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span>
-      <span class="toc-b-title">Key Verses &amp; Sources</span>
-      <span class="toc-b-skt">माण्डूक्य कारिका</span>
-    </a>
-  </nav>
+  <nav class="toc-book" aria-label="Page contents"> <a href="#upanishadic-roots" class="toc-book-item"><span class="toc-b-num">I</span><span class="toc-b-title">The Upanishadic Roots — The Māṇḍūkya Upaniṣad</span><span class="toc-b-skt">माण्डूक्य</span></a> <a href="#ajata" class="toc-book-item"><span class="toc-b-num">II</span><span class="toc-b-title">Ajata Vada — Non-Origination</span><span class="toc-b-skt">अजात वाद</span></a> <a href="#states" class="toc-book-item"><span class="toc-b-num">III</span><span class="toc-b-title">The Four States of Consciousness</span><span class="toc-b-skt">तुरीय · Turiya</span></a> <a href="#no-duality" class="toc-book-item"><span class="toc-b-num">IV</span><span class="toc-b-title">No Duality, No Creation</span><span class="toc-b-skt">अद्वैत · Advaita</span></a> <a href="#lineage" class="toc-book-item"><span class="toc-b-num">V</span><span class="toc-b-title">Lineage &amp; Influence — Ashtavakra</span><span class="toc-b-skt">गुरु परम्परा</span></a> <a href="#practice" class="toc-book-item"><span class="toc-b-num">VI</span><span class="toc-b-title">Practice — Asparsa Yoga</span><span class="toc-b-skt">अस्पर्श योग</span></a> <a href="#sources" class="toc-book-item"><span class="toc-b-num">VII</span><span class="toc-b-title">Key Verses &amp; Sources</span><span class="toc-b-skt">माण्डूक्य कारिका</span></a> <a href="#comparative" class="toc-book-item"><span class="toc-b-num">VIII</span><span class="toc-b-title">Comparative Thresholds — Ajāta in Context</span><span class="toc-b-skt">तुलना · संवाद</span></a> </nav>
 </section>
 
 <!-- ═════════════════════════════════
@@ -1136,15 +1208,60 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 </div>
 
 <!-- ═════════════════════════════════
-     SECTION 1: AJATA VADA — 3D DIAGRAM
+     SECTION 1: UPANISHADIC ROOTS — NEW
      ═════════════════════════════════ -->
 <div class="stages-wrap">
 
+<section class="stage-section" id="upanishadic-roots">
+  <div class="stage-wm" aria-hidden="true">माण्डूक्य</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Chapter I</span>
+      <span class="stage-skt">The Upanishadic Source</span>
+      <span class="stage-deva-title">माण्डूक्य उपनिषद्</span>
+    </div>
+    <h2 class="stage-h2">The Māṇḍūkya Upaniṣad</h2>
+    <span class="stage-subtitle-label">The shortest Upaniṣad — twelve verses — the seed of the Kārikā</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>T</strong>he <strong><span class="sanskrit-term" title="The shortest of the principal Upanishads; twelve verses on OM and the four states">Māṇḍūkya Upaniṣad</span></strong> is the shortest of the principal Upaniṣads, containing only twelve verses. Despite its brevity, it is considered the most profound of all, containing the entire essence of Vedānta. Gaudapada chose this Upaniṣad as the foundation for his magnum opus, the <em>Māṇḍūkya Kārikā</em>, because it presents the four states of consciousness in a compressed and luminous form.</p>
+
+    <p>The Upaniṣad opens with the syllable <span class="sanskrit-term" title="The primordial sound; the cosmic syllable representing the Absolute">Oṁ</span> — the sacred sound that is the entirety of all existence:</p>
+
+    <div class="scripture-panels">
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Verse 1 — Oṁ</div>
+        <p class="scripture-panel-text">"Oṁ — this syllable is all this. What has become, what is becoming, and what will become — all this is Oṁ. And whatever is beyond the three times, that also is Oṁ."</p>
+        <p class="scripture-panel-ref">Māṇḍūkya Upaniṣad 1</p>
+      </div>
+      <div class="scripture-panel">
+        <div class="scripture-panel-label">Verse 7 — Turīya</div>
+        <p class="scripture-panel-text">"Turīya is not that which is conscious of the internal, nor that which is conscious of the external, nor that which is conscious of both, nor that which is a mass of consciousness. It is unseen, beyond empirical dealings, unthinkable, and indescribable."</p>
+        <p class="scripture-panel-ref">Māṇḍūkya Upaniṣad 7</p>
+      </div>
+    </div>
+
+    <p>Gaudapada's Kārikā is not merely a commentary but an independent philosophical treatise that uses the Upaniṣad as a launching pad. He expands the twelve verses into four chapters (prakaraṇas) of his own, establishing the framework of <em>Ajāta Vāda</em>. The Upaniṣad provides the seed; Gaudapada grows it into a complete tree of liberation.</p>
+
+    <div class="pull-q">
+      <p>"The Self is to be known through the syllable Oṁ. Oṁ is the bow; the Self is the arrow; Brahman is the target. It is to be hit by one who is intent. The arrow becomes one with the target."</p>
+      <cite>— Māṇḍūkya Upaniṣad (paraphrased)</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="stage-sep"/>
+
+<!-- ═════════════════════════════════
+     SECTION 2: AJATA VADA (was Chapter I, now II)
+     ═════════════════════════════════ -->
 <section class="stage-section" id="ajata">
   <div class="stage-wm" aria-hidden="true">अजात</div>
   <div class="stage-header">
     <div class="stage-eyeline">
-      <span class="stage-n">Chapter I</span>
+      <span class="stage-n">Chapter II</span>
       <span class="stage-skt">Ajata Vada</span>
       <span class="stage-deva-title">अजात</span>
     </div>
@@ -1158,7 +1275,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
     <p>The entire phenomenal universe — all names, forms, objects, and even the sense of a separate self — is a superimposition, like a rope mistaken for a snake, or a dream seen by a sleeping mind. Just as a dream has no independent reality apart from the dreamer, so the waking world has no reality apart from pure consciousness, <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>. Gaudapada uses the analogy of a mirage: water that appears in the desert never actually exists. Similarly, the world appears but never truly arises.</p>
 
-    <!-- ★ 3D PREMIUM DIAGRAM: Mirage of Creation ★ -->
     <div class="diagram-3d-container diagram-mirage">
       <div class="diagram-title">The Mirage of Creation · माया</div>
 
@@ -1215,13 +1331,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <hr class="stage-sep"/>
 
 <!-- ═════════════════════════════════
-     SECTION 2: THE FOUR STATES — 3D DIAGRAM
+     SECTION 3: THE FOUR STATES (was II, now III)
      ═════════════════════════════════ -->
 <section class="stage-section" id="states">
   <div class="stage-wm" aria-hidden="true">तुरीय</div>
   <div class="stage-header">
     <div class="stage-eyeline">
-      <span class="stage-n">Chapter II</span>
+      <span class="stage-n">Chapter III</span>
       <span class="stage-skt">Consciousness</span>
       <span class="stage-deva-title">तुरीय</span>
     </div>
@@ -1235,7 +1351,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
     <p>Turiya is not a fourth state in sequence; it is the substratum that underlies and witnesses the other three. It is pure consciousness without any object, the Self that never comes and goes. Gaudapada identifies this Turiya with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span>, the absolute reality.</p>
 
-    <!-- ★ 3D PREMIUM DIAGRAM: The Four States ★ -->
     <div class="diagram-3d-container diagram-states">
       <div class="diagram-title">The Four States of Consciousness · चतुः स्थिति</div>
 
@@ -1325,13 +1440,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <hr class="stage-sep"/>
 
 <!-- ═════════════════════════════════
-     SECTION 3: NO DUALITY — 3D FIRE-BRAND DIAGRAM
+     SECTION 4: NO DUALITY (was III, now IV)
      ═════════════════════════════════ -->
 <section class="stage-section" id="no-duality">
   <div class="stage-wm" aria-hidden="true">अद्वैत</div>
   <div class="stage-header">
     <div class="stage-eyeline">
-      <span class="stage-n">Chapter III</span>
+      <span class="stage-n">Chapter IV</span>
       <span class="stage-skt">Non-Duality</span>
       <span class="stage-deva-title">अद्वैत</span>
     </div>
@@ -1345,7 +1460,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
     <p>He shows that the very concept of causation is a mental projection. If the world is an illusion, then there is no real creator, no real creation, and no real dissolution. The only reality is the non-dual <span class="sanskrit-term" title="The individual self; the true consciousness within">Self</span>, which is free from all attributes and all relationships.</p>
 
-    <!-- ★ 3D PREMIUM DIAGRAM: Fire-brand Analogy ★ -->
     <div class="diagram-fire">
       <div class="diagram-title" style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:1.5rem;">The Fire-brand Analogy · अलात</div>
 
@@ -1391,7 +1505,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <hr class="stage-sep"/>
 
 <!-- ═════════════════════════════════
-     SECTION 4: LINEAGE
+     SECTION 5: LINEAGE (was IV, now V)
      ═════════════════════════════════ -->
 <section class="lineage-section" id="lineage">
   <div class="ed-section-label">Lineage · गुरु परम्परा</div>
@@ -1460,8 +1574,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
+<hr class="stage-sep"/>
+
 <!-- ═════════════════════════════════
-     SECTION 5: ASPARSA YOGA
+     SECTION 6: ASPARSA YOGA (was V, now VI)
      ═════════════════════════════════ -->
 <section class="practice-section" id="practice">
   <div class="ed-section-label">Practice · साधन</div>
@@ -1512,8 +1628,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   </div>
 </section>
 
+<hr class="stage-sep"/>
+
 <!-- ═════════════════════════════════
-     SECTION 6: KEY VERSES
+     SECTION 7: KEY VERSES (was VI, now VII)
      ═════════════════════════════════ -->
 <section class="gloss-section" id="sources">
   <div class="ed-section-label">Primary Source · मूल ग्रन्थ</div>
@@ -1556,7 +1674,180 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <p style="text-align:center; color:var(--stone); font-style:italic; margin-top:2rem; font-size:0.95rem;">The entire Karika is a masterpiece of logical analysis and direct pointing. Shankara wrote a commentary on it, cementing it as a central text of Advaita Vedanta.</p>
 </section>
 
+<hr class="stage-sep"/>
+
+<!-- ═════════════════════════════════
+     SECTION 8: COMPARATIVE THRESHOLDS — NEW
+     ═════════════════════════════════ -->
+<section class="stage-section" id="comparative">
+  <div class="stage-wm" aria-hidden="true">तुलना</div>
+  <div class="stage-header">
+    <div class="stage-eyeline">
+      <span class="stage-n">Chapter VIII</span>
+      <span class="stage-skt">Comparative Thresholds</span>
+      <span class="stage-deva-title">तुलना · संवाद</span>
+    </div>
+    <h2 class="stage-h2">Ajāta in Context</h2>
+    <span class="stage-subtitle-label">Gaudapada's radical non‑origination across the landscape of wisdom traditions</span>
+    <span class="stage-rule"></span>
+  </div>
+
+  <div class="stage-body">
+    <p><strong>G</strong>audapada's <em>ajāta vāda</em> — the doctrine that nothing is ever born — stands as one of the most radical expressions of non‑duality. It reverberates not only through Advaita Vedanta but also echoes in other Indian and East Asian traditions. This chapter places Gaudapada's teaching in conversation with four other profound streams of thought, revealing both family resemblance and distinctive edges.</p>
+
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Tradition</th>
+            <th>Core Teaching</th>
+            <th>Relation to Ajāta</th>
+            <th>Key Distinction</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Śaṅkara's Vivarta</td>
+            <td><strong>Apparent modification</strong> — the world is a superimposition on Brahman</td>
+            <td>Builds directly on Gaudapada's foundation</td>
+            <td>Maintains a qualified "appearance" while affirming Brahman as the sole reality</td>
+          </tr>
+          <tr class="highlight-cell">
+            <td>Buddhist Mādhyamaka</td>
+            <td><strong>Śūnyatā</strong> — all phenomena are empty of inherent existence</td>
+            <td>Parallel: both deny any real arising or causation</td>
+            <td>Mādhyamaka is non‑affirming (no positive reality); Ajāta affirms Brahman as the ground</td>
+          </tr>
+          <tr>
+            <td>Kashmiri Śaivism</td>
+            <td><strong>Pratyabhijñā</strong> — recognition of one's nature as Śiva</td>
+            <td>Shared non‑duality; both affirm the world as divine play</td>
+            <td>Śaivism affirms manifestation; Ajāta says the world never truly arises</td>
+          </tr>
+          <tr>
+            <td>Taoism</td>
+            <td><strong>Wu Wei</strong> — effortless action in alignment with the Tao</td>
+            <td>Resonance: spontaneous, causeless arising</td>
+            <td>Taoism does not deny the world; Ajāta sees it as a mirage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="resonance-box">
+      <h4>⚡ The Convergence</h4>
+      <p>All four traditions <strong>deny ultimate reality to the phenomenal world</strong>. Whether it is called <em>māyā</em>, <em>śūnyatā</em>, or the <em>Tao</em>, there is a shared recognition that what appears is not the final truth. Gaudapada's <em>ajāta</em> is the most uncompromising formulation: not only is the world unreal, but <strong>it never even originated</strong>. This distinguishes him from those who allow for a qualified creation, divine manifestation, or a dynamic process. Yet in the ultimate state — the silent abidance in the Self — all these traditions converge.</p>
+    </div>
+
+    <div class="pull-q">
+      <p>"The highest truth is that there is no creation, no dissolution, no bondage, no one striving for liberation, and no one liberated. Only the Self is."</p>
+      <cite>— Gaudapada, Karika 2.32</cite>
+    </div>
+
+    <p>Gaudapada's voice is the purest statement of non‑origination in the Indian tradition. It is a razor that cuts through every form of grasping, including the subtle grasping at "I am the witness" or "I am consciousness." In the final state, even the witness is transcended — and only the Self remains, speechless, radiant, beyond all comparison.</p>
+  </div>
+</section>
+
 </div><!-- .stages-wrap -->
+
+<!-- ═════════════════════════════════
+     GLOSSARY (refined and expanded)
+     ═════════════════════════════════ -->
+<section class="gloss-section" id="glossary">
+  <div class="ed-section-label">Glossary · शब्दकोश</div>
+  <h2 class="ed-section-h2">Key Terms of Gaudapada's Teaching</h2>
+  <p class="ed-section-intro">A searchable guide to the essential Sanskrit terms and concepts.</p>
+
+  <div class="gloss-search-wrap">
+    <span class="gloss-search-ico">🔍</span>
+    <input class="gloss-search" id="glossSearch" type="text" placeholder="Search glossary..." aria-label="Search glossary terms">
+    <button class="gloss-clear" id="glossClear" aria-label="Clear search">✕</button>
+  </div>
+  <div class="gloss-no-results" id="glossNoResults">No glossary terms match your search.</div>
+
+  <div class="gloss-grid" id="glossGrid">
+    <div class="gloss-entry" data-term="ajata ajata-vada ajāta">
+      <div class="gloss-term">Ajāta <span class="gloss-term-deva">अजात</span></div>
+      <span class="gloss-cat">Core Doctrine</span>
+      <div class="gloss-def">"Non‑origination" — the central teaching of Gaudapada that nothing is ever born, created, or produced. The world is a mirage; only Brahman is real.</div>
+    </div>
+    <div class="gloss-entry" data-term="ajata-vada ajāta-vāda">
+      <div class="gloss-term">Ajāta Vāda <span class="gloss-term-deva">अजात वाद</span></div>
+      <span class="gloss-cat">Core Doctrine</span>
+      <div class="gloss-def">The doctrine of non‑origination. The philosophical position that the phenomenal world has no real beginning, middle, or end; it is an illusion superimposed on the Self.</div>
+    </div>
+    <div class="gloss-entry" data-term="turiya turīya">
+      <div class="gloss-term">Turīya <span class="gloss-term-deva">तुरीय</span></div>
+      <span class="gloss-cat">Consciousness</span>
+      <div class="gloss-def">The "Fourth" — the pure witness consciousness that underlies and transcends the three ordinary states of waking, dreaming, and deep sleep. It is the Self, Brahman.</div>
+    </div>
+    <div class="gloss-entry" data-term="maya māyā">
+      <div class="gloss-term">Māyā <span class="gloss-term-deva">माया</span></div>
+      <span class="gloss-cat">Illusion</span>
+      <div class="gloss-def">The cosmic power of illusion that projects the appearance of the world. In Gaudapada's view, māyā is not a creative force but the very fabric of the dream‑like nature of existence.</div>
+    </div>
+    <div class="gloss-entry" data-term="alata-santi alataśānti alatasanti">
+      <div class="gloss-term">Alataśānti <span class="gloss-term-deva">अलतशान्ति</span></div>
+      <span class="gloss-cat">Analogy</span>
+      <div class="gloss-def">"Extinction of the Fire‑brand" — the fourth chapter of the Māṇḍūkya Kārikā, using the analogy of a swinging fire‑brand to show that the world of cause and effect is an illusion.</div>
+    </div>
+    <div class="gloss-entry" data-term="asparsa-yoga asparśa-yoga">
+      <div class="gloss-term">Asparśa Yoga <span class="gloss-term-deva">अस्पर्श योग</span></div>
+      <span class="gloss-cat">Practice</span>
+      <div class="gloss-def">"The Yoga of Non‑Contact" — Gaudapada's method of abiding in pure awareness without engaging with any object, thought, or perception. Effortless resting in the Self.</div>
+    </div>
+    <div class="gloss-entry" data-term="brahman">
+      <div class="gloss-term">Brahman <span class="gloss-term-deva">ब्रह्मन्</span></div>
+      <span class="gloss-cat">Ultimate Reality</span>
+      <div class="gloss-def">The absolute reality, the ground of all existence. In Gaudapada's teaching, Brahman is the only reality; the world is an unreal appearance projected upon it.</div>
+    </div>
+    <div class="gloss-entry" data-term="jagrat">
+      <div class="gloss-term">Jagrat <span class="gloss-term-deva">जाग्रत्</span></div>
+      <span class="gloss-cat">States</span>
+      <div class="gloss-def">The waking state of consciousness — the world of objects, names, and forms, experienced through the five senses and the mind.</div>
+    </div>
+    <div class="gloss-entry" data-term="svapna">
+      <div class="gloss-term">Svapna <span class="gloss-term-deva">स्वप्न</span></div>
+      <span class="gloss-cat">States</span>
+      <div class="gloss-def">The dream state of consciousness — a world of mind‑created imagery, perceived without external stimuli. Dreams are used by Gaudapada as a key analogy for the waking world.</div>
+    </div>
+    <div class="gloss-entry" data-term="susupti suṣupti">
+      <div class="gloss-term">Suṣupti <span class="gloss-term-deva">सुषुप्ति</span></div>
+      <span class="gloss-cat">States</span>
+      <div class="gloss-def">Deep sleep — a state of unconsciousness without dreams. Though the mind is inactive, the Self remains as the witness that remembers "I slept well."</div>
+    </div>
+    <div class="gloss-entry" data-term="mandukya māṇḍūkya">
+      <div class="gloss-term">Māṇḍūkya <span class="gloss-term-deva">माण्डूक्य</span></div>
+      <span class="gloss-cat">Text</span>
+      <div class="gloss-def">The shortest of the principal Upaniṣads (twelve verses) on the syllable Oṁ and the four states of consciousness. Gaudapada's Kārikā is a commentary on this text.</div>
+    </div>
+    <div class="gloss-entry" data-term="karika kārikā">
+      <div class="gloss-term">Kārikā <span class="gloss-term-deva">कारिका</span></div>
+      <span class="gloss-cat">Text</span>
+      <div class="gloss-def">A concise philosophical treatise in verse. Gaudapada's <em>Māṇḍūkya Kārikā</em> is the foundational text of Ajāta Vāda and the earliest systematic exposition of Advaita Vedanta.</div>
+    </div>
+    <div class="gloss-entry" data-term="jiva jīva">
+      <div class="gloss-term">Jīva <span class="gloss-term-deva">जीव</span></div>
+      <span class="gloss-cat">Self</span>
+      <div class="gloss-def">The individual soul or living being. In Gaudapada's teaching, the jīva is never truly born; it is a mistaken identification with the body‑mind complex.</div>
+    </div>
+    <div class="gloss-entry" data-term="ashtavakra aṣṭāvakra">
+      <div class="gloss-term">Aṣṭāvakra <span class="gloss-term-deva">अष्टावक्र</span></div>
+      <span class="gloss-cat">Lineage</span>
+      <div class="gloss-def">The sage with eight bends, author of the <em>Aṣṭāvakra Gītā</em>. His radical non‑dual teaching — "The world is unreal; you are pure awareness" — echoes Gaudapada's Ajāta.</div>
+    </div>
+    <div class="gloss-entry" data-term="shankara śaṅkara">
+      <div class="gloss-term">Śaṅkara <span class="gloss-term-deva">शङ्कर</span></div>
+      <span class="gloss-cat">Lineage</span>
+      <div class="gloss-def">Adi Śaṅkara (c. 8th century CE) — the great disciple of Govinda Bhagavatpada and the systematizer of Advaita Vedanta. He wrote a commentary on Gaudapada's Kārikā.</div>
+    </div>
+    <div class="gloss-entry" data-term="govinda-bhagavatpada">
+      <div class="gloss-term">Govinda Bhagavatpada <span class="gloss-term-deva">गोविन्द भगवत्पाद</span></div>
+      <span class="gloss-cat">Lineage</span>
+      <div class="gloss-def">Gaudapada's direct disciple and the guru of Adi Śaṅkara. He transmitted the Ajāta teaching to the young Śaṅkara, who would later establish Advaita as the dominant philosophical school of India.</div>
+    </div>
+  </div>
+</section>
 
 <!-- ═════════════════════════════════
      FINAL PULLQUOTE / CONTINUE
@@ -1564,8 +1855,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <div class="pq-section">
   <div class="pq-glow"></div>
   <div class="pullquote">
-    <p class="pq-text">"Gaudapada's Mandukya Karika stands as the foundational text of Advaita Vedanta, establishing the non-dual perspective through rigorous philosophical argument."</p>
-    <p class="pq-attr"><a href="../index.html" class="continue-link">← Return to Home</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="advaita-adi-shankara.html" class="continue-link">Continue to Adi Shankara →</a></p>
+    <p class="pq-text">"No jiva is ever born. No cause exists for anything that appears. The highest truth is that nothing is ever born."</p>
+    <p class="pq-attr">— Gaudapada, Mandukya Karika 3.15</p>
   </div>
 </div>
 
@@ -1573,13 +1864,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <div class="chapter-nav">
   <a href="../index.html" class="chapter-link">⌂ Home</a>
   <span class="chapter-sep">ॐ</span>
-  <a href="advaita-gaudapada.html" class="chapter-link active">Gaudapada</a>
+  <a href="advaita-gaudapada.html" class="chapter-link active">I · Gaudapada</a>
   <span class="chapter-sep">ॐ</span>
-  <a href="advaita-adi-shankara.html" class="chapter-link">Adi Shankara</a>
+  <a href="advaita-adi-shankara.html" class="chapter-link">II · Adi Shankara</a>
   <span class="chapter-sep">ॐ</span>
-  <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
+  <a href="advaita-ramana-maharshi.html" class="chapter-link">III · Ramana Maharshi</a>
   <span class="chapter-sep">ॐ</span>
-  <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
+  <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">IV · Nisargadatta Maharaj</a>
+  <span class="chapter-sep">ॐ</span>
+  <a href="vedanta-living-tradition.html" class="chapter-link">V · The Living Tradition</a>
 </div>
 
 <!-- ═════════════════════════════════
@@ -1689,6 +1982,37 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       requestAnimationFrame(animateCursor);
     }
     animateCursor();
+  }
+
+  /* GLOSSARY SEARCH */
+  const glossSearch = document.getElementById('glossSearch');
+  const glossClear = document.getElementById('glossClear');
+  const glossEntries = document.querySelectorAll('.gloss-entry');
+  const glossNoResults = document.getElementById('glossNoResults');
+
+  function filterGlossary(query) {
+    const q = query.toLowerCase().trim();
+    let visible = 0;
+    glossEntries.forEach(entry => {
+      const term = (entry.getAttribute('data-term') || '').toLowerCase();
+      const def = entry.querySelector('.gloss-def')?.textContent?.toLowerCase() || '';
+      const match = !q || term.includes(q) || def.includes(q);
+      entry.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    glossNoResults.style.display = visible === 0 && q !== '' ? 'block' : 'none';
+    glossClear.classList.toggle('vis', q !== '');
+  }
+
+  if (glossSearch) {
+    glossSearch.addEventListener('input', (e) => filterGlossary(e.target.value));
+    if (glossClear) {
+      glossClear.addEventListener('click', () => {
+        glossSearch.value = '';
+        filterGlossary('');
+        glossSearch.focus();
+      });
+    }
   }
 
   /* FALLBACK for fade-in */

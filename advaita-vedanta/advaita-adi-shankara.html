@@ -2258,6 +2258,208 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           NEW: MATHAS (Four Monasteries)
+           ═══════════════════════════════════════════════════════════════ */
+        .matha-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            margin: 2.5rem 0;
+            background: var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+        }
+        .matha-card {
+            background: var(--surface);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        .matha-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .matha-card:hover::after {
+            opacity: 1;
+        }
+        .matha-card:hover {
+            background: var(--surface2);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-gold);
+        }
+        .matha-card .direction {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .matha-card .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin: 0.25rem 0 0.1rem;
+        }
+        .matha-card .veda {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            color: var(--stone);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        .matha-card .desc {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+            color: var(--stone);
+            line-height: 1.6;
+            margin-top: 0.25rem;
+        }
+        .matha-card .location {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.75rem;
+            color: var(--stone-light);
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+        [data-theme="dark"] .matha-card {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+        [data-theme="dark"] .matha-card:hover {
+            background: var(--surface2);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           NEW: COMPARATIVE TABLE (ported from Gaudapada)
+           ═══════════════════════════════════════════════════════════════ */
+        .comp-table-wrap {
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            font-family: 'Crimson Pro', serif;
+        }
+        .comp-table thead {
+            background: var(--bg2);
+        }
+        .comp-table th {
+            padding: 1.25rem 1.25rem 0.75rem;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--stone-light);
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+        }
+        .comp-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--stone);
+            line-height: 1.65;
+            vertical-align: top;
+        }
+        .comp-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comp-table td:first-child {
+            font-weight: 500;
+            color: var(--ink);
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .comp-table td strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .comp-table .highlight-cell {
+            background: var(--gold-glow);
+        }
+        .comp-table .highlight-cell strong {
+            color: var(--gold-deep);
+        }
+        [data-theme="dark"] .comp-table td strong {
+            color: var(--ink);
+        }
+        [data-theme="dark"] .comp-table .highlight-cell {
+            background: rgba(212, 175, 55, 0.08);
+        }
+        [data-theme="dark"] .comp-table .highlight-cell strong {
+            color: var(--gold-light);
+        }
+
+        .resonance-box {
+            background: var(--surface2);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-sm);
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+        .resonance-box::before {
+            content: '⚡';
+            position: absolute;
+            top: -0.75rem;
+            left: 1.5rem;
+            background: var(--gold);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 12px var(--gold-glow);
+        }
+        .resonance-box h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        .resonance-box p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.98rem;
+            color: var(--stone);
+            line-height: 1.8;
+            margin: 0;
+        }
+        .resonance-box p strong {
+            color: var(--ink);
+        }
+        [data-theme="dark"] .resonance-box {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════════════════════════ */
         .footer {
@@ -2367,12 +2569,9 @@
             justify-content: center;
             gap: 1.5rem;
             padding: 2rem 0;
-            flex-wrap: wrap;
             font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            max-width: 740px;
-            margin: 0 auto;
         }
         .chapter-link {
             color: var(--stone);
@@ -2423,6 +2622,177 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           LIGHT THEME DIAGRAM VISIBILITY ENHANCEMENTS
+           ═══════════════════════════════════════════════════════════════ */
+        [data-theme="light"] .diagram-3d-container .ring {
+            border-color: rgba(0, 0, 0, 0.3) !important;
+        }
+        [data-theme="light"] .diagram-3d-container .ring-outer {
+            border-color: rgba(0, 0, 0, 0.25) !important;
+            background: rgba(181, 130, 42, 0.05) !important;
+        }
+        [data-theme="light"] .diagram-pramana .ring-mid {
+            border-color: #b5822a !important;
+            opacity: 0.8;
+            background: rgba(181, 130, 42, 0.08) !important;
+        }
+        [data-theme="light"] .diagram-pramana .ring-center {
+            background: radial-gradient(circle at 35% 35%, #d4a44a, #b5822a) !important;
+            border-color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.2) !important;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode .label {
+            color: #0e1a2a !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode .sub {
+            color: #3a2a1a !important;
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode .deva-label {
+            color: #5a4a3a !important;
+            opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode .num {
+            color: #8a5e1a !important;
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode.shabda {
+            border-color: #b5822a !important;
+            border-width: 2.5px !important;
+            background: rgba(181, 130, 42, 0.08) !important;
+        }
+        [data-theme="light"] .diagram-pramana .pnode.shabda .label {
+            color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-pramana .ray {
+            background: linear-gradient(180deg, #b5822a, transparent) !important;
+            opacity: 0.5 !important;
+        }
+
+        /* Two Levels diagram */
+        [data-theme="light"] .diagram-levels .level-param {
+            border-color: #b5822a !important;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181, 130, 42, 0.10), transparent 80%) !important;
+        }
+        [data-theme="light"] .diagram-levels .level-param .main {
+            color: #0e1a2a !important;
+        }
+        [data-theme="light"] .diagram-levels .level-param .lbl {
+            color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-levels .level-param .sub {
+            color: #3a2a1a !important;
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-levels .level-vyav {
+            border-color: rgba(0, 0, 0, 0.2) !important;
+            background: rgba(255, 255, 255, 0.6) !important;
+        }
+        [data-theme="light"] .diagram-levels .level-vyav .main {
+            color: #1a2d4d !important;
+        }
+        [data-theme="light"] .diagram-levels .level-vyav .lbl {
+            color: #5a4a3a !important;
+            opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-levels .level-vyav .sub {
+            color: #3a2a1a !important;
+            opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-levels .level-connector {
+            background: linear-gradient(180deg, transparent, #b5822a, transparent) !important;
+            opacity: 0.3 !important;
+        }
+        [data-theme="light"] .diagram-levels .level-arrow {
+            color: #8a5e1a !important;
+            opacity: 0.5 !important;
+        }
+        [data-theme="light"] .diagram-levels .level-rope {
+            color: #5a4a3a !important;
+            opacity: 0.7 !important;
+        }
+
+        /* Nirguna & Saguna diagram */
+        [data-theme="light"] .diagram-nirguna .split-top {
+            border-color: #b5822a !important;
+            background: radial-gradient(ellipse at 50% 50%, rgba(181, 130, 42, 0.10), transparent 80%) !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-top .main {
+            color: #0e1a2a !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-top .lbl {
+            color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-top .sub {
+            color: #3a2a1a !important;
+            opacity: 0.9 !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-bottom {
+            border-color: rgba(0, 0, 0, 0.2) !important;
+            background: rgba(255, 255, 255, 0.6) !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-bottom .main {
+            color: #1a2d4d !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-bottom .lbl {
+            color: #5a4a3a !important;
+            opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-bottom .sub {
+            color: #3a2a1a !important;
+            opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-mirror {
+            color: #8a5e1a !important;
+            opacity: 0.6 !important;
+        }
+        [data-theme="light"] .diagram-nirguna .split-mirror .sub {
+            color: #5a4a3a !important;
+            opacity: 0.7 !important;
+        }
+
+        /* Mahavakya diagram */
+        [data-theme="light"] .diagram-mahavakya .quad {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.15) !important;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05) !important;
+        }
+        [data-theme="light"] .diagram-mahavakya .quad .skt {
+            color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-mahavakya .quad .trans {
+            color: #0e1a2a !important;
+        }
+        [data-theme="light"] .diagram-mahavakya .quad .src {
+            color: #5a4a3a !important;
+            opacity: 0.8 !important;
+        }
+        [data-theme="light"] .diagram-mahavakya .quad.veda {
+            border-color: #b5822a !important;
+            border-width: 2px !important;
+            background: rgba(181, 130, 42, 0.06) !important;
+        }
+        [data-theme="light"] .diagram-mahavakya .quad.veda .skt {
+            color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-mahavakya .center-aum {
+            color: #8a5e1a !important;
+            opacity: 0.2 !important;
+        }
+
+        /* Generic light theme diagram overrides */
+        [data-theme="light"] .diagram-3d-container .diagram-title {
+            color: #8a5e1a !important;
+        }
+        [data-theme="light"] .diagram-caption {
+            color: #3a2a1a !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            RESPONSIVE
            ═══════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
@@ -2433,6 +2803,9 @@
                 grid-template-columns: 1fr 1fr;
             }
             .sacred-cards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .matha-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .chapter-nav {
@@ -2503,12 +2876,23 @@
             .diagram-mahavakya .quad {
                 padding: 0.4rem 0.3rem;
             }
+            .comp-table th,
+            .comp-table td {
+                padding: 0.75rem;
+                font-size: 0.75rem;
+            }
+            .comp-table td:first-child {
+                font-size: 0.5rem;
+            }
         }
         @media (max-width: 500px) {
             .pramana-grid {
                 grid-template-columns: 1fr;
             }
             .sacred-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .matha-grid {
                 grid-template-columns: 1fr;
             }
             .scripture-panel {
@@ -2584,6 +2968,24 @@
             .diagram-mahavakya .center-aum {
                 font-size: clamp(1rem, 3.5vw, 1.6rem);
             }
+            .comp-table th,
+            .comp-table td {
+                padding: 0.5rem;
+                font-size: 0.65rem;
+            }
+            .comp-table td:first-child {
+                font-size: 0.45rem;
+            }
+            .resonance-box {
+                padding: 1.25rem 1rem;
+            }
+            .resonance-box::before {
+                width: 28px;
+                height: 28px;
+                font-size: 0.9rem;
+                top: -0.65rem;
+                left: 1rem;
+            }
         }
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -2618,13 +3020,17 @@
             <a href="#mahavakyas" class="nav-item" data-section="mahavakyas"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span><span>Four Mahavakyas</span></a>
             <a href="#lineage" class="nav-item" data-section="lineage"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg></span><span>Lineage · Ashtavakra</span></a>
             <a href="#practice" class="nav-item" data-section="practice"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Sadhana Chatushtaya</span></a>
+            <a href="#jnana-yoga" class="nav-item" data-section="jnana-yoga"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>Path of Jñāna Yoga</span></a>
+            <a href="#mathas" class="nav-item" data-section="mathas"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 6h12l-2 12H8z"/></svg></span><span>Four Monasteries</span></a>
             <a href="#works" class="nav-item" data-section="works"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Key Works</span></a>
+            <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M14 17V5"/><path d="M10 17v-3"/><path d="M6 17v-7"/></svg></span><span>Comparative</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Advaita Vedanta</div>
-            <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Gaudapada</span></a>
-            <a href="advaita-adi-shankara.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Adi Shankara</span></a>
-            <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ramana Maharshi</span></a>
-            <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Nisargadatta Maharaj</span></a>
+            <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>I · Gaudapada</span></a>
+            <a href="advaita-adi-shankara.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>II · Adi Shankara</span></a>
+            <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>III · Ramana Maharshi</span></a>
+            <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>IV · Nisargadatta Maharaj</span></a>
+            <a href="vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>V · The Living Tradition</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
             <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span>Home · Vedantic Mappings</span></a>
@@ -2701,7 +3107,7 @@
     <section class="toc-section" id="toc">
         <div class="ed-section-label">Contents · विषयसूची</div>
         <h2 class="ed-section-h2">The Core Teachings of Adi Shankara</h2>
-        <p class="ed-section-intro">The six pramāṇas · Nirguṇa vs. Saguṇa · The path of Jñāna Yoga.</p>
+        <p class="ed-section-intro">The six pramāṇas · Two levels of reality · Nirguṇa vs. Saguṇa · Four Mahāvākyas · The path of Jñāna Yoga · The four monasteries · Comparative thresholds.</p>
         <nav class="toc-book" aria-label="Page contents">
             <a href="#pramanas" class="toc-book-item">
                 <span class="toc-b-num">I</span>
@@ -2724,19 +3130,34 @@
                 <span class="toc-b-skt">महावाक्य</span>
             </a>
             <a href="#lineage" class="toc-book-item">
-                <span class="toc-b-num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>
+                <span class="toc-b-num">V</span>
                 <span class="toc-b-title">Lineage — Ashtavakra &amp; the Living Voice</span>
                 <span class="toc-b-skt">अष्टावक्र</span>
             </a>
             <a href="#practice" class="toc-book-item">
-                <span class="toc-b-num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span>
+                <span class="toc-b-num">VI</span>
                 <span class="toc-b-title">Practice — Sādhana Chatuṣṭaya</span>
                 <span class="toc-b-skt">साधन चतुष्टय</span>
             </a>
+            <a href="#jnana-yoga" class="toc-book-item">
+                <span class="toc-b-num">VII</span>
+                <span class="toc-b-title">The Path of Jñāna Yoga — Śravaṇa, Manana, Nididhyāsana</span>
+                <span class="toc-b-skt">ज्ञान योग</span>
+            </a>
+            <a href="#mathas" class="toc-book-item">
+                <span class="toc-b-num">VIII</span>
+                <span class="toc-b-title">The Four Monasteries — Āmnāya Mathas</span>
+                <span class="toc-b-skt">आम्नाय मठ</span>
+            </a>
             <a href="#works" class="toc-book-item">
-                <span class="toc-b-num"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span>
+                <span class="toc-b-num">IX</span>
                 <span class="toc-b-title">Key Works — Bhāṣyas &amp; Prakaraṇa Granthas</span>
                 <span class="toc-b-skt">भाष्य</span>
+            </a>
+            <a href="#comparative" class="toc-book-item">
+                <span class="toc-b-num">X</span>
+                <span class="toc-b-title">Comparative Thresholds — Advaita in Context</span>
+                <span class="toc-b-skt">तुलना · संवाद</span>
             </a>
         </nav>
     </section>
@@ -3124,7 +3545,7 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 6: SADHANA CHATUSHTAYA -->
+        <!-- SECTION 6: SADHANA CHATUSHTAYA (PREMIUM VISUAL DIAGRAM) -->
         <section class="stage-section" id="practice">
             <div class="stage-wm" aria-hidden="true">साधन</div>
             <div class="stage-header">
@@ -3140,6 +3561,7 @@
             <div class="stage-body">
                 <p><strong>S</strong>hankara taught that not everyone is ready for direct Self‑enquiry. One must first cultivate the <strong><span class="sanskrit-term" title="The fourfold qualifications for Jñāna Yoga: discrimination, dispassion, six virtues, and longing for liberation">fourfold qualifications</span></strong> (sādhana chatuṣṭaya) to purify the mind:</p>
 
+                <!-- Premium visual grid for Sadhana Chatushtaya -->
                 <div class="pramana-grid">
                     <div class="pramana-item">
                         <div class="pramana-num">I</div>
@@ -3174,12 +3596,115 @@
 
         <hr class="stage-sep"/>
 
-        <!-- SECTION 7: KEY WORKS -->
+        <!-- SECTION 7: JNANA YOGA — ŚRAVANA, MANANA, NIDIDHYASANA (NEW) -->
+        <section class="stage-section" id="jnana-yoga">
+            <div class="stage-wm" aria-hidden="true">ज्ञान</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter VII</span>
+                    <span class="stage-skt">Jñāna Yoga</span>
+                    <span class="stage-deva-title">ज्ञान योग</span>
+                </div>
+                <h2 class="stage-h2">The Path of Jñāna Yoga</h2>
+                <span class="stage-subtitle-label">Śravaṇa, Manana, Nididhyāsana — Hearing, Reflection, Deep Meditation</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>J</strong>ñāna Yoga, the path of knowledge, is the direct means to liberation in Advaita. It does not involve creating a new state of mind, but rather removing the ignorance that obscures the ever-present Self. This is achieved through three stages, which correspond to the cultivation of the Sādhana Chatuṣṭaya (the fourfold qualifications).</p>
+
+                <div class="scripture-panels">
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Śravaṇa</div>
+                        <p class="scripture-panel-text">Hearing the Upaniṣadic teachings from a qualified teacher. This is the foundational stage, where the seeker receives the mahāvākyas with faith and listens attentively to their meaning.</p>
+                        <p class="scripture-panel-ref">Requires Viveka &amp; Śraddhā</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Manana</div>
+                        <p class="scripture-panel-text">Reflecting on the teachings through logic and reasoning. The seeker contemplates the teaching repeatedly, removing all doubts and objections through intellectual analysis.</p>
+                        <p class="scripture-panel-ref">Requires Vairāgya &amp; Śama-Dama</p>
+                    </div>
+                    <div class="scripture-panel" style="grid-column: 1 / -1;">
+                        <div class="scripture-panel-label">Nididhyāsana</div>
+                        <p class="scripture-panel-text">Deep, unbroken meditation on the identity of Atman and Brahman. This is not a forced concentration, but a spontaneous, effortless absorption in the Self, where the mind becomes one with its source.</p>
+                        <p class="scripture-panel-ref">Requires Mumukṣutva &amp; Samādhāna</p>
+                    </div>
+                </div>
+
+                <p>These three stages are not strictly sequential; they interweave and support each other. As reflection deepens, meditation arises; as meditation matures, the teaching is heard with greater clarity. Ultimately, they culminate in <em>aparokṣānubhūti</em> — direct, immediate realisation of Brahman.</p>
+
+                <div class="pull-q">
+                    <p>"The mind becomes purified by the practice of these virtues, and then the truth of the Upaniṣads shines forth like a lamp in a windless place."</p>
+                    <cite>— Vivekachūḍāmaṇi 18</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 8: FOUR MONASTERIES (NEW) -->
+        <section class="stage-section" id="mathas">
+            <div class="stage-wm" aria-hidden="true">मठ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter VIII</span>
+                    <span class="stage-skt">Āmnāya Mathas</span>
+                    <span class="stage-deva-title">आम्नाय मठ</span>
+                </div>
+                <h2 class="stage-h2">The Four Monasteries</h2>
+                <span class="stage-subtitle-label">The cardinal seats of Advaita — established by Shankara</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>T</strong>o preserve and propagate the Advaita teaching, Adi Shankara established four monasteries (mathas) in the four corners of India. Each matha was entrusted with one of the four Vedas and continues the unbroken lineage of Śaṅkarācāryas to this day.</p>
+
+                <div class="matha-grid">
+                    <div class="matha-card">
+                        <div class="direction">South</div>
+                        <div class="name">Śṛṅgerī</div>
+                        <div class="veda">Sāma Veda</div>
+                        <div class="desc">The first matha, established on the banks of the Tunga River in Karnataka. The seat of the first Śaṅkarācārya.</div>
+                        <div class="location">Karnataka, India</div>
+                    </div>
+                    <div class="matha-card">
+                        <div class="direction">West</div>
+                        <div class="name">Dvārakā</div>
+                        <div class="veda">Yajur Veda</div>
+                        <div class="desc">Located in Gujarat, at the ancient city of Dvārakā, associated with Lord Krishna. Guards the western threshold of India.</div>
+                        <div class="location">Gujarat, India</div>
+                    </div>
+                    <div class="matha-card">
+                        <div class="direction">East</div>
+                        <div class="name">Puri</div>
+                        <div class="veda">Ṛg Veda</div>
+                        <div class="desc">Located in Odisha, at the famous Jagannath temple. Upholds the Rig Veda and the eastern tradition of Advaita.</div>
+                        <div class="location">Odisha, India</div>
+                    </div>
+                    <div class="matha-card">
+                        <div class="direction">North</div>
+                        <div class="name">Badrīnāth</div>
+                        <div class="veda">Atharva Veda</div>
+                        <div class="desc">Located in the Himalayas, a sacred pilgrimage site. Protects the northern tradition and the Atharva Veda.</div>
+                        <div class="location">Uttarakhand, India</div>
+                    </div>
+                </div>
+
+                <p>These mathas became the institutional backbone of Advaita Vedanta. Each is headed by a Śaṅkarācārya, who serves as the spiritual head and guardian of the tradition. They continue to teach, ordain monks, and preserve the vast literary and philosophical heritage of Shankara.</p>
+
+                <div class="pull-q">
+                    <p>"These monasteries are not merely institutions but living embodiments of the teaching. They are the pillars that uphold the dharma of non-duality."</p>
+                    <cite>— Traditional verse</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 9: KEY WORKS (renumbered from VII to IX) -->
         <section class="stage-section" id="works">
             <div class="stage-wm" aria-hidden="true">भाष्य</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter VII</span>
+                    <span class="stage-n">Chapter IX</span>
                     <span class="stage-skt">Granthas</span>
                     <span class="stage-deva-title">ग्रन्थ</span>
                 </div>
@@ -3246,6 +3771,67 @@
             </div>
         </section>
 
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 10: COMPARATIVE THRESHOLDS (NEW) -->
+        <section class="stage-section" id="comparative">
+            <div class="stage-wm" aria-hidden="true">तुलना</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter X</span>
+                    <span class="stage-skt">Comparative Thresholds</span>
+                    <span class="stage-deva-title">तुलना · संवाद</span>
+                </div>
+                <h2 class="stage-h2">Advaita in Context</h2>
+                <span class="stage-subtitle-label">Śaṅkara's Advaita compared with Viśiṣṭādvaita, Dvaita, and Buddhist Idealism</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>S</strong>hankara's Advaita Vedanta was not the only game in town. It emerged in a vibrant philosophical landscape, debating with rival schools that offered alternative visions of reality. Understanding these distinctions sharpens our appreciation of Advaita's unique position.</p>
+
+                <div class="comp-table-wrap">
+                    <table class="comp-table">
+                        <thead>
+                            <tr>
+                                <th>Tradition</th>
+                                <th>Core Teaching</th>
+                                <th>Key Distinction from Advaita</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-cell">
+                                <td>Śaṅkara's Advaita</td>
+                                <td><strong>Non-dualism</strong> — Brahman alone is real; the world is <em>mithyā</em> (dependent appearance).</td>
+                                <td>The sole reality is attributeless Brahman. The world and souls are ultimately identical with Brahman.</td>
+                            </tr>
+                            <tr>
+                                <td>Rāmānuja's Viśiṣṭādvaita</td>
+                                <td><strong>Qualified Non-dualism</strong> — Brahman is a whole with attributes and souls as its parts.</td>
+                                <td>Brahman has qualities (Saguṇa). The world and souls are real and distinct, though inseparable from God.</td>
+                            </tr>
+                            <tr>
+                                <td>Madhva's Dvaita</td>
+                                <td><strong>Dualism</strong> — God (Viṣṇu) and individual souls are eternally distinct.</td>
+                                <td>Complete and eternal distinction between God, soul, and world. Liberation is not union but eternal service.</td>
+                            </tr>
+                            <tr>
+                                <td>Buddhist Vijñānavāda</td>
+                                <td><strong>Idealism</strong> — Consciousness alone exists; external objects are mental projections.</td>
+                                <td>Denies a permanent self (Ātman) or absolute Brahman. Consciousness is momentary and self-luminous.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="resonance-box">
+                    <h4>⚡ The Living Debate</h4>
+                    <p>These philosophical differences shaped the intellectual landscape of India for centuries. Shankara engaged deeply with all these schools, refuting their positions with logic and scriptural interpretation. Yet he also borrowed from them, adopting the dialectical tools of the Buddhists and the devotional language of the Bhakti traditions. Advaita is not a monolithic system but a dynamic, living dialogue.</p>
+                </div>
+
+                <p>Despite their differences, all these traditions share a common goal: the cessation of suffering and the realisation of the highest good. For Shankara, that good is the direct, immediate knowledge of one's identity with Brahman — a knowledge that is not merely intellectual but transformative, liberating the mind from the illusion of separation.</p>
+            </div>
+        </section>
+
     </div><!-- .stages-wrap -->
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -3254,8 +3840,8 @@
     <div class="pq-section">
         <div class="pq-glow"></div>
         <div class="pullquote">
-            <p class="pq-text">"Adi Shankara's commentaries and philosophical works established Advaita Vedanta as a systematic tradition, bridging the ancient Upanishadic wisdom with rigorous dialectic."</p>
-            <p class="pq-attr"><a href="advaita-gaudapada.html" class="continue-link">&larr; Return to Gaudapada</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="advaita-ramana-maharshi.html" class="continue-link">Continue to Ramana Maharshi &rarr;</a></p>
+            <p class="pq-text">"Brahma satyaṁ jagan mithyā jīvo brahmaiva nāparaḥ"<br>Brahman is real; the world is unreal; the jiva is none other than Brahman.</p>
+            <p class="pq-attr">— Adi Shankara, Brahma Jñānāvalīmālā 20</p>
         </div>
     </div>
 
@@ -3263,13 +3849,15 @@
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link"><svg class="icon-home" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a>
         <span class="chapter-sep"><svg class="icon-om" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span>
-        <a href="advaita-gaudapada.html" class="chapter-link">Gaudapada</a>
+        <a href="advaita-gaudapada.html" class="chapter-link">I · Gaudapada</a>
         <span class="chapter-sep"><svg class="icon-om" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span>
-        <a href="advaita-adi-shankara.html" class="chapter-link active">Adi Shankara</a>
+        <a href="advaita-adi-shankara.html" class="chapter-link active">II · Adi Shankara</a>
         <span class="chapter-sep"><svg class="icon-om" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span>
-        <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
+        <a href="advaita-ramana-maharshi.html" class="chapter-link">III · Ramana Maharshi</a>
         <span class="chapter-sep"><svg class="icon-om" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span>
-        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
+        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">IV · Nisargadatta Maharaj</a>
+        <span class="chapter-sep"><svg class="icon-om" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span>
+        <a href="vedanta-living-tradition.html" class="chapter-link">V · The Living Tradition</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -3303,7 +3891,7 @@
                 const saved = localStorage.getItem('theme');
                 if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
                 html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' :
-                'light');
+                    'light');
             })();
             const themeBtn = document.getElementById('themeToggle');
             if (themeBtn) themeBtn.addEventListener('click', () => {
@@ -3319,14 +3907,14 @@
                 navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
                 document.addEventListener('click', e => {
                     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove(
-                    'open');
+                        'open');
                 });
             }
 
             /* BACK TO TOP */
             const btt = document.getElementById('backToTop');
             window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window
-                    .innerHeight * 0.6); }, { passive: true });
+                        .innerHeight * 0.6); }, { passive: true });
             if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
             /* HERO SCROLL CUE */

@@ -1,0 +1,3171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Living Tradition of Advaita Vedanta — A unified cartography connecting the Upanishads, Gaudapada, Shankara, Ramana Maharshi, and Nisargadatta Maharaj into one living current of non-dual wisdom." />
+    <title>The Living Tradition — Advaita Vedanta as a Whole</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+        /* ═══════════════════════════════════════
+           TOKENS — premium design system
+           ═══════════════════════════════════════ */
+        :root {
+            --bg: #faf7f2;
+            --bg2: #f2ece0;
+            --bg3: #e8dfc8;
+            --surface: #ffffff;
+            --surface2: #f7f2e8;
+            --ink: #0e1a2a;
+            --ink2: #1a2d4d;
+            --stone: #6b7f94;
+            --stone-light: #9aafbf;
+            --gold: #b5822a;
+            --gold-light: #d4a44a;
+            --gold-deep: #8a5e1a;
+            --gold-glow: rgba(181, 130, 42, 0.18);
+            --sun-glow: rgba(181, 130, 42, 0.28);
+            --s1: #7c6fa0;
+            --s2: #4a7fa5;
+            --s3: #c0622a;
+            --s4: #4a8a72;
+            --s5: #5a7ca8;
+            --s6: #8a5c9a;
+            --s7: #b5822a;
+            --border: rgba(181, 130, 42, 0.14);
+            --border-strong: rgba(181, 130, 42, 0.32);
+            --border-subtle: rgba(181, 130, 42, 0.07);
+            --border-medium: rgba(181, 130, 42, 0.20);
+            --shadow: 0 2px 24px rgba(60, 30, 0, 0.09);
+            --shadow-deep: 0 8px 40px rgba(60, 30, 0, 0.13);
+            --shadow-gold: 0 0 40px rgba(181, 130, 42, 0.16);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, #f5e8c8 0%, #e8d5a0 40%, #c8a860 70%, #8a6020 100%);
+            --grain-opacity: 0.025;
+            --mountain-fill: rgba(181, 130, 42, 0.05);
+            --ring-color: rgba(122, 90, 42, 0.22);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        [data-theme="dark"] {
+            --bg: #0c0f14;
+            --bg2: #12161c;
+            --bg3: #151920;
+            --surface: #181c23;
+            --surface2: #21262e;
+            --ink: #eef2f8;
+            --ink2: #9aaebf;
+            --stone: #7c8ea0;
+            --stone-light: #9eb0c0;
+            --gold: #d4af37;
+            --gold-light: #e6c86e;
+            --gold-deep: #b8960c;
+            --gold-glow: rgba(212, 175, 55, 0.08);
+            --sun-glow: rgba(212, 175, 55, 0.18);
+            --s1: #9a8fc0;
+            --s2: #6aaac8;
+            --s3: #d4844a;
+            --s4: #6aaa92;
+            --s5: #7a9cc8;
+            --s6: #aa7cc8;
+            --s7: #d4af37;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-strong: rgba(255, 255, 255, 0.12);
+            --border-subtle: rgba(255, 255, 255, 0.03);
+            --border-medium: rgba(255, 255, 255, 0.08);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.36);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.44);
+            --shadow-gold: 0 0 40px rgba(212, 175, 55, 0.08);
+            --hero-bg: radial-gradient(ellipse 90% 80% at 50% 35%, var(--bg2) 0%, var(--bg) 40%, var(--bg3) 70%, var(--bg) 100%);
+            --grain-opacity: 0.045;
+            --mountain-fill: rgba(212, 175, 55, 0.05);
+            --ring-color: rgba(212, 175, 55, 0.10);
+        }
+
+        /* ═══════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
+            font-size: 18px;
+            line-height: 1.78;
+            transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: var(--grain-opacity);
+            animation: grainShift 8s steps(10) infinite;
+        }
+        @keyframes grainShift {
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            10% {
+                transform: translate(-2%, -2%);
+            }
+            20% {
+                transform: translate(2%, 1%);
+            }
+            30% {
+                transform: translate(-1%, 2%);
+            }
+            40% {
+                transform: translate(1%, -1%);
+            }
+            50% {
+                transform: translate(-2%, 1%);
+            }
+            60% {
+                transform: translate(2%, -2%);
+            }
+            70% {
+                transform: translate(-1%, -1%);
+            }
+            80% {
+                transform: translate(1%, 2%);
+            }
+            90% {
+                transform: translate(-2%, -1%);
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-light));
+            border-radius: 2px;
+        }
+        ::selection {
+            background: rgba(181, 130, 42, 0.22);
+            color: var(--ink);
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* ═══════════════════════════════════════
+           KEYFRAMES
+           ═══════════════════════════════════════ */
+        @keyframes heroRise {
+            from {
+                opacity: 0;
+                transform: translateY(28px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes heroRiseSlow {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes mandalaRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes breathe {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 40px var(--gold-glow);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 72px var(--gold-glow);
+            }
+        }
+        @keyframes breatheDark {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 50px rgba(212, 175, 55, 0.10);
+            }
+            50% {
+                transform: scale(1.04);
+                box-shadow: 0 0 90px rgba(212, 175, 55, 0.18);
+            }
+        }
+        @keyframes mandalaBreathe {
+            0%,
+            100% {
+                opacity: 0.35;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.75;
+                transform: translate(-50%, -50%) scale(1.015);
+            }
+        }
+        @keyframes scrollBounce {
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scaleY(0.4);
+                opacity: 0.2;
+            }
+        }
+        @keyframes rippleOut {
+            0% {
+                opacity: 0.55;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(4.2);
+            }
+        }
+        @keyframes emblemRotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes emblemPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 20px 5px var(--sun-glow);
+            }
+            50% {
+                box-shadow: 0 0 40px 14px var(--sun-glow);
+            }
+        }
+        @keyframes ambientDrift {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: .55;
+            }
+            33% {
+                transform: translate(2%, -1%) scale(1.02);
+                opacity: .75;
+            }
+            66% {
+                transform: translate(-1%, 2%) scale(0.98);
+                opacity: .45;
+            }
+        }
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes centerPulse3D {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 30px rgba(181, 130, 42, 0.25), 0 0 60px rgba(181, 130, 42, 0.08);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.04);
+                box-shadow: 0 0 50px rgba(181, 130, 42, 0.40), 0 0 90px rgba(181, 130, 42, 0.14);
+            }
+        }
+        @keyframes ringGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(181, 130, 42, 0.12), inset 0 0 20px rgba(181, 130, 42, 0.04);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(181, 130, 42, 0.22), inset 0 0 40px rgba(181, 130, 42, 0.08);
+            }
+        }
+        @keyframes turiyaGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 30px rgba(181, 130, 42, 0.15), inset 0 0 30px rgba(181, 130, 42, 0.05);
+            }
+            50% {
+                box-shadow: 0 0 60px rgba(181, 130, 42, 0.30), inset 0 0 50px rgba(181, 130, 42, 0.10);
+            }
+        }
+        @keyframes threadPulse {
+            0%,
+            100% {
+                stroke-width: 1.5;
+                opacity: 0.4;
+            }
+            50% {
+                stroke-width: 3;
+                opacity: 1;
+            }
+        }
+        @keyframes goldFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* ═══════════════════════════════════════
+           CURSOR GLOW
+           ═══════════════════════════════════════ */
+        @media (pointer:fine) {
+            .cursor-glow {
+                position: fixed;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+                pointer-events: none;
+                z-index: 9998;
+                transform: translate(-50%, -50%);
+                transition: opacity .3s ease;
+                opacity: 0;
+                mix-blend-mode: screen;
+            }
+            body:hover .cursor-glow {
+                opacity: 1;
+            }
+        }
+
+        /* ═══════════════════════════════════════
+           NAV COMPASS
+           ═══════════════════════════════════════ */
+        .nav-compass {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            z-index: 1010;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+        .nav-toggle {
+            width: 44px;
+            height: 44px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all .35s var(--ease-out-expo);
+            box-shadow: var(--shadow);
+        }
+        .nav-toggle:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            transform: scale(1.08);
+        }
+        .nav-menu {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 240px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .nav-menu.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--gold-deep);
+            border-radius: 3px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            padding: .6rem 1.25rem;
+            color: var(--stone);
+            text-decoration: none;
+            font-size: .88rem;
+            line-height: 1.35;
+            transition: all .3s var(--ease-out-expo);
+            border-left: 3px solid transparent;
+        }
+        .nav-item:hover {
+            color: var(--ink);
+            background: var(--gold-glow);
+            padding-left: 1.5rem;
+        }
+        .nav-item.active {
+            color: var(--gold-light);
+            background: rgba(154, 122, 58, 0.08);
+            border-left-color: var(--gold);
+            font-weight: 500;
+        }
+        .nav-item-icon {
+            font-size: .8rem;
+            flex-shrink: 0;
+            width: 18px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-item-icon svg {
+            width: 16px;
+            height: 16px;
+            color: var(--stone);
+            transition: color .3s var(--ease-out-expo);
+            stroke-width: 1.5;
+        }
+        .icon-home,
+        .icon-om {
+            color: var(--stone);
+            transition: color .3s;
+        }
+        .nav-item:hover .icon-home,
+        .nav-item:hover .icon-om,
+        .nav-item:hover .nav-item-icon svg {
+            color: var(--gold);
+        }
+        .nav-item.active .nav-item-icon svg {
+            color: var(--gold-light);
+        }
+        .nav-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: .55rem;
+            letter-spacing: .3em;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            padding: .6rem 1.25rem .3rem;
+        }
+        .nav-divider {
+            height: 1px;
+            background: var(--border);
+            margin: .5rem 1rem;
+        }
+
+        /* ═══════════════════════════════════════
+           CONTROLS
+           ═══════════════════════════════════════ */
+        .theme-toggle {
+            position: fixed;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            z-index: 1000;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border-medium);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all .45s var(--ease-elastic);
+            box-shadow: var(--shadow-gold), 0 2px 8px rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.12);
+            border-color: var(--gold);
+            box-shadow: 0 0 30px var(--gold-glow);
+        }
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+        .theme-toggle-icon {
+            position: absolute;
+            transition: transform .5s var(--ease-out-expo), opacity .35s ease;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        [data-theme="light"] .theme-toggle-icon-sun {
+            opacity: 1;
+            transform: scale(1);
+        }
+        [data-theme="light"] .theme-toggle-icon-moon {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .theme-toggle-icon-sun {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .theme-toggle-icon-moon {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 5.75rem;
+            right: 1.5rem;
+            z-index: 1000;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--stone);
+            font-size: 1.1rem;
+            transition: all .4s var(--ease-out-expo);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px) scale(0.9);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .back-to-top:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px) scale(1.08);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ═══════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 2rem 6rem;
+            text-align: center;
+            background: var(--hero-bg);
+            perspective: 1500px;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 55% 45% at 20% 40%, rgba(181, 130, 42, .07) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 80% 60%, rgba(181, 130, 42, .05) 0%, transparent 70%);
+            animation: ambientDrift 18s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        [data-theme="light"] .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181, 130, 42, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 130, 42, .025) 29px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        [data-theme="dark"] .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(212, 175, 55, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(212, 175, 55, .025) 29px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        [data-theme="dark"] .hero::after {
+            background: radial-gradient(ellipse 55% 45% at 20% 40%, rgba(212, 175, 55, .14) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 80% 60%, rgba(212, 175, 55, .10) 0%, transparent 70%);
+            box-shadow: 0 0 50px rgba(212, 175, 55, .10);
+            animation: breatheDark 18s ease-in-out infinite;
+        }
+        .hero-mountain {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 52%;
+            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(181, 133, 58, .30) 80%);
+            clip-path: polygon(0% 100%, 8% 85%, 15% 78%, 20% 65%, 25% 55%, 30% 48%, 35% 40%, 38% 32%, 42% 22%, 45% 14%, 48% 8%, 50% 0%, 52% 8%, 55% 14%, 58% 22%, 62% 32%, 65% 40%, 70% 48%, 75% 55%, 80% 65%, 85% 72%, 92% 82%, 100% 100%);
+            opacity: .12;
+            z-index: 0;
+            pointer-events: none;
+        }
+        [data-theme="dark"] .hero-mountain {
+            background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(212, 175, 55, .30) 80%);
+        }
+
+        .hero-rings {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            border: 1px solid var(--ring-color);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: mandalaBreathe 12s ease-in-out infinite;
+            will-change: transform, opacity;
+        }
+        .hero-ring.r1 {
+            width: 260px;
+            height: 260px;
+            opacity: 0.18;
+        }
+        .hero-ring.r2 {
+            width: 400px;
+            height: 400px;
+            opacity: 0.12;
+            animation-delay: 1.5s;
+            animation-duration: 14s;
+        }
+        .hero-ring.r3 {
+            width: 560px;
+            height: 560px;
+            opacity: 0.08;
+            animation-delay: 3s;
+            animation-duration: 16s;
+        }
+        .hero-ring.r4 {
+            width: 740px;
+            height: 740px;
+            opacity: 0.05;
+            animation-delay: 4.5s;
+            animation-duration: 18s;
+        }
+
+        .hero-ripples {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px solid var(--ring-color);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: rippleOut 9s ease-out infinite;
+            will-change: transform, opacity;
+        }
+        .hero-ripple.rip1 {
+            animation-delay: 0s;
+        }
+        .hero-ripple.rip2 {
+            animation-delay: 3s;
+        }
+        .hero-ripple.rip3 {
+            animation-delay: 6s;
+        }
+
+        .hero-emblem {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 2rem;
+            position: relative;
+            opacity: 0;
+            animation: heroRise 1.2s 0.5s forwards;
+            z-index: 3;
+        }
+        .hero-emblem-circle {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--gold-deep);
+            opacity: .6;
+            animation: emblemRotate 30s linear infinite;
+        }
+        .hero-emblem-circle2 {
+            position: absolute;
+            inset: 12px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            opacity: .4;
+            animation: emblemRotate 20s linear infinite reverse;
+        }
+        .hero-emblem-dot {
+            position: absolute;
+            inset: 26px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--gold-light), var(--gold));
+            box-shadow: 0 0 20px 5px var(--sun-glow);
+            animation: emblemPulse 4s ease-in-out infinite;
+        }
+        .hero-eyemark {
+            font-family: 'Cinzel', serif;
+            font-size: .63rem;
+            letter-spacing: .5em;
+            color: var(--gold-deep);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: heroRise 1.1s .3s forwards;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-label {
+            font-family: 'Cinzel', serif;
+            font-size: .58rem;
+            letter-spacing: .5em;
+            color: var(--gold-deep);
+            margin-bottom: .5rem;
+            opacity: 0;
+            animation: heroRise 1.1s .9s forwards;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-subtitle-top {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--stone);
+            letter-spacing: .08em;
+            margin-bottom: .8rem;
+            opacity: 0;
+            animation: heroRise 1.1s 1.1s forwards;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 7vw, 5.8rem);
+            font-weight: 400;
+            letter-spacing: .06em;
+            line-height: 1.05;
+            color: var(--ink);
+            text-shadow: 0 2px 40px rgba(181, 130, 42, .20);
+            opacity: 0;
+            animation: heroRise 1.3s 1.3s forwards;
+            margin-bottom: .2em;
+            position: relative;
+            z-index: 3;
+        }
+        [data-theme="dark"] .hero-title {
+            color: var(--gold-light);
+            text-shadow: 0 0 80px rgba(230, 200, 110, .35);
+        }
+        .hero-epithet {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            color: var(--gold-deep);
+            letter-spacing: .12em;
+            opacity: 0;
+            animation: heroRise 1.1s 1.6s forwards;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0 auto 2.5rem;
+            width: fit-content;
+            opacity: 0;
+            animation: heroRise 1.1s 1.8s forwards;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-divider-line {
+            width: 70px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-deep));
+        }
+        .hero-divider-line:last-child {
+            background: linear-gradient(90deg, var(--gold-deep), transparent);
+        }
+        .hero-divider-diamond {
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px var(--sun-glow);
+        }
+        .hero-quote {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            color: var(--ink2);
+            max-width: 570px;
+            margin: 0 auto .7rem;
+            line-height: 1.85;
+            opacity: 0;
+            animation: heroRise 1.1s 2s forwards;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-quote-attr {
+            font-family: 'Cinzel', serif;
+            font-size: .6rem;
+            letter-spacing: .35em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0;
+            animation: heroRise 1.1s 2.2s forwards;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-dates {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: .9rem;
+            color: var(--stone);
+            letter-spacing: .18em;
+            opacity: 0;
+            animation: heroRise 1.1s 2.4s forwards;
+            position: relative;
+            z-index: 3;
+        }
+        .hero-scroll-cue {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            opacity: 0;
+            animation: heroRise 1.1s 2.8s forwards;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .hero-scroll-cue span {
+            font-family: 'Cinzel', serif;
+            font-size: .52rem;
+            letter-spacing: .5em;
+            color: var(--stone);
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 36px;
+            background: linear-gradient(180deg, var(--gold-deep), transparent);
+            animation: scrollBounce 2.5s ease-in-out infinite;
+        }
+
+        /* ═══════════════════════════════════════
+           EDITORIAL LAYOUT SYSTEM
+           ═══════════════════════════════════════ */
+        .ed-wrap {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .deva {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.82em;
+            color: var(--stone-light);
+            margin-left: 0.35em;
+            opacity: 0.7;
+            letter-spacing: 0;
+            vertical-align: baseline;
+        }
+        [data-theme="dark"] .deva {
+            opacity: 0.85;
+        }
+        .skt-divider {
+            text-align: center;
+            padding: 56px 0 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .skt-divider::before,
+        .skt-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 28%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold));
+            opacity: 0.15;
+        }
+        .skt-divider::before {
+            left: 0;
+            background: linear-gradient(to left, transparent, var(--gold));
+        }
+        .skt-divider::after {
+            right: 0;
+        }
+        .skt-divider-inner {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            opacity: 0.28;
+            letter-spacing: 1em;
+            padding-left: 1em;
+        }
+        .ed-section-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.5em;
+            color: var(--gold-deep);
+            text-transform: uppercase;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        .ed-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--gold), transparent);
+            opacity: 0.22;
+            max-width: 160px;
+        }
+        .ed-section-h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .ed-section-intro {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.02rem;
+            color: var(--stone);
+            line-height: 1.72;
+            max-width: 580px;
+            margin-bottom: 2.5rem;
+        }
+        .ed-h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 2.75rem 0 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .ed-h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--gold), transparent);
+            opacity: 0.2;
+        }
+        .pull-q {
+            border-left: 2px solid var(--gold);
+            margin: 3rem 0;
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .pull-q p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+            font-style: italic;
+            font-weight: 300;
+            color: var(--ink);
+            margin-bottom: 0.75rem;
+            line-height: 1.52;
+        }
+        .pull-q cite {
+            font-family: 'Cinzel', serif;
+            font-size: 0.57rem;
+            letter-spacing: 0.3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            font-style: normal;
+        }
+
+        /* ═══════════════════════════════════════
+           TABLE OF CONTENTS
+           ═══════════════════════════════════════ */
+        .toc-section {
+            padding: 100px 32px;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+        .toc-book {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .toc-book-item {
+            display: grid;
+            grid-template-columns: 52px 1fr auto;
+            align-items: baseline;
+            gap: 0 1.5rem;
+            padding: 1.15rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            text-decoration: none;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .toc-book-item:hover .toc-b-title {
+            color: var(--gold);
+        }
+        .toc-book-item:hover .toc-b-num {
+            opacity: 1;
+        }
+        .toc-b-num {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-align: right;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+            padding-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .toc-b-num svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+            stroke-width: 1.5;
+        }
+        .toc-b-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--ink);
+            transition: color 0.35s;
+            line-height: 1.3;
+        }
+        .toc-b-skt {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.88rem;
+            color: var(--stone-light);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* ═══════════════════════════════════════
+           PULLQUOTE BANNER
+           ═══════════════════════════════════════ */
+        .pq-section {
+            padding: 100px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg2), var(--bg));
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .pq-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--gold-glow), transparent 60%);
+            pointer-events: none;
+            animation: breathe 10s ease-in-out infinite;
+            transform-origin: center center;
+        }
+        .pq-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.06;
+            line-height: 0.8;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            margin-bottom: -2.5rem;
+        }
+        .pq-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+            color: var(--ink);
+            line-height: 1.65;
+            max-width: 660px;
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.57rem;
+            letter-spacing: 0.4em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .pq-attr a:hover {
+            color: var(--gold-light);
+        }
+
+        /* ═══════════════════════════════════════
+           STAGE SECTIONS
+           ═══════════════════════════════════════ */
+        .stages-wrap {
+            background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 30%, var(--bg) 70%, var(--bg2) 100%);
+        }
+        .stage-section {
+            padding: 120px 32px;
+            max-width: 740px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .stage-wm {
+            position: absolute;
+            right: -30px;
+            top: 30px;
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: clamp(140px, 18vw, 220px);
+            line-height: 1;
+            color: var(--gold);
+            opacity: 0.04;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            letter-spacing: -0.05em;
+        }
+        [data-theme="dark"] .stage-wm {
+            opacity: 0.065;
+        }
+        .stage-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 3rem;
+        }
+        .stage-eyeline {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .stage-n {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.45em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .stage-skt {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--stone-light);
+        }
+        .stage-deva-title {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.92rem;
+            color: var(--stone-light);
+            opacity: 0.65;
+        }
+        .stage-h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.15;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
+        }
+        [data-theme="dark"] .stage-h2 {
+            color: var(--gold-light);
+        }
+        .stage-subtitle-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.38em;
+            color: var(--stone);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .stage-rule {
+            width: 40px;
+            height: 1.5px;
+            background: var(--gold);
+            position: relative;
+            display: block;
+            margin-top: 1rem;
+            z-index: 1;
+        }
+        .stage-rule::after {
+            content: '';
+            position: absolute;
+            right: -16px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            opacity: 0.6;
+        }
+        .stage-body {
+            position: relative;
+            z-index: 1;
+        }
+        .stage-body>p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.05rem;
+            color: var(--stone);
+            line-height: 1.88;
+            margin-bottom: 1.5rem;
+        }
+        .stage-body>p strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .stage-body>p em {
+            color: var(--ink2);
+            font-style: italic;
+        }
+        .stage-body>p:first-child::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.2rem;
+            line-height: 0.72;
+            float: left;
+            margin: 0.08em 0.1em 0 0;
+            color: var(--gold);
+            font-weight: 400;
+        }
+        .stage-sep {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+            opacity: 0.1;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════
+           TEACHER PROFILE CARDS
+           ═══════════════════════════════════════ */
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 2.5rem 0;
+            background: var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+        }
+        .teacher-card {
+            background: var(--surface);
+            padding: 2rem 1.75rem;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+        .teacher-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .teacher-card:hover::before {
+            opacity: 1;
+        }
+        .teacher-card:hover {
+            background: var(--surface2);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+        .teacher-card .era {
+            font-family: 'Cinzel', serif;
+            font-size: 0.45rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        .teacher-card .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 0.1rem;
+        }
+        .teacher-card .deva-name {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.9rem;
+            color: var(--stone-light);
+            opacity: 0.6;
+            margin-bottom: 0.5rem;
+        }
+        .teacher-card .contribution {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.92rem;
+            color: var(--stone);
+            line-height: 1.6;
+        }
+        .teacher-card .contribution strong {
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .teacher-card .key-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--ink2);
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .teacher-card .key-text .src {
+            font-family: 'Cinzel', serif;
+            font-size: 0.45rem;
+            letter-spacing: 0.15em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            font-style: normal;
+            display: block;
+            margin-top: 0.2rem;
+        }
+        [data-theme="dark"] .teacher-card .name {
+            color: var(--gold-light);
+        }
+        [data-theme="dark"] .teacher-card .key-text {
+            color: var(--stone-light);
+        }
+
+        /* ═══════════════════════════════════════
+           COMPARATIVE TABLE
+           ═══════════════════════════════════════ */
+        .comp-table-wrap {
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--surface);
+        }
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            font-family: 'Crimson Pro', serif;
+        }
+        .comp-table thead {
+            background: var(--bg2);
+        }
+        .comp-table th {
+            padding: 1rem 1rem 0.6rem;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--stone-light);
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+        }
+        .comp-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--stone);
+            line-height: 1.6;
+            vertical-align: top;
+        }
+        .comp-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comp-table td:first-child {
+            font-weight: 500;
+            color: var(--ink);
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .comp-table td strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .comp-table .highlight-cell {
+            background: var(--gold-glow);
+        }
+        .comp-table .highlight-cell strong {
+            color: var(--gold-deep);
+        }
+        [data-theme="dark"] .comp-table td strong {
+            color: var(--ink);
+        }
+        [data-theme="dark"] .comp-table .highlight-cell {
+            background: rgba(212, 175, 55, 0.08);
+        }
+        [data-theme="dark"] .comp-table .highlight-cell strong {
+            color: var(--gold-light);
+        }
+
+        .resonance-box {
+            background: var(--surface2);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-sm);
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+        .resonance-box::before {
+            content: '⚡';
+            position: absolute;
+            top: -0.75rem;
+            left: 1.5rem;
+            background: var(--gold);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 12px var(--gold-glow);
+        }
+        .resonance-box h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        .resonance-box p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.98rem;
+            color: var(--stone);
+            line-height: 1.8;
+            margin: 0;
+        }
+        .resonance-box p strong {
+            color: var(--ink);
+        }
+        [data-theme="dark"] .resonance-box {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+
+        /* ═══════════════════════════════════════
+           FURTHER VOICES — EXPANDED LINEAGE
+           ═══════════════════════════════════════ */
+        .further-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 2.5rem 0;
+            background: var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+        }
+        .further-card {
+            background: var(--surface);
+            padding: 1.5rem 1.25rem;
+            transition: all 0.4s var(--ease-out-expo);
+            text-align: center;
+        }
+        .further-card:hover {
+            background: var(--surface2);
+            transform: translateY(-2px);
+        }
+        .further-card .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+        .further-card .deva-name {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.75rem;
+            color: var(--stone-light);
+            opacity: 0.6;
+        }
+        .further-card .dates {
+            font-family: 'Cinzel', serif;
+            font-size: 0.45rem;
+            letter-spacing: 0.15em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            margin: 0.2rem 0 0.5rem;
+        }
+        .further-card .role {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .further-card .desc {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+            color: var(--stone);
+            line-height: 1.6;
+        }
+        .further-card .key-work {
+            font-family: 'Cinzel', serif;
+            font-size: 0.4rem;
+            letter-spacing: 0.1em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        [data-theme="dark"] .further-card .name {
+            color: var(--gold-light);
+        }
+
+        .further-section-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-align: center;
+            margin: 3rem 0 0.5rem;
+            opacity: 0.6;
+        }
+
+        /* ═══════════════════════════════════════
+           LINEAGE DIAGRAM — SVG golden thread
+           ═══════════════════════════════════════ */
+        .lineage-diagram-wrap {
+            margin: 3rem auto;
+            max-width: 700px;
+            width: 100%;
+            overflow-x: auto;
+            position: relative;
+            z-index: 1;
+        }
+        .lineage-diagram-wrap svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            border: 1px solid var(--border-subtle);
+            padding: 1rem 0.5rem;
+            box-shadow: var(--shadow);
+        }
+        .lineage-diagram-wrap .node-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            fill: var(--ink);
+        }
+        [data-theme="dark"] .lineage-diagram-wrap .node-text {
+            fill: var(--ink);
+        }
+        .lineage-diagram-wrap .node-sub {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.45rem;
+            fill: var(--stone);
+            letter-spacing: 0.05em;
+        }
+        [data-theme="dark"] .lineage-diagram-wrap .node-sub {
+            fill: var(--stone-light);
+        }
+        .lineage-diagram-wrap .node-deva {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.5rem;
+            fill: var(--stone-light);
+            opacity: 0.6;
+        }
+        [data-theme="dark"] .lineage-diagram-wrap .node-deva {
+            fill: var(--stone);
+        }
+        .lineage-diagram-wrap .thread {
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            fill: none;
+            opacity: 0.5;
+            animation: threadPulse 4s ease-in-out infinite;
+        }
+        .lineage-diagram-wrap .node-circle {
+            fill: var(--surface);
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .lineage-diagram-wrap .node-circle:hover {
+            fill: var(--gold-glow);
+            stroke-width: 2.5;
+        }
+
+        /* ═══════════════════════════════════════
+           UNIFIED GLOSSARY
+           ═══════════════════════════════════════ */
+        .gloss-section {
+            padding: 100px 32px 80px;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+        .gloss-search-wrap {
+            position: relative;
+            max-width: 340px;
+            margin: 2.5rem auto 2.5rem;
+        }
+        .gloss-search {
+            width: 100%;
+            padding: 0.75rem 2.75rem 0.75rem 2.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border-medium);
+            border-radius: 100px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            color: var(--ink);
+            outline: none;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .gloss-search:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .gloss-search-ico {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--stone);
+            font-size: 0.88rem;
+            pointer-events: none;
+        }
+        .gloss-clear {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--stone);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .gloss-clear.vis {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .gloss-clear:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .gloss-no-results {
+            text-align: center;
+            color: var(--stone);
+            font-style: italic;
+            padding: 2rem;
+            display: none;
+        }
+        .gloss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1px;
+            background: var(--border-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+        .gloss-entry {
+            background: var(--surface);
+            padding: 1.75rem 1.5rem;
+            transition: background 0.3s;
+            cursor: default;
+        }
+        .gloss-entry:hover {
+            background: var(--surface2);
+        }
+        .gloss-term {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.3rem;
+        }
+        .gloss-term-deva {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.95rem;
+            color: var(--stone-light);
+            opacity: 0.72;
+        }
+        .gloss-cat {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.28em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+        .gloss-def {
+            font-size: 0.88rem;
+            color: var(--stone);
+            line-height: 1.65;
+        }
+
+        /* ═══════════════════════════════════════
+           FOOTER & NAV
+           ═══════════════════════════════════════ */
+        .footer {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .footer-emblem {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        .footer-emblem-outer {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+        }
+        .footer-emblem-inner {
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+        [data-theme="dark"] .footer-emblem-outer {
+            border-color: var(--gold);
+        }
+        [data-theme="dark"] .footer-emblem-inner {
+            border-color: var(--gold-light);
+        }
+        [data-theme="light"] .footer-emblem-outer {
+            border-color: #b87333;
+        }
+        [data-theme="light"] .footer-emblem-inner {
+            border-color: #cd7f32;
+        }
+        .footer-name {
+            font-family: 'Cinzel', serif;
+            font-size: .92rem;
+            letter-spacing: .2em;
+            color: var(--gold);
+            margin-bottom: .5rem;
+        }
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--stone);
+            font-size: .95rem;
+            margin-bottom: 2rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: .75rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            transition: color .3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .nav-icon {
+            width: 14px;
+            height: 14px;
+            color: var(--stone);
+            transition: color .3s;
+        }
+        .footer-links a:hover .nav-icon {
+            color: var(--gold);
+        }
+        .footer-credit {
+            font-family: 'Cinzel', serif;
+            font-size: .5rem;
+            letter-spacing: .3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: .4;
+        }
+        .footer-copyright {
+            font-family: 'Cinzel', serif;
+            font-size: .5rem;
+            letter-spacing: .3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: .4;
+            margin-top: 1rem;
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .chapter-link {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .chapter-link:hover {
+            color: var(--gold);
+        }
+        .chapter-sep {
+            color: var(--gold-deep);
+            opacity: 0.3;
+            display: flex;
+            align-items: center;
+        }
+        .chapter-link.active {
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .continue-link {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+        .continue-link:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+        }
+        .sanskrit-term {
+            cursor: help;
+            border-bottom: 1px dotted var(--gold);
+            text-decoration: none;
+            color: var(--gold-light);
+            font-weight: 400;
+            transition: all 0.3s var(--ease-smooth);
+        }
+        .sanskrit-term:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold-deep);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .teacher-grid {
+                grid-template-columns: 1fr;
+            }
+            .further-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .toc-book-item {
+                grid-template-columns: 38px 1fr;
+            }
+            .toc-b-skt {
+                display: none;
+            }
+            .stage-section {
+                padding: 80px 24px;
+            }
+            .comp-table th,
+            .comp-table td {
+                padding: 0.6rem 0.5rem;
+                font-size: 0.7rem;
+            }
+            .comp-table td:first-child {
+                font-size: 0.45rem;
+            }
+            .lineage-diagram-wrap svg {
+                padding: 0.5rem;
+            }
+            .chapter-nav {
+                gap: 0.75rem;
+                font-size: 0.6rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .gloss-grid {
+                grid-template-columns: 1fr;
+            }
+            .further-grid {
+                grid-template-columns: 1fr;
+            }
+            .comp-table th,
+            .comp-table td {
+                padding: 0.4rem 0.3rem;
+                font-size: 0.6rem;
+            }
+            .comp-table td:first-child {
+                font-size: 0.4rem;
+                letter-spacing: 0.05em;
+            }
+            .resonance-box {
+                padding: 1.25rem 1rem;
+            }
+            .resonance-box::before {
+                width: 28px;
+                height: 28px;
+                font-size: 0.9rem;
+                top: -0.65rem;
+                left: 1rem;
+            }
+            .lineage-diagram-wrap svg {
+                padding: 0.25rem;
+                border-radius: var(--radius-sm);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- NAV COMPASS -->
+    <div class="nav-compass">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <div class="nav-section-title">This Page</div>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span>Overview</span></a>
+            <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span>Contents</span></a>
+            <a href="#upanishadic-source" class="nav-item" data-section="upanishadic-source"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/></svg></span><span>Upanishadic Source</span></a>
+            <a href="#gaudapada" class="nav-item" data-section="gaudapada"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Gaudapada</span></a>
+            <a href="#shankara" class="nav-item" data-section="shankara"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Shankara</span></a>
+            <a href="#ramana" class="nav-item" data-section="ramana"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ramana Maharshi</span></a>
+            <a href="#nisargadatta" class="nav-item" data-section="nisargadatta"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Nisargadatta</span></a>
+            <a href="#further-voices" class="nav-item" data-section="further-voices"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg></span><span>Further Voices</span></a>
+            <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M14 17V5"/><path d="M10 17v-3"/><path d="M6 17v-7"/></svg></span><span>Comparative</span></a>
+            <a href="#glossary" class="nav-item" data-section="glossary"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Glossary</span></a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Advaita Vedanta</div>
+            <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>I · Gaudapada</span></a>
+            <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>II · Adi Shankara</span></a>
+            <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>III · Ramana Maharshi</span></a>
+            <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>IV · Nisargadatta Maharaj</span></a>
+            <a href="vedanta-living-tradition.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>V · The Living Tradition</span></a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Other Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span>Home · Vedantic Mappings</span></a>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>The Vedantic Messiah</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/></svg></span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10"/><path d="M2 12h20"/></svg></span><span>Taoism · The Unnamed Way</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41-1.41"/></svg></span><span>Quantum Mechanics</span></a>
+        </div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
+        <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
+    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════ -->
+    <header class="hero" id="hero">
+        <svg style="position:absolute;inset:0;width:100%;height:auto;z-index:0;pointer-events:none;" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g style="animation:mandalaRotate 60s linear infinite;transform-origin:center;">
+                <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
+                <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
+                <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
+                <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+            </g>
+        </svg>
+        <div class="hero-mountain" aria-hidden="true"></div>
+
+        <div class="hero-rings" aria-hidden="true">
+            <div class="hero-ring r1"></div>
+            <div class="hero-ring r2"></div>
+            <div class="hero-ring r3"></div>
+            <div class="hero-ring r4"></div>
+        </div>
+
+        <div class="hero-ripples" aria-hidden="true">
+            <div class="hero-ripple rip1"></div>
+            <div class="hero-ripple rip2"></div>
+            <div class="hero-ripple rip3"></div>
+        </div>
+
+        <p class="hero-eyemark">The Living Current of Non-Duality</p>
+        <div class="hero-emblem" aria-hidden="true">
+            <div class="hero-emblem-circle"></div>
+            <div class="hero-emblem-circle2"></div>
+            <div class="hero-emblem-dot"></div>
+        </div>
+        <p class="hero-label">Advaita Vedanta</p>
+        <p class="hero-subtitle-top">The Living Tradition — A Unified Cartography</p>
+        <h1 class="hero-title">The Golden Thread</h1>
+        <p class="hero-epithet">From the Upanishads to the Present · The Unbroken Transmission</p>
+        <div class="hero-divider" aria-hidden="true">
+            <div class="hero-divider-line"></div>
+            <div class="hero-divider-diamond"></div>
+            <div class="hero-divider-line"></div>
+        </div>
+        <p class="hero-quote">"The Self is the Guru. The Guru is the Self. The teaching is the recognition of what always already is."</p>
+        <p class="hero-quote-attr">— The Living Tradition</p>
+        <p class="hero-dates">Upanishads (c. 800 BCE) — Present</p>
+        <div class="hero-scroll-cue" id="heroScroll" tabindex="0" role="button" aria-label="Scroll to content">
+            <span>Explore</span>
+            <div class="scroll-line" aria-hidden="true"></div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         TABLE OF CONTENTS
+         ═══════════════════════════════════════ -->
+    <section class="toc-section" id="toc">
+        <div class="ed-section-label">सर्वसार</div>
+        <h2 class="ed-section-h2">The Living Tradition — A Unified Cartography</h2>
+        <p class="ed-section-intro">From the Upanishads to the present — a complete map of Advaita Vedanta's living transmission, connecting the great teachers and texts across the centuries.</p>
+
+        <nav class="toc-book" aria-label="Page contents">
+            <a href="#upanishadic-source" class="toc-book-item">
+                <span class="toc-b-num">I</span>
+                <span class="toc-b-title">The Upanishadic Source</span>
+                <span class="toc-b-skt">उपनिषद्</span>
+            </a>
+            <a href="#gaudapada" class="toc-book-item">
+                <span class="toc-b-num">II</span>
+                <span class="toc-b-title">Gaudapada — The Architect</span>
+                <span class="toc-b-skt">गौडपाद</span>
+            </a>
+            <a href="#shankara" class="toc-book-item">
+                <span class="toc-b-num">III</span>
+                <span class="toc-b-title">Adi Shankara — The Systematizer</span>
+                <span class="toc-b-skt">शङ्कर</span>
+            </a>
+            <a href="#ramana" class="toc-book-item">
+                <span class="toc-b-num">IV</span>
+                <span class="toc-b-title">Ramana Maharshi — The Living Master</span>
+                <span class="toc-b-skt">रमण</span>
+            </a>
+            <a href="#nisargadatta" class="toc-book-item">
+                <span class="toc-b-num">V</span>
+                <span class="toc-b-title">Nisargadatta — The Radical Pointer</span>
+                <span class="toc-b-skt">निसर्गदत्त</span>
+            </a>
+            <a href="#further-voices" class="toc-book-item">
+                <span class="toc-b-num">VI</span>
+                <span class="toc-b-title">Further Voices — The Full Lineage</span>
+                <span class="toc-b-skt">परम्परा</span>
+            </a>
+            <a href="#comparative" class="toc-book-item">
+                <span class="toc-b-num">VII</span>
+                <span class="toc-b-title">Comparative Summary — Many Voices, One Truth</span>
+                <span class="toc-b-skt">तुलना</span>
+            </a>
+            <a href="#glossary" class="toc-book-item">
+                <span class="toc-b-num">VIII</span>
+                <span class="toc-b-title">Unified Glossary — All Key Terms</span>
+                <span class="toc-b-skt">शब्दकोश</span>
+            </a>
+        </nav>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PULLQUOTE BANNER
+         ═══════════════════════════════════════ -->
+    <div class="pq-section">
+        <div class="pq-glow" aria-hidden="true"></div>
+        <span class="pq-mark" aria-hidden="true">"</span>
+        <p class="pq-text">The Self alone is real. All else is a temporary appearance. This is the single teaching of Vedanta, repeated in countless ways across the centuries.</p>
+        <p class="pq-attr">— The Unified Teaching of Advaita Vedanta</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SECTION I: UPANISHADIC SOURCE
+         ═══════════════════════════════════════ -->
+    <div class="stages-wrap">
+        <section class="stage-section" id="upanishadic-source">
+            <div class="stage-wm" aria-hidden="true">उपनिषद्</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter I</span>
+                    <span class="stage-skt">The Source</span>
+                    <span class="stage-deva-title">उपनिषद्</span>
+                </div>
+                <h2 class="stage-h2">The Upanishadic Source</h2>
+                <span class="stage-subtitle-label">The foundational texts of non-duality · c. 800 BCE</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The sacred scriptures of India; the oldest layer of Vedic literature">Vedas</span> are the oldest scriptures of India, dating back to c. 1500 BCE. The <span class="sanskrit-term" title="The philosophical and mystical texts at the end of the Vedas; the foundation of Vedanta">Upanishads</span> (c. 800–200 BCE) are their philosophical culmination — the <em>Vedānta</em> (end of the Vedas). The twelve principal Upanishads contain the seed of all later Advaita Vedanta.</p>
+
+                <p>The central teaching is the identity of <span class="sanskrit-term" title="The individual self; the true consciousness within">Ātman</span> (the individual self) with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span> (the absolute reality). This identity is expressed in the four <span class="sanskrit-term" title="The four great sayings of Vedanta: Prajñānaṃ Brahma, Ahaṃ Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma">Mahāvākyas</span> — the great sayings that later teachers would use as the core of their meditation.</p>
+
+                <div class="pull-q">
+                    <p>"That which is the subtle essence — in that all that exists has its Self. That is the Truth. That is the Self. That Thou Art."</p>
+                    <cite>— Chāndogya Upaniṣad 6.8.7 (Tat Tvam Asi)</cite>
+                </div>
+
+                <div class="ed-h3">The Four Great Sayings · चत्वारि महावाक्यानि</div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; margin:2rem 0; background:var(--border-subtle); border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--border-subtle);">
+                    <div style="background:var(--surface); padding:1.5rem; text-align:center; transition:background 0.3s ease;">
+                        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold); margin-bottom:0.3rem;">Prajñānaṁ Brahma</div>
+                        <div style="font-size:0.85rem; color:var(--stone);">Consciousness is Brahman</div>
+                        <div style="font-family:'Cinzel',serif; font-size:0.4rem; letter-spacing:0.15em; color:var(--stone-light); text-transform:uppercase; margin-top:0.3rem;">Aitareya · Rig Veda</div>
+                    </div>
+                    <div style="background:var(--surface); padding:1.5rem; text-align:center; transition:background 0.3s ease;">
+                        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold); margin-bottom:0.3rem;">Ahaṁ Brahmāsmi</div>
+                        <div style="font-size:0.85rem; color:var(--stone);">I am Brahman</div>
+                        <div style="font-family:'Cinzel',serif; font-size:0.4rem; letter-spacing:0.15em; color:var(--stone-light); text-transform:uppercase; margin-top:0.3rem;">Bṛhadāraṇyaka · Yajur Veda</div>
+                    </div>
+                    <div style="background:var(--surface); padding:1.5rem; text-align:center; transition:background 0.3s ease;">
+                        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold); margin-bottom:0.3rem;">Tat Tvam Asi</div>
+                        <div style="font-size:0.85rem; color:var(--stone);">That thou art</div>
+                        <div style="font-family:'Cinzel',serif; font-size:0.4rem; letter-spacing:0.15em; color:var(--stone-light); text-transform:uppercase; margin-top:0.3rem;">Chāndogya · Sāma Veda</div>
+                    </div>
+                    <div style="background:var(--surface); padding:1.5rem; text-align:center; transition:background 0.3s ease;">
+                        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold); margin-bottom:0.3rem;">Ayam Ātmā Brahma</div>
+                        <div style="font-size:0.85rem; color:var(--stone);">This self is Brahman</div>
+                        <div style="font-family:'Cinzel',serif; font-size:0.4rem; letter-spacing:0.15em; color:var(--stone-light); text-transform:uppercase; margin-top:0.3rem;">Māṇḍūkya · Atharva Veda</div>
+                    </div>
+                </div>
+
+                <p>The <em>Māṇḍūkya Upaniṣad</em> — the shortest (only twelve verses) — became the foundation for Gaudapada's <em>Kārikā</em> and through it, the entire Advaita tradition. Its teaching on the four states of consciousness (<em>jāgrat</em>, <em>svapna</em>, <em>suṣupti</em>, <em>turīya</em>) is the blueprint for all later Vedantic cartographies.</p>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION II: GAUDAPADA
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="gaudapada">
+            <div class="stage-wm" aria-hidden="true">गौडपाद</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter II</span>
+                    <span class="stage-skt">The Architect</span>
+                    <span class="stage-deva-title">गौडपाद</span>
+                </div>
+                <h2 class="stage-h2">Gaudapada — The Architect of Ajāta</h2>
+                <span class="stage-subtitle-label">c. 6th–7th century CE · Author of the Māṇḍūkya Kārikā</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>G</strong>audapada is the first historical teacher to write a systematic exposition of Advaita in Sanskrit. His <em>Māṇḍūkya Kārikā</em> is a commentary on the twelve verses of the <em>Māṇḍūkya Upaniṣad</em>, but it is also an independent philosophical treatise establishing the doctrine of <strong><span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">ajāta vāda</span></strong> — non-origination.</p>
+
+                <p>His radical teaching: <em>"There is no birth, no destruction, no one in bondage, no seeker of liberation, and no one liberated. This is the highest truth."</em> (Karika 2.32). The entire phenomenal universe is a superimposition, like a rope mistaken for a snake, or a dream seen by a sleeping mind. He uses the analogy of a fire-brand swung in a circle: it appears to produce a circle of fire, but no circle is ever actually created.</p>
+
+                <div class="pull-q">
+                    <p>"That which is non-existent at the beginning and in the end is also non-existent in the middle. It is like a mirage in the desert."</p>
+                    <cite>— Mandukya Karika 4.31</cite>
+                </div>
+
+                <p>Gaudapada's disciple <span class="sanskrit-term" title="Gaudapada's disciple; the guru of Adi Shankara">Govinda Bhagavatpada</span> transmitted the teaching to <span class="sanskrit-term" title="The great systematizer of Advaita Vedanta">Adi Shankara</span>, making Gaudapada the <span class="sanskrit-term" title="The grand-teacher; the guru's guru">parama-guru</span> of the entire classical Advaita tradition.</p>
+
+                <div class="teacher-grid">
+                    <div class="teacher-card">
+                        <div class="era">Key Text</div>
+                        <div class="name">Māṇḍūkya Kārikā</div>
+                        <div class="deva-name">माण्डूक्य कारिका</div>
+                        <div class="contribution">The first systematic exposition of Advaita in Sanskrit. Establishes <strong>ajāta vāda</strong> — the doctrine that nothing is ever born.</div>
+                        <div class="key-text">"No jiva is ever born. No cause exists for anything that appears. The highest truth is that nothing is ever born."<span class="src">Karika 3.15</span></div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="era">Core Contribution</div>
+                        <div class="name">Ajāta Vāda</div>
+                        <div class="deva-name">अजात वाद</div>
+                        <div class="contribution">The uncompromising teaching that the world never truly arises. It is an illusion like a dream. Only <strong>Brahman</strong> is real.</div>
+                        <div class="key-text">"There is no dissolution, no birth, none in bondage, none aspiring for freedom, none liberated. This is the ultimate truth."<span class="src">Karika 2.32</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION III: SHANKARA
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="shankara">
+            <div class="stage-wm" aria-hidden="true">शङ्कर</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter III</span>
+                    <span class="stage-skt">The Systematizer</span>
+                    <span class="stage-deva-title">शङ्कर</span>
+                </div>
+                <h2 class="stage-h2">Adi Shankara — The Great Expositor</h2>
+                <span class="stage-subtitle-label">c. 788–820 CE · Author of the Brahma Sūtra Bhāṣya</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>A</strong>di Shankara systematised Advaita Vedanta into a coherent philosophical framework. He wrote commentaries on the ten principal Upanishads, the <em>Bhagavad Gītā</em>, and the <em>Brahma Sūtras</em>, establishing Advaita as India's dominant philosophical school.</p>
+
+                <p>His key contributions: the <strong><span class="sanskrit-term" title="The six means of valid knowledge in Advaita epistemology">six pramāṇas</span></strong> (means of knowledge), the distinction between <strong><span class="sanskrit-term" title="Brahman without qualities; the formless absolute">Nirguṇa</span></strong> and <strong><span class="sanskrit-term" title="Brahman with qualities; the personal God as an object of devotion">Saguṇa Brahman</span></strong>, the doctrine of <strong><span class="sanskrit-term" title="Apparent modification; the world is a superimposition on Brahman">vivarta</span></strong> (apparent modification), and the <strong><span class="sanskrit-term" title="The fourfold qualifications for Jñāna Yoga: discrimination, dispassion, six virtues, and longing for liberation">Sādhana Chatuṣṭaya</span></strong> (fourfold qualifications for liberation).</p>
+
+                <div class="pull-q">
+                    <p>"Brahman alone is real; the world is an illusion; the individual soul is none other than Brahman."</p>
+                    <cite>— Brahma Jñānāvalīmālā 20</cite>
+                </div>
+
+                <p>He established four monasteries (<span class="sanskrit-term" title="The four cardinal monasteries established by Shankara: Sringeri, Dvaraka, Puri, Badrinath">Āmnāya Mathas</span>) in the four corners of India, preserving the teaching for over twelve centuries. His lineage continues unbroken to the present day.</p>
+
+                <div class="teacher-grid">
+                    <div class="teacher-card">
+                        <div class="era">Key Text</div>
+                        <div class="name">Brahma Sūtra Bhāṣya</div>
+                        <div class="deva-name">ब्रह्म सूत्र भाष्य</div>
+                        <div class="contribution">His magnum opus — a commentary on the <strong>Brahma Sūtras</strong> of Bādarāyaṇa. Establishes Advaita through rigorous dialectic.</div>
+                        <div class="key-text">"The scripture is the only means for knowing Brahman, because Brahman is beyond all sense perception and reasoning."<span class="src">Brahma Sūtra Bhāṣya 1.1.2</span></div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="era">Core Contribution</div>
+                        <div class="name">The Path of Jñāna Yoga</div>
+                        <div class="deva-name">ज्ञान योग</div>
+                        <div class="contribution">The three stages: <strong>śravaṇa</strong> (hearing), <strong>manana</strong> (reflection), and <strong>nididhyāsana</strong> (deep meditation). The direct path to liberation.</div>
+                        <div class="key-text">"The mind becomes purified by the practice of these virtues, and then the truth of the Upaniṣads shines forth like a lamp in a windless place."<span class="src">Vivekachūḍāmaṇi 18</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION IV: RAMANA
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="ramana">
+            <div class="stage-wm" aria-hidden="true">रमण</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter IV</span>
+                    <span class="stage-skt">The Living Master</span>
+                    <span class="stage-deva-title">रमण</span>
+                </div>
+                <h2 class="stage-h2">Ramana Maharshi — The Living Recognition</h2>
+                <span class="stage-subtitle-label">1879–1950 · The Sage of Arunachala</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>R</strong>amana Maharshi realised the Self spontaneously at the age of sixteen, without any formal teaching or spiritual practice. His method, <strong><span class="sanskrit-term" title="The method of Self-enquiry; tracing the 'I'-thought back to its source">Atma Vicāra</span></strong> (Self-enquiry), is the direct investigation into the nature of the "I"-thought: <em>"Who am I?"</em></p>
+
+                <p>He taught for 54 years from Tiruvannamalai, offering the simplest and most direct practice: trace every thought back to its source, the "I"-thought, and that source will dissolve when looked at directly. His primary teaching: <em>"The Guru is none other than the Self."</em></p>
+
+                <div class="pull-q">
+                    <p>"Of all the thoughts that rise in the mind, the thought 'I' is the first thought. Enquire into the nature of the 'I'. This is Self-enquiry."</p>
+                    <cite>— Who Am I? (Nan Yar, 1902)</cite>
+                </div>
+
+                <p>Ramana's teaching is the experiential enactment of the Mahāvākyas. Where the Upanishads declare identity in language, Ramana points to immediate recognition. His influence spread globally through his disciples, including <span class="sanskrit-term" title="The 'Lightning Guru'; a disciple of Ramana who triggered sudden awakenings">Papaji (H.W.L. Poonja)</span>, who went on to teach Mooji and many others.</p>
+
+                <div class="teacher-grid">
+                    <div class="teacher-card">
+                        <div class="era">Key Text</div>
+                        <div class="name">Who Am I? (Nan Yar)</div>
+                        <div class="deva-name">नान् यार्</div>
+                        <div class="contribution">The foundational text of Ramana's teaching. A direct inquiry into the nature of the "I"-thought. The shortest and most powerful of his works.</div>
+                        <div class="key-text">"By the inquiry 'Who am I?' the mind will merge into the Self. If the mind is not destroyed, Self-realisation is not possible."<span class="src">Who Am I?</span></div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="era">Core Contribution</div>
+                        <div class="name">Self-Enquiry (Vicāra)</div>
+                        <div class="deva-name">आत्मविचार</div>
+                        <div class="contribution">The direct method of tracing the "I"-thought back to its source. Not a mantra to repeat — the actual, living recognition of consciousness itself.</div>
+                        <div class="key-text">"The seeker is the sought. The search is for what was never lost. When this is seen, the search ends."<span class="src">The Essential Teaching</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION V: NISARGADATTA
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="nisargadatta">
+            <div class="stage-wm" aria-hidden="true">निसर्गदत्त</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter V</span>
+                    <span class="stage-skt">The Radical Pointer</span>
+                    <span class="stage-deva-title">निसर्गदत्त</span>
+                </div>
+                <h2 class="stage-h2">Nisargadatta — The Radical Pointer</h2>
+                <span class="stage-subtitle-label">1897–1981 · The Guru of Mumbai</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>N</strong>isargadatta Maharaj was an ordinary householder and beedi-shop owner until the age of 36. Following his guru's single instruction — <em>"abide in the sense of 'I Am'"</em> — he realised the Self within three years. He taught from his humble Khetwadi flat in Mumbai for forty years, attracting seekers from around the world.</p>
+
+                <p>His method, <strong><span class="sanskrit-term" title="The yoga of the natural state; abiding in the bare sense of 'I Am'">Nisarga Yoga</span></strong>, is the practice of abiding in the bare "I Am" — the sense of existing prior to thought. He identified this "I Am" with <span class="sanskrit-term" title="God; the creative principle; the source of the universe">Ishvara</span>, the creative principle. His radical teaching: even the "I Am" is an appearance. What is prior to it — <strong><span class="sanskrit-term" title="The Absolute; that which is prior to consciousness">Parabrahman</span></strong> — is the ultimate reality.</p>
+
+                <div class="pull-q">
+                    <p>"The knowledge 'I am' is the link between the Absolute and the relative. The Absolute is prior to consciousness."</p>
+                    <cite>— I Am That</cite>
+                </div>
+
+                <p>Nisargadatta's teaching is often compared with Ramana's. Both point to the same reality, but their methods differ: Ramana traces the "I"-thought to its source; Nisargadatta abides in the "I Am" until it reveals what is prior to itself.</p>
+
+                <div class="teacher-grid">
+                    <div class="teacher-card">
+                        <div class="era">Key Text</div>
+                        <div class="name">I Am That</div>
+                        <div class="deva-name">अहम् तत्</div>
+                        <div class="contribution">The collected conversations of Nisargadatta, translated by Maurice Frydman. Never out of print since 1973. The most widely-read Advaita text of the modern era.</div>
+                        <div class="key-text">"The sense 'I am' is the basis of all experience. Without it, there is no experience. Find that sense, hold on to it, and you will know yourself."<span class="src">I Am That, Chapter 7</span></div>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="era">Core Contribution</div>
+                        <div class="name">The Distinction</div>
+                        <div class="deva-name">चिदाकाश · परमाकाश</div>
+                        <div class="contribution">The critical distinction between <strong>Consciousness (Chidākāśa)</strong> and <strong>the Absolute (Paramākāśa)</strong>. Consciousness is still an appearance; the Absolute is prior to consciousness.</div>
+                        <div class="key-text">"The entire universe exists only in consciousness (Chidākāśa), while the Jñānī has his abode in the Absolute (Paramākāśa)."<span class="src">Nisargadatta Maharaj</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION VI: FURTHER VOICES — EXPANDED LINEAGE
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="further-voices">
+            <div class="stage-wm" aria-hidden="true">परम्परा</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter VI</span>
+                    <span class="stage-skt">The Full Lineage</span>
+                    <span class="stage-deva-title">परम्परा</span>
+                </div>
+                <h2 class="stage-h2">Further Voices — The Full Lineage</h2>
+                <span class="stage-subtitle-label">The many teachers and texts that shape the Advaita tradition</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>T</strong>he four teachers profiled above are pillars of the tradition, but they are not alone. Advaita Vedanta is a vast, living river with many tributaries. Below are additional teachers and texts that have shaped the tradition, organised by era.</p>
+
+                <div class="ed-h3">Pre-Shankara · प्राचीन आचार्य</div>
+                <div class="further-grid">
+                    <div class="further-card">
+                        <div class="name">Bādarāyaṇa</div>
+                        <div class="deva-name">बादरायण</div>
+                        <div class="dates">c. 200 BCE – 200 CE</div>
+                        <div class="role">Author of the Brahma Sūtras</div>
+                        <div class="desc">The foundational text of Vedanta philosophy. 555 aphorisms that systematise the Upanishadic teachings. Shankara's magnum opus is a commentary on this text.</div>
+                        <div class="key-work">Brahma Sūtras</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Bhartṛhari</div>
+                        <div class="deva-name">भर्तृहरि</div>
+                        <div class="dates">c. 5th century CE</div>
+                        <div class="role">Grammarian &amp; Philosopher</div>
+                        <div class="desc">Author of the <em>Vākyapadīya</em>, a treatise on language and consciousness. His teaching on the unity of word and meaning influenced later Advaita.</div>
+                        <div class="key-work">Vākyapadīya</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Bṛhaspati</div>
+                        <div class="deva-name">बृहस्पति</div>
+                        <div class="dates">c. 5th–6th c. (traditional)</div>
+                        <div class="role">Early Advaita Teacher</div>
+                        <div class="desc">Mentioned in Shankara's works as an early exponent of Advaita. His teachings are known only through citations in later texts.</div>
+                        <div class="key-work">Lost to history</div>
+                    </div>
+                </div>
+
+                <div class="further-section-label">✦ Post-Shankara · आधुनिक आचार्य ✦</div>
+                <div class="further-grid">
+                    <div class="further-card">
+                        <div class="name">Padmapāda</div>
+                        <div class="deva-name">पद्मपाद</div>
+                        <div class="dates">c. 9th century CE</div>
+                        <div class="role">Direct Disciple of Shankara</div>
+                        <div class="desc">Author of the <em>Pañcapādikā</em>, a commentary on Shankara's Brahma Sūtra Bhāṣya. One of the earliest sub-commentators.</div>
+                        <div class="key-work">Pañcapādikā</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Sureśvara</div>
+                        <div class="deva-name">सुरेश्वर</div>
+                        <div class="dates">c. 9th century CE</div>
+                        <div class="role">Direct Disciple of Shankara</div>
+                        <div class="desc">Author of the <em>Naiṣkarmya Siddhi</em>, a defence of Advaita. Also wrote commentaries on Shankara's works on the Bṛhadāraṇyaka and Taittirīya Upaniṣads.</div>
+                        <div class="key-work">Naiṣkarmya Siddhi</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Maṇḍana Miśra</div>
+                        <div class="deva-name">मण्डन मिश्र</div>
+                        <div class="dates">c. 8th century CE</div>
+                        <div class="role">Debater &amp; Disciple</div>
+                        <div class="desc">Initially a Mīmāṃsaka, he debated Shankara and became his disciple. Author of the <em>Brahma Siddhi</em>, an early defense of Advaita.</div>
+                        <div class="key-work">Brahma Siddhi</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Vācaspati Miśra</div>
+                        <div class="deva-name">वाचस्पति मिश्र</div>
+                        <div class="dates">c. 9th–10th c.</div>
+                        <div class="role">Bhāmatī School</div>
+                        <div class="desc">Author of the <em>Bhāmatī</em>, a sub-commentary on Shankara's Brahma Sūtra Bhāṣya. Founded the Bhāmatī school of Advaita interpretation.</div>
+                        <div class="key-work">Bhāmatī</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Prakāśātman</div>
+                        <div class="deva-name">प्रकाशात्मन्</div>
+                        <div class="dates">c. 11th century CE</div>
+                        <div class="role">Vivaraṇa School</div>
+                        <div class="desc">Author of the <em>Pañcapādikā Vivaraṇa</em>, a commentary on Padmapāda's work. Founded the Vivaraṇa school of Advaita.</div>
+                        <div class="key-work">Pañcapādikā Vivaraṇa</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Vidyāraṇya</div>
+                        <div class="deva-name">विद्यारण्य</div>
+                        <div class="dates">c. 14th century CE</div>
+                        <div class="role">Author &amp; Teacher</div>
+                        <div class="desc">Author of the <em>Pañcadaśī</em>, a comprehensive summary of Advaita in fifteen chapters. Also wrote on Jīvanmukti.</div>
+                        <div class="key-work">Pañcadaśī</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Madhusūdana Sarasvatī</div>
+                        <div class="deva-name">मधुसूदन सरस्वती</div>
+                        <div class="dates">c. 16th century CE</div>
+                        <div class="role">Advaita Siddhi</div>
+                        <div class="desc">Author of the <em>Advaita Siddhi</em>, a definitive defense of Advaita against rival schools. Also wrote on the unity of bhakti and jñāna.</div>
+                        <div class="key-work">Advaita Siddhi</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Sadānanda</div>
+                        <div class="deva-name">सदानन्द</div>
+                        <div class="dates">c. 17th century CE</div>
+                        <div class="role">Vedāntasāra</div>
+                        <div class="desc">Author of the <em>Vedāntasāra</em> (Essence of Vedanta), a popular summary of Advaita for students. Clear and accessible.</div>
+                        <div class="key-work">Vedāntasāra</div>
+                    </div>
+                </div>
+
+                <div class="further-section-label">✦ The Śaṅkarācārya Lineage · शङ्कराचार्य परम्परा ✦</div>
+                <p style="text-align:center; color:var(--stone); max-width:600px; margin:0.5rem auto 1.5rem;">The unbroken succession of heads of the four monasteries established by Shankara. Each is a living teacher in the tradition.</p>
+                <div class="further-grid">
+                    <div class="further-card">
+                        <div class="name">Śṛṅgerī Śaṅkarācārya</div>
+                        <div class="deva-name">शृङ्गेरी</div>
+                        <div class="dates">South · Sāma Veda</div>
+                        <div class="role">Karnataka, India</div>
+                        <div class="desc">The first matha established by Shankara. The current head is <strong>Śrī Bhāratī Tīrtha Svāmī</strong> (since 1989).</div>
+                        <div class="key-work">Sringeri Matha</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Dvārakā Śaṅkarācārya</div>
+                        <div class="deva-name">द्वारका</div>
+                        <div class="dates">West · Yajur Veda</div>
+                        <div class="role">Gujarat, India</div>
+                        <div class="desc">Established in the ancient city of Dvārakā, associated with Lord Krishna. Guards the western threshold of India.</div>
+                        <div class="key-work">Dvaraka Matha</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Puri Śaṅkarācārya</div>
+                        <div class="deva-name">पुरी</div>
+                        <div class="dates">East · Ṛg Veda</div>
+                        <div class="role">Odisha, India</div>
+                        <div class="desc">Located at the famous Jagannath temple. Upholds the Rig Veda and the eastern tradition of Advaita.</div>
+                        <div class="key-work">Govardhana Matha</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Badrīnāth Śaṅkarācārya</div>
+                        <div class="deva-name">बद्रीनाथ</div>
+                        <div class="dates">North · Atharva Veda</div>
+                        <div class="role">Uttarakhand, India</div>
+                        <div class="desc">Located in the Himalayas, a sacred pilgrimage site. Protects the northern tradition and the Atharva Veda.</div>
+                        <div class="key-work">Jyotirmatha</div>
+                    </div>
+                </div>
+
+                <div class="further-section-label">✦ Modern Teachers · आधुनिक गुरु ✦</div>
+                <div class="further-grid">
+                    <div class="further-card">
+                        <div class="name">Swami Vivekananda</div>
+                        <div class="deva-name">स्वामी विवेकानन्द</div>
+                        <div class="dates">1863–1902</div>
+                        <div class="role">Disciple of Ramakrishna</div>
+                        <div class="desc">Brought Advaita Vedanta to the West at the World's Parliament of Religions (1893). Founded the Ramakrishna Mission. Key text: <em>Raja Yoga</em>.</div>
+                        <div class="key-work">Jnana Yoga</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Swami Chinmayananda</div>
+                        <div class="deva-name">स्वामी चिन्मयानन्द</div>
+                        <div class="dates">1916–1993</div>
+                        <div class="role">Disciple of Swami Sivananda</div>
+                        <div class="desc">Popularised Advaita for modern audiences. Founded the Chinmaya Mission. Author of commentaries on all major Upanishads and the Bhagavad Gītā.</div>
+                        <div class="key-work">Bhagavad Gītā Commentary</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Swami Dayananda Saraswati</div>
+                        <div class="deva-name">स्वामी दयानन्द सरस्वती</div>
+                        <div class="dates">1930–2015</div>
+                        <div class="role">Traditional Advaita Teacher</div>
+                        <div class="desc">A master of traditional Advaita teaching method. Taught thousands of students. Founded Arsha Vidya Gurukulam. Known for his clarity in teaching the Upanishads.</div>
+                        <div class="key-work">Upanishad Commentaries</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Mooji</div>
+                        <div class="deva-name">मूजी</div>
+                        <div class="dates">1954–present</div>
+                        <div class="role">Disciple of Papaji</div>
+                        <div class="desc">A living voice of Ramana's teaching. Points directly to the Self through Satsang, silence, and inquiry. Reaches millions worldwide through online videos.</div>
+                        <div class="key-work">Vaster than the Sky</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Annamalai Swami</div>
+                        <div class="deva-name">अन्नमलै स्वामी</div>
+                        <div class="dates">1906–1995</div>
+                        <div class="role">Ramana's Disciple</div>
+                        <div class="desc">A devoted disciple who lived at Ramana's ashram. His teaching emphasises the unity of work and meditation — all action as worship of the Self.</div>
+                        <div class="key-work">Living by the Words of Bhagavan</div>
+                    </div>
+                    <div class="further-card">
+                        <div class="name">Ramesh Balsekar</div>
+                        <div class="deva-name">रमेश बालसेकर</div>
+                        <div class="dates">1917–2009</div>
+                        <div class="role">Nisargadatta's Disciple</div>
+                        <div class="desc">A disciple of Nisargadatta who bridged the teaching with Western psychology. Author of many books. Emphasised the non-doership teaching.</div>
+                        <div class="key-work">The One in the Mirror</div>
+                    </div>
+                </div>
+
+                <div class="pull-q" style="margin-top:3rem">
+                    <p>"The teaching is not the property of any one teacher. It is the living truth, available to anyone who turns their attention inward. The lineage is not a line of succession — it is the recognition of what is always already present."</p>
+                    <cite>— The Living Tradition</cite>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION VII: COMPARATIVE SUMMARY
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="comparative">
+            <div class="stage-wm" aria-hidden="true">तुलना</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter VII</span>
+                    <span class="stage-skt">Comparative Summary</span>
+                    <span class="stage-deva-title">तुलना · संवाद</span>
+                </div>
+                <h2 class="stage-h2">Many Voices, One Truth</h2>
+                <span class="stage-subtitle-label">A comparative overview of the four primary teachers and the broader tradition</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>F</strong>our teachers, four methods, one truth. Each has contributed a unique facet to the diamond of Advaita. The table below summarises their key teachings, methods, and contributions.</p>
+
+                <div class="comp-table-wrap">
+                    <table class="comp-table">
+                        <thead>
+                            <tr>
+                                <th>Teacher</th>
+                                <th>Era</th>
+                                <th>Key Text</th>
+                                <th>Core Method</th>
+                                <th>Unique Contribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gaudapada</td>
+                                <td>6th–7th c.</td>
+                                <td>Māṇḍūkya Kārikā</td>
+                                <td>Philosophical analysis + direct pointing</td>
+                                <td><strong>Ajāta Vāda</strong> — the doctrine of non-origination</td>
+                            </tr>
+                            <tr class="highlight-cell">
+                                <td>Adi Shankara</td>
+                                <td>8th c.</td>
+                                <td>Brahma Sūtra Bhāṣya</td>
+                                <td>Systematic philosophy + Jñāna Yoga</td>
+                                <td><strong>Systematization</strong> — established Advaita as a complete philosophical system</td>
+                            </tr>
+                            <tr>
+                                <td>Ramana Maharshi</td>
+                                <td>1879–1950</td>
+                                <td>Who Am I? (Nan Yar)</td>
+                                <td>Self-Enquiry (Vicāra)</td>
+                                <td><strong>Direct pointing</strong> — the living practice of the Mahāvākyas</td>
+                            </tr>
+                            <tr>
+                                <td>Nisargadatta</td>
+                                <td>1897–1981</td>
+                                <td>I Am That</td>
+                                <td>Nisarga Yoga — abiding in "I Am"</td>
+                                <td><strong>Consciousness vs. Absolute</strong> — even the "I Am" is an appearance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="resonance-box">
+                    <h4>⚡ The Living Convergence</h4>
+                    <p>Despite their different methods and emphases, all four teachers — and indeed all the teachers listed in the lineage above — point to the same reality: <strong>the Self that is ever-present, beyond mind, beyond words, beyond all appearance</strong>. Gaudapada established the philosophical foundation; Shankara systematised it; Ramana made it a living practice; Nisargadatta pushed it to its ultimate conclusion. The lineage continues through the Śaṅkarācāryas, the modern teachers, and countless unnamed sages. Together, they form a <strong>golden thread</strong> that stretches from the Upanishads to the present — an unbroken transmission of the non-dual teaching.</p>
+                </div>
+
+                <div class="ed-h3">The Golden Thread · सुवर्ण सूत्र</div>
+
+                <!-- SVG Lineage Diagram -->
+                <div class="lineage-diagram-wrap">
+                    <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lineage diagram showing the golden thread from Upanishads to Nisargadatta">
+                        <!-- Golden thread -->
+                        <path class="thread" d="M 50 80 Q 120 20, 200 80 Q 280 140, 350 80 Q 420 20, 500 80 Q 580 140, 650 80" />
+
+                        <!-- Nodes -->
+                        <circle cx="50" cy="80" r="22" class="node-circle" />
+                        <text x="50" y="73" text-anchor="middle" class="node-text" font-size="7">Upanishads</text>
+                        <text x="50" y="88" text-anchor="middle" class="node-deva" font-size="6">उपनिषद्</text>
+
+                        <circle cx="200" cy="80" r="22" class="node-circle" />
+                        <text x="200" y="73" text-anchor="middle" class="node-text" font-size="7">Gaudapada</text>
+                        <text x="200" y="88" text-anchor="middle" class="node-deva" font-size="6">गौडपाद</text>
+
+                        <circle cx="350" cy="80" r="22" class="node-circle" />
+                        <text x="350" y="70" text-anchor="middle" class="node-text" font-size="6.5">Adi Shankara</text>
+                        <text x="350" y="83" text-anchor="middle" class="node-deva" font-size="5.5">शङ्कर</text>
+                        <text x="350" y="96" text-anchor="middle" class="node-sub" font-size="5.5">c. 8th c.</text>
+
+                        <circle cx="500" cy="80" r="22" class="node-circle" />
+                        <text x="500" y="70" text-anchor="middle" class="node-text" font-size="6.5">Ramana</text>
+                        <text x="500" y="83" text-anchor="middle" class="node-deva" font-size="5.5">रमण</text>
+                        <text x="500" y="96" text-anchor="middle" class="node-sub" font-size="5.5">1879–1950</text>
+
+                        <circle cx="650" cy="80" r="22" class="node-circle" />
+                        <text x="650" y="70" text-anchor="middle" class="node-text" font-size="6.5">Nisargadatta</text>
+                        <text x="650" y="83" text-anchor="middle" class="node-deva" font-size="5.5">निसर्गदत्त</text>
+                        <text x="650" y="96" text-anchor="middle" class="node-sub" font-size="5.5">1897–1981</text>
+
+                        <!-- Connecting rays -->
+                        <line x1="72" y1="80" x2="178" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
+                        <line x1="222" y1="80" x2="328" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
+                        <line x1="372" y1="80" x2="478" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
+                        <line x1="522" y1="80" x2="628" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
+
+                        <!-- Small diamonds between nodes -->
+                        <polygon points="130,80 133,77 136,80 133,83" fill="var(--gold)" opacity="0.15" />
+                        <polygon points="280,80 283,77 286,80 283,83" fill="var(--gold)" opacity="0.15" />
+                        <polygon points="430,80 433,77 436,80 433,83" fill="var(--gold)" opacity="0.15" />
+                        <polygon points="580,80 583,77 586,80 583,83" fill="var(--gold)" opacity="0.15" />
+                    </svg>
+                </div>
+
+                <p style="text-align:center; color:var(--stone); font-style:italic; font-size:0.9rem; max-width:600px; margin:0 auto;">The golden thread of Advaita: from the Upanishads through Gaudapada, Shankara, Ramana, and Nisargadatta — an unbroken transmission of non-dual recognition.</p>
+            </div>
+        </section>
+    </div><!-- .stages-wrap -->
+
+    <div class="skt-divider"><span class="skt-divider-inner">ॐ</span></div>
+
+    <!-- ═══════════════════════════════════════
+         SECTION VIII: UNIFIED GLOSSARY
+         ═══════════════════════════════════════ -->
+    <section class="gloss-section" id="glossary">
+        <div class="ed-section-label">शब्दकोश</div>
+        <h2 class="ed-section-h2">Unified Glossary</h2>
+        <p class="ed-section-intro">All key Sanskrit terms from the Advaita Vedanta tradition — from the Upanishads through Gaudapada, Shankara, Ramana, Nisargadatta, and the broader lineage.</p>
+
+        <div class="gloss-search-wrap">
+            <span class="gloss-search-ico">🔍</span>
+            <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms…" autocomplete="off" />
+            <button class="gloss-clear" id="glossClear" aria-label="Clear">✕</button>
+        </div>
+        <p class="gloss-no-results" id="glossNoResults">No matching terms found.</p>
+
+        <div class="gloss-grid" id="glossGrid">
+            <!-- Upanishadic terms -->
+            <div class="gloss-entry" data-terms="upanishad vedanta scripture">
+                <div class="gloss-term">Upaniṣad <span class="gloss-term-deva">उपनिषद्</span></div>
+                <span class="gloss-cat">Scripture</span>
+                <p class="gloss-def">The philosophical and mystical texts at the end of the Vedas. The foundation of Vedanta. Twelve principal Upanishads form the core of Advaita.</p>
+            </div>
+            <div class="gloss-entry" data-terms="atman self soul consciousness">
+                <div class="gloss-term">Ātman <span class="gloss-term-deva">आत्मन्</span></div>
+                <span class="gloss-cat">The Self</span>
+                <p class="gloss-def">The eternal, unchanging consciousness that is your true nature. Beyond mind, body, and all attributes. Identical with Brahman.</p>
+            </div>
+            <div class="gloss-entry" data-terms="brahman absolute reality consciousness">
+                <div class="gloss-term">Brahman <span class="gloss-term-deva">ब्रह्मन्</span></div>
+                <span class="gloss-cat">The Absolute</span>
+                <p class="gloss-def">The ultimate reality, the ground of existence. Non-dual, infinite, eternal. In Advaita, Ātman and Brahman are one — the Self is Brahman.</p>
+            </div>
+            <div class="gloss-entry" data-terms="mahavakya great saying four vedanta">
+                <div class="gloss-term">Mahāvākya <span class="gloss-term-deva">महावाक्य</span></div>
+                <span class="gloss-cat">The Great Sayings</span>
+                <p class="gloss-def">The four great sayings of Vedanta: Prajñānaṃ Brahma, Ahaṃ Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma. Each from a different Veda.</p>
+            </div>
+
+            <!-- Gaudapada terms -->
+            <div class="gloss-entry" data-terms="ajata non-origination no-creation">
+                <div class="gloss-term">Ajāta <span class="gloss-term-deva">अजात</span></div>
+                <span class="gloss-cat">Gaudapada</span>
+                <p class="gloss-def">"Non-origination" — the central teaching of Gaudapada that nothing is ever born, created, or produced. The world is a mirage; only Brahman is real.</p>
+            </div>
+            <div class="gloss-entry" data-terms="alata firebrand illusion circle">
+                <div class="gloss-term">Alataśānti <span class="gloss-term-deva">अलतशान्ति</span></div>
+                <span class="gloss-cat">Gaudapada</span>
+                <p class="gloss-def">"Extinction of the Fire-brand" — the fourth chapter of the Māṇḍūkya Kārikā, using the analogy of a swinging fire-brand to show that the world of cause and effect is an illusion.</p>
+            </div>
+            <div class="gloss-entry" data-terms="mandukya karika commentary text">
+                <div class="gloss-term">Māṇḍūkya Kārikā <span class="gloss-term-deva">माण्डूक्य कारिका</span></div>
+                <span class="gloss-cat">Gaudapada</span>
+                <p class="gloss-def">Gaudapada's commentary on the Māṇḍūkya Upaniṣad. The first systematic exposition of Advaita in Sanskrit and the foundation of ajāta vāda.</p>
+            </div>
+
+            <!-- Shankara terms -->
+            <div class="gloss-entry" data-terms="pramana means of knowledge epistemology shankara">
+                <div class="gloss-term">Pramāṇa <span class="gloss-term-deva">प्रमाण</span></div>
+                <span class="gloss-cat">Shankara</span>
+                <p class="gloss-def">A means of valid knowledge. Shankara systematised six: Pratyakṣa (perception), Anumāṇa (inference), Upamāṇa (comparison), Arthāpatti (postulation), Anupalabdhi (non-apprehension), Śabda (verbal testimony).</p>
+            </div>
+            <div class="gloss-entry" data-terms="vivarta superimposition appearance shankara">
+                <div class="gloss-term">Vivarta <span class="gloss-term-deva">विवर्त</span></div>
+                <span class="gloss-cat">Shankara</span>
+                <p class="gloss-def">"Apparent modification" — the doctrine that the world is a superimposition on Brahman, like a rope mistaken for a snake. The world appears but is not ultimately real.</p>
+            </div>
+            <div class="gloss-entry" data-terms="nirguna saguna brahman god personal">
+                <div class="gloss-term">Nirguṇa / Saguṇa <span class="gloss-term-deva">निर्गुण · सगुण</span></div>
+                <span class="gloss-cat">Shankara</span>
+                <p class="gloss-def">Nirguṇa Brahman — Brahman without qualities, the formless absolute. Saguṇa Brahman — Brahman with qualities, the personal God (Īśvara) worshipped through devotion.</p>
+            </div>
+            <div class="gloss-entry" data-terms="sadhana chatushtaya qualifications fourfold shankara">
+                <div class="gloss-term">Sādhana Chatuṣṭaya <span class="gloss-term-deva">साधन चतुष्टय</span></div>
+                <span class="gloss-cat">Shankara</span>
+                <p class="gloss-def">The fourfold qualifications for Jñāna Yoga: Viveka (discrimination), Vairāgya (dispassion), Ṣaṭsampatti (six virtues), Mumukṣutva (longing for liberation).</p>
+            </div>
+            <div class="gloss-entry" data-terms="sravana manana nididhyasana hearing reflection meditation">
+                <div class="gloss-term">Śravaṇa, Manana, Nididhyāsana <span class="gloss-term-deva">श्रवण · मनन · निदिध्यासन</span></div>
+                <span class="gloss-cat">Shankara</span>
+                <p class="gloss-def">The three stages of Jñāna Yoga: hearing the teaching (śravaṇa), reflecting on it (manana), and deep meditation (nididhyāsana).</p>
+            </div>
+
+            <!-- Ramana terms -->
+            <div class="gloss-entry" data-terms="vichara enquiry self-enquiry ramana">
+                <div class="gloss-term">Vicāra <span class="gloss-term-deva">विचार</span></div>
+                <span class="gloss-cat">Ramana Maharshi</span>
+                <p class="gloss-def">"Self-enquiry" — the method of turning attention inward to investigate the "I"-thought. The primary sadhana of Ramana's teaching.</p>
+            </div>
+            <div class="gloss-entry" data-terms="ahankara ego i-thought ramana">
+                <div class="gloss-term">Ahaṁkāra <span class="gloss-term-deva">अहंकार</span></div>
+                <span class="gloss-cat">Ramana Maharshi</span>
+                <p class="gloss-def">The "I"-thought — the first thought that arises and is the root of all others. Dissolved by Self-enquiry.</p>
+            </div>
+            <div class="gloss-entry" data-terms="mouna silence ramana teaching">
+                <div class="gloss-term">Mouna <span class="gloss-term-deva">मौन</span></div>
+                <span class="gloss-cat">Ramana Maharshi</span>
+                <p class="gloss-def">"Silence" — the highest teaching and the highest compassion. The direct transmission from Self to Self, beyond words.</p>
+            </div>
+
+            <!-- Nisargadatta terms -->
+            <div class="gloss-entry" data-terms="nisarga yoga natural state nisargadatta">
+                <div class="gloss-term">Nisarga Yoga <span class="gloss-term-deva">निसर्ग योग</span></div>
+                <span class="gloss-cat">Nisargadatta</span>
+                <p class="gloss-def">Nisargadatta's method: abiding in the bare "I Am" without qualifiers. Effortless recognition of what is always already present.</p>
+            </div>
+            <div class="gloss-entry" data-terms="chidakash consciousness space nisargadatta">
+                <div class="gloss-term">Chidākāśa <span class="gloss-term-deva">चिदाकाश</span></div>
+                <span class="gloss-cat">Nisargadatta</span>
+                <p class="gloss-def">"Consciousness-Space" — the field of knowingness in which the entire universe exists. The "I Am-ness." Still an appearance, not the ultimate.</p>
+            </div>
+            <div class="gloss-entry" data-terms="paramakash absolute space nisargadatta">
+                <div class="gloss-term">Paramākāśa <span class="gloss-term-deva">परमाकाश</span></div>
+                <span class="gloss-cat">Nisargadatta</span>
+                <p class="gloss-def">"Absolute Space" — the abode of the Jñānī, prior to consciousness. In the Absolute there is no consciousness of "I am."</p>
+            </div>
+            <div class="gloss-entry" data-terms="parabrahman absolute prior nisargadatta">
+                <div class="gloss-term">Parabrahman <span class="gloss-term-deva">परब्रह्म</span></div>
+                <span class="gloss-cat">Nisargadatta</span>
+                <p class="gloss-def">That which is prior to consciousness, prior to "I Am." The ultimate reality without qualities, without being or non-being. What you are when all appearances subside.</p>
+            </div>
+            <div class="gloss-entry" data-terms="ishvara god creator nisargadatta">
+                <div class="gloss-term">Ishvara <span class="gloss-term-deva">ईश्वर</span></div>
+                <span class="gloss-cat">Nisargadatta</span>
+                <p class="gloss-def">God — identified by Nisargadatta with the "I Am" itself. The creative principle, the source of the universe. Still an appearance on the Absolute.</p>
+            </div>
+
+            <!-- Shared terms -->
+            <div class="gloss-entry" data-terms="jnani sage realized knower">
+                <div class="gloss-term">Jñānī <span class="gloss-term-deva">ज्ञानी</span></div>
+                <span class="gloss-cat">The Knower</span>
+                <p class="gloss-def">One who has realised the Self. The separate self-sense has dissolved completely. Appears to live normally but with no person behind it.</p>
+            </div>
+            <div class="gloss-entry" data-terms="maya illusion appearance world">
+                <div class="gloss-term">Māyā <span class="gloss-term-deva">माया</span></div>
+                <span class="gloss-cat">Appearance</span>
+                <p class="gloss-def">The power of illusion. Not a trick — simply the apparent appearance of the world on the Self. The mechanism by which the Absolute apparently forgets itself.</p>
+            </div>
+            <div class="gloss-entry" data-terms="turiya fourth witness awareness">
+                <div class="gloss-term">Turīya <span class="gloss-term-deva">तुरीय</span></div>
+                <span class="gloss-cat">The Fourth</span>
+                <p class="gloss-def">Not a state but the unchanging awareness that witnesses and contains waking, dreaming, and deep sleep. The silent background of all experience.</p>
+            </div>
+            <div class="gloss-entry" data-terms="jagrat svapna susupti waking dreaming sleep">
+                <div class="gloss-term">Jāgrat, Svapna, Suṣupti <span class="gloss-term-deva">जाग्रत् · स्वप्न · सुषुप्ति</span></div>
+                <span class="gloss-cat">The Three States</span>
+                <p class="gloss-def">The three ordinary states of consciousness: waking, dreaming, and deep sleep. All three come and go; Turīya, the fourth, is the witness.</p>
+            </div>
+            <div class="gloss-entry" data-terms="viveka discrimination wisdom discernment">
+                <div class="gloss-term">Viveka <span class="gloss-term-deva">विवेक</span></div>
+                <span class="gloss-cat">Discrimination</span>
+                <p class="gloss-def">The capacity to distinguish the real from the apparent, the permanent from the transient, consciousness from its contents. The essential faculty on the path.</p>
+            </div>
+            <!-- Additional lineage terms -->
+            <div class="gloss-entry" data-terms="badarayana brahma sutra">
+                <div class="gloss-term">Bādarāyaṇa <span class="gloss-term-deva">बादरायण</span></div>
+                <span class="gloss-cat">Pre-Shankara</span>
+                <p class="gloss-def">The author of the Brahma Sūtras (c. 200 BCE – 200 CE). His 555 aphorisms systematise the Upanishadic teachings and form the foundation of Vedanta philosophy.</p>
+            </div>
+            <div class="gloss-entry" data-terms="vidyaranya pancadasi">
+                <div class="gloss-term">Vidyāraṇya <span class="gloss-term-deva">विद्यारण्य</span></div>
+                <span class="gloss-cat">Post-Shankara</span>
+                <p class="gloss-def">Author of the Pañcadaśī (c. 14th century CE), a comprehensive summary of Advaita in fifteen chapters. Also wrote on Jīvanmukti (liberation while living).</p>
+            </div>
+            <div class="gloss-entry" data-terms="madhusudana advaita-siddhi">
+                <div class="gloss-term">Madhusūdana Sarasvatī <span class="gloss-term-deva">मधुसूदन सरस्वती</span></div>
+                <span class="gloss-cat">Post-Shankara</span>
+                <p class="gloss-def">Author of the Advaita Siddhi (c. 16th century CE), a definitive defense of Advaita against rival schools. Also wrote on the unity of bhakti and jñāna.</p>
+            </div>
+            <div class="gloss-entry" data-terms="sankaracharya matha monastery lineage">
+                <div class="gloss-term">Śaṅkarācārya <span class="gloss-term-deva">शङ्कराचार्य</span></div>
+                <span class="gloss-cat">Institutional Lineage</span>
+                <p class="gloss-def">The title of the heads of the four monasteries (mathas) established by Shankara. An unbroken lineage of teachers preserving the Advaita tradition.</p>
+            </div>
+            <div class="gloss-entry" data-terms="vivekananda modern ramakrishna">
+                <div class="gloss-term">Swami Vivekananda <span class="gloss-term-deva">स्वामी विवेकानन्द</span></div>
+                <span class="gloss-cat">Modern Teacher</span>
+                <p class="gloss-def">Brought Advaita Vedanta to the West at the World's Parliament of Religions in 1893. Founded the Ramakrishna Mission. Key work: Jnana Yoga.</p>
+            </div>
+            <div class="gloss-entry" data-terms="chinmayananda modern advaita">
+                <div class="gloss-term">Swami Chinmayananda <span class="gloss-term-deva">स्वामी चिन्मयानन्द</span></div>
+                <span class="gloss-cat">Modern Teacher</span>
+                <p class="gloss-def">Popularised Advaita for modern audiences. Founded the Chinmaya Mission. Author of commentaries on all major Upanishads and the Bhagavad Gītā.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TRANSITION PULLQUOTE
+         ═══════════════════════════════════════ -->
+    <div class="pq-section">
+        <div class="pq-glow"></div>
+        <div class="pullquote">
+            <p class="pq-text">"The Guru is not a person. The Self is the Guru. The teaching is the recognition of what always already is."</p>
+            <p class="pq-attr"><a href="advaita-nisargadatta-maharaj.html" class="continue-link">← Return to Nisargadatta Maharaj</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../messiah/messiah-threshold.html" class="continue-link">Continue to The Vedantic Messiah →</a></p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         CHAPTER NAVIGATION
+         ═══════════════════════════════════════ -->
+    <div class="chapter-nav">
+        <a href="../index.html" class="chapter-link">⌂ Home</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-gaudapada.html" class="chapter-link">Gaudapada</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-adi-shankara.html" class="chapter-link">Adi Shankara</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="vedanta-living-tradition.html" class="chapter-link active">The Living Tradition</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-name">Vedantic Mappings</div>
+        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-links">
+            <a href="../index.html"><svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Vedantic Mappings</a>
+            <a href="advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed - .</div>
+        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+
+            /* THEME */
+            const html = document.documentElement;
+            (function initTheme() {
+                const saved = localStorage.getItem('theme');
+                if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
+                html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' :
+                    'light');
+            })();
+            const themeBtn = document.getElementById('themeToggle');
+            if (themeBtn) themeBtn.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+
+            /* NAV */
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+                document.addEventListener('click', e => {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove(
+                        'open');
+                });
+            }
+
+            /* BACK TO TOP */
+            const btt = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window
+                    .innerHeight * 0.6); }, { passive: true });
+            if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            /* HERO SCROLL CUE */
+            const heroScroll = document.getElementById('heroScroll');
+            if (heroScroll) heroScroll.addEventListener('click', () => {
+                const toc = document.getElementById('toc');
+                if (toc) toc.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            /* SMOOTH SCROLL */
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const t = document.querySelector(this.getAttribute('href'));
+                    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            /* GLOSSARY SEARCH */
+            const searchInput = document.getElementById('glossSearch');
+            const clearBtn = document.getElementById('glossClear');
+            const glossItems = document.querySelectorAll('#glossGrid .gloss-entry');
+            const noResults = document.getElementById('glossNoResults');
+
+            function norm(s) {
+                return s.toLowerCase().replace(/[āàáâ]/g, 'a').replace(/[īìíî]/g, 'i').replace(/[ūùúû]/g, 'u')
+                    .replace(/[śṣ]/g, 's').replace(/[ṭ]/g, 't').replace(/[ḍ]/g, 'd').replace(/[ṇ]/g, 'n')
+                    .replace(/[ṁṃ]/g, 'm').replace(/[ḥ]/g, 'h').replace(/ñ/g, 'n');
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = norm(searchInput.value.trim());
+                    if (clearBtn) clearBtn.classList.toggle('vis', searchInput.value.length > 0);
+                    let count = 0;
+                    glossItems.forEach(item => {
+                        const text = norm(item.textContent + ' ' + (item.dataset.terms || ''));
+                        const show = !q || text.includes(q);
+                        item.style.display = show ? '' : 'none';
+                        if (show) count++;
+                    });
+                    if (noResults) noResults.style.display = count === 0 ? 'block' : 'none';
+                });
+                if (clearBtn) clearBtn.addEventListener('click', () => {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                    searchInput.focus();
+                });
+            }
+
+            /* INTERSECTION OBSERVER for fade-in */
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            /* ACTIVE NAV HIGHLIGHTING */
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const navItems = document.querySelectorAll('.nav-item[data-section]');
+
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 150) current = section.getAttribute('id');
+                });
+                navItems.forEach(item => {
+                    item.classList.toggle('active', item.getAttribute('data-section') === current);
+                });
+            }
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+            updateActiveNav();
+
+            /* CURSOR GLOW */
+            const cursorGlow = document.getElementById('cursorGlow');
+            if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+                let mx = 0,
+                    my = 0,
+                    cx = 0,
+                    cy = 0;
+                document.addEventListener('mousemove', e => { mx = e.clientX;
+                    my = e.clientY; }, { passive: true });
+
+                function animateCursor() {
+                    cx += (mx - cx) * 0.08;
+                    cy += (my - cy) * 0.08;
+                    cursorGlow.style.left = cx + 'px';
+                    cursorGlow.style.top = cy + 'px';
+                    requestAnimationFrame(animateCursor);
+                }
+                animateCursor();
+            }
+
+            /* FALLBACK for fade-in */
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 2000);
+        })();
+    </script>
+
+</body>
+</html>

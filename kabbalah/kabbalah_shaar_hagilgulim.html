@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <style>
         /* ═══════════════════════════════════════════════════════
-           TOKENS — Dark Kabbalistic Theme
+           TOKENS — Dark Kabbalistic Theme (from Sha'ar HaGilgulim)
            ═══════════════════════════════════════════════════════ */
         :root {
             --bg: #0a0c14;
@@ -1363,150 +1363,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════
-           CHAPTER NAV & FOOTER
-           ═══════════════════════════════════════════════════════ */
-        .chapter-nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 2rem 0;
-            flex-wrap: wrap;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            max-width: 900px;
-            margin: 0 auto;
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .chapter-link {
-            color: var(--stone);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: 'Cinzel', serif;
-        }
-        .chapter-link:hover,
-        .chapter-link.active {
-            color: var(--gold);
-        }
-        .chapter-sep {
-            color: var(--gold-deep);
-            opacity: 0.3;
-        }
-
-        .footer {
-            background: var(--bg2);
-            border-top: 1px solid var(--border);
-            padding: 5rem 2rem 3rem;
-            text-align: center;
-        }
-        .footer-emblem {
-            width: 36px;
-            height: 36px;
-            margin: 0 auto 1.5rem;
-            position: relative;
-        }
-        .footer-emblem-outer {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 1px solid var(--border-strong);
-        }
-        .footer-emblem-inner {
-            position: absolute;
-            inset: 8px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-        }
-        [data-theme="dark"] .footer-emblem-outer {
-            border-color: var(--gold);
-        }
-        [data-theme="dark"] .footer-emblem-inner {
-            border-color: var(--gold-light);
-        }
-        [data-theme="light"] .footer-emblem-outer {
-            border-color: #8a7030;
-        }
-        [data-theme="light"] .footer-emblem-inner {
-            border-color: #a08840;
-        }
-        .footer-name {
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        .footer-tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: var(--stone);
-            font-size: 0.98rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            font-size: 0.78rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 2.5rem;
-        }
-        .footer-links a {
-            color: var(--stone);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: 'Cinzel', serif;
-        }
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-        .footer-credit {
-            font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
-            letter-spacing: 0.3em;
-            color: var(--stone);
-            text-transform: uppercase;
-            opacity: 0.4;
-        }
-        .footer-version {
-            font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
-            letter-spacing: 0.3em;
-            color: var(--stone);
-            text-transform: uppercase;
-            opacity: 0.4;
-            margin-top: 1rem;
-        }
-        .footer-copyright {
-            font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
-            letter-spacing: 0.3em;
-            color: var(--stone);
-            text-transform: uppercase;
-            opacity: 0.4;
-            margin-top: 0.5rem;
-        }
-
-        /* ═══════════════════════════════════════════════════════
-           FADE IN
-           ═══════════════════════════════════════════════════════ */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ═══════════════════════════════════════════════════════
-           PREMIUM DIAGRAM CONTAINERS
+           DIAGRAM CONTAINERS
            ═══════════════════════════════════════════════════════ */
         .diagram-container {
             width: 100%;
@@ -1663,6 +1520,201 @@
             .hotspot.active .hotspot-tooltip {
                 transform: scale(1);
             }
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           CONCLUDING SYNTHESIS SECTION
+           ═══════════════════════════════════════════════════════ */
+        .concluding-section {
+            padding: 4rem 2rem;
+            background: var(--surface2);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+        .concluding-section-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .concluding-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .concluding-quote {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+            color: var(--ink);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .concluding-nav {
+            text-align: center;
+            margin: 40px 0;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            font-weight: 400;
+        }
+        .concluding-nav a {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .concluding-nav a:hover {
+            color: var(--gold);
+        }
+        .concluding-nav .nav-sep {
+            margin: 0 0.75rem;
+            color: var(--gold);
+            opacity: 0.3;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           CHAPTER NAV & FOOTER
+           ═══════════════════════════════════════════════════════ */
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            max-width: 900px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .chapter-link {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+        .chapter-link:hover,
+        .chapter-link.active {
+            color: var(--gold);
+        }
+        .chapter-sep {
+            color: var(--gold-deep);
+            opacity: 0.3;
+        }
+
+        .footer {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+        .footer-emblem {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        .footer-emblem-outer {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+        }
+        .footer-emblem-inner {
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+        [data-theme="dark"] .footer-emblem-outer {
+            border-color: var(--gold);
+        }
+        [data-theme="dark"] .footer-emblem-inner {
+            border-color: var(--gold-light);
+        }
+        [data-theme="light"] .footer-emblem-outer {
+            border-color: #8a7030;
+        }
+        [data-theme="light"] .footer-emblem-inner {
+            border-color: #a08840;
+        }
+        .footer-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--stone);
+            font-size: 0.98rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .footer-credit {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
+        }
+        .footer-version {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
+            margin-top: 1rem;
+        }
+        .footer-copyright {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
+            margin-top: 0.5rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           FADE IN
+           ═══════════════════════════════════════════════════════ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -2650,27 +2702,17 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
-    CLOSING SYNTHESIS (Replaces previous pullquote)
+    CLOSING SYNTHESIS
     ═══════════════════════════════════════════════════════ -->
-    <div class="concluding-section" style="padding:4rem 2rem; background:var(--surface2); border-top:2px solid var(--gold); border-bottom:2px solid var(--gold);">
-        <div style="max-width:760px; margin:0 auto; text-align:center;">
-            <h3 style="font-family:'Cinzel', serif; font-size:0.6rem; letter-spacing:0.4em; color:var(--gold); text-transform:uppercase; margin-bottom:1.5rem;">Synthesis</h3>
-            <p style="font-family:'IM Fell English', serif; font-style:italic; font-size:clamp(1.05rem,2.5vw,1.5rem); color:var(--ink); line-height:1.7;">"All the souls of the world, before they come into this world, are one. They are all joined together in the likeness of the Holy King. When they go forth into the world, they are separated, one from the other. But when the time comes to return to the King, they are all joined together once more, and they ascend as one, in the place from which they came." — Zohar, Volume III, 105a
-
-<div style="text-align: center; margin: 40px 0; font-family: sans-serif; font-weight: bold; color: #fff;">
-    <a href="kabbalah_zivug_haneshamot.html" style="color: #fff; text-decoration: none;">← RETURN TO VI · ZIVUG HANESHAMOT</a> 
-    &nbsp;&nbsp;·&nbsp;&nbsp; 
-    <a href="../gnosticism/gnosticism-unknown-father.html" style="color: #fff; text-decoration: none;">CONTINUE TO GNOSTICISM →</a>
-</div>
-
-
-<div style="text-align: center; margin: 40px 0; font-family: sans-serif; font-weight: bold;">
-    <a href="kabbalah-zivug-haneshamot.html">← RETURN TO VI · ZIVUG HANESHAMOT</a> 
-    &nbsp;&nbsp;·&nbsp;&nbsp; 
-    <a href="../gnosticism/gnosticism-unknown-father.html">CONTINUE TO GNOSTICISM →</a>
-</div>
-</p>
-            <p style="font-family:'Cinzel', serif; font-size:0.5rem; letter-spacing:0.3em; color:var(--stone); margin-top:1.5rem;"></p>
+    <div class="concluding-section">
+        <div class="concluding-section-inner">
+            <h3 class="concluding-title">Synthesis</h3>
+            <p class="concluding-quote">"All the souls of the world, before they come into this world, are one. They are all joined together in the likeness of the Holy King. When they go forth into the world, they are separated, one from the other. But when the time comes to return to the King, they are all joined together once more, and they ascend as one, in the place from which they came." — Zohar, Volume III, 105a</p>
+            <div class="concluding-nav">
+                <a href="kabbalah_zivug_haneshamot.html">← RETURN TO VI · ZIVUG HANESHAMOT</a>
+                <span class="nav-sep">·</span>
+                <a href="../gnosticism/gnosticism-unknown-father.html">CONTINUE TO GNOSTICISM →</a>
+            </div>
         </div>
     </div>
 
@@ -2716,7 +2758,6 @@
         </div>
         <div class="footer-credit">Researched and composed — J.M.Q.</div>
         <div class="footer-copyright">Last updated: June 2026 · Six cartographies</div>
-        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
         <div class="footer-version" style="margin-top:0.4rem;opacity:0.25">Primary sources: Sha'ar HaGilgulim (Arizal / R. Chaim Vital) · Zohar Mishpatim · Chesed L'Avraham</div>
     </footer>
 
@@ -2818,4 +2859,3 @@
 
 </body>
 </html>
-

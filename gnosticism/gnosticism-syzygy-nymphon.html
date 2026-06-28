@@ -170,32 +170,9 @@
             66%     { transform: translate(-1%,2%) scale(0.98); opacity: 0.25; }
         }
 
-        @keyframes pleroma-rot-cw {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        @keyframes pleroma-rot-ccw {
-            to { transform: translate(-50%, -50%) rotate(-360deg); }
-        }
-
-        @keyframes nymphon-pulse {
-            0%,100% { opacity: 0.5; filter: drop-shadow(0 0 12px var(--gold)); transform: translate(-50%, -50%) scale(1); }
-            50%     { opacity: 1; filter: drop-shadow(0 0 36px var(--gold-light)); transform: translate(-50%, -50%) scale(1.06); }
-        }
-
-        @keyframes glow-pulse {
-            0%,100% { box-shadow: 0 0 20px var(--gold-glow); }
-            50%     { box-shadow: 0 0 60px var(--sun-glow); }
-        }
-
         @keyframes ouroboros-glow {
             0%,100% { filter: drop-shadow(0 0 6px rgba(201,168,76,0.20)) drop-shadow(0 0 18px rgba(201,168,76,0.10)); }
             50%     { filter: drop-shadow(0 0 16px rgba(201,168,76,0.50)) drop-shadow(0 0 40px rgba(201,168,76,0.25)) drop-shadow(0 0 60px rgba(201,168,76,0.12)); }
-        }
-
-        @keyframes scroll-drop {
-            0%,100% { transform: scaleY(1); opacity: 1; }
-            50%     { transform: scaleY(0.3); opacity: 0.2; }
         }
 
         /* =====================================================
@@ -204,14 +181,14 @@
         .nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
         .nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--violet-light); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
         .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
-        .nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 260px; }
+        .nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 280px; max-height: 80vh; overflow-y: auto; }
         .nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
-        .nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
+        .nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.82rem; line-height: 1.3; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
         .nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
         .nav-item.active { color: var(--gold-light); background: rgba(201,168,76,0.08); border-left-color: var(--gold); font-weight: 500; }
-        .nav-item-icon { font-size: 0.8rem; flex-shrink: 0; width: 18px; text-align: center; }
-        .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.3rem; }
-        .nav-divider { height: 1px; background: var(--border); margin: 0.5rem 1rem; }
+        .nav-item-icon { font-size: 0.75rem; flex-shrink: 0; width: 18px; text-align: center; }
+        .nav-section-title { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.3em; color: var(--violet-light); text-transform: uppercase; padding: 0.6rem 1.25rem 0.25rem; }
+        .nav-divider { height: 1px; background: var(--border); margin: 0.4rem 1rem; }
 
         .theme-toggle { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; width: 48px; height: 48px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
         .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
@@ -557,10 +534,10 @@
             gap: 1.5rem;
             padding: 2rem 1rem;
             flex-wrap: wrap;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .chapter-link {
@@ -638,6 +615,7 @@
             .lin-dot { left: -1px; }
             .toc-book-item { grid-template-columns: 38px 1fr; }
             .toc-b-skt { display: none; }
+            .chapter-nav { font-size: 0.55rem; gap: 0.8rem; }
         }
 
         @media (max-width: 480px) {
@@ -650,7 +628,7 @@
             .nav-compass { top: 0.75rem; left: 0.75rem; }
             .nav-toggle { width: 40px; height: 40px; }
             .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
-            .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
+            .nav-item { padding: 0.5rem 1rem; font-size: 0.78rem; }
             .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
             .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
             .scripture-panel { padding: 20px; }
@@ -662,6 +640,7 @@
             .level-tile { padding: 1.25rem; }
             .dist-col { padding: 1.25rem; }
             .syzygy-tile { padding: 1.25rem; }
+            .chapter-nav { font-size: 0.5rem; gap: 0.5rem; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -687,14 +666,16 @@
             <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Gnostic Bridal Chamber</div>
-            <a href="#hero" class="nav-item active"><span class="nav-item-icon">✦</span><span>The Pleroma</span></a>
-            <a href="#syzygy" class="nav-item"><span class="nav-item-icon">⊕</span><span>Syzygy Theology</span></a>
-            <a href="#fall" class="nav-item"><span class="nav-item-icon">↓</span><span>The Fall of Sophia</span></a>
-            <a href="#corpus" class="nav-item"><span class="nav-item-icon">📜</span><span>The Corpus</span></a>
-            <a href="#nymphon" class="nav-item"><span class="nav-item-icon">♡</span><span>The Nymphon</span></a>
-            <a href="#restoration" class="nav-item"><span class="nav-item-icon">↑</span><span>Restoration</span></a>
-            <a href="#convergences" class="nav-item"><span class="nav-item-icon">◈</span><span>Convergences</span></a>
-            <a href="#glossary" class="nav-item"><span class="nav-item-icon">📖</span><span>Glossary</span></a>
+            <a href="#hero" class="nav-item active"><span class="nav-item-icon">✦</span><span>Overview</span></a>
+            <a href="#syzygy" class="nav-item"><span class="nav-item-icon">I</span><span>I · Syzygy</span></a>
+            <a href="#pleroma" class="nav-item"><span class="nav-item-icon">II</span><span>II · The Pleroma</span></a>
+            <a href="#fall" class="nav-item"><span class="nav-item-icon">III</span><span>III · The Fall</span></a>
+            <a href="#corpus" class="nav-item"><span class="nav-item-icon">IV</span><span>IV · The Corpus</span></a>
+            <a href="#nymphon" class="nav-item"><span class="nav-item-icon">V</span><span>V · The Nymphon</span></a>
+            <a href="#restoration" class="nav-item"><span class="nav-item-icon">VI</span><span>VI · Restoration</span></a>
+            <a href="#kabbalah" class="nav-item"><span class="nav-item-icon">VII</span><span>VII · Kabbalistic Map</span></a>
+            <a href="#advaita" class="nav-item"><span class="nav-item-icon">VIII</span><span>VIII · Non-Dual Synthesis</span></a>
+            <a href="#glossary" class="nav-item"><span class="nav-item-icon">IX</span><span>IX · Glossary</span></a>
         </div>
     </div>
 
@@ -889,14 +870,19 @@
                 <span class="toc-b-title">Restoration — The Three Levels</span>
                 <span class="toc-b-skt">ἀποκατάστασις</span>
             </a>
-            <a href="#convergences" class="toc-book-item">
+            <a href="#kabbalah" class="toc-book-item">
                 <span class="toc-b-num">VII</span>
-                <span class="toc-b-title">Convergences — Kabbalah & Advaita</span>
-                <span class="toc-b-skt">correspondences</span>
+                <span class="toc-b-title">The Kabbalistic Correspondence</span>
+                <span class="toc-b-skt">קַבָּלָה</span>
+            </a>
+            <a href="#advaita" class="toc-book-item">
+                <span class="toc-b-num">VIII</span>
+                <span class="toc-b-title">The Non-Dual Gnostic — Advaita Synthesis</span>
+                <span class="toc-b-skt">अद्वैत</span>
             </a>
             <a href="#glossary" class="toc-book-item">
-                <span class="toc-b-num">★</span>
-                <span class="toc-b-title">Glossary of Greek & Gnostic Terms</span>
+                <span class="toc-b-num">IX</span>
+                <span class="toc-b-title">Glossary of Greek, Hebrew & Sanskrit Terms</span>
                 <span class="toc-b-skt">γλωσσάριον</span>
             </a>
         </nav>
@@ -1381,18 +1367,283 @@
 
         <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
 
-        <!-- STAGE VII — CONVERGENCES -->
-        <section class="content-section" id="convergences">
+        <!-- ============================================================
+             STAGE VII — THE KABBALISTIC CORRESPONDENCE
+             ============================================================ -->
+        <section class="content-section" id="kabbalah">
             <div class="section-header">
                 <div class="section-separator"></div>
-                <p class="section-eyemark">Stage VII · The Convergences</p>
-                <h2>Kabbalah & Advaita</h2>
-                <p>Independent Convergence on the Syzygy Structure</p>
+                <p class="section-eyemark">Stage VII · The Kabbalistic Correspondence</p>
+                <h2>The Kabbalistic Correspondence</h2>
+                <p>A Systematic Mapping · קַבָּלָה</p>
             </div>
             <div class="content-essay">
                 <p class="content-introduction"><strong>K</strong>abbalah, arriving centuries after the Gnostic corpus, independently converges on strikingly similar structures. The Lurianic system maps the Sephiroth in masculine-feminine pairs — <span class="grk">זיווג</span> (zivug), "coupling" — with Tiferet and Malkhut as the primary cosmic syzygy. The <em>Shekhinah's exile</em> is the Kabbalistic version of Sophia's fall: the feminine divine presence separated from her partner. The Sabbath is the syzygy restored.</p>
                 <p>The Etz Chaim's ten Sephiroth arrange themselves into three pillars: masculine (Chesed, right), feminine (Gevurah, left), and median (Rachamim, center). The union of the right and left pillars through the central is the structural equivalent of the Gnostic nymphon: the joining of opposing principles through the mediating axis.</p>
 
+                <!-- DIAGRAM 1: Correspondence Table -->
+                <div class="diagram-container">
+                    <div class="diagram-title">◈ Kabbalistic–Gnostic Correspondence Table</div>
+                    <svg class="diagram-svg" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kabbalistic-Gnostic correspondence table">
+                        <defs>
+                            <linearGradient id="kab-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="var(--violet)" stop-opacity="0.25"/>
+                                <stop offset="50%" stop-color="var(--gold)" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="var(--violet)" stop-opacity="0.25"/>
+                            </linearGradient>
+                            <linearGradient id="kab-head" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.20"/>
+                                <stop offset="100%" stop-color="var(--violet)" stop-opacity="0.10"/>
+                            </linearGradient>
+                            <filter id="kab-glow">
+                                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="var(--gold)" flood-opacity="0.15"/>
+                            </filter>
+                        </defs>
+                        <!-- Background -->
+                        <rect x="0" y="0" width="820" height="520" rx="12" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                        <!-- Header -->
+                        <rect x="10" y="10" width="800" height="44" rx="6" fill="url(#kab-head)" stroke="var(--gold)" stroke-width="0.5" opacity="0.6"/>
+                        <text x="410" y="39" font-family="'Cinzel',serif" font-size="13" fill="var(--gold-light)" text-anchor="middle" letter-spacing="0.3em" text-transform="uppercase">Kabbalistic–Gnostic Correspondence</text>
+                        <!-- Column headers -->
+                        <text x="55"  y="84" font-family="'Cinzel',serif" font-size="11" fill="var(--gold)" text-anchor="middle" letter-spacing="0.15em" text-transform="uppercase" font-weight="500">Gnostic Concept</text>
+                        <text x="300" y="84" font-family="'Cinzel',serif" font-size="11" fill="var(--gold)" text-anchor="middle" letter-spacing="0.15em" text-transform="uppercase" font-weight="500">Kabbalistic Equivalent</text>
+                        <text x="570" y="84" font-family="'Cinzel',serif" font-size="11" fill="var(--gold)" text-anchor="middle" letter-spacing="0.15em" text-transform="uppercase" font-weight="500">Explanation</text>
+                        <!-- Divider line -->
+                        <line x1="20" y1="94" x2="800" y2="94" stroke="var(--border-strong)" stroke-width="0.5"/>
+                        <!-- Row 1 -->
+                        <line x1="20" y1="144" x2="800" y2="144" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="126" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Unknown Father</text>
+                        <text x="300" y="126" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Ein Sof</text>
+                        <text x="570" y="126" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">The ineffable, boundless source beyond all attributes.</text>
+                        <!-- Row 2 -->
+                        <line x1="20" y1="193" x2="800" y2="193" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="175" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Pleroma (Aeons)</text>
+                        <text x="300" y="175" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Sefirot</text>
+                        <text x="570" y="175" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">Ten emanations structured in pairs (Partzufim).</text>
+                        <!-- Row 3 -->
+                        <line x1="20" y1="242" x2="800" y2="242" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="224" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Sophia's Fall</text>
+                        <text x="300" y="224" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Shevirat Ha-Kelim</text>
+                        <text x="570" y="224" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">Breaking of vessels due to overwhelming light.</text>
+                        <!-- Row 4 -->
+                        <line x1="20" y1="291" x2="800" y2="291" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="273" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Demiurge (Yaldabaoth)</text>
+                        <text x="300" y="273" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Sitra Achra</text>
+                        <text x="570" y="273" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">The "Other Side" — shadow of the divine.</text>
+                        <!-- Row 5 -->
+                        <line x1="20" y1="340" x2="800" y2="340" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="322" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Archons</text>
+                        <text x="300" y="322" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Qlippot</text>
+                        <text x="570" y="322" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">"Shells" that conceal divine sparks.</text>
+                        <!-- Row 6 -->
+                        <line x1="20" y1="389" x2="800" y2="389" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="371" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Bridal Chamber (Nymphon)</text>
+                        <text x="300" y="371" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Zivug</text>
+                        <text x="570" y="371" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">Sacred coupling of divine masculine and feminine.</text>
+                        <!-- Row 7 -->
+                        <line x1="20" y1="438" x2="800" y2="438" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="420" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Divine Spark (Pneuma)</text>
+                        <text x="300" y="420" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Nitzotz</text>
+                        <text x="570" y="420" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">Holy spark buried in matter awaiting redemption.</text>
+                        <!-- Row 8 -->
+                        <line x1="20" y1="487" x2="800" y2="487" stroke="var(--border-subtle)" stroke-width="0.3"/>
+                        <text x="55"  y="469" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="400">Restoration (Apokatastasis)</text>
+                        <text x="300" y="469" font-family="'Cormorant Garamond',serif" font-size="14" fill="var(--gold-light)" text-anchor="middle" font-style="italic" opacity="0.9">Tikkun</text>
+                        <text x="570" y="469" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" dominant-baseline="central">Repair and restoration of the cosmic order.</text>
+                        <!-- Bottom border -->
+                        <rect x="10" y="10" width="800" height="500" rx="6" fill="none" stroke="var(--border-strong)" stroke-width="0.5" opacity="0.4"/>
+                    </svg>
+                    <div class="diagram-caption">Kabbalah and Gnosticism share the same deep structure: a rupture in the divine order, a fall into separation, and a path of restoration through sacred union. The correspondence is structural, not historical — both traditions arrived at the same ontological map independently.</div>
+                </div>
+
+                <!-- Scripture Panels for Chapter VII -->
+                <div class="scripture-panels">
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Zohar · The Shekhinah in Exile</div>
+                        <div class="scripture-panel-text">"When the Shekhinah is in exile, the Holy One, blessed be He, weeps. The unification of the masculine and feminine is the restoration of the divine order."</div>
+                        <div class="scripture-panel-ref">— Zohar, Bereshit 1:1</div>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Etz Chaim · The Breaking of the Vessels</div>
+                        <div class="scripture-panel-text">"The light of the Ein Sof was too great for the vessels, and they shattered. Sparks of holiness fell into the Qlippot, and the repair is the gathering of these sparks."</div>
+                        <div class="scripture-panel-ref">— Etz Chaim, Sha'ar HaKelalim</div>
+                    </div>
+                </div>
+
+                <div class="tension-box">
+                    <p><strong>The structural claim:</strong> The correspondence between Gnosticism and Kabbalah is not historical borrowing but ontological convergence. Both traditions recognize that the divine is fundamentally relational, that the rupture of that relation is the source of suffering, and that the restoration of that relation is the goal of all spiritual practice.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" style="max-width:760px;margin:0 auto;"/>
+
+        <!-- ============================================================
+             STAGE VIII — THE NON-DUAL GNOSTIC: ADVAITA SYNTHESIS
+             ============================================================ -->
+        <section class="content-section" id="advaita">
+            <div class="section-header">
+                <div class="section-separator"></div>
+                <p class="section-eyemark">Stage VIII · The Non-Dual Gnostic</p>
+                <h2>The Advaita Synthesis</h2>
+                <p>Non-Dual Vedanta · अद्वैत · The Single Unity</p>
+            </div>
+            <div class="content-essay">
+                <p class="content-introduction"><strong>N</strong>on-dual Advaita Vedanta, though not historically related to Gnosticism, presents a striking parallel structure. The ultimate teaching — 'You are already that' (<span class="grk">Tat Tvam Asi</span>) — resonates with the Gnostic recognition that the soul is already a fragment of the Pleroma, not needing to acquire what it has always possessed.</p>
+                <p>The Advaita synthesis offers a radical reading of the Gnostic project: the fall is not a historical event but a perpetual misrecognition (<span class="grk">avidya</span>); the restoration is not a future event but a present awakening (<span class="grk">jñāna</span>). The bridal chamber, in this reading, is not a ritual but the direct recognition of non-duality — the end of the search, the dissolution of the ego, the beginning of the single unity.</p>
+
+                <h3>Advaita–Gnostic Correspondence</h3>
+
+                <!-- Inline correspondence table as styled content -->
+                <div class="dist-panel" style="grid-template-columns:1fr 1fr 1fr; margin-bottom:2.5rem;">
+                    <div class="dist-col" style="padding:1.25rem 1.25rem; text-align:center;">
+                        <div style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;">Advaita</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--violet-light);">Nirguna Brahman</div>
+                        <div style="font-size:0.75rem;color:var(--stone);margin-top:0.25rem;">↕</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);">Unknown Father</div>
+                        <div style="font-size:0.7rem;color:var(--stone);margin-top:0.5rem;font-style:italic;">The ineffable, quality-less absolute.</div>
+                    </div>
+                    <div class="dist-col" style="padding:1.25rem 1.25rem; text-align:center;">
+                        <div style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;">Advaita</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--violet-light);">Saguna Brahman</div>
+                        <div style="font-size:0.75rem;color:var(--stone);margin-top:0.25rem;">↕</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);">Pleroma</div>
+                        <div style="font-size:0.7rem;color:var(--stone);margin-top:0.5rem;font-style:italic;">The divine with attributes — fullness of being.</div>
+                    </div>
+                    <div class="dist-col" style="padding:1.25rem 1.25rem; text-align:center;">
+                        <div style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;">Advaita</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--violet-light);">Maya</div>
+                        <div style="font-size:0.75rem;color:var(--stone);margin-top:0.25rem;">↕</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);">Demiurge's Cosmos</div>
+                        <div style="font-size:0.7rem;color:var(--stone);margin-top:0.5rem;font-style:italic;">The phenomenal world — illusion and obscuration.</div>
+                    </div>
+                </div>
+                <div class="dist-panel" style="grid-template-columns:1fr 1fr 1fr; margin-top:0;">
+                    <div class="dist-col" style="padding:1.25rem 1.25rem; text-align:center;">
+                        <div style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;">Advaita</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--violet-light);">Avidya</div>
+                        <div style="font-size:0.75rem;color:var(--stone);margin-top:0.25rem;">↕</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);">The Fall</div>
+                        <div style="font-size:0.7rem;color:var(--stone);margin-top:0.5rem;font-style:italic;">Misrecognition — the root of all suffering.</div>
+                    </div>
+                    <div class="dist-col" style="padding:1.25rem 1.25rem; text-align:center;">
+                        <div style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;">Advaita</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--violet-light);">Atman</div>
+                        <div style="font-size:0.75rem;color:var(--stone);margin-top:0.25rem;">↕</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);">Divine Spark (Pneuma)</div>
+                        <div style="font-size:0.7rem;color:var(--stone);margin-top:0.5rem;font-style:italic;">The innermost self — identical with Brahman.</div>
+                    </div>
+                    <div class="dist-col" style="padding:1.25rem 1.25rem; text-align:center;">
+                        <div style="font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.75rem;">Advaita</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--violet-light);">Jñāna</div>
+                        <div style="font-size:0.75rem;color:var(--stone);margin-top:0.25rem;">↕</div>
+                        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);">Gnosis</div>
+                        <div style="font-size:0.7rem;color:var(--stone);margin-top:0.5rem;font-style:italic;">Direct recognition of what already is.</div>
+                    </div>
+                </div>
+
+                <!-- DIAGRAM 2: Venn Diagram — Non-Dual Synthesis -->
+                <div class="diagram-container">
+                    <div class="diagram-title">◈ Non-Dual Synthesis — The Single Unity</div>
+                    <svg class="diagram-svg" viewBox="0 0 780 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Non-Dual Synthesis Venn Diagram">
+                        <defs>
+                            <filter id="venn-glow">
+                                <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="var(--gold)" flood-opacity="0.12"/>
+                            </filter>
+                            <filter id="venn-glow-strong">
+                                <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="var(--gold)" flood-opacity="0.20"/>
+                            </filter>
+                            <radialGradient id="center-grad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.25"/>
+                                <stop offset="70%" stop-color="var(--violet)" stop-opacity="0.12"/>
+                                <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="gnos-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--violet)" stop-opacity="0.20"/>
+                                <stop offset="100%" stop-color="var(--violet)" stop-opacity="0.05"/>
+                            </linearGradient>
+                            <linearGradient id="kab-grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.20"/>
+                                <stop offset="100%" stop-color="var(--gold)" stop-opacity="0.05"/>
+                            </linearGradient>
+                            <linearGradient id="adv-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="var(--copper)" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="var(--copper)" stop-opacity="0.05"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Background -->
+                        <rect x="0" y="0" width="780" height="540" rx="12" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+
+                        <!-- Center glow -->
+                        <circle cx="390" cy="280" r="120" fill="url(#center-grad)" filter="url(#venn-glow-strong)"/>
+
+                        <!-- Circle 1: Gnosticism (left) -->
+                        <circle cx="270" cy="260" r="160" fill="url(#gnos-grad)" stroke="var(--violet)" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+                        <text x="270" y="130" font-family="'Cinzel',serif" font-size="16" fill="var(--violet-light)" text-anchor="middle" letter-spacing="0.2em" font-weight="500">GNOSTICISM</text>
+                        <text x="270" y="158" font-family="'Cormorant Garamond',serif" font-size="11" fill="var(--stone-light)" text-anchor="middle" font-style="italic">The Bridal Chamber</text>
+                        <text x="270" y="178" font-family="'Cormorant Garamond',serif" font-size="11" fill="var(--stone-light)" text-anchor="middle" font-style="italic">Syzygy · Nymphon</text>
+
+                        <!-- Circle 2: Kabbalah (right) -->
+                        <circle cx="510" cy="260" r="160" fill="url(#kab-grad2)" stroke="var(--gold)" stroke-width="2" stroke-dasharray="6,4" opacity="0.7"/>
+                        <text x="510" y="130" font-family="'Cinzel',serif" font-size="16" fill="var(--gold-light)" text-anchor="middle" letter-spacing="0.2em" font-weight="500">KABBALAH</text>
+                        <text x="510" y="158" font-family="'Cormorant Garamond',serif" font-size="11" fill="var(--stone-light)" text-anchor="middle" font-style="italic">Zivug · Tikkun</text>
+                        <text x="510" y="178" font-family="'Cormorant Garamond',serif" font-size="11" fill="var(--stone-light)" text-anchor="middle" font-style="italic">Sefirot · Shekhinah</text>
+
+                        <!-- Circle 3: Advaita (bottom center) -->
+                        <circle cx="390" cy="370" r="140" fill="url(#adv-grad)" stroke="var(--copper-light)" stroke-width="2" stroke-dasharray="6,4" opacity="0.6"/>
+                        <text x="390" y="295" font-family="'Cinzel',serif" font-size="16" fill="var(--copper-light)" text-anchor="middle" letter-spacing="0.2em" font-weight="500">ADVAITA</text>
+                        <text x="390" y="323" font-family="'Cormorant Garamond',serif" font-size="11" fill="var(--stone-light)" text-anchor="middle" font-style="italic">Sahaja Samadhi</text>
+                        <text x="390" y="343" font-family="'Cormorant Garamond',serif" font-size="11" fill="var(--stone-light)" text-anchor="middle" font-style="italic">Nirguna Brahman</text>
+
+                        <!-- Overlap labels -->
+                        <!-- Gnostic–Kabbalah overlap (top center) -->
+                        <text x="390" y="195" font-family="'Cormorant Garamond',serif" font-size="13" fill="var(--gold)" text-anchor="middle" font-weight="400" filter="url(#venn-glow)">The Spark · The Repair</text>
+
+                        <!-- Gnostic–Advaita overlap (bottom left) -->
+                        <text x="310" y="340" font-family="'Cormorant Garamond',serif" font-size="13" fill="var(--violet-light)" text-anchor="middle" font-weight="400" filter="url(#venn-glow)">The Recognition</text>
+
+                        <!-- Kabbalah–Advaita overlap (bottom right) -->
+                        <text x="470" y="340" font-family="'Cormorant Garamond',serif" font-size="13" fill="var(--gold)" text-anchor="middle" font-weight="400" filter="url(#venn-glow)">The Return</text>
+
+                        <!-- CENTER — The Single Unity -->
+                        <text x="390" y="265" font-family="'Cinzel',serif" font-size="17" fill="var(--gold-light)" text-anchor="middle" font-weight="700" letter-spacing="0.1em" filter="url(#venn-glow-strong)">THE SINGLE</text>
+                        <text x="390" y="295" font-family="'Cinzel',serif" font-size="17" fill="var(--gold-light)" text-anchor="middle" font-weight="700" letter-spacing="0.1em" filter="url(#venn-glow-strong)">UNITY</text>
+
+                        <!-- Bottom annotation -->
+                        <text x="390" y="490" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" font-style="italic" opacity="0.8">Three traditions, one structure: the primordial unity, the rupture of separation,</text>
+                        <text x="390" y="510" font-family="'Crimson Pro',serif" font-size="11.5" fill="var(--stone)" text-anchor="middle" font-style="italic" opacity="0.8">the path of recognition, and the restoration of wholeness.</text>
+
+                        <!-- Decorative border -->
+                        <rect x="10" y="10" width="760" height="520" rx="6" fill="none" stroke="var(--border-strong)" stroke-width="0.5" opacity="0.4"/>
+                    </svg>
+                    <div class="diagram-caption">The Gnostic bridal chamber, the Kabbalistic zivug, and the Advaitic sahaja samadhi all point to the same non-dual reality: the recognition that you are already that, and the search is the final obscurity.</div>
+                </div>
+
+                <!-- Scripture Panels for Chapter VIII -->
+                <div class="scripture-panels">
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Chandogya Upanishad · Tat Tvam Asi</div>
+                        <div class="scripture-panel-text">"That which is the finest essence — this whole world has that as its soul. That is Reality. That is the Self. That thou art, O Śvetaketu."</div>
+                        <div class="scripture-panel-ref">— Chandogya Upanishad 6.8.7</div>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-panel-label">Ramana Maharshi · The Final Teaching</div>
+                        <div class="scripture-panel-text">"You are already that. The search is the final obscurity. The self is not something to be attained; it is what is already the case."</div>
+                        <div class="scripture-panel-ref">— Self-Enquiry, Teachings of Ramana Maharshi</div>
+                    </div>
+                </div>
+
+                <div class="resonance-callout">
+                    <p>"The Gnostic bridal chamber, the Kabbalistic zivug, and the Advaitic sahaja samadhi all point to the same truth: you are already that. The search is the final obscurity. The ego is the final veil. The recognition is the single unity."</p>
+                </div>
+
+                <div class="tension-box">
+                    <p><strong>The ultimate teaching:</strong> The Gnostic does not need to ascend to the Pleroma. The Gnostic needs to recognize that the Pleroma is already present, already the case, already what they are. The bridal chamber is not a destination — it is a recognition. The masculine and feminine are not two principles seeking union — they are one principle expressing itself as two in order to know itself. The soul does not enter the bridal chamber; it remembers that it never left it.</p>
+                </div>
+
+                <!-- Timeline — moved here from the original Convergences section -->
+                <h3 style="margin-top:3.5rem;">The Convergence of Traditions</h3>
                 <div class="lin-timeline">
                     <div class="lin-entry">
                         <div class="lin-dot"></div>
@@ -1420,7 +1671,7 @@
                     </div>
                 </div>
 
-                <div class="pull-q">
+                <div class="pull-q" style="margin-top:2.5rem;">
                     <p>"Kabbalah, arriving centuries later, independently converges on strikingly similar structures — the syzygy of Partzufim, the Shekhinah's exile, the zivug of Shabbat. The structure, it seems, is not historical but ontological."</p>
                     <cite>— Research note</cite>
                 </div>
@@ -1437,13 +1688,15 @@
         </div>
     </div>
 
-    <!-- GLOSSARY -->
+    <!-- ============================================================
+         GLOSSARY (IX)
+         ============================================================ -->
     <section class="gloss-section" id="glossary">
         <div class="section-header">
             <div class="section-separator"></div>
             <p class="section-eyemark">Glossary · γλωσσάριον</p>
             <h2>Key Terms</h2>
-            <p>Greek, Coptic, and technical terms used throughout this study of Gnostic syzygy theology.</p>
+            <p>Greek, Hebrew, Sanskrit, and technical terms used throughout this study of Gnostic syzygy theology and its convergences.</p>
         </div>
 
         <div class="gloss-search-wrap">
@@ -1454,6 +1707,7 @@
         <p class="gloss-no-results" id="glossNoResults">No matching terms found.</p>
 
         <div class="gloss-grid" id="glossGrid">
+            <!-- Gnostic terms -->
             <div class="gloss-entry" data-terms="syzygy pair couple yoke conjugal">
                 <div class="gloss-term">Syzygy <span class="gloss-term-grk">συζυγία</span></div>
                 <span class="gloss-cat">Structural Pair</span>
@@ -1514,6 +1768,55 @@
                 <span class="gloss-cat">Emptiness / Deficiency</span>
                 <p class="gloss-def">The opposite of Pleroma. The void or deficiency — the material cosmos as the absence of fullness. What the nymphon ultimately overcomes by filling the kenoma with gnosis and light.</p>
             </div>
+
+            <!-- Kabbalistic terms (NEW) -->
+            <div class="gloss-entry" data-terms="ein sof kabbalah infinite boundless source">
+                <div class="gloss-term">Ein Sof <span class="gloss-term-grk">אין סוף</span></div>
+                <span class="gloss-cat">Kabbalistic · The Infinite</span>
+                <p class="gloss-def">The boundless, infinite divine source in Kabbalah. Corresponds to the Gnostic Unknown Father — beyond all attributes, beyond all names. The absolute ground of being.</p>
+            </div>
+            <div class="gloss-entry" data-terms="zivug kabbalah coupling sacred masculine feminine">
+                <div class="gloss-term">Zivug <span class="gloss-term-grk">זיווג</span></div>
+                <span class="gloss-cat">Kabbalistic · Sacred Coupling</span>
+                <p class="gloss-def">The sacred coupling of divine masculine and feminine principles. The Kabbalistic equivalent of the Gnostic Bridal Chamber. The restoration of the divine syzygy.</p>
+            </div>
+            <div class="gloss-entry" data-terms="tikkun kabbalah repair restoration cosmic order">
+                <div class="gloss-term">Tikkun <span class="gloss-term-grk">תיקון</span></div>
+                <span class="gloss-cat">Kabbalistic · Repair</span>
+                <p class="gloss-def">The repair of the cosmic order, the restoration of the divine harmony. Corresponds to the Gnostic apokatastasis, the restoration of the Pleroma.</p>
+            </div>
+            <div class="gloss-entry" data-terms="shekhinah kabbalah feminine divine presence exile">
+                <div class="gloss-term">Shekhinah <span class="gloss-term-grk">שכינה</span></div>
+                <span class="gloss-cat">Kabbalistic · Divine Presence</span>
+                <p class="gloss-def">The feminine divine presence in Kabbalah. Her exile from her partner (Ze'ir Anpin) is the Kabbalistic equivalent of Sophia's fall. The Sabbath is the day of their reunion.</p>
+            </div>
+
+            <!-- Advaita terms (NEW) -->
+            <div class="gloss-entry" data-terms="advaita non-dual vedanta shankara ramana">
+                <div class="gloss-term">Advaita <span class="gloss-term-grk">अद्वैत</span></div>
+                <span class="gloss-cat">Non-Dual Vedanta</span>
+                <p class="gloss-def">The non-dual philosophy of Shankara and Ramana Maharshi. The ultimate teaching: 'You are already that.' The Gnostic bridal chamber as non-dual recognition.</p>
+            </div>
+            <div class="gloss-entry" data-terms="sahaja samadhi advaita natural state non-dual awareness">
+                <div class="gloss-term">Sahaja Samadhi <span class="gloss-term-grk">सहज समाधि</span></div>
+                <span class="gloss-cat">Advaita · Natural State</span>
+                <p class="gloss-def">The natural, effortless state of non-dual awareness. The Advaitic equivalent of the Gnostic Bridal Chamber — the dissolution of the ego, the beginning of the single unity.</p>
+            </div>
+            <div class="gloss-entry" data-terms="nirguna brahman advaita absolute quality-less">
+                <div class="gloss-term">Nirguna Brahman <span class="gloss-term-grk">निर्गुण ब्रह्मन्</span></div>
+                <span class="gloss-cat">Advaita · The Absolute</span>
+                <p class="gloss-def">The absolute, quality-less Brahman. Corresponds to the Gnostic Unknown Father — beyond all names, forms, and attributes. The ultimate ground of being.</p>
+            </div>
+            <div class="gloss-entry" data-terms="tat tvam asi advaita upanishad that thou art">
+                <div class="gloss-term">Tat Tvam Asi <span class="gloss-term-grk">तत् त्वम् असि</span></div>
+                <span class="gloss-cat">Advaita · The Great Saying</span>
+                <p class="gloss-def">"That thou art" — the mahavakya from the Chandogya Upanishad. The recognition that the individual self (Atman) is identical with the absolute (Brahman). The Advaitic equivalent of Gnostic recognition.</p>
+            </div>
+            <div class="gloss-entry" data-terms="avidya advaita ignorance misrecognition fall">
+                <div class="gloss-term">Avidya <span class="gloss-term-grk">अविद्या</span></div>
+                <span class="gloss-cat">Advaita · Ignorance</span>
+                <p class="gloss-def">The fundamental misrecognition that gives rise to the phenomenal world. The Advaitic equivalent of the Gnostic fall — not a historical event but a perpetual obscuration.</p>
+            </div>
         </div>
     </section>
 
@@ -1526,22 +1829,22 @@
         </div>
     </div>
 
-   <!-- ═══════════════════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════════════════
     CHAPTER NAVIGATION
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">&#8962; Home</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-unknown-father.html" class="chapter-link">I &middot; The Unknown Father</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-the_demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
-  <span class="chapter-sep">&#9775;</span>
-  <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV &middot; The Bridal Chamber</a>
-  <span class="chapter-sep">&rarr;</span>
-  <a href="gnosticism-syzygy-nymphon.html" class="chapter-link active">V &middot; Syzygy Theology</a>
-</div>
+        <a href="../index.html" class="chapter-link">&#8962; Home</a>
+        <span class="chapter-sep">&#9775;</span>
+        <a href="gnosticism-unknown-father.html" class="chapter-link">I &middot; The Unknown Father</a>
+        <span class="chapter-sep">&#9775;</span>
+        <a href="gnosticism-the_demiurge.html" class="chapter-link">II &middot; The Demiurge</a>
+        <span class="chapter-sep">&#9775;</span>
+        <a href="gnosticism-the_divine_spark.html" class="chapter-link">III &middot; The Divine Spark</a>
+        <span class="chapter-sep">&#9775;</span>
+        <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV &middot; The Bridal Chamber</a>
+        <span class="chapter-sep">&rarr;</span>
+        <a href="gnosticism-syzygy-nymphon.html" class="chapter-link active">V &middot; Syzygy Theology</a>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
@@ -1550,17 +1853,17 @@
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-            <div class="footer-links">
-      <a href="../index.html">⌂ Vedantic Mappings</a>
-      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="gnosticism-unknown-father.html">Gnosticism</a>
-      <a href="../taoism/taoism-threshold.html">Taoism</a>
-      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-    </div>
-        <div class="footer-credit">Researched and composed - .</div>
-        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Vedantic Mappings</a>
+            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed.</div>
+        <div class="footer-copyright">Last updated: 20 June 2026 · Nine cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
@@ -1648,6 +1951,7 @@
             const clearBtn = document.getElementById('glossClear');
             const glossItems = document.querySelectorAll('#glossGrid .gloss-entry');
             const noResults = document.getElementById('glossNoResults');
+
             function norm(s) {
                 return s.toLowerCase()
                     .replace(/[āàáâ]/g, 'a').replace(/[ēèéê]/g, 'e').replace(/[īìíî]/g, 'i')
@@ -1689,7 +1993,16 @@
             });
             revealElements.forEach(el => revealObserver.observe(el));
 
-            /* SMOOTH NAV LINK HIGHLIGHT — improved */
+            /* Section separators */
+            const separators = document.querySelectorAll('.section-separator');
+            const sepObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.2 });
+            separators.forEach(sep => sepObserver.observe(sep));
+
+            /* SMOOTH NAV LINK HIGHLIGHT */
             const navLinks = document.querySelectorAll('.toc-book-item, .nav-item');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {

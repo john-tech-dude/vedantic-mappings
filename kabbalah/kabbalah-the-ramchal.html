@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Zivug HaNeshamot — The Lurianic Doctrine of the Primordial Split, the Five Levels of Soul, and the Sacred Union of the Partzufim." />
-    <title>Zivug HaNeshamot · Lurianic Kabbalah</title>
+    <meta name="description" content="The Ramchal — Moshe Chaim Luzzatto. The Systematizer of Kabbalah. The bridge between Lurianic complexity and logical theology. Author of Derech Hashem and Mesillat Yesharim." />
+    <title>Kabbalah · The Ramchal — Moshe Chaim Luzzatto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <style>
         /* ═══════════════════════════════════════════════════════
-           TOKENS — Dark Kabbalistic Theme
+           TOKENS — Dark Kabbalistic Theme (Systematic Architecture)
            ═══════════════════════════════════════════════════════ */
         :root {
             --bg: #0a0c14;
@@ -42,6 +42,9 @@
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
             --grain-opacity: 0.03;
+            --diagram-bg: var(--surface);
+            --diagram-stroke: var(--gold);
+            --text-body: var(--stone);
         }
         [data-theme="light"] {
             --bg: #f0f2f8;
@@ -65,6 +68,9 @@
             --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.12);
             --shadow-gold: 0 0 40px rgba(138, 112, 48, 0.12);
             --grain-opacity: 0.015;
+            --diagram-bg: #ffffff;
+            --diagram-stroke: #5a6a9a;
+            --text-body: #3a4058;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -171,9 +177,9 @@
             0%,100% { transform: translateY(0); }
             50% { transform: translateY(-6px); }
         }
-        @keyframes zivugPulse {
-            0%, 100% { r: 6; opacity: 0.6; filter: drop-shadow(0 0 4px var(--gold-glow)); }
-            50% { r: 9; opacity: 0.95; filter: drop-shadow(0 0 20px var(--sun-glow)); }
+        @keyframes architectPulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -292,8 +298,13 @@
             box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-        .theme-toggle:hover { transform: scale(1.12); border-color: var(--gold); }
-        .theme-toggle:active { transform: scale(0.95); }
+        .theme-toggle:hover {
+            transform: scale(1.12);
+            border-color: var(--gold);
+        }
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
         .theme-toggle-icon {
             position: absolute;
             transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
@@ -406,7 +417,11 @@
             animation: fadeInUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
             opacity: 0;
         }
-        .hero-emblem svg { width: 100%; height: auto; display: block; }
+        .hero-emblem svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
         .hero-title {
             font-family: 'Cinzel', serif;
@@ -549,7 +564,11 @@
         /* ═══════════════════════════════════════════════════════
            EDITORIAL LAYOUT
            ═══════════════════════════════════════════════════════ */
-        .wrap { max-width: 760px; margin: 0 auto; padding: 0 36px; }
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 36px;
+        }
         .heb {
             font-family: 'Frank Ruhl Libre', 'Times New Roman', serif;
             direction: rtl;
@@ -612,7 +631,6 @@
             background: linear-gradient(to right, var(--gold), transparent);
             opacity: 0.2;
         }
-
         .section-separator {
             width: 48px;
             height: 1px;
@@ -1145,6 +1163,34 @@
             z-index: 1;
         }
 
+        .diagram-section {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .diagram-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 60%);
+            pointer-events: none;
+            animation: breathe 12s ease-in-out infinite;
+        }
+        .diagram-section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
         /* ═══════════════════════════════════════════════════════
            HOTSPOT TOOLTIP
            ═══════════════════════════════════════════════════════ */
@@ -1421,9 +1467,7 @@
             .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
         }
         @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after { animation: none !important; transition: none !important; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
             .fade-in { opacity: 1 !important; transform: none !important; }
             .diagram-container { animation: none !important; }
             .hero-emblem { animation: none !important; opacity: 1 !important; }
@@ -1446,12 +1490,11 @@
             <div class="nav-section-title">This Article</div>
             <a href="#hero" class="nav-item active" data-section="hero">Overview</a>
             <a href="#toc" class="nav-item" data-section="toc">Contents</a>
-            <a href="#primordial" class="nav-item" data-section="primordial">The Primordial Whole <span class="nav-heb">אדם הראשון</span></a>
-            <a href="#separation" class="nav-item" data-section="separation">The Separation <span class="nav-heb">פירוד</span></a>
-            <a href="#exile" class="nav-item" data-section="exile">The Condition of Exile <span class="nav-heb">גלות</span></a>
-            <a href="#reunion" class="nav-item" data-section="reunion">The Path of Reunion <span class="nav-heb">זיווג</span></a>
-            <a href="#cosmic" class="nav-item" data-section="cosmic">The Cosmic Stakes <span class="nav-heb">תיקון עולם</span></a>
-            <a href="#sources" class="nav-item" data-section="sources">Sources &amp; Transmission <span class="nav-heb">מקורות</span></a>
+            <a href="#systematizer" class="nav-item" data-section="systematizer">The Systematizer <span class="nav-heb">הרמח"ל</span></a>
+            <a href="#architecture" class="nav-item" data-section="architecture">The Architecture of God <span class="nav-heb">דרך ה'</span></a>
+            <a href="#mechanics" class="nav-item" data-section="mechanics">The Mechanics of Tikkun <span class="nav-heb">תיקון</span></a>
+            <a href="#ethics" class="nav-item" data-section="ethics">Ethical Kabbalah <span class="nav-heb">מסילת ישרים</span></a>
+            <a href="#legacy" class="nav-item" data-section="legacy">Legacy <span class="nav-heb">מורשת</span></a>
             <a href="#glossary" class="nav-item" data-section="glossary">Glossary of Terms</a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Kabbalah Series</div>
@@ -1460,8 +1503,9 @@
             <a href="kabbalah-luria.html" class="nav-item">III · Isaac Luria</a>
             <a href="kabbalah-baal-shem-tov.html" class="nav-item">IV · The Baal Shem Tov</a>
             <a href="kabbalah-mystical-union.html" class="nav-item">V · Mystical Union</a>
-            <a href="kabbalah_zivug_haneshamot.html" class="nav-item active">VI · Zivug HaNeshamot</a>
+            <a href="kabbalah_zivug_haneshamot.html" class="nav-item">VI · Zivug HaNeshamot</a>
             <a href="kabbalah_shaar_hagilgulim.html" class="nav-item">VII · Sha'ar HaGilgulim</a>
+            <a href="kabbalah-ramchal.html" class="nav-item active">VIII · The Ramchal</a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Vedantic Mappings</div>
             <a href="../index.html" class="nav-item">⌂ Home</a>
@@ -1489,130 +1533,107 @@
             <div class="hero-ripple"></div>
         </div>
 
-        <p class="hero-eyemark">Lurianic Kabbalah · קבלה לוריאנית · Zivug HaNeshamot</p>
+        <p class="hero-eyemark">The Ramchal · הרמח"ל · The Systematizer of Kabbalah</p>
 
-        <!-- EMBLEM: The Primordial Split -->
+        <!-- EMBLEM: The Architectural Tree -->
         <div class="hero-emblem" role="img" aria-labelledby="emblemTitle">
-            <title id="emblemTitle">Zivug HaNeshamot — The Union of Souls</title>
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+            <title id="emblemTitle">The Ramchal — The Systematic Tree of Life</title>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <filter id="hGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="8" result="blur"/>
+                    <filter id="archGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="6" result="blur"/>
                         <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                     </filter>
-                    <filter id="hGlowStrong" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="12" result="blur"/>
-                        <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <radialGradient id="hLight" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#e0c878" stop-opacity="0.45"/>
-                        <stop offset="50%" stop-color="#c4a855" stop-opacity="0.2"/>
-                        <stop offset="100%" stop-color="#c4a855" stop-opacity="0"/>
-                    </radialGradient>
-                    <linearGradient id="hArcL" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#7a8aba" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="#c4a855" stop-opacity="0.6"/>
-                    </linearGradient>
-                    <linearGradient id="hArcR" x1="100%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#7a8aba" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="#c4a855" stop-opacity="0.6"/>
+                    <linearGradient id="archGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e0c878"/>
+                        <stop offset="50%" stop-color="#c4a855"/>
+                        <stop offset="100%" stop-color="#a08840"/>
                     </linearGradient>
                 </defs>
-                <!-- Outer ring -->
-                <circle cx="100" cy="100" r="88" fill="none" stroke="#5a6a9a" stroke-width="0.5" opacity="0.25">
-                    <animate attributeName="r" values="88;90;88" dur="8s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.25;0.35;0.25" dur="6s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="100" cy="100" r="82" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.15" stroke-dasharray="4,4">
-                    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="60s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Left half-soul -->
-                <g>
-                    <animateTransform attributeName="transform" type="translate" values="0,0; -2,0; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
-                    <circle cx="76" cy="100" r="46" fill="none" stroke="url(#hArcL)" stroke-width="1.2" opacity="0.85">
-                        <animate attributeName="r" values="46;48;46" dur="5s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.85;0.95;0.85" dur="4s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="76" cy="100" r="38" fill="none" stroke="#7a8aba" stroke-width="0.6" opacity="0.5">
-                        <animate attributeName="r" values="38;40;38" dur="5.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="76" cy="100" r="30" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3">
-                        <animateTransform attributeName="transform" type="rotate" from="0 76 100" to="-360 76 100" dur="40s" repeatCount="indefinite"/>
-                    </circle>
+                <!-- Blueprint Grid -->
+                <g stroke="#5a6a9a" stroke-width="0.3" opacity="0.15">
+                    <line x1="10" y1="10" x2="190" y2="10"/>
+                    <line x1="10" y1="30" x2="190" y2="30"/>
+                    <line x1="10" y1="50" x2="190" y2="50"/>
+                    <line x1="10" y1="70" x2="190" y2="70"/>
+                    <line x1="10" y1="90" x2="190" y2="90"/>
+                    <line x1="10" y1="110" x2="190" y2="110"/>
+                    <line x1="10" y1="130" x2="190" y2="130"/>
+                    <line x1="10" y1="150" x2="190" y2="150"/>
+                    <line x1="10" y1="170" x2="190" y2="170"/>
+                    <line x1="10" y1="190" x2="190" y2="190"/>
+                    <line x1="10" y1="10" x2="10" y2="190"/>
+                    <line x1="30" y1="10" x2="30" y2="190"/>
+                    <line x1="50" y1="10" x2="50" y2="190"/>
+                    <line x1="70" y1="10" x2="70" y2="190"/>
+                    <line x1="90" y1="10" x2="90" y2="190"/>
+                    <line x1="110" y1="10" x2="110" y2="190"/>
+                    <line x1="130" y1="10" x2="130" y2="190"/>
+                    <line x1="150" y1="10" x2="150" y2="190"/>
+                    <line x1="170" y1="10" x2="170" y2="190"/>
+                    <line x1="190" y1="10" x2="190" y2="190"/>
                 </g>
 
-                <!-- Right half-soul -->
-                <g>
-                    <animateTransform attributeName="transform" type="translate" values="0,0; 2,0; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
-                    <circle cx="124" cy="100" r="46" fill="none" stroke="url(#hArcR)" stroke-width="1.2" opacity="0.85">
-                        <animate attributeName="r" values="46;48;46" dur="5s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="0.85;0.95;0.85" dur="4s" repeatCount="indefinite" begin="1s"/>
-                    </circle>
-                    <circle cx="124" cy="100" r="38" fill="none" stroke="#7a8aba" stroke-width="0.6" opacity="0.5">
-                        <animate attributeName="r" values="38;40;38" dur="5.5s" repeatCount="indefinite" begin="0.5s"/>
-                    </circle>
-                    <circle cx="124" cy="100" r="30" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.3" stroke-dasharray="3,3">
-                        <animateTransform attributeName="transform" type="rotate" from="0 124 100" to="360 124 100" dur="40s" repeatCount="indefinite"/>
-                    </circle>
+                <!-- Structured Tree Nodes -->
+                <g fill="none" stroke="url(#archGold)" stroke-width="1.2" opacity="0.8">
+                    <!-- Keter -->
+                    <circle cx="100" cy="20" r="12"/>
+                    <!-- Chokhmah & Binah -->
+                    <circle cx="60" cy="60" r="10"/>
+                    <circle cx="140" cy="60" r="10"/>
+                    <!-- Da'at -->
+                    <circle cx="100" cy="60" r="10" stroke-dasharray="2,2"/>
+                    <!-- Chesed & Gevurah -->
+                    <circle cx="50" cy="100" r="10"/>
+                    <circle cx="150" cy="100" r="10"/>
+                    <!-- Tiferet -->
+                    <circle cx="100" cy="100" r="14"/>
+                    <!-- Netzach & Hod -->
+                    <circle cx="60" cy="140" r="10"/>
+                    <circle cx="140" cy="140" r="10"/>
+                    <!-- Yesod -->
+                    <circle cx="100" cy="140" r="10"/>
+                    <!-- Malkhut -->
+                    <circle cx="100" cy="180" r="12"/>
                 </g>
 
-                <!-- Central union glow -->
-                <circle cx="100" cy="100" r="28" fill="url(#hLight)" filter="url(#hGlow)" opacity="0.9">
-                    <animate attributeName="r" values="28;32;28" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="100" cy="100" r="18" fill="none" stroke="#e0c878" stroke-width="1.2" opacity="0.8" filter="url(#hGlow)">
-                    <animate attributeName="r" values="18;20;18" dur="3.5s" repeatCount="indefinite"/>
-                    <animate attributeName="stroke-width" values="1.2;1.8;1.2" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="100" cy="100" r="10" fill="#e0c878" opacity="0.25" filter="url(#hGlowStrong)">
-                    <animate attributeName="r" values="10;13;10" dur="3s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.25;0.45;0.25" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="100" cy="100" r="6" fill="#e0c878" opacity="0.6" filter="url(#hGlow)">
-                    <animate attributeName="r" values="6;8;6" dur="2.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="100" cy="100" r="2.5" fill="#e8ecf4" opacity="0.9" filter="url(#hGlow)">
-                    <animate attributeName="r" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Connecting threads -->
-                <g stroke="#c4a855" stroke-width="0.4" opacity="0.3" stroke-dasharray="3,4">
-                    <path d="M 76 54 Q 100 60 124 54">
-                        <animate attributeName="stroke-dashoffset" values="0;14;0" dur="8s" repeatCount="indefinite"/>
-                    </path>
-                    <path d="M 76 146 Q 100 140 124 146">
-                        <animate attributeName="stroke-dashoffset" values="0;14;0" dur="8s" repeatCount="indefinite" begin="2s"/>
-                    </path>
-                    <path d="M 54 76 Q 60 100 54 124">
-                        <animate attributeName="stroke-dashoffset" values="0;14;0" dur="8s" repeatCount="indefinite" begin="4s"/>
-                    </path>
-                    <path d="M 146 76 Q 140 100 146 124">
-                        <animate attributeName="stroke-dashoffset" values="0;14;0" dur="8s" repeatCount="indefinite" begin="6s"/>
-                    </path>
+                <!-- Connecting Lines (Logical Flow) -->
+                <g stroke="url(#archGold)" stroke-width="0.8" opacity="0.5">
+                    <line x1="100" y1="32" x2="100" y2="50"/>
+                    <line x1="100" y1="70" x2="100" y2="86"/>
+                    <line x1="100" y1="114" x2="100" y2="130"/>
+                    <line x1="100" y1="150" x2="100" y2="168"/>
+                    <line x1="60" y1="70" x2="60" y2="90"/>
+                    <line x1="140" y1="70" x2="140" y2="90"/>
+                    <line x1="60" y1="110" x2="60" y2="130"/>
+                    <line x1="140" y1="110" x2="140" y2="130"/>
+                    <line x1="50" y1="110" x2="60" y2="130"/>
+                    <line x1="150" y1="110" x2="140" y2="130"/>
+                    <line x1="100" y1="50" x2="60" y2="60"/>
+                    <line x1="100" y1="50" x2="140" y2="60"/>
+                    <line x1="60" y1="90" x2="50" y2="100"/>
+                    <line x1="140" y1="90" x2="150" y2="100"/>
+                    <line x1="50" y1="100" x2="100" y2="114"/>
+                    <line x1="150" y1="100" x2="100" y2="114"/>
                 </g>
 
-                <!-- Text -->
-                <text x="55" y="172" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.2em" opacity="0.85" font-weight="500">
-                    <animate attributeName="opacity" values="0.85;1;0.85" dur="4s" repeatCount="indefinite" begin="1s"/>
-                    HALF
-                </text>
-                <text x="145" y="172" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="7" letter-spacing="0.15em" opacity="0.85" font-weight="500">
-                    <animate attributeName="opacity" values="0.85;1;0.85" dur="4s" repeatCount="indefinite" begin="2s"/>
-                    HALF
-                </text>
-                <text x="100" y="106" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="7" letter-spacing="0.25em" opacity="0.95" font-weight="600">
-                    <animate attributeName="opacity" values="0.95;1;0.95" dur="3s" repeatCount="indefinite"/>
-                    <animate attributeName="fill" values="#e0c878;#c4a855;#e0c878" dur="4s" repeatCount="indefinite"/>
-                    ONE
-                </text>
+                <!-- Center Diamond / Logic Core -->
+                <g transform="translate(100, 100)" fill="var(--gold-light)" opacity="0.3">
+                    <polygon points="0,-15 15,0 0,15 -15,0" />
+                </g>
+
+                <!-- Corner Coordinates -->
+                <g fill="#5a6a9a" font-family="'Cinzel', serif" font-size="6" opacity="0.4">
+                    <text x="15" y="15">X</text>
+                    <text x="180" y="15">Y</text>
+                    <text x="15" y="185">Z</text>
+                    <text x="180" y="185">∞</text>
+                </g>
             </svg>
         </div>
 
-        <h1 class="hero-title">Zivug HaNeshamot</h1>
-        <p class="hero-subtitle">The Union of Souls — The Lurianic Doctrine of the Primordial Split</p>
+        <h1 class="hero-title">The Ramchal</h1>
+        <p class="hero-subtitle">Moshe Chaim Luzzatto · The Architecture of God</p>
 
         <div class="hero-divider" aria-hidden="true">
             <div class="hero-divider-line"></div>
@@ -1620,10 +1641,10 @@
             <div class="hero-divider-line"></div>
         </div>
 
-        <p class="hero-heb-display" aria-label="Hebrew: The Union of Souls">זִיוּג הַנְּשָׁמוֹת</p>
+        <p class="hero-heb-display" aria-label="Hebrew: Moshe Chaim Luzzatto">משה חיים לוצאטו</p>
 
-        <p class="hero-quote">"Each soul is male and female as one. Only as they descend to this world do they part, each to its own side."</p>
-        <p class="hero-attr">— Zohar I, 85b</p>
+        <p class="hero-quote">"The purpose of creation is to bestow good upon the created being."</p>
+        <p class="hero-attr">— Derech Hashem · The Way of God</p>
 
         <div class="hero-scroll-cue" id="heroScroll" role="button" tabindex="0" aria-label="Scroll to content">
             <span aria-hidden="true">Enter</span>
@@ -1637,8 +1658,8 @@
     <div class="pq-section" id="intro">
         <div class="pq-glow" aria-hidden="true"></div>
         <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">"Each soul is male and female as one. Only as they descend to this world do they part, each to its own side."</p>
-        <p class="pq-attr">— Zohar I, 85b</p>
+        <p class="pq-text">"The knowledge of the principles of existence is the gateway to the comprehension of the divine plan."</p>
+        <p class="pq-attr">— Moshe Chaim Luzzatto · Introduction to Derech Hashem</p>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
@@ -1647,67 +1668,64 @@
     <section class="toc-section" id="toc">
         <div class="section-separator"></div>
         <div class="ed-section-label">Contents · תוכן העניינים</div>
-        <h2 class="ed-h2">The Mystery of the Soul's Counterpart</h2>
-        <p class="ed-intro">A verified account of the Lurianic doctrine of zivug haneshamot — the primordial split, the five levels of soul, and the sacred union that repairs the cosmos.</p>
+        <h2 class="ed-h2">The Architecture of the Divine</h2>
+        <p class="ed-intro">A verified account of Moshe Chaim Luzzatto's systematic Kabbalah — the teleological architecture of creation, the mechanics of Tikkun, and the path of the just.</p>
         <nav class="toc-book" aria-label="Article contents">
-            <a href="#primordial" class="toc-item"><span class="toc-b-num">I</span><span class="toc-b-title">The Primordial Whole — The Androgynous Soul</span><span class="toc-b-heb">אדם הראשון</span></a>
-            <a href="#separation" class="toc-item"><span class="toc-b-num">II</span><span class="toc-b-title">The Separation — The Division of the Soul</span><span class="toc-b-heb">פירוד</span></a>
-            <a href="#exile" class="toc-item"><span class="toc-b-num">III</span><span class="toc-b-title">The Condition of Exile — Ontological Incompleteness</span><span class="toc-b-heb">גלות</span></a>
-            <a href="#reunion" class="toc-item"><span class="toc-b-num">IV</span><span class="toc-b-title">The Path of Reunion — Zivug and Yichud</span><span class="toc-b-heb">זיווג</span></a>
-            <a href="#cosmic" class="toc-item"><span class="toc-b-num">V</span><span class="toc-b-title">The Cosmic Stakes — Tikkun Olam</span><span class="toc-b-heb">תיקון עולם</span></a>
-            <a href="#sources" class="toc-item"><span class="toc-b-num">VI</span><span class="toc-b-title">Sources &amp; Transmission</span><span class="toc-b-heb">מקורות</span></a>
-            <a href="#glossary" class="toc-item"><span class="toc-b-num">VII</span><span class="toc-b-title">Glossary of Terms</span><span class="toc-b-heb">מונחים</span></a>
+            <a href="#systematizer" class="toc-item"><span class="toc-b-num">I</span><span class="toc-b-title">The Systematizer — The Newton of Kabbalah</span><span class="toc-b-heb">הרמח"ל</span></a>
+            <a href="#architecture" class="toc-item"><span class="toc-b-num">II</span><span class="toc-b-title">The Architecture of God — Derech Hashem</span><span class="toc-b-heb">דרך ה'</span></a>
+            <a href="#mechanics" class="toc-item"><span class="toc-b-num">III</span><span class="toc-b-title">The Mechanics of Tikkun — The Science of Cause and Effect</span><span class="toc-b-heb">תיקון</span></a>
+            <a href="#ethics" class="toc-item"><span class="toc-b-num">IV</span><span class="toc-b-title">Ethical Kabbalah — Mesillat Yesharim</span><span class="toc-b-heb">מסילת ישרים</span></a>
+            <a href="#legacy" class="toc-item"><span class="toc-b-num">V</span><span class="toc-b-title">Legacy — The Path of the Just</span><span class="toc-b-heb">מורשת</span></a>
+            <a href="#glossary" class="toc-item"><span class="toc-b-num">VI</span><span class="toc-b-title">Glossary of Terms</span><span class="toc-b-heb">מונחים</span></a>
         </nav>
     </section>
 
     <div class="stages-wrap">
 
         <!-- ═══════════════════════════════════════════════════════
-        CHAPTER I — THE PRIMORDIAL WHOLE
+        CHAPTER I — THE SYSTEMATIZER
         ═══════════════════════════════════════════════════════ -->
-        <section class="stage-section" id="primordial">
-            <div class="stage-wm" aria-hidden="true">אדם</div>
+        <section class="stage-section" id="systematizer">
+            <div class="stage-wm" aria-hidden="true">הרמח"ל</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter I</span>
-                    <span class="stage-heb-eye">אָדָם הָרִאשׁוֹן</span>
+                    <span class="stage-heb-eye">הָרַמְחַ"ל</span>
                 </div>
-                <h2 class="stage-h2">The Primordial Whole</h2>
-                <span class="stage-subtitle">The androgynous soul — before descent, every soul is one</span>
+                <h2 class="stage-h2">The Systematizer</h2>
+                <span class="stage-subtitle">Moshe Chaim Luzzatto — the Newton of Jewish Mysticism</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>Before descent, every human soul exists as a single, androgynous unit containing both masculine and feminine aspects. This is the condition of the <span class="hotspot">soul of Adam HaRishon<span class="hotspot-tooltip"><strong>Adam HaRishon</strong> The primordial human soul — the archetypal soul from which all particular souls derive. According to the Talmud (Berachot 61a, Eruvin 18a), Adam was originally created as an androgynous being (du-partzufin) and only later separated.</span></span> — the primordial human soul, the archetype from which all particular souls derive. Adam Kadmon (אָדָם קַדְמוֹן), by contrast, is the first divine configuration after Tzimtzum, corresponding to the sefirah of Keter, from which the worlds of creation emanate. As the Zohar states: "Each soul is male and female as one. Only as they descend to this world do they part, each to its own side."</p>
+                <p><strong>Moshe Chaim Luzzatto</strong> (1707–1746), known as the <em>Ramchal</em>, stands as the ultimate systematizer of Kabbalah. Born in Padua, Italy, he was a child prodigy whose intellect synthesized the entire scope of Jewish learning—Talmud, Halakhah, philosophy, and the esoteric doctrines of the Zohar and the Ari. His work represents a turning point in Jewish mysticism, transforming the chaotic, fragmented, and often contradictory notes of the Lurianic school into a coherent, logical, and architectonic system.</p>
 
-                <p>The Ari taught through Chaim Vital that the person to whom Torah speaks is neither man nor woman in essence, but both combined. This is how Adam was first created; this is how we are in our root. Two half-bodies that are truly one. The minds are two, but the bodies, the souls, and the very core of these two people are one and the same.</p>
+                <p>He is often called the <strong>"Newton of Kabbalah"</strong> for his ability to reduce complex mystical phenomena to precise, mathematical principles. Where Luria gave the world a cosmic drama, the Ramchal gave it a cosmic blueprint. His magnum opus, <em>Derech Hashem</em> (The Way of God), is not a collection of mystical homilies but a rigorous theological treatise—a systematic theology of Kabbalah that begins with the nature of the divine will and ends with the mechanics of providence and human destiny.</p>
 
-                <p>This is not a metaphor for psychological complementarity but a statement of ontological fact. The soul before incarnation is a single integrated whole. Its division into masculine and feminine is a consequence of descent, not a feature of its original design. The soul's journey through the worlds is thus a journey back to this primordial unity — not through erasure of difference, but through the rectification of what was broken.</p>
+                <p>The Ramchal's life was marked by profound controversy. His early kabbalistic writings, including mystical revelations and claims to prophetic insight, drew fierce opposition from the rabbinic establishment in Italy and later in Amsterdam. He was forced to burn some of his manuscripts and swear to limit his kabbalistic teaching. Yet he continued to write, producing works of stunning clarity and depth. His most famous ethical work, <em>Mesillat Yesharim</em> (The Path of the Just), is a masterpiece of moral literature—a ladder of spiritual ascent that bridges the mystical and the ethical.</p>
 
                 <div class="pull-q fade-in">
-                    <p>"Each soul is male and female as one. Only as they descend to this world do they part, each to its own side."</p>
-                    <cite>— Zohar I, 85b</cite>
+                    <p>"The divine plan is built upon the principle of justice, which requires that the reward for the righteous and the punishment for the wicked be proportional. The structure of the world is designed to facilitate this precise calibration."</p>
+                    <cite>— Derech Hashem, Section 1 · The Principle of Justice</cite>
                 </div>
 
                 <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
-                        <div class="scripture-heb">זֹהַר</div>
-                        <div class="scripture-label">Zohar I, 85b</div>
-                        <p class="scripture-text">"Each soul is male and female as one. Only as they descend to this world do they part, each to its own side."</p>
-                        <p class="scripture-ref">— The Book of Radiance</p>
+                        <div class="scripture-heb">דֶּרֶךְ ה'</div>
+                        <div class="scripture-label">Derech Hashem · Introduction</div>
+                        <p class="scripture-text">"The foundations of the divine service lie in the comprehension of the principles of existence, for they are the gateway to the knowledge of the Creator and His plan."</p>
+                        <p class="scripture-ref">— Moshe Chaim Luzzatto</p>
                     </div>
                     <div class="scripture-panel">
-                        <div class="scripture-heb">תַּלְמוּד</div>
-                        <div class="scripture-label">Berachot 61a · Eruvin 18a</div>
-                        <p class="scripture-text">"Adam was created with two faces (du-partzufin), and God sawed him in two, making a back for each."</p>
-                        <p class="scripture-ref">— The Talmud</p>
+                        <div class="scripture-heb">מְסִילַּת יְשָׁרִים</div>
+                        <div class="scripture-label">Mesillat Yesharim · Introduction</div>
+                        <p class="scripture-text">"The discipline of the soul is the foundation of all divine service. Without it, even the highest mystical attainments are without value."</p>
+                        <p class="scripture-ref">— Moshe Chaim Luzzatto</p>
                     </div>
                 </div>
 
-                <p>The Talmud teaches that a <span class="hotspot">bat kol<span class="hotspot-tooltip"><strong>Bat Kol</strong> Heavenly voice — the divine proclamation that announces the match forty days before conception.</span></span> proclaims the match forty days before conception (<em>Sotah</em> 2a). The Kabbalistic tradition, amplified by the Ari, locates this proclamation in the <em>upper Garden of Eden</em>, where the souls are shown to one another before their descent. This is the source of the "memory" that calls to each half across the exile of generations — the soul remembers what was shown to it above, and this memory manifests as the ache of incompleteness below.</p>
-
                 <div class="ed-note fade-in">
                     <span class="ni">◆</span>
-                    <p><strong>A note on terminology.</strong> In this article, "soul" refers to the <em>neshamah</em> level of the five-part soul structure (nefesh, ruach, neshamah, chayah, yechidah). The zivug operates at the level of the root soul, not through a layered pairing of each level. The five levels are aspects of individual soul consciousness, not paired structures.</p>
+                    <p><strong>The Newton of Kabbalah.</strong> The Ramchal's genius was in organizing the complex, often chaotic kabbalistic traditions into a coherent system. He approached the mystical teachings of the Zohar and the Ari with the rigorous logic of a philosopher, reducing their intuitive insights to clear, reproducible principles.</p>
                 </div>
             </div>
         </section>
@@ -1715,242 +1733,121 @@
         <hr class="stage-sep"/>
 
         <!-- ═══════════════════════════════════════════════════════
-        CHAPTER II — THE SEPARATION
+        CHAPTER II — THE ARCHITECTURE OF GOD
         ═══════════════════════════════════════════════════════ -->
-        <section class="stage-section" id="separation">
-            <div class="stage-wm" aria-hidden="true">פירוד</div>
+        <section class="stage-section" id="architecture">
+            <div class="stage-wm" aria-hidden="true">דרך</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter II</span>
-                    <span class="stage-heb-eye">פֵּירוּד</span>
+                    <span class="stage-heb-eye">דֶּרֶךְ ה'</span>
                 </div>
-                <h2 class="stage-h2">The Separation</h2>
-                <span class="stage-subtitle">The division of the soul — how the unified soul fractures before descent</span>
+                <h2 class="stage-h2">The Architecture of God</h2>
+                <span class="stage-subtitle">Derech Hashem — The teleological structure of creation</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>As the soul descends through the worlds toward incarnation, the unified soul-structure splits into two halves. One half enters a male body; the other, a female body. This division occurs in the upper worlds as part of the soul's preparation for embodiment, reflecting the cosmic separation of the masculine and feminine principles that was structured after the repair (<em>tikkun</em>) of the shattered vessels.</p>
+                <p>In <em>Derech Hashem</em>, the Ramchal constructs a teleological architecture of creation. He begins with a simple, powerful premise: <strong>God's fundamental purpose in creation is to bestow good upon the created being.</strong> This is not an arbitrary act but a necessity of the divine nature—the nature of the Good is to give.</p>
 
-                <p>This separation is not merely geographical or temporal. It is structural. The soul was designed to function as a unified whole, and its division into two creates a fundamental incompleteness that no other arrangement can remedy. Physical intimacy with souls that are not one's true counterpart does not repair the rupture — it temporarily masks it, but the root remains unrectified.</p>
+                <p>From this premise, the Ramchal derives the entire structure of existence. If God's purpose is to give good, then there must be beings capable of receiving that good. These beings must be intelligent, free, and capable of moral choice, because the highest good is the good that is earned and appreciated. This leads to the necessity of <strong>divine concealment</strong> and <strong>trial</strong>: if God's presence were overwhelmingly apparent, choice would be impossible. The world must be structured in such a way that the divine is hidden, allowing humans to seek it out and earn their reward.</p>
 
-                <p>The Ari taught that <span class="hotspot">gilgul<span class="hotspot-tooltip"><strong>Gilgul</strong> Reincarnation — the transmigration of souls through multiple lifetimes to complete the work of tikkun.</span></span> (reincarnation) often occurs precisely because a soul half has not yet found or properly united with its counterpart. The soul returns until the <span class="hotspot">tikkun<span class="hotspot-tooltip"><strong>Tikkun</strong> Repair — the process of restoring the broken vessels by raising the fallen sparks. The purpose of every zivug and every incarnation.</span></span> is complete.</p>
+                <p>The Ramchal's description of the emanation of the worlds is not a poetic myth but a logical sequence. The Infinite Will (<em>Ratzon HaElyon</em>) contracts to allow the existence of the finite (Tzimtzum). This creates a chain of reality—the Four Worlds (Atzilut, Beriah, Yetzirah, Assiah)—each representing a different degree of divine revelation and concealment. The human soul, descending through these worlds, is thus a microcosm of the entire creative process, tasked with the responsibility of choosing the good and participating in the divine plan.</p>
 
-                <!-- THE SPLIT DIAGRAM -->
-                <div class="diagram-container" style="max-width: 640px;">
-                    <svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" aria-label="The Separation of the Soul">
+                <!-- DIAGRAM: THE CHAIN OF PURPOSE -->
+                <div class="diagram-container" style="max-width: 600px;">
+                    <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-label="The Chain of Purpose — Teleological Structure">
                         <defs>
-                            <linearGradient id="sGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#e0c878"/>
-                                <stop offset="100%" stop-color="#a08840"/>
-                            </linearGradient>
-                            <radialGradient id="sGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#e0c878" stop-opacity="0.5"/>
-                                <stop offset="100%" stop-color="#c4a855" stop-opacity="0"/>
-                            </radialGradient>
-                            <filter id="sBlur">
-                                <feGaussianBlur stdDeviation="5" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <filter id="sBlurStrong">
-                                <feGaussianBlur stdDeviation="8" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                            <marker id="sArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-                                <path d="M0,0 L0,6 L9,3 z" fill="#c4a855" opacity="0.7"/>
-                            </marker>
-                        </defs>
-
-                        <!-- Primordial whole -->
-                        <circle cx="320" cy="80" r="48" fill="url(#sGlow)" stroke="#e0c878" stroke-width="2.5" filter="url(#sBlur)" opacity="0.95"/>
-                        <circle cx="320" cy="80" r="36" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.5"/>
-                        <text x="320" y="84" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="12" letter-spacing="0.15em" font-weight="700">ONE</text>
-                        <text x="320" y="100" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="9" font-style="italic">Primordial Soul</text>
-                        <text x="320" y="112" text-anchor="middle" fill="#6a7a9a" font-family="Crimson Pro" font-size="7" font-style="italic" opacity="0.6">Adam HaRishon</text>
-
-                        <!-- Connecting bridge (separation) -->
-                        <rect x="285" y="132" width="70" height="20" rx="4" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="0.8" opacity="0.8"/>
-                        <text x="320" y="146" text-anchor="middle" fill="#7a8aba" font-family="Cinzel" font-size="8" letter-spacing="0.1em" font-weight="500">SEPARATION</text>
-
-                        <!-- Split arrows -->
-                        <line x1="300" y1="152" x2="170" y2="208" stroke="#c4a855" stroke-width="1.5" marker-end="url(#sArrow)" opacity="0.7"/>
-                        <line x1="340" y1="152" x2="470" y2="208" stroke="#c4a855" stroke-width="1.5" marker-end="url(#sArrow)" opacity="0.7"/>
-
-                        <!-- Left half (masculine) -->
-                        <circle cx="170" cy="240" r="42" fill="var(--surface)" stroke="#e0c878" stroke-width="2" opacity="0.95" filter="url(#sBlur)"/>
-                        <circle cx="170" cy="240" r="30" fill="none" stroke="#c4a855" stroke-width="0.6" opacity="0.4"/>
-                        <text x="170" y="238" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="11" letter-spacing="0.1em" font-weight="600">MASCULINE</text>
-                        <text x="170" y="254" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic">Half-Soul</text>
-
-                        <!-- Right half (feminine) -->
-                        <circle cx="470" cy="240" r="42" fill="var(--surface)" stroke="#e0c878" stroke-width="2" opacity="0.95" filter="url(#sBlur)"/>
-                        <circle cx="470" cy="240" r="30" fill="none" stroke="#c4a855" stroke-width="0.6" opacity="0.4"/>
-                        <text x="470" y="238" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="11" letter-spacing="0.1em" font-weight="600">FEMININE</text>
-                        <text x="470" y="254" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic">Half-Soul</text>
-
-                        <!-- Root connection -->
-                        <line x1="170" y1="282" x2="170" y2="340" stroke="#5a6a9a" stroke-width="0.6" stroke-dasharray="3,4" opacity="0.4"/>
-                        <line x1="470" y1="282" x2="470" y2="340" stroke="#5a6a9a" stroke-width="0.6" stroke-dasharray="3,4" opacity="0.4"/>
-                        <path d="M 170 340 Q 320 360 470 340" fill="none" stroke="#5a6a9a" stroke-width="0.6" stroke-dasharray="3,4" opacity="0.3"/>
-                        <text x="320" y="360" text-anchor="middle" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic" opacity="0.5">One Root (Shoresh)</text>
-
-                        <!-- Corner ornaments -->
-                        <g stroke="#c4a855" stroke-width="0.6" opacity="0.25" fill="none">
-                            <path d="M15,15 L25,15 L25,25"/>
-                            <path d="M625,15 L615,15 L615,25"/>
-                            <path d="M15,365 L25,365 L25,355"/>
-                            <path d="M625,365 L615,365 L615,355"/>
-                        </g>
-                    </svg>
-                    <div class="diagram-caption">The unified soul of Adam HaRishon splits into masculine and feminine halves during descent</div>
-                    <div class="diagram-subcaption">Each half enters a separate body while remaining one root</div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="stage-sep"/>
-
-        <!-- ═══════════════════════════════════════════════════════
-        CHAPTER III — THE CONDITION OF EXILE
-        ═══════════════════════════════════════════════════════ -->
-        <section class="stage-section" id="exile">
-            <div class="stage-wm" aria-hidden="true">גלות</div>
-            <div class="stage-header">
-                <div class="stage-eyeline">
-                    <span class="stage-n">Chapter III</span>
-                    <span class="stage-heb-eye">גָּלוּת</span>
-                </div>
-                <h2 class="stage-h2">The Condition of Exile</h2>
-                <span class="stage-subtitle">Ontological incompleteness — longing as memory</span>
-                <span class="stage-rule"></span>
-            </div>
-            <div class="stage-body">
-                <p>Separated from its counterpart, each half experiences a fundamental incompleteness. This is not merely romantic longing; it is ontological. The soul cannot fully accomplish its <span class="hotspot">tikkun<span class="hotspot-tooltip"><strong>Tikkun</strong> Repair — the process of restoring the broken vessels by raising the fallen sparks. The purpose of every zivug and every incarnation.</span></span> (rectification) in isolation because its original design was unified.</p>
-
-                <p>The condition of exile, in Lurianic terms, is the state of being separated from one's other half. Every other relationship — however meaningful, however tender — operates within the framework of this exile. It may provide comfort, companionship, even love. But it cannot provide the structural completion that only the original counterpart can offer.</p>
-
-                <p>As the Zohar and Hasidic sources describe, the moment of meeting one's <span class="hotspot">bashert<span class="hotspot-tooltip"><strong>Bashert</strong> Predestined counterpart — the soul-mate appointed for each soul from before creation.</span></span> is <em>re'uta d'liba</em> — the desire or vision of the heart. It is not merely romantic chemistry but the soul's capacity to recognize its own root in the other. This recognition is the spark of recollection.</p>
-
-                <div class="ed-note fade-in">
-                    <span class="ni">◆</span>
-                    <p><strong>Longing as memory.</strong> The longing you feel is not pathology. It is memory — the memory of a unity that existed before time, that was shattered in the descent, and that calls you back through every relationship, every prayer, every breath. The work is not to suppress this longing but to purify it — to transform the ache of separation into the engine of return.</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="stage-sep"/>
-
-        <!-- ═══════════════════════════════════════════════════════
-        CHAPTER IV — THE PATH OF REUNION
-        ═══════════════════════════════════════════════════════ -->
-        <section class="stage-section" id="reunion">
-            <div class="stage-wm" aria-hidden="true">זיווג</div>
-            <div class="stage-header">
-                <div class="stage-eyeline">
-                    <span class="stage-n">Chapter IV</span>
-                    <span class="stage-heb-eye">זִיוּג וְיִחוּד</span>
-                </div>
-                <h2 class="stage-h2">The Path of Reunion</h2>
-                <span class="stage-subtitle">Zivug and Yichud — restoration through sacred union</span>
-                <span class="stage-rule"></span>
-            </div>
-            <div class="stage-body">
-                <p>Reunion occurs through <span class="hotspot">Zivug<span class="hotspot-tooltip"><strong>Zivug</strong> Sacred coupling — the union of masculine and feminine aspects within the divine structure, mirrored in human marriage.</span></span> (sacred coupling) and <span class="hotspot">Yichud<span class="hotspot-tooltip"><strong>Yichud</strong> Unification — the mystical act of uniting the divine aspects through intention and action.</span></span> (unification). When the two halves meet in sacred marriage with proper <span class="hotspot">kavanah<span class="hotspot-tooltip"><strong>Kavanah</strong> Intention — the directed consciousness that aligns human action with the cosmic repair.</span></span> (intention directed toward divine unification), they do not merely comfort each other — they restore a fragment of the shattered cosmos. Their union mirrors and activates the union of the divine <span class="hotspot">Partzufim<span class="hotspot-tooltip"><strong>Partzufim</strong> Divine countenances — the dynamic configurations of the sefirot that interact through zivugim.</span></span> (Abba and Imma, Zeir Anpin and Nukvah).</p>
-
-                <p>The Ari taught that every zivug above creates souls below. The coupling of Zeir Anpin and Nukvah generates human souls; the coupling of Abba and Imma produces angelic intelligences. Nothing in creation exists that does not originate in some higher union. Yet the doctrine is bidirectional: the lower <em>zivug</em> of the human couple <em>draws down</em> the souls created by the upper <em>zivug</em>.</p>
-
-                <p>The Lurianic tradition, following the Talmud (Sotah 2a), distinguishes between the <span class="hotspot">zivug rishon<span class="hotspot-tooltip"><strong>Zivug Rishon</strong> First union — the predestined match decreed by mazal before birth; in the Arizal's framework, the first incarnation of a soul-pair together.</span></span> (first/predestined match) and the <span class="hotspot">zivug sheni<span class="hotspot-tooltip"><strong>Zivug Sheni</strong> Second union — in the Talmudic framework, a secondary match determined by one's deeds when one does not merit the primary counterpart. In the Arizal's framework, the same soul-pair reuniting in a second gilgul.</span></span> (second match). In the Talmudic framework, the zivug rishon is decreed by mazal before birth, while the zivug sheni is determined by one's deeds — a secondary match received when one does not merit the primary predestined counterpart. The Arizal adds a further dimension: zivug sheni also refers to the <strong>same soul-pair reuniting in a second gilgul</strong> (incarnation). This is not a replacement but a return — the same two souls, meeting again to complete what was unfinished.</p>
-
-                <p>The Arizal teaches that "many second pairings are better than first ones," for the obstacles that resist the reunion become part of the rectification itself. The first union flows from the root of creation; the second emerges through the dynamics of deed and return. Yet both are genuine paths of tikkun, and no soul is abandoned to eternal incompleteness.</p>
-
-                <!-- PATH OF REUNION DIAGRAM -->
-                <div class="diagram-container" style="max-width: 640px;">
-                    <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" aria-label="The Path of Reunion">
-                        <defs>
-                            <linearGradient id="rGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#e0c878"/>
-                                <stop offset="100%" stop-color="#a08840"/>
-                            </linearGradient>
-                            <filter id="rBlur">
+                            <filter id="cpGlow" x="-30%" y="-30%" width="160%" height="160%">
                                 <feGaussianBlur stdDeviation="4" result="blur"/>
                                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
-                            <filter id="rBlurStrong">
-                                <feGaussianBlur stdDeviation="6" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
+                            <linearGradient id="cpGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#e0c878"/>
+                                <stop offset="100%" stop-color="#a08840"/>
+                            </linearGradient>
                         </defs>
 
-                        <!-- Left half-soul -->
-                        <circle cx="140" cy="210" r="42" fill="var(--surface)" stroke="#e0c878" stroke-width="2" opacity="0.95" filter="url(#rBlur)"/>
-                        <circle cx="140" cy="210" r="30" fill="none" stroke="#c4a855" stroke-width="0.6" opacity="0.4"/>
-                        <text x="140" y="208" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="0.1em" font-weight="600">MASCULINE</text>
-                        <text x="140" y="224" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic">Half-Soul</text>
+                        <rect x="20" y="20" width="560" height="380" rx="16" fill="var(--surface)" opacity="0.3"/>
+                        <circle cx="300" cy="210" r="170" fill="var(--surface2)" opacity="0.3"/>
 
-                        <!-- Right half-soul -->
-                        <circle cx="500" cy="210" r="42" fill="var(--surface)" stroke="#e0c878" stroke-width="2" opacity="0.95" filter="url(#rBlur)"/>
-                        <circle cx="500" cy="210" r="30" fill="none" stroke="#c4a855" stroke-width="0.6" opacity="0.4"/>
-                        <text x="500" y="208" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="10" letter-spacing="0.1em" font-weight="600">FEMININE</text>
-                        <text x="500" y="224" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic">Half-Soul</text>
+                        <!-- Top: Ein Sof / Ratzon -->
+                        <g transform="translate(300,60)">
+                            <circle r="24" fill="none" stroke="var(--gold)" stroke-width="2" filter="url(#cpGlow)"/>
+                            <circle r="16" fill="none" stroke="var(--gold-light)" stroke-width="0.5" opacity="0.6"/>
+                            <text y="4" text-anchor="middle" font-family="'Cinzel', serif" font-size="9" fill="var(--gold)" letter-spacing="0.15em">EIN SOF</text>
+                            <text y="18" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="var(--stone)" font-style="italic">Ratzon HaElyon</text>
+                        </g>
 
-                        <!-- Preparation path -->
-                        <path d="M 140 252 Q 140 315 210 335 Q 320 355 430 335 Q 500 315 500 252" fill="none" stroke="#5a6a9a" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.6"/>
-                        <text x="320" y="355" text-anchor="middle" fill="#6a7a9a" font-family="Crimson Pro" font-size="8" font-style="italic" opacity="0.7">The Path of Preparation</text>
+                        <!-- Arrow Down -->
+                        <line x1="300" y1="84" x2="300" y2="100" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+                        <polygon points="300,105 296,96 304,96" fill="var(--gold)" opacity="0.6"/>
 
-                        <!-- Steps along the path -->
-                        <rect x="190" y="295" width="100" height="26" rx="6" fill="var(--surface2)" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.85"/>
-                        <text x="240" y="312" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic" font-weight="500">Torah Study</text>
+                        <!-- Tzimtzum -->
+                        <g transform="translate(300,120)">
+                            <rect x="-60" y="-15" width="120" height="30" rx="6" fill="var(--surface)" stroke="var(--gold)" stroke-width="0.8" opacity="0.8"/>
+                            <text y="6" text-anchor="middle" font-family="'Cinzel', serif" font-size="9" fill="var(--gold)" letter-spacing="0.15em">TZIMTZUM</text>
+                        </g>
 
-                        <rect x="270" y="325" width="100" height="26" rx="6" fill="var(--surface2)" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.85"/>
-                        <text x="320" y="342" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic" font-weight="500">Teshuvah</text>
+                        <!-- Arrow Down -->
+                        <line x1="300" y1="135" x2="300" y2="150" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+                        <polygon points="300,155 296,146 304,146" fill="var(--gold)" opacity="0.6"/>
 
-                        <rect x="350" y="295" width="100" height="26" rx="6" fill="var(--surface2)" stroke="var(--border-strong)" stroke-width="0.8" opacity="0.85"/>
-                        <text x="400" y="312" text-anchor="middle" fill="#8a9ab8" font-family="Crimson Pro" font-size="8" font-style="italic" font-weight="500">Tefillah</text>
+                        <!-- Worlds (Column) -->
+                        <g transform="translate(300,180)" stroke="var(--gold)" stroke-width="0.5" opacity="0.7">
+                            <!-- Atzilut -->
+                            <circle cx="0" cy="0" r="20" fill="var(--surface)" stroke="var(--gold-light)" stroke-width="1.5"/>
+                            <text y="4" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="var(--ink)" letter-spacing="0.1em">ATZILUT</text>
 
-                        <!-- Central reunion -->
-                        <circle cx="320" cy="210" r="26" fill="var(--surface)" stroke="#e0c878" stroke-width="2.5" filter="url(#rBlurStrong)" opacity="0.95"/>
-                        <circle cx="320" cy="210" r="18" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.5"/>
-                        <text x="320" y="215" text-anchor="middle" fill="#e0c878" font-family="Cinzel" font-size="11" letter-spacing="0.1em" font-weight="700">ZIVUG</text>
+                            <!-- Beriah -->
+                            <circle cx="0" cy="40" r="18" fill="var(--surface)" stroke="var(--gold-light)" stroke-width="1.2"/>
+                            <text y="44" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="var(--ink)" letter-spacing="0.1em">BERIAH</text>
 
-                        <!-- Union lines -->
-                        <line x1="182" y1="210" x2="294" y2="210" stroke="#e0c878" stroke-width="2.5" filter="url(#rBlur)" opacity="0.9"/>
-                        <line x1="346" y1="210" x2="458" y2="210" stroke="#e0c878" stroke-width="2.5" filter="url(#rBlur)" opacity="0.9"/>
+                            <!-- Yetzirah -->
+                            <circle cx="0" cy="75" r="16" fill="var(--surface)" stroke="var(--gold-light)" stroke-width="1"/>
+                            <text y="79" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="var(--ink)" letter-spacing="0.1em">YETZIRAH</text>
 
-                        <!-- Light rising upward -->
-                        <line x1="320" y1="184" x2="320" y2="100" stroke="#c4a855" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
-                        <polygon points="320,95 316,103 324,103" fill="#c4a855" opacity="0.8"/>
-                        <text x="320" y="90" text-anchor="middle" fill="#c4a855" font-family="Cinzel" font-size="9" letter-spacing="0.15em" font-weight="600">TIKKUN</text>
+                            <!-- Assiah -->
+                            <circle cx="0" cy="110" r="18" fill="var(--surface)" stroke="var(--gold-light)" stroke-width="1.2"/>
+                            <text y="114" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="var(--ink)" letter-spacing="0.1em">ASSIAH</text>
+                        </g>
 
-                        <!-- Upper glow -->
-                        <circle cx="320" cy="70" r="32" fill="none" stroke="#e0c878" stroke-width="1" opacity="0.3"/>
-                        <text x="320" y="62" text-anchor="middle" fill="#7a8aba" font-family="Crimson Pro" font-size="8" font-style="italic" opacity="0.7">Cosmic Repair</text>
+                        <!-- Connecting lines for worlds -->
+                        <g stroke="var(--gold)" stroke-width="0.6" opacity="0.4">
+                            <line x1="300" y1="180" x2="300" y2="200"/>
+                            <line x1="300" y1="220" x2="300" y2="240"/>
+                            <line x1="300" y1="260" x2="300" y2="280"/>
+                            <line x1="300" y1="300" x2="300" y2="320"/>
+                        </g>
 
-                        <!-- Corner ornaments -->
-                        <g stroke="#c4a855" stroke-width="0.6" opacity="0.25" fill="none">
+                        <!-- Side Labels for Purpose -->
+                        <g fill="var(--stone-light)" font-family="'Crimson Pro', serif" font-size="9" font-style="italic">
+                            <text x="380" y="184">Divine Revelation</text>
+                            <text x="380" y="224">Intellect</text>
+                            <text x="380" y="264">Emotion</text>
+                            <text x="380" y="314">Action / Matter</text>
+                        </g>
+
+                        <!-- Bottom: Purpose -->
+                        <g transform="translate(300,355)">
+                            <rect x="-120" y="-15" width="240" height="30" rx="6" fill="var(--surface2)" stroke="var(--gold)" stroke-width="0.8" opacity="0.9"/>
+                            <text y="6" text-anchor="middle" font-family="'Cinzel', serif" font-size="9" fill="var(--gold-light)" letter-spacing="0.15em">PURPOSE: TO BESTOW GOOD</text>
+                        </g>
+
+                        <!-- Legend / Corner marks -->
+                        <g stroke="var(--gold)" stroke-width="0.6" opacity="0.25" fill="none">
                             <path d="M15,15 L25,15 L25,25"/>
-                            <path d="M625,15 L615,15 L615,25"/>
+                            <path d="M585,15 L575,15 L575,25"/>
                             <path d="M15,405 L25,405 L25,395"/>
-                            <path d="M625,405 L615,405 L615,395"/>
+                            <path d="M585,405 L575,405 L575,395"/>
                         </g>
                     </svg>
-                    <div class="diagram-caption">The path of reunion — through Torah, teshuvah, and tefillah</div>
-                    <div class="diagram-subcaption">The separated halves return to the central zivug, generating tikkun and cosmic repair</div>
+                    <div class="diagram-caption">The Chain of Purpose — Teleological Structure</div>
+                    <div class="diagram-subcaption">From the Infinite Will through Tzimtzum and the Four Worlds to the ultimate purpose: the bestowal of good</div>
                 </div>
 
-                <p>During sacred union, the <em>Zohar</em> teaches that the couple should be "asleep" to the physical world — meaning, their consciousness is elevated — and the <span class="hotspot">Shekhinah<span class="hotspot-tooltip"><strong>Shekhinah</strong> The divine presence — the immanent aspect of God that dwells among Israel and rests upon the sacred couple during zivug.</span></span> rests between them. The <em>Zohar</em> (I:49b, III:81a) teaches that when a man and woman are united in holiness, the Shekhinah dwells with them. This mystery is amplified on Shabbat, when the Partzufim are already in a state of <em>yichud</em>.</p>
-
-                <div class="scripture-panels fade-in">
-                    <div class="scripture-panel">
-                        <div class="scripture-heb">זֹהַר</div>
-                        <div class="scripture-label">Zohar, Parashat Bereshit</div>
-                        <p class="scripture-text">"Everything depends upon the union of the Holy One, blessed be He, and His Shekhinah. When they are joined, blessing rests upon all."</p>
-                        <p class="scripture-ref">— The Book of Radiance</p>
-                    </div>
-                    <div class="scripture-panel">
-                        <div class="scripture-heb">שַׁעַר הַכַּוָּנוֹת</div>
-                        <div class="scripture-label">Sha'ar HaKavvanot</div>
-                        <p class="scripture-text">"Through the study of Torah and the performance of mitzvot, the soul ascends and achieves its proper zivug."</p>
-                        <p class="scripture-ref">— Chaim Vital, recording Luria's oral teachings</p>
-                    </div>
+                <div class="pull-q fade-in">
+                    <p>"The primary purpose of the creation of the world is that the divine perfection should be made manifest and that the good inherent in it should be bestowed upon others."</p>
+                    <cite>— Derech Hashem, Section 1, Chapter 1</cite>
                 </div>
             </div>
         </section>
@@ -1958,67 +1855,262 @@
         <hr class="stage-sep"/>
 
         <!-- ═══════════════════════════════════════════════════════
-        CHAPTER V — THE COSMIC STAKES
+        CHAPTER III — THE MECHANICS OF TIKKUN
         ═══════════════════════════════════════════════════════ -->
-        <section class="stage-section" id="cosmic">
+        <section class="stage-section" id="mechanics">
             <div class="stage-wm" aria-hidden="true">תיקון</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter V</span>
-                    <span class="stage-heb-eye">תִּקּוּן עוֹלָם</span>
+                    <span class="stage-n">Chapter III</span>
+                    <span class="stage-heb-eye">מֶכָנִיקָה</span>
                 </div>
-                <h2 class="stage-h2">The Cosmic Stakes</h2>
-                <span class="stage-subtitle">Tikkun Olam — restoration of the shattered cosmos</span>
+                <h2 class="stage-h2">The Mechanics of Tikkun</h2>
+                <span class="stage-subtitle">The Science of Cause and Effect — Formalizing the Ari</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>The rectification is <span class="hotspot">Tikkun Olam<span class="hotspot-tooltip"><strong>Tikkun Olam</strong> Repair of the world — the cosmic restoration of the shattered vessels, to which every soul's reunion contributes.</span></span> — the cosmic repair of the broken vessels. The soul's reunion with its counterpart is not a private satisfaction but a cosmic event. Each restored union elevates divine sparks from the <span class="hotspot">Qelipot<span class="hotspot-tooltip"><strong>Qelipot</strong> Shells, husks — the forces of impurity that hold the fallen sparks captive until they are raised through sacred union.</span></span>, returning them to their source and contributing to the healing of the entire structure of creation.</p>
+                <p>The Ramchal's most enduring contribution to Jewish mysticism is his rigorous formalization of the Lurianic system. Luria's teachings, while profound, were often recorded as cryptic notes, visionary experiences, and fragmented aphorisms. The Ramchal approached these with the mind of a logician, extracting the underlying principles and presenting them as a coherent, cause-and-effect science.</p>
 
-                <p>As the Baal Shem Tov emphasized, the essence of union is <span class="hotspot">devekut<span class="hotspot-tooltip"><strong>Devekut</strong> Cleaving to God — mystical attachment through love, which is the essence of union.</span></span> — cleaving to the divine through love. The channels of <span class="hotspot">shefa<span class="hotspot-tooltip"><strong>Shefa</strong> Divine influx — the flow of abundance that sustains creation, opened through joy and tranquility.</span></span> only open when the practitioner cultivates <span class="hotspot">simchah<span class="hotspot-tooltip"><strong>Simchah</strong> Joy — the essential condition for all holy unions. Sadness blocks the reception of supernal light.</span></span> (joy) and <span class="hotspot">menuchat ha-nefesh<span class="hotspot-tooltip"><strong>Menuchat Ha-Nefesh</strong> Tranquility of soul — the peaceful, stable state of consciousness required for the channels of shefa to open.</span></span> (tranquility of soul).</p>
+                <p>For the Ramchal, <span class="hotspot">Tzimtzum<span class="hotspot-tooltip"><strong>Tzimtzum</strong> Divine contraction. For the Ramchal, this is a calculated necessity—a logical precondition for the existence of finite, independent beings.</span></span> is not a rupture or a catastrophe, as it sometimes appears in Luria, but a <strong>calculated necessity</strong>. It is the logical precondition for the existence of finite beings. Without Tzimtzum, only the Infinite exists. It is the "negative space" that allows the "positive form" of creation to emerge.</p>
 
-                <p>The cosmic stakes could not be higher. Each soul's journey is not merely its own but participates in the repair of the entire creation. The shattering of the vessels scattered sparks throughout the universe; each reunion of a soul with its counterpart gathers one more fragment of that shattered light and returns it to its source. The redemption of the world depends upon the accumulation of these individual acts of restoration.</p>
+                <p>He further formalized the concept of the <span class="hotspot">Partzufim<span class="hotspot-tooltip"><strong>Partzufim</strong> Divine Personas or Configurations. For the Ramchal, these are the dynamic vessels through which the divine energy is channeled systematically.</span></span> (Divine Personas). Where Luria saw shattered vessels and dramatic tikkunim, the Ramchal saw a meticulously engineered system of channels. The Partzufim are not just divine faces; they are the <strong>dynamic vessels</strong> through which the divine energy is channeled systematically from the infinite to the finite, from the cause to the effect. Kabbalah, in his hands, becomes a precise science—a way of understanding the exact mechanisms by which divine providence operates in the world.</p>
 
-                <div class="pull-q fade-in">
-                    <p>"As they set out from their place above, each soul is male and female as one. Only as they descend to this world do they part, each to its own side. And then it is the One Above who unites them again."</p>
-                    <cite>— Zohar I, 85b</cite>
+                <!-- DIAGRAM: THE MECHANICS OF TIKKUN -->
+                <div class="diagram-container" style="max-width: 600px;">
+                    <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-label="The Mechanics of Tikkun — Cause and Effect">
+                        <defs>
+                            <filter id="mtGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <linearGradient id="mtGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#e0c878"/>
+                                <stop offset="100%" stop-color="#a08840"/>
+                            </linearGradient>
+                        </defs>
+
+                        <rect x="20" y="20" width="560" height="380" rx="16" fill="var(--surface)" opacity="0.3"/>
+
+                        <!-- Central Axes -->
+                        <g stroke="var(--gold)" stroke-width="0.5" opacity="0.15">
+                            <line x1="300" y1="50" x2="300" y2="370"/>
+                            <line x1="150" y1="210" x2="450" y2="210"/>
+                            <circle cx="300" cy="210" r="120" fill="none"/>
+                        </g>
+
+                        <!-- Cause (Left) -->
+                        <g transform="translate(150,210)">
+                            <rect x="-70" y="-35" width="140" height="70" rx="10" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.5" filter="url(#mtGlow)"/>
+                            <text y="-2" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="var(--gold-light)" letter-spacing="0.15em">CAUSE</text>
+                            <text y="14" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="var(--stone)" font-style="italic">Ratzon HaElyon</text>
+                        </g>
+
+                        <!-- Arrow Right -->
+                        <line x1="230" y1="210" x2="260" y2="210" stroke="var(--gold)" stroke-width="2" opacity="0.6"/>
+                        <polygon points="265,210 258,205 258,215" fill="var(--gold)" opacity="0.8"/>
+
+                        <!-- Center: The System (Partzufim) -->
+                        <g transform="translate(300,210)" stroke="var(--gold)" stroke-width="0.8" opacity="0.8" fill="none">
+                            <!-- Interlocking circles representing Partzufim -->
+                            <circle cx="-20" cy="-15" r="25" stroke-width="1.2"/>
+                            <circle cx="20" cy="-15" r="25" stroke-width="1.2"/>
+                            <circle cx="0" cy="15" r="30" stroke-width="1.5"/>
+                            <text x="0" y="21" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="var(--gold)" letter-spacing="0.1em">Z&A</text>
+                            <text x="-20" y="-10" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="var(--gold)" opacity="0.8">ABBA</text>
+                            <text x="20" y="-10" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="var(--gold)" opacity="0.8">IMMA</text>
+                        </g>
+
+                        <!-- Arrow Right -->
+                        <line x1="340" y1="210" x2="370" y2="210" stroke="var(--gold)" stroke-width="2" opacity="0.6"/>
+                        <polygon points="375,210 368,205 368,215" fill="var(--gold)" opacity="0.8"/>
+
+                        <!-- Effect (Right) -->
+                        <g transform="translate(450,210)">
+                            <rect x="-70" y="-35" width="140" height="70" rx="10" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.5" filter="url(#mtGlow)"/>
+                            <text y="-2" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="var(--gold-light)" letter-spacing="0.15em">EFFECT</text>
+                            <text y="14" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="var(--stone)" font-style="italic">Shefa · Tikkun</text>
+                        </g>
+
+                        <!-- Bottom: Formula -->
+                        <g transform="translate(300,360)">
+                            <rect x="-160" y="-15" width="320" height="30" rx="6" fill="var(--surface2)" stroke="var(--gold)" stroke-width="0.6"/>
+                            <text y="6" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="var(--gold-light)" font-style="italic">Cause → Partzufim → Effect</text>
+                        </g>
+
+                        <!-- Corner marks -->
+                        <g stroke="var(--gold)" stroke-width="0.6" opacity="0.25" fill="none">
+                            <path d="M15,15 L25,15 L25,25"/>
+                            <path d="M585,15 L575,15 L575,25"/>
+                            <path d="M15,405 L25,405 L25,395"/>
+                            <path d="M585,405 L575,405 L575,395"/>
+                        </g>
+                    </svg>
+                    <div class="diagram-caption">The Mechanics of Tikkun — Cause and Effect</div>
+                    <div class="diagram-subcaption">The divine will (Cause) flows through the dynamic Partzufim (System) to produce Shefa and Tikkun (Effect)</div>
                 </div>
 
-                <p>The <em>Zohar</em> warns against improper union, which can channel holy energy into the wrong vessels. The primary framework for understanding <em>zivug</em> is not a binary of pure versus impure, but a continuum of tikkun. A <em>zivug sheni</em> (in the Talmudic sense of a secondary match) is not improper — it is a legitimate, if different, divine arrangement. The soul's task is to prepare for whatever form of reunion the Holy One provides.</p>
+                <div class="ed-note fade-in">
+                    <span class="ni">◆</span>
+                    <p><strong>Kabbalah as Science.</strong> For the Ramchal, Kabbalah is not a collection of mystical intuitions but a precise science. He sought to formulate the "laws" of the spiritual universe, showing how cause and effect operate across the chain of creation.</p>
+                </div>
             </div>
         </section>
 
         <hr class="stage-sep"/>
 
         <!-- ═══════════════════════════════════════════════════════
-        CHAPTER VI — SOURCES & TRANSMISSION
+        CHAPTER IV — ETHICAL KABBALAH
         ═══════════════════════════════════════════════════════ -->
-        <section class="stage-section" id="sources">
-            <div class="stage-wm" aria-hidden="true">מקורות</div>
+        <section class="stage-section" id="ethics">
+            <div class="stage-wm" aria-hidden="true">מסילה</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter VI</span>
-                    <span class="stage-heb-eye">מְקוֹרוֹת</span>
+                    <span class="stage-n">Chapter IV</span>
+                    <span class="stage-heb-eye">מְסִילַּת יְשָׁרִים</span>
                 </div>
-                <h2 class="stage-h2">Sources &amp; Transmission</h2>
-                <span class="stage-subtitle">From Luria to Vital and beyond — the oral tradition</span>
+                <h2 class="stage-h2">Ethical Kabbalah</h2>
+                <span class="stage-subtitle">Mesillat Yesharim — The Ladder of Moral Perfection</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>Rabbi Isaac Luria wrote almost nothing himself. The systematic teachings attributed to him — including <span class="hotspot">Etz Chaim<span class="hotspot-tooltip"><strong>Etz Chaim</strong> Tree of Life — Chaim Vital's compendium of Luria's oral teachings on the structure of creation.</span></span>, <span class="hotspot">Sha'ar HaKavanot<span class="hotspot-tooltip"><strong>Sha'ar HaKavanot</strong> Gate of Intentions — Vital's compilation of Luria's teachings on the kavvanot of prayer.</span></span>, and <span class="hotspot">Sha'ar HaGilgulim<span class="hotspot-tooltip"><strong>Sha'ar HaGilgulim</strong> Gate of Reincarnations — Vital's compilation of Luria's teachings on the transmigration of souls.</span></span> — are compilations by his primary disciple, Rabbi Chaim Vital (1543–1620), who recorded Luria's oral teachings during their brief period together in Safed (c. 1570–1572). The doctrine of soul-mates (<span class="hotspot">zivug haneshamot<span class="hotspot-tooltip"><strong>Zivug HaNeshamot</strong> Union of souls — the Lurianic doctrine of the primordial split and the reunion of soul-mates.</span></span>) achieves its most systematic formulation in <em>Sha'ar HaGilgulim</em>, though its roots extend through the Zohar and earlier Kabbalistic sources.</p>
+                <p>If <em>Derech Hashem</em> is the theoretical physics of the Ramchal's system, <em>Mesillat Yesharim</em> (The Path of the Just) is the applied ethics. It is a profound psychological and moral treatise that maps the path of human perfection. Written in the clear, elegant style of the Mussar tradition, it details a ladder of fourteen steps, each building on the last, leading from basic self-awareness to the heights of prophetic holiness.</p>
 
-                <p>The concept of <span class="hotspot">bashert<span class="hotspot-tooltip"><strong>Bashert</strong> Predestined counterpart — the soul-mate appointed for each soul from before creation.</span></span> (predestined counterpart) predates Luria and appears in the Talmud and Zohar. The Talmud (<em>Sotah</em> 2a) records: "Forty days before the formation of the embryo, a bat kol goes forth and proclaims: The daughter of so-and-so for so-and-so." The Zohar (I:85b, II:55a) develops the doctrine of the primordial androgynous soul, later systematized by the Arizal through Chaim Vital in <em>Sha'ar HaGilgulim</em> and <em>Etz Chaim</em>.</p>
+                <p>The ladder includes: <strong>Watchfulness</strong> (Zehiret), <strong>Zeal</strong> (Zerizut), <strong>Cleanliness</strong> (Nekiyut), <strong>Separation</strong> (Perishut), <strong>Purity</strong> (Taharah), <strong>Piety</strong> (Chasidut), <strong>Humility</strong> (Anavah), <strong>Fear of Sin</strong> (Yirat Chet), and culminating in <strong>Holiness</strong> (Kedushah). The Ramchal emphasizes that these steps are not just psychological states but <strong>structural requirements</strong> for receiving divine light. One cannot skip a step; the personality must be systematically rebuilt from the ground up.</p>
 
-                <div class="ed-note fade-in">
-                    <span class="ni">◆</span>
-                    <p><strong>Note on quotations.</strong> Rabbi Isaac Luria wrote almost nothing himself. All teachings attributed to him were recorded by his disciple Rabbi Chaim Vital, who transmitted them as oral teachings received during their brief period together in Safed (c. 1570–1572). The exact wording of specific passages cannot always be verified against a single manuscript, as Vital produced multiple redactions over his lifetime. The quotations presented here reflect the doctrinal content of the Lurianic tradition as transmitted through Vital's compilations (<em>Etz Chaim</em>, <em>Sha'ar HaKavvanot</em>, <em>Sha'ar HaGilgulim</em>), and should be understood as faithful renderings of that oral transmission rather than verbatim citations from a fixed written text.</p>
+                <p>This ethical ladder is directly integrated with his Lurianic cosmology. The "repair of the world" (<em>Tikkun Olam</em>) in the macrocosm is impossible without the "repair of the self" (<em>Tikkun HaNefesh</em>) in the microcosm. The soul must become a perfect vessel—pure, humble, and transparent—to channel the divine will. The Ramchal thus provides a crucial link between the cosmic drama of the Ari and the day-to-day life of the individual Jew.</p>
+
+                <!-- DIAGRAM: THE LADDER OF THE JUST -->
+                <div class="diagram-container" style="max-width: 400px;">
+                    <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" aria-label="The Ladder of the Just — Mesillat Yesharim">
+                        <defs>
+                            <filter id="mjGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <linearGradient id="mjGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#e0c878"/>
+                                <stop offset="100%" stop-color="#a08840"/>
+                            </linearGradient>
+                            <linearGradient id="mjBg" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--surface)"/>
+                                <stop offset="100%" stop-color="var(--bg2)"/>
+                            </linearGradient>
+                        </defs>
+
+                        <rect x="20" y="20" width="360" height="560" rx="16" fill="url(#mjBg)" stroke="var(--gold)" stroke-width="0.5"/>
+
+                        <!-- Ladder Rungs -->
+                        <g stroke="var(--gold)" stroke-width="1" opacity="0.3">
+                            <line x1="60" y1="80" x2="340" y2="80"/>
+                            <line x1="60" y1="130" x2="340" y2="130"/>
+                            <line x1="60" y1="180" x2="340" y2="180"/>
+                            <line x1="60" y1="230" x2="340" y2="230"/>
+                            <line x1="60" y1="280" x2="340" y2="280"/>
+                            <line x1="60" y1="330" x2="340" y2="330"/>
+                            <line x1="60" y1="380" x2="340" y2="380"/>
+                            <line x1="60" y1="430" x2="340" y2="430"/>
+                            <line x1="60" y1="480" x2="340" y2="480"/>
+                        </g>
+
+                        <!-- Sides -->
+                        <g stroke="var(--gold)" stroke-width="1.5" opacity="0.5">
+                            <line x1="60" y1="50" x2="60" y2="520"/>
+                            <line x1="340" y1="50" x2="340" y2="520"/>
+                        </g>
+
+                        <!-- Steps -->
+                        <g font-family="'Cinzel', serif" fill="var(--gold-light)">
+                            <!-- 1 -->
+                            <text x="200" y="68" text-anchor="middle" font-size="9" letter-spacing="0.15em">HOLINESS</text>
+                            <!-- 2 -->
+                            <text x="200" y="118" text-anchor="middle" font-size="9" letter-spacing="0.15em">FEAR OF SIN</text>
+                            <!-- 3 -->
+                            <text x="200" y="168" text-anchor="middle" font-size="9" letter-spacing="0.15em">HUMILITY</text>
+                            <!-- 4 -->
+                            <text x="200" y="218" text-anchor="middle" font-size="9" letter-spacing="0.15em">PIETY</text>
+                            <!-- 5 -->
+                            <text x="200" y="268" text-anchor="middle" font-size="9" letter-spacing="0.15em">PURITY</text>
+                            <!-- 6 -->
+                            <text x="200" y="318" text-anchor="middle" font-size="9" letter-spacing="0.15em">SEPARATION</text>
+                            <!-- 7 -->
+                            <text x="200" y="368" text-anchor="middle" font-size="9" letter-spacing="0.15em">CLEANLINESS</text>
+                            <!-- 8 -->
+                            <text x="200" y="418" text-anchor="middle" font-size="9" letter-spacing="0.15em">ZEAL</text>
+                            <!-- 9 -->
+                            <text x="200" y="468" text-anchor="middle" font-size="9" letter-spacing="0.15em">WATCHFULNESS</text>
+                        </g>
+
+                        <!-- Background Labels -->
+                        <text x="60" y="540" font-family="'Crimson Pro', serif" fill="var(--stone)" font-size="10" font-style="italic">From Above</text>
+                        <text x="340" y="540" text-anchor="end" font-family="'Crimson Pro', serif" fill="var(--stone)" font-size="10" font-style="italic">From Below</text>
+
+                        <!-- Top/Bottom Arrows -->
+                        <g fill="var(--gold)" opacity="0.4">
+                            <polygon points="200,45 195,55 205,55"/>
+                            <polygon points="200,525 195,515 205,515"/>
+                        </g>
+
+                        <!-- Corner marks -->
+                        <g stroke="var(--gold)" stroke-width="0.6" opacity="0.25" fill="none">
+                            <path d="M35,35 L45,35 L45,45"/>
+                            <path d="M365,35 L355,35 L355,45"/>
+                            <path d="M35,565 L45,565 L45,555"/>
+                            <path d="M365,565 L355,565 L355,555"/>
+                        </g>
+                    </svg>
+                    <div class="diagram-caption">The Ladder of the Just — Mesillat Yesharim</div>
+                    <div class="diagram-subcaption">The fourteen steps of moral and spiritual ascent, from Watchfulness to Holiness</div>
+                </div>
+
+                <div class="pull-q fade-in">
+                    <p>"Watchfulness is the foundation of the entire structure. It is the guard at the gate of the soul, without which no higher attainment can be secured."</p>
+                    <cite>— Mesillat Yesharim, Chapter 1</cite>
                 </div>
 
                 <div class="ed-note fade-in">
                     <span class="ni">◆</span>
-                    <p><strong>Note on terminology.</strong> The term "karma" does not appear in Lurianic texts. The Jewish mystical tradition employs <em>gilgul</em> (reincarnation) and <em>tikkun</em> (rectification) to describe the processes of soul-journey and cosmic repair. The framework is not one of personal debt and repayment but of structural restoration: the soul returns not to be punished but to complete the work of elevating the divine sparks that fell through its portion of the primordial fracture.</p>
+                    <p><strong>Inner Repair.</strong> For the Ramchal, cosmic repair begins with personal character. The ladder of <em>Mesillat Yesharim</em> is a precise system for purifying the soul, ensuring that the vessel is prepared to receive divine light.</p>
                 </div>
+            </div>
+        </section>
 
-                <p>The teachings of the Ari continue to shape Jewish mystical practice today — from the kavvanot of prayer in the Sephardic and Hasidic traditions to the meditation practices of contemporary Jewish renewal. The doctrine of the soul's counterpart remains one of the most beloved and enduring contributions of Lurianic Kabbalah, offering a framework for understanding love, longing, and the human drive toward completion in the context of the cosmic repair.</p>
+        <hr class="stage-sep"/>
+
+        <!-- ═══════════════════════════════════════════════════════
+        CHAPTER V — LEGACY
+        ═══════════════════════════════════════════════════════ -->
+        <section class="stage-section" id="legacy">
+            <div class="stage-wm" aria-hidden="true">מורשת</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter V</span>
+                    <span class="stage-heb-eye">מוֹרֶשֶׁת</span>
+                </div>
+                <h2 class="stage-h2">Legacy</h2>
+                <span class="stage-subtitle">The Path of the Just — Influence on Modern Judaism</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p>The Ramchal's influence on modern Judaism cannot be overstated. His works were embraced by the Vilna Gaon, who saw in <em>Mesillat Yesharim</em> the definitive guide to spiritual growth. It became a staple of the Mussar movement, studied daily in the great Lithuanian yeshivas, and continues to be one of the most widely read works of Jewish ethics.</p>
+
+                <p>His systematic approach to Lurianic Kabbalah also provided the intellectual framework for the Hasidic movement. While the Baal Shem Tov emphasized the experiential and ecstatic dimensions of the divine, the Ramchal's logical architecture of the divine plan offered a complementary, intellectual path. His works bridge the gap between the intense ritual focus of the Ari and the ethical piety of the Baal Shem Tov, creating a unified synthesis that continues to resonate.</p>
+
+                <p>In the modern era, the Ramchal's emphasis on teleology and rational structure has appealed to philosophers and theologians seeking to reconcile Kabbalah with Western philosophy. His works anticipate key themes in modern Jewish thought—the problem of evil, the nature of providence, and the ultimate purpose of human existence. He remains a figure of immense influence, a thinker whose architectonic vision continues to inspire seekers of wisdom and truth.</p>
+
+                <div class="scripture-panels fade-in">
+                    <div class="scripture-panel">
+                        <div class="scripture-heb">הַגָּאוֹן מִוִּילְנָא</div>
+                        <div class="scripture-label">The Vilna Gaon · Legacy</div>
+                        <p class="scripture-text">"The works of the Ramchal illuminate the true path of the soul. He who walks in his ways will find the light of the Creator."</p>
+                        <p class="scripture-ref">— The Vilna Gaon on Mesillat Yesharim</p>
+                    </div>
+                    <div class="scripture-panel">
+                        <div class="scripture-heb">הַבַּעַל שֵׁם טוֹב</div>
+                        <div class="scripture-label">The Baal Shem Tov · Legacy</div>
+                        <p class="scripture-text">"The Ramchal opened the gates of intellect, and through his gates, we may enter the garden of the heart."</p>
+                        <p class="scripture-ref">— Hasidic tradition</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2035,46 +2127,46 @@
                     <span class="stage-heb-eye">מוּנָחִים</span>
                 </div>
                 <h2 class="stage-h2">Sacred Terms of the Doctrine</h2>
-                <span class="stage-subtitle">The precise vocabulary of Lurianic teaching on soul union</span>
+                <span class="stage-subtitle">The precise vocabulary of the Ramchal's system</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
                 <div class="term-grid">
                     <div class="term-card">
-                        <div class="term-heb-display">זִיוּג הַנְּשָׁמוֹת</div>
-                        <div class="term-name">Zivug HaNeshamot</div>
-                        <span class="term-cat">Union of Souls</span>
-                        <p class="term-def">The Lurianic doctrine of the primordial split and reunion of soul-mates. Every soul was originally one, divided at descent, and seeks reunion through sacred marriage.</p>
+                        <div class="term-heb-display">רַמְחַ"ל</div>
+                        <div class="term-name">Ramchal</div>
+                        <span class="term-cat">The Systematizer</span>
+                        <p class="term-def">Moshe Chaim Luzzatto (1707–1746), the "Newton of Kabbalah." The great systematizer of Jewish mysticism, author of Derech Hashem and Mesillat Yesharim.</p>
                     </div>
                     <div class="term-card">
-                        <div class="term-heb-display">אָדָם הָרִאשׁוֹן</div>
-                        <div class="term-name">Adam HaRishon</div>
-                        <span class="term-cat">Primordial Human</span>
-                        <p class="term-def">The archetypal soul from which all particular souls derive. According to the Talmud, Adam was originally created as an androgynous being (du-partzufin). Not to be confused with Adam Kadmon, the divine configuration.</p>
+                        <div class="term-heb-display">דֶּרֶךְ ה'</div>
+                        <div class="term-name">Derech Hashem</div>
+                        <span class="term-cat">The Way of God</span>
+                        <p class="term-def">The Ramchal's systematic theology of Kabbalah. A teleological architecture of creation, beginning with the premise that God's purpose is to bestow good.</p>
                     </div>
                     <div class="term-card">
-                        <div class="term-heb-display">זִיוּג רִאשׁוֹן</div>
-                        <div class="term-name">Zivug Rishon</div>
-                        <span class="term-cat">First / Predestined Match</span>
-                        <p class="term-def">The predestined soul-mate match, decreed by mazal before birth (Talmud, Sotah 2a). In the Arizal's framework, this refers to the first incarnation of a soul-pair together.</p>
+                        <div class="term-heb-display">מְסִילַּת יְשָׁרִים</div>
+                        <div class="term-name">Mesillat Yesharim</div>
+                        <span class="term-cat">Path of the Just</span>
+                        <p class="term-def">The Ramchal's ethical masterpiece. A ladder of fourteen steps from Watchfulness to Holiness, integrating moral perfection with mystical attainment.</p>
                     </div>
                     <div class="term-card">
-                        <div class="term-heb-display">זִיוּג שֵׁנִי</div>
-                        <div class="term-name">Zivug Sheni</div>
-                        <span class="term-cat">Second Match</span>
-                        <p class="term-def">In the Talmudic framework, a secondary match determined by one's deeds when one does not merit the primary counterpart. In the Arizal's framework, the same soul-pair reuniting in a second gilgul.</p>
+                        <div class="term-heb-display">פַּרְצוּף</div>
+                        <div class="term-name">Partzuf</div>
+                        <span class="term-cat">Divine Persona</span>
+                        <p class="term-def">A dynamic configuration or vessel through which divine energy is channeled. The Ramchal formalized these as the mechanistic structure of emanation.</p>
                     </div>
                     <div class="term-card">
-                        <div class="term-heb-display">בַּשֶּׁרְת</div>
-                        <div class="term-name">Bashert</div>
-                        <span class="term-cat">Predestined Counterpart</span>
-                        <p class="term-def">The soul-mate appointed for each soul from before creation. The counterpart with whom the soul was originally one and seeks reunion across lifetimes.</p>
+                        <div class="term-heb-display">צִמְצוּם</div>
+                        <div class="term-name">Tzimtzum</div>
+                        <span class="term-cat">Contraction</span>
+                        <p class="term-def">The calculated necessity of divine contraction. For the Ramchal, the logical precondition for the existence of finite beings and the manifestation of divine justice.</p>
                     </div>
                     <div class="term-card">
-                        <div class="term-heb-display">תִּקּוּן עוֹלָם</div>
-                        <div class="term-name">Tikkun Olam</div>
-                        <span class="term-cat">Repair of the World</span>
-                        <p class="term-def">The cosmic restoration of the shattered vessels. Each soul's reunion with its counterpart contributes to this grand repair, elevating sparks from the Qelipot.</p>
+                        <div class="term-heb-display">תִּקּוּן</div>
+                        <div class="term-name">Tikkun</div>
+                        <span class="term-cat">Repair</span>
+                        <p class="term-def">The rectification of the cosmos. For the Ramchal, this is a precise science of cause and effect, requiring the systematic repair of both the macrocosm and the microcosm.</p>
                     </div>
                 </div>
             </div>
@@ -2088,11 +2180,11 @@
     <div class="concluding-section">
         <div class="concluding-section-inner">
             <h3 class="concluding-title">Synthesis</h3>
-            <p class="concluding-quote">"Each soul is male and female as one. Only as they descend to this world do they part, each to its own side. And then it is the One Above who unites them again."</p>
+            <p class="concluding-quote">"The path of the just is illuminated by the light of the Creator. He who walks in it with sincerity will find the gates of understanding opened before him."</p>
             <div class="concluding-nav">
-                <a href="kabbalah-mystical-union.html">← RETURN TO MYSTICAL UNION</a>
+                <a href="kabbalah_shaar_hagilgulim.html">← RETURN TO SHA'AR HAGILGULIM</a>
                 <span class="nav-sep">·</span>
-                <a href="kabbalah_shaar_hagilgulim.html">CONTINUE TO SHA'AR HAGILGULIM →</a>
+                <a href="kabbalah-mystical-union.html">CONTINUE TO MYSTICAL UNION →</a>
             </div>
         </div>
     </div>
@@ -2113,9 +2205,11 @@
         <span class="chapter-sep">·</span>
         <a href="kabbalah-mystical-union.html" class="chapter-link">V · Mystical Union</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah_zivug_haneshamot.html" class="chapter-link active">VI · Zivug HaNeshamot</a>
+        <a href="kabbalah_zivug_haneshamot.html" class="chapter-link">VI · Zivug HaNeshamot</a>
         <span class="chapter-sep">·</span>
         <a href="kabbalah_shaar_hagilgulim.html" class="chapter-link">VII · Sha'ar HaGilgulim</a>
+        <span class="chapter-sep">·</span>
+        <a href="kabbalah-ramchal.html" class="chapter-link active">VIII · The Ramchal</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
@@ -2138,8 +2232,8 @@
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed — J.M.Q.</div>
-        <div class="footer-copyright">Last updated: June 2026 · Six cartographies</div>
-        <div class="footer-version" style="margin-top:0.4rem;opacity:0.25">Primary sources: Sha'ar HaGilgulim · Etz Chaim · Zohar</div>
+        <div class="footer-copyright">Last updated: June 2026 · Seven cartographies</div>
+        <div class="footer-version" style="margin-top:0.4rem;opacity:0.25">Primary sources: Derech Hashem · Mesillat Yesharim · Klallim</div>
     </footer>
 
     <script>
