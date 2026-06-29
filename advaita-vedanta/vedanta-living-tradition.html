@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Living Tradition of Advaita Vedanta — A unified cartography connecting the Upanishads, Gaudapada, Shankara, Ramana Maharshi, and Nisargadatta Maharaj into one living current of non-dual wisdom." />
-    <title>The Living Tradition — Advaita Vedanta as a Whole</title>
+    <meta name="description" content="The Foundations of Vedanta — The Upanishads, the Bhagavad Gita, the Brahma Sutras, and the core philosophy of non-duality." />
+    <title>The Foundations of Vedanta — Texts, Teachings &amp; Philosophy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -27,13 +27,6 @@
             --gold-deep: #8a5e1a;
             --gold-glow: rgba(181, 130, 42, 0.18);
             --sun-glow: rgba(181, 130, 42, 0.28);
-            --s1: #7c6fa0;
-            --s2: #4a7fa5;
-            --s3: #c0622a;
-            --s4: #4a8a72;
-            --s5: #5a7ca8;
-            --s6: #8a5c9a;
-            --s7: #b5822a;
             --border: rgba(181, 130, 42, 0.14);
             --border-strong: rgba(181, 130, 42, 0.32);
             --border-subtle: rgba(181, 130, 42, 0.07);
@@ -49,10 +42,8 @@
             --mountain-fill: rgba(181, 130, 42, 0.05);
             --ring-color: rgba(122, 90, 42, 0.22);
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
             --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-            --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
         [data-theme="dark"] {
             --bg: #0c0f14;
@@ -69,13 +60,6 @@
             --gold-deep: #b8960c;
             --gold-glow: rgba(212, 175, 55, 0.08);
             --sun-glow: rgba(212, 175, 55, 0.18);
-            --s1: #9a8fc0;
-            --s2: #6aaac8;
-            --s3: #d4844a;
-            --s4: #6aaa92;
-            --s5: #7a9cc8;
-            --s6: #aa7cc8;
-            --s7: #d4af37;
             --border: rgba(255, 255, 255, 0.06);
             --border-strong: rgba(255, 255, 255, 0.12);
             --border-subtle: rgba(255, 255, 255, 0.03);
@@ -188,16 +172,6 @@
                 transform: translateY(0) scale(1);
             }
         }
-        @keyframes heroRiseSlow {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.96);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
         @keyframes mandalaRotate {
             to {
                 transform: rotate(360deg);
@@ -286,14 +260,6 @@
                 opacity: .45;
             }
         }
-        @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-            100% {
-                background-position: 200% center;
-            }
-        }
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -304,35 +270,6 @@
                 transform: translateY(0);
             }
         }
-        @keyframes centerPulse3D {
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                box-shadow: 0 0 30px rgba(181, 130, 42, 0.25), 0 0 60px rgba(181, 130, 42, 0.08);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.04);
-                box-shadow: 0 0 50px rgba(181, 130, 42, 0.40), 0 0 90px rgba(181, 130, 42, 0.14);
-            }
-        }
-        @keyframes ringGlow {
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(181, 130, 42, 0.12), inset 0 0 20px rgba(181, 130, 42, 0.04);
-            }
-            50% {
-                box-shadow: 0 0 50px rgba(181, 130, 42, 0.22), inset 0 0 40px rgba(181, 130, 42, 0.08);
-            }
-        }
-        @keyframes turiyaGlow {
-            0%,
-            100% {
-                box-shadow: 0 0 30px rgba(181, 130, 42, 0.15), inset 0 0 30px rgba(181, 130, 42, 0.05);
-            }
-            50% {
-                box-shadow: 0 0 60px rgba(181, 130, 42, 0.30), inset 0 0 50px rgba(181, 130, 42, 0.10);
-            }
-        }
         @keyframes threadPulse {
             0%,
             100% {
@@ -341,37 +278,6 @@
             }
             50% {
                 stroke-width: 3;
-                opacity: 1;
-            }
-        }
-        @keyframes goldFloat {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-4px);
-            }
-        }
-
-        /* ═══════════════════════════════════════
-           CURSOR GLOW
-           ═══════════════════════════════════════ */
-        @media (pointer:fine) {
-            .cursor-glow {
-                position: fixed;
-                width: 320px;
-                height: 320px;
-                border-radius: 50%;
-                background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
-                pointer-events: none;
-                z-index: 9998;
-                transform: translate(-50%, -50%);
-                transition: opacity .3s ease;
-                opacity: 0;
-                mix-blend-mode: screen;
-            }
-            body:hover .cursor-glow {
                 opacity: 1;
             }
         }
@@ -426,16 +332,6 @@
             transform: translateY(0) scale(1);
             pointer-events: all;
         }
-        .nav-menu::-webkit-scrollbar {
-            width: 6px;
-        }
-        .nav-menu::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .nav-menu::-webkit-scrollbar-thumb {
-            background: var(--gold-deep);
-            border-radius: 3px;
-        }
         .nav-item {
             display: flex;
             align-items: center;
@@ -475,13 +371,6 @@
             transition: color .3s var(--ease-out-expo);
             stroke-width: 1.5;
         }
-        .icon-home,
-        .icon-om {
-            color: var(--stone);
-            transition: color .3s;
-        }
-        .nav-item:hover .icon-home,
-        .nav-item:hover .icon-om,
         .nav-item:hover .nav-item-icon svg {
             color: var(--gold);
         }
@@ -606,7 +495,6 @@
             padding: 5rem 2rem 6rem;
             text-align: center;
             background: var(--hero-bg);
-            perspective: 1500px;
         }
         .hero::after {
             content: '';
@@ -617,25 +505,8 @@
             pointer-events: none;
             z-index: 1;
         }
-        [data-theme="light"] .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(181, 130, 42, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(181, 130, 42, .025) 29px);
-            pointer-events: none;
-            z-index: 0;
-        }
-        [data-theme="dark"] .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(212, 175, 55, .035) 29px), repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(212, 175, 55, .025) 29px);
-            pointer-events: none;
-            z-index: 0;
-        }
         [data-theme="dark"] .hero::after {
             background: radial-gradient(ellipse 55% 45% at 20% 40%, rgba(212, 175, 55, .14) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 80% 60%, rgba(212, 175, 55, .10) 0%, transparent 70%);
-            box-shadow: 0 0 50px rgba(212, 175, 55, .10);
             animation: breatheDark 18s ease-in-out infinite;
         }
         .hero-mountain {
@@ -654,7 +525,6 @@
         [data-theme="dark"] .hero-mountain {
             background: linear-gradient(175deg, transparent 20%, var(--mountain-fill) 50%, rgba(212, 175, 55, .30) 80%);
         }
-
         .hero-rings {
             position: absolute;
             inset: 0;
@@ -698,7 +568,6 @@
             animation-delay: 4.5s;
             animation-duration: 18s;
         }
-
         .hero-ripples {
             position: absolute;
             inset: 0;
@@ -727,7 +596,6 @@
         .hero-ripple.rip3 {
             animation-delay: 6s;
         }
-
         .hero-emblem {
             width: 72px;
             height: 72px;
@@ -773,29 +641,6 @@
             position: relative;
             z-index: 3;
         }
-        .hero-label {
-            font-family: 'Cinzel', serif;
-            font-size: .58rem;
-            letter-spacing: .5em;
-            color: var(--gold-deep);
-            margin-bottom: .5rem;
-            opacity: 0;
-            animation: heroRise 1.1s .9s forwards;
-            position: relative;
-            z-index: 3;
-        }
-        .hero-subtitle-top {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--stone);
-            letter-spacing: .08em;
-            margin-bottom: .8rem;
-            opacity: 0;
-            animation: heroRise 1.1s 1.1s forwards;
-            position: relative;
-            z-index: 3;
-        }
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.8rem, 7vw, 5.8rem);
@@ -814,7 +659,7 @@
             color: var(--gold-light);
             text-shadow: 0 0 80px rgba(230, 200, 110, .35);
         }
-        .hero-epithet {
+        .hero-subtitle {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-size: clamp(1rem, 2.5vw, 1.35rem);
@@ -874,16 +719,6 @@
             opacity: 0;
             animation: heroRise 1.1s 2.2s forwards;
             margin-bottom: 3.5rem;
-            position: relative;
-            z-index: 3;
-        }
-        .hero-dates {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: .9rem;
-            color: var(--stone);
-            letter-spacing: .18em;
-            opacity: 0;
-            animation: heroRise 1.1s 2.4s forwards;
             position: relative;
             z-index: 3;
         }
@@ -1088,12 +923,6 @@
             align-items: center;
             justify-content: flex-end;
         }
-        .toc-b-num svg {
-            width: 16px;
-            height: 16px;
-            color: var(--gold);
-            stroke-width: 1.5;
-        }
         .toc-b-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.15rem;
@@ -1164,14 +993,6 @@
             text-transform: uppercase;
             position: relative;
             z-index: 1;
-        }
-        .pq-attr a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .pq-attr a:hover {
-            color: var(--gold-light);
         }
 
         /* ═══════════════════════════════════════
@@ -1314,104 +1135,7 @@
         }
 
         /* ═══════════════════════════════════════
-           TEACHER PROFILE CARDS
-           ═══════════════════════════════════════ */
-        .teacher-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-            margin: 2.5rem 0;
-            background: var(--border-subtle);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--border-subtle);
-        }
-        .teacher-card {
-            background: var(--surface);
-            padding: 2rem 1.75rem;
-            transition: all 0.4s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
-        }
-        .teacher-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .teacher-card:hover::before {
-            opacity: 1;
-        }
-        .teacher-card:hover {
-            background: var(--surface2);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-gold);
-        }
-        .teacher-card .era {
-            font-family: 'Cinzel', serif;
-            font-size: 0.45rem;
-            letter-spacing: 0.2em;
-            color: var(--stone-light);
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
-        }
-        .teacher-card .name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--ink);
-            margin-bottom: 0.1rem;
-        }
-        .teacher-card .deva-name {
-            font-family: 'Noto Serif Devanagari', serif;
-            font-size: 0.9rem;
-            color: var(--stone-light);
-            opacity: 0.6;
-            margin-bottom: 0.5rem;
-        }
-        .teacher-card .contribution {
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.92rem;
-            color: var(--stone);
-            line-height: 1.6;
-        }
-        .teacher-card .contribution strong {
-            color: var(--gold);
-            font-weight: 500;
-        }
-        .teacher-card .key-text {
-            font-family: 'IM Fell English', serif;
-            font-style: italic;
-            font-size: 0.95rem;
-            color: var(--ink2);
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--border-subtle);
-        }
-        .teacher-card .key-text .src {
-            font-family: 'Cinzel', serif;
-            font-size: 0.45rem;
-            letter-spacing: 0.15em;
-            color: var(--stone-light);
-            text-transform: uppercase;
-            font-style: normal;
-            display: block;
-            margin-top: 0.2rem;
-        }
-        [data-theme="dark"] .teacher-card .name {
-            color: var(--gold-light);
-        }
-        [data-theme="dark"] .teacher-card .key-text {
-            color: var(--stone-light);
-        }
-
-        /* ═══════════════════════════════════════
-           COMPARATIVE TABLE
+           TEXT COMPARISON TABLE
            ═══════════════════════════════════════ */
         .comp-table-wrap {
             overflow-x: auto;
@@ -1489,7 +1213,7 @@
             position: relative;
         }
         .resonance-box::before {
-            content: '⚡';
+            content: '📜';
             position: absolute;
             top: -0.75rem;
             left: 1.5rem;
@@ -1501,7 +1225,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             box-shadow: 0 2px 12px var(--gold-glow);
         }
         .resonance-box h4 {
@@ -1529,9 +1253,9 @@
         }
 
         /* ═══════════════════════════════════════
-           FURTHER VOICES — EXPANDED LINEAGE
+           YOGA CARDS
            ═══════════════════════════════════════ */
-        .further-grid {
+        .yoga-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2px;
@@ -1541,263 +1265,81 @@
             overflow: hidden;
             border: 1px solid var(--border-subtle);
         }
-        .further-card {
+        .yoga-card {
             background: var(--surface);
-            padding: 1.5rem 1.25rem;
+            padding: 2rem 1.75rem;
             transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
             text-align: center;
         }
-        .further-card:hover {
+        .yoga-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-light), var(--gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .yoga-card:hover::before {
+            opacity: 1;
+        }
+        .yoga-card:hover {
             background: var(--surface2);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
         }
-        .further-card .name {
+        .yoga-card .yoga-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: 500;
             color: var(--ink);
+            margin-bottom: 0.1rem;
         }
-        .further-card .deva-name {
+        .yoga-card .yoga-deva {
             font-family: 'Noto Serif Devanagari', serif;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             color: var(--stone-light);
             opacity: 0.6;
+            margin-bottom: 0.5rem;
         }
-        .further-card .dates {
+        .yoga-card .yoga-desc {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.92rem;
+            color: var(--stone);
+            line-height: 1.6;
+        }
+        .yoga-card .yoga-desc strong {
+            color: var(--gold);
+            font-weight: 500;
+        }
+        .yoga-card .yoga-key {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--ink2);
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .yoga-card .yoga-key .src {
             font-family: 'Cinzel', serif;
             font-size: 0.45rem;
             letter-spacing: 0.15em;
             color: var(--stone-light);
             text-transform: uppercase;
-            margin: 0.2rem 0 0.5rem;
+            font-style: normal;
+            display: block;
+            margin-top: 0.2rem;
         }
-        .further-card .role {
-            font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
-            letter-spacing: 0.1em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-        .further-card .desc {
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.85rem;
-            color: var(--stone);
-            line-height: 1.6;
-        }
-        .further-card .key-work {
-            font-family: 'Cinzel', serif;
-            font-size: 0.4rem;
-            letter-spacing: 0.1em;
-            color: var(--stone-light);
-            text-transform: uppercase;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-        [data-theme="dark"] .further-card .name {
+        [data-theme="dark"] .yoga-card .yoga-name {
             color: var(--gold-light);
         }
-
-        .further-section-label {
-            font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
-            letter-spacing: 0.3em;
-            color: var(--gold);
-            text-transform: uppercase;
-            text-align: center;
-            margin: 3rem 0 0.5rem;
-            opacity: 0.6;
-        }
-
-        /* ═══════════════════════════════════════
-           LINEAGE DIAGRAM — SVG golden thread
-           ═══════════════════════════════════════ */
-        .lineage-diagram-wrap {
-            margin: 3rem auto;
-            max-width: 700px;
-            width: 100%;
-            overflow-x: auto;
-            position: relative;
-            z-index: 1;
-        }
-        .lineage-diagram-wrap svg {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius-sm);
-            background: var(--surface);
-            border: 1px solid var(--border-subtle);
-            padding: 1rem 0.5rem;
-            box-shadow: var(--shadow);
-        }
-        .lineage-diagram-wrap .node-text {
-            font-family: 'Cinzel', serif;
-            font-size: 0.55rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            fill: var(--ink);
-        }
-        [data-theme="dark"] .lineage-diagram-wrap .node-text {
-            fill: var(--ink);
-        }
-        .lineage-diagram-wrap .node-sub {
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.45rem;
-            fill: var(--stone);
-            letter-spacing: 0.05em;
-        }
-        [data-theme="dark"] .lineage-diagram-wrap .node-sub {
-            fill: var(--stone-light);
-        }
-        .lineage-diagram-wrap .node-deva {
-            font-family: 'Noto Serif Devanagari', serif;
-            font-size: 0.5rem;
-            fill: var(--stone-light);
-            opacity: 0.6;
-        }
-        [data-theme="dark"] .lineage-diagram-wrap .node-deva {
-            fill: var(--stone);
-        }
-        .lineage-diagram-wrap .thread {
-            stroke: var(--gold);
-            stroke-width: 1.5;
-            fill: none;
-            opacity: 0.5;
-            animation: threadPulse 4s ease-in-out infinite;
-        }
-        .lineage-diagram-wrap .node-circle {
-            fill: var(--surface);
-            stroke: var(--gold);
-            stroke-width: 1.5;
-            transition: all 0.4s var(--ease-out-expo);
-        }
-        .lineage-diagram-wrap .node-circle:hover {
-            fill: var(--gold-glow);
-            stroke-width: 2.5;
-        }
-
-        /* ═══════════════════════════════════════
-           UNIFIED GLOSSARY
-           ═══════════════════════════════════════ */
-        .gloss-section {
-            padding: 100px 32px 80px;
-            max-width: 740px;
-            margin: 0 auto;
-        }
-        .gloss-search-wrap {
-            position: relative;
-            max-width: 340px;
-            margin: 2.5rem auto 2.5rem;
-        }
-        .gloss-search {
-            width: 100%;
-            padding: 0.75rem 2.75rem 0.75rem 2.75rem;
-            background: var(--surface);
-            border: 1px solid var(--border-medium);
-            border-radius: 100px;
-            font-family: 'Crimson Pro', serif;
-            font-size: 1rem;
-            color: var(--ink);
-            outline: none;
-            transition: all 0.35s var(--ease-out-expo);
-        }
-        .gloss-search:focus {
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px var(--gold-glow);
-        }
-        .gloss-search-ico {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--stone);
-            font-size: 0.88rem;
-            pointer-events: none;
-        }
-        .gloss-clear {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            color: var(--stone);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.78rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s;
-        }
-        .gloss-clear.vis {
-            opacity: 1;
-            pointer-events: all;
-        }
-        .gloss-clear:hover {
-            background: var(--gold-glow);
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-        .gloss-no-results {
-            text-align: center;
-            color: var(--stone);
-            font-style: italic;
-            padding: 2rem;
-            display: none;
-        }
-        .gloss-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1px;
-            background: var(--border-subtle);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-        }
-        .gloss-entry {
-            background: var(--surface);
-            padding: 1.75rem 1.5rem;
-            transition: background 0.3s;
-            cursor: default;
-        }
-        .gloss-entry:hover {
-            background: var(--surface2);
-        }
-        .gloss-term {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: var(--ink);
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.3rem;
-        }
-        .gloss-term-deva {
-            font-family: 'Noto Serif Devanagari', serif;
-            font-size: 0.95rem;
+        [data-theme="dark"] .yoga-card .yoga-key {
             color: var(--stone-light);
-            opacity: 0.72;
-        }
-        .gloss-cat {
-            font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
-            letter-spacing: 0.28em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 0.7rem;
-            display: block;
-        }
-        .gloss-def {
-            font-size: 0.88rem;
-            color: var(--stone);
-            line-height: 1.65;
         }
 
         /* ═══════════════════════════════════════
@@ -1875,15 +1417,6 @@
         .footer-links a:hover {
             color: var(--gold);
         }
-        .nav-icon {
-            width: 14px;
-            height: 14px;
-            color: var(--stone);
-            transition: color .3s;
-        }
-        .footer-links a:hover .nav-icon {
-            color: var(--gold);
-        }
         .footer-credit {
             font-family: 'Cinzel', serif;
             font-size: .5rem;
@@ -1933,21 +1466,7 @@
             color: var(--gold);
             font-weight: 500;
         }
-        .continue-link {
-            display: inline-block;
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
-        }
-        .continue-link:hover {
-            color: var(--gold-light);
-            border-bottom-color: var(--gold-light);
-        }
+
         .sanskrit-term {
             cursor: help;
             border-bottom: 1px dotted var(--gold);
@@ -1974,11 +1493,8 @@
            RESPONSIVE
            ═══════════════════════════════════════ */
         @media (max-width: 768px) {
-            .teacher-grid {
+            .yoga-grid {
                 grid-template-columns: 1fr;
-            }
-            .further-grid {
-                grid-template-columns: 1fr 1fr;
             }
             .toc-book-item {
                 grid-template-columns: 38px 1fr;
@@ -1997,21 +1513,12 @@
             .comp-table td:first-child {
                 font-size: 0.45rem;
             }
-            .lineage-diagram-wrap svg {
-                padding: 0.5rem;
-            }
             .chapter-nav {
                 gap: 0.75rem;
                 font-size: 0.6rem;
             }
         }
         @media (max-width: 500px) {
-            .gloss-grid {
-                grid-template-columns: 1fr;
-            }
-            .further-grid {
-                grid-template-columns: 1fr;
-            }
             .comp-table th,
             .comp-table td {
                 padding: 0.4rem 0.3rem;
@@ -2031,10 +1538,6 @@
                 top: -0.65rem;
                 left: 1rem;
             }
-            .lineage-diagram-wrap svg {
-                padding: 0.25rem;
-                border-radius: var(--radius-sm);
-            }
         }
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -2052,8 +1555,6 @@
 </head>
 <body>
 
-    <div class="cursor-glow" id="cursorGlow"></div>
-
     <!-- NAV COMPASS -->
     <div class="nav-compass">
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -2061,31 +1562,24 @@
         </button>
         <div class="nav-menu" id="navMenu">
             <div class="nav-section-title">This Page</div>
-            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span>Overview</span></a>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg></span><span>Overview</span></a>
             <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span>Contents</span></a>
-            <a href="#upanishadic-source" class="nav-item" data-section="upanishadic-source"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/></svg></span><span>Upanishadic Source</span></a>
-            <a href="#gaudapada" class="nav-item" data-section="gaudapada"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Gaudapada</span></a>
-            <a href="#shankara" class="nav-item" data-section="shankara"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Shankara</span></a>
-            <a href="#ramana" class="nav-item" data-section="ramana"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Ramana Maharshi</span></a>
-            <a href="#nisargadatta" class="nav-item" data-section="nisargadatta"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Nisargadatta</span></a>
-            <a href="#further-voices" class="nav-item" data-section="further-voices"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg></span><span>Further Voices</span></a>
-            <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M14 17V5"/><path d="M10 17v-3"/><path d="M6 17v-7"/></svg></span><span>Comparative</span></a>
-            <a href="#glossary" class="nav-item" data-section="glossary"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Glossary</span></a>
+            <a href="#origins" class="nav-item" data-section="origins"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/></svg></span><span>Origins</span></a>
+            <a href="#upanishads" class="nav-item" data-section="upanishads"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>Upanishads</span></a>
+            <a href="#bhagavad-gita" class="nav-item" data-section="bhagavad-gita"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Bhagavad Gita</span></a>
+            <a href="#brahma-sutras" class="nav-item" data-section="brahma-sutras"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Brahma Sutras</span></a>
+            <a href="#prasthanatrayi" class="nav-item" data-section="prasthanatrayi"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M14 17V5"/><path d="M10 17v-3"/><path d="M6 17v-7"/></svg></span><span>Prasthanatrayi</span></a>
+            <a href="#key-concepts" class="nav-item" data-section="key-concepts"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/></svg></span><span>Key Concepts</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Advaita Vedanta</div>
-            <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>I · Gaudapada</span></a>
-            <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>II · Adi Shankara</span></a>
-            <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>III · Ramana Maharshi</span></a>
-            <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>IV · Nisargadatta Maharaj</span></a>
-            <a href="vedanta-living-tradition.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>V · The Living Tradition</span></a>
+            <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>I · Gaudapada</span></a>
+            <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>II · Adi Shankara</span></a>
+            <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>III · Ramana Maharshi</span></a>
+            <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>IV · Nisargadatta</span></a>
+            <a href="vedanta-living-tradition.html" class="nav-item active"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>V · Foundations</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span>Home · Vedantic Mappings</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>The Vedantic Messiah</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span>Kabbalah</span></a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/></svg></span><span>Gnosticism</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10"/><path d="M2 12h20"/></svg></span><span>Taoism · The Unnamed Way</span></a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M6.34 17.66l-1.41 1.41"/><path d="M19.07 4.93l-1.41-1.41"/></svg></span><span>Quantum Mechanics</span></a>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home</span></a>
         </div>
     </div>
 
@@ -2099,47 +1593,34 @@
          HERO
          ═══════════════════════════════════════ -->
     <header class="hero" id="hero">
-        <svg style="position:absolute;inset:0;width:100%;height:auto;z-index:0;pointer-events:none;" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <g style="animation:mandalaRotate 60s linear infinite;transform-origin:center;">
-                <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.1"/>
-                <circle cx="600" cy="400" r="300" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.12"/>
-                <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.1"/>
-                <circle cx="600" cy="400" r="200" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
-            </g>
-        </svg>
         <div class="hero-mountain" aria-hidden="true"></div>
-
         <div class="hero-rings" aria-hidden="true">
             <div class="hero-ring r1"></div>
             <div class="hero-ring r2"></div>
             <div class="hero-ring r3"></div>
             <div class="hero-ring r4"></div>
         </div>
-
         <div class="hero-ripples" aria-hidden="true">
             <div class="hero-ripple rip1"></div>
             <div class="hero-ripple rip2"></div>
             <div class="hero-ripple rip3"></div>
         </div>
 
-        <p class="hero-eyemark">The Living Current of Non-Duality</p>
+        <p class="hero-eyemark">The Foundations of Vedanta</p>
         <div class="hero-emblem" aria-hidden="true">
             <div class="hero-emblem-circle"></div>
             <div class="hero-emblem-circle2"></div>
             <div class="hero-emblem-dot"></div>
         </div>
-        <p class="hero-label">Advaita Vedanta</p>
-        <p class="hero-subtitle-top">The Living Tradition — A Unified Cartography</p>
-        <h1 class="hero-title">The Golden Thread</h1>
-        <p class="hero-epithet">From the Upanishads to the Present · The Unbroken Transmission</p>
+        <h1 class="hero-title">The Three Canons</h1>
+        <p class="hero-subtitle">Upanishads · Bhagavad Gita · Brahma Sutras</p>
         <div class="hero-divider" aria-hidden="true">
             <div class="hero-divider-line"></div>
             <div class="hero-divider-diamond"></div>
             <div class="hero-divider-line"></div>
         </div>
-        <p class="hero-quote">"The Self is the Guru. The Guru is the Self. The teaching is the recognition of what always already is."</p>
-        <p class="hero-quote-attr">— The Living Tradition</p>
-        <p class="hero-dates">Upanishads (c. 800 BCE) — Present</p>
+        <p class="hero-quote">"The Upanishads are the source, the Gita is the synthesis, and the Brahma Sutras are the logical thread."</p>
+        <p class="hero-quote-attr">— The Prasthanatrayi</p>
         <div class="hero-scroll-cue" id="heroScroll" tabindex="0" role="button" aria-label="Scroll to content">
             <span>Explore</span>
             <div class="scroll-line" aria-hidden="true"></div>
@@ -2151,48 +1632,38 @@
          ═══════════════════════════════════════ -->
     <section class="toc-section" id="toc">
         <div class="ed-section-label">सर्वसार</div>
-        <h2 class="ed-section-h2">The Living Tradition — A Unified Cartography</h2>
-        <p class="ed-section-intro">From the Upanishads to the present — a complete map of Advaita Vedanta's living transmission, connecting the great teachers and texts across the centuries.</p>
+        <h2 class="ed-section-h2">The Foundations of Vedanta</h2>
+        <p class="ed-section-intro">A comprehensive overview of Vedanta's origins, its three foundational texts, and the core philosophical concepts that define the non-dual tradition.</p>
 
         <nav class="toc-book" aria-label="Page contents">
-            <a href="#upanishadic-source" class="toc-book-item">
+            <a href="#origins" class="toc-book-item">
                 <span class="toc-b-num">I</span>
-                <span class="toc-b-title">The Upanishadic Source</span>
+                <span class="toc-b-title">The Origins of Vedanta</span>
+                <span class="toc-b-skt">वेदान्त</span>
+            </a>
+            <a href="#upanishads" class="toc-book-item">
+                <span class="toc-b-num">II</span>
+                <span class="toc-b-title">The Upanishads — The Source</span>
                 <span class="toc-b-skt">उपनिषद्</span>
             </a>
-            <a href="#gaudapada" class="toc-book-item">
-                <span class="toc-b-num">II</span>
-                <span class="toc-b-title">Gaudapada — The Architect</span>
-                <span class="toc-b-skt">गौडपाद</span>
-            </a>
-            <a href="#shankara" class="toc-book-item">
+            <a href="#bhagavad-gita" class="toc-book-item">
                 <span class="toc-b-num">III</span>
-                <span class="toc-b-title">Adi Shankara — The Systematizer</span>
-                <span class="toc-b-skt">शङ्कर</span>
+                <span class="toc-b-title">The Bhagavad Gita — The Synthesis</span>
+                <span class="toc-b-skt">भगवद्गीता</span>
             </a>
-            <a href="#ramana" class="toc-book-item">
+            <a href="#brahma-sutras" class="toc-book-item">
                 <span class="toc-b-num">IV</span>
-                <span class="toc-b-title">Ramana Maharshi — The Living Master</span>
-                <span class="toc-b-skt">रमण</span>
+                <span class="toc-b-title">The Brahma Sutras — The Logic</span>
+                <span class="toc-b-skt">ब्रह्मसूत्र</span>
             </a>
-            <a href="#nisargadatta" class="toc-book-item">
+            <a href="#prasthanatrayi" class="toc-book-item">
                 <span class="toc-b-num">V</span>
-                <span class="toc-b-title">Nisargadatta — The Radical Pointer</span>
-                <span class="toc-b-skt">निसर्गदत्त</span>
+                <span class="toc-b-title">The Prasthanatrayi — The Triple Canon</span>
+                <span class="toc-b-skt">प्रस्थानत्रयी</span>
             </a>
-            <a href="#further-voices" class="toc-book-item">
+            <a href="#key-concepts" class="toc-book-item">
                 <span class="toc-b-num">VI</span>
-                <span class="toc-b-title">Further Voices — The Full Lineage</span>
-                <span class="toc-b-skt">परम्परा</span>
-            </a>
-            <a href="#comparative" class="toc-book-item">
-                <span class="toc-b-num">VII</span>
-                <span class="toc-b-title">Comparative Summary — Many Voices, One Truth</span>
-                <span class="toc-b-skt">तुलना</span>
-            </a>
-            <a href="#glossary" class="toc-book-item">
-                <span class="toc-b-num">VIII</span>
-                <span class="toc-b-title">Unified Glossary — All Key Terms</span>
+                <span class="toc-b-title">Key Concepts — The Core Vocabulary</span>
                 <span class="toc-b-skt">शब्दकोश</span>
             </a>
         </nav>
@@ -2209,31 +1680,58 @@
     </div>
 
     <!-- ═══════════════════════════════════════
-         SECTION I: UPANISHADIC SOURCE
+         SECTION I: ORIGINS
          ═══════════════════════════════════════ -->
     <div class="stages-wrap">
-        <section class="stage-section" id="upanishadic-source">
-            <div class="stage-wm" aria-hidden="true">उपनिषद्</div>
+        <section class="stage-section" id="origins">
+            <div class="stage-wm" aria-hidden="true">वेदान्त</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter I</span>
-                    <span class="stage-skt">The Source</span>
-                    <span class="stage-deva-title">उपनिषद्</span>
+                    <span class="stage-skt">The Origins</span>
+                    <span class="stage-deva-title">वेदान्त · 1500–500 BCE</span>
                 </div>
-                <h2 class="stage-h2">The Upanishadic Source</h2>
-                <span class="stage-subtitle-label">The foundational texts of non-duality · c. 800 BCE</span>
+                <h2 class="stage-h2">The Origins of Vedanta</h2>
+                <span class="stage-subtitle-label">From the Vedas to the Upanishads — the philosophical climax of ancient India</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>T</strong>he <span class="sanskrit-term" title="The sacred scriptures of India; the oldest layer of Vedic literature">Vedas</span> are the oldest scriptures of India, dating back to c. 1500 BCE. The <span class="sanskrit-term" title="The philosophical and mystical texts at the end of the Vedas; the foundation of Vedanta">Upanishads</span> (c. 800–200 BCE) are their philosophical culmination — the <em>Vedānta</em> (end of the Vedas). The twelve principal Upanishads contain the seed of all later Advaita Vedanta.</p>
+                <p><strong>V</strong>edanta is the philosophical culmination of the <span class="sanskrit-term" title="The sacred scriptures of India; the oldest layer of Vedic literature">Vedas</span>, the oldest scriptures of India, dating back to c. 1500 BCE. The word "Vedanta" literally means "the end of the Vedas" — referring both to the <span class="sanskrit-term" title="The philosophical and mystical texts at the end of the Vedas; the foundation of Vedanta">Upanishads</span> (the final sections of the Vedic corpus) and to the ultimate purpose of Vedic knowledge.</p>
 
-                <p>The central teaching is the identity of <span class="sanskrit-term" title="The individual self; the true consciousness within">Ātman</span> (the individual self) with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span> (the absolute reality). This identity is expressed in the four <span class="sanskrit-term" title="The four great sayings of Vedanta: Prajñānaṃ Brahma, Ahaṃ Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma">Mahāvākyas</span> — the great sayings that later teachers would use as the core of their meditation.</p>
+                <p>The Vedic tradition developed over several centuries. The earliest layer, the <em>Saṃhitās</em>, consists of hymns, prayers, and rituals. The <em>Brāhmaṇas</em> (c. 1000–800 BCE) contain ritual instructions and priestly commentary. The <em>Āraṇyakas</em> ("forest texts") mark a transition toward interiority and meditation. Finally, the <span class="sanskrit-term" title="The philosophical core of the Vedas; the source of Vedanta">Upanishads</span> (c. 800–200 BCE) shift the focus from ritual to knowledge — from <em>karma</em> (action) to <em>jñāna</em> (wisdom).</p>
 
                 <div class="pull-q">
-                    <p>"That which is the subtle essence — in that all that exists has its Self. That is the Truth. That is the Self. That Thou Art."</p>
-                    <cite>— Chāndogya Upaniṣad 6.8.7 (Tat Tvam Asi)</cite>
+                    <p>"From the unreal lead me to the real. From darkness lead me to light. From death lead me to immortality."</p>
+                    <cite>— Bṛhadāraṇyaka Upaniṣad 1.3.28</cite>
                 </div>
+
+                <p>The Upanishads ask the deepest questions: What is the nature of reality? Who am I? What is the relationship between the individual self and the ultimate ground of existence? Their answers form the foundation of all later Vedantic philosophy.</p>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION II: UPANISHADS
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="upanishads">
+            <div class="stage-wm" aria-hidden="true">उपनिषद्</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter II</span>
+                    <span class="stage-skt">The Source</span>
+                    <span class="stage-deva-title">उपनिषद् · c. 800–200 BCE</span>
+                </div>
+                <h2 class="stage-h2">The Upanishads</h2>
+                <span class="stage-subtitle-label">The foundational texts of non-duality — the seeds of Vedanta</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The philosophical and mystical texts at the end of the Vedas; the foundation of Vedanta">Upanishads</span> are the philosophical core of the Vedas. There are over 200 Upanishads, but the ten principal ones (the <em>Mukhya Upanishads</em>) form the foundation of Vedanta. They contain the seed of all later Advaita philosophy.</p>
+
+                <p>The central teaching of the Upanishads is the identity of <span class="sanskrit-term" title="The individual self; the true consciousness within">Ātman</span> (the individual self) with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span> (the absolute reality). This identity is expressed in the four <span class="sanskrit-term" title="The four great sayings of Vedanta: Prajñānaṃ Brahma, Ahaṃ Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma">Mahāvākyas</span> — the great sayings that later teachers would use as the core of their meditation.</p>
 
                 <div class="ed-h3">The Four Great Sayings · चत्वारि महावाक्यानि</div>
 
@@ -2260,104 +1758,57 @@
                     </div>
                 </div>
 
-                <p>The <em>Māṇḍūkya Upaniṣad</em> — the shortest (only twelve verses) — became the foundation for Gaudapada's <em>Kārikā</em> and through it, the entire Advaita tradition. Its teaching on the four states of consciousness (<em>jāgrat</em>, <em>svapna</em>, <em>suṣupti</em>, <em>turīya</em>) is the blueprint for all later Vedantic cartographies.</p>
+                <p>The <em>Māṇḍūkya Upaniṣad</em> — the shortest of the principal Upanishads at only twelve verses — became the foundation for Gaudapada's <em>Kārikā</em> and through it, the entire Advaita tradition. Its teaching on the four states of consciousness (<em>jāgrat</em>, <em>svapna</em>, <em>suṣupti</em>, <em>turīya</em>) provides a complete map of human experience and points toward the fourth state, the silent witness, as the ultimate reality.</p>
             </div>
         </section>
 
         <hr class="stage-sep" />
 
         <!-- ═══════════════════════════════════════
-             SECTION II: GAUDAPADA
+             SECTION III: BHAGAVAD GITA
              ═══════════════════════════════════════ -->
-        <section class="stage-section" id="gaudapada">
-            <div class="stage-wm" aria-hidden="true">गौडपाद</div>
-            <div class="stage-header">
-                <div class="stage-eyeline">
-                    <span class="stage-n">Chapter II</span>
-                    <span class="stage-skt">The Architect</span>
-                    <span class="stage-deva-title">गौडपाद</span>
-                </div>
-                <h2 class="stage-h2">Gaudapada — The Architect of Ajāta</h2>
-                <span class="stage-subtitle-label">c. 6th–7th century CE · Author of the Māṇḍūkya Kārikā</span>
-                <span class="stage-rule"></span>
-            </div>
-
-            <div class="stage-body">
-                <p><strong>G</strong>audapada is the first historical teacher to write a systematic exposition of Advaita in Sanskrit. His <em>Māṇḍūkya Kārikā</em> is a commentary on the twelve verses of the <em>Māṇḍūkya Upaniṣad</em>, but it is also an independent philosophical treatise establishing the doctrine of <strong><span class="sanskrit-term" title="The doctrine of non-creation; nothing is ever born or created">ajāta vāda</span></strong> — non-origination.</p>
-
-                <p>His radical teaching: <em>"There is no birth, no destruction, no one in bondage, no seeker of liberation, and no one liberated. This is the highest truth."</em> (Karika 2.32). The entire phenomenal universe is a superimposition, like a rope mistaken for a snake, or a dream seen by a sleeping mind. He uses the analogy of a fire-brand swung in a circle: it appears to produce a circle of fire, but no circle is ever actually created.</p>
-
-                <div class="pull-q">
-                    <p>"That which is non-existent at the beginning and in the end is also non-existent in the middle. It is like a mirage in the desert."</p>
-                    <cite>— Mandukya Karika 4.31</cite>
-                </div>
-
-                <p>Gaudapada's disciple <span class="sanskrit-term" title="Gaudapada's disciple; the guru of Adi Shankara">Govinda Bhagavatpada</span> transmitted the teaching to <span class="sanskrit-term" title="The great systematizer of Advaita Vedanta">Adi Shankara</span>, making Gaudapada the <span class="sanskrit-term" title="The grand-teacher; the guru's guru">parama-guru</span> of the entire classical Advaita tradition.</p>
-
-                <div class="teacher-grid">
-                    <div class="teacher-card">
-                        <div class="era">Key Text</div>
-                        <div class="name">Māṇḍūkya Kārikā</div>
-                        <div class="deva-name">माण्डूक्य कारिका</div>
-                        <div class="contribution">The first systematic exposition of Advaita in Sanskrit. Establishes <strong>ajāta vāda</strong> — the doctrine that nothing is ever born.</div>
-                        <div class="key-text">"No jiva is ever born. No cause exists for anything that appears. The highest truth is that nothing is ever born."<span class="src">Karika 3.15</span></div>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="era">Core Contribution</div>
-                        <div class="name">Ajāta Vāda</div>
-                        <div class="deva-name">अजात वाद</div>
-                        <div class="contribution">The uncompromising teaching that the world never truly arises. It is an illusion like a dream. Only <strong>Brahman</strong> is real.</div>
-                        <div class="key-text">"There is no dissolution, no birth, none in bondage, none aspiring for freedom, none liberated. This is the ultimate truth."<span class="src">Karika 2.32</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr class="stage-sep" />
-
-        <!-- ═══════════════════════════════════════
-             SECTION III: SHANKARA
-             ═══════════════════════════════════════ -->
-        <section class="stage-section" id="shankara">
-            <div class="stage-wm" aria-hidden="true">शङ्कर</div>
+        <section class="stage-section" id="bhagavad-gita">
+            <div class="stage-wm" aria-hidden="true">भगवद्गीता</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter III</span>
-                    <span class="stage-skt">The Systematizer</span>
-                    <span class="stage-deva-title">शङ्कर</span>
+                    <span class="stage-skt">The Synthesis</span>
+                    <span class="stage-deva-title">भगवद्गीता · c. 5th–2nd BCE</span>
                 </div>
-                <h2 class="stage-h2">Adi Shankara — The Great Expositor</h2>
-                <span class="stage-subtitle-label">c. 788–820 CE · Author of the Brahma Sūtra Bhāṣya</span>
+                <h2 class="stage-h2">The Bhagavad Gita</h2>
+                <span class="stage-subtitle-label">The practical integration of Upanishadic wisdom</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>A</strong>di Shankara systematised Advaita Vedanta into a coherent philosophical framework. He wrote commentaries on the ten principal Upanishads, the <em>Bhagavad Gītā</em>, and the <em>Brahma Sūtras</em>, establishing Advaita as India's dominant philosophical school.</p>
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The Song of the Lord; the dialogue between Krishna and Arjuna">Bhagavad Gita</span> is often called the "essence of the Upanishads." It presents the core teachings of Vedanta not as abstract philosophy but as a practical dialogue between <span class="sanskrit-term" title="The warrior prince; the seeker who represents the human condition">Arjuna</span> and <span class="sanskrit-term" title="The divine teacher; the charioteer who reveals the truth">Krishna</span> on the battlefield of Kurukshetra. It is a <em>Smṛti</em> text (tradition, not direct revelation) but holds the status of an Upanishad in practice.</p>
 
-                <p>His key contributions: the <strong><span class="sanskrit-term" title="The six means of valid knowledge in Advaita epistemology">six pramāṇas</span></strong> (means of knowledge), the distinction between <strong><span class="sanskrit-term" title="Brahman without qualities; the formless absolute">Nirguṇa</span></strong> and <strong><span class="sanskrit-term" title="Brahman with qualities; the personal God as an object of devotion">Saguṇa Brahman</span></strong>, the doctrine of <strong><span class="sanskrit-term" title="Apparent modification; the world is a superimposition on Brahman">vivarta</span></strong> (apparent modification), and the <strong><span class="sanskrit-term" title="The fourfold qualifications for Jñāna Yoga: discrimination, dispassion, six virtues, and longing for liberation">Sādhana Chatuṣṭaya</span></strong> (fourfold qualifications for liberation).</p>
+                <p>The Gita resolves the apparent conflict between ascetic renunciation and worldly duty by integrating the three main paths of Yoga into a harmonious whole:</p>
 
-                <div class="pull-q">
-                    <p>"Brahman alone is real; the world is an illusion; the individual soul is none other than Brahman."</p>
-                    <cite>— Brahma Jñānāvalīmālā 20</cite>
+                <div class="yoga-grid">
+                    <div class="yoga-card">
+                        <div class="yoga-name">Karma Yoga</div>
+                        <div class="yoga-deva">कर्म योग</div>
+                        <div class="yoga-desc">The path of <strong>selfless action</strong> — acting without attachment to the fruits of action. Doing what is right because it is right, not for personal gain.</div>
+                        <div class="yoga-key">"You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions."<span class="src">Gita 2.47</span></div>
+                    </div>
+                    <div class="yoga-card">
+                        <div class="yoga-name">Bhakti Yoga</div>
+                        <div class="yoga-deva">भक्ति योग</div>
+                        <div class="yoga-desc">The path of <strong>devotion</strong> — surrendering all actions and their results to the Divine. Love as the highest form of knowledge.</div>
+                        <div class="yoga-key">"Offer your mind to Me, offer your heart to Me, offer your actions to Me. By doing so, you will surely come to Me."<span class="src">Gita 18.65</span></div>
+                    </div>
+                    <div class="yoga-card" style="grid-column: 1 / -1; max-width: 50%; justify-self: center; border-radius: var(--radius-sm);">
+                        <div class="yoga-name">Jnana Yoga</div>
+                        <div class="yoga-deva">ज्ञान योग</div>
+                        <div class="yoga-desc">The path of <strong>knowledge</strong> — the direct investigation into the nature of the Self, culminating in the recognition of one's identity with Brahman.</div>
+                        <div class="yoga-key">"The wise man sees the same Self in the learned sage, the cow, the elephant, and the dog."<span class="src">Gita 5.18</span></div>
+                    </div>
                 </div>
 
-                <p>He established four monasteries (<span class="sanskrit-term" title="The four cardinal monasteries established by Shankara: Sringeri, Dvaraka, Puri, Badrinath">Āmnāya Mathas</span>) in the four corners of India, preserving the teaching for over twelve centuries. His lineage continues unbroken to the present day.</p>
-
-                <div class="teacher-grid">
-                    <div class="teacher-card">
-                        <div class="era">Key Text</div>
-                        <div class="name">Brahma Sūtra Bhāṣya</div>
-                        <div class="deva-name">ब्रह्म सूत्र भाष्य</div>
-                        <div class="contribution">His magnum opus — a commentary on the <strong>Brahma Sūtras</strong> of Bādarāyaṇa. Establishes Advaita through rigorous dialectic.</div>
-                        <div class="key-text">"The scripture is the only means for knowing Brahman, because Brahman is beyond all sense perception and reasoning."<span class="src">Brahma Sūtra Bhāṣya 1.1.2</span></div>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="era">Core Contribution</div>
-                        <div class="name">The Path of Jñāna Yoga</div>
-                        <div class="deva-name">ज्ञान योग</div>
-                        <div class="contribution">The three stages: <strong>śravaṇa</strong> (hearing), <strong>manana</strong> (reflection), and <strong>nididhyāsana</strong> (deep meditation). The direct path to liberation.</div>
-                        <div class="key-text">"The mind becomes purified by the practice of these virtues, and then the truth of the Upaniṣads shines forth like a lamp in a windless place."<span class="src">Vivekachūḍāmaṇi 18</span></div>
-                    </div>
+                <div class="resonance-box">
+                    <h4>⚡ The Gita's Role in Vedanta</h4>
+                    <p>Why does the Gita matter so much? Because it takes the profound, abstract truths of the Upanishads — <em>"That Thou Art"</em> — and shows how they can be lived in everyday life. It bridges the gap between the monastery and the battlefield, teaching that liberation is not achieved by escaping the world but by engaging with it <em>without attachment</em>. The Gita is the most accessible and practical expression of Vedantic philosophy, making it one of the most widely read spiritual texts in the world.</p>
                 </div>
             </div>
         </section>
@@ -2365,97 +1816,89 @@
         <hr class="stage-sep" />
 
         <!-- ═══════════════════════════════════════
-             SECTION IV: RAMANA
+             SECTION IV: BRAHMA SUTRAS
              ═══════════════════════════════════════ -->
-        <section class="stage-section" id="ramana">
-            <div class="stage-wm" aria-hidden="true">रमण</div>
+        <section class="stage-section" id="brahma-sutras">
+            <div class="stage-wm" aria-hidden="true">ब्रह्मसूत्र</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter IV</span>
-                    <span class="stage-skt">The Living Master</span>
-                    <span class="stage-deva-title">रमण</span>
+                    <span class="stage-skt">The Logic</span>
+                    <span class="stage-deva-title">ब्रह्मसूत्र · c. 200 BCE – 200 CE</span>
                 </div>
-                <h2 class="stage-h2">Ramana Maharshi — The Living Recognition</h2>
-                <span class="stage-subtitle-label">1879–1950 · The Sage of Arunachala</span>
+                <h2 class="stage-h2">The Brahma Sutras</h2>
+                <span class="stage-subtitle-label">The systematic philosophy of Vedanta</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>R</strong>amana Maharshi realised the Self spontaneously at the age of sixteen, without any formal teaching or spiritual practice. His method, <strong><span class="sanskrit-term" title="The method of Self-enquiry; tracing the 'I'-thought back to its source">Atma Vicāra</span></strong> (Self-enquiry), is the direct investigation into the nature of the "I"-thought: <em>"Who am I?"</em></p>
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The systematic aphorisms that organize Vedantic philosophy">Brahma Sutras</span> (also known as the <em>Vedanta Sutras</em>) are a collection of 555 aphorisms composed by <span class="sanskrit-term" title="The author of the Brahma Sutras; the systematizer of Vedantic philosophy">Bādarāyaṇa</span>. They systematically organize the teachings of the Upanishads into a coherent philosophical system.</p>
 
-                <p>He taught for 54 years from Tiruvannamalai, offering the simplest and most direct practice: trace every thought back to its source, the "I"-thought, and that source will dissolve when looked at directly. His primary teaching: <em>"The Guru is none other than the Self."</em></p>
+                <p>Each sutra is a brief, precise statement that encapsulates a key Vedantic principle. They are arranged in four chapters (<em>Adhyāyas</em>), each divided into four sections (<em>Pādas</em>):</p>
+
+                <ul style="font-family:'Crimson Pro', serif; font-size:1.05rem; color:var(--stone); line-height:1.88; list-style:none; padding-left:0; margin-bottom:1.5rem;">
+                    <li style="padding:0.3rem 0; border-bottom:1px solid var(--border-subtle);"><strong style="color:var(--gold);">Chapter I:</strong> <em>Samanvaya</em> — The harmony of all Upanishadic teachings. Establishes that Brahman is the ultimate reality.</li>
+                    <li style="padding:0.3rem 0; border-bottom:1px solid var(--border-subtle);"><strong style="color:var(--gold);">Chapter II:</strong> <em>Avirodha</em> — Non-contradiction. Refutes opposing philosophical views (Sāṃkhya, Yoga, etc.) and reconciles apparent contradictions in the Upanishads.</li>
+                    <li style="padding:0.3rem 0; border-bottom:1px solid var(--border-subtle);"><strong style="color:var(--gold);">Chapter III:</strong> <em>Sādhana</em> — The means of realization. Discusses the path to liberation, including the role of meditation and the qualifications required for the seeker.</li>
+                    <li style="padding:0.3rem 0;"><strong style="color:var(--gold);">Chapter IV:</strong> <em>Phala</em> — The fruit. Describes the nature of liberation (<em>mokṣa</em>) and the state of the liberated soul.</li>
+                </ul>
 
                 <div class="pull-q">
-                    <p>"Of all the thoughts that rise in the mind, the thought 'I' is the first thought. Enquire into the nature of the 'I'. This is Self-enquiry."</p>
-                    <cite>— Who Am I? (Nan Yar, 1902)</cite>
+                    <p>"That which is the subtle essence — in that all that exists has its Self. That is the Truth. That is the Self. That Thou Art."</p>
+                    <cite>— Chāndogya Upaniṣad 6.8.7, quoted in Brahma Sūtra 1.1.4</cite>
                 </div>
 
-                <p>Ramana's teaching is the experiential enactment of the Mahāvākyas. Where the Upanishads declare identity in language, Ramana points to immediate recognition. His influence spread globally through his disciples, including <span class="sanskrit-term" title="The 'Lightning Guru'; a disciple of Ramana who triggered sudden awakenings">Papaji (H.W.L. Poonja)</span>, who went on to teach Mooji and many others.</p>
-
-                <div class="teacher-grid">
-                    <div class="teacher-card">
-                        <div class="era">Key Text</div>
-                        <div class="name">Who Am I? (Nan Yar)</div>
-                        <div class="deva-name">नान् यार्</div>
-                        <div class="contribution">The foundational text of Ramana's teaching. A direct inquiry into the nature of the "I"-thought. The shortest and most powerful of his works.</div>
-                        <div class="key-text">"By the inquiry 'Who am I?' the mind will merge into the Self. If the mind is not destroyed, Self-realisation is not possible."<span class="src">Who Am I?</span></div>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="era">Core Contribution</div>
-                        <div class="name">Self-Enquiry (Vicāra)</div>
-                        <div class="deva-name">आत्मविचार</div>
-                        <div class="contribution">The direct method of tracing the "I"-thought back to its source. Not a mantra to repeat — the actual, living recognition of consciousness itself.</div>
-                        <div class="key-text">"The seeker is the sought. The search is for what was never lost. When this is seen, the search ends."<span class="src">The Essential Teaching</span></div>
-                    </div>
-                </div>
+                <p>The Brahma Sutras are the logical thread that strings the pearls of Upanishadic wisdom into a coherent philosophical system. They do not introduce new teachings but organize and defend the existing ones, providing a framework for all later Vedantic commentary.</p>
             </div>
         </section>
 
         <hr class="stage-sep" />
 
         <!-- ═══════════════════════════════════════
-             SECTION V: NISARGADATTA
+             SECTION V: PRASTHANATRAYI
              ═══════════════════════════════════════ -->
-        <section class="stage-section" id="nisargadatta">
-            <div class="stage-wm" aria-hidden="true">निसर्गदत्त</div>
+        <section class="stage-section" id="prasthanatrayi">
+            <div class="stage-wm" aria-hidden="true">प्रस्थानत्रयी</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter V</span>
-                    <span class="stage-skt">The Radical Pointer</span>
-                    <span class="stage-deva-title">निसर्गदत्त</span>
+                    <span class="stage-skt">The Triple Canon</span>
+                    <span class="stage-deva-title">प्रस्थानत्रयी</span>
                 </div>
-                <h2 class="stage-h2">Nisargadatta — The Radical Pointer</h2>
-                <span class="stage-subtitle-label">1897–1981 · The Guru of Mumbai</span>
+                <h2 class="stage-h2">The Prasthanatrayi</h2>
+                <span class="stage-subtitle-label">The three foundational texts of Vedanta</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>N</strong>isargadatta Maharaj was an ordinary householder and beedi-shop owner until the age of 36. Following his guru's single instruction — <em>"abide in the sense of 'I Am'"</em> — he realised the Self within three years. He taught from his humble Khetwadi flat in Mumbai for forty years, attracting seekers from around the world.</p>
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The three foundational texts of Vedanta: Upanishads, Bhagavad Gita, Brahma Sutras">Prasthanatrayi</span> is the triple canon of Vedanta. It consists of the three texts that form the basis of all classical Vedantic philosophy. They complement each other perfectly:</p>
 
-                <p>His method, <strong><span class="sanskrit-term" title="The yoga of the natural state; abiding in the bare sense of 'I Am'">Nisarga Yoga</span></strong>, is the practice of abiding in the bare "I Am" — the sense of existing prior to thought. He identified this "I Am" with <span class="sanskrit-term" title="God; the creative principle; the source of the universe">Ishvara</span>, the creative principle. His radical teaching: even the "I Am" is an appearance. What is prior to it — <strong><span class="sanskrit-term" title="The Absolute; that which is prior to consciousness">Parabrahman</span></strong> — is the ultimate reality.</p>
-
-                <div class="pull-q">
-                    <p>"The knowledge 'I am' is the link between the Absolute and the relative. The Absolute is prior to consciousness."</p>
-                    <cite>— I Am That</cite>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.5rem; margin:2rem 0;">
+                    <div style="background:var(--surface); padding:1.5rem; border-radius:var(--radius-sm); text-align:center; border:1px solid var(--border-medium); transition:all 0.3s var(--ease-out-expo);">
+                        <div style="font-family:'Cinzel', serif; font-size:0.5rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">Śruti</div>
+                        <div style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; font-weight:400; color:var(--ink);">Upanishads</div>
+                        <div style="font-family:'Noto Serif Devanagari', serif; font-size:0.9rem; color:var(--stone-light); opacity:0.6;">उपनिषद्</div>
+                        <div style="font-family:'Crimson Pro', serif; font-size:0.85rem; color:var(--stone); margin-top:0.5rem;">The Source<br />Revelation</div>
+                    </div>
+                    <div style="background:var(--surface); padding:1.5rem; border-radius:var(--radius-sm); text-align:center; border:1px solid var(--border-medium); transition:all 0.3s var(--ease-out-expo);">
+                        <div style="font-family:'Cinzel', serif; font-size:0.5rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">Smṛti</div>
+                        <div style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; font-weight:400; color:var(--ink);">Bhagavad Gita</div>
+                        <div style="font-family:'Noto Serif Devanagari', serif; font-size:0.9rem; color:var(--stone-light); opacity:0.6;">भगवद्गीता</div>
+                        <div style="font-family:'Crimson Pro', serif; font-size:0.85rem; color:var(--stone); margin-top:0.5rem;">The Synthesis<br />Tradition</div>
+                    </div>
+                    <div style="background:var(--surface); padding:1.5rem; border-radius:var(--radius-sm); text-align:center; border:1px solid var(--border-medium); transition:all 0.3s var(--ease-out-expo);">
+                        <div style="font-family:'Cinzel', serif; font-size:0.5rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">Nyāya</div>
+                        <div style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; font-weight:400; color:var(--ink);">Brahma Sutras</div>
+                        <div style="font-family:'Noto Serif Devanagari', serif; font-size:0.9rem; color:var(--stone-light); opacity:0.6;">ब्रह्मसूत्र</div>
+                        <div style="font-family:'Crimson Pro', serif; font-size:0.85rem; color:var(--stone); margin-top:0.5rem;">The Logic<br />Systematic Philosophy</div>
+                    </div>
                 </div>
 
-                <p>Nisargadatta's teaching is often compared with Ramana's. Both point to the same reality, but their methods differ: Ramana traces the "I"-thought to its source; Nisargadatta abides in the "I Am" until it reveals what is prior to itself.</p>
+                <p>Together, these three texts form the complete foundation of Vedanta. The Upanishads provide the <strong>revelation</strong> (Śruti) — the direct perception of truth. The Bhagavad Gita provides the <strong>synthesis</strong> (Smṛti) — the practical application. The Brahma Sutras provide the <strong>logic</strong> (Nyāya) — the systematic defense and organization of the teachings.</p>
 
-                <div class="teacher-grid">
-                    <div class="teacher-card">
-                        <div class="era">Key Text</div>
-                        <div class="name">I Am That</div>
-                        <div class="deva-name">अहम् तत्</div>
-                        <div class="contribution">The collected conversations of Nisargadatta, translated by Maurice Frydman. Never out of print since 1973. The most widely-read Advaita text of the modern era.</div>
-                        <div class="key-text">"The sense 'I am' is the basis of all experience. Without it, there is no experience. Find that sense, hold on to it, and you will know yourself."<span class="src">I Am That, Chapter 7</span></div>
-                    </div>
-                    <div class="teacher-card">
-                        <div class="era">Core Contribution</div>
-                        <div class="name">The Distinction</div>
-                        <div class="deva-name">चिदाकाश · परमाकाश</div>
-                        <div class="contribution">The critical distinction between <strong>Consciousness (Chidākāśa)</strong> and <strong>the Absolute (Paramākāśa)</strong>. Consciousness is still an appearance; the Absolute is prior to consciousness.</div>
-                        <div class="key-text">"The entire universe exists only in consciousness (Chidākāśa), while the Jñānī has his abode in the Absolute (Paramākāśa)."<span class="src">Nisargadatta Maharaj</span></div>
-                    </div>
+                <div class="resonance-box">
+                    <h4>📜 The Unity of the Three</h4>
+                    <p>No single text can stand alone. The Upanishads are too vast and seemingly contradictory; the Gita is too practical to serve as a complete philosophical system; the Brahma Sutras are too abstract without the context of the Upanishads and the Gita. Together, they form a complete, integrated system of spiritual knowledge — the Prasthanatrayi.</p>
                 </div>
             </div>
         </section>
@@ -2463,524 +1906,90 @@
         <hr class="stage-sep" />
 
         <!-- ═══════════════════════════════════════
-             SECTION VI: FURTHER VOICES — EXPANDED LINEAGE
+             SECTION VI: KEY CONCEPTS
              ═══════════════════════════════════════ -->
-        <section class="stage-section" id="further-voices">
-            <div class="stage-wm" aria-hidden="true">परम्परा</div>
+        <section class="stage-section" id="key-concepts">
+            <div class="stage-wm" aria-hidden="true">शब्दकोश</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter VI</span>
-                    <span class="stage-skt">The Full Lineage</span>
-                    <span class="stage-deva-title">परम्परा</span>
+                    <span class="stage-skt">Core Vocabulary</span>
+                    <span class="stage-deva-title">शब्दकोश</span>
                 </div>
-                <h2 class="stage-h2">Further Voices — The Full Lineage</h2>
-                <span class="stage-subtitle-label">The many teachers and texts that shape the Advaita tradition</span>
+                <h2 class="stage-h2">Key Concepts</h2>
+                <span class="stage-subtitle-label">The essential terms of Vedanta — a concise glossary</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>T</strong>he four teachers profiled above are pillars of the tradition, but they are not alone. Advaita Vedanta is a vast, living river with many tributaries. Below are additional teachers and texts that have shaped the tradition, organised by era.</p>
-
-                <div class="ed-h3">Pre-Shankara · प्राचीन आचार्य</div>
-                <div class="further-grid">
-                    <div class="further-card">
-                        <div class="name">Bādarāyaṇa</div>
-                        <div class="deva-name">बादरायण</div>
-                        <div class="dates">c. 200 BCE – 200 CE</div>
-                        <div class="role">Author of the Brahma Sūtras</div>
-                        <div class="desc">The foundational text of Vedanta philosophy. 555 aphorisms that systematise the Upanishadic teachings. Shankara's magnum opus is a commentary on this text.</div>
-                        <div class="key-work">Brahma Sūtras</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Bhartṛhari</div>
-                        <div class="deva-name">भर्तृहरि</div>
-                        <div class="dates">c. 5th century CE</div>
-                        <div class="role">Grammarian &amp; Philosopher</div>
-                        <div class="desc">Author of the <em>Vākyapadīya</em>, a treatise on language and consciousness. His teaching on the unity of word and meaning influenced later Advaita.</div>
-                        <div class="key-work">Vākyapadīya</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Bṛhaspati</div>
-                        <div class="deva-name">बृहस्पति</div>
-                        <div class="dates">c. 5th–6th c. (traditional)</div>
-                        <div class="role">Early Advaita Teacher</div>
-                        <div class="desc">Mentioned in Shankara's works as an early exponent of Advaita. His teachings are known only through citations in later texts.</div>
-                        <div class="key-work">Lost to history</div>
-                    </div>
-                </div>
-
-                <div class="further-section-label">✦ Post-Shankara · आधुनिक आचार्य ✦</div>
-                <div class="further-grid">
-                    <div class="further-card">
-                        <div class="name">Padmapāda</div>
-                        <div class="deva-name">पद्मपाद</div>
-                        <div class="dates">c. 9th century CE</div>
-                        <div class="role">Direct Disciple of Shankara</div>
-                        <div class="desc">Author of the <em>Pañcapādikā</em>, a commentary on Shankara's Brahma Sūtra Bhāṣya. One of the earliest sub-commentators.</div>
-                        <div class="key-work">Pañcapādikā</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Sureśvara</div>
-                        <div class="deva-name">सुरेश्वर</div>
-                        <div class="dates">c. 9th century CE</div>
-                        <div class="role">Direct Disciple of Shankara</div>
-                        <div class="desc">Author of the <em>Naiṣkarmya Siddhi</em>, a defence of Advaita. Also wrote commentaries on Shankara's works on the Bṛhadāraṇyaka and Taittirīya Upaniṣads.</div>
-                        <div class="key-work">Naiṣkarmya Siddhi</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Maṇḍana Miśra</div>
-                        <div class="deva-name">मण्डन मिश्र</div>
-                        <div class="dates">c. 8th century CE</div>
-                        <div class="role">Debater &amp; Disciple</div>
-                        <div class="desc">Initially a Mīmāṃsaka, he debated Shankara and became his disciple. Author of the <em>Brahma Siddhi</em>, an early defense of Advaita.</div>
-                        <div class="key-work">Brahma Siddhi</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Vācaspati Miśra</div>
-                        <div class="deva-name">वाचस्पति मिश्र</div>
-                        <div class="dates">c. 9th–10th c.</div>
-                        <div class="role">Bhāmatī School</div>
-                        <div class="desc">Author of the <em>Bhāmatī</em>, a sub-commentary on Shankara's Brahma Sūtra Bhāṣya. Founded the Bhāmatī school of Advaita interpretation.</div>
-                        <div class="key-work">Bhāmatī</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Prakāśātman</div>
-                        <div class="deva-name">प्रकाशात्मन्</div>
-                        <div class="dates">c. 11th century CE</div>
-                        <div class="role">Vivaraṇa School</div>
-                        <div class="desc">Author of the <em>Pañcapādikā Vivaraṇa</em>, a commentary on Padmapāda's work. Founded the Vivaraṇa school of Advaita.</div>
-                        <div class="key-work">Pañcapādikā Vivaraṇa</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Vidyāraṇya</div>
-                        <div class="deva-name">विद्यारण्य</div>
-                        <div class="dates">c. 14th century CE</div>
-                        <div class="role">Author &amp; Teacher</div>
-                        <div class="desc">Author of the <em>Pañcadaśī</em>, a comprehensive summary of Advaita in fifteen chapters. Also wrote on Jīvanmukti.</div>
-                        <div class="key-work">Pañcadaśī</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Madhusūdana Sarasvatī</div>
-                        <div class="deva-name">मधुसूदन सरस्वती</div>
-                        <div class="dates">c. 16th century CE</div>
-                        <div class="role">Advaita Siddhi</div>
-                        <div class="desc">Author of the <em>Advaita Siddhi</em>, a definitive defense of Advaita against rival schools. Also wrote on the unity of bhakti and jñāna.</div>
-                        <div class="key-work">Advaita Siddhi</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Sadānanda</div>
-                        <div class="deva-name">सदानन्द</div>
-                        <div class="dates">c. 17th century CE</div>
-                        <div class="role">Vedāntasāra</div>
-                        <div class="desc">Author of the <em>Vedāntasāra</em> (Essence of Vedanta), a popular summary of Advaita for students. Clear and accessible.</div>
-                        <div class="key-work">Vedāntasāra</div>
-                    </div>
-                </div>
-
-                <div class="further-section-label">✦ The Śaṅkarācārya Lineage · शङ्कराचार्य परम्परा ✦</div>
-                <p style="text-align:center; color:var(--stone); max-width:600px; margin:0.5rem auto 1.5rem;">The unbroken succession of heads of the four monasteries established by Shankara. Each is a living teacher in the tradition.</p>
-                <div class="further-grid">
-                    <div class="further-card">
-                        <div class="name">Śṛṅgerī Śaṅkarācārya</div>
-                        <div class="deva-name">शृङ्गेरी</div>
-                        <div class="dates">South · Sāma Veda</div>
-                        <div class="role">Karnataka, India</div>
-                        <div class="desc">The first matha established by Shankara. The current head is <strong>Śrī Bhāratī Tīrtha Svāmī</strong> (since 1989).</div>
-                        <div class="key-work">Sringeri Matha</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Dvārakā Śaṅkarācārya</div>
-                        <div class="deva-name">द्वारका</div>
-                        <div class="dates">West · Yajur Veda</div>
-                        <div class="role">Gujarat, India</div>
-                        <div class="desc">Established in the ancient city of Dvārakā, associated with Lord Krishna. Guards the western threshold of India.</div>
-                        <div class="key-work">Dvaraka Matha</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Puri Śaṅkarācārya</div>
-                        <div class="deva-name">पुरी</div>
-                        <div class="dates">East · Ṛg Veda</div>
-                        <div class="role">Odisha, India</div>
-                        <div class="desc">Located at the famous Jagannath temple. Upholds the Rig Veda and the eastern tradition of Advaita.</div>
-                        <div class="key-work">Govardhana Matha</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Badrīnāth Śaṅkarācārya</div>
-                        <div class="deva-name">बद्रीनाथ</div>
-                        <div class="dates">North · Atharva Veda</div>
-                        <div class="role">Uttarakhand, India</div>
-                        <div class="desc">Located in the Himalayas, a sacred pilgrimage site. Protects the northern tradition and the Atharva Veda.</div>
-                        <div class="key-work">Jyotirmatha</div>
-                    </div>
-                </div>
-
-                <div class="further-section-label">✦ Modern Teachers · आधुनिक गुरु ✦</div>
-                <div class="further-grid">
-                    <div class="further-card">
-                        <div class="name">Swami Vivekananda</div>
-                        <div class="deva-name">स्वामी विवेकानन्द</div>
-                        <div class="dates">1863–1902</div>
-                        <div class="role">Disciple of Ramakrishna</div>
-                        <div class="desc">Brought Advaita Vedanta to the West at the World's Parliament of Religions (1893). Founded the Ramakrishna Mission. Key text: <em>Raja Yoga</em>.</div>
-                        <div class="key-work">Jnana Yoga</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Swami Chinmayananda</div>
-                        <div class="deva-name">स्वामी चिन्मयानन्द</div>
-                        <div class="dates">1916–1993</div>
-                        <div class="role">Disciple of Swami Sivananda</div>
-                        <div class="desc">Popularised Advaita for modern audiences. Founded the Chinmaya Mission. Author of commentaries on all major Upanishads and the Bhagavad Gītā.</div>
-                        <div class="key-work">Bhagavad Gītā Commentary</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Swami Dayananda Saraswati</div>
-                        <div class="deva-name">स्वामी दयानन्द सरस्वती</div>
-                        <div class="dates">1930–2015</div>
-                        <div class="role">Traditional Advaita Teacher</div>
-                        <div class="desc">A master of traditional Advaita teaching method. Taught thousands of students. Founded Arsha Vidya Gurukulam. Known for his clarity in teaching the Upanishads.</div>
-                        <div class="key-work">Upanishad Commentaries</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Mooji</div>
-                        <div class="deva-name">मूजी</div>
-                        <div class="dates">1954–present</div>
-                        <div class="role">Disciple of Papaji</div>
-                        <div class="desc">A living voice of Ramana's teaching. Points directly to the Self through Satsang, silence, and inquiry. Reaches millions worldwide through online videos.</div>
-                        <div class="key-work">Vaster than the Sky</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Annamalai Swami</div>
-                        <div class="deva-name">अन्नमलै स्वामी</div>
-                        <div class="dates">1906–1995</div>
-                        <div class="role">Ramana's Disciple</div>
-                        <div class="desc">A devoted disciple who lived at Ramana's ashram. His teaching emphasises the unity of work and meditation — all action as worship of the Self.</div>
-                        <div class="key-work">Living by the Words of Bhagavan</div>
-                    </div>
-                    <div class="further-card">
-                        <div class="name">Ramesh Balsekar</div>
-                        <div class="deva-name">रमेश बालसेकर</div>
-                        <div class="dates">1917–2009</div>
-                        <div class="role">Nisargadatta's Disciple</div>
-                        <div class="desc">A disciple of Nisargadatta who bridged the teaching with Western psychology. Author of many books. Emphasised the non-doership teaching.</div>
-                        <div class="key-work">The One in the Mirror</div>
-                    </div>
-                </div>
-
-                <div class="pull-q" style="margin-top:3rem">
-                    <p>"The teaching is not the property of any one teacher. It is the living truth, available to anyone who turns their attention inward. The lineage is not a line of succession — it is the recognition of what is always already present."</p>
-                    <cite>— The Living Tradition</cite>
-                </div>
-            </div>
-        </section>
-
-        <hr class="stage-sep" />
-
-        <!-- ═══════════════════════════════════════
-             SECTION VII: COMPARATIVE SUMMARY
-             ═══════════════════════════════════════ -->
-        <section class="stage-section" id="comparative">
-            <div class="stage-wm" aria-hidden="true">तुलना</div>
-            <div class="stage-header">
-                <div class="stage-eyeline">
-                    <span class="stage-n">Chapter VII</span>
-                    <span class="stage-skt">Comparative Summary</span>
-                    <span class="stage-deva-title">तुलना · संवाद</span>
-                </div>
-                <h2 class="stage-h2">Many Voices, One Truth</h2>
-                <span class="stage-subtitle-label">A comparative overview of the four primary teachers and the broader tradition</span>
-                <span class="stage-rule"></span>
-            </div>
-
-            <div class="stage-body">
-                <p><strong>F</strong>our teachers, four methods, one truth. Each has contributed a unique facet to the diamond of Advaita. The table below summarises their key teachings, methods, and contributions.</p>
+                <p><strong>T</strong>he following terms form the core vocabulary of Vedanta. They appear repeatedly in the Upanishads, the Gita, and the Brahma Sutras, and are essential to understanding the non-dual philosophy.</p>
 
                 <div class="comp-table-wrap">
                     <table class="comp-table">
                         <thead>
                             <tr>
-                                <th>Teacher</th>
-                                <th>Era</th>
-                                <th>Key Text</th>
-                                <th>Core Method</th>
-                                <th>Unique Contribution</th>
+                                <th>Term</th>
+                                <th>Translation</th>
+                                <th>Meaning in Vedanta</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Gaudapada</td>
-                                <td>6th–7th c.</td>
-                                <td>Māṇḍūkya Kārikā</td>
-                                <td>Philosophical analysis + direct pointing</td>
-                                <td><strong>Ajāta Vāda</strong> — the doctrine of non-origination</td>
-                            </tr>
-                            <tr class="highlight-cell">
-                                <td>Adi Shankara</td>
-                                <td>8th c.</td>
-                                <td>Brahma Sūtra Bhāṣya</td>
-                                <td>Systematic philosophy + Jñāna Yoga</td>
-                                <td><strong>Systematization</strong> — established Advaita as a complete philosophical system</td>
+                                <td>Ātman</td>
+                                <td>Self</td>
+                                <td>The eternal, unchanging consciousness that is your true nature. Beyond mind, body, and all attributes. Identical with Brahman.</td>
                             </tr>
                             <tr>
-                                <td>Ramana Maharshi</td>
-                                <td>1879–1950</td>
-                                <td>Who Am I? (Nan Yar)</td>
-                                <td>Self-Enquiry (Vicāra)</td>
-                                <td><strong>Direct pointing</strong> — the living practice of the Mahāvākyas</td>
+                                <td>Brahman</td>
+                                <td>Absolute</td>
+                                <td>The ultimate reality, the ground of existence. Non-dual, infinite, eternal. In Advaita, Ātman and Brahman are one.</td>
                             </tr>
                             <tr>
-                                <td>Nisargadatta</td>
-                                <td>1897–1981</td>
-                                <td>I Am That</td>
-                                <td>Nisarga Yoga — abiding in "I Am"</td>
-                                <td><strong>Consciousness vs. Absolute</strong> — even the "I Am" is an appearance</td>
+                                <td>Māyā</td>
+                                <td>Illusion</td>
+                                <td>The power of appearances. The mechanism by which the one reality appears as the many. Not a trick — the inherent creative power of Brahman.</td>
+                            </tr>
+                            <tr>
+                                <td>Avidyā</td>
+                                <td>Ignorance</td>
+                                <td>The fundamental misperception that separates the self from reality. The root cause of suffering and bondage.</td>
+                            </tr>
+                            <tr>
+                                <td>Mokṣa</td>
+                                <td>Liberation</td>
+                                <td>Freedom from the cycle of birth and death. The direct recognition of one's identity with Brahman. The ultimate goal of Vedanta.</td>
+                            </tr>
+                            <tr>
+                                <td>Jñāna</td>
+                                <td>Knowledge</td>
+                                <td>Not intellectual knowledge, but direct, intuitive realization. The recognition of the Self as Brahman. The path of Jñāna Yoga.</td>
+                            </tr>
+                            <tr>
+                                <td>Bhakti</td>
+                                <td>Devotion</td>
+                                <td>Love and surrender to the Divine. In the Gita, the highest form of devotion is the recognition that all is Brahman.</td>
+                            </tr>
+                            <tr>
+                                <td>Karma</td>
+                                <td>Action</td>
+                                <td>Action and its consequences. The law of cause and effect. In Vedanta, action performed without attachment leads to liberation.</td>
+                            </tr>
+                            <tr>
+                                <td>Turīya</td>
+                                <td>The Fourth</td>
+                                <td>Not a state but the unchanging awareness that witnesses waking, dreaming, and deep sleep. The silent background of all experience.</td>
+                            </tr>
+                            <tr>
+                                <td>Viveka</td>
+                                <td>Discrimination</td>
+                                <td>The capacity to distinguish the real from the apparent, the permanent from the transient. The essential faculty on the path.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
-                <div class="resonance-box">
-                    <h4>⚡ The Living Convergence</h4>
-                    <p>Despite their different methods and emphases, all four teachers — and indeed all the teachers listed in the lineage above — point to the same reality: <strong>the Self that is ever-present, beyond mind, beyond words, beyond all appearance</strong>. Gaudapada established the philosophical foundation; Shankara systematised it; Ramana made it a living practice; Nisargadatta pushed it to its ultimate conclusion. The lineage continues through the Śaṅkarācāryas, the modern teachers, and countless unnamed sages. Together, they form a <strong>golden thread</strong> that stretches from the Upanishads to the present — an unbroken transmission of the non-dual teaching.</p>
-                </div>
-
-                <div class="ed-h3">The Golden Thread · सुवर्ण सूत्र</div>
-
-                <!-- SVG Lineage Diagram -->
-                <div class="lineage-diagram-wrap">
-                    <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lineage diagram showing the golden thread from Upanishads to Nisargadatta">
-                        <!-- Golden thread -->
-                        <path class="thread" d="M 50 80 Q 120 20, 200 80 Q 280 140, 350 80 Q 420 20, 500 80 Q 580 140, 650 80" />
-
-                        <!-- Nodes -->
-                        <circle cx="50" cy="80" r="22" class="node-circle" />
-                        <text x="50" y="73" text-anchor="middle" class="node-text" font-size="7">Upanishads</text>
-                        <text x="50" y="88" text-anchor="middle" class="node-deva" font-size="6">उपनिषद्</text>
-
-                        <circle cx="200" cy="80" r="22" class="node-circle" />
-                        <text x="200" y="73" text-anchor="middle" class="node-text" font-size="7">Gaudapada</text>
-                        <text x="200" y="88" text-anchor="middle" class="node-deva" font-size="6">गौडपाद</text>
-
-                        <circle cx="350" cy="80" r="22" class="node-circle" />
-                        <text x="350" y="70" text-anchor="middle" class="node-text" font-size="6.5">Adi Shankara</text>
-                        <text x="350" y="83" text-anchor="middle" class="node-deva" font-size="5.5">शङ्कर</text>
-                        <text x="350" y="96" text-anchor="middle" class="node-sub" font-size="5.5">c. 8th c.</text>
-
-                        <circle cx="500" cy="80" r="22" class="node-circle" />
-                        <text x="500" y="70" text-anchor="middle" class="node-text" font-size="6.5">Ramana</text>
-                        <text x="500" y="83" text-anchor="middle" class="node-deva" font-size="5.5">रमण</text>
-                        <text x="500" y="96" text-anchor="middle" class="node-sub" font-size="5.5">1879–1950</text>
-
-                        <circle cx="650" cy="80" r="22" class="node-circle" />
-                        <text x="650" y="70" text-anchor="middle" class="node-text" font-size="6.5">Nisargadatta</text>
-                        <text x="650" y="83" text-anchor="middle" class="node-deva" font-size="5.5">निसर्गदत्त</text>
-                        <text x="650" y="96" text-anchor="middle" class="node-sub" font-size="5.5">1897–1981</text>
-
-                        <!-- Connecting rays -->
-                        <line x1="72" y1="80" x2="178" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
-                        <line x1="222" y1="80" x2="328" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
-                        <line x1="372" y1="80" x2="478" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
-                        <line x1="522" y1="80" x2="628" y2="80" stroke="var(--gold)" stroke-width="0.5" opacity="0.2" />
-
-                        <!-- Small diamonds between nodes -->
-                        <polygon points="130,80 133,77 136,80 133,83" fill="var(--gold)" opacity="0.15" />
-                        <polygon points="280,80 283,77 286,80 283,83" fill="var(--gold)" opacity="0.15" />
-                        <polygon points="430,80 433,77 436,80 433,83" fill="var(--gold)" opacity="0.15" />
-                        <polygon points="580,80 583,77 586,80 583,83" fill="var(--gold)" opacity="0.15" />
-                    </svg>
-                </div>
-
-                <p style="text-align:center; color:var(--stone); font-style:italic; font-size:0.9rem; max-width:600px; margin:0 auto;">The golden thread of Advaita: from the Upanishads through Gaudapada, Shankara, Ramana, and Nisargadatta — an unbroken transmission of non-dual recognition.</p>
             </div>
         </section>
     </div><!-- .stages-wrap -->
-
-    <div class="skt-divider"><span class="skt-divider-inner">ॐ</span></div>
-
-    <!-- ═══════════════════════════════════════
-         SECTION VIII: UNIFIED GLOSSARY
-         ═══════════════════════════════════════ -->
-    <section class="gloss-section" id="glossary">
-        <div class="ed-section-label">शब्दकोश</div>
-        <h2 class="ed-section-h2">Unified Glossary</h2>
-        <p class="ed-section-intro">All key Sanskrit terms from the Advaita Vedanta tradition — from the Upanishads through Gaudapada, Shankara, Ramana, Nisargadatta, and the broader lineage.</p>
-
-        <div class="gloss-search-wrap">
-            <span class="gloss-search-ico">🔍</span>
-            <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms…" autocomplete="off" />
-            <button class="gloss-clear" id="glossClear" aria-label="Clear">✕</button>
-        </div>
-        <p class="gloss-no-results" id="glossNoResults">No matching terms found.</p>
-
-        <div class="gloss-grid" id="glossGrid">
-            <!-- Upanishadic terms -->
-            <div class="gloss-entry" data-terms="upanishad vedanta scripture">
-                <div class="gloss-term">Upaniṣad <span class="gloss-term-deva">उपनिषद्</span></div>
-                <span class="gloss-cat">Scripture</span>
-                <p class="gloss-def">The philosophical and mystical texts at the end of the Vedas. The foundation of Vedanta. Twelve principal Upanishads form the core of Advaita.</p>
-            </div>
-            <div class="gloss-entry" data-terms="atman self soul consciousness">
-                <div class="gloss-term">Ātman <span class="gloss-term-deva">आत्मन्</span></div>
-                <span class="gloss-cat">The Self</span>
-                <p class="gloss-def">The eternal, unchanging consciousness that is your true nature. Beyond mind, body, and all attributes. Identical with Brahman.</p>
-            </div>
-            <div class="gloss-entry" data-terms="brahman absolute reality consciousness">
-                <div class="gloss-term">Brahman <span class="gloss-term-deva">ब्रह्मन्</span></div>
-                <span class="gloss-cat">The Absolute</span>
-                <p class="gloss-def">The ultimate reality, the ground of existence. Non-dual, infinite, eternal. In Advaita, Ātman and Brahman are one — the Self is Brahman.</p>
-            </div>
-            <div class="gloss-entry" data-terms="mahavakya great saying four vedanta">
-                <div class="gloss-term">Mahāvākya <span class="gloss-term-deva">महावाक्य</span></div>
-                <span class="gloss-cat">The Great Sayings</span>
-                <p class="gloss-def">The four great sayings of Vedanta: Prajñānaṃ Brahma, Ahaṃ Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma. Each from a different Veda.</p>
-            </div>
-
-            <!-- Gaudapada terms -->
-            <div class="gloss-entry" data-terms="ajata non-origination no-creation">
-                <div class="gloss-term">Ajāta <span class="gloss-term-deva">अजात</span></div>
-                <span class="gloss-cat">Gaudapada</span>
-                <p class="gloss-def">"Non-origination" — the central teaching of Gaudapada that nothing is ever born, created, or produced. The world is a mirage; only Brahman is real.</p>
-            </div>
-            <div class="gloss-entry" data-terms="alata firebrand illusion circle">
-                <div class="gloss-term">Alataśānti <span class="gloss-term-deva">अलतशान्ति</span></div>
-                <span class="gloss-cat">Gaudapada</span>
-                <p class="gloss-def">"Extinction of the Fire-brand" — the fourth chapter of the Māṇḍūkya Kārikā, using the analogy of a swinging fire-brand to show that the world of cause and effect is an illusion.</p>
-            </div>
-            <div class="gloss-entry" data-terms="mandukya karika commentary text">
-                <div class="gloss-term">Māṇḍūkya Kārikā <span class="gloss-term-deva">माण्डूक्य कारिका</span></div>
-                <span class="gloss-cat">Gaudapada</span>
-                <p class="gloss-def">Gaudapada's commentary on the Māṇḍūkya Upaniṣad. The first systematic exposition of Advaita in Sanskrit and the foundation of ajāta vāda.</p>
-            </div>
-
-            <!-- Shankara terms -->
-            <div class="gloss-entry" data-terms="pramana means of knowledge epistemology shankara">
-                <div class="gloss-term">Pramāṇa <span class="gloss-term-deva">प्रमाण</span></div>
-                <span class="gloss-cat">Shankara</span>
-                <p class="gloss-def">A means of valid knowledge. Shankara systematised six: Pratyakṣa (perception), Anumāṇa (inference), Upamāṇa (comparison), Arthāpatti (postulation), Anupalabdhi (non-apprehension), Śabda (verbal testimony).</p>
-            </div>
-            <div class="gloss-entry" data-terms="vivarta superimposition appearance shankara">
-                <div class="gloss-term">Vivarta <span class="gloss-term-deva">विवर्त</span></div>
-                <span class="gloss-cat">Shankara</span>
-                <p class="gloss-def">"Apparent modification" — the doctrine that the world is a superimposition on Brahman, like a rope mistaken for a snake. The world appears but is not ultimately real.</p>
-            </div>
-            <div class="gloss-entry" data-terms="nirguna saguna brahman god personal">
-                <div class="gloss-term">Nirguṇa / Saguṇa <span class="gloss-term-deva">निर्गुण · सगुण</span></div>
-                <span class="gloss-cat">Shankara</span>
-                <p class="gloss-def">Nirguṇa Brahman — Brahman without qualities, the formless absolute. Saguṇa Brahman — Brahman with qualities, the personal God (Īśvara) worshipped through devotion.</p>
-            </div>
-            <div class="gloss-entry" data-terms="sadhana chatushtaya qualifications fourfold shankara">
-                <div class="gloss-term">Sādhana Chatuṣṭaya <span class="gloss-term-deva">साधन चतुष्टय</span></div>
-                <span class="gloss-cat">Shankara</span>
-                <p class="gloss-def">The fourfold qualifications for Jñāna Yoga: Viveka (discrimination), Vairāgya (dispassion), Ṣaṭsampatti (six virtues), Mumukṣutva (longing for liberation).</p>
-            </div>
-            <div class="gloss-entry" data-terms="sravana manana nididhyasana hearing reflection meditation">
-                <div class="gloss-term">Śravaṇa, Manana, Nididhyāsana <span class="gloss-term-deva">श्रवण · मनन · निदिध्यासन</span></div>
-                <span class="gloss-cat">Shankara</span>
-                <p class="gloss-def">The three stages of Jñāna Yoga: hearing the teaching (śravaṇa), reflecting on it (manana), and deep meditation (nididhyāsana).</p>
-            </div>
-
-            <!-- Ramana terms -->
-            <div class="gloss-entry" data-terms="vichara enquiry self-enquiry ramana">
-                <div class="gloss-term">Vicāra <span class="gloss-term-deva">विचार</span></div>
-                <span class="gloss-cat">Ramana Maharshi</span>
-                <p class="gloss-def">"Self-enquiry" — the method of turning attention inward to investigate the "I"-thought. The primary sadhana of Ramana's teaching.</p>
-            </div>
-            <div class="gloss-entry" data-terms="ahankara ego i-thought ramana">
-                <div class="gloss-term">Ahaṁkāra <span class="gloss-term-deva">अहंकार</span></div>
-                <span class="gloss-cat">Ramana Maharshi</span>
-                <p class="gloss-def">The "I"-thought — the first thought that arises and is the root of all others. Dissolved by Self-enquiry.</p>
-            </div>
-            <div class="gloss-entry" data-terms="mouna silence ramana teaching">
-                <div class="gloss-term">Mouna <span class="gloss-term-deva">मौन</span></div>
-                <span class="gloss-cat">Ramana Maharshi</span>
-                <p class="gloss-def">"Silence" — the highest teaching and the highest compassion. The direct transmission from Self to Self, beyond words.</p>
-            </div>
-
-            <!-- Nisargadatta terms -->
-            <div class="gloss-entry" data-terms="nisarga yoga natural state nisargadatta">
-                <div class="gloss-term">Nisarga Yoga <span class="gloss-term-deva">निसर्ग योग</span></div>
-                <span class="gloss-cat">Nisargadatta</span>
-                <p class="gloss-def">Nisargadatta's method: abiding in the bare "I Am" without qualifiers. Effortless recognition of what is always already present.</p>
-            </div>
-            <div class="gloss-entry" data-terms="chidakash consciousness space nisargadatta">
-                <div class="gloss-term">Chidākāśa <span class="gloss-term-deva">चिदाकाश</span></div>
-                <span class="gloss-cat">Nisargadatta</span>
-                <p class="gloss-def">"Consciousness-Space" — the field of knowingness in which the entire universe exists. The "I Am-ness." Still an appearance, not the ultimate.</p>
-            </div>
-            <div class="gloss-entry" data-terms="paramakash absolute space nisargadatta">
-                <div class="gloss-term">Paramākāśa <span class="gloss-term-deva">परमाकाश</span></div>
-                <span class="gloss-cat">Nisargadatta</span>
-                <p class="gloss-def">"Absolute Space" — the abode of the Jñānī, prior to consciousness. In the Absolute there is no consciousness of "I am."</p>
-            </div>
-            <div class="gloss-entry" data-terms="parabrahman absolute prior nisargadatta">
-                <div class="gloss-term">Parabrahman <span class="gloss-term-deva">परब्रह्म</span></div>
-                <span class="gloss-cat">Nisargadatta</span>
-                <p class="gloss-def">That which is prior to consciousness, prior to "I Am." The ultimate reality without qualities, without being or non-being. What you are when all appearances subside.</p>
-            </div>
-            <div class="gloss-entry" data-terms="ishvara god creator nisargadatta">
-                <div class="gloss-term">Ishvara <span class="gloss-term-deva">ईश्वर</span></div>
-                <span class="gloss-cat">Nisargadatta</span>
-                <p class="gloss-def">God — identified by Nisargadatta with the "I Am" itself. The creative principle, the source of the universe. Still an appearance on the Absolute.</p>
-            </div>
-
-            <!-- Shared terms -->
-            <div class="gloss-entry" data-terms="jnani sage realized knower">
-                <div class="gloss-term">Jñānī <span class="gloss-term-deva">ज्ञानी</span></div>
-                <span class="gloss-cat">The Knower</span>
-                <p class="gloss-def">One who has realised the Self. The separate self-sense has dissolved completely. Appears to live normally but with no person behind it.</p>
-            </div>
-            <div class="gloss-entry" data-terms="maya illusion appearance world">
-                <div class="gloss-term">Māyā <span class="gloss-term-deva">माया</span></div>
-                <span class="gloss-cat">Appearance</span>
-                <p class="gloss-def">The power of illusion. Not a trick — simply the apparent appearance of the world on the Self. The mechanism by which the Absolute apparently forgets itself.</p>
-            </div>
-            <div class="gloss-entry" data-terms="turiya fourth witness awareness">
-                <div class="gloss-term">Turīya <span class="gloss-term-deva">तुरीय</span></div>
-                <span class="gloss-cat">The Fourth</span>
-                <p class="gloss-def">Not a state but the unchanging awareness that witnesses and contains waking, dreaming, and deep sleep. The silent background of all experience.</p>
-            </div>
-            <div class="gloss-entry" data-terms="jagrat svapna susupti waking dreaming sleep">
-                <div class="gloss-term">Jāgrat, Svapna, Suṣupti <span class="gloss-term-deva">जाग्रत् · स्वप्न · सुषुप्ति</span></div>
-                <span class="gloss-cat">The Three States</span>
-                <p class="gloss-def">The three ordinary states of consciousness: waking, dreaming, and deep sleep. All three come and go; Turīya, the fourth, is the witness.</p>
-            </div>
-            <div class="gloss-entry" data-terms="viveka discrimination wisdom discernment">
-                <div class="gloss-term">Viveka <span class="gloss-term-deva">विवेक</span></div>
-                <span class="gloss-cat">Discrimination</span>
-                <p class="gloss-def">The capacity to distinguish the real from the apparent, the permanent from the transient, consciousness from its contents. The essential faculty on the path.</p>
-            </div>
-            <!-- Additional lineage terms -->
-            <div class="gloss-entry" data-terms="badarayana brahma sutra">
-                <div class="gloss-term">Bādarāyaṇa <span class="gloss-term-deva">बादरायण</span></div>
-                <span class="gloss-cat">Pre-Shankara</span>
-                <p class="gloss-def">The author of the Brahma Sūtras (c. 200 BCE – 200 CE). His 555 aphorisms systematise the Upanishadic teachings and form the foundation of Vedanta philosophy.</p>
-            </div>
-            <div class="gloss-entry" data-terms="vidyaranya pancadasi">
-                <div class="gloss-term">Vidyāraṇya <span class="gloss-term-deva">विद्यारण्य</span></div>
-                <span class="gloss-cat">Post-Shankara</span>
-                <p class="gloss-def">Author of the Pañcadaśī (c. 14th century CE), a comprehensive summary of Advaita in fifteen chapters. Also wrote on Jīvanmukti (liberation while living).</p>
-            </div>
-            <div class="gloss-entry" data-terms="madhusudana advaita-siddhi">
-                <div class="gloss-term">Madhusūdana Sarasvatī <span class="gloss-term-deva">मधुसूदन सरस्वती</span></div>
-                <span class="gloss-cat">Post-Shankara</span>
-                <p class="gloss-def">Author of the Advaita Siddhi (c. 16th century CE), a definitive defense of Advaita against rival schools. Also wrote on the unity of bhakti and jñāna.</p>
-            </div>
-            <div class="gloss-entry" data-terms="sankaracharya matha monastery lineage">
-                <div class="gloss-term">Śaṅkarācārya <span class="gloss-term-deva">शङ्कराचार्य</span></div>
-                <span class="gloss-cat">Institutional Lineage</span>
-                <p class="gloss-def">The title of the heads of the four monasteries (mathas) established by Shankara. An unbroken lineage of teachers preserving the Advaita tradition.</p>
-            </div>
-            <div class="gloss-entry" data-terms="vivekananda modern ramakrishna">
-                <div class="gloss-term">Swami Vivekananda <span class="gloss-term-deva">स्वामी विवेकानन्द</span></div>
-                <span class="gloss-cat">Modern Teacher</span>
-                <p class="gloss-def">Brought Advaita Vedanta to the West at the World's Parliament of Religions in 1893. Founded the Ramakrishna Mission. Key work: Jnana Yoga.</p>
-            </div>
-            <div class="gloss-entry" data-terms="chinmayananda modern advaita">
-                <div class="gloss-term">Swami Chinmayananda <span class="gloss-term-deva">स्वामी चिन्मयानन्द</span></div>
-                <span class="gloss-cat">Modern Teacher</span>
-                <p class="gloss-def">Popularised Advaita for modern audiences. Founded the Chinmaya Mission. Author of commentaries on all major Upanishads and the Bhagavad Gītā.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- ═══════════════════════════════════════
          TRANSITION PULLQUOTE
@@ -2988,13 +1997,16 @@
     <div class="pq-section">
         <div class="pq-glow"></div>
         <div class="pullquote">
-            <p class="pq-text">"The Guru is not a person. The Self is the Guru. The teaching is the recognition of what always already is."</p>
-            <p class="pq-attr"><a href="advaita-nisargadatta-maharaj.html" class="continue-link">← Return to Nisargadatta Maharaj</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../messiah/messiah-threshold.html" class="continue-link">Continue to The Vedantic Messiah →</a></p>
+            <p class="pq-text">The Upanishads are the source, the Gita is the synthesis, and the Brahma Sutras are the logical thread.
+            — The Prasthanatrayi</p>
+            <p class="pq-attr"><a href="advaita-nisargadatta-maharaj.html" class="continue-link">&larr; Return to Nisargadatta</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../messiah/messiah-threshold.html" class="continue-link">Continue to The Vedantic Messiah &rarr;</a></p>
         </div>
     </div>
 
+    <div class="skt-divider"><span class="skt-divider-inner">ॐ</span></div>
+
     <!-- ═══════════════════════════════════════
-         CHAPTER NAVIGATION
+         FOOTER & NAV
          ═══════════════════════════════════════ -->
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link">⌂ Home</a>
@@ -3005,20 +2017,17 @@
         <span class="chapter-sep">ॐ</span>
         <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
         <span class="chapter-sep">ॐ</span>
-        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta Maharaj</a>
+        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta</a>
         <span class="chapter-sep">ॐ</span>
-        <a href="vedanta-living-tradition.html" class="chapter-link active">The Living Tradition</a>
+        <a href="vedanta-living-tradition.html" class="chapter-link active">Foundations</a>
     </div>
 
-    <!-- ═══════════════════════════════════════
-         FOOTER
-         ═══════════════════════════════════════ -->
     <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">Vedantic Mappings</div>
         <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
         <div class="footer-links">
-            <a href="../index.html"><svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Vedantic Mappings</a>
+            <a href="../index.html">Home</a>
             <a href="advaita-gaudapada.html">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
@@ -3026,8 +2035,8 @@
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
-        <div class="footer-credit">Researched and composed - .</div>
-        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-credit">Researched and composed — J.M.Q.</div>
+        <div class="footer-copyright">Last updated: 22 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
@@ -3035,7 +2044,6 @@
         (function() {
             'use strict';
 
-            /* THEME */
             const html = document.documentElement;
             (function initTheme() {
                 const saved = localStorage.getItem('theme');
@@ -3067,7 +2075,7 @@
                     .innerHeight * 0.6); }, { passive: true });
             if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            /* HERO SCROLL CUE */
+            /* HERO SCROLL */
             const heroScroll = document.getElementById('heroScroll');
             if (heroScroll) heroScroll.addEventListener('click', () => {
                 const toc = document.getElementById('toc');
@@ -3083,45 +2091,13 @@
                 });
             });
 
-            /* GLOSSARY SEARCH */
-            const searchInput = document.getElementById('glossSearch');
-            const clearBtn = document.getElementById('glossClear');
-            const glossItems = document.querySelectorAll('#glossGrid .gloss-entry');
-            const noResults = document.getElementById('glossNoResults');
-
-            function norm(s) {
-                return s.toLowerCase().replace(/[āàáâ]/g, 'a').replace(/[īìíî]/g, 'i').replace(/[ūùúû]/g, 'u')
-                    .replace(/[śṣ]/g, 's').replace(/[ṭ]/g, 't').replace(/[ḍ]/g, 'd').replace(/[ṇ]/g, 'n')
-                    .replace(/[ṁṃ]/g, 'm').replace(/[ḥ]/g, 'h').replace(/ñ/g, 'n');
-            }
-
-            if (searchInput) {
-                searchInput.addEventListener('input', () => {
-                    const q = norm(searchInput.value.trim());
-                    if (clearBtn) clearBtn.classList.toggle('vis', searchInput.value.length > 0);
-                    let count = 0;
-                    glossItems.forEach(item => {
-                        const text = norm(item.textContent + ' ' + (item.dataset.terms || ''));
-                        const show = !q || text.includes(q);
-                        item.style.display = show ? '' : 'none';
-                        if (show) count++;
-                    });
-                    if (noResults) noResults.style.display = count === 0 ? 'block' : 'none';
-                });
-                if (clearBtn) clearBtn.addEventListener('click', () => {
-                    searchInput.value = '';
-                    searchInput.dispatchEvent(new Event('input'));
-                    searchInput.focus();
-                });
-            }
-
-            /* INTERSECTION OBSERVER for fade-in */
+            /* INTERSECTION OBSERVER */
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
             }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-            /* ACTIVE NAV HIGHLIGHTING */
+            /* ACTIVE NAV */
             const sections = document.querySelectorAll('section[id], header[id]');
             const navItems = document.querySelectorAll('.nav-item[data-section]');
 
@@ -3138,31 +2114,9 @@
             window.addEventListener('scroll', updateActiveNav, { passive: true });
             updateActiveNav();
 
-            /* CURSOR GLOW */
-            const cursorGlow = document.getElementById('cursorGlow');
-            if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
-                let mx = 0,
-                    my = 0,
-                    cx = 0,
-                    cy = 0;
-                document.addEventListener('mousemove', e => { mx = e.clientX;
-                    my = e.clientY; }, { passive: true });
-
-                function animateCursor() {
-                    cx += (mx - cx) * 0.08;
-                    cy += (my - cy) * 0.08;
-                    cursorGlow.style.left = cx + 'px';
-                    cursorGlow.style.top = cy + 'px';
-                    requestAnimationFrame(animateCursor);
-                }
-                animateCursor();
-            }
-
-            /* FALLBACK for fade-in */
+            /* FALLBACK */
             setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach(el => {
-                    el.classList.add('visible');
-                });
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
             }, 2000);
         })();
     </script>
