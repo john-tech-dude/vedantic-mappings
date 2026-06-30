@@ -344,6 +344,22 @@
             min-width: 260px;
             max-height: 80vh;
             overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
         }
         .nav-menu.open {
             opacity: 1;
@@ -905,6 +921,7 @@
             color: var(--violet);
             opacity: 0.04;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             z-index: 0;
             letter-spacing: -0.05em;
@@ -1387,6 +1404,7 @@
             line-height: 0.8;
             display: block;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             margin-bottom: -2.5rem;
         }
@@ -1723,8 +1741,35 @@
            ═══════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
             .nav-menu {
-                min-width: 180px;
-            }
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
             .back-to-top {
                 right: 1.5rem;
                 bottom: 5rem;
@@ -1787,9 +1832,35 @@
                 height: 40px;
             }
             .nav-menu {
-                min-width: 160px;
-                border-radius: var(--radius-sm);
-            }
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
             .nav-item {
                 padding: 0.5rem 1rem;
                 font-size: 0.82rem;
@@ -1891,8 +1962,8 @@
             <a href="gnosticism-syzygy-nymphon.html" class="nav-item"><span class="nav-item-icon">✦</span><span>V · Syzygy Theology</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
             <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
             <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
@@ -2496,110 +2567,7 @@
             <div class="stage-body">
                 <p><strong>T</strong>he figure of the Demiurge is not unique to Gnosticism. It appears, under different names and with different valences, across the major esoteric traditions of the ancient world. Understanding these parallels illuminates what is distinctive about the Gnostic formulation — and what is universal about the human recognition that the apparent creator of the visible world is not the ultimate source of being.</p>
 
-                <!-- DIAGRAM: Comparative Table -->
-                <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">The Craftsman Compared · Demiurge Across Traditions</div>
-                    <svg class="diagram-svg" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="tableHeader" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--surface2)" stop-opacity="0.8"/>
-                                <stop offset="100%" stop-color="var(--surface)" stop-opacity="0.6"/>
-                            </linearGradient>
-                            <linearGradient id="tableRow" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--surface)" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="var(--bg)" stop-opacity="0.2"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="800" height="580" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
-
-                        <!-- Title -->
-                        <text x="400" y="35" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em" opacity="0.9">THE CRAFTSMAN ACROSS TRADITIONS</text>
-
-                        <!-- Header row -->
-                        <rect x="40" y="55" width="720" height="38" fill="url(#tableHeader)" rx="4" stroke="var(--border-strong)" stroke-width="0.5"/>
-                        <text x="140" y="78" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">TRADITION</text>
-                        <text x="340" y="78" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">NAME / FIGURE</text>
-                        <text x="580" y="78" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.12em" opacity="0.95">KEY CHARACTERISTICS</text>
-
-                        <!-- Row 1: Plato -->
-                        <rect x="40" y="98" width="720" height="72" fill="url(#tableRow)" rx="4" stroke="var(--border)" stroke-width="0.3"/>
-                        <text x="140" y="122" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">PLATONISM</text>
-                        <text x="140" y="138" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Timaeus · c. 360 BCE</text>
-                        <text x="340" y="122" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">ΔΗΜΙΟΥΡΓΟΣ</text>
-                        <text x="340" y="138" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Craftsman · The Maker</text>
-                        <text x="580" y="118" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Benevolent but limited; fashions</text>
-                        <text x="580" y="132" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">cosmos after eternal Forms; not</text>
-                        <text x="580" y="146" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">the highest principle · Nous</text>
-                        <text x="580" y="160" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"He was good, and the good can never</text>
-                        <text x="580" y="172" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">have any jealousy of what is." — Timaeus 29e</text>
-
-                        <!-- Row 2: Gnosticism -->
-                        <rect x="40" y="175" width="720" height="72" fill="none" rx="4" stroke="var(--border)" stroke-width="0.3"/>
-                        <text x="140" y="199" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">GNOSTICISM</text>
-                        <text x="140" y="215" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Nag Hammadi · 2nd–4th c. CE</text>
-                        <text x="340" y="199" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">YALDABAOTH</text>
-                        <text x="340" y="215" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Saklas · Samael · The Blind God</text>
-                        <text x="580" y="195" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Ignorant and arrogant; believes himself</text>
-                        <text x="580" y="209" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">sole god; creates flawed material prison;</text>
-                        <text x="580" y="223" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">product of Sophia's deficiency · Hylic</text>
-                        <text x="580" y="237" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"I am God and there is no other God</text>
-                        <text x="580" y="249" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">beside me." — Apocryphon of John</text>
-
-                        <!-- Row 3: Kabbalah -->
-                        <rect x="40" y="252" width="720" height="72" fill="url(#tableRow)" rx="4" stroke="var(--border)" stroke-width="0.3"/>
-                        <text x="140" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">KABBALAH</text>
-                        <text x="140" y="292" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Zohar · 13th c. CE</text>
-                        <text x="340" y="276" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">METATRON / SAMAEL</text>
-                        <text x="340" y="292" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Lesser YHWH · The Accuser</text>
-                        <text x="580" y="272" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Angel of the Presence; mediator between</text>
-                        <text x="580" y="286" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">infinite and finite; Samael as dark side</text>
-                        <text x="580" y="300" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">of the demiurgic function · Yetzirah</text>
-                        <text x="580" y="314" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"The Holy One, blessed be He, created</text>
-                        <text x="580" y="326" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">the world through the angel Metatron."</text>
-
-                        <!-- Row 4: Manichaeism -->
-                        <rect x="40" y="329" width="720" height="72" fill="none" rx="4" stroke="var(--border)" stroke-width="0.3"/>
-                        <text x="140" y="353" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">MANICHAEISM</text>
-                        <text x="140" y="369" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">3rd c. CE · Mesopotamia</text>
-                        <text x="340" y="353" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">THE PRINCE OF DARKNESS</text>
-                        <text x="340" y="369" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Az · The Archons · The Watchers</text>
-                        <text x="580" y="349" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Active malevolence; not merely ignorant</text>
-                        <text x="580" y="363" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">but hostile; traps light in matter; cosmic</text>
-                        <text x="580" y="377" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">dualism of light and darkness · Hyle</text>
-                        <text x="580" y="391" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"The Princes of Darkness devoured the</text>
-                        <text x="580" y="403" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">light and became pregnant with it."</text>
-
-                        <!-- Row 5: Hermeticism -->
-                        <rect x="40" y="406" width="720" height="72" fill="url(#tableRow)" rx="4" stroke="var(--border)" stroke-width="0.3"/>
-                        <text x="140" y="430" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">HERMETICISM</text>
-                        <text x="140" y="446" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Corpus Hermeticum · 2nd c. CE</text>
-                        <text x="340" y="430" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">POIMANDRES / THE NOUS</text>
-                        <text x="340" y="446" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Divine Mind · The Craftsman</text>
-                        <text x="580" y="426" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Ambiguous — both creator and revealer;</text>
-                        <text x="580" y="440" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">fashions seven planetary governors who</text>
-                        <text x="580" y="454" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">can be transcended through gnosis · Logos</text>
-                        <text x="580" y="468" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"The Nous is god, male and female,</text>
-                        <text x="580" y="480" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">life and light, word and spirit." — CH I</text>
-
-                        <!-- Row 6: Vedanta -->
-                        <rect x="40" y="483" width="720" height="72" fill="none" rx="4" stroke="var(--border)" stroke-width="0.3"/>
-                        <text x="140" y="507" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em" opacity="0.9">VEDANTA</text>
-                        <text x="140" y="523" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">Upanishads · c. 800–200 BCE</text>
-                        <text x="340" y="507" text-anchor="middle" fill="var(--bronze)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.08em" opacity="0.9">MAYA / ISHVARA</text>
-                        <text x="340" y="523" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.6">The Cosmic Illusion · The Lord</text>
-                        <text x="580" y="503" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">Ishvara as qualified Brahman; Maya as</text>
-                        <text x="580" y="517" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">the power of projection that makes the</text>
-                        <text x="580" y="531" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" opacity="0.8">many appear from the One · Avidya</text>
-                        <text x="580" y="545" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">"By whom impelled, by whom compelled</text>
-                        <text x="580" y="557" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" font-style="italic" opacity="0.5">does the mind fly forth?" — Kena Up. 1.1</text>
-
-                        <!-- Bottom annotation -->
-                        <text x="400" y="575" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.5">&ldquo;The same river is called by different names by those who stand on different banks.&rdquo;</text>
-                    </svg>
-                    <p class="diagram-caption">Comparative cartography of the Demiurge figure across six major traditions. Each tradition names, describes, and evaluates the craftsman differently — yet all recognize the gap between the apparent creator and the ultimate source.</p>
-                </div>
-
-                <p class="fade-in stagger-2"><strong>Plato's Demiurge</strong> (Δημιουργός) in the <em>Timaeus</em> is the most benign of these figures. He is not ignorant but <em>limited</em> — a craftsman who looks to the eternal Forms as his model and shapes the receptacle (χώρα) of becoming according to that pattern. He is "good, and the good can never have any jealousy of what is." His limitation is not moral but ontological: he is a secondary cause, not the First Principle. The Gnostics radicalized this figure, transforming benevolent limitation into arrogant ignorance, but the structural parallel is unmistakable.</p>
+                <p class="fade-in stagger-1"><strong>Plato's Demiurge</strong> (Δημιουργός) in the <em>Timaeus</em> is the most benign of these figures. He is not ignorant but <em>limited</em> — a craftsman who looks to the eternal Forms as his model and shapes the receptacle (χώρα) of becoming according to that pattern. He is "good, and the good can never have any jealousy of what is." His limitation is not moral but ontological: he is a secondary cause, not the First Principle. The Gnostics radicalized this figure, transforming benevolent limitation into arrogant ignorance, but the structural parallel is unmistakable.</p>
 
                 <p class="fade-in stagger-3"><strong>Kabbalah</strong> offers the most complex parallel. The Zohar describes <em>Metatron</em> as the "Lesser YHWH," the angel through whom the infinite Ein Sof creates and governs the finite world. But Kabbalah also preserves the figure of <em>Samael</em> — the same name given to the Gnostic Demiurge — as the dark side of the demiurgic function, the accuser, the obstacle that must be transformed. Where Gnosticism sees the Demiurge as a tragic mistake, Kabbalah sees the demiurgic function as a necessary stage in the <em>tzimtzum</em> (contraction) that makes creation possible. The craftsman is not rejected but refined.</p>
 
@@ -2663,16 +2631,16 @@
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-        <div class="footer-name">Vedantic Mappings</div>
-        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">⌂ Vedantic Mappings</a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>

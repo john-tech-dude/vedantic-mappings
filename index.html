@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vedantic Mappings — Cartographies of the non-dual path: Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics · The Unnamed Way. Six complete maps from mistaken identity to liberation." />
-    <meta property="og:title" content="Vedantic Mappings — Non-Dual Cartographies" />
-    <meta property="og:description" content="Six complete maps from mistaken identity to liberation: Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics." />
+    <meta name="description" content="Six complete maps from mistaken identity to liberation: Advaita Vedanta, Jesus of Nazareth, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics · The Unnamed Way." />
+    <meta property="og:title" content="Non-Dual Cartographies" />
+    <meta property="og:description" content="Six complete maps from mistaken identity to liberation: Advaita Vedanta, Jesus of Nazareth, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vedanticmappings.com" />
     <meta property="og:image" content="https://vedanticmappings.com/og-image.jpg" />
-    <title>Vedantic Mappings — Non-Dual Cartographies</title>
+    <title>Non-Dual Cartographies</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -805,6 +805,7 @@
             color: var(--violet);
             opacity: 0.04;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             z-index: 0;
             letter-spacing: -0.05em;
@@ -996,6 +997,7 @@
             height: auto;
             display: block;
             margin: 0 auto;
+            max-width: 100%;
         }
         .diagram-svg path,
         .diagram-svg circle,
@@ -1369,6 +1371,21 @@
         }
         .cartography-card.quantum .cartography-meta span::before {
             background: var(--quantum-blue);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PAGE COUNT BADGE
+           ═══════════════════════════════════════════════════════════════ */
+        .page-count-badge {
+            display: inline-block;
+            font-size: 0.5rem;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            padding: 0.1rem 0.6rem;
+            margin-left: 0.5rem;
+            vertical-align: middle;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1774,11 +1791,11 @@
             <a href="#pullquote" class="nav-item" data-section="pullquote"><span class="nav-item-icon">❝</span><span>Contemplation</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Cartographies</div>
-            <a href="advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-            <a href="messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
-            <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Kabbalah</span></a>
+            <a href="advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta · 5 Pages</span></a>
+            <a href="messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>Jesus of Nazareth · 7 Pages</span></a>
+            <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Kabbalah · 7 Pages</span></a>
             <div class="nav-divider"></div>
-            <div class="nav-section-title">Gnosticism · Five Pages</div>
+            <div class="nav-section-title">Gnosticism · 5 Pages</div>
             <a href="gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>I · The Source</span></a>
             <a href="gnosticism/gnosticism-the_demiurge.html" class="nav-item"><span class="nav-item-icon">⊡</span><span>II · The Demiurge</span></a>
             <a href="gnosticism/gnosticism-the_divine_spark.html" class="nav-item"><span class="nav-item-icon">✦</span><span>III · The Divine Spark</span></a>
@@ -1786,8 +1803,8 @@
             <a href="gnosticism/gnosticism-syzygy-nymphon.html" class="nav-item"><span class="nav-item-icon">☯</span><span>V · Syzygy Theology</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
-            <a href="taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
-            <a href="quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
+            <a href="taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · 4 Pages</span></a>
+            <a href="quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics · 4 Pages</span></a>
         </div>
     </div>
 
@@ -1822,8 +1839,8 @@
         <p class="hero-label">Six Complete Maps</p>
         <p class="hero-subtitle-top">For those who have sensed there is more—but are not sure where to begin.</p>
 
-        <h1 class="hero-title">Vedantic Mappings</h1>
-        <p class="hero-epithet">Advaita Vedanta · The Vedantic Messiah · Kabbalah · Gnosticism · Taoism · Quantum Mechanics</p>
+        <h1 class="hero-title">Non-Dual Cartographies</h1>
+        <p class="hero-epithet">Advaita Vedanta · Jesus of Nazareth · Kabbalah · Gnosticism · Taoism · Quantum Mechanics</p>
 
         <div class="hero-divider" aria-hidden="true">
             <div class="hero-divider-line"></div>
@@ -1861,20 +1878,20 @@
 
                 <p class="fade-in stagger-1"><strong>Why Maps?</strong> Every tradition, every realized master, every scripture is a <em>map</em>—not the territory. The territory is the Self, the Absolute, the Tao. It cannot be drawn. But a good map, drawn from authentic experience, can orient the seeker and reveal the pitfalls of the journey.</p>
 
-                <p class="fade-in stagger-2">The six cartographies here—<span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta — the non-dual metaphysics within Christian mysticism">The Vedantic Messiah</span>, <span class="sanskrit-term" title="Jewish mysticism and the Tree of Life — the ten sefirot and the path from Ein Sof to Malkhut">Kabbalah</span>, <span class="sanskrit-term" title="Gnostic cosmology and theology — the Unknown Father, the Pleroma, and the divine spark">Gnosticism</span>, <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi — the Way that cannot be named">Taoism · The Unnamed Way</span>, and <span class="sanskrit-term" title="Quantum mechanics as a contemporary cartography — superposition, entanglement, and the observer effect as modern expressions of non-dual recognition">Quantum Mechanics</span>—are not competitors. They are different paths up the same mountain, each with its own language, its own silences, its own precision.</p>
+                <p class="fade-in stagger-2">The six cartographies here—<span class="sanskrit-term" title="The end of the Vedas; the philosophical culmination of the Upanishads">Advaita Vedanta</span>, <span class="sanskrit-term" title="A contemplative cartography of Gospel and Vedanta — the non-dual metaphysics within Christian mysticism">Jesus of Nazareth</span>, <span class="sanskrit-term" title="Jewish mysticism and the Tree of Life — the ten sefirot and the path from Ein Sof to Malkhut">Kabbalah</span>, <span class="sanskrit-term" title="Gnostic cosmology and theology — the Unknown Father, the Pleroma, and the divine spark">Gnosticism</span>, <span class="sanskrit-term" title="The apophatic cartography from the Tao Te Ching and Zhuangzi — the Way that cannot be named">Taoism · The Unnamed Way</span>, and <span class="sanskrit-term" title="Quantum mechanics as a contemporary cartography — superposition, entanglement, and the observer effect as modern expressions of non-dual recognition">Quantum Mechanics</span>—are not competitors. They are different paths up the same mountain, each with its own language, its own silences, its own precision.</p>
 
                 <div class="tension-box fade-in stagger-1">
                     <p>&ldquo;The Self is the only Guru. All outer gurus merely point back to that inner Guru.&rdquo; — Ramana Maharshi</p>
                 </div>
 
-                <p class="fade-in stagger-2">As Ramana Maharshi said: <em>&ldquo;The Self is the only Guru. All outer gurus merely point back to that inner Guru.&rdquo;</em> Nisargadatta Maharaj reminds us: <em>&ldquo;Give up all questions except one: &lsquo;Who am I?&rsquo; After all, the only fact you are sure of is that you are. The &lsquo;I am&rsquo; is certain. The &lsquo;I am this&rsquo; is not.&rdquo;</em></p>
+                <p class="fade-in stagger-2">Nisargadatta Maharaj reminds us: <em>&ldquo;Give up all questions except one: &lsquo;Who am I?&rsquo; After all, the only fact you are sure of is that you are. The &lsquo;I am&rsquo; is certain. The &lsquo;I am this&rsquo; is not.&rdquo;</em></p>
 
                 <p class="fade-in stagger-3">And from the quantum realm, physicist John Wheeler—who coined the term &ldquo;black hole&rdquo; and developed the &ldquo;participatory universe&rdquo; hypothesis—observed: <em>&ldquo;No phenomenon is a real phenomenon until it is an observed phenomenon.&rdquo;</em> Schrödinger, steeped in Vedantic texts, wrote that the apparent multiplicity of selves is &ldquo;only an illusion.&rdquo; David Bohm, after dialogues with Jiddu Krishnamurti, proposed the &ldquo;implicate order&rdquo;—a holographic universe where every part contains the whole, echoing the ancient wisdom of the <em>vākyavṛtti</em>.</p>
 
                 <div class="scripture-panels fade-in stagger-4" style="margin-top: 2rem;">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">The Invitation</div>
-                        <p class="scripture-panel-text">&ldquo;You are already That. The seeker is the sought. The perceiver is the perceived. There is no gap.&rdquo;</p>
+                        <p class="scripture-panel-text">&ldquo;Give up all questions except one: &lsquo;Who am I?&rsquo; After all, the only fact you are sure of is that you are. The &lsquo;I am&rsquo; is certain. The &lsquo;I am this&rsquo; is not.&rdquo;</p>
                         <p class="scripture-panel-ref">— Nisargadatta Maharaj</p>
                     </div>
                     <div class="scripture-panel">
@@ -1890,10 +1907,10 @@
         </section>
     </div>
 
-    
+
 
     <!-- ═══════════════════════════════════════════════════════════════
-    DIAGRAMS SECTION
+    DIAGRAMS SECTION — UPGRADED SVG WITH PROPER TEXT CONTAINMENT
     ═══════════════════════════════════════════════════════════════ -->
     <section class="stage-section" id="diagrams">
         <div class="stage-wm" aria-hidden="true">◈</div>
@@ -1911,89 +1928,158 @@
 
             <p class="fade-in stagger-1">These diagrams are not the territory. They are sketches for the inner eye—orienting devices to help you recognize what the traditions point toward. The first map shows the underlying structure common to all six cartographies. The second shows how each tradition approaches that same structure from its own angle.</p>
 
-            <!-- Diagram 1: The Non-Dual Structure -->
+            <!-- Diagram 1: The Non-Dual Structure — UPGRADED -->
             <div class="diagram-container fade-in stagger-1">
                 <div class="diagram-title">I. The Non-Dual Structure</div>
-                <svg class="diagram-svg" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" width="600" height="320">
+                <svg class="diagram-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" width="600" height="340">
                     <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
                         </linearGradient>
-                        <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.6" />
-                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3" />
+                        <linearGradient id="goldGradLight1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e6c86e;stop-opacity:0.20" />
+                            <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.08" />
                         </linearGradient>
+                        <linearGradient id="violetGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a090d0;stop-opacity:0.15" />
+                            <stop offset="100%" style="stop-color:#7c6fae;stop-opacity:0.05" />
+                        </linearGradient>
+                        <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                        </filter>
                     </defs>
-                    <rect width="600" height="320" fill="transparent"/>
-                    <ellipse cx="300" cy="80" rx="180" ry="45" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
-                    <text x="300" y="75" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="500" letter-spacing="0.15em">BRAHMAN</text>
-                    <text x="300" y="95" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Absolute · Pure Consciousness</text>
-                    <line x1="300" y1="125" x2="300" y2="165" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
-                    <text x="310" y="148" fill="#b8960c" font-size="8" font-style="italic" opacity="0.8">=</text>
-                    <ellipse cx="300" cy="200" rx="120" ry="35" fill="url(#goldGradLight)" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
-                    <text x="300" y="195" text-anchor="middle" fill="#d4af37" font-size="14" font-weight="500" letter-spacing="0.15em">ĀTMAN</text>
-                    <text x="300" y="215" text-anchor="middle" fill="#7c8ea0" font-size="9" letter-spacing="0.1em">The Individual Self</text>
-                    <path d="M 180 140 Q 300 170 420 140" stroke="#b8960c" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="6,3"/>
-                    <text x="300" y="165" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.6">MĀYĀ · The Veil of Appearance</text>
-                    <ellipse cx="300" cy="280" rx="80" ry="25" fill="none" stroke="#7c8ea0" stroke-width="1" opacity="0.5"/>
-                    <text x="300" y="275" text-anchor="middle" fill="#7c8ea0" font-size="10" letter-spacing="0.1em">JĪVA</text>
-                    <text x="300" y="290" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.05em">Body · Mind · Ego</text>
-                    <line x1="300" y1="235" x2="300" y2="255" stroke="#7c8ea0" stroke-width="1" opacity="0.4"/>
-                    <polygon points="300,258 297,252 303,252" fill="#7c8ea0" opacity="0.4"/>
-                    <text x="80" y="160" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.5">PARAMĀRTHIKA</text>
-                    <text x="80" y="172" fill="#7c8ea0" font-size="7" opacity="0.4">(Absolute Reality)</text>
-                    <text x="480" y="160" fill="#7c8ea0" font-size="8" letter-spacing="0.1em" opacity="0.5">VYĀVAHĀRIKA</text>
-                    <text x="480" y="172" fill="#7c8ea0" font-size="7" opacity="0.4">(Conventional Reality)</text>
+                    <rect width="600" height="340" fill="transparent"/>
+
+                    <!-- Background subtle glow -->
+                    <ellipse cx="300" cy="70" rx="200" ry="50" fill="url(#goldGradLight1)" opacity="0.4"/>
+                    <ellipse cx="300" cy="180" rx="160" ry="40" fill="url(#violetGrad1)" opacity="0.3"/>
+                    <ellipse cx="300" cy="280" rx="100" ry="30" fill="url(#violetGrad1)" opacity="0.2"/>
+
+                    <!-- BRAHMAN -->
+                    <rect x="160" y="25" width="280" height="52" rx="26" fill="url(#goldGradLight1)" stroke="url(#goldGrad1)" stroke-width="1.8" filter="url(#glow1)"/>
+                    <text x="300" y="55" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="16" font-weight="500" letter-spacing="0.15em">BRAHMAN</text>
+                    <text x="300" y="78" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="9" letter-spacing="0.08em">The Absolute · Pure Consciousness</text>
+
+                    <!-- Connection line Brahman → Ātman -->
+                    <line x1="300" y1="90" x2="300" y2="130" stroke="#d4af37" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.5"/>
+                    <text x="312" y="113" fill="#b8960c" font-family="'Crimson Pro',serif" font-size="10" font-style="italic" opacity="0.7">=</text>
+
+                    <!-- MĀYĀ label along the line -->
+                    <rect x="230" y="105" width="80" height="18" rx="9" fill="var(--bg)" stroke="#7c8ea0" stroke-width="0.8" opacity="0.7"/>
+                    <text x="270" y="118" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.12em">MĀYĀ</text>
+
+                    <!-- ĀTMAN -->
+                    <rect x="175" y="145" width="250" height="48" rx="24" fill="url(#goldGradLight1)" stroke="url(#goldGrad1)" stroke-width="1.8" filter="url(#glow1)"/>
+                    <text x="300" y="172" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="16" font-weight="500" letter-spacing="0.15em">ĀTMAN</text>
+                    <text x="300" y="193" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="9" letter-spacing="0.08em">The Individual Self</text>
+
+                    <!-- Connection line Ātman → Jīva -->
+                    <line x1="300" y1="205" x2="300" y2="240" stroke="#7c8ea0" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+
+                    <!-- JĪVA -->
+                    <rect x="200" y="252" width="200" height="42" rx="21" fill="url(#violetGrad1)" stroke="#7c8ea0" stroke-width="1.2" opacity="0.7"/>
+                    <text x="300" y="275" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="14" letter-spacing="0.12em">JĪVA</text>
+                    <text x="300" y="293" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="8" letter-spacing="0.05em" opacity="0.7">Body · Mind · Ego</text>
+
+                    <!-- Side labels: Paramārthika & Vyāvahārika -->
+                    <text x="60" y="145" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="9" letter-spacing="0.12em" opacity="0.7">PARAMĀRTHIKA</text>
+                    <text x="60" y="160" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="7.5" opacity="0.5">Absolute Reality</text>
+
+                    <text x="480" y="145" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="9" letter-spacing="0.12em" opacity="0.7">VYĀVAHĀRIKA</text>
+                    <text x="480" y="160" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="7.5" opacity="0.5">Conventional Reality</text>
+
+                    <!-- Small decorative diamond between Brahman and Ātman -->
+                    <polygon points="300,95 305,100 300,105 295,100" fill="#d4af37" opacity="0.4"/>
+
+                    <!-- Small decorative diamond between Ātman and Jīva -->
+                    <polygon points="300,218 303,223 300,228 297,223" fill="#7c8ea0" opacity="0.3"/>
+
+                    <!-- Anchor dots at the ends of the side labels -->
+                    <circle cx="64" cy="140" r="2" fill="#7c8ea0" opacity="0.4"/>
+                    <circle cx="536" cy="140" r="2" fill="#7c8ea0" opacity="0.4"/>
                 </svg>
                 <p class="diagram-caption">The Advaitic structure: Brahman (absolute) and Ātman (individual self) are identical. Māyā is the apparent veil that creates the illusion of separation. The other five cartographies describe this same structure in their own languages.</p>
             </div>
 
             <p class="fade-in stagger-2">This structure is not unique to Advaita. Kabbalah calls the Absolute <em>Ein Sof</em> and the veil <em>Tzimtzum</em>. Gnosticism speaks of the <em>Unknown Father</em> and the <em>Demiurge</em>. Taoism names it the <em>Tao</em> and the ten thousand things. Quantum mechanics describes it as the <em>wavefunction</em> and <em>measurement</em>. The names change; the structure does not.</p>
 
-            <!-- Diagram 2: Six Paths Convergence -->
+            <!-- Diagram 2: Six Paths Convergence — UPGRADED -->
             <div class="diagram-container fade-in stagger-3">
                 <div class="diagram-title">II. Six Paths to the Absolute</div>
-                <svg class="diagram-svg" viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" width="600" height="420">
+                <svg class="diagram-svg" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" width="600" height="440">
                     <defs>
                         <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
                             <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
                         </linearGradient>
-                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.3" />
+                        <radialGradient id="centerGlow2" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.35" />
+                            <stop offset="60%" style="stop-color:#d4af37;stop-opacity:0.08" />
                             <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0" />
                         </radialGradient>
+                        <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2.5" result="blur" />
+                            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                        </filter>
                     </defs>
-                    <rect width="600" height="420" fill="transparent"/>
-                    <circle cx="300" cy="60" r="45" fill="url(#centerGlow)" stroke="url(#goldGrad2)" stroke-width="2"/>
-                    <text x="300" y="55" text-anchor="middle" fill="#d4af37" font-size="11" font-weight="500" letter-spacing="0.15em">THE ABSOLUTE</text>
-                    <text x="300" y="72" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.1em">Brahman · Ein Sof · Tao · Wavefunction</text>
-                    <path d="M 100 360 Q 180 220 260 95" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.8"/>
-                    <circle cx="100" cy="360" r="28" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
-                    <text x="100" y="355" text-anchor="middle" fill="#d4af37" font-size="8" letter-spacing="0.1em">ADVAITA</text>
-                    <text x="100" y="368" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">Vedanta</text>
-                    <path d="M 500 360 Q 420 220 340 95" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.8"/>
-                    <circle cx="500" cy="360" r="28" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
-                    <text x="500" y="355" text-anchor="middle" fill="#d4af37" font-size="8" letter-spacing="0.1em">MESSIAH</text>
-                    <text x="500" y="368" text-anchor="middle" fill="#7c8ea0" font-size="7" letter-spacing="0.05em">Gospel · Vedanta</text>
-                    <path d="M 180 380 Q 230 240 280 105" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.6"/>
-                    <circle cx="180" cy="380" r="24" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
-                    <text x="180" y="375" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">KABBALAH</text>
-                    <text x="180" y="387" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">Tree of Life</text>
-                    <path d="M 420 380 Q 370 240 320 105" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.6"/>
-                    <circle cx="420" cy="380" r="24" fill="none" stroke="#7c8ea0" stroke-width="1.2" opacity="0.5"/>
-                    <text x="420" y="375" text-anchor="middle" fill="#7c8ea0" font-size="8" letter-spacing="0.1em">TAOISM</text>
-                    <text x="420" y="387" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">The Unnamed Way</text>
-                    <path d="M 260 390 Q 280 250 290 110" stroke="#b87333" stroke-width="1.5" fill="none" opacity="0.5"/>
-                    <circle cx="260" cy="390" r="24" fill="none" stroke="#b87333" stroke-width="1.2" opacity="0.5"/>
-                    <text x="260" y="385" text-anchor="middle" fill="#b87333" font-size="8" letter-spacing="0.1em">GNOSTICISM</text>
-                    <text x="260" y="397" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">Unknown Father · Syzygy</text>
-                    <path d="M 340 390 Q 320 250 310 110" stroke="#4a90d9" stroke-width="1.5" fill="none" opacity="0.5"/>
-                    <circle cx="340" cy="390" r="24" fill="none" stroke="#4a90d9" stroke-width="1.2" opacity="0.5"/>
-                    <text x="340" y="385" text-anchor="middle" fill="#4a90d9" font-size="8" letter-spacing="0.1em">QUANTUM</text>
-                    <text x="340" y="397" text-anchor="middle" fill="#7c8ea0" font-size="7" opacity="0.5">The Implicate Order</text>
-                    <text x="300" y="180" text-anchor="middle" fill="#7c8ea0" font-size="8" font-style="italic" opacity="0.4">Different paths, one mountain</text>
+                    <rect width="600" height="440" fill="transparent"/>
+
+                    <!-- Central glow behind Absolute -->
+                    <circle cx="300" cy="55" r="80" fill="url(#centerGlow2)"/>
+
+                    <!-- THE ABSOLUTE — centered at top -->
+                    <rect x="195" y="18" width="210" height="50" rx="25" fill="url(#centerGlow2)" stroke="url(#goldGrad2)" stroke-width="2" filter="url(#glow2)"/>
+                    <text x="300" y="42" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="13" font-weight="500" letter-spacing="0.12em">THE ABSOLUTE</text>
+                    <text x="300" y="60" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7.5" letter-spacing="0.06em">Brahman · Ein Sof · Tao · Wavefunction</text>
+
+                    <!-- Decorative rings around Absolute -->
+                    <circle cx="300" cy="55" r="70" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.15"/>
+                    <circle cx="300" cy="55" r="90" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.08"/>
+
+                    <!-- Path 1: Advaita Vedanta (left) -->
+                    <path d="M 120 365 Q 190 230 270 105" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.7"/>
+                    <circle cx="120" cy="365" r="34" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" filter="url(#glow2)"/>
+                    <text x="120" y="357" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">ADVAITA</text>
+                    <text x="120" y="373" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7" letter-spacing="0.04em">Vedanta</text>
+
+                    <!-- Path 2: Messiah (right) -->
+                    <path d="M 480 365 Q 410 230 330 105" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.7"/>
+                    <circle cx="480" cy="365" r="34" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" filter="url(#glow2)"/>
+                    <text x="480" y="357" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">MESSIAH</text>
+                    <text x="480" y="373" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7" letter-spacing="0.04em">Gospel · Vedanta</text>
+
+                    <!-- Path 3: Kabbalah (left-center) -->
+                    <path d="M 180 385 Q 220 240 285 110" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.5"/>
+                    <circle cx="180" cy="385" r="30" fill="none" stroke="#7c8ea0" stroke-width="1.4" opacity="0.6"/>
+                    <text x="180" y="378" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">KABBALAH</text>
+                    <text x="180" y="393" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Tree of Life</text>
+
+                    <!-- Path 4: Taoism (right-center) -->
+                    <path d="M 420 385 Q 380 240 315 110" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.5"/>
+                    <circle cx="420" cy="385" r="30" fill="none" stroke="#7c8ea0" stroke-width="1.4" opacity="0.6"/>
+                    <text x="420" y="378" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">TAOISM</text>
+                    <text x="420" y="393" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">The Unnamed Way</text>
+
+                    <!-- Path 5: Gnosticism (center-left) -->
+                    <path d="M 255 400 Q 275 260 295 115" stroke="#b87333" stroke-width="1.5" fill="none" opacity="0.45"/>
+                    <circle cx="255" cy="400" r="30" fill="none" stroke="#b87333" stroke-width="1.4" opacity="0.55"/>
+                    <text x="255" y="393" text-anchor="middle" fill="#b87333" font-family="'Cinzel',serif" font-size="7.5" letter-spacing="0.06em">GNOSTICISM</text>
+                    <text x="255" y="408" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Unknown Father · Syzygy</text>
+
+                    <!-- Path 6: Quantum (center-right) -->
+                    <path d="M 345 400 Q 325 260 305 115" stroke="#4a90d9" stroke-width="1.5" fill="none" opacity="0.45"/>
+                    <circle cx="345" cy="400" r="30" fill="none" stroke="#4a90d9" stroke-width="1.4" opacity="0.55"/>
+                    <text x="345" y="393" text-anchor="middle" fill="#4a90d9" font-family="'Cinzel',serif" font-size="7.5" letter-spacing="0.06em">QUANTUM</text>
+                    <text x="345" y="408" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Implicate Order</text>
+
+                    <!-- Bottom label -->
+                    <text x="300" y="435" text-anchor="middle" fill="#7c8ea0" font-family="'Cormorant Garamond',serif" font-size="9" font-style="italic" opacity="0.5">Different paths, one mountain</text>
+
+                    <!-- Small decorative dots at path origins -->
+                    <circle cx="240" cy="88" r="2" fill="#d4af37" opacity="0.3"/>
+                    <circle cx="360" cy="88" r="2" fill="#d4af37" opacity="0.3"/>
                 </svg>
                 <p class="diagram-caption">Six traditions converging on the same Absolute. Each path uses distinct language and methodology, yet all point to the same non-dual recognition. The detailed maps for each tradition are found in their respective cartographies below.</p>
             </div>
@@ -2002,23 +2088,26 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    CARTOGRAPHIES SECTION — GNOSTICISM UPDATED TO 5 PAGES
+    CARTOGRAPHIES SECTION — ALL CARDS UPDATED WITH PAGE COUNTS AND DATES
     ═══════════════════════════════════════════════════════════════ -->
     <section class="cartographies-section" id="cartographies">
         <div class="cartographies-container">
             <div class="section-numeral">The Cartographies</div>
             <h2 class="section-title">Six Paths to<br>the Absolute</h2>
-            <p class="section-subtitle">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions — Advaita Vedanta, The Vedantic Messiah, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics.</p>
+            <p class="section-subtitle">Complete maps from mistaken identity to liberation, grounded in the contemplative traditions — Advaita Vedanta, Jesus of Nazareth, Kabbalah, Gnosticism, Taoism, and Quantum Mechanics.</p>
 
             <div class="cartographies-grid">
 
-                <a href="advaita-vedanta/advaita-gaudapada.html" class="cartography-card">
+                <a href="advaita-vedanta/vedanta-living-tradition.html" class="cartography-card">
                     <span class="cartography-number">I</span>
-                    <h3 class="cartography-title">Advaita Vedanta</h3>
+                    <h3 class="cartography-title">
+                        Advaita Vedanta
+                        <span class="page-count-badge">5 Pages</span>
+                    </h3>
                     <p class="cartography-subtitle">The Non-Dual Tradition</p>
                     <p class="cartography-description">A comprehensive mapping of the Advaita Vedanta lineage from Gaudapada's ajata vada to modern masters. Includes Ramana Maharshi's Self-enquiry, Nisargadatta's "I Am" teaching, and comparative analysis with Adyashanti. Grounded in the Upanishadic tradition.</p>
                     <div class="cartography-meta">
-                        <span>Ancient to Modern</span>
+                        <span>c. 8th Century BCE–Present</span>
                         <span>Lineage Tradition</span>
                         <span>Advaita Vedanta</span>
                     </div>
@@ -2026,51 +2115,59 @@
 
                 <a href="messiah/messiah-threshold.html" class="cartography-card">
                     <span class="cartography-number">II</span>
-                    <h3 class="cartography-title">The Vedantic Messiah</h3>
+                    <h3 class="cartography-title">
+                        Jesus of Nazareth
+                        <span class="page-count-badge">7 Pages</span>
+                    </h3>
                     <p class="cartography-subtitle">Gospel &amp; Upanishad</p>
-                    <p class="cartography-description">A mystical synthesis of the Gospel of Jesus and non-dual Upanishadic wisdom, explored through silent contemplation (hesychia) and the recognition that <em>"I and the Father are one."</em> Five pages mapping resonances between Christian mysticism and Advaita — not a merger, but illumination.</p>
+                    <p class="cartography-description">A mystical synthesis of the Gospel of Jesus and non-dual Upanishadic wisdom, explored through silent contemplation (hesychia) and the recognition that <em>"I and the Father are one."</em> Seven pages mapping resonances between Christian mysticism and Advaita — not a merger, but illumination.</p>
                     <div class="cartography-meta">
+                        <span>c. 1st Century CE</span>
                         <span>Contemplative</span>
-                        <span>Comparative</span>
                         <span>Christian · Vedantic</span>
                     </div>
                 </a>
 
                 <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="cartography-card">
                     <span class="cartography-number">III</span>
-                    <h3 class="cartography-title">Kabbalah</h3>
+                    <h3 class="cartography-title">
+                        Kabbalah
+                        <span class="page-count-badge">7 Pages</span>
+                    </h3>
                     <p class="cartography-subtitle">The Tree of Life</p>
                     <p class="cartography-description">A meditative journey into Jewish mysticism, mapping the ten sefirot and the path from Ein Sof to Malkhut through contemplative visualization and the meditative recitation of divine names. The mystical journey up and down the Tree of Life.</p>
                     <div class="cartography-meta">
-                        <span>Ancient Tradition</span>
+                        <span>c. 12th–16th Century CE</span>
                         <span>Jewish Mysticism</span>
                         <span>Kabbalistic</span>
                     </div>
                 </a>
 
-                <!-- UPDATED GNOSTICISM CARD — 5 PAGES -->
                 <a href="gnosticism/gnosticism-unknown-father.html" class="cartography-card">
                     <span class="cartography-number">IV</span>
                     <h3 class="cartography-title">
                         Gnosticism
-                        <span style="display:inline-block; font-size:0.5rem; letter-spacing:0.15em; color:var(--gold); border:1px solid var(--gold); border-radius:4px; padding:0.1rem 0.6rem; margin-left:0.5rem; vertical-align:middle;">5 Pages</span>
+                        <span class="page-count-badge">5 Pages</span>
                     </h3>
                     <p class="cartography-subtitle">The Unknown Father · The Bridal Chamber · Syzygy Theology</p>
                     <p class="cartography-description">A comprehensive cartography of Gnostic cosmology and theology across five pages: the Unknown Father and the apophatic abyss; the Demiurge and the material prison; the Divine Spark and the awakening of the soul; the Bridal Chamber and the restoration of the syzygy; and Syzygy Theology as the systematic map, including Kabbalistic and Advaita correspondences. Grounded in the Nag Hammadi library, the Pistis Sophia, and the Patristic reports.</p>
                     <div class="cartography-meta">
                         <span>c. 2nd–4th Century CE</span>
-                        <span>Nag Hammadi · Five Pages</span>
+                        <span>Nag Hammadi</span>
                         <span>Gnostic · Syzygy · Apophatic</span>
                     </div>
                 </a>
 
                 <a href="taoism/taoism-threshold.html" class="cartography-card">
                     <span class="cartography-number">V</span>
-                    <h3 class="cartography-title">Lao Tzu · Taoism</h3>
+                    <h3 class="cartography-title">
+                        Lao Tzu · Taoism
+                        <span class="page-count-badge">4 Pages</span>
+                    </h3>
                     <p class="cartography-subtitle">The Uncarved Block &amp; The Way</p>
                     <p class="cartography-description">A complete apophatic cartography from the Tao Te Ching and Zhuangzi. The Tao that cannot be named, the practice of wu wei (effortless action), and the recognition that the ten thousand things and the self are one root — a parallel non-dual path.</p>
                     <div class="cartography-meta">
-                        <span>6th–4th c. BCE</span>
+                        <span>c. 6th–4th Century BCE</span>
                         <span>Ancient China</span>
                         <span>Taoism · Philosophical</span>
                     </div>
@@ -2078,11 +2175,14 @@
 
                 <a href="quantum_mechanics/quantum-unmeasured.html" class="cartography-card quantum">
                     <span class="cartography-number">VI</span>
-                    <h3 class="cartography-title">Quantum Mechanics</h3>
+                    <h3 class="cartography-title">
+                        Quantum Mechanics
+                        <span class="page-count-badge">4 Pages</span>
+                    </h3>
                     <p class="cartography-subtitle">The Implicate Order</p>
                     <p class="cartography-description">A contemplative cartography of quantum foundations — superposition, the observer effect, entanglement, and the implicate order. Four pages mapping Copenhagen, Many-Worlds, QBism, and Bohm's holomovement as modern expressions of non-dual recognition. The wavefunction as Ein Sof; collapse as Tzimtzum; entanglement as the One without a second.</p>
                     <div class="cartography-meta">
-                        <span>20th–21st Century</span>
+                        <span>c. 20th–21st Century</span>
                         <span>Contemporary Physics</span>
                         <span>Quantum · Non-Dual</span>
                     </div>
@@ -2098,20 +2198,20 @@
     <div class="pq-section" id="pullquote">
         <div class="pq-glow" aria-hidden="true"></div>
         <p class="pq-text">&ldquo;You are the one witness of everything. You are always free. Your only bondage is that you see yourself as something other than this.&rdquo;</p>
-        <p class="pq-attr"><a href="advaita-vedanta/advaita-gaudapada.html">Explore the Cartographies →</a></p>
+        <p class="pq-attr"><a href="advaita-vedanta/vedanta-living-tradition.html">Explore the Cartographies →</a></p>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-        <div class="footer-name">Vedantic Mappings</div>
-        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="index.html">⌂ Vedantic Mappings</a>
-            <a href="advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="index.html">⌂ Home</a>
+            <a href="advaita-vedanta/vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
             <a href="gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
             <a href="taoism/taoism-threshold.html">Taoism</a>

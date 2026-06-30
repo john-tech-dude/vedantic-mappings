@@ -344,7 +344,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
    ═══════════════════════════════════════════════════════════════ */
 .pq-section { padding: 100px 32px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(180deg, var(--bg2), var(--bg)); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
 .pq-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 600px; height: 400px; background: radial-gradient(ellipse, var(--gold-glow), transparent 60%); pointer-events: none; animation: breathe 10s ease-in-out infinite; transform-origin: center center; }
-.pq-mark { font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: var(--gold); opacity: 0.06; line-height: 0.8; display: block; pointer-events: none; user-select: none; margin-bottom: -2.5rem; }
+.pq-mark { font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: var(--gold); opacity: 0.06; line-height: 0.8; display: block; pointer-events: none; -webkit-user-select: none;
+            user-select: none; margin-bottom: -2.5rem; }
 .pq-text { font-family: 'IM Fell English', serif; font-style: italic; font-size: clamp(1.2rem, 2.8vw, 1.7rem); color: var(--ink); line-height: 1.65; max-width: 660px; margin: 0 auto 1.25rem; position: relative; z-index: 1; }
 .pq-attr { font-family: 'Cinzel', serif; font-size: 0.57rem; letter-spacing: 0.4em; color: var(--stone-light); text-transform: uppercase; position: relative; z-index: 1; }
 .pq-attr a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
@@ -369,7 +370,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
    ═══════════════════════════════════════════════════════════════ */
 .stages-wrap { background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 30%, var(--bg) 70%, var(--bg2) 100%); }
 .stage-section { padding: 120px 32px; max-width: 740px; margin: 0 auto; position: relative; overflow: hidden; }
-.stage-wm { position: absolute; right: -30px; top: 30px; font-family: 'Noto Serif Devanagari', serif; font-size: clamp(140px, 18vw, 220px); line-height: 1; color: var(--gold); opacity: 0.04; pointer-events: none; user-select: none; z-index: 0; letter-spacing: -0.05em; }
+.stage-wm { position: absolute; right: -30px; top: 30px; font-family: 'Noto Serif Devanagari', serif; font-size: clamp(140px, 18vw, 220px); line-height: 1; color: var(--gold); opacity: 0.04; pointer-events: none; -webkit-user-select: none;
+            user-select: none; z-index: 0; letter-spacing: -0.05em; }
 [data-theme="dark"] .stage-wm { opacity: 0.065; }
 .stage-header { position: relative; z-index: 1; margin-bottom: 3rem; }
 .stage-eyeline { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
@@ -585,7 +587,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   letter-spacing: 0.06em;
   text-shadow: 0 1px 8px rgba(0,0,0,0.15);
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+            user-select: none;
 }
 .diagram-mirage .ring-center span .hl { font-weight:600; color:#fff8ee; text-shadow:0 0 16px rgba(255,215,140,0.4); }
 [data-theme="dark"] .diagram-mirage .ring-center span .hl { color:#fff5e0; text-shadow:0 0 20px rgba(212,175,55,0.3); }
@@ -710,7 +713,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   letter-spacing: 0.06em;
   text-shadow: 0 1px 8px rgba(0,0,0,0.15);
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+            user-select: none;
 }
 .diagram-states .ring-center span .hl { font-weight:600; color:#fff8ee; text-shadow:0 0 16px rgba(255,215,140,0.4); }
 [data-theme="dark"] .diagram-states .ring-center span .hl { color:#fff5e0; text-shadow:0 0 20px rgba(212,175,55,0.3); }
@@ -1115,10 +1119,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     <a href="#comparative" class="nav-item" data-section="comparative"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M14 17V5"/><path d="M10 17v-3"/><path d="M6 17v-7"/></svg></span><span>Comparative</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Advaita Vedanta</div>
-    <a href="advaita-gaudapada.html" class="nav-item active"><span class="nav-item-icon">ॐ</span><span>I · Gaudapada</span></a> <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>II · Adi Shankara</span></a> <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>III · Ramana Maharshi</span></a> <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>IV · Nisargadatta Maharaj</span></a> <a href="vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>V · The Living Tradition</span></a>
+    <a href="vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>Introduction</span></a>
+    <a href="vedanta-living-tradition.html" class="nav-item active"><span class="nav-item-icon">ॐ</span><span>I · Gaudapada</span></a> <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>II · Adi Shankara</span></a> <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>III · Ramana Maharshi</span></a> <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>IV · Nisargadatta Maharaj</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
     <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>The Vedantic Messiah</span></a>
     <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span>Kabbalah</span></a>
     <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/></svg></span><span>Gnosticism</span></a>
@@ -1865,37 +1870,37 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 <div class="chapter-nav">
   <a href="../index.html" class="chapter-link">⌂ Home</a>
   <span class="chapter-sep">ॐ</span>
-  <a href="advaita-gaudapada.html" class="chapter-link active">I · Gaudapada</a>
+  <a href="vedanta-living-tradition.html" class="chapter-link">Foundations</a>
+  <span class="chapter-sep">ॐ</span>
+  <a href="vedanta-living-tradition.html" class="chapter-link active">I · Gaudapada</a>
   <span class="chapter-sep">ॐ</span>
   <a href="advaita-adi-shankara.html" class="chapter-link">II · Adi Shankara</a>
   <span class="chapter-sep">ॐ</span>
   <a href="advaita-ramana-maharshi.html" class="chapter-link">III · Ramana Maharshi</a>
   <span class="chapter-sep">ॐ</span>
   <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">IV · Nisargadatta Maharaj</a>
-  <span class="chapter-sep">ॐ</span>
-  <a href="vedanta-living-tradition.html" class="chapter-link">V · The Living Tradition</a>
 </div>
 
 <!-- ═════════════════════════════════
      FOOTER
      ═════════════════════════════════ -->
-<footer class="footer">
-  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-  <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-  <div class="footer-links">
-    <a href="../index.html"><svg class="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Vedantic Mappings</a>
-    <a href="advaita-gaudapada.html">Advaita Vedanta</a>
-    <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-    <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-    <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
-    <a href="../taoism/taoism-threshold.html">Taoism</a>
-    <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-  </div>
-  <div class="footer-credit">Researched and composed - .</div>
-  <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
-  <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
-</footer>
+    <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+    </footer>
 
 </div><!-- .main-content -->
 

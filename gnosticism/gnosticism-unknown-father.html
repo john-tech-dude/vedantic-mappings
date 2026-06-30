@@ -341,6 +341,22 @@
             min-width: 260px;
             max-height: 80vh;
             overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
         }
         .nav-menu.open {
             opacity: 1;
@@ -895,6 +911,7 @@
             color: var(--violet);
             opacity: 0.04;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             z-index: 0;
             letter-spacing: -0.05em;
@@ -1346,6 +1363,7 @@
             line-height: 0.8;
             display: block;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             margin-bottom: -2.5rem;
         }
@@ -1905,8 +1923,8 @@
             <a href="gnosticism-syzygy-nymphon.html" class="nav-item"><span class="nav-item-icon">✦</span><span>V · Syzygy Theology</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
             <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
             <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
@@ -2490,29 +2508,6 @@
 
                 <div class="scripture-panels fade-in stagger-2">
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Comparative Table · The Deepest Level</div>
-                        <div class="comparative-table-wrapper">
-                            <table class="comparative-table">
-                                <thead>
-                                    <tr>
-                                        <th>Aspect</th>
-                                        <th>Taoism</th>
-                                        <th>Kabbalah</th>
-                                        <th>Advaita Vedanta</th>
-                                        <th>Gnosticism</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Absolute source</td><td>The Tao (nameless)</td><td>Ein Sof (the Infinite)</td><td>Nirguṇa Brahman</td><td>The Source / Unknown Father</td></tr>
-                                    <tr><td>First emanation</td><td>The named Tao</td><td>Keter (Crown)</td><td>Saguṇa Brahman</td><td>Barbelo (first thought)</td></tr>
-                                    <tr><td>The problem</td><td>Desire and naming</td><td>Breaking of the vessels</td><td>Avidyā (ignorance)</td><td>Forgetfulness</td></tr>
-                                    <tr><td>The path</td><td>Wu wei (non-action)</td><td>Tikkun (repair)</td><td>Atma-vichāra</td><td>Gnōsis (recognition)</td></tr>
-                                    <tr><td>Final state</td><td>The Uncarved Block</td><td>Restoration of vessels</td><td>Sahaja Samādhi</td><td>Return to the Pleroma</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="scripture-panel">
                         <div class="scripture-panel-label">Gospel of Philip · On Names</div>
                         <p class="scripture-panel-text">&ldquo;Names given to the worldly are very deceptive, for they divert our thoughts from what is correct to what is incorrect. Thus one who hears the word &lsquo;god&rsquo; does not perceive what is correct, but perceives what is incorrect.&rdquo;</p>
                         <p class="scripture-panel-ref">&mdash; Nag Hammadi Library (II,3)</p>
@@ -2554,21 +2549,21 @@
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-        <div class="footer-name">Vedantic Mappings</div>
-        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">⌂ Vedantic Mappings</a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 

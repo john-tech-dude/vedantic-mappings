@@ -165,7 +165,36 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--violet); outlin
 .nav-compass { position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1010; display: flex; flex-direction: column; gap: 0.5rem; }
 .nav-toggle { width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--violet-light); transition: all 0.35s var(--ease-out-expo); box-shadow: var(--shadow); }
 .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
-.nav-menu { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 0; box-shadow: var(--shadow-deep); opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: all 0.4s var(--ease-out-expo); min-width: 260px; }
+.nav-menu {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
 .nav-menu.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
 .nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1.25rem; color: var(--stone); text-decoration: none; font-size: 0.88rem; line-height: 1.35; transition: all 0.3s var(--ease-out-expo); border-left: 3px solid transparent; }
 .nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left: 1.5rem; }
@@ -572,7 +601,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   line-height: 0.8;
   display: block;
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+            user-select: none;
   margin-bottom: -2.5rem;
 }
 .pq-text {
@@ -646,10 +676,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   text-transform: uppercase;
   max-width: 900px;
   margin: 0 auto;
-}
-    scrollbar-width: thin;
-    scrollbar-color: var(--stone) var(--border);
-  }
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) var(--border);
 }
 
 /* Webkit scrollbar styling (Chrome, Safari, Edge) */
@@ -701,7 +729,36 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
 .stagger-5 { transition-delay: 0.65s; }
 
 @media (max-width: 768px) {
-  .nav-menu { min-width: 180px; }
+  .nav-menu {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
   .back-to-top { right: 1.5rem; bottom: 5rem; }
   .footer-links { gap: 1.5rem; }
   .scripture-panels { grid-template-columns: 1fr; }
@@ -717,7 +774,36 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
   .hero-emblem { width: 95px; height: 95px; }
   .nav-compass { top: 0.75rem; left: 0.75rem; }
   .nav-toggle { width: 40px; height: 40px; }
-  .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
+  .nav-menu {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-deep);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.96);
+            pointer-events: none;
+            transition: all .4s var(--ease-out-expo);
+            min-width: 260px;
+            max-height: 80vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--violet) var(--border);
+        }
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nav-menu::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: var(--violet);
+            border-radius: 3px;
+        }
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
   .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
   .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
   .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
@@ -767,8 +853,8 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
     <a href="gnosticism-syzygy-nymphon.html" class="nav-item"><span class="nav-item-icon">✦</span><span>V · Syzygy Theology</span></a>
     <div class="nav-divider"></div>
     <div class="nav-section-title">Other Cartographies</div>
-    <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span><span>Home · Vedantic Mappings</span></a>
-    <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/></svg></span><span>Advaita Vedanta</span></a>
+    <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></span><span>Home · The Cartographies</span></a>
+    <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/></svg></span><span>Advaita Vedanta</span></a>
     <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span><span>The Vedantic Messiah</span></a>
     <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
     <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20"/><path d="M12 7a5 5 0 0 0 0 10 5 5 0 0 0 0-10"/><path d="M12 12a5 5 0 0 0 5 5 5 5 0 0 0-5-5"/></svg></span><span>Taoism</span></a>
@@ -1669,33 +1755,6 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
       </div>
     </div>
 
-    <!-- Comparative Table -->
-    <div class="diagram-container fade-in stagger-1">
-      <div class="diagram-title">Comparative Table &middot; The Imprisoned Light</div>
-      <div class="comparative-table-wrapper">
-        <table class="comparative-table">
-          <thead>
-            <tr>
-              <th>Aspect</th>
-              <th>Advaita Vedanta</th>
-              <th>Mahayana Buddhism</th>
-              <th>Kabbalah</th>
-              <th>Gnosticism</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>The spark</td><td>Atman (the Self)</td><td>Tathagatagarbha (Buddha-nature)</td><td>Nitzotz (divine spark)</td><td>Pneuma (the divine spark)</td></tr>
-            <tr><td>The prison</td><td>Maya (illusion)</td><td>Samsara (cyclic existence)</td><td>Galut (exile)</td><td>Hyle (matter)</td></tr>
-            <tr><td>The warden</td><td>Avidya (ignorance)</td><td>Klesha (afflictive emotions)</td><td>Klipot (husks)</td><td>Archons (planetary rulers)</td></tr>
-            <tr><td>The path</td><td>Atma-vichara (self-inquiry)</td><td>Shikantaza (just sitting)</td><td>Tikkun (repair through mitzvot)</td><td>Gnosis (recognition, remembrance)</td></tr>
-            <tr><td>The return</td><td>Moksha (liberation)</td><td>Nirvana (cessation)</td><td>Aliyah (ascent)</td><td>Return to the Pleroma</td></tr>
-            <tr><td>Final state</td><td>Sahaja Samadhi (natural state)</td><td>Dharmakaya (truth body)</td><td>Restoration of the vessels</td><td>The Bridal Chamber</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="diagram-caption">Across the non-dual traditions, the same structure appears: a divine light imprisoned in matter, a path of recognition or repair, and a return to the original fullness. The Gnostic emphasis on the <em>foreignness</em> of the spark &mdash; its origin in a realm beyond the cosmos &mdash; is its distinctive contribution.</p>
-    </div>
-
     <h3 class="fade-in stagger-1">The Gnostic Distinctiveness</h3>
     <p class="fade-in stagger-2">What distinguishes the Gnostic spark from the Atman or the Buddha-nature is its <em>exilic</em> character. The Atman is not foreign to the world; it is the ground of the world, the consciousness that shines through all forms. The Buddha-nature is not trapped in matter; it is the true nature of matter itself, once the veil of afflictive emotions is lifted. But the Gnostic spark is <em>not at home</em> in the world. It is a stranger, an alien, a prisoner of war. Its natural habitat is the Pleroma, and the world is a foreign country where it does not speak the language.</p>
 
@@ -1727,35 +1786,35 @@ section { position: relative; transition: background-color 0.6s var(--ease-smoot
         <span class="chapter-sep">✦</span>
         <a href="gnosticism-unknown-father.html" class="chapter-link">I · The Source</a>
         <span class="chapter-sep">✦</span>
-        <a href="gnosticism-the_demiurge.html" class="chapter-link active">II · The Demiurge</a>
+        <a href="gnosticism-the_demiurge.html" class="chapter-link">II · The Demiurge</a>
         <span class="chapter-sep">✦</span>
-        <a href="gnosticism-the_divine_spark.html" class="chapter-link">III · The Divine Spark</a>
+        <a href="gnosticism-the_divine_spark.html" class="chapter-link active">III · The Divine Spark</a>
         <span class="chapter-sep">✦</span>
         <a href="gnosticism_the_bridal_chamber.html" class="chapter-link">IV · The Bridal Chamber</a>
         <span class="chapter-sep">→</span>
-        <a href="gnostic_syzygy_nymphon.html" class="chapter-link">V · Syzygy Theology</a>
+        <a href="gnosticism-syzygy-nymphon.html" class="chapter-link">V · Syzygy Theology</a>
     </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-<footer class="footer">
-  <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-  <div class="footer-name">Vedantic Mappings</div>
-  <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
-              <div class="footer-links">
-      <a href="../index.html">⌂ Vedantic Mappings</a>
-      <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-      <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
-      <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-      <a href="gnosticism-unknown-father.html">Gnosticism</a>
-      <a href="../taoism/taoism-threshold.html">Taoism</a>
-      <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
-    </div>
-  <div class="footer-credit">Researched and composed - .</div>
-  <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
-  <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
-</footer>
+    <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
+        <div class="footer-links">
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+        </div>
+        <div class="footer-credit">Researched and composed</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+    </footer>
 
 <!-- =====================================================
      JAVASCRIPT

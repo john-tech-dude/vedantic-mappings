@@ -928,6 +928,7 @@
             color: var(--jade);
             opacity: 0.04;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             z-index: 0;
             letter-spacing: -0.05em;
@@ -1361,6 +1362,7 @@
             line-height: 0.8;
             display: block;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             margin-bottom: -2.5rem;
         }
@@ -1616,12 +1618,9 @@
             justify-content: center;
             gap: 1.5rem;
             padding: 2rem 0;
-            flex-wrap: wrap;
             font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            max-width: 740px;
-            margin: 0 auto;
         }
         .chapter-link {
             color: var(--stone);
@@ -1847,6 +1846,7 @@
             .chapter-nav {
                 gap: 0.75rem;
                 font-size: 0.6rem;
+                flex-wrap: nowrap;
             }
             .toc-book-item {
                 grid-template-columns: 38px 1fr;
@@ -1913,6 +1913,7 @@
             .chapter-nav {
                 gap: 0.5rem;
                 font-size: 0.55rem;
+                flex-wrap: nowrap;
             }
             .footer {
                 padding: 3rem 1rem 2rem;
@@ -1998,8 +1999,8 @@
             <a href="taoism-return.html" class="nav-item"><span class="nav-item-icon">↩</span><span>IV · Returning to the Root</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · Vedantic Mappings</span></a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
             <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>The Vedantic Messiah</span></a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Kabbalah</span></a>
         </div>
@@ -2253,15 +2254,15 @@
 
                 <h3 class="fade-in stagger-1">What the Tao Is Not</h3>
 
-                <!-- WHAT THE TAO IS NOT — REFORMATTED as unordered list with stagger -->
-                <ul class="fade-in stagger-1">
-                    <li class="stagger-1">A deity or divine being (&ldquo;It is older than God&rdquo;)</li>
-                    <li class="stagger-1">A state of consciousness (consciousness is one of the &ldquo;ten thousand things&rdquo; that arise from it)</li>
-                    <li class="stagger-2">The witness or observer (the witness is still a mode of perception)</li>
-                    <li class="stagger-2">An experience (all experiences are transient)</li>
-                    <li class="stagger-3">A void or emptiness (&ldquo;empty yet infinitely capable; the more you use it, the more it produces&rdquo;)</li>
-                    <li class="stagger-3">Something to be attained (&ldquo;always present,&rdquo; &ldquo;hidden but always present&rdquo;)</li>
-                </ul>
+                <!-- WHAT THE TAO IS NOT — REFORMATTED as ordered list with bold headers -->
+                <ol class="fade-in stagger-1">
+                    <li class="stagger-1"><strong>A deity or divine being</strong> (&ldquo;It is older than God&rdquo;)</li>
+                    <li class="stagger-1"><strong>A state of consciousness</strong> (consciousness is one of the &ldquo;ten thousand things&rdquo; that arise from it)</li>
+                    <li class="stagger-2"><strong>The witness or observer</strong> (the witness is still a mode of perception)</li>
+                    <li class="stagger-2"><strong>An experience</strong> (all experiences are transient)</li>
+                    <li class="stagger-3"><strong>A void or emptiness</strong> (&ldquo;empty yet infinitely capable; the more you use it, the more it produces&rdquo;)</li>
+                    <li class="stagger-3"><strong>Something to be attained</strong> (&ldquo;always present,&rdquo; &ldquo;hidden but always present&rdquo;)</li>
+                </ol>
 
                 <div class="scripture-panels fade-in stagger-2">
                     <div class="scripture-panel">
@@ -2556,21 +2557,21 @@
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-        <div class="footer-name">Vedantic Mappings</div>
-        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">⌂ Vedantic Mappings</a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="gnosticism-unknown-father.html">Gnosticism</a>
-            <a href="taoism-threshold.html">Taoism</a>
+            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
+            <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 20 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 

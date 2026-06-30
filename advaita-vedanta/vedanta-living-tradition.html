@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Foundations of Vedanta — The Upanishads, the Bhagavad Gita, the Brahma Sutras, and the core philosophy of non-duality." />
-    <title>The Foundations of Vedanta — Texts, Teachings &amp; Philosophy</title>
+    <meta name="description" content="The Foundations of Advaita Vedanta — The Upanishads, the Bhagavad Gita, the Brahma Sutras, and the core philosophy of non-duality. A scholarly overview with historical nuance." />
+    <title>The Foundations of Advaita Vedanta — Texts, Teachings &amp; Philosophy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -971,6 +971,7 @@
             line-height: 0.8;
             display: block;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             margin-bottom: -2.5rem;
         }
@@ -1018,6 +1019,7 @@
             color: var(--gold);
             opacity: 0.04;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             z-index: 0;
             letter-spacing: -0.05em;
@@ -1147,17 +1149,17 @@
         .comp-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-family: 'Crimson Pro', serif;
         }
         .comp-table thead {
             background: var(--bg2);
         }
         .comp-table th {
-            padding: 1rem 1rem 0.6rem;
+            padding: 1.25rem 1.25rem 0.75rem;
             text-align: center;
             font-family: 'Cinzel', serif;
-            font-size: 0.5rem;
+            font-size: 0.55rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--stone-light);
@@ -1165,10 +1167,10 @@
             border-bottom: 1px solid var(--border);
         }
         .comp-table td {
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.25rem;
             border-bottom: 1px solid var(--border-subtle);
             color: var(--stone);
-            line-height: 1.6;
+            line-height: 1.65;
             vertical-align: top;
         }
         .comp-table tr:last-child td {
@@ -1178,8 +1180,8 @@
             font-weight: 500;
             color: var(--ink);
             font-family: 'Cinzel', serif;
-            font-size: 0.55rem;
-            letter-spacing: 0.08em;
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--gold);
             white-space: nowrap;
@@ -1340,6 +1342,53 @@
         }
         [data-theme="dark"] .yoga-card .yoga-key {
             color: var(--stone-light);
+        }
+
+        /* ═══════════════════════════════════════
+           SCHOOLS GRID
+           ═══════════════════════════════════════ */
+        .schools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .school-card {
+            background: var(--surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem 1rem;
+            text-align: center;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .school-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-2px);
+        }
+        .school-card .school-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+        .school-card .school-deva {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.75rem;
+            color: var(--stone-light);
+            opacity: 0.6;
+            margin-bottom: 0.3rem;
+        }
+        .school-card .school-exponent {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.82rem;
+            color: var(--stone);
+            line-height: 1.4;
+        }
+        .school-card .school-exponent strong {
+            color: var(--ink);
         }
 
         /* ═══════════════════════════════════════
@@ -1505,28 +1554,25 @@
             .stage-section {
                 padding: 80px 24px;
             }
-            .comp-table th,
-            .comp-table td {
-                padding: 0.6rem 0.5rem;
-                font-size: 0.7rem;
-            }
-            .comp-table td:first-child {
-                font-size: 0.45rem;
-            }
+            .comp-table { font-size: 0.7rem; }
+            .comp-table td { padding: 0.6rem 0.75rem; }
+            .comp-table td:first-child { font-size: 0.5rem; }
             .chapter-nav {
                 gap: 0.75rem;
                 font-size: 0.6rem;
+            }
+            .schools-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
         @media (max-width: 500px) {
             .comp-table th,
             .comp-table td {
-                padding: 0.4rem 0.3rem;
-                font-size: 0.6rem;
+                padding: 0.6rem 0.75rem;
+                font-size: 0.7rem;
             }
             .comp-table td:first-child {
-                font-size: 0.4rem;
-                letter-spacing: 0.05em;
+                font-size: 0.5rem;
             }
             .resonance-box {
                 padding: 1.25rem 1rem;
@@ -1537,6 +1583,9 @@
                 font-size: 0.9rem;
                 top: -0.65rem;
                 left: 1rem;
+            }
+            .schools-grid {
+                grid-template-columns: 1fr;
             }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -1572,11 +1621,11 @@
             <a href="#key-concepts" class="nav-item" data-section="key-concepts"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/></svg></span><span>Key Concepts</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Advaita Vedanta</div>
-            <a href="advaita-gaudapada.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>I · Gaudapada</span></a>
+            <a href="vedanta-living-tradition.html" class="nav-item active"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>Introduction</span></a>
+            <a href="vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>I · Gaudapada</span></a>
             <a href="advaita-adi-shankara.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>II · Adi Shankara</span></a>
             <a href="advaita-ramana-maharshi.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>III · Ramana Maharshi</span></a>
             <a href="advaita-nisargadatta-maharaj.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>IV · Nisargadatta</span></a>
-            <a href="vedanta-living-tradition.html" class="nav-item active"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M8 12h8"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span><span>V · Foundations</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
             <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home</span></a>
@@ -1606,13 +1655,13 @@
             <div class="hero-ripple rip3"></div>
         </div>
 
-        <p class="hero-eyemark">The Foundations of Vedanta</p>
+        <p class="hero-eyemark">The Foundations of Advaita Vedanta</p>
         <div class="hero-emblem" aria-hidden="true">
             <div class="hero-emblem-circle"></div>
             <div class="hero-emblem-circle2"></div>
             <div class="hero-emblem-dot"></div>
         </div>
-        <h1 class="hero-title">The Three Canons</h1>
+        <h1 class="hero-title">The Triple Canon</h1>
         <p class="hero-subtitle">Upanishads · Bhagavad Gita · Brahma Sutras</p>
         <div class="hero-divider" aria-hidden="true">
             <div class="hero-divider-line"></div>
@@ -1620,7 +1669,7 @@
             <div class="hero-divider-line"></div>
         </div>
         <p class="hero-quote">"The Upanishads are the source, the Gita is the synthesis, and the Brahma Sutras are the logical thread."</p>
-        <p class="hero-quote-attr">— The Prasthanatrayi</p>
+        <p class="hero-quote-attr">— The Prasthanatrayi, shared across all Vedanta schools</p>
         <div class="hero-scroll-cue" id="heroScroll" tabindex="0" role="button" aria-label="Scroll to content">
             <span>Explore</span>
             <div class="scroll-line" aria-hidden="true"></div>
@@ -1632,8 +1681,8 @@
          ═══════════════════════════════════════ -->
     <section class="toc-section" id="toc">
         <div class="ed-section-label">सर्वसार</div>
-        <h2 class="ed-section-h2">The Foundations of Vedanta</h2>
-        <p class="ed-section-intro">A comprehensive overview of Vedanta's origins, its three foundational texts, and the core philosophical concepts that define the non-dual tradition.</p>
+        <h2 class="ed-section-h2">The Foundations of Advaita Vedanta</h2>
+        <p class="ed-section-intro">A scholarly overview of Advaita Vedanta's origins, its three foundational texts, and the core philosophical concepts that define the non-dual tradition — with attention to historical nuance and the broader Vedantic landscape.</p>
 
         <nav class="toc-book" aria-label="Page contents">
             <a href="#origins" class="toc-book-item">
@@ -1661,8 +1710,13 @@
                 <span class="toc-b-title">The Prasthanatrayi — The Triple Canon</span>
                 <span class="toc-b-skt">प्रस्थानत्रयी</span>
             </a>
-            <a href="#key-concepts" class="toc-book-item">
+            <a href="#schools" class="toc-book-item">
                 <span class="toc-b-num">VI</span>
+                <span class="toc-b-title">The Schools of Vedanta</span>
+                <span class="toc-b-skt">सम्प्रदाय</span>
+            </a>
+            <a href="#key-concepts" class="toc-book-item">
+                <span class="toc-b-num">VII</span>
                 <span class="toc-b-title">Key Concepts — The Core Vocabulary</span>
                 <span class="toc-b-skt">शब्दकोश</span>
             </a>
@@ -1675,8 +1729,8 @@
     <div class="pq-section">
         <div class="pq-glow" aria-hidden="true"></div>
         <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">The Self alone is real. All else is a temporary appearance. This is the single teaching of Vedanta, repeated in countless ways across the centuries.</p>
-        <p class="pq-attr">— The Unified Teaching of Advaita Vedanta</p>
+        <p class="pq-text">The Self alone is real. All else is a temporary appearance. This is the single teaching of Advaita Vedanta, repeated in countless ways across the centuries.</p>
+        <p class="pq-attr">— The Core Teaching of Advaita Vedanta</p>
     </div>
 
     <!-- ═══════════════════════════════════════
@@ -1707,6 +1761,11 @@
                 </div>
 
                 <p>The Upanishads ask the deepest questions: What is the nature of reality? Who am I? What is the relationship between the individual self and the ultimate ground of existence? Their answers form the foundation of all later Vedantic philosophy.</p>
+
+                <div class="resonance-box">
+                    <h4>📅 Dating Note</h4>
+                    <p>The dating of the Upanishads is <strong>not fixed</strong>. Bṛhadāraṇyaka and Chāndogya are likely <strong>7th–6th BCE</strong>, while later texts like Māṇḍūkya and Praśna are from the <strong>early centuries CE</strong>. The range "c. 800–200 BCE" is a broad scholarly convention that masks significant variation.</p>
+                </div>
             </div>
         </section>
 
@@ -1724,12 +1783,12 @@
                     <span class="stage-deva-title">उपनिषद् · c. 800–200 BCE</span>
                 </div>
                 <h2 class="stage-h2">The Upanishads</h2>
-                <span class="stage-subtitle-label">The foundational texts of non-duality — the seeds of Vedanta</span>
+                <span class="stage-subtitle-label">The foundational texts of non-duality — the seeds of Advaita</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>T</strong>he <span class="sanskrit-term" title="The philosophical and mystical texts at the end of the Vedas; the foundation of Vedanta">Upanishads</span> are the philosophical core of the Vedas. There are over 200 Upanishads, but the ten principal ones (the <em>Mukhya Upanishads</em>) form the foundation of Vedanta. They contain the seed of all later Advaita philosophy.</p>
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The philosophical and mystical texts at the end of the Vedas; the foundation of Vedanta">Upanishads</span> are the philosophical core of the Vedas. There are over 200 Upanishads, but the ten principal ones (the <em>Mukhya Upanishads</em>) form the foundation of Vedanta — though the number varies by tradition; some lists include <strong>11</strong> or <strong>13</strong>, and the Muktikā canon lists <strong>108</strong>. The "ten" is a common modern simplification.</p>
 
                 <p>The central teaching of the Upanishads is the identity of <span class="sanskrit-term" title="The individual self; the true consciousness within">Ātman</span> (the individual self) with <span class="sanskrit-term" title="The ultimate reality; the absolute ground of all existence">Brahman</span> (the absolute reality). This identity is expressed in the four <span class="sanskrit-term" title="The four great sayings of Vedanta: Prajñānaṃ Brahma, Ahaṃ Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma">Mahāvākyas</span> — the great sayings that later teachers would use as the core of their meditation.</p>
 
@@ -1758,7 +1817,7 @@
                     </div>
                 </div>
 
-                <p>The <em>Māṇḍūkya Upaniṣad</em> — the shortest of the principal Upanishads at only twelve verses — became the foundation for Gaudapada's <em>Kārikā</em> and through it, the entire Advaita tradition. Its teaching on the four states of consciousness (<em>jāgrat</em>, <em>svapna</em>, <em>suṣupti</em>, <em>turīya</em>) provides a complete map of human experience and points toward the fourth state, the silent witness, as the ultimate reality.</p>
+                <p>The <em>Māṇḍūkya Upaniṣad</em> — the shortest of the principal Upanishads at only twelve verses — became the foundation for Gaudapada's <em>Kārikā</em> and through it, the entire Advaita tradition. Most scholars place the Māṇḍūkya in the <strong>early centuries CE</strong> (Nakamura, King, Olivelle), though some (Ranade, Phillips) argue for an earlier date (5th–4th BCE). Its teaching on the four states of consciousness (<em>jāgrat</em>, <em>svapna</em>, <em>suṣupti</em>, <em>turīya</em>) provides a complete map of human experience and points toward the fourth state, the silent witness, as the ultimate reality.</p>
             </div>
         </section>
 
@@ -1773,7 +1832,7 @@
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter III</span>
                     <span class="stage-skt">The Synthesis</span>
-                    <span class="stage-deva-title">भगवद्गीता · c. 5th–2nd BCE</span>
+                    <span class="stage-deva-title">भगवद्गीता · c. 200 BCE – 200 CE</span>
                 </div>
                 <h2 class="stage-h2">The Bhagavad Gita</h2>
                 <span class="stage-subtitle-label">The practical integration of Upanishadic wisdom</span>
@@ -1782,6 +1841,8 @@
 
             <div class="stage-body">
                 <p><strong>T</strong>he <span class="sanskrit-term" title="The Song of the Lord; the dialogue between Krishna and Arjuna">Bhagavad Gita</span> is often called the "essence of the Upanishads." It presents the core teachings of Vedanta not as abstract philosophy but as a practical dialogue between <span class="sanskrit-term" title="The warrior prince; the seeker who represents the human condition">Arjuna</span> and <span class="sanskrit-term" title="The divine teacher; the charioteer who reveals the truth">Krishna</span> on the battlefield of Kurukshetra. It is a <em>Smṛti</em> text (tradition, not direct revelation) but holds the status of an Upanishad in practice.</p>
+
+                <p>The dating of the Gita is debated. Most scholars place it between <strong>c. 200 BCE and 200 CE</strong>, with some arguing for the 2nd century BCE as a major revision date. The range "5th–2nd BCE" sometimes given in earlier scholarship is now considered the <strong>early end</strong> of the spectrum, not the scholarly consensus.</p>
 
                 <p>The Gita resolves the apparent conflict between ascetic renunciation and worldly duty by integrating the three main paths of Yoga into a harmonious whole:</p>
 
@@ -1807,7 +1868,7 @@
                 </div>
 
                 <div class="resonance-box">
-                    <h4>⚡ The Gita's Role in Vedanta</h4>
+                    <h4>⚡ The Gita's Role in Advaita Vedanta</h4>
                     <p>Why does the Gita matter so much? Because it takes the profound, abstract truths of the Upanishads — <em>"That Thou Art"</em> — and shows how they can be lived in everyday life. It bridges the gap between the monastery and the battlefield, teaching that liberation is not achieved by escaping the world but by engaging with it <em>without attachment</em>. The Gita is the most accessible and practical expression of Vedantic philosophy, making it one of the most widely read spiritual texts in the world.</p>
                 </div>
             </div>
@@ -1827,14 +1888,16 @@
                     <span class="stage-deva-title">ब्रह्मसूत्र · c. 200 BCE – 200 CE</span>
                 </div>
                 <h2 class="stage-h2">The Brahma Sutras</h2>
-                <span class="stage-subtitle-label">The systematic philosophy of Vedanta</span>
+                <span class="stage-subtitle-label">The systematic philosophy of Vedanta — and its contested interpretations</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>T</strong>he <span class="sanskrit-term" title="The systematic aphorisms that organize Vedantic philosophy">Brahma Sutras</span> (also known as the <em>Vedanta Sutras</em>) are a collection of 555 aphorisms composed by <span class="sanskrit-term" title="The author of the Brahma Sutras; the systematizer of Vedantic philosophy">Bādarāyaṇa</span>. They systematically organize the teachings of the Upanishads into a coherent philosophical system.</p>
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The systematic aphorisms that organize Vedantic philosophy">Brahma Sutras</span> (also known as the <em>Vedanta Sutras</em>) are a collection of <strong>555 aphorisms</strong> composed by <span class="sanskrit-term" title="The author of the Brahma Sutras; the systematizer of Vedantic philosophy">Bādarāyaṇa</span> (c. 200 BCE – 200 CE, though the surviving form was likely completed around 400–450 CE). They systematically organize the teachings of the Upanishads into a coherent philosophical system.</p>
 
-                <p>Each sutra is a brief, precise statement that encapsulates a key Vedantic principle. They are arranged in four chapters (<em>Adhyāyas</em>), each divided into four sections (<em>Pādas</em>):</p>
+                <p>Each sutra is a brief, precise statement — often only 2–3 words — that encapsulates a key Vedantic principle. <strong>The text is so terse that it is unintelligible without commentary</strong>. This is a crucial point: the Brahma Sutras are not a stand-alone text but a set of aphorisms designed to be expanded upon by a <em>bhāṣya</em> (commentary).</p>
+
+                <p>They are arranged in four chapters (<em>Adhyāyas</em>), each divided into four sections (<em>Pādas</em>):</p>
 
                 <ul style="font-family:'Crimson Pro', serif; font-size:1.05rem; color:var(--stone); line-height:1.88; list-style:none; padding-left:0; margin-bottom:1.5rem;">
                     <li style="padding:0.3rem 0; border-bottom:1px solid var(--border-subtle);"><strong style="color:var(--gold);">Chapter I:</strong> <em>Samanvaya</em> — The harmony of all Upanishadic teachings. Establishes that Brahman is the ultimate reality.</li>
@@ -1849,6 +1912,11 @@
                 </div>
 
                 <p>The Brahma Sutras are the logical thread that strings the pearls of Upanishadic wisdom into a coherent philosophical system. They do not introduce new teachings but organize and defend the existing ones, providing a framework for all later Vedantic commentary.</p>
+
+                <div class="resonance-box">
+                    <h4>📜 A Contested Text</h4>
+                    <p>Scholars note that the Brahma Sutras were originally composed from a <strong>bhedābheda perspective</strong> (Brahman and Ātman are different-and-non-different), not strictly Advaita. <strong>Śaṅkara's 8th-century commentary</strong> reinterpreted them as Advaita, and the same sutras are read in opposite ways by different schools — Dvaita, Viśiṣṭādvaita, and others. The text is not a neutral systematizer but a contested foundation.</p>
+                </div>
             </div>
         </section>
 
@@ -1866,12 +1934,12 @@
                     <span class="stage-deva-title">प्रस्थानत्रयी</span>
                 </div>
                 <h2 class="stage-h2">The Prasthanatrayi</h2>
-                <span class="stage-subtitle-label">The three foundational texts of Vedanta</span>
+                <span class="stage-subtitle-label">The three foundational texts — shared across all schools of Vedanta</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>T</strong>he <span class="sanskrit-term" title="The three foundational texts of Vedanta: Upanishads, Bhagavad Gita, Brahma Sutras">Prasthanatrayi</span> is the triple canon of Vedanta. It consists of the three texts that form the basis of all classical Vedantic philosophy. They complement each other perfectly:</p>
+                <p><strong>T</strong>he <span class="sanskrit-term" title="The three foundational texts of Vedanta: Upanishads, Bhagavad Gita, Brahma Sutras">Prasthanatrayi</span> is the triple canon of Vedanta. It consists of the three texts that form the basis of all classical Vedantic philosophy — <strong>not just Advaita</strong>, but all schools. They complement each other perfectly:</p>
 
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.5rem; margin:2rem 0;">
                     <div style="background:var(--surface); padding:1.5rem; border-radius:var(--radius-sm); text-align:center; border:1px solid var(--border-medium); transition:all 0.3s var(--ease-out-expo);">
@@ -1896,9 +1964,67 @@
 
                 <p>Together, these three texts form the complete foundation of Vedanta. The Upanishads provide the <strong>revelation</strong> (Śruti) — the direct perception of truth. The Bhagavad Gita provides the <strong>synthesis</strong> (Smṛti) — the practical application. The Brahma Sutras provide the <strong>logic</strong> (Nyāya) — the systematic defense and organization of the teachings.</p>
 
+                <p><strong>Importantly</strong>, the Prasthanatrayi is shared across all schools of Vedanta — Advaita, Viśiṣṭādvaita, Dvaita, Bhedābheda, and others — though each interprets these texts through its own philosophical lens.</p>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
+
+        <!-- ═══════════════════════════════════════
+             SECTION VI: SCHOOLS OF VEDANTA
+             ═══════════════════════════════════════ -->
+        <section class="stage-section" id="schools">
+            <div class="stage-wm" aria-hidden="true">सम्प्रदाय</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter VI</span>
+                    <span class="stage-skt">The Schools</span>
+                    <span class="stage-deva-title">सम्प्रदाय</span>
+                </div>
+                <h2 class="stage-h2">The Schools of Vedanta</h2>
+                <span class="stage-subtitle-label">Vedanta is not a single system — it is a family of interpretations</span>
+                <span class="stage-rule"></span>
+            </div>
+
+            <div class="stage-body">
+                <p><strong>V</strong>edanta encompasses <strong>multiple philosophical schools</strong>, each offering a different interpretation of the Prasthanatrayi. While this primer focuses on Advaita (non-dualism), it is essential to recognize that Vedanta is a contested tradition with diverse voices.</p>
+
+                <div class="schools-grid">
+                    <div class="school-card">
+                        <div class="school-name">Advaita</div>
+                        <div class="school-deva">अद्वैत</div>
+                        <div class="school-exponent"><strong>Śaṅkara</strong> (8th c.)<br />Non-dualism — Ātman and Brahman are identical.</div>
+                    </div>
+                    <div class="school-card">
+                        <div class="school-name">Viśiṣṭādvaita</div>
+                        <div class="school-deva">विशिष्टाद्वैत</div>
+                        <div class="school-exponent"><strong>Rāmānuja</strong> (11th c.)<br />Qualified non-dualism — unity with internal distinctions.</div>
+                    </div>
+                    <div class="school-card">
+                        <div class="school-name">Dvaita</div>
+                        <div class="school-deva">द्वैत</div>
+                        <div class="school-exponent"><strong>Madhva</strong> (13th c.)<br />Dualism — God and soul are eternally distinct.</div>
+                    </div>
+                    <div class="school-card">
+                        <div class="school-name">Bhedābheda</div>
+                        <div class="school-deva">भेदाभेद</div>
+                        <div class="school-exponent"><strong>Bhāskara</strong> (8th c.), <strong>Nimbārka</strong> (13th c.)<br />Difference-and-non-difference — the original perspective of the Brahma Sutras.</div>
+                    </div>
+                    <div class="school-card">
+                        <div class="school-name">Śuddhādvaita</div>
+                        <div class="school-deva">शुद्धाद्वैत</div>
+                        <div class="school-exponent"><strong>Vallabha</strong> (16th c.)<br />Pure non-dualism — all is Brahman, without illusion.</div>
+                    </div>
+                    <div class="school-card">
+                        <div class="school-name">Dvaitādvaita</div>
+                        <div class="school-deva">द्वैताद्वैत</div>
+                        <div class="school-exponent"><strong>Nimbārka</strong> (13th c.)<br />Dualistic non-dualism — reality is both one and many.</div>
+                    </div>
+                </div>
+
                 <div class="resonance-box">
-                    <h4>📜 The Unity of the Three</h4>
-                    <p>No single text can stand alone. The Upanishads are too vast and seemingly contradictory; the Gita is too practical to serve as a complete philosophical system; the Brahma Sutras are too abstract without the context of the Upanishads and the Gita. Together, they form a complete, integrated system of spiritual knowledge — the Prasthanatrayi.</p>
+                    <h4>🧭 A Map, Not the Territory</h4>
+                    <p>Each school reads the same Upanishads, the same Gita, and the same Brahma Sutras — and arrives at a different conclusion. This is not a weakness but a sign of the depth and richness of the texts. <strong>Advaita is one interpretation among many</strong>, though it has become the most influential in the modern West. This primer is an <strong>Advaita primer</strong>, not a comprehensive overview of all Vedanta.</p>
                 </div>
             </div>
         </section>
@@ -1906,23 +2032,23 @@
         <hr class="stage-sep" />
 
         <!-- ═══════════════════════════════════════
-             SECTION VI: KEY CONCEPTS
+             SECTION VII: KEY CONCEPTS
              ═══════════════════════════════════════ -->
         <section class="stage-section" id="key-concepts">
             <div class="stage-wm" aria-hidden="true">शब्दकोश</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Chapter VI</span>
+                    <span class="stage-n">Chapter VII</span>
                     <span class="stage-skt">Core Vocabulary</span>
                     <span class="stage-deva-title">शब्दकोश</span>
                 </div>
                 <h2 class="stage-h2">Key Concepts</h2>
-                <span class="stage-subtitle-label">The essential terms of Vedanta — a concise glossary</span>
+                <span class="stage-subtitle-label">The essential terms of Advaita Vedanta — a concise glossary</span>
                 <span class="stage-rule"></span>
             </div>
 
             <div class="stage-body">
-                <p><strong>T</strong>he following terms form the core vocabulary of Vedanta. They appear repeatedly in the Upanishads, the Gita, and the Brahma Sutras, and are essential to understanding the non-dual philosophy.</p>
+                <p><strong>T</strong>he following terms form the core vocabulary of Advaita Vedanta. They appear repeatedly in the Upanishads, the Gita, and the Brahma Sutras, and are essential to understanding the non-dual philosophy.</p>
 
                 <div class="comp-table-wrap">
                     <table class="comp-table">
@@ -1930,7 +2056,7 @@
                             <tr>
                                 <th>Term</th>
                                 <th>Translation</th>
-                                <th>Meaning in Vedanta</th>
+                                <th>Meaning in Advaita Vedanta</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1997,46 +2123,50 @@
     <div class="pq-section">
         <div class="pq-glow"></div>
         <div class="pullquote">
-            <p class="pq-text">The Upanishads are the source, the Gita is the synthesis, and the Brahma Sutras are the logical thread.
-            — The Prasthanatrayi</p>
-            <p class="pq-attr"><a href="advaita-nisargadatta-maharaj.html" class="continue-link">&larr; Return to Nisargadatta</a> <span class="pq-sep" style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span> <a href="../messiah/messiah-threshold.html" class="continue-link">Continue to The Vedantic Messiah &rarr;</a></p>
+            <p class="pq-text">The Upanishads are the source, the Gita is the synthesis, and the Brahma Sutras are the logical thread.</p>
+            <p class="pq-attr">— The Prasthanatrayi, the shared foundation of all Vedanta</p>
+            <p class="pq-attr" style="margin-top:1rem; font-size:0.45rem; opacity:0.6; letter-spacing:0.15em;">
+                <a href="vedanta-living-tradition.html" class="continue-link" style="color:var(--stone-light);text-decoration:none;">← Gaudapada</a>
+                <span style="color:var(--border-strong);opacity:0.5;margin:0 0.5rem;">·</span>
+                <a href="advaita-adi-shankara.html" class="continue-link" style="color:var(--stone-light);text-decoration:none;">Adi Shankara →</a>
+            </p>
         </div>
     </div>
 
     <div class="skt-divider"><span class="skt-divider-inner">ॐ</span></div>
 
-    <!-- ═══════════════════════════════════════
+   <!-- ═══════════════════════════════════════
          FOOTER & NAV
          ═══════════════════════════════════════ -->
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link">⌂ Home</a>
         <span class="chapter-sep">ॐ</span>
-        <a href="advaita-gaudapada.html" class="chapter-link">Gaudapada</a>
-        <span class="chapter-sep">ॐ</span>
-        <a href="advaita-adi-shankara.html" class="chapter-link">Adi Shankara</a>
-        <span class="chapter-sep">ॐ</span>
-        <a href="advaita-ramana-maharshi.html" class="chapter-link">Ramana Maharshi</a>
-        <span class="chapter-sep">ॐ</span>
-        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">Nisargadatta</a>
-        <span class="chapter-sep">ॐ</span>
         <a href="vedanta-living-tradition.html" class="chapter-link active">Foundations</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="vedanta-living-tradition.html" class="chapter-link">I · Gaudapada</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-adi-shankara.html" class="chapter-link">II · Adi Shankara</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-ramana-maharshi.html" class="chapter-link">III · Ramana Maharshi</a>
+        <span class="chapter-sep">ॐ</span>
+        <a href="advaita-nisargadatta-maharaj.html" class="chapter-link">IV · Nisargadatta Maharaj</a>
     </div>
 
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
-        <div class="footer-name">Vedantic Mappings</div>
-        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">Home</a>
-            <a href="advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
             <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
-        <div class="footer-credit">Researched and composed — J.M.Q.</div>
-        <div class="footer-copyright">Last updated: 22 June 2026 · Six cartographies</div>
+        <div class="footer-credit">Researched and composed</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 

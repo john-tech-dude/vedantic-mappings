@@ -889,6 +889,7 @@
             color: var(--gold);
             opacity: 0.04;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             z-index: 0;
             direction: rtl;
@@ -1254,6 +1255,7 @@
             line-height: 0.8;
             display: block;
             pointer-events: none;
+            -webkit-user-select: none;
             user-select: none;
             margin-bottom: -2.5rem;
         }
@@ -1550,6 +1552,14 @@
             font-size: clamp(1.05rem, 2.5vw, 1.5rem);
             color: var(--ink);
             line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .concluding-attribution {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
             margin-bottom: 2rem;
         }
         .concluding-nav {
@@ -1881,14 +1891,14 @@
             <a href="kabbalah-sefer-yetzirah.html" class="nav-item">I · The Book of Creation</a>
             <a href="kabbalah-zohar.html" class="nav-item">II · The Zohar</a>
             <a href="kabbalah-luria.html" class="nav-item">III · Isaac Luria</a>
-            <a href="kabbalah-baal-shem-tov.html" class="nav-item">IV · The Baal Shem Tov</a>
+            <a href="kabbalah-the-ramchal.html" class="nav-item">IV · The Ramchal</a>
             <a href="kabbalah-mystical-union.html" class="nav-item">V · Mystical Union</a>
             <a href="kabbalah_zivug_haneshamot.html" class="nav-item">VI · Zivug HaNeshamot</a>
             <a href="kabbalah_shaar_hagilgulim.html" class="nav-item active">VII · Sha'ar HaGilgulim</a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Vedantic Mappings</div>
             <a href="../index.html" class="nav-item">⌂ Home</a>
-            <a href="../advaita-vedanta/advaita-gaudapada.html" class="nav-item">Advaita Vedanta</a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html" class="nav-item">The Vedantic Messiah</a>
             <a href="kabbalah-sefer-yetzirah.html" class="nav-item">Kabbalah</a>
             <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item">Gnosticism</a>
@@ -2709,9 +2719,10 @@
     <div class="concluding-section">
         <div class="concluding-section-inner">
             <h3 class="concluding-title">Synthesis</h3>
-            <p class="concluding-quote">"All the souls of the world, before they come into this world, are one. They are all joined together in the likeness of the Holy King. When they go forth into the world, they are separated, one from the other. But when the time comes to return to the King, they are all joined together once more, and they ascend as one, in the place from which they came." — Zohar, Volume III, 105a</p>
+            <p class="concluding-quote">"All the souls of the world, before they come into this world, are one. They are all joined together in the likeness of the Holy King. When they go forth into the world, they are separated, one from the other. But when the time comes to return to the King, they are all joined together once more, and they ascend as one, in the place from which they came."</p>
+            <p class="concluding-attribution">— Zohar, Volume III, 105a</p>
             <div class="concluding-nav">
-                <a href="kabbalah_zivug_haneshamot.html">← RETURN TO VI · ZIVUG HANESHAMOT</a>
+                <a href="kabbalah_zivug_haneshamot.html">← RETURN TO ZIVUG HANESHAMOT</a>
                 <span class="nav-sep">·</span>
                 <a href="../gnosticism/gnosticism-unknown-father.html">CONTINUE TO GNOSTICISM →</a>
             </div>
@@ -2724,13 +2735,13 @@
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link">⌂ Home</a>
         <span class="chapter-sep">·</span>
-        <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="chapter-link">I · The Book of Creation</a>
+        <a href="kabbalah-sefer-yetzirah.html" class="chapter-link">I · The Book of Creation</a>
         <span class="chapter-sep">·</span>
-        <a href="../kabbalah/kabbalah-zohar.html" class="chapter-link">II · The Zohar</a>
+        <a href="kabbalah-zohar.html" class="chapter-link">II · The Zohar</a>
         <span class="chapter-sep">·</span>
-        <a href="../kabbalah/kabbalah-luria.html" class="chapter-link">III · Isaac Luria</a>
+        <a href="kabbalah-luria.html" class="chapter-link">III · Isaac Luria</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah-baal-shem-tov.html" class="chapter-link">IV · The Baal Shem Tov</a>
+        <a href="kabbalah-the-ramchal.html" class="chapter-link">IV · The Ramchal</a>
         <span class="chapter-sep">·</span>
         <a href="kabbalah-mystical-union.html" class="chapter-link">V · Mystical Union</a>
         <span class="chapter-sep">·</span>
@@ -2742,25 +2753,22 @@
     <!-- ═══════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════ -->
-    <footer class="footer">
-        <div class="footer-emblem" aria-hidden="true">
-            <div class="footer-emblem-outer"></div>
-            <div class="footer-emblem-inner"></div>
-        </div>
-        <div class="footer-name">Vedantic Mappings</div>
-        <div class="footer-tagline">Cartographies of the Non-Dual Path</div>
+        <footer class="footer">
+        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-name">The Cartographies</div>
+        <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">⌂ Vedantic Mappings</a>
-            <a href="../advaita/advaita-gaudapada.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">The Vedantic Messiah</a>
+            <a href="../index.html">⌂ Home</a>
+            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
             <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
-        <div class="footer-credit">Researched and composed — J.M.Q.</div>
-        <div class="footer-copyright">Last updated: June 2026 · Six cartographies</div>
-        <div class="footer-version" style="margin-top:0.4rem;opacity:0.25">Primary sources: Sha'ar HaGilgulim (Arizal / R. Chaim Vital) · Zohar Mishpatim · Chesed L'Avraham</div>
+        <div class="footer-credit">Researched and composed</div>
+        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
     <script>
