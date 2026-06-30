@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The Beatitudes as Jnana Yoga — The Sermon on the Mount as a practical guide to ego-dissolution, the Lord's Prayer as mantra, and the path of daily realization." />
-    <title>The Beatitudes as Jnana Yoga · The Vedantic Messiah</title>
+    <title>The Beatitudes as Jnana Yoga · Jesus of Nazareth</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -480,10 +480,43 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 5rem 2rem 6rem;
+            padding: 6rem 2rem 7rem;
             text-align: center;
             background: var(--hero-bg);
             perspective: 1200px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            max-width: 36rem;
+            width: 100%;
+            padding: 0 1rem;
+        }
+        .hero-content .hero-eyemark,
+        .hero-content .hero-title,
+        .hero-content .hero-epithet,
+        .hero-content .hero-quote {
+            margin-bottom: 0;
+        }
+        .hero-content .hero-divider {
+            margin: 0 auto;
+        }
+        .hero-content .hero-quote-attr {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        .hero-dates-inline {
+            display: block;
+            margin-top: 0.35rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.14em;
+            color: var(--stone);
+            text-transform: none;
         }
         .hero::after {
             content: '';
@@ -631,10 +664,10 @@
         }
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.4rem, 6vw, 5rem);
+            font-size: clamp(2.1rem, 5vw, 4.25rem);
             font-weight: 400;
             letter-spacing: .06em;
-            line-height: 1.08;
+            line-height: 1.12;
             color: var(--ink);
             text-shadow: 0 2px 40px rgba(124, 111, 174, 0.2);
             opacity: 0;
@@ -650,11 +683,13 @@
         .hero-epithet {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
             color: var(--violet-light);
-            letter-spacing: .12em;
+            letter-spacing: .1em;
             opacity: 0;
             margin-bottom: 2.5rem;
+            max-width: 32rem;
+            line-height: 1.5;
             position: relative;
             z-index: 3;
             animation: hero-rise 1.1s 1.6s forwards;
@@ -707,11 +742,12 @@
         .hero-quote-attr {
             font-family: 'Cinzel', serif;
             font-size: .55rem;
-            letter-spacing: .35em;
+            letter-spacing: .28em;
             color: var(--stone-light);
             text-transform: uppercase;
             opacity: 0;
             margin-bottom: 3.5rem;
+            max-width: 36rem;
             position: relative;
             z-index: 3;
             animation: hero-rise 1.1s 2.2s forwards;
@@ -1565,7 +1601,11 @@
         @media (max-width: 480px) {
             body { font-size: 16px; line-height: 1.72; }
             .content-section { padding: 48px 16px; }
-            .hero { padding: 4rem 1rem 5rem; }
+            .hero { padding: 4.5rem 1rem 5.5rem; }
+            .hero-content { gap: 1.35rem; max-width: 100%; }
+            .hero-title { font-size: clamp(1.85rem, 8vw, 2.6rem); }
+            .hero-epithet { font-size: 0.95rem; letter-spacing: 0.06em; }
+            .hero-quote-attr { letter-spacing: 0.18em; font-size: 0.5rem; }
             .hero-emblem { width: 95px; height: 95px; }
             .nav-compass { top: 0.75rem; left: 0.75rem; }
             .nav-toggle { width: 40px; height: 40px; }
@@ -1614,19 +1654,22 @@
             <a href="#daily-practice" class="nav-item" data-section="daily-practice"><span class="nav-item-icon">🌱</span><span>Daily Practice</span></a>
             <a href="#perfection" class="nav-item" data-section="perfection"><span class="nav-item-icon">⊙</span><span>Be Perfect</span></a>
             <div class="nav-divider"></div>
-            <div class="nav-section-title">The Vedantic Messiah</div>
-            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>I · The Hermeneutic Key</span></a>
-            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">◈</span><span>II · Three Bridges</span></a>
+                                    <div class="nav-section-title">Jesus of Nazareth</div>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>I · The Hermeneutic Key</span></a>
+            <a href="../messiah/messiah-parables.html" class="nav-item"><span class="nav-item-icon">◈</span><span>II · Three Bridges</span></a>
             <a href="../messiah/messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
-            <a href="messiah-beatitudes.html" class="nav-item active"><span class="nav-item-icon">🌱</span><span>IV · The Beatitudes as Jnana Yoga</span></a>
+            <a href="../messiah/messiah-beatitudes.html" class="nav-item active"><span class="nav-item-icon">🌱</span><span>IV · The Beatitudes as Jnana Yoga</span></a>
             <a href="../messiah/messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
-            <div class="nav-divider"></div>
-            <div class="nav-section-title">Other Cartographies</div>
+            <a href="../messiah/messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon">📖</span><span>VI · The Gospel of Thomas</span></a>
+            <a href="../messiah/messiah-avatar.html" class="nav-item"><span class="nav-item-icon">☸</span><span>VII · The Incarnation as Avatar</span></a><div class="nav-divider"></div>
+                        <div class="nav-section-title">Other Cartographies</div>
             <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
             <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>Jesus of Nazareth</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>Kabbalah</span></a>
             <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
             <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
         </div>
     </div>
 
@@ -1657,19 +1700,17 @@
         <div class="hero-ripple" aria-hidden="true"></div>
         <div class="hero-ripple" aria-hidden="true"></div>
 
-        <p class="hero-eyemark">The Practical Path</p>
-        <p class="hero-label">The Sermon on the Mount · The Beatitudes</p>
-        <p class="hero-subtitle-top">The Yoga of the Heart · The Way of the Awakened Life</p>
-        <h1 class="hero-title">The Beatitudes as Jnana Yoga</h1>
-        <p class="hero-epithet">The Eightfold Path of the Heart · The Qualifications for Realization</p>
-        <div class="hero-divider" aria-hidden="true">
-            <div class="hero-divider-line"></div>
-            <div class="hero-divider-diamond"></div>
-            <div class="hero-divider-line"></div>
+        <div class="hero-content">
+            <p class="hero-eyemark">Jesus of Nazareth</p>
+            <h1 class="hero-title">The Beatitudes</h1>
+            <div class="hero-divider" aria-hidden="true">
+                <div class="hero-divider-line"></div>
+                <div class="hero-divider-diamond"></div>
+                <div class="hero-divider-line"></div>
+            </div>
+            <p class="hero-quote">&ldquo;Blessed are the poor in spirit, for theirs is the kingdom of heaven.&rdquo;</p>
+            <p class="hero-quote-attr">&mdash; Matthew 5:3</p>
         </div>
-        <p class="hero-quote">&ldquo;Blessed are the poor in spirit, for theirs is the kingdom of heaven.&rdquo;</p>
-        <p class="hero-quote-attr">&mdash; Matthew 5:3 · <span class="greek-term" title="Aramaic: ṭūḇayhōn lə-miskēnē bə-rūḥ — 'Blessed are the poor in spirit'">ṭūḇayhōn lə-miskēnē bə-rūḥ</span></p>
-        <p class="hero-dates">The Sermon on the Mount · c. 26–30 CE · Galilee</p>
         <div class="hero-scroll-cue" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
             <span>Enter</span>
             <div class="scroll-line" aria-hidden="true"></div>
@@ -1959,7 +2000,7 @@
 
                 <div class="pull-q fade-in">
                     <p>&ldquo;The Lord's Prayer is the japa of the Kingdom. It is not asking for something you lack; it is affirming what you already are.&rdquo;</p>
-                    <cite>&mdash; The Vedantic Messiah</cite>
+                    <cite>&mdash; Jesus of Nazareth</cite>
                 </div>
 
                 <!-- DIAGRAM: The Lord's Prayer as Mantra -->
@@ -2082,7 +2123,7 @@
 
                 <div class="resonance-callout fade-in stagger-1">
                     <p>&ldquo;Be whole. Be complete. Be what you already are. The Father is not a separate being to be imitated; the Father is the Self that you are.&rdquo;</p>
-                    <p class="attribution">&mdash; The Vedantic Messiah</p>
+                    <p class="attribution">&mdash; Jesus of Nazareth</p>
                 </div>
 
                 <p class="fade-in stagger-2">In Advaita, perfection is not an achievement but a <strong>recognition</strong>. You are already the Self, already whole, already complete. The command &ldquo;Be perfect&rdquo; is an invitation to recognize what you have never ceased to be. It is the same teaching as the Upanishadic <span class="greek-term" title="You are That; the supreme identity of Atman and Brahman">Tat Tvam Asi</span> &mdash; &ldquo;That Thou Art.&rdquo;</p>
@@ -2108,7 +2149,7 @@
 
                 <div class="pull-q fade-in">
                     <p>&ldquo;Blessed are the pure in heart, for they shall see God. The pure heart sees no separation. The pure heart sees only the Self.&rdquo;</p>
-                    <cite>&mdash; The Vedantic Messiah</cite>
+                    <cite>&mdash; Jesus of Nazareth</cite>
                 </div>
             </div>
         </section>
@@ -2132,9 +2173,9 @@
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link">⌂ Home</a>
         <span class="chapter-sep">✦</span>
-        <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
+        <a href="../messiah/messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
         <span class="chapter-sep">✦</span>
-        <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
+        <a href="../messiah/messiah-parables.html" class="chapter-link">II · Three Bridges</a>
         <span class="chapter-sep">✦</span>
         <a href="../messiah/messiah-silence.html" class="chapter-link">III · The Cloud of Unknowing</a>
         <span class="chapter-sep">✦</span>
@@ -2142,7 +2183,9 @@
         <span class="chapter-sep">✦</span>
         <a href="../messiah/messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
           <span class="chapter-sep">✦</span>
-        <a href="messiah-gospel-thomas.html" class="chapter-link">VI · The Gospel of Thomas</a>
+        <a href="../messiah/messiah-gospel-thomas.html" class="chapter-link">VI · The Gospel of Thomas</a>
+        <span class="chapter-sep">✦</span>
+        <a href="../messiah/messiah-avatar.html" class="chapter-link">VII · The Incarnation as Avatar</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -2154,7 +2197,7 @@
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
             <a href="../index.html">⌂ Home</a>
-            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
             <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>

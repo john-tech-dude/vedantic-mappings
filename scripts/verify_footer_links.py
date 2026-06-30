@@ -23,7 +23,7 @@ GNOSTICISM_FILES = [
 EXPECTED_LINKS = {
     "⌂ Vedantic Mappings": "../index.html",
     "Advaita Vedanta": "../advaita-vedanta/advaita-gaudapada.html",
-    "The Vedantic Messiah": "../messiah/messiah-threshold.html",
+    "Jesus of Nazareth": "../messiah/messiah-threshold.html",
     "Kabbalah": "../kabbalah/kabbalah-sefer-yetzirah.html",
     "Gnosticism": "gnosticism-unknown-father.html",
     "Taoism · The Unnamed Way": "../taoism/taoism-practices.html",

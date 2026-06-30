@@ -2,7 +2,7 @@
 
 Cartographies of the Non-Dual Path
 
-This project contains comprehensive, single-page HTML cartographies documenting the teachings of Advaita Vedanta, The Vedantic Messiah, Kabbalah, and Taoism. Each cartography provides a complete map from mistaken identity to liberation, grounded in scriptural sources and presented with scholarly precision.
+This project contains comprehensive, single-page HTML cartographies documenting the teachings of Advaita Vedanta, Jesus of Nazareth, Kabbalah, and Taoism. Each cartography provides a complete map from mistaken identity to liberation, grounded in scriptural sources and presented with scholarly precision.
 
 ## 📁 Project Structure
 
@@ -125,7 +125,7 @@ vedantic-mappings/
 
 ---
 
-### III. The Vedantic Messiah — Gospel & Upanishad
+### III. Jesus of Nazareth — Gospel & Upanishad
 
 **Teaching**: Non-Dual Metaphysics in Christian Mysticism
 

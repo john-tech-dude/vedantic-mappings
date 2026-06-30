@@ -73,7 +73,7 @@ section_patterns = {
     'Advaita': advaita_svgs,
     'Kabbalah': kabbalah_svgs,
     'Taoism': taoism_svgs,
-    'The Vedantic Messiah': messiah_svgs,
+    'Jesus of Nazareth': messiah_svgs,
 }
 
 processed_count = 0

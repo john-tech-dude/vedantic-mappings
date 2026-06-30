@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The Gospel of Thomas — A Mystical Exegesis woven with the Nag Hammadi Library." />
-    <title>The Gospel of Thomas · A Mystical Exegesis · Nag Hammadi Woven</title>
+    <title>Jesus of Nazareth - The Gospel of Thomas · A Mystical Exegesis · Nag Hammadi Woven</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -237,15 +237,62 @@
             animation: ambientDrift 20s ease-in-out infinite;
             pointer-events: none; z-index: 1;
         }
-        .hero-ripples { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-        .hero-ripple {
-            position: absolute; top: 50%; left: 50%; width: 200px; height: 200px;
-            border-radius: 50%; border: 1px solid var(--indigo);
-            transform: translate(-50%, -50%); pointer-events: none;
-            animation: rippleOut 10s ease-out infinite;
+        @keyframes mandalaRotate { to { transform: rotate(360deg); } }
+        @keyframes mandala-breathe {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.12; }
+            50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.2; }
         }
-        .hero-ripple:nth-child(2) { animation-delay: 3.5s; }
-        .hero-ripple:nth-child(3) { animation-delay: 7s; }
+        @keyframes ripple-out {
+            0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.35; }
+            100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+        }
+        .hero-mountain {
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 120%; height: 48%;
+            background: linear-gradient(175deg, transparent 20%, rgba(90, 106, 154, 0.12) 50%, rgba(90, 106, 154, 0.22) 80%);
+            clip-path: polygon(0% 100%, 8% 85%, 15% 78%, 20% 65%, 25% 55%, 30% 48%, 35% 40%, 38% 32%, 42% 22%, 45% 14%, 48% 8%, 50% 0%, 52% 8%, 55% 14%, 58% 22%, 62% 32%, 65% 40%, 70% 48%, 75% 55%, 80% 65%, 85% 72%, 92% 82%, 100% 100%);
+            opacity: 0.15;
+        }
+        .mandala-ring {
+            position: absolute; top: 50%; left: 50%; border-radius: 50%;
+            border: 1px solid var(--indigo-light); transform: translate(-50%, -50%);
+            pointer-events: none; animation: mandala-breathe 14s ease-in-out infinite;
+        }
+        .mandala-ring:nth-of-type(1) { width: 220px; height: 220px; opacity: 0.18; }
+        .mandala-ring:nth-of-type(2) { width: 360px; height: 360px; opacity: 0.12; animation-delay: 2s; }
+        .mandala-ring:nth-of-type(3) { width: 520px; height: 520px; opacity: 0.08; animation-delay: 4s; }
+        .mandala-ring:nth-of-type(4) { width: 700px; height: 700px; opacity: 0.05; animation-delay: 6s; }
+        .hero-ripple {
+            position: absolute; top: 50%; left: 50%; width: 180px; height: 180px;
+            border-radius: 50%; border: 1px solid var(--indigo-light);
+            transform: translate(-50%, -50%); pointer-events: none;
+            animation: ripple-out 10s ease-out infinite;
+        }
+        .hero-ripple:nth-of-type(2) { animation-delay: 3.3s; }
+        .hero-ripple:nth-of-type(3) { animation-delay: 6.6s; }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 36rem;
+            width: 100%;
+            padding: 0 1.5rem;
+        }
+        .hero-content .hero-eyemark,
+        .hero-content .hero-title,
+        .hero-content .hero-quote,
+        .hero-content .hero-quote-attr,
+        .hero-content .hero-divider {
+            margin-bottom: 0;
+        }
+        .hero-content .hero-divider {
+            margin: 0 auto;
+        }
+
         .hero-eyemark {
             font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.5em;
             color: var(--indigo-light); text-transform: uppercase; margin-bottom: 1.5rem;
@@ -623,12 +670,23 @@
             <div class="nav-section-title">Nag Hammadi Parallels</div>
             <a href="#nhtable" class="nav-item" data-section="nhtable">Summary Table</a>
             <div class="nav-divider"></div>
-            <div class="nav-section-title">Vedantic Mappings</div>
-            <a href="../index.html" class="nav-item">⌂ Home</a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item">Kabbalah</a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item">Gnosticism</a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item">Advaita Vedanta</a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item">Taoism</a>
+                        <div class="nav-section-title">Jesus of Nazareth</div>
+            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>I · The Hermeneutic Key</span></a>
+            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">◈</span><span>II · Three Bridges</span></a>
+            <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon">🌱</span><span>IV · The Beatitudes as Jnana Yoga</span></a>
+            <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
+            <a href="messiah-gospel-thomas.html" class="nav-item active"><span class="nav-item-icon">📖</span><span>VI · The Gospel of Thomas</span></a>
+            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon">☸</span><span>VII · The Incarnation as Avatar</span></a>
+            <div class="nav-divider"></div>
+                        <div class="nav-section-title">Other Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>Jesus of Nazareth</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
         </div>
     </div>
 
@@ -641,57 +699,36 @@
 
     <!-- ═══ HERO ═══ -->
     <header class="hero" id="hero">
-        <div class="hero-ripples" aria-hidden="true">
-            <div class="hero-ripple"></div>
-            <div class="hero-ripple"></div>
-            <div class="hero-ripple"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:auto" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g style="animation:mandalaRotate 60s linear infinite">
+                <circle cx="600" cy="400" r="350" fill="none" stroke="var(--gold)" stroke-width="0.3" opacity="0.08"/>
+                <circle cx="600" cy="400" r="300" fill="none" stroke="var(--violet)" stroke-width="0.5" opacity="0.10"/>
+                <circle cx="600" cy="400" r="250" fill="none" stroke="var(--gold)" stroke-width="0.4" opacity="0.07"/>
+                <circle cx="600" cy="400" r="200" fill="none" stroke="var(--violet)" stroke-width="0.3" opacity="0.06"/>
+            </g>
+        </svg>
+        <div class="hero-mountain" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="mandala-ring" aria-hidden="true"></div>
+        <div class="hero-ripple" aria-hidden="true"></div>
+        <div class="hero-ripple" aria-hidden="true"></div>
+        <div class="hero-ripple" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <p class="hero-eyemark">Jesus of Nazareth</p>
+            <h1 class="hero-title">The Gospel of Thomas</h1>
+            <div class="hero-divider" aria-hidden="true">
+                <div class="hero-divider-line"></div>
+                <div class="hero-divider-diamond"></div>
+                <div class="hero-divider-line"></div>
+            </div>
+            <p class="hero-quote">&ldquo;Whoever finds the meaning of these sayings will not taste death.&rdquo;</p>
+            <p class="hero-quote-attr">&mdash; Gospel of Thomas, Logion 1</p>
         </div>
-        <p class="hero-eyemark">The Gospel of Thomas</p>
-        <div class="hero-emblem" role="img" aria-labelledby="emblemTitle">
-            <title id="emblemTitle">The Light That Is Above Them All</title>
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="6" result="blur"/>
-                        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#e0c878" stop-opacity="0.3"/>
-                        <stop offset="60%" stop-color="#c4a855" stop-opacity="0.1"/>
-                        <stop offset="100%" stop-color="#c4a855" stop-opacity="0"/>
-                    </radialGradient>
-                </defs>
-                <circle cx="100" cy="100" r="95" fill="none" stroke="#5a6a9a" stroke-width="0.3" opacity="0.3"/>
-                <circle cx="100" cy="100" r="90" fill="none" stroke="#5a6a9a" stroke-width="0.5" opacity="0.2"/>
-                <circle cx="100" cy="100" r="80" fill="none" stroke="#7a8aba" stroke-width="0.4" opacity="0.25"/>
-                <circle cx="100" cy="100" r="60" fill="url(#centerGlow)" opacity="0.5"/>
-                <circle cx="100" cy="100" r="45" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.6"/>
-                <circle cx="100" cy="100" r="28" fill="none" stroke="#e0c878" stroke-width="0.6" opacity="0.4"/>
-                <circle cx="100" cy="100" r="4" fill="#e0c878" opacity="0.7" filter="url(#glow)"/>
-                <circle cx="100" cy="100" r="1.5" fill="#fff" opacity="0.4"/>
-                <g stroke="#c4a855" stroke-width="0.5" opacity="0.25" stroke-linecap="round">
-                    <line x1="30" y1="170" x2="170" y2="30"/>
-                    <line x1="170" y1="170" x2="30" y2="30"/>
-                </g>
-                <g stroke="#7a8aba" stroke-width="0.3" opacity="0.2">
-                    <line x1="100" y1="5" x2="100" y2="195"/>
-                    <line x1="5" y1="100" x2="195" y2="100"/>
-                </g>
-                <polygon points="100,92 108,100 100,108 92,100" fill="#e0c878" opacity="0.3"/>
-            </svg>
-        </div>
-        <h1 class="hero-title">The Gospel of Thomas</h1>
-        <p class="hero-subtitle">A Mystical Exegesis · Illuminated by the Nag Hammadi Library</p>
-        <div class="hero-divider" aria-hidden="true">
-            <div class="hero-divider-line"></div>
-            <div class="hero-divider-diamond"></div>
-            <div class="hero-divider-line"></div>
-        </div>
-        <p class="hero-heb-display" aria-label="Coptic: The Gospel of Thomas">ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲙ̄ⲡⲉ ⲑⲱⲙⲁⲥ</p>
-        <p class="hero-quote">"Whoever finds the meaning of these sayings will not taste death."</p>
-        <p class="hero-attr">— Gospel of Thomas, Logion 1</p>
-        <div class="hero-scroll-cue" id="heroScroll" role="button" tabindex="0" aria-label="Scroll to content">
-            <span aria-hidden="true">Enter</span>
+        <div class="hero-scroll-cue" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
+            <span>Enter</span>
             <div class="scroll-line" aria-hidden="true"></div>
         </div>
     </header>
@@ -757,8 +794,8 @@
                     <div class="scripture-panel">
                         <div class="scripture-heb">ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲙ̄ⲡⲉ ⲑⲱⲙⲁⲥ</div>
                         <div class="scripture-label">Gospel of Thomas · Logion 1</div>
-                        <p class="scripture-text">"Whoever finds the meaning of these sayings will not taste death."</p>
-                        <p class="scripture-ref">— Gospel of Thomas</p>
+                        <p class="scripture-text">"Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the All."</p>
+                        <p class="scripture-ref">— Gospel of Thomas · Logion 2</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-heb">ⲑⲱⲙⲁⲥ</div>
@@ -906,7 +943,7 @@
                 <p>The <em>Gospel of Philip</em> draws the same line: those asleep in the world are buried in it. To eat what is dead and make it alive is the gnostic reversal — transforming the material through perception rather than ritual. Thomas doesn't need the sacrament. The saying does the work.</p>
 
                 <div class="pull-q fade-in">
-                    <p>"In the days before Eve was taken out of Adam, death had not yet come into being. When she was separated from him, death came into being. If she enters again and he receives her, death will cease."</p>
+                    <p>"Those who are asleep in the world are buried in it."</p>
                     <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
                 </div>
             </div>
@@ -1134,9 +1171,9 @@
             <h3 class="concluding-title">Synthesis</h3>
             <p class="concluding-quote">"Whoever finds the meaning of these sayings will not taste death." Not because the body survives. Because the one who was afraid of dying is seen through — and what remains doesn't need the promise anymore.</p>
             <div class="concluding-nav">
-                <a href="../index.html">← RETURN TO HOME</a>
+                <a href="messiah-mirror.html">← RETURN TO TAT TVAM ASI</a>
                 <span class="nav-sep">·</span>
-                <a href="../kabbalah/kabbalah-sefer-yetzirah.html">CONTINUE TO THE SEPHIR YETZIRAH →</a>
+                <a href="messiah-avatar.html">CONTINUE TO THE INCARNATION AS AVATAR →</a>
             </div>
         </div>
     </div>
@@ -1158,6 +1195,8 @@
         <a href="messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
         <span class="chapter-sep">✦</span>
         <a href="messiah-gospel-thomas.html" class="chapter-link active">VI · The Gospel of Thomas</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-avatar.html" class="chapter-link">VII · The Incarnation as Avatar</a>
     </div>
 
     <!-- ═══ FOOTER ═══ -->
@@ -1167,7 +1206,7 @@
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
             <a href="../index.html">⌂ Home</a>
-            <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
             <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
