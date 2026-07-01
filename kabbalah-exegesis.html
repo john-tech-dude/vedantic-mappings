@@ -2849,9 +2849,15 @@
                                 <feGaussianBlur stdDeviation="4" result="blur"/>
                                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
-                            <linearGradient id="shofarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#c4a855"/><stop offset="100%" stop-color="#8a7030"/>
+                            <linearGradient id="shofarGrad" x1="0%" y1="20%" x2="100%" y2="80%">
+                                <stop offset="0%" stop-color="#f0d080"/><stop offset="35%" stop-color="#d4a050"/><stop offset="70%" stop-color="#a07030"/><stop offset="100%" stop-color="#6a4018"/>
                             </linearGradient>
+                            <linearGradient id="shofarHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#fff0c0" stop-opacity="0.45"/><stop offset="100%" stop-color="#fff0c0" stop-opacity="0"/>
+                            </linearGradient>
+                            <radialGradient id="shofarMouth" cx="40%" cy="50%" r="60%">
+                                <stop offset="0%" stop-color="#2a1808"/><stop offset="100%" stop-color="#0a0604"/>
+                            </radialGradient>
                         </defs>
                         <rect x="12" y="12" width="576" height="376" rx="14" fill="var(--surface)" opacity="0.22" stroke="var(--border)" stroke-width="0.5"/>
                         <g class="diag-frame" stroke="var(--gold)" stroke-width="0.9" fill="none" opacity="0.38">
@@ -2860,6 +2866,9 @@
                             <path d="M588,370 L588,388 L570,388"/>
                             <path d="M30,388 L12,388 L12,370"/>
                         </g>
+                        <text x="300" y="52" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="var(--gold)" letter-spacing="0.28em">THE GREAT SHOFAR — GATHERING THE EXILES</text>
+
+                        <!-- Four corners -->
                         <g transform="translate(100,100)">
                             <circle r="30" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" opacity="0.8"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#8a9ab8">NORTH</text>
@@ -2880,28 +2889,44 @@
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#8a9ab8">EAST</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="10" fill="#c4a855">מִזְרָח</text>
                         </g>
-                        <g transform="translate(300,200)">
-                            <path d="M-60,-20 Q-30,-40 0,-30 Q30,-20 50,0 Q70,20 60,50 Q40,70 0,60 Q-40,50 -60,20 Q-70,0 -60,-20" fill="url(#shofarGrad)" opacity="0.8" filter="url(#shofarGlow)"/>
-                            <path d="M-60,-20 Q-30,-40 0,-30 Q30,-20 50,0 Q70,20 60,50 Q40,70 0,60 Q-40,50 -60,20 Q-70,0 -60,-20" fill="none" stroke="#e0c878" stroke-width="1" opacity="0.5"/>
-                            <g stroke="#c4a855" stroke-width="0.8" opacity="0.4" fill="none">
-                                <circle r="70" opacity="0.3">
-                                    <animate attributeName="r" values="70;90;70" dur="3s" repeatCount="indefinite"/>
-                                    <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
-                                </circle>
-                                <circle r="90" opacity="0.2">
-                                    <animate attributeName="r" values="90;110;90" dur="3s" repeatCount="indefinite" begin="0.5s"/>
-                                    <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" repeatCount="indefinite" begin="0.5s"/>
-                                </circle>
+
+                        <!-- Ram's horn shofar — mouth left, tip curls up-right -->
+                        <g transform="translate(300,208)" filter="url(#shofarGlow)">
+                            <!-- Horn body -->
+                            <path d="M-88,32 C-95,8 -88,-28 -58,-58 C-22,-92 28,-102 68,-82 C 102,-65 118,-30 108,5 C 98,36 68,58 28,62 C-8,66 -42,58 -64,44 C-82,32 -88,32 -88,32 Z" fill="url(#shofarGrad)" stroke="#8a5820" stroke-width="1.3"/>
+                            <!-- Inner mouth rim -->
+                            <path d="M-88,32 C-82,48 -68,58 -50,54 C-38,50 -32,38 -36,22 C-42,2 -58,-8 -72,2 C-82,12 -88,32 -88,32 Z" fill="url(#shofarHighlight)" opacity="0.5"/>
+                            <!-- Blow hole -->
+                            <ellipse cx="-62" cy="22" rx="18" ry="26" fill="url(#shofarMouth)" stroke="#4a3010" stroke-width="1"/>
+                            <ellipse cx="-58" cy="18" rx="11" ry="16" fill="#0a0604" opacity="0.6"/>
+                            <!-- Natural ridges -->
+                            <path d="M-70,18 C-45,-25 0,-55 55,-68" fill="none" stroke="#7a5018" stroke-width="0.7" opacity="0.45"/>
+                            <path d="M-65,28 C-30,-5 20,-38 75,-48" fill="none" stroke="#7a5018" stroke-width="0.6" opacity="0.35"/>
+                            <path d="M-55,38 C-15,10 35,-18 85,-25" fill="none" stroke="#7a5018" stroke-width="0.5" opacity="0.28"/>
+                            <!-- Highlight sheen -->
+                            <path d="M-50,8 C-25,-35 30,-62 80,-58 C 95,-55 100,-40 88,-22" fill="none" stroke="#f0d888" stroke-width="2.5" opacity="0.3" stroke-linecap="round"/>
+                            <!-- Tip curl -->
+                            <path d="M 95,-8 C 108,-22 112,-38 100,-52 C 94,-60 86,-58 82,-48 C 78,-36 86,-18 95,-8 Z" fill="#8a5820" stroke="#c4a855" stroke-width="0.6"/>
+                            <text x="-5" y="88" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="14" fill="var(--gold)">שׁוֹפָר</text>
+                            <!-- Sound ripples from mouth -->
+                            <g fill="none" stroke="#c4a855" stroke-width="1" opacity="0.35">
+                                <ellipse cx="-95" cy="22" rx="12" ry="20" opacity="0.5"><animate attributeName="rx" values="12;28;12" dur="2.5s" repeatCount="indefinite"/><animate attributeName="ry" values="20;38;20" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/></ellipse>
+                                <ellipse cx="-95" cy="22" rx="20" ry="32" opacity="0.3"><animate attributeName="rx" values="20;42;20" dur="2.5s" repeatCount="indefinite" begin="0.4s"/><animate attributeName="ry" values="32;52;32" dur="2.5s" repeatCount="indefinite" begin="0.4s"/><animate attributeName="opacity" values="0.3;0;0.3" dur="2.5s" repeatCount="indefinite" begin="0.4s"/></ellipse>
                             </g>
-                            <text y="5" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="#1a1e2e" font-weight="600">שׁוֹפָר</text>
                         </g>
-                        <g stroke="#c4a855" stroke-width="0.6" opacity="0.3" fill="none" stroke-dasharray="4,4">
-                            <path d="M130,130 Q200,160 250,180"/>
-                            <path d="M470,130 Q400,160 350,180"/>
-                            <path d="M130,270 Q200,240 250,220"/>
-                            <path d="M470,270 Q400,240 350,220"/>
+
+                        <!-- Blast lines to four corners from mouth (~212, 230) -->
+                        <g stroke="#c4a855" stroke-width="0.8" opacity="0.35" fill="none" stroke-dasharray="5,4">
+                            <path d="M212,230 Q155,175 130,130"/>
+                            <path d="M212,230 Q155,285 130,300"/>
+                            <path d="M212,230 Q280,175 350,130"/>
+                            <path d="M212,230 Q280,285 350,300"/>
                         </g>
-                        <text x="300" y="60" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="#c4a855" letter-spacing="0.3em" opacity="0.7">THE GREAT SHOFAR — GATHERING THE EXILES</text>
+                        <g stroke="#e0c878" stroke-width="0.4" opacity="0.25" fill="none">
+                            <path d="M212,230 L130,130"/><path d="M212,230 L130,300"/>
+                            <path d="M212,230 L500,130"/><path d="M212,230 L500,300"/>
+                        </g>
+                        <text x="300" y="378" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="var(--stone-light)" font-style="italic">"The great trumpet shall be blown, and they shall come" — Isaiah 27:13</text>
                     </svg>
                     <div class="diagram-caption">The Great Shofar — Shofar HaGadol</div>
                     <div class="diagram-subcaption">From the four corners of the earth, the exiles are called home — Isaiah 27:13</div>
