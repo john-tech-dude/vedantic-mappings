@@ -167,23 +167,5 @@ def main() -> None:
         path.write_text(text, encoding="utf-8")
         print(f"Updated {name}")
 
-    # Mirror kabbalah duplicate beatitudes hero
-    kabbalah = ROOT.parent / "kabbalah" / "messiah-beatitudes.html"
-    if kabbalah.exists():
-        meta = PAGES["messiah-beatitudes.html"]
-        text = kabbalah.read_text(encoding="utf-8")
-        if ".hero-content" not in text or "Jesus of Nazareth" not in text.split("hero-content")[1][:400]:
-            text = inject_css(text)
-            text = re.sub(
-                r'<header class="hero" id="hero">.*?</header>',
-                f'<header class="hero" id="hero">\n{hero_block(meta)}\n    </header>',
-                text,
-                count=1,
-                flags=re.DOTALL,
-            )
-            kabbalah.write_text(text, encoding="utf-8")
-            print("Updated kabbalah/messiah-beatitudes.html")
-
-
 if __name__ == "__main__":
     main()

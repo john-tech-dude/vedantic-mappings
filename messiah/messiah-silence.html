@@ -1528,31 +1528,15 @@
             width: 36px;
             height: 36px;
             margin: 0 auto 1.5rem;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .footer-emblem-outer {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 1px solid var(--border-strong);
+        .footer-emblem .icon-cross {
+            stroke: var(--gold);
         }
-        .footer-emblem-inner {
-            position: absolute;
-            inset: 8px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-        }
-        [data-theme="dark"] .footer-emblem-outer {
-            border-color: var(--gold);
-        }
-        [data-theme="dark"] .footer-emblem-inner {
-            border-color: var(--gold-light);
-        }
-        [data-theme="light"] .footer-emblem-outer {
-            border-color: var(--copper);
-        }
-        [data-theme="light"] .footer-emblem-inner {
-            border-color: var(--copper-light);
+        [data-theme="light"] .footer-emblem .icon-cross {
+            stroke: var(--copper);
         }
         .footer-name {
             font-family: 'Cinzel', serif;
@@ -2487,7 +2471,7 @@
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
         <footer class="footer">
-        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-emblem"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M12 2v20M8 8h8"/></svg></div>
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">

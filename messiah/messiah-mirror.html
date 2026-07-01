@@ -1392,6 +1392,9 @@
             color: var(--gold-light);
             border-bottom-color: var(--gold-light);
         }
+        .pq-attr-nav {
+            margin-top: 0.5rem;
+        }
         .pq-sep {
             color: var(--border-strong);
             opacity: 0.5;
@@ -1584,6 +1587,33 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           NUMBERED LIST
+           ═══════════════════════════════════════════════════════════════ */
+        .hierarchy-list {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--stone);
+            list-style-type: none;
+            counter-reset: item;
+        }
+        .hierarchy-list li {
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            padding-left: 2rem;
+            counter-increment: item;
+        }
+        .hierarchy-list li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════════════════════════ */
         .footer {
@@ -1596,31 +1626,15 @@
             width: 36px;
             height: 36px;
             margin: 0 auto 1.5rem;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .footer-emblem-outer {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 1px solid var(--border-strong);
+        .footer-emblem .icon-cross {
+            stroke: var(--gold);
         }
-        .footer-emblem-inner {
-            position: absolute;
-            inset: 8px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-        }
-        [data-theme="dark"] .footer-emblem-outer {
-            border-color: var(--gold);
-        }
-        [data-theme="dark"] .footer-emblem-inner {
-            border-color: var(--gold-light);
-        }
-        [data-theme="light"] .footer-emblem-outer {
-            border-color: var(--copper);
-        }
-        [data-theme="light"] .footer-emblem-inner {
-            border-color: var(--copper-light);
+        [data-theme="light"] .footer-emblem .icon-cross {
+            stroke: var(--copper);
         }
         .footer-name {
             font-family: 'Cinzel', serif;
@@ -2177,17 +2191,14 @@
 
             <p class="fade-in">When read through the lens of the mystical tradition rather than institutional dogma, the teaching of Jesus reveals a clear hierarchy of consciousness:</p>
 
-            <ol style="margin:1.5rem 0;padding-left:1.5rem;color:var(--stone);list-style-type:none;counter-reset:item;">
-                <li style="padding:0.85rem 0;border-bottom:1px solid var(--border-subtle);position:relative;padding-left:2rem;counter-increment:item;" class="fade-in">
-                    <span style="position:absolute;left:0;font-weight:600;color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;counter(content:counter(item) '.')"></span>
+            <ol class="hierarchy-list">
+                <li class="fade-in">
                     <strong>The Individual Self (Psyche)</strong> — The person who identifies with body, mind, social role, and separateness. "Who do people say that I am?" (Mark 8:27). This is the level of ordinary existence, the ego-bound life, the "old self" that must "die daily" (1 Cor 15:31).
                 </li>
-                <li style="padding:0.85rem 0;border-bottom:1px solid var(--border-subtle);position:relative;padding-left:2rem;counter-increment:item;" class="fade-in stagger-1">
-                    <span style="position:absolute;left:0;font-weight:600;color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;counter(content:counter(item) '.')"></span>
+                <li class="fade-in stagger-1">
                     <strong>The Christ Consciousness (Logos / Son)</strong> — The realization that "I and the Father are one" (John 10:30). Here, the separate self dissolves into union with the divine source. As the Gospel of John frames it: "The Father is in me, and I in the Father" (John 10:38). This is the level of mystical union, where one no longer acts from personal will but from divine will — "I only do what the Father shows me" (John 5:19).
                 </li>
-                <li style="padding:0.85rem 0;border-bottom:1px solid var(--border-subtle);position:relative;padding-left:2rem;counter-increment:item;" class="fade-in stagger-2">
-                    <span style="position:absolute;left:0;font-weight:600;color:var(--gold);font-family:'Cinzel',serif;font-size:0.85rem;counter(content:counter(item) '.')"></span>
+                <li class="fade-in stagger-2">
                     <strong>The Divine Ground (Abba / The Absolute)</strong> — The ultimate reality that is the source of the Father-Son relationship, yet transcends even the names "Father" and "Son." This is the apophatic God — the God beyond God, the "darkness beyond understanding" of Pseudo-Dionysius, the "ground of being" of Meister Eckhart. In Orthodox theology, this is the divine <em>ousia</em> (essence) that remains forever unknowable, while the <em>energeiai</em> (energies) are what we can participate in.
                 </li>
             </ol>
@@ -2329,7 +2340,7 @@
         <span class="pq-mark" aria-hidden="true">"</span>
         <p class="pq-text">&ldquo;The eye through which I see God is the same eye through which God sees me; my eye and God's eye are one eye, one seeing, one knowing, one loving.&rdquo;</p>
         <p class="pq-attr">&mdash; Meister Eckhart</p>
-        <p class="pq-attr" style="margin-top:0.5rem;"><a href="messiah-beatitudes.html" class="continue-link">&larr; Return to The Beatitudes</a> <span class="pq-sep">·</span> <a href="messiah-gospel-thomas.html" class="continue-link">Continue to The Gospel of Thomas &rarr;</a></p>
+        <p class="pq-attr pq-attr-nav"><a href="messiah-beatitudes.html" class="continue-link">&larr; Return to The Beatitudes</a> <span class="pq-sep">·</span> <a href="messiah-gospel-thomas.html" class="continue-link">Continue to The Gospel of Thomas &rarr;</a></p>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -2357,7 +2368,7 @@
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
         <footer class="footer">
-        <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
+        <div class="footer-emblem"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M12 2v20M8 8h8"/></svg></div>
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
