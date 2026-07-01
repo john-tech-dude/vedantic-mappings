@@ -458,7 +458,7 @@ def main():
                             Israel + the One = the Key of David. Their union, sanctified by the Holy One, becomes the Key that opens and shuts the gates of redemption.
                         </span>
                         <span style="display:block; margin-top:0.5rem; font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--stone-light);">
-                            — Verified by the seeker of truth, who calculated it himself.
+                            — Discovered and verified by Gordon McKay, who calculated it himself.
                         </span>
                     </p>
                 </div>'''
@@ -480,7 +480,7 @@ def main():
                             Israel + the One = the Key of David. Their union, sanctified by the Holy One, becomes the Key that opens and shuts the gates of redemption.
                         </span>
                         <span class="revelation-caption">
-                            — Verified by the seeker of truth, who calculated it himself.
+                            — Discovered and verified by Gordon McKay, who calculated it himself.
                         </span>
                     </p>
                 </div>'''
