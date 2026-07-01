@@ -3025,9 +3025,9 @@
                 <p>The 1988 equivalents point to specific Hebrew years. The year they met, 5782, begins a seven-year cycle that culminates in 5789.</p>
 
                 <div class="diagram-container diagram-container--lg">
-                    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" aria-label="Seven-Year Prophetic Cycle">
+                    <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" aria-label="Seven-Year Prophetic Cycle" preserveAspectRatio="xMidYMid meet">
                         <defs>
-                            <filter id="cycleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="cycleGlow" x="-30%" y="-30%" width="160%" height="160%">
                                 <feGaussianBlur stdDeviation="3" result="blur"/>
                                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
@@ -3036,54 +3036,63 @@
                                 <stop offset="100%" stop-color="#c4a855"/>
                             </linearGradient>
                         </defs>
-                        <rect x="20" y="20" width="660" height="360" rx="16" fill="var(--surface)" opacity="0.3"/>
-                        <line x1="80" y1="200" x2="620" y2="200" stroke="var(--gold)" stroke-width="2" opacity="0.5"/>
-                        <g font-family="'Cinzel', serif" font-size="10" fill="var(--gold)" text-anchor="middle">
-                            <text x="110" y="220">5782</text>
-                            <text x="190" y="220">5783</text>
-                            <text x="270" y="220">5784</text>
-                            <text x="350" y="220">5785</text>
-                            <text x="430" y="220">5786</text>
-                            <text x="510" y="220">5787</text>
-                            <text x="590" y="220">5788</text>
-                            <text x="620" y="260">5789</text>
+                        <rect x="10" y="10" width="740" height="340" rx="16" fill="var(--surface)" opacity="0.3"/>
+                        <text x="380" y="42" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="var(--gold)" letter-spacing="0.3em">THE SEVEN-YEAR CYCLE — 5782 TO 5789</text>
+                        <!-- Straight timeline axis -->
+                        <line x1="50" y1="195" x2="710" y2="195" stroke="url(#cycleGrad)" stroke-width="3" opacity="0.7"/>
+                        <line x1="50" y1="195" x2="710" y2="195" stroke="var(--gold)" stroke-width="1" opacity="0.35"/>
+                        <!-- Year nodes — evenly spaced on one horizontal line -->
+                        <g id="cycle-nodes">
+                            <circle cx="50"  cy="195" r="7" fill="var(--gold)" filter="url(#cycleGlow)"/>
+                            <circle cx="144" cy="195" r="7" fill="var(--crimson)" filter="url(#cycleGlow)"/>
+                            <circle cx="238" cy="195" r="7" fill="var(--stone)" filter="url(#cycleGlow)"/>
+                            <circle cx="332" cy="195" r="7" fill="var(--crimson-light)" filter="url(#cycleGlow)"/>
+                            <circle cx="426" cy="195" r="7" fill="var(--gold-light)" filter="url(#cycleGlow)"/>
+                            <circle cx="520" cy="195" r="7" fill="var(--indigo-light)" filter="url(#cycleGlow)"/>
+                            <circle cx="614" cy="195" r="7" fill="var(--gold)" filter="url(#cycleGlow)"/>
+                            <circle cx="710" cy="195" r="9" fill="var(--gold-light)" stroke="var(--gold)" stroke-width="2" filter="url(#cycleGlow)"/>
                         </g>
+                        <!-- Event labels above -->
                         <g font-family="'Crimson Pro', serif" font-size="8" fill="var(--stone-light)" text-anchor="middle">
-                            <text x="110" y="170">Revelation</text>
-                            <text x="110" y="185">of the Zivug</text>
-                            <text x="190" y="170">Attack</text>
-                            <text x="190" y="185">of Kelipot</text>
-                            <text x="270" y="170">Shemitah</text>
-                            <text x="270" y="185">Separation</text>
-                            <text x="350" y="170">Gog and</text>
-                            <text x="350" y="185">Magog</text>
-                            <text x="430" y="170">Shemini</text>
-                            <text x="430" y="185">Atzeret</text>
-                            <text x="510" y="170">Final</text>
-                            <text x="510" y="185">Judgment</text>
-                            <text x="590" y="170">Preparation</text>
-                            <text x="620" y="260">Yichud &amp;</text>
-                            <text x="620" y="275">Redemption</text>
+                            <text x="50"  y="155">Revelation</text>
+                            <text x="50"  y="168">of the Zivug</text>
+                            <text x="144" y="155">Attack</text>
+                            <text x="144" y="168">of Kelipot</text>
+                            <text x="238" y="155">Shemitah</text>
+                            <text x="238" y="168">Separation</text>
+                            <text x="332" y="155">Gog and</text>
+                            <text x="332" y="168">Magog</text>
+                            <text x="426" y="155">Shemini</text>
+                            <text x="426" y="168">Atzeret</text>
+                            <text x="520" y="155">Final</text>
+                            <text x="520" y="168">Judgment</text>
+                            <text x="614" y="155">Preparation</text>
+                            <text x="710" y="155">Yichud &amp;</text>
+                            <text x="710" y="168">Redemption</text>
                         </g>
-                        <circle cx="110" cy="200" r="6" fill="var(--gold)" filter="url(#cycleGlow)"/>
-                        <circle cx="190" cy="200" r="6" fill="var(--crimson)" filter="url(#cycleGlow)"/>
-                        <circle cx="270" cy="200" r="6" fill="var(--stone)" filter="url(#cycleGlow)"/>
-                        <circle cx="350" cy="200" r="6" fill="var(--crimson-light)" filter="url(#cycleGlow)"/>
-                        <circle cx="430" cy="200" r="6" fill="var(--gold-light)" filter="url(#cycleGlow)"/>
-                        <circle cx="510" cy="200" r="6" fill="var(--indigo-light)" filter="url(#cycleGlow)"/>
-                        <circle cx="590" cy="200" r="6" fill="var(--gold)" filter="url(#cycleGlow)"/>
-                        <circle cx="620" cy="260" r="6" fill="var(--gold)" filter="url(#cycleGlow)"/>
-                        <g stroke="var(--gold)" stroke-width="1" opacity="0.3">
-                            <line x1="110" y1="200" x2="190" y2="200"/>
-                            <line x1="190" y1="200" x2="270" y2="200"/>
-                            <line x1="270" y1="200" x2="350" y2="200"/>
-                            <line x1="350" y1="200" x2="430" y2="200"/>
-                            <line x1="430" y1="200" x2="510" y2="200"/>
-                            <line x1="510" y1="200" x2="590" y2="200"/>
-                            <line x1="590" y1="200" x2="620" y2="230"/>
+                        <!-- Year labels below -->
+                        <g font-family="'Cinzel', serif" font-size="10" fill="var(--gold)" text-anchor="middle">
+                            <text x="50"  y="222">5782</text>
+                            <text x="144" y="222">5783</text>
+                            <text x="238" y="222">5784</text>
+                            <text x="332" y="222">5785</text>
+                            <text x="426" y="222">5786</text>
+                            <text x="520" y="222">5787</text>
+                            <text x="614" y="222">5788</text>
+                            <text x="710" y="222" font-weight="600">5789</text>
                         </g>
-                        <text x="350" y="60" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="var(--gold)" letter-spacing="0.3em">THE SEVEN-YEAR CYCLE — 5782 TO 5789</text>
-                        <text x="350" y="340" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="var(--stone-light)" font-style="italic">Encoded in the corrected full names: 1988</text>
+                        <!-- Tick marks -->
+                        <g stroke="var(--gold)" stroke-width="1" opacity="0.25">
+                            <line x1="50"  y1="188" x2="50"  y2="202"/>
+                            <line x1="144" y1="188" x2="144" y2="202"/>
+                            <line x1="238" y1="188" x2="238" y2="202"/>
+                            <line x1="332" y1="188" x2="332" y2="202"/>
+                            <line x1="426" y1="188" x2="426" y2="202"/>
+                            <line x1="520" y1="188" x2="520" y2="202"/>
+                            <line x1="614" y1="188" x2="614" y2="202"/>
+                            <line x1="710" y1="186" x2="710" y2="204"/>
+                        </g>
+                        <text x="380" y="310" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="var(--stone-light)" font-style="italic">Encoded in the corrected full names: 1988</text>
                     </svg>
                     <div class="diagram-caption">Seven-Year Prophetic Cycle</div>
                     <div class="diagram-subcaption">From the revelation of the Zivug to the final Yichud</div>
