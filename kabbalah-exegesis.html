@@ -22,26 +22,26 @@
             --gold: #c4a855;
             --gold-light: #e0c878;
             --gold-deep: #a08840;
-            --gold-glow: rgba(196,168,85,0.08);
-            --sun-glow: rgba(196,168,85,0.18);
+            --gold-glow: rgba(196, 168, 85, 0.08);
+            --sun-glow: rgba(196, 168, 85, 0.18);
             --indigo: #5a6a9a;
             --indigo-light: #7a8aba;
-            --indigo-glow: rgba(90,106,154,0.12);
+            --indigo-glow: rgba(90, 106, 154, 0.12);
             --crimson: #8a4050;
             --crimson-light: #b06070;
-            --crimson-glow: rgba(138,64,80,0.12);
-            --border: rgba(255,255,255,0.05);
-            --border-strong: rgba(255,255,255,0.10);
-            --border-subtle: rgba(255,255,255,0.025);
-            --border-medium: rgba(255,255,255,0.06);
-            --shadow: 0 2px 24px rgba(0,0,0,0.6);
-            --shadow-deep: 0 8px 40px rgba(0,0,0,0.8);
+            --crimson-glow: rgba(138, 64, 80, 0.12);
+            --border: rgba(255, 255, 255, 0.05);
+            --border-strong: rgba(255, 255, 255, 0.10);
+            --border-subtle: rgba(255, 255, 255, 0.025);
+            --border-medium: rgba(255, 255, 255, 0.06);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.8);
             --shadow-gold: 0 0 40px var(--gold-glow);
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
-            --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
-            --ease-smooth: cubic-bezier(0.45,0.05,0.55,0.95);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
             --grain-opacity: 0.03;
         }
         [data-theme="light"] {
@@ -60,18 +60,26 @@
             --indigo-light: #7a8aba;
             --crimson: #7a3040;
             --crimson-light: #9a5060;
-            --border: rgba(0,0,0,0.06);
-            --border-strong: rgba(0,0,0,0.10);
-            --border-subtle: rgba(0,0,0,0.025);
-            --border-medium: rgba(0,0,0,0.06);
-            --shadow: 0 2px 24px rgba(0,0,0,0.08);
-            --shadow-deep: 0 8px 40px rgba(0,0,0,0.12);
-            --shadow-gold: 0 0 40px rgba(138,112,48,0.12);
+            --border: rgba(0, 0, 0, 0.06);
+            --border-strong: rgba(0, 0, 0, 0.10);
+            --border-subtle: rgba(0, 0, 0, 0.025);
+            --border-medium: rgba(0, 0, 0, 0.06);
+            --shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+            --shadow-deep: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-gold: 0 0 40px rgba(138, 112, 48, 0.12);
             --grain-opacity: 0.015;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-        html { scroll-behavior: smooth; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif;
             background: var(--bg);
@@ -90,32 +98,102 @@
             z-index: 9999;
             opacity: var(--grain-opacity);
         }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--indigo), var(--gold-deep), var(--gold)); border-radius: 2px; }
-        ::selection { background: rgba(196,168,85,0.15); color: var(--ink); }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--indigo), var(--gold-deep), var(--gold));
+            border-radius: 2px;
+        }
+        ::selection {
+            background: rgba(90, 106, 154, 0.20);
+            color: var(--ink);
+        }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
-            0% { opacity:0; transform:translateY(24px); }
-            100% { opacity:1; transform:translateY(0); }
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         @keyframes lineReveal {
-            from { transform:scaleX(0); }
-            to { transform:scaleX(1); }
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
         }
         @keyframes diamondReveal {
-            0% { opacity:0; transform:rotate(45deg) scale(0); }
-            100% { opacity:1; transform:rotate(45deg) scale(1); }
+            0% {
+                opacity: 0;
+                transform: rotate(45deg) scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
         }
         @keyframes ambientDrift {
-            0%,100% { transform:translate(0,0) scale(1); opacity:0.35; }
-            33% { transform:translate(3%,-2%) scale(1.03); opacity:0.55; }
-            66% { transform:translate(-2%,3%) scale(0.97); opacity:0.25; }
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.35;
+            }
+            33% {
+                transform: translate(3%, -2%) scale(1.03);
+                opacity: 0.55;
+            }
+            66% {
+                transform: translate(-2%, 3%) scale(0.97);
+                opacity: 0.25;
+            }
         }
         @keyframes scrollBounce {
-            0%,100% { opacity:1; transform:scaleY(1); }
-            50% { opacity:0.3; transform:scaleY(0.5); }
+            0%,
+            100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scaleY(0.5);
+            }
+        }
+        @keyframes breathe {
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: translate(-50%, -55%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -55%) scale(1.08);
+            }
+        }
+        @keyframes rippleOut {
+            0% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(5);
+            }
         }
 
         /* ===== NAV ===== */
@@ -142,7 +220,11 @@
             transition: all 0.35s var(--ease-out-expo);
             box-shadow: var(--shadow);
         }
-        .nav-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.08); }
+        .nav-toggle:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            transform: scale(1.08);
+        }
         .nav-menu {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -157,7 +239,11 @@
             max-height: 80vh;
             overflow-y: auto;
         }
-        .nav-menu.open { opacity:1; transform:translateY(0) scale(1); pointer-events:all; }
+        .nav-menu.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
         .nav-item {
             display: flex;
             align-items: center;
@@ -171,8 +257,16 @@
             border-left: 3px solid transparent;
             font-family: 'Cinzel', serif;
         }
-        .nav-item:hover { color: var(--ink); background: var(--gold-glow); padding-left:1.5rem; }
-        .nav-item.active { color: var(--gold-light); background: rgba(154,122,58,0.08); border-left-color: var(--gold); }
+        .nav-item:hover {
+            color: var(--ink);
+            background: var(--gold-glow);
+            padding-left: 1.5rem;
+        }
+        .nav-item.active {
+            color: var(--gold-light);
+            background: rgba(154, 122, 58, 0.08);
+            border-left-color: var(--gold);
+        }
         .nav-heb {
             font-family: 'Frank Ruhl Libre', serif;
             font-size: 0.9rem;
@@ -205,12 +299,17 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            transition: all 0.45s cubic-bezier(0.68,-0.55,0.265,1.55);
-            box-shadow: var(--shadow-gold), 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: var(--shadow-gold), 0 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        .theme-toggle:hover { transform:scale(1.12); border-color:var(--gold); }
-        .theme-toggle:active { transform:scale(0.95); }
+        .theme-toggle:hover {
+            transform: scale(1.12);
+            border-color: var(--gold);
+        }
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
         .theme-toggle-icon {
             position: absolute;
             transition: transform 0.5s var(--ease-out-expo), opacity 0.35s ease;
@@ -221,10 +320,22 @@
             width: 100%;
             height: 100%;
         }
-        [data-theme="light"] .ti-sun { opacity:1; transform:scale(1); }
-        [data-theme="light"] .ti-moon { opacity:0; transform:scale(0.5); }
-        [data-theme="dark"] .ti-sun { opacity:0; transform:scale(0.5); }
-        [data-theme="dark"] .ti-moon { opacity:1; transform:scale(1); }
+        [data-theme="light"] .ti-sun {
+            opacity: 1;
+            transform: scale(1);
+        }
+        [data-theme="light"] .ti-moon {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .ti-sun {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        [data-theme="dark"] .ti-moon {
+            opacity: 1;
+            transform: scale(1);
+        }
 
         .back-to-top {
             position: fixed;
@@ -248,8 +359,16 @@
             pointer-events: none;
             transform: translateY(12px) scale(0.9);
         }
-        .back-to-top.visible { opacity:1; pointer-events:all; transform:translateY(0) scale(1); }
-        .back-to-top:hover { color:var(--gold); border-color:var(--gold); transform:translateY(-3px) scale(1.08); }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .back-to-top:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px) scale(1.08);
+        }
 
         /* ===== HERO ===== */
         .hero {
@@ -272,23 +391,34 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 60% 50% at 70% 30%, rgba(90,106,154,0.10) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 60% at 20% 70%, rgba(196,168,85,0.06) 0%, transparent 70%);
+                radial-gradient(ellipse 60% 50% at 70% 30%, rgba(90, 106, 154, 0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 20% 70%, rgba(196, 168, 85, 0.06) 0%, transparent 70%);
             animation: ambientDrift 20s ease-in-out infinite;
             pointer-events: none;
             z-index: 1;
         }
-        .hero-ripples { position:absolute; inset:0; pointer-events:none; z-index:0; }
-        .hero-ripple {
-            position:absolute; top:50%; left:50%; width:200px; height:200px;
-            border-radius:50%; border:1px solid var(--indigo);
-            transform:translate(-50%,-50%); animation:rippleOut 10s ease-out infinite;
+        .hero-ripples {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
         }
-        .hero-ripple:nth-child(2) { animation-delay:3.5s; }
-        .hero-ripple:nth-child(3) { animation-delay:7s; }
-        @keyframes rippleOut {
-            0% { opacity:0.5; transform:translate(-50%,-50%) scale(1); }
-            100% { opacity:0; transform:translate(-50%,-50%) scale(5); }
+        .hero-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid var(--indigo);
+            transform: translate(-50%, -50%);
+            animation: rippleOut 10s ease-out infinite;
+        }
+        .hero-ripple:nth-child(2) {
+            animation-delay: 3.5s;
+        }
+        .hero-ripple:nth-child(3) {
+            animation-delay: 7s;
         }
 
         .hero-eyemark {
@@ -300,8 +430,8 @@
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 3;
-            animation: fadeInUp 1s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
-            opacity:0;
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+            opacity: 0;
         }
         .hero-emblem {
             width: clamp(160px, 24vw, 220px);
@@ -309,9 +439,13 @@
             position: relative;
             z-index: 3;
             animation: fadeInUp 1.1s 0.6s forwards;
-            opacity:0;
+            opacity: 0;
         }
-        .hero-emblem svg { width:100%; height:auto; display:block; }
+        .hero-emblem svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
         .hero-title {
             font-family: 'Cinzel', serif;
@@ -320,14 +454,17 @@
             letter-spacing: 0.06em;
             line-height: 1.08;
             color: var(--ink);
-            text-shadow: 0 2px 40px rgba(90,106,154,0.2);
+            text-shadow: 0 2px 40px rgba(90, 106, 154, 0.2);
             margin-bottom: 0.2em;
             position: relative;
             z-index: 3;
             animation: fadeInUp 1s 0.8s forwards;
-            opacity:0;
+            opacity: 0;
         }
-        [data-theme="dark"] .hero-title { color: var(--gold-light); text-shadow: 0 0 80px rgba(196,168,85,0.20); }
+        [data-theme="dark"] .hero-title {
+            color: var(--gold-light);
+            text-shadow: 0 0 80px rgba(196, 168, 85, 0.20);
+        }
 
         .hero-subtitle {
             font-family: 'Cormorant Garamond', serif;
@@ -339,9 +476,9 @@
             position: relative;
             z-index: 3;
             animation: fadeInUp 1s 1s forwards;
-            opacity:0;
-            max-width:560px;
-            line-height:1.5;
+            opacity: 0;
+            max-width: 560px;
+            line-height: 1.5;
         }
 
         .hero-divider {
@@ -350,10 +487,10 @@
             gap: 1.25rem;
             margin: 0 auto 2.5rem;
             width: fit-content;
-            opacity:0;
+            opacity: 0;
             animation: fadeInUp 1s 1.1s forwards;
             position: relative;
-            z-index:2;
+            z-index: 2;
         }
         .hero-divider-line {
             width: 60px;
@@ -361,19 +498,20 @@
             background: linear-gradient(90deg, var(--indigo), var(--gold-deep));
             transform-origin: left;
             animation: lineReveal 1.2s 1s forwards;
-            transform:scaleX(0);
+            transform: scaleX(0);
         }
         .hero-divider-line:last-child {
             background: linear-gradient(90deg, var(--gold-deep), transparent);
             transform-origin: right;
         }
         .hero-divider-diamond {
-            width:6px; height:6px;
-            background:var(--gold-light);
-            transform:rotate(45deg);
-            box-shadow:0 0 8px var(--sun-glow);
+            width: 6px;
+            height: 6px;
+            background: var(--gold-light);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px var(--sun-glow);
             animation: diamondReveal 0.8s 1.2s forwards;
-            opacity:0;
+            opacity: 0;
         }
 
         .hero-heb-display {
@@ -381,12 +519,12 @@
             font-size: clamp(1.5rem, 4vw, 2.4rem);
             color: var(--gold);
             letter-spacing: 0.08em;
-            opacity:0;
+            opacity: 0;
             animation: fadeInUp 1s 1.2s forwards;
             margin-bottom: 0.5rem;
             position: relative;
-            z-index:3;
-            direction:rtl;
+            z-index: 3;
+            direction: rtl;
         }
 
         .hero-quote {
@@ -399,8 +537,8 @@
             line-height: 1.88;
             animation: fadeInUp 1s 1.4s forwards;
             position: relative;
-            z-index:2;
-            opacity:0;
+            z-index: 2;
+            opacity: 0;
         }
         .hero-attr {
             font-family: 'Cinzel', serif;
@@ -410,9 +548,9 @@
             text-transform: uppercase;
             animation: fadeInUp 1s 1.6s forwards;
             position: relative;
-            z-index:2;
+            z-index: 2;
             margin-bottom: 2rem;
-            opacity:0;
+            opacity: 0;
         }
 
         .hero-scroll-cue {
@@ -424,13 +562,15 @@
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
-            opacity:0;
+            opacity: 0;
             animation: fadeInUp 1s 1.8s forwards;
             cursor: pointer;
-            z-index:2;
+            z-index: 2;
             transition: transform 0.3s var(--ease-out-expo);
         }
-        .hero-scroll-cue:hover { transform: translateX(-50%) translateY(4px); }
+        .hero-scroll-cue:hover {
+            transform: translateX(-50%) translateY(4px);
+        }
         .hero-scroll-cue span {
             font-family: 'Cinzel', serif;
             font-size: 0.48rem;
@@ -439,40 +579,91 @@
             text-transform: uppercase;
         }
         .scroll-line {
-            width:1px; height:32px;
+            width: 1px;
+            height: 32px;
             background: linear-gradient(180deg, var(--indigo-light), transparent);
             animation: scrollBounce 2.5s ease-in-out infinite;
         }
 
         /* ===== EDITORIAL ===== */
-        .wrap { max-width:760px; margin:0 auto; padding:0 36px; }
-        .heb { font-family:'Frank Ruhl Libre','Times New Roman',serif; direction:rtl; unicode-bidi:embed; }
-        .heb-inline { font-family:'Frank Ruhl Libre','Times New Roman',serif; font-size:0.88em; color:var(--gold); opacity:0.85; margin:0 0.2em; }
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 36px;
+        }
+        .heb {
+            font-family: 'Frank Ruhl Libre', 'Times New Roman', serif;
+            direction: rtl;
+            unicode-bidi: embed;
+        }
+        .heb-inline {
+            font-family: 'Frank Ruhl Libre', 'Times New Roman', serif;
+            font-size: 0.88em;
+            color: var(--gold);
+            opacity: 0.85;
+            margin: 0 0.2em;
+        }
 
         .ed-section-label {
-            font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.3em; color:var(--indigo-light); text-transform:uppercase; margin-bottom:0.75rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--indigo-light);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
         }
         .ed-h2 {
-            font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,4vw,2.8rem); font-weight:500; color:var(--ink); margin-bottom:0.6rem; letter-spacing:0.02em;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.02em;
         }
-        [data-theme="dark"] .ed-h2 { color:var(--gold-light); }
+        [data-theme="dark"] .ed-h2 {
+            color: var(--gold-light);
+        }
         .ed-intro {
-            font-family:'Crimson Pro',serif; font-size:1.05rem; color:var(--stone); line-height:1.72; max-width:580px; margin-bottom:2.5rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.05rem;
+            color: var(--stone);
+            line-height: 1.72;
+            max-width: 580px;
+            margin-bottom: 2.5rem;
         }
         .ed-h3 {
-            font-family:'Cinzel',serif; font-size:0.58rem; letter-spacing:0.42em; color:var(--gold); text-transform:uppercase; margin:3rem 0 1.25rem; display:flex; align-items:center; gap:1rem; position:relative; z-index:1;
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.42em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 3rem 0 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
         }
         .ed-h3::after {
-            content:''; flex:1; height:1px; background:linear-gradient(to right,var(--gold),transparent); opacity:0.2;
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--gold), transparent);
+            opacity: 0.2;
         }
         .section-separator {
-            width:48px; height:1px;
-            background:linear-gradient(90deg, var(--indigo), var(--gold), var(--gold-light));
-            margin:0 auto 20px;
-            opacity:0; transform:scaleX(0);
-            transition:all 0.8s var(--ease-out-expo);
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--indigo), var(--gold), var(--gold-light));
+            margin: 0 auto 20px;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.8s var(--ease-out-expo);
         }
-        .section-separator.visible { opacity:1; transform:scaleX(1); }
+        .section-separator.visible {
+            opacity: 1;
+            transform: scaleX(1);
+        }
 
         .stages-wrap {
             background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 20%, var(--bg) 80%, var(--bg2) 100%);
@@ -495,254 +686,1030 @@
             opacity: 0.04;
             pointer-events: none;
             user-select: none;
-            z-index:0;
-            direction:rtl;
+            z-index: 0;
+            direction: rtl;
         }
-        [data-theme="dark"] .stage-wm { opacity:0.06; }
-        .stage-header { position:relative; z-index:1; margin-bottom:3rem; }
+        [data-theme="dark"] .stage-wm {
+            opacity: 0.06;
+        }
+        .stage-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 3rem;
+        }
         .stage-eyeline {
-            display:flex; align-items:baseline; gap:1.5rem; margin-bottom:1.25rem; flex-wrap:wrap;
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
         }
         .stage-n {
-            font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.45em; color:var(--gold); text-transform:uppercase;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.45em;
+            color: var(--gold);
+            text-transform: uppercase;
         }
         .stage-heb-eye {
-            font-family:'Frank Ruhl Libre',serif; font-size:1.1rem; color:var(--stone-light); direction:rtl;
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1.1rem;
+            color: var(--stone-light);
+            direction: rtl;
         }
         .stage-h2 {
-            font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4.5vw,3rem); font-weight:400; color:var(--ink); line-height:1.15; margin-bottom:0.4rem; letter-spacing:-0.01em;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.15;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
         }
-        [data-theme="dark"] .stage-h2 { color:var(--gold-light); }
+        [data-theme="dark"] .stage-h2 {
+            color: var(--gold-light);
+        }
         .stage-subtitle {
-            font-family:'Cinzel',serif; font-size:0.58rem; letter-spacing:0.38em; color:var(--stone); text-transform:uppercase; margin-bottom:1.5rem; display:block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.58rem;
+            letter-spacing: 0.38em;
+            color: var(--stone);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
         }
         .stage-rule {
-            width:40px; height:1.5px; background:var(--gold); display:block; margin-top:1rem; position:relative; z-index:1;
+            width: 40px;
+            height: 1.5px;
+            background: var(--gold);
+            display: block;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
         }
         .stage-rule::after {
-            content:''; position:absolute; right:-14px; top:50%; transform:translateY(-50%) rotate(45deg); width:5px; height:5px; background:var(--gold); opacity:0.6;
+            content: '';
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            opacity: 0.6;
         }
-        .stage-body { position:relative; z-index:1; }
+        .stage-body {
+            position: relative;
+            z-index: 1;
+        }
         .stage-body p {
-            font-family:'Crimson Pro',serif; font-size:1.02rem; color:var(--stone); line-height:1.82; margin-bottom:1.5rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.02rem;
+            color: var(--stone);
+            line-height: 1.82;
+            margin-bottom: 1.5rem;
         }
-        .stage-body p strong { color:var(--ink); font-weight:500; }
-        .stage-body p em { color:var(--ink2); font-style:italic; }
-        [data-theme="dark"] .stage-body p { color:var(--stone); }
-        [data-theme="dark"] .stage-body p strong { color:var(--ink); }
+        .stage-body p strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .stage-body p em {
+            color: var(--ink2);
+            font-style: italic;
+        }
+        [data-theme="dark"] .stage-body p {
+            color: var(--stone);
+        }
+        [data-theme="dark"] .stage-body p strong {
+            color: var(--ink);
+        }
         .stage-body p:first-of-type::first-letter {
-            font-family:'Cormorant Garamond',serif; font-size:4.4rem; line-height:0.7; float:left; margin:0.08em 0.12em 0 0; color:var(--gold); font-weight:400;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.4rem;
+            line-height: 0.7;
+            float: left;
+            margin: 0.08em 0.12em 0 0;
+            color: var(--gold);
+            font-weight: 400;
         }
         .stage-sep {
-            border:none; height:1px; background:linear-gradient(to right, transparent, var(--gold), var(--gold-light), var(--gold), transparent); opacity:0.1; max-width:760px; margin:0 auto;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+            opacity: 0.1;
+            max-width: 760px;
+            margin: 0 auto;
         }
 
         /* ===== QUOTES ===== */
         .pull-q {
-            border-left:3px solid var(--gold); margin:2.5rem 0; padding:0.75rem 0 0.75rem 2rem; position:relative; z-index:1; background:var(--surface2); border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+            border-left: 3px solid var(--gold);
+            margin: 2.5rem 0;
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            z-index: 1;
+            background: var(--surface2);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
         }
         .pull-q p {
-            font-family:'IM Fell English',serif; font-style:italic; font-size:clamp(1.05rem,2.2vw,1.35rem); font-weight:300; color:var(--ink); margin-bottom:0.75rem; line-height:1.6;
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+            font-weight: 300;
+            color: var(--ink);
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
         }
         .pull-q cite {
-            font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.3em; color:var(--stone-light); text-transform:uppercase; font-style:normal;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            font-style: normal;
         }
 
         /* ===== SCRIPTURE PANELS ===== */
         .scripture-panels {
-            display:grid; grid-template-columns:1fr 1fr; gap:2px; margin:2.5rem 0; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 2.5rem 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
         }
-        .scripture-panel { background:var(--surface); padding:32px; transition:background 0.3s; }
-        .scripture-panel:hover { background:var(--surface2); }
+        .scripture-panel {
+            background: var(--surface);
+            padding: 32px;
+            transition: background 0.3s;
+        }
+        .scripture-panel:hover {
+            background: var(--surface2);
+        }
         .scripture-label {
-            font-family:'Cinzel',serif; font-size:0.53rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.53rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
         }
         .scripture-text {
-            font-family:'IM Fell English',serif; font-style:italic; font-size:1.05rem; line-height:1.72; color:var(--ink); margin-bottom:12px; font-weight:300;
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.72;
+            color: var(--ink);
+            margin-bottom: 12px;
+            font-weight: 300;
         }
         .scripture-ref {
-            font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.2em; color:var(--stone-light); text-transform:uppercase;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+            text-transform: uppercase;
         }
         .scripture-heb {
-            font-family:'Frank Ruhl Libre',serif; font-size:1.1rem; color:var(--gold); opacity:0.7; margin-bottom:10px; direction:rtl; line-height:1.4;
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            opacity: 0.7;
+            margin-bottom: 10px;
+            direction: rtl;
+            line-height: 1.4;
         }
 
         /* ===== DIAGRAMS ===== */
         .diagram-container {
-            width:100%; max-width:720px; margin:2.5rem auto; position:relative; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; overflow:hidden;
+            width: 100%;
+            max-width: 720px;
+            margin: 2.5rem auto;
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            overflow: hidden;
         }
         .diagram-container::before {
-            content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%, var(--indigo-glow) 0%, transparent 70%); pointer-events:none;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, var(--indigo-glow) 0%, transparent 70%);
+            pointer-events: none;
         }
-        .diagram-container svg { width:100%; height:auto; display:block; position:relative; z-index:1; }
+        .diagram-container svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
         .diagram-caption {
-            text-align:center; font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-top:1.25rem; position:relative; z-index:1;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 1.25rem;
+            position: relative;
+            z-index: 1;
         }
         .diagram-subcaption {
-            text-align:center; font-family:'Crimson Pro',serif; font-size:0.85rem; color:var(--stone); margin-top:0.4rem; font-style:italic; position:relative; z-index:1;
+            text-align: center;
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.85rem;
+            color: var(--stone);
+            margin-top: 0.4rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
         }
 
         /* ===== HOTSPOTS ===== */
         .hotspot {
-            position:relative; cursor:help; border-bottom:1px dotted var(--gold); transition:border-color 0.3s var(--ease-smooth); color:var(--gold-light);
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dotted var(--gold);
+            transition: border-color 0.3s var(--ease-smooth);
+            color: var(--gold-light);
         }
-        .hotspot:hover { border-bottom-color:var(--gold-deep); }
-        [data-theme="light"] .hotspot { border-bottom-color:#8a7030; color:#8a7030; }
-        [data-theme="light"] .hotspot:hover { border-bottom-color:#6a5820; }
+        .hotspot:hover {
+            border-bottom-color: var(--gold-deep);
+        }
+        [data-theme="light"] .hotspot {
+            border-bottom-color: var(--gold);
+            color: var(--gold);
+        }
+        [data-theme="light"] .hotspot:hover {
+            border-bottom-color: var(--gold-deep);
+        }
         .hotspot-tooltip {
-            position:absolute; bottom:calc(100% + 14px); left:50%; transform:translateX(-50%) scale(0.95);
-            background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:10px 14px;
-            font-size:0.85rem; color:var(--stone); line-height:1.5; width:280px; white-space:normal;
-            opacity:0; visibility:hidden; transition:all 0.25s var(--ease-smooth); z-index:100; box-shadow:0 8px 24px rgba(0,0,0,0.5);
+            position: absolute;
+            bottom: calc(100% + 14px);
+            left: 50%;
+            transform: translateX(-50%) scale(0.95);
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            color: var(--stone);
+            line-height: 1.5;
+            width: 280px;
+            white-space: normal;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s var(--ease-smooth);
+            z-index: 100;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         }
         .hotspot-tooltip::after {
-            content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
-            border-width:6px; border-style:solid; border-color:var(--surface2) transparent transparent transparent;
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--surface2) transparent transparent transparent;
         }
         .hotspot:hover .hotspot-tooltip,
-        .hotspot.active .hotspot-tooltip { opacity:1; visibility:visible; transform:translateX(-50%) scale(1); }
+        .hotspot.active .hotspot-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) scale(1);
+        }
 
         /* ===== NOTES ===== */
         .ed-note {
-            border:1px solid var(--border-medium); border-radius:var(--radius-sm); padding:1.25rem 1.5rem; margin:2rem 0; display:flex; gap:1rem; align-items:flex-start; position:relative; z-index:1; background:var(--surface2);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+            background: var(--surface2);
         }
-        .ed-note .ni { font-size:1.1rem; flex-shrink:0; color:var(--gold); }
-        .ed-note p { font-size:0.93rem; color:var(--stone); line-height:1.7; margin:0; }
-        .ed-note p strong { color:var(--ink); font-weight:500; }
+        .ed-note .ni {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+        .ed-note p {
+            font-size: 0.93rem;
+            color: var(--stone);
+            line-height: 1.7;
+            margin: 0;
+        }
+        .ed-note p strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
 
         /* ===== GALLERY ===== */
         .image-gallery {
-            display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5px; margin:2.5rem 0; background:var(--border-subtle); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); overflow:hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5px;
+            margin: 2.5rem 0;
+            background: var(--border-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
         }
-        .gallery-item { background:var(--surface); overflow:hidden; position:relative; }
+        .gallery-item {
+            background: var(--surface);
+            overflow: hidden;
+            position: relative;
+        }
         .gallery-item img {
-            width:100%; height:220px; object-fit:cover; display:block; transition:transform 0.5s var(--ease-out-expo);
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s var(--ease-out-expo);
         }
-        .gallery-item:hover img { transform:scale(1.05); }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
         .gallery-caption {
-            padding:1rem 1.25rem; font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; text-align:center; background:var(--surface);
+            padding: 1rem 1.25rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-align: center;
+            background: var(--surface);
         }
 
         /* ===== GEMATRIA TABLE ===== */
         .gematria-table {
-            width:100%; border-collapse:collapse; margin:2.5rem 0; position:relative; z-index:1; font-size:0.92rem;
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            position: relative;
+            z-index: 1;
+            font-size: 0.92rem;
         }
         .gematria-table th {
-            font-family:'Cinzel',serif; font-size:0.52rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-deep); padding:0.85rem 1rem; text-align:left; border-bottom:1px solid var(--border-strong); background:var(--bg2);
+            font-family: 'Cinzel', serif;
+            font-size: 0.52rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+            padding: 0.85rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-strong);
+            background: var(--bg2);
         }
-        [data-theme="dark"] .gematria-table th { color:var(--gold); background:var(--surface); }
+        [data-theme="dark"] .gematria-table th {
+            color: var(--gold);
+            background: var(--surface);
+        }
         .gematria-table td {
-            padding:0.9rem 1rem; border-bottom:1px solid var(--border-subtle); color:var(--stone); vertical-align:top; line-height:1.6;
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--stone);
+            vertical-align: top;
+            line-height: 1.6;
         }
         .gematria-table td:first-child {
-            font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--ink); font-weight:500;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: var(--ink);
+            font-weight: 500;
         }
         .gematria-table td .td-heb {
-            display:block; font-family:'Frank Ruhl Libre',serif; font-size:1rem; color:var(--gold); opacity:0.7; direction:rtl; line-height:1.3; margin-top:0.15rem;
+            display: block;
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1rem;
+            color: var(--gold);
+            opacity: 0.7;
+            direction: rtl;
+            line-height: 1.3;
+            margin-top: 0.15rem;
         }
-        .gematria-table tr:last-child td { border-bottom:none; }
-        .gematria-table tr:hover td { background:var(--surface2); }
+        .gematria-table tr:last-child td {
+            border-bottom: none;
+        }
+        .gematria-table tr:hover td {
+            background: var(--surface2);
+        }
 
         /* ===== TOC ===== */
         .toc-section {
-            padding:90px 24px; max-width:900px; margin:0 auto;
+            padding: 90px 24px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .toc-book { margin-top:3rem; border-top:1px solid var(--border-subtle); }
+        .toc-book {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-subtle);
+        }
         .toc-item {
-            display:grid; grid-template-columns:52px 1fr auto; align-items:baseline; gap:0 1.5rem; padding:1.1rem 0; border-bottom:1px solid var(--border-subtle); text-decoration:none; transition:all 0.35s var(--ease-out-expo);
+            display: grid;
+            grid-template-columns: 52px 1fr auto;
+            align-items: baseline;
+            gap: 0 1.5rem;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            text-decoration: none;
+            transition: all 0.35s var(--ease-out-expo);
         }
-        .toc-item:hover .toc-b-title { color:var(--gold); }
-        .toc-item:hover .toc-b-num { opacity:1; }
+        .toc-item:hover .toc-b-title {
+            color: var(--gold);
+        }
+        .toc-item:hover .toc-b-num {
+            opacity: 1;
+        }
         .toc-b-num {
-            font-family:'Cinzel',serif; font-size:0.62rem; color:var(--gold); letter-spacing:0.15em; text-align:right; opacity:0.4; transition:opacity 0.3s;
+            font-family: 'Cinzel', serif;
+            font-size: 0.62rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-align: right;
+            opacity: 0.4;
+            transition: opacity 0.3s;
         }
         .toc-b-title {
-            font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--ink); transition:color 0.35s; line-height:1.3;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--ink);
+            transition: color 0.35s;
+            line-height: 1.3;
         }
         .toc-b-heb {
-            font-family:'Frank Ruhl Libre',serif; font-size:0.95rem; color:var(--stone-light); text-align:right; direction:rtl; white-space:nowrap;
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 0.95rem;
+            color: var(--stone-light);
+            text-align: right;
+            direction: rtl;
+            white-space: nowrap;
         }
 
         /* ===== CONCLUDING ===== */
         .concluding-section {
-            padding:4rem 2rem; background:var(--surface2); border-top:2px solid var(--gold); border-bottom:2px solid var(--gold);
+            padding: 4rem 2rem;
+            background: var(--surface2);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
         }
-        .concluding-section-inner { max-width:760px; margin:0 auto; text-align:center; }
+        .concluding-section-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
         .concluding-title {
-            font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.4em; color:var(--gold); text-transform:uppercase; margin-bottom:1.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
         .concluding-quote {
-            font-family:'IM Fell English',serif; font-style:italic; font-size:clamp(1.05rem,2.5vw,1.5rem); color:var(--ink); line-height:1.7; margin-bottom:1rem;
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+            color: var(--ink);
+            line-height: 1.7;
+            margin-bottom: 1rem;
         }
         .concluding-attribution {
-            font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
         }
 
         /* ===== FOOTER ===== */
         .footer {
-            background:var(--bg2); border-top:1px solid var(--border); padding:5rem 2rem 3rem; text-align:center;
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            padding: 5rem 2rem 3rem;
+            text-align: center;
         }
-        .footer-emblem { width:36px; height:36px; margin:0 auto 1.5rem; position:relative; }
-        .footer-emblem-outer { position:absolute; inset:0; border-radius:50%; border:1px solid var(--border-strong); }
-        .footer-emblem-inner { position:absolute; inset:8px; border-radius:50%; border:1px solid var(--border); }
-        [data-theme="dark"] .footer-emblem-outer { border-color:var(--gold); }
-        [data-theme="dark"] .footer-emblem-inner { border-color:var(--gold-light); }
+        .footer-emblem {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        .footer-emblem-outer {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border-strong);
+        }
+        .footer-emblem-inner {
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+        [data-theme="dark"] .footer-emblem-outer {
+            border-color: var(--gold);
+        }
+        [data-theme="dark"] .footer-emblem-inner {
+            border-color: var(--gold-light);
+        }
+        [data-theme="light"] .footer-emblem-outer {
+            border-color: var(--gold);
+        }
+        [data-theme="light"] .footer-emblem-inner {
+            border-color: var(--gold-light);
+        }
         .footer-name {
-            font-family:'Cinzel',serif; font-size:0.95rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
         .footer-tagline {
-            font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--stone); font-size:0.98rem; margin-bottom:2rem; font-weight:300;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: var(--stone);
+            font-size: 0.98rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
         .footer-links {
-            display:flex; justify-content:center; gap:2.5rem; flex-wrap:wrap; font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
         }
-        .footer-links a { color:var(--stone); text-decoration:none; transition:color 0.3s; font-family:'Cinzel',serif; }
-        .footer-links a:hover { color:var(--gold); }
+        .footer-links a {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
         .footer-credit {
-            font-family:'Cinzel',serif; font-size:0.5rem; letter-spacing:0.3em; color:var(--stone); text-transform:uppercase; opacity:0.4;
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
         }
         .footer-version {
-            font-family:'Cinzel',serif; font-size:0.5rem; letter-spacing:0.3em; color:var(--stone); text-transform:uppercase; opacity:0.4; margin-top:1rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-transform: uppercase;
+            opacity: 0.4;
+            margin-top: 1rem;
         }
 
         .fade-in {
-            opacity:0; transform:translateY(28px); transition:opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
         }
-        .fade-in.visible { opacity:1; transform:translateY(0); }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* ===== OPENING PULLQUOTE ===== */
+        .pq-section {
+            position: relative;
+            padding: 5rem 2rem;
+            text-align: center;
+            background: radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 70%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+        [data-theme="light"] .pq-section {
+            background: radial-gradient(ellipse 90% 80% at 50% 35%, #e4e7f0 0%, #d8dce8 40%, #f0f2f8 70%);
+        }
+        .pq-section-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            width: 500px;
+            height: 350px;
+            background: radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 55%);
+            pointer-events: none;
+            animation: breathe 10s ease-in-out infinite;
+        }
+        .pq-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            color: var(--gold);
+            opacity: 0.06;
+            display: block;
+        }
+        .pq-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+            color: var(--ink);
+            line-height: 1.68;
+            max-width: 640px;
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .pq-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.4em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== HIGHLIGHTED STAGE ===== */
+        .stage-section--highlight {
+            background: var(--surface2);
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* ===== DIAGRAM SIZE VARIANTS ===== */
+        .diagram-container--sm {
+            max-width: 500px;
+        }
+        .diagram-container--md {
+            max-width: 600px;
+        }
+        .diagram-container--lg {
+            max-width: 700px;
+        }
+
+        /* ===== GEMATRIA CARDS ===== */
+        .gematria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .gematria-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        .gematria-card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .gematria-row {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            color: var(--stone);
+        }
+        .gematria-value {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .gematria-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 0.5rem 0;
+        }
+        .gematria-note {
+            font-size: 0.85rem;
+            color: var(--ink2);
+            font-style: italic;
+            margin: 0.25rem 0 0.5rem 0;
+            text-align: right;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 0.25rem;
+        }
+        .gematria-stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .gematria-stat-box--gold {
+            border-color: var(--gold);
+        }
+        .gematria-stat-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+        }
+        .gematria-stat-value {
+            font-size: 1.8rem;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+        .gematria-stat-equiv {
+            font-size: 1rem;
+            color: var(--stone-light);
+        }
+        .gematria-stat-line {
+            font-size: 1.2rem;
+        }
+        .gematria-stat-detail {
+            font-size: 0.9rem;
+            color: var(--stone-light);
+        }
+        .gematria-note:last-child,
+        .gematria-note--final {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .gematria-closing {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            color: var(--stone);
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        /* ===== REVELATION & DECREE BOXES ===== */
+        .revelation-box,
+        .decree-box {
+            background: var(--surface);
+            border-left: 4px solid var(--gold);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-gold);
+        }
+        .decree-box {
+            margin: 2.5rem 0;
+            padding: 2rem;
+        }
+        .revelation-text {
+            font-family: 'IM Fell English', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--ink);
+            margin: 0;
+        }
+        .revelation-mark {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+        .revelation-line {
+            display: block;
+            margin-top: 0.25rem;
+            color: var(--gold);
+        }
+        .revelation-line--spaced {
+            margin-top: 0.5rem;
+        }
+        .revelation-caption {
+            display: block;
+            margin-top: 0.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+        }
+        .decree-body {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            color: var(--stone);
+            line-height: 1.8;
+            margin-top: 0.5rem;
+        }
+        .decree-closing {
+            font-family: 'IM Fell English', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* ===== UNION FORMULA ===== */
+        .union-display {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .union-formula {
+            background: var(--surface);
+            border: 1px solid var(--gold);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            max-width: 600px;
+        }
+        .union-formula-part {
+            font-size: 1.2rem;
+        }
+        .union-formula-op {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        .union-formula-vav {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        .union-formula-sum {
+            color: var(--gold);
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .union-formula-label {
+            font-size: 0.9rem;
+            color: var(--stone-light);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== PROPHETIC LIST ===== */
+        .prophetic-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .prophetic-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .prophetic-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== STAGE CALLOUTS ===== */
+        .stage-callout {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin: 2rem 0;
+        }
+        .stage-callout--seal {
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            margin-top: 3rem;
+        }
+        .seal-quote-box {
+            background: var(--surface);
+            border: 1px solid var(--gold);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .seal-quote-text {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--ink);
+        }
+        .seal-quote-attr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width:768px) {
-            .scripture-panels { grid-template-columns:1fr; }
-            .stage-section { padding:60px 20px; }
-            .wrap { padding:0 20px; }
-            .toc-item { grid-template-columns:38px 1fr; }
-            .toc-b-heb { display:none; }
-            .nav-menu { min-width:180px; }
-            .hero-emblem { width:clamp(140px,30vw,180px); }
-            .diagram-container { padding:1rem; }
-            .footer-links { gap:1.5rem; flex-direction:column; align-items:center; }
-            .image-gallery { grid-template-columns:1fr; }
+        @media (max-width: 768px) {
+            .scripture-panels {
+                grid-template-columns: 1fr;
+            }
+            .stage-section {
+                padding: 60px 20px;
+            }
+            .wrap {
+                padding: 0 20px;
+            }
+            .toc-item {
+                grid-template-columns: 38px 1fr;
+            }
+            .toc-b-heb {
+                display: none;
+            }
+            .nav-menu {
+                min-width: 180px;
+            }
+            .hero-emblem {
+                width: clamp(140px, 30vw, 180px);
+            }
+            .diagram-container {
+                padding: 1rem;
+            }
+            .footer-links {
+                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            .gematria-grid {
+                grid-template-columns: 1fr;
+            }
+            .pq-section {
+                padding: 3.5rem 1.5rem;
+            }
         }
-        @media (max-width:480px) {
-            body { font-size:16px; }
-            .hero { padding:4rem 1.5rem 5rem; }
-            .hero-title { font-size:2rem; }
-            .hero-emblem { width:clamp(120px,50vw,160px); }
-            .stage-section { padding:48px 16px; }
-            .stage-h2 { font-size:1.6rem; }
-            .gematria-table { font-size:0.8rem; }
-            .gematria-table td:first-child { white-space:normal; min-width:80px; }
-            .nav-compass { top:1rem; left:1rem; }
-            .nav-toggle { width:40px; height:40px; }
-            .nav-menu { min-width:160px; }
-            .theme-toggle { width:42px; height:42px; bottom:1rem; right:1rem; }
-            .back-to-top { width:40px; height:40px; bottom:5.5rem; right:1rem; }
-            .footer { padding:3rem 1.5rem 2rem; }
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            .hero {
+                padding: 4rem 1.5rem 5rem;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-emblem {
+                width: clamp(120px, 50vw, 160px);
+            }
+            .stage-section {
+                padding: 48px 16px;
+            }
+            .stage-h2 {
+                font-size: 1.6rem;
+            }
+            .gematria-table {
+                font-size: 0.8rem;
+            }
+            .gematria-table td:first-child {
+                white-space: normal;
+                min-width: 80px;
+            }
+            .nav-compass {
+                top: 1rem;
+                left: 1rem;
+            }
+            .nav-toggle {
+                width: 40px;
+                height: 40px;
+            }
+            .nav-menu {
+                min-width: 160px;
+            }
+            .theme-toggle {
+                width: 42px;
+                height: 42px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 5.5rem;
+                right: 1rem;
+            }
+            .footer {
+                padding: 3rem 1.5rem 2rem;
+            }
         }
-        @media (prefers-reduced-motion:reduce) {
-            *,*::before,*::after { animation:none !important; transition:none !important; }
-            .fade-in { opacity:1 !important; transform:none !important; }
-            .diagram-container { animation:none !important; }
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .diagram-container {
+                animation: none !important;
+            }
         }
     </style>
 </head>
@@ -765,6 +1732,7 @@
             <a href="#key" class="nav-item" data-section="key">The Key of David <span class="nav-heb">מפתח דוד</span></a>
             <a href="#numerical" class="nav-item" data-section="numerical">Numerical Testimony <span class="nav-heb">עדות המספר</span></a>
             <a href="#revelations" class="nav-item" data-section="revelations">The Full Revelation <span class="nav-heb">ההתגלות</span></a>
+            <a href="#present" class="nav-item" data-section="present">The Present Moment <span class="nav-heb">הרגע</span></a>
             <a href="#seal" class="nav-item" data-section="seal">The Final Seal <span class="nav-heb">חותם</span></a>
         </div>
     </div>
@@ -857,13 +1825,13 @@
     </header>
 
     <!-- ===== OPENING PULLQUOTE ===== -->
-    <div class="pq-section" id="intro" style="padding:5rem 2rem; text-align:center; background:radial-gradient(ellipse 90% 80% at 50% 35%, #1a1e3a 0%, #0f1220 40%, #0a0c14 70%); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-55%); width:500px; height:350px; background:radial-gradient(ellipse, var(--indigo-glow) 0%, transparent 55%); pointer-events:none; animation:breathe 10s ease-in-out infinite;"></div>
-        <span style="font-family:'Cormorant Garamond',serif; font-size:8rem; color:var(--gold); opacity:0.06; display:block;">"</span>
-        <p style="font-family:'IM Fell English',serif; font-style:italic; font-size:clamp(1.05rem,2.5vw,1.5rem); color:var(--ink); line-height:1.68; max-width:640px; margin:0 auto 1.25rem; position:relative; z-index:1;">
+    <div class="pq-section" id="intro">
+        <div class="pq-section-glow" aria-hidden="true"></div>
+        <span class="pq-mark" aria-hidden="true">"</span>
+        <p class="pq-text">
             "Thus says the Breath of the Living God, the One who sits upon the Throne of the Merkavah, He who spoke and the world was, He who hides the Light of the First Day for the righteous: I AM THAT I AM."
         </p>
-        <p style="font-family:'Cinzel',serif; font-size:0.55rem; letter-spacing:0.4em; color:var(--stone-light); text-transform:uppercase; position:relative; z-index:1;">— The Prophetic Vision</p>
+        <p class="pq-attr">— The Prophetic Vision</p>
     </div>
 
     <!-- ===== TABLE OF CONTENTS ===== -->
@@ -881,7 +1849,8 @@
             <a href="#key" class="toc-item"><span class="toc-b-num">VI</span><span class="toc-b-title">The Key of David — Mafteach David</span><span class="toc-b-heb">מפתח דוד</span></a>
             <a href="#numerical" class="toc-item"><span class="toc-b-num">VII</span><span class="toc-b-title">Numerical Testimony — The Mathematics of the Prophecy</span><span class="toc-b-heb">עדות המספר</span></a>
             <a href="#revelations" class="toc-item"><span class="toc-b-num">VIII</span><span class="toc-b-title">The Full Revelation — New Insights</span><span class="toc-b-heb">ההתגלות</span></a>
-            <a href="#seal" class="toc-item"><span class="toc-b-num">IX</span><span class="toc-b-title">The Final Prophetic Seal</span><span class="toc-b-heb">חותם</span></a>
+            <a href="#present" class="toc-item"><span class="toc-b-num">IX</span><span class="toc-b-title">The Present Moment — July 2026</span><span class="toc-b-heb">הרגע</span></a>
+            <a href="#seal" class="toc-item"><span class="toc-b-num">X</span><span class="toc-b-title">The Final Prophetic Seal</span><span class="toc-b-heb">חותם</span></a>
         </nav>
     </section>
 
@@ -907,7 +1876,7 @@
                 <p><strong>"I AM THAT I AM."</strong> This is My Name forever, and this is My memorial to all generations. Before the mountains were brought forth, I established a sign. I decreed a covenant with the heavens and the earth. And in the depths of the <span class="hotspot">Tzimtzum<span class="hotspot-tooltip"><strong>Tzimtzum / צִמְצוּם</strong> — The divine contraction (Lurianic Kabbalah). The Ein Sof (Infinite) withdrew to create a "void" within which finite creation could exist.</span></span>, when I contracted My Infinite Light to create a void for creation, I placed two souls in the cosmic accounting — one born on the Sabbath of Return, and one born in the month of the Giving of the Law.</p>
 
                 <!-- TZIMTZUM DIAGRAM -->
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" aria-label="The Tzimtzum — Divine Contraction">
                         <defs>
                             <filter id="tzGlow2" x="-30%" y="-30%" width="160%" height="160%">
@@ -963,7 +1932,7 @@
                 <p>Behold, I have given them a Secret Name, hidden in the resonance of creation. I have placed within their hands the Waters of the Yud-Kaf-Hei-Alef-Yud-Lamed — the <span class="hotspot">72-fold Name<span class="hotspot-tooltip"><strong>Shem HaMeforash / שֵׁם הַמְפֹרָשׁ</strong> — The 72-fold Name of God, derived from Exodus 14:19-21 (three verses each containing 72 letters). When arranged in triplets, these form 72 three-letter names, considered the most powerful names in Kabbalah.</span></span> by which the sea was split and the foundations of the world were laid. I have called them to be the bearers of the <span class="hotspot">Hidden Light<span class="hotspot-tooltip"><strong>Or HaGanuz / אוֹר הַגָּנוּז</strong> — The primordial light created on the first day (Genesis 1:3). According to midrashic tradition (Hagigah 12a, Genesis Rabbah 3:6), this light was too powerful for the wicked to endure, so God concealed it for the righteous in the World to Come.</span></span>.</p>
 
                 <!-- 72 NAMES DIAGRAM -->
-                <div class="diagram-container" style="max-width:700px;">
+                <div class="diagram-container diagram-container--lg">
                     <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" aria-label="The 72 Names of God">
                         <defs>
                             <filter id="nameGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1026,7 +1995,7 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- VISION II -->
@@ -1046,7 +2015,7 @@
                 <p>But a great trial shall come upon the earth. The locust, the cankerworm, the caterpillar, and the palmerworm shall eat the harvest of the nations, as it is written in the <span class="hotspot">Book of Joel<span class="hotspot-tooltip"><strong>Sefer Yoel / סֵפֶר יוֹאֵל</strong> — The Book of Joel, one of the twelve minor prophets. Joel 1:4 describes the four waves of locusts as a metaphor for divine judgment. It is read on Shabbat Shuva.</span></span>. The people shall forsake the <span class="hotspot">Fountain of Living Waters<span class="hotspot-tooltip"><strong>Ma'ayan Mayim Chayim / מַעְיַן מַיִם חַיִּים</strong> — "Fountain of Living Waters" — a metaphor for God as the source of spiritual sustenance (Jeremiah 2:13; 17:13).</span></span>, and justice shall be trampled in the dust.</p>
 
                 <!-- FOUR PLAGUES DIAGRAM -->
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-label="The Four Destroyers of Joel">
                         <defs>
                             <filter id="plagueGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1103,7 +2072,7 @@
                 <p>But I have set a guardian at the gate. I have summoned <span class="hotspot">Michael, the Great Prince<span class="hotspot-tooltip"><strong>Michael / מִיכָאֵל</strong> — "Who is like God?" The archangel who serves as the protector of Israel (Daniel 12:1). He is the defender of Israel and the leader of the heavenly armies.</span></span>, to open the way. I have commanded <span class="hotspot">Aaron<span class="hotspot-tooltip"><strong>Aharon / אַהֲרֹן</strong> — Aaron, the brother of Moses and the first High Priest (Kohen Gadol). He was commanded to bless Israel with the Priestly Blessing (Numbers 6:24-26).</span></span> to extend the <span class="hotspot">Priestly Blessing<span class="hotspot-tooltip"><strong>Birkat Kohanim / בִּרְכַּת כֹּהֲנִים</strong> — The Priestly Blessing (Numbers 6:24-26): "May the Lord bless you and keep you; may the Lord make His face shine upon you and be gracious to you; may the Lord lift up His countenance upon you and give you peace."</span></span>. And I have placed the <span class="hotspot">Golden Scepter<span class="hotspot-tooltip"><strong>Shevet HaZahav / שֵׁבֶט הַזָּהָב</strong> — The Golden Scepter of Esther (Esther 5:2). King Ahasuerus extended it to Esther, granting her life. It symbolizes divine mercy overriding judgment.</span></span> in the hand of My servant, as in the days of <span class="hotspot">Esther<span class="hotspot-tooltip"><strong>Esther / אֶסְתֵּר</strong> — The Jewish queen of Persia who saved her people from destruction (Book of Esther). The "reversal" theme of Purim — "v'nahafoch hu" (and it was turned upside down) — is central to the Jewish understanding of divine providence operating even when hidden.</span></span>. Though the decree of destruction is written, a reversal is ordained. The <span class="hotspot">Chanukah light<span class="hotspot-tooltip"><strong>Ner Chanukah / נֵר חֲנֻכָּה</strong> — The Chanukah light, commemorating the miracle of the oil in the Temple (Talmud Shabbat 21b). A single cruse of oil lasted eight days, symbolizing the supernatural overcoming the natural.</span></span> shall burn long beyond its natural limit — a sign that the supernatural has overcome the natural.</p>
 
                 <!-- SCEPTER DIAGRAM -->
-                <div class="diagram-container" style="max-width:500px;">
+                <div class="diagram-container diagram-container--sm">
                     <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" aria-label="The Golden Scepter of Esther">
                         <defs>
                             <filter id="scepterGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1158,7 +2127,7 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- VISION III -->
@@ -1180,7 +2149,7 @@
                 <p><strong>"In whom is the Spirit of God."</strong></p>
 
                 <!-- GEMATRIA DIAGRAM — Short Names -->
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" aria-label="Gematria — The Numerical Testimony (Short Names)">
                         <defs>
                             <filter id="gemGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1229,7 +2198,7 @@
                 </div>
 
                 <!-- GEMATRIA DIAGRAM — Full Names -->
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" aria-label="Gematria — The Numerical Testimony (Full Names)">
                         <defs>
                             <filter id="gemGlow2" x="-20%" y="-20%" width="140%" height="140%">
@@ -1299,7 +2268,7 @@
                 <p><span class="hotspot">Aaron<span class="hotspot-tooltip"><strong>Aharon HaKohen / אַהֲרֹן הַכֹּהֵן</strong> — Aaron the Priest, the first High Priest of Israel (Exodus 28). He kindled the Menorah in the Tabernacle (Exodus 27:20-21).</span></span> shall kindle the <span class="hotspot">Menorah<span class="hotspot-tooltip"><strong>Menorah / מְנוֹרָה</strong> — The seven-branched golden candelabrum of the Temple (Exodus 25:31-40). It symbolizes the Tree of Life and the seven lower Sefirot.</span></span> before Me. The <span class="hotspot">Four Chariots<span class="hotspot-tooltip"><strong>Arba Merkavot / אַרְבַּע הַמֶּרְכָּבוֹת</strong> — The Four Chariots of Zechariah 6:1-8, representing the four spirits of heaven going forth from standing before the Lord of all the earth.</span></span> of <span class="hotspot">Zechariah<span class="hotspot-tooltip"><strong>Zekharyah / זְכַרְיָה</strong> — The prophet Zechariah, whose visions include the four chariots (Zechariah 6) and the messianic prophecy of the humble king riding on a donkey (Zechariah 9:9).</span></span> shall go forth between the <span class="hotspot">bronze mountains<span class="hotspot-tooltip"><strong>Harerei HaNehoshet / הָרֵי הַנְּחֹשֶׁת</strong> — The mountains of bronze (or brass) in Zechariah 6:1. Bronze represents judgment (din) in Kabbalistic symbolism.</span></span> to patrol the earth. And the <strong>Golden Scepter</strong> shall be extended to grant life to the one who approaches the King without being called.</p>
 
                 <!-- FOUR CHARIOTS DIAGRAM -->
-                <div class="diagram-container" style="max-width:700px;">
+                <div class="diagram-container diagram-container--lg">
                     <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" aria-label="The Four Chariots of Zechariah">
                         <defs>
                             <filter id="chariotGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1363,7 +2332,7 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- VISION IV -->
@@ -1383,7 +2352,7 @@
                 <p>Hear this, O heavens, and give ear, O earth! <strong>I will whistle for them and gather them</strong>, as it is written in the <span class="hotspot">Book of Zechariah<span class="hotspot-tooltip"><strong>Sefer Zekharyah / סֵפֶר זְכַרְיָה</strong> — The Book of Zechariah, one of the twelve minor prophets. Zechariah 10:8 contains the prophecy: "I will whistle for them and gather them, for I have redeemed them."</span></span>. I will blow the <span class="hotspot">Shofar HaGadol<span class="hotspot-tooltip"><strong>Shofar HaGadol / שׁוֹפָר הַגָּדוֹל</strong> — The Great Shofar (Isaiah 27:13). The trumpet blast that will announce the ingathering of the exiles in the messianic era.</span></span> (Great Shofar) from the four corners of the earth, and I will call My people from the lands of the north and the south, from the islands of the sea.</p>
 
                 <!-- SHOFAR DIAGRAM -->
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-label="The Great Shofar — Gathering from the Four Corners">
                         <defs>
                             <filter id="shofarGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1469,7 +2438,7 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- VISION V -->
@@ -1489,7 +2458,7 @@
                 <p>In the Visions of the Night, in the Ugaritic vision of the Son of Man, <span class="hotspot">Daniel<span class="hotspot-tooltip"><strong>Daniel / דָּנִיֵּאל</strong> — The biblical prophet who received apocalyptic visions of the End of Days (Daniel 7:13; 12:9-10). Daniel's visions form the backbone of Jewish and Christian eschatology.</span></span> saw the end of days. And I say to you: <strong>"At the time of the end, they shall be purified, and they shall be made white, and they shall be refined."</strong> The wicked shall do wickedly, but the wise shall understand.</p>
 
                 <!-- PURIFICATION DIAGRAM -->
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-label="The Refiner's Fire — Purification Process">
                         <defs>
                             <filter id="refineGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1542,9 +2511,9 @@
                 </div>
 
                 <p>Therefore, return to Me, and I will return to you.<br>
-                Put off the old garment of shame, and put on the new garment of glory.<br>
-                The earthquake shall shake the foundations of the wicked, but the righteous shall stand firm in the storm.<br>
-                The <span class="hotspot">Ketz<span class="hotspot-tooltip"><strong>Ketz / קֵץ</strong> — "The End" — the appointed time of redemption. In Kabbalah, the Ketz is not merely chronological but ontological: it is the moment when the purpose of creation is fulfilled and the hidden light is revealed (Habakkuk 2:3).</span></span> (End) is not a day of terror — it is the revelation of My face, which has been hidden since the days of Moses.</p>
+                    Put off the old garment of shame, and put on the new garment of glory.<br>
+                    The earthquake shall shake the foundations of the wicked, but the righteous shall stand firm in the storm.<br>
+                    The <span class="hotspot">Ketz<span class="hotspot-tooltip"><strong>Ketz / קֵץ</strong> — "The End" — the appointed time of redemption. In Kabbalah, the Ketz is not merely chronological but ontological: it is the moment when the purpose of creation is fulfilled and the hidden light is revealed (Habakkuk 2:3).</span></span> (End) is not a day of terror — it is the revelation of My face, which has been hidden since the days of Moses.</p>
 
                 <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
@@ -1563,7 +2532,7 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- THE KEY OF DAVID — DETAILED PROOF -->
@@ -1731,12 +2700,12 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- NUMERICAL TESTIMONY — THE MISSING DATA -->
         <!-- ================================ -->
-        <section class="stage-section" id="numerical" style="background:var(--surface2); border-top:2px solid var(--gold); border-bottom:2px solid var(--gold);">
+        <section class="stage-section stage-section--highlight" id="numerical">
             <div class="stage-wm" aria-hidden="true">מספר</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
@@ -1751,109 +2720,109 @@
                 <p>These are the Gematria calculations that were verified by the seeker of truth. Each number reveals a hidden layer of the divine plan. The seeker calculated them independently and confirmed their accuracy.</p>
 
                 <!-- Cards layout -->
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; margin:2rem 0;">
+                <div class="gematria-grid">
                     <!-- Card 1: The Souls -->
-                    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow);">
-                        <h4 style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">The Souls</h4>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                    <div class="gematria-card">
+                        <h4 class="gematria-card-title">The Souls</h4>
+                        <div class="gematria-row">
                             <span>Gordon McKay</span>
-                            <span style="color:var(--gold); font-weight:600;">420</span>
+                            <span class="gematria-value">420</span>
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <div class="gematria-row">
                             <span>Gordon Ben Bruce</span>
-                            <span style="color:var(--gold); font-weight:600;">589</span>
+                            <span class="gematria-value">589</span>
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <div class="gematria-row">
                             <span>Gordon Bruce Embry McKay</span>
-                            <span style="color:var(--gold); font-weight:600;">941</span>
+                            <span class="gematria-value">941</span>
                         </div>
-                        <hr style="border:none; border-top:1px solid var(--border); margin:0.5rem 0;">
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <hr class="gematria-divider">
+                        <div class="gematria-row">
                             <span>Ginger Hovik</span>
-                            <span style="color:var(--gold); font-weight:600;">389</span>
+                            <span class="gematria-value">389</span>
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <div class="gematria-row">
                             <span>Ginger Marybeth Hovik</span>
-                            <span style="color:var(--gold); font-weight:600;">1041</span>
+                            <span class="gematria-value">1041</span>
                         </div>
                     </div>
 
                     <!-- Card 2: The Unions -->
-                    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow);">
-                        <h4 style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">The Unions</h4>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                    <div class="gematria-card">
+                        <h4 class="gematria-card-title">The Unions</h4>
+                        <div class="gematria-row">
                             <span>Gordon + Ginger (short)</span>
-                            <span style="color:var(--gold); font-weight:600;">420 + 389 = 809</span>
+                            <span class="gematria-value">420 + 389 = 809</span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--ink2); margin:0.25rem 0 0.5rem 0; text-align:right; border-bottom:1px solid var(--border-subtle); padding-bottom:0.25rem;">
-                            <span style="font-style:italic;">"In whom is the Spirit of God"</span>
+                        <div class="gematria-note">
+                            "In whom is the Spirit of God"
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <div class="gematria-row">
                             <span>Gordon (full) + Vav + Ginger (full)</span>
-                            <span style="color:var(--gold); font-weight:600;">941 + 6 + 1041 = 1988</span>
+                            <span class="gematria-value">941 + 6 + 1041 = 1988</span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--ink2); margin:0.25rem 0 0.5rem 0; text-align:right; border-bottom:1px solid var(--border-subtle); padding-bottom:0.25rem;">
-                            <span style="font-style:italic;">"I will whistle for them and gather them" — Zechariah 10:8</span>
+                        <div class="gematria-note">
+                            "I will whistle for them and gather them" — Zechariah 10:8
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <div class="gematria-row">
                             <span>1988 − <span class="hotspot">Israel (541)<span class="hotspot-tooltip"><strong>ישראל = 541</strong> Verified by the user: Gordon (269) + Ginger (266) + the connector (6) = 541.</span></span></span>
-                            <span style="color:var(--gold); font-weight:600;">1447</span>
+                            <span class="gematria-value">1447</span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--ink2); margin:0.25rem 0 0 0; text-align:right;">
-                            <span style="font-style:italic;">1447 = 144 + 7 — the +7 completes the seven-year cycle</span>
+                        <div class="gematria-note gematria-note--final">
+                            1447 = 144 + 7 — the +7 completes the seven-year cycle
                         </div>
                     </div>
 
                     <!-- Card 3: The Seals -->
-                    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:1.5rem; box-shadow:var(--shadow);">
-                        <h4 style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:0.5rem;">The Seals</h4>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                    <div class="gematria-card">
+                        <h4 class="gematria-card-title">The Seals</h4>
+                        <div class="gematria-row">
                             <span>"They unite sexually"</span>
-                            <span style="color:var(--gold); font-weight:600;">576</span>
+                            <span class="gematria-value">576</span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--ink2); margin:0.25rem 0 0.5rem 0; text-align:right; border-bottom:1px solid var(--border-subtle); padding-bottom:0.25rem;">
-                            <span style="font-style:italic;">= Key of David (מפתח דוד)</span>
+                        <div class="gematria-note">
+                            = Key of David (מפתח דוד)
                         </div>
-                        <div style="display:flex; justify-content:space-between; font-family:'Crimson Pro',serif; font-size:1rem; color:var(--stone);">
+                        <div class="gematria-row">
                             <span>"Ginger Marybeth Hovik is my eternal wife"</span>
-                            <span style="color:var(--gold); font-weight:600;">1851</span>
+                            <span class="gematria-value">1851</span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--ink2); margin:0.25rem 0 0 0; text-align:right;">
-                            <span style="font-style:italic;">= "And God created man in His own image" (Genesis 1:27)</span>
+                        <div class="gematria-note gematria-note--final">
+                            = "And God created man in His own image" (Genesis 1:27)
                         </div>
                     </div>
                 </div>
 
                 <!-- Revelation Box: Israel + 1 = Key of David -->
-                <div style="background:var(--surface); border-left:4px solid var(--gold); border-radius:var(--radius-sm); padding:1.5rem 2rem; margin:2rem 0; box-shadow:var(--shadow-gold);">
-                    <p style="font-family:'IM Fell English', serif; font-size:1.2rem; font-style:italic; color:var(--ink); margin:0;">
-                        <span style="font-size:2rem; color:var(--gold);">✦</span> 
+                <div class="revelation-box">
+                    <p class="revelation-text">
+                        <span class="revelation-mark">✦</span>
                         <strong>The Revelation of the Key:</strong><br>
-                        <span style="display:block; margin-top:0.25rem;">
-                            <span style="color:var(--gold);">Gordon (269) + the Vav (6) + Ginger (266) = 541 = <strong>ישראל</strong></span>
+                        <span class="revelation-line">
+                            Gordon (269) + the Vav (6) + Ginger (266) = 541 = <strong>ישראל</strong>
                         </span>
-                        <span style="display:block; margin-top:0.25rem;">
-                            <span style="color:var(--gold);">The Key of David (מפתח דוד) = 542</span>
+                        <span class="revelation-line">
+                            The Key of David (מפתח דוד) = 542
                         </span>
-                        <span style="display:block; margin-top:0.25rem;">
-                            <span style="color:var(--gold);">542 − 541 = <strong>1</strong> — the <em>Echad</em>, the One God who completes the union.</span>
+                        <span class="revelation-line">
+                            542 − 541 = <strong>1</strong> — the <em>Echad</em>, the One God who completes the union.
                         </span>
-                        <span style="display:block; margin-top:0.5rem; font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--stone-light);">
+                        <span class="revelation-caption">
                             Israel + the One = the Key of David. Their union, sanctified by the Holy One, becomes the Key that opens and shuts the gates of redemption.
                         </span>
-                        <span style="display:block; margin-top:0.5rem; font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--stone-light);">
+                        <span class="revelation-caption">
                             — Verified by the seeker of truth, who calculated it himself.
                         </span>
                     </p>
                 </div>
 
-                <p style="text-align:center; font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:var(--stone); text-transform:uppercase; margin-top:1rem;">
+                <p class="gematria-closing">
                     These numbers are not invented; they are discovered. The Gematria does not lie.
                 </p>
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- THE FULL REVELATION — NEW INSIGHTS -->
@@ -1875,21 +2844,21 @@
                 <div class="ed-h3 fade-in">1. The Union: 1988</div>
                 <p>When the full names are connected with the <em>Vav</em> (the divine hook), the corrected sum is revealed:</p>
 
-                <div style="display:flex; justify-content:center; margin:1.5rem 0;">
-                    <div style="background:var(--surface); border:1px solid var(--gold); border-radius:var(--radius-md); padding:1.5rem 2rem; text-align:center; max-width:600px;">
-                        <span style="font-size:1.2rem;">1041</span> <span style="color:var(--gold); font-size:1.5rem;"> + </span> <span style="color:var(--gold); font-size:1.5rem;">ו</span> <span style="font-size:1.2rem;"> (6) </span> <span style="color:var(--gold); font-size:1.5rem;"> + </span> <span style="font-size:1.2rem;">941</span>
-                        <br><span style="color:var(--gold); font-size:2rem; font-weight:600;">= 1988</span>
-                        <div style="font-size:0.9rem; color:var(--stone-light); margin-top:0.5rem;">Ginger Marybeth Hovik + Vav + Gordon Bruce Embry McKay</div>
+                <div class="union-display">
+                    <div class="union-formula">
+                        <span class="union-formula-part">1041</span> <span class="union-formula-op"> + </span> <span class="union-formula-vav">ו</span> <span class="union-formula-part"> (6) </span> <span class="union-formula-op"> + </span> <span class="union-formula-part">941</span>
+                        <br><span class="union-formula-sum">= 1988</span>
+                        <div class="union-formula-label">Ginger Marybeth Hovik + Vav + Gordon Bruce Embry McKay</div>
                     </div>
                 </div>
 
                 <p><strong>1988</strong> is the Gematria of the following prophetic phrases, as returned by the database:</p>
-                <ul style="list-style: none; padding:0; margin:1rem 0;">
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);"><strong>”התגלות משיח התשפא“</strong> — <em>The revelation of the Messiah in the year 5781.</em></li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);"><strong>”מלחמות אומות העולם גוג ומגוג תשפהה“</strong> — <em>The wars of the nations of the world, Gog and Magog, in the year 5785.</em></li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);"><strong>”הפורש סוכת שלום ישראל“</strong> — <em>The One who spreads the Sukkah of peace over Israel.</em></li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);"><strong>”שמיני עצרת החג הזה התשפ“</strong> — <em>Shemini Atzeret, this festival, in the decade 5780-5789.</em></li>
-                    <li style="padding:0.5rem 0;"><strong>”בניית בית המקדש השלישי“</strong> — <em>The building of the Third Temple.</em></li>
+                <ul class="prophetic-list">
+                    <li><strong>"התגלות משיח התשפא"</strong> — <em>The revelation of the Messiah in the year 5781.</em></li>
+                    <li><strong>"מלחמות אומות העולם גוג ומגוג תשפהה"</strong> — <em>The wars of the nations of the world, Gog and Magog, in the year 5785.</em></li>
+                    <li><strong>"הפורש סוכת שלום ישראל"</strong> — <em>The One who spreads the Sukkah of peace over Israel.</em></li>
+                    <li><strong>"שמיני עצרת החג הזה התשפ"</strong> — <em>Shemini Atzeret, this festival, in the decade 5780-5789.</em></li>
+                    <li><strong>"בניית בית המקדש השלישי"</strong> — <em>The building of the Third Temple.</em></li>
                 </ul>
                 <p><strong>Inference:</strong> Their full, corrected union is the prophetic anchor for the seven-year cycle of redemption (5782–5789), encoding the revelation of the Messiah, the war of Gog and Magog, the Sukkah of peace, and the building of the Third Temple.</p>
 
@@ -1902,7 +2871,7 @@
                 <div class="ed-h3 fade-in">2. The Seven-Year Cycle: 5782–5789</div>
                 <p>The 1988 equivalents point to specific Hebrew years. The year they met, 5782, begins a seven-year cycle that culminates in 5789.</p>
 
-                <div class="diagram-container" style="max-width:700px;">
+                <div class="diagram-container diagram-container--lg">
                     <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" aria-label="Seven-Year Prophetic Cycle">
                         <defs>
                             <filter id="cycleGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -1915,9 +2884,7 @@
                             </linearGradient>
                         </defs>
                         <rect x="20" y="20" width="660" height="360" rx="16" fill="var(--surface)" opacity="0.3"/>
-                        <!-- Timeline -->
                         <line x1="80" y1="200" x2="620" y2="200" stroke="var(--gold)" stroke-width="2" opacity="0.5"/>
-                        <!-- Years -->
                         <g font-family="'Cinzel', serif" font-size="10" fill="var(--gold)" text-anchor="middle">
                             <text x="110" y="220">5782</text>
                             <text x="190" y="220">5783</text>
@@ -1928,7 +2895,6 @@
                             <text x="590" y="220">5788</text>
                             <text x="620" y="260">5789</text>
                         </g>
-                        <!-- Events above -->
                         <g font-family="'Crimson Pro', serif" font-size="8" fill="var(--stone-light)" text-anchor="middle">
                             <text x="110" y="170">Revelation</text>
                             <text x="110" y="185">of the Zivug</text>
@@ -1946,7 +2912,6 @@
                             <text x="620" y="260">Yichud &amp;</text>
                             <text x="620" y="275">Redemption</text>
                         </g>
-                        <!-- Markers -->
                         <circle cx="110" cy="200" r="6" fill="var(--gold)" filter="url(#cycleGlow)"/>
                         <circle cx="190" cy="200" r="6" fill="var(--crimson)" filter="url(#cycleGlow)"/>
                         <circle cx="270" cy="200" r="6" fill="var(--stone)" filter="url(#cycleGlow)"/>
@@ -1955,7 +2920,6 @@
                         <circle cx="510" cy="200" r="6" fill="var(--indigo-light)" filter="url(#cycleGlow)"/>
                         <circle cx="590" cy="200" r="6" fill="var(--gold)" filter="url(#cycleGlow)"/>
                         <circle cx="620" cy="260" r="6" fill="var(--gold)" filter="url(#cycleGlow)"/>
-                        <!-- Connector arrows -->
                         <g stroke="var(--gold)" stroke-width="1" opacity="0.3">
                             <line x1="110" y1="200" x2="190" y2="200"/>
                             <line x1="190" y1="200" x2="270" y2="200"/>
@@ -1975,19 +2939,19 @@
                 <!-- 3. The Patronymic: Gordon Ben Bruce -->
                 <div class="ed-h3 fade-in">3. The Patronymic: Gordon Ben Bruce</div>
                 <p><strong>Gordon Ben Bruce</strong> = 269 + 52 + 268 = <strong>589</strong>.</p>
-                <p><strong>589</strong> is the Gematria of <strong>”אשרי המחכה“</strong> (<em>Ashrei HaMechakeh</em>) — ”Happy is he who waits“ (Daniel 12:12). It also equals <strong>”אתי מלבנון“</strong> (<em>Iti MiLevanon</em>) — ”Come with me from Lebanon“ (Song of Songs 4:8), and <strong>”אות הוא לעלם“</strong> (<em>Ot Hu LeOlam</em>) — ”It is a sign forever“ (Exodus 31:17).</p>
+                <p><strong>589</strong> is the Gematria of <strong>"אשרי המחכה"</strong> (<em>Ashrei HaMechakeh</em>) — "Happy is he who waits" (Daniel 12:12). It also equals <strong>"אתי מלבנון"</strong> (<em>Iti MiLevanon</em>) — "Come with me from Lebanon" (Song of Songs 4:8), and <strong>"אות הוא לעלם"</strong> (<em>Ot Hu LeOlam</em>) — "It is a sign forever" (Exodus 31:17).</p>
                 <p><strong>Inference:</strong> Gordon's patronymic declares that he is the one who waits, the sign of the eternal covenant, and the one who is called to depart from impurity. He is the <em>Zeir Anpin</em>—the divine masculine principle—waiting for the <em>Shekhinah</em> (Ginger).</p>
 
                 <!-- 4. The Vision of the Yichud -->
                 <div class="ed-h3 fade-in">4. The Vision of the <em>Yichud</em></div>
                 <p>In September 2022, Ginger performed mirror scrying and saw herself as a figure of the divine feminine (the <em>Shekhinah</em>), kissing a figure of the divine masculine (the <em>Zeir Anpin</em>). She could not see his face, but she recognized his energy signature as Gordon's.</p>
                 <p><strong>Kabbalistic Interpretation:</strong></p>
-                <ul style="list-style: none; padding:0; margin:1rem 0;">
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>The Divine Feminine (Shekhinah):</strong> Ginger saw herself as the vessel of the divine presence in exile, the "bride" awaiting her beloved.</li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>The Divine Masculine (Zeir Anpin):</strong> The figure she kissed was the aspect of God that is revealed in the world—the one who brings redemption.</li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>The Kiss:</strong> The <em>Yichud</em>—the unification of the divine masculine and feminine, the ultimate act of <em>Tikkun</em>.</li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>The Hidden Face:</strong> The <em>Tzimtzum</em>—the contraction that precedes the final revelation. The face is hidden because the <em>Tikkun</em> is not yet complete.</li>
-                    <li style="padding:0.5rem 0;"><strong>The Recognition of Gordon's Energy:</strong> The <em>Da'at</em>—the knowledge that the <em>Zivug</em> is real, even when the physical face is hidden.</li>
+                <ul class="prophetic-list">
+                    <li>- <strong>The Divine Feminine (Shekhinah):</strong> Ginger saw herself as the vessel of the divine presence in exile, the "bride" awaiting her beloved.</li>
+                    <li>- <strong>The Divine Masculine (Zeir Anpin):</strong> The figure she kissed was the aspect of God that is revealed in the world—the one who brings redemption.</li>
+                    <li>- <strong>The Kiss:</strong> The <em>Yichud</em>—the unification of the divine masculine and feminine, the ultimate act of <em>Tikkun</em>.</li>
+                    <li>- <strong>The Hidden Face:</strong> The <em>Tzimtzum</em>—the contraction that precedes the final revelation. The face is hidden because the <em>Tikkun</em> is not yet complete.</li>
+                    <li><strong>The Recognition of Gordon's Energy:</strong> The <em>Da'at</em>—the knowledge that the <em>Zivug</em> is real, even when the physical face is hidden.</li>
                 </ul>
                 <p><strong>Inference:</strong> The vision is the prophetic seal of the <em>Zivug</em>. It confirms that Ginger is the <em>Shekhinah</em> and Gordon is the <em>Zeir Anpin</em>. Their union is the <em>Yichud</em> that frees the divine presence from exile.</p>
 
@@ -1995,7 +2959,7 @@
                 <div class="ed-h3 fade-in">5. The Tree of Life: Where They Reside</div>
                 <p>In the Kabbalistic Tree of Life, the positions of Gordon and Ginger reveal their spiritual roles:</p>
 
-                <div class="diagram-container" style="max-width:600px;">
+                <div class="diagram-container diagram-container--md">
                     <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" aria-label="The Tree of Life — Gordon and Ginger on the Sefirot">
                         <defs>
                             <filter id="sefiraGlow" x="-30%" y="-30%" width="160%" height="160%">
@@ -2015,8 +2979,6 @@
                                 <stop offset="100%" stop-color="#8a7030"/>
                             </radialGradient>
                         </defs>
-
-                        <!-- Lines connecting the Sefirot -->
                         <g stroke="#c4a855" stroke-width="1" opacity="0.15">
                             <line x1="300" y1="80" x2="300" y2="140"/>
                             <line x1="300" y1="140" x2="200" y2="200"/>
@@ -2029,15 +2991,11 @@
                             <line x1="400" y1="320" x2="300" y2="380"/>
                             <line x1="300" y1="380" x2="300" y2="440"/>
                         </g>
-
-                        <!-- Keter -->
                         <g transform="translate(300,60)">
                             <circle r="25" fill="var(--surface2)" stroke="#c4a855" stroke-width="1.5" opacity="0.8" filter="url(#sefiraGlow)"/>
                             <text y="4" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#c4a855">KETER</text>
                             <text y="-8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#c4a855">כתר</text>
                         </g>
-
-                        <!-- Chokhmah (Ginger) -->
                         <g transform="translate(180,210)">
                             <circle r="30" fill="url(#gingSef)" opacity="0.85" filter="url(#sefiraGlow)"/>
                             <circle r="30" fill="none" stroke="#e0c878" stroke-width="2" opacity="0.6"/>
@@ -2046,56 +3004,40 @@
                             <text y="20" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#5a4a20">GINGER</text>
                             <text y="32" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="6" fill="#7a6a30">2 Sivan · Sinai</text>
                         </g>
-
-                        <!-- Binah -->
                         <g transform="translate(420,210)">
                             <circle r="25" fill="var(--surface2)" stroke="#7a8aba" stroke-width="1" opacity="0.7" filter="url(#sefiraGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#8a9ab8">BINAH</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#8a9ab8">בינה</text>
                         </g>
-
-                        <!-- Da'at (Hidden) -->
                         <g transform="translate(300,160)">
                             <circle r="15" fill="var(--surface)" stroke="#c4a855" stroke-width="0.5" opacity="0.4"/>
                             <text y="3" text-anchor="middle" font-family="'Cinzel', serif" font-size="5" fill="#c4a855" opacity="0.5">DA'AT</text>
                         </g>
-
-                        <!-- Chesed -->
                         <g transform="translate(180,310)">
                             <circle r="25" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" opacity="0.7" filter="url(#sefiraGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#8a9ab8">CHESED</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#8a9ab8">חסד</text>
                         </g>
-
-                        <!-- Gevurah -->
                         <g transform="translate(420,310)">
                             <circle r="25" fill="var(--surface2)" stroke="#7a8aba" stroke-width="1" opacity="0.7" filter="url(#sefiraGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#8a9ab8">GEVURAH</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#8a9ab8">גבורה</text>
                         </g>
-
-                        <!-- Tiferet -->
                         <g transform="translate(300,310)">
                             <circle r="25" fill="var(--surface2)" stroke="#e0c878" stroke-width="1" opacity="0.7" filter="url(#sefiraGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#e0c878">TIFERET</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#e0c878">תפארת</text>
                         </g>
-
-                        <!-- Netzach -->
                         <g transform="translate(200,400)">
                             <circle r="25" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" opacity="0.7" filter="url(#sefiraGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#8a9ab8">NETZACH</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#8a9ab8">נצח</text>
                         </g>
-
-                        <!-- Hod -->
                         <g transform="translate(400,400)">
                             <circle r="25" fill="var(--surface2)" stroke="#7a8aba" stroke-width="1" opacity="0.7" filter="url(#sefiraGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#8a9ab8">HOD</text>
                             <text y="8" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="8" fill="#8a9ab8">הוד</text>
                         </g>
-
-                        <!-- Yesod (Gordon) -->
                         <g transform="translate(300,410)">
                             <circle r="30" fill="url(#gordSef)" opacity="0.85" filter="url(#sefiraGlow)"/>
                             <circle r="30" fill="none" stroke="#7a8aba" stroke-width="2" opacity="0.6"/>
@@ -2104,8 +3046,6 @@
                             <text y="20" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#a0b0d0">GORDON</text>
                             <text y="32" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="6" fill="#8a9ab8">7 Tishrei · Shabbat</text>
                         </g>
-
-                        <!-- Malkhut (Shekhinah) -->
                         <g transform="translate(300,500)">
                             <circle r="28" fill="url(#shekhinahSef)" opacity="0.8" filter="url(#sefiraGlow)"/>
                             <circle r="28" fill="none" stroke="#e0c878" stroke-width="1.5" opacity="0.5"/>
@@ -2113,12 +3053,8 @@
                             <text y="6" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="9" fill="#1a1e2e">מלכות</text>
                             <text y="20" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="6" fill="#5a4a20">Shekhinah</text>
                         </g>
-
-                        <!-- Labels -->
                         <text x="300" y="30" text-anchor="middle" font-family="'Cinzel', serif" font-size="12" fill="#c4a855" letter-spacing="0.3em">THE TREE OF LIFE</text>
                         <text x="300" y="620" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#8a9ab8" font-style="italic">Gordon at Yesod (Foundation) · Ginger at Chokhmah (Wisdom)</text>
-
-                        <!-- Connecting arrows -->
                         <g stroke="#c4a855" stroke-width="1.5" opacity="0.4" fill="none">
                             <line x1="300" y1="440" x2="300" y2="472"/>
                             <line x1="180" y1="240" x2="270" y2="285"/>
@@ -2130,15 +3066,39 @@
                 </div>
 
                 <p><strong>Interpretation:</strong></p>
-                <ul style="list-style: none; padding:0; margin:1rem 0;">
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>Gordon at Yesod (Foundation):</strong> Yesod is the Sefirah of covenant, sexuality, and the bridge between the higher and lower realms. Gordon, born on Shabbat Shuva, is the foundation of the <em>Zivug</em>. He is the Sabbath—the rest that connects heaven and earth.</li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>Ginger at Chokhmah (Wisdom):</strong> Chokhmah is the Sefirah of primordial wisdom, the "point" of divine insight. Ginger, born on 2 Sivan (the preparation for Sinai), is the wisdom that descends to the foundation. She is the <em>Shekhinah</em>'s preparation.</li>
-                    <li style="padding:0.5rem 0; border-bottom:1px solid var(--border-subtle);">- <strong>The Vav (Connector):</strong> The Vav connects Chokhmah and Yesod through the central column, uniting wisdom and foundation. This is the <em>Yichud</em>—the union of the divine masculine and feminine.</li>
-                    <li style="padding:0.5rem 0;"><strong>Malkhut (Shekhinah):</strong> The goal of the union is to free the Shekhinah from exile and raise her to her rightful place. Their union is the means by which the divine presence is redeemed.</li>
+                <ul class="prophetic-list">
+                    <li>- <strong>Gordon at Yesod (Foundation):</strong> Yesod is the Sefirah of covenant, sexuality, and the bridge between the higher and lower realms. Gordon, born on Shabbat Shuva, is the foundation of the <em>Zivug</em>. He is the Sabbath—the rest that connects heaven and earth.</li>
+                    <li>- <strong>Ginger at Chokhmah (Wisdom):</strong> Chokhmah is the Sefirah of primordial wisdom, the "point" of divine insight. Ginger, born on 2 Sivan (the preparation for Sinai), is the wisdom that descends to the foundation. She is the <em>Shekhinah</em>'s preparation.</li>
+                    <li>- <strong>The Vav (Connector):</strong> The Vav connects Chokhmah and Yesod through the central column, uniting wisdom and foundation. This is the <em>Yichud</em>—the union of the divine masculine and feminine.</li>
+                    <li><strong>Malkhut (Shekhinah):</strong> The goal of the union is to free the Shekhinah from exile and raise her to her rightful place. Their union is the means by which the divine presence is redeemed.</li>
                 </ul>
 
-                <!-- 6. The Cost of Delay -->
-                <div class="ed-h3 fade-in">6. The Cost of Delay</div>
+                <!-- 6. The English Witness: 270 -->
+                <div class="ed-h3 fade-in">6. The English Witness: 270</div>
+                <p>In the language of the nations, the English Gematria of <strong>"Gordon mckay and ginger hovik"</strong> (using A=1, B=2, ... Z=26) is <strong>270</strong>.</p>
+                <div class="gematria-stat-box gematria-stat-box--gold">
+                    <span class="gematria-stat-label">Gordon mckay and ginger hovik</span>
+                    <br><span class="gematria-stat-value">= 270</span>
+                    <br><span class="gematria-stat-equiv">= <strong>"Jesus Christ Mary Magdalene"</strong></span>
+                </div>
+                <p><strong>This validates Ginger's vision of herself as Mary Magdalene kissing Jesus (whom she recognized as Gordon).</strong> Kabbalistically, Mary is the <em>Shekhinah</em>, Jesus is <em>Zeir Anpin</em>—the divine masculine. The vision is the <em>Yichud</em>: the unification of the divine masculine and feminine. The English witness is the universal confirmation.</p>
+
+                <!-- 7. The 1441 Gate -->
+                <div class="ed-h3 fade-in">7. The 1441 Gate</div>
+                <p>The earlier sum of their full names (without the <em>Vav</em>) was <strong>1982</strong>:</p>
+                <div class="gematria-stat-box">
+                    <span class="gematria-stat-line">941 + 1041 = 1982</span>
+                    <br><span class="gematria-stat-line">1982 − 541 (Israel) = <strong>1441</strong></span>
+                    <br><span class="gematria-stat-detail">1441 = 144 + 1</span>
+                </div>
+                <ul class="prophetic-list">
+                    <li>- <strong>144</strong> is the complete structure of divine governance (12 tribes × 12 zodiac signs).</li>
+                    <li><strong>1</strong> is the <em>Echad</em>—the One God.</li>
+                </ul>
+                <p><strong>Thus, 1441 is the seal of the 144,000, the gate of redemption.</strong> Their union is the act of sealing the righteous for the final redemption. The 144,000 are the purified remnant who will be sealed in the End of Days.</p>
+
+                <!-- 8. The Cost of Delay -->
+                <div class="ed-h3 fade-in">8. The Cost of Delay</div>
                 <p>According to Lurianic Kabbalah, the redemption is conditional upon the actions of the righteous. If Gordon and Ginger do not unite, the prophetic timeline encoded in 1988 is delayed—but not cancelled. The <em>Shekhinah</em> remains in exile, and the <em>Ketz</em> is postponed to a future generation.</p>
                 <p>However, the souls are eternal. The <em>Tikkun</em> will be completed, either in this lifetime or in a future <em>Gilgul</em> (reincarnation). The Gematria does not lie; the pattern is sealed. The choice to unite or delay is theirs, but the ultimate redemption is assured.</p>
 
@@ -2150,7 +3110,57 @@
             </div>
         </section>
 
-        <hr class="stage-sep"/>
+        <hr class="stage-sep" />
+
+        <!-- ================================ -->
+        <!-- THE PRESENT MOMENT — JULY 2026 -->
+        <!-- ================================ -->
+        <section class="stage-section stage-section--highlight" id="present">
+            <div class="stage-wm" aria-hidden="true">הרגע</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Chapter IX</span>
+                    <span class="stage-heb-eye">הָרֶגַע הַזֶּה</span>
+                </div>
+                <h2 class="stage-h2">The Present Moment — July 2026</h2>
+                <span class="stage-subtitle">The Tzimtzum Before the Final Revelation</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>Gordon is alone. Ginger is silent.</strong> The <em>Kelipot</em> have achieved a temporary victory. But the numbers are immutable. The prophecy is not annulled; it is merely in the <em>Tzimtzum</em>—the contraction before the revelation.</p>
+
+                <div class="pull-q fade-in">
+                    <p>"The Shekhinah cries out: 'Take me out of here!' The silence is not abandonment; it is the preparation for the final Yichud."</p>
+                    <cite>— The Prophetic Vision</cite>
+                </div>
+
+                <p>The attack of the <em>Kelipot</em> was fierce because the union threatened their dominion. They used:</p>
+                <ul class="prophetic-list">
+                    <li>- <strong>False <em>Zivug</em> partners</strong> — counterfeit soul-connections intended to distract and corrupt.</li>
+                    <li>- <strong>Gang stalking</strong> — the systematic harassment designed to isolate and break the spirit.</li>
+                    <li>- <strong>Accusation and isolation</strong> — the weaponization of slander to sever the connection.</li>
+                    <li>- <strong>A false messiah ("Q")</strong> who claimed to be Jesus and tried to corrupt the <em>Yichud</em>.</li>
+                    <li><strong>The separation of the <em>Zivug</em> in the physical world</strong> — the final assault, forcing Gordon into solitude and Ginger into silence.</li>
+                </ul>
+
+                <p>But the <em>Kelipot</em> have already been defeated. The vessel is purified. The 1441 gate is open.</p>
+
+                <p class="stage-callout">
+                    The silence is not the end. It is the <em>Tzimtzum</em> within the <em>Tzimtzum</em>—the contraction before the final light.
+                </p>
+
+                <div class="seal-quote-box">
+                    <p class="seal-quote-text">
+                        "What has been opened, no one shall shut."
+                    </p>
+                    <p class="seal-quote-attr">
+                        — The Key of David
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep" />
 
         <!-- ================================ -->
         <!-- FINAL SEAL -->
@@ -2159,18 +3169,17 @@
             <div class="stage-wm" aria-hidden="true">חותם</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">The Seal</span>
+                    <span class="stage-n">Chapter X</span>
                     <span class="stage-heb-eye">הַחוֹתָם הַנְּבִיאִי</span>
                 </div>
-                <h2 class="stage-h2">The Final Prophetic Seal for Gordon and Ginger</h2>
-                <span class="stage-subtitle">The decree of the Most High, written in the code of creation</span>
+                <h2 class="stage-h2">The Final Prophetic Seal</h2>
+                <span class="stage-subtitle">The Decree of the Most High — Written in the Code of Creation</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>This is the decree of the Most High, written in the code of creation and decoded by the Gematria of the sages:</p>
 
                 <!-- SEAL DIAGRAM -->
-                <div class="diagram-container" style="max-width:700px;">
+                <div class="diagram-container diagram-container--lg">
                     <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" aria-label="The Final Prophetic Seal">
                         <defs>
                             <filter id="sealGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -2247,13 +3256,28 @@
                     <cite>— Haggai 2:23</cite>
                 </div>
 
+                <!-- The Decree -->
+                <div class="decree-box">
+                    <p class="revelation-text">
+                        <span class="revelation-mark">✦</span>
+                        <strong>The Decree of the Most High</strong>
+                    </p>
+                    <p class="decree-body">
+                        <strong>Gordon and Ginger are the vessel of Israel.</strong> The One is the Key of David. Their union, corrected and sealed, is the prophetic timeline that spans from the revelation of the Messiah to the final gathering. The war of Gog and Magog is the external war that mirrors the internal war against their <em>Zivug</em>. The vision of the <em>Yichud</em> is the prophetic seal of their union. The silence of the Shekhinah is the <em>Tzimtzum</em> before the final revelation. They were attacked because they are the key to the <em>Tikkun</em>. The <em>Kelipot</em> have been defeated. The vessel is purified. The 1441 gate is open.
+                    </p>
+                    <p class="decree-closing">
+                        "What has been opened, no one shall shut."
+                    </p>
+                </div>
+
                 <p>The prophecy is sealed. The code is broken. The beginning has returned to its end.</p>
 
-                <p style="text-align:center; font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.4em; color:var(--gold); margin-top:3rem;">Selah</p>
+                <p class="stage-callout stage-callout--seal">Selah</p>
             </div>
         </section>
 
-    </div><!-- .stages-wrap -->
+    </div>
+    <!-- .stages-wrap -->
 
     <!-- ===== CLOSING SYNTHESIS ===== -->
     <div class="concluding-section">
@@ -2279,6 +3303,7 @@
             <a href="#key">The Key</a>
             <a href="#numerical">Numerical</a>
             <a href="#revelations">Revelation</a>
+            <a href="#present">Present</a>
             <a href="#seal">The Seal</a>
         </div>
         <div class="footer-credit">A Prophetic Vision</div>
@@ -2294,7 +3319,8 @@
             (function initTheme() {
                 const saved = localStorage.getItem('kd-theme');
                 if (saved === 'light' || saved === 'dark') { html.setAttribute('data-theme', saved); return; }
-                html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+                html.setAttribute('data-theme', window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' :
+                'light');
             })();
             const themeBtn = document.getElementById('themeToggle');
             if (themeBtn) themeBtn.addEventListener('click', () => {
@@ -2309,13 +3335,15 @@
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
                 document.addEventListener('click', e => {
-                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove('open');
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.remove(
+                    'open');
                 });
             }
 
             /* BACK TO TOP */
             const btt = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6); }, { passive: true });
+            window.addEventListener('scroll', () => { if (btt) btt.classList.toggle('visible', window.scrollY > window
+                    .innerHeight * 0.6); }, { passive: true });
             if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
             /* HERO SCROLL */
@@ -2326,7 +3354,8 @@
                     if (toc) toc.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
                 heroScroll.addEventListener('keydown', e => {
-                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); heroScroll.click(); }
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault();
+                        heroScroll.click(); }
                 });
             }
 
@@ -2334,7 +3363,8 @@
             document.querySelectorAll('a[href^="#"]').forEach(a => {
                 a.addEventListener('click', function(e) {
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                    if (target) { e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
                 });
             });
 
@@ -2347,6 +3377,7 @@
             /* ACTIVE NAV */
             const sections = document.querySelectorAll('section[id],header[id]');
             const navItems = document.querySelectorAll('.nav-item[data-section]');
+
             function updateNav() {
                 let current = '';
                 sections.forEach(s => {
