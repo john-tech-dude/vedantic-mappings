@@ -1594,14 +1594,15 @@
         .chapter-nav {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 0.75rem;
             padding: 2rem 0;
             flex-wrap: wrap;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
+            line-height: 1.8;
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
@@ -1609,6 +1610,7 @@
             color: var(--stone);
             text-decoration: none;
             transition: color 0.3s;
+            white-space: nowrap;
             font-family: 'Cinzel', serif;
         }
         .chapter-link:hover,
@@ -1762,8 +1764,9 @@
                 align-items: center;
             }
             .chapter-nav {
-                gap: 1rem;
-                font-size: 0.6rem;
+                gap: 0.5rem;
+                font-size: 0.55rem;
+                line-height: 2;
             }
         }
         @media (max-width: 480px) {
@@ -1875,7 +1878,7 @@
         </button>
         <div class="nav-menu" id="navMenu" aria-hidden="true">
             <div class="nav-section-title">This Page</div>
-            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon">✦</span><span>Overview</span></a>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>Overview</span></a>
             <a href="#kenosis" class="nav-item" data-section="kenosis"><span class="nav-item-icon">I</span><span>The Kenosis — Self-Emptying of God</span></a>
             <a href="#flesh" class="nav-item" data-section="flesh"><span class="nav-item-icon">II</span><span>The Flesh as Sacred — Body of Christ</span></a>
             <a href="#breath" class="nav-item" data-section="breath"><span class="nav-item-icon">III</span><span>The Breath of God — Word &amp; Spirit</span></a>
@@ -1885,22 +1888,22 @@
             <a href="#friction" class="nav-item" data-section="friction"><span class="nav-item-icon">⊙</span><span>The Friction of the Flesh</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Jesus of Nazareth</div>
-            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✦</span><span>I · The Hermeneutic Key</span></a>
-            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">◈</span><span>II · Three Bridges</span></a>
+            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>I · The Hermeneutic Key</span></a>
+            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>II · Three Bridges</span></a>
             <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
-            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon">🌱</span><span>IV · The Beatitudes as Jnana Yoga</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-seedling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22V10M12 12c0-3 3-5 7-5M12 14c0-3-3-5-7-5"/></svg></span><span>IV · The Beatitudes as Jnana Yoga</span></a>
             <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
-            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon">📖</span><span>VI · The Gospel of Thomas</span></a>
-            <a href="messiah-avatar.html" class="nav-item active"><span class="nav-item-icon">☸</span><span>VII · The Incarnation as Avatar</span></a>
+            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span>VI · The Gospel of Thomas</span></a>
+            <a href="messiah-avatar.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>VII · The Incarnation as Avatar</span></a>
             <div class="nav-divider"></div>
             <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>Jesus of Nazareth</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>Kabbalah</span></a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta</span></a>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-star-david" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2.5l5.5 9.5H6.5z"/><path d="M12 21.5L6.5 12h11z"/></svg></span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Taoism · The Unnamed Way</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Quantum Mechanics</span></a>
             <div class="nav-divider"></div>
         </div>
     </nav>
@@ -1909,10 +1912,10 @@
     THEME TOGGLE & BACK TO TOP
     ═══════════════════════════════════════════════════════ -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-toggle-icon ti-sun">☀</span>
+        <span class="theme-toggle-icon ti-sun">☼</span>
         <span class="theme-toggle-icon ti-moon">☾</span>
     </button>
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m18 15-6-6-6 6"/></svg></button>
 
     <!-- ═══════════════════════════════════════════════════════
     HERO
@@ -2393,20 +2396,20 @@
     CHAPTER NAV
     ═══════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
-        <a href="../index.html" class="chapter-link">⌂ Home</a>
-        <span class="chapter-sep">✦</span>
+        <a href="../index.html" class="chapter-link"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
-        <span class="chapter-sep">✦</span>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
-        <span class="chapter-sep">✦</span>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-silence.html" class="chapter-link">III · The Cloud of Unknowing</a>
-        <span class="chapter-sep">✦</span>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-beatitudes.html" class="chapter-link">IV · The Beatitudes</a>
-        <span class="chapter-sep">✦</span>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
-        <span class="chapter-sep">✦</span>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-gospel-thomas.html" class="chapter-link">VI · The Gospel of Thomas</a>
-        <span class="chapter-sep">✦</span>
+        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-avatar.html" class="chapter-link active">VII · The Incarnation as Avatar</a>
     </div>
 
@@ -2418,7 +2421,7 @@
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">⌂ Home</a>
+            <a href="../index.html"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
             <a href="../advaita-vedanta/vedanta-living-tradition.html">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>

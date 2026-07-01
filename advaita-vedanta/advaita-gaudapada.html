@@ -435,7 +435,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 [data-theme="dark"] .comp-table .highlight-cell strong { color: var(--gold-light); }
 
 .resonance-box { background: var(--surface2); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 1.75rem 2rem; margin: 2.5rem 0; position: relative; }
-.resonance-box::before { content: '⚡'; position: absolute; top: -0.75rem; left: 1.5rem; background: var(--gold); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 2px 12px var(--gold-glow); }
+.resonance-box::before { content: ''; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 16px 16px; position: absolute; top: -0.75rem; left: 1.5rem; background: var(--gold); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 2px 12px var(--gold-glow); }
 .resonance-box h4 { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; margin-top: 0.25rem; }
 .resonance-box p { font-family: 'Crimson Pro', serif; font-size: 0.98rem; color: var(--stone); line-height: 1.8; margin: 0; }
 .resonance-box p strong { color: var(--ink); }
@@ -1125,13 +1125,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             <a href="advaita-ramana-maharshi.html" class="nav-item">III · Ramana Maharshi</a>
             <a href="advaita-nisargadatta-maharaj.html" class="nav-item">IV · Nisargadatta Maharaj</a><div class="nav-divider"></div>
                 <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">🕉</span><span>Advaita Vedanta</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon">✝</span><span>Jesus of Nazareth</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">🔯</span><span>Kabbalah</span></a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism · The Unnamed Way</span></a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta</span></a>
+            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-star-david" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2.5l5.5 9.5H6.5z"/><path d="M12 21.5L6.5 12h11z"/></svg></span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Taoism · The Unnamed Way</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Quantum Mechanics</span></a>
   </div>
 </div>
 
@@ -1139,7 +1139,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <span class="theme-toggle-icon theme-toggle-icon-sun">☼</span>
   <span class="theme-toggle-icon theme-toggle-icon-moon">☾</span>
 </button>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg class="icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m18 15-6-6-6 6"/></svg></button>
 
 <div class="main-content">
 
@@ -1622,7 +1622,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       </div>
     </div>
     <div class="prac-step">
-      <div class="prac-n">✦</div>
+      <div class="prac-n"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></div>
       <div class="prac-content">
         <h5>Cessation of Movement <span class="deva">विराम</span></h5>
         <p>"The wise man, having realised that the Self is the only reality, abides in the Self and does not return to the false perception of the world. He is like the fire-brand that has ceased moving — only light remains."</p>
@@ -1743,7 +1743,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
 
     <div class="resonance-box">
-      <h4>⚡ The Convergence</h4>
+      <h4><svg class="icon-energy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="vertical-align: -0.15em; margin-right: 0.35em; display: inline-block;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> The Convergence</h4>
       <p>All four traditions <strong>deny ultimate reality to the phenomenal world</strong>. Whether it is called <em>māyā</em>, <em>śūnyatā</em>, or the <em>Tao</em>, there is a shared recognition that what appears is not the final truth. Gaudapada's <em>ajāta</em> is the most uncompromising formulation: not only is the world unreal, but <strong>it never even originated</strong>. This distinguishes him from those who allow for a qualified creation, divine manifestation, or a dynamic process. Yet in the ultimate state — the silent abidance in the Self — all these traditions converge.</p>
     </div>
 
@@ -1767,9 +1767,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <p class="ed-section-intro">A searchable guide to the essential Sanskrit terms and concepts.</p>
 
   <div class="gloss-search-wrap">
-    <span class="gloss-search-ico">🔍</span>
+    <span class="gloss-search-ico"><svg class="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
     <input class="gloss-search" id="glossSearch" type="text" placeholder="Search glossary..." aria-label="Search glossary terms">
-    <button class="gloss-clear" id="glossClear" aria-label="Clear search">✕</button>
+    <button class="gloss-clear" id="glossClear" aria-label="Clear search"><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="gloss-no-results" id="glossNoResults">No glossary terms match your search.</div>
 
@@ -1871,7 +1871,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
 <!-- CHAPTER NAVIGATION -->
 <div class="chapter-nav">
-  <a href="../index.html" class="chapter-link">⌂ Home</a>
+  <a href="../index.html" class="chapter-link"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
   <span class="chapter-sep">ॐ</span>
   <a href="vedanta-living-tradition.html" class="chapter-link">Foundations</a>
   <span class="chapter-sep">ॐ</span>
@@ -1892,7 +1892,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html">⌂ Home</a>
+            <a href="../index.html"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
             <a href="vedanta-living-tradition.html">Advaita Vedanta</a>
             <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
