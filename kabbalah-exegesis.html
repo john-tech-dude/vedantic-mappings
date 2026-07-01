@@ -1515,6 +1515,78 @@
             margin-top: 1rem;
         }
 
+        /* ===== KEY OF DAVID EQUATION CALLOUT ===== */
+        .key-equation-callout {
+            background: radial-gradient(ellipse at 50% 20%, var(--gold-glow) 0%, var(--surface) 65%);
+            border: 2px solid var(--gold);
+            border-radius: var(--radius-md);
+            padding: 2.5rem 2rem;
+            margin: 2.5rem auto;
+            max-width: 640px;
+            box-shadow: var(--shadow-gold), 0 0 60px rgba(196, 168, 85, 0.14);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .key-equation-callout--compact {
+            padding: 2rem 1.5rem;
+            margin: 2rem auto;
+        }
+        .key-equation-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .key-equation-title .revelation-mark {
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+        .key-equation-line {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            color: var(--ink);
+            line-height: 1.85;
+            margin: 0.3rem 0;
+        }
+        .key-equation-line--emphasis {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-light);
+        }
+        .key-equation-heb {
+            font-family: 'Frank Ruhl Libre', serif;
+            direction: rtl;
+            display: inline-block;
+        }
+        .key-equation-echad {
+            font-family: 'Cinzel', serif;
+            font-size: 1.45rem;
+            letter-spacing: 0.18em;
+            color: var(--gold);
+            margin: 0.75rem 0;
+        }
+        .key-equation-sum {
+            font-family: 'Cinzel', serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            margin-top: 0.75rem;
+        }
+        .key-equation-quote {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--stone);
+            margin-top: 1.25rem;
+            line-height: 1.65;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* ===== UNION FORMULA ===== */
         .union-display {
             display: flex;
@@ -2816,6 +2888,25 @@
                     </p>
                 </div>
 
+                <!-- Key of David Equation — prominent callout -->
+                <div class="key-equation-callout fade-in" id="key-equation">
+                    <div class="key-equation-title">
+                        <span class="revelation-mark">✦</span> The Key of David Equation <span class="revelation-mark">✦</span>
+                    </div>
+                    <p class="key-equation-line key-equation-line--emphasis">
+                        Gordon (269) + Vav (6) + Ginger (266)<br>
+                        = 541 = <strong>ISRAEL</strong>
+                    </p>
+                    <p class="key-equation-line key-equation-line--emphasis">
+                        The Key of David (<span class="key-equation-heb">מפתח דוד</span>) = 542
+                    </p>
+                    <p class="key-equation-echad">542 − 541 = 1 = ECHAD — THE ONE GOD</p>
+                    <p class="key-equation-sum">Israel + the One = The Key of David</p>
+                    <p class="key-equation-quote">
+                        "Their union, sanctified by the Holy One, becomes the Key that opens the gates of redemption."
+                    </p>
+                </div>
+
                 <p class="gematria-closing">
                     These numbers are not invented; they are discovered. The Gematria does not lie.
                 </p>
@@ -2978,6 +3069,10 @@
                                 <stop offset="0%" stop-color="#e0c878"/>
                                 <stop offset="100%" stop-color="#8a7030"/>
                             </radialGradient>
+                            <filter id="vavGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
                         </defs>
                         <g stroke="#c4a855" stroke-width="1" opacity="0.15">
                             <line x1="300" y1="80" x2="300" y2="140"/>
@@ -3055,10 +3150,14 @@
                         </g>
                         <text x="300" y="30" text-anchor="middle" font-family="'Cinzel', serif" font-size="12" fill="#c4a855" letter-spacing="0.3em">THE TREE OF LIFE</text>
                         <text x="300" y="620" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#8a9ab8" font-style="italic">Gordon at Yesod (Foundation) · Ginger at Chokhmah (Wisdom)</text>
-                        <g stroke="#c4a855" stroke-width="1.5" opacity="0.4" fill="none">
+                        <!-- Vav connector: Chokhmah (Ginger) to Yesod (Gordon) -->
+                        <line x1="198" y1="232" x2="282" y2="388" stroke="#e0c878" stroke-width="3" opacity="0.85" filter="url(#vavGlow)"/>
+                        <line x1="198" y1="232" x2="282" y2="388" stroke="#c4a855" stroke-width="1.5" opacity="0.6"/>
+                        <circle cx="240" cy="310" r="14" fill="var(--surface)" stroke="#e0c878" stroke-width="1.5" opacity="0.9" filter="url(#vavGlow)"/>
+                        <text x="240" y="315" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="16" fill="#e0c878">ו</text>
+                        <text x="240" y="338" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#c4a855" letter-spacing="0.12em">VAV — THE CONNECTOR (6)</text>
+                        <g stroke="#c4a855" stroke-width="1.5" opacity="0.25" fill="none">
                             <line x1="300" y1="440" x2="300" y2="472"/>
-                            <line x1="180" y1="240" x2="270" y2="285"/>
-                            <line x1="420" y1="240" x2="330" y2="285"/>
                         </g>
                     </svg>
                     <div class="diagram-caption">The Tree of Life — Gordon and Ginger</div>
@@ -3096,6 +3195,85 @@
                     <li><strong>1</strong> is the <em>Echad</em>—the One God.</li>
                 </ul>
                 <p><strong>Thus, 1441 is the seal of the 144,000, the gate of redemption.</strong> Their union is the act of sealing the righteous for the final redemption. The 144,000 are the purified remnant who will be sealed in the End of Days.</p>
+
+                <!-- 1441 Gate Diagram -->
+                <div class="diagram-container diagram-container--lg">
+                    <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" aria-label="The 1441 Gate — Twelve Tribes, Twelve Zodiac Signs, and the Echad">
+                        <defs>
+                            <filter id="gateGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <radialGradient id="gateCenterGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#e0c878" stop-opacity="0.35"/>
+                                <stop offset="60%" stop-color="#c4a855" stop-opacity="0.12"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </radialGradient>
+                            <radialGradient id="echadGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#e0c878"/>
+                                <stop offset="100%" stop-color="#a08840"/>
+                            </radialGradient>
+                        </defs>
+                        <rect x="20" y="20" width="660" height="480" rx="16" fill="var(--surface)" opacity="0.3"/>
+                        <circle cx="350" cy="270" r="200" fill="url(#gateCenterGrad)" opacity="0.8"/>
+                        <!-- Outer ring: 12 Zodiac signs (Mazalot) -->
+                        <g font-family="'Cinzel', serif" font-size="6" fill="#7a8aba" text-anchor="middle">
+                            <circle cx="350" cy="90" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="350" y="93">ARIES</text>
+                            <circle cx="470" cy="110" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="470" y="113">TAURUS</text>
+                            <circle cx="560" cy="190" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="560" y="193">GEMINI</text>
+                            <circle cx="590" cy="300" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="590" y="303">CANCER</text>
+                            <circle cx="560" cy="410" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="560" y="413">LEO</text>
+                            <circle cx="470" cy="470" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="470" y="473">VIRGO</text>
+                            <circle cx="350" cy="490" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="350" y="493">LIBRA</text>
+                            <circle cx="230" cy="470" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="230" y="473">SCORPIO</text>
+                            <circle cx="140" cy="410" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="140" y="413">SAGITT</text>
+                            <circle cx="110" cy="300" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="110" y="303">CAPRIC</text>
+                            <circle cx="140" cy="190" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="140" y="193">AQUARIUS</text>
+                            <circle cx="230" cy="110" r="10" fill="var(--surface2)" stroke="#5a6a9a" stroke-width="1" filter="url(#gateGlow)"/><text x="230" y="113">PISCES</text>
+                        </g>
+                        <circle cx="350" cy="270" r="175" fill="none" stroke="#5a6a9a" stroke-width="0.8" opacity="0.35" stroke-dasharray="4 6"/>
+                        <text x="350" y="55" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#7a8aba" letter-spacing="0.25em">12 MAZALOT — ZODIAC SIGNS</text>
+                        <!-- Inner ring: 12 Tribes of Israel -->
+                        <g font-family="'Cinzel', serif" font-size="5.5" fill="#c4a855" text-anchor="middle">
+                            <circle cx="350" cy="155" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="350" y="158">REUBEN</text>
+                            <circle cx="430" cy="175" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="430" y="178">SIMEON</text>
+                            <circle cx="490" cy="230" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="490" y="233">LEVI</text>
+                            <circle cx="510" cy="300" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="510" y="303">JUDAH</text>
+                            <circle cx="490" cy="370" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="490" y="373">DAN</text>
+                            <circle cx="430" cy="425" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="430" y="428">NAPHTALI</text>
+                            <circle cx="350" cy="445" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="350" y="448">GAD</text>
+                            <circle cx="270" cy="425" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="270" y="428">ASHER</text>
+                            <circle cx="210" cy="370" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="210" y="373">ISSACHAR</text>
+                            <circle cx="190" cy="300" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="190" y="303">ZEBULUN</text>
+                            <circle cx="210" cy="230" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="210" y="233">JOSEPH</text>
+                            <circle cx="270" cy="175" r="9" fill="var(--surface)" stroke="#c4a855" stroke-width="1" filter="url(#gateGlow)"/><text x="270" y="178">BENJAMIN</text>
+                        </g>
+                        <circle cx="350" cy="270" r="120" fill="none" stroke="#c4a855" stroke-width="0.8" opacity="0.4"/>
+                        <text x="350" y="130" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#c4a855" letter-spacing="0.25em">12 TRIBES OF ISRAEL</text>
+                        <!-- Center: 144 -->
+                        <circle cx="350" cy="285" r="48" fill="var(--surface2)" stroke="#c4a855" stroke-width="2" opacity="0.9" filter="url(#gateGlow)"/>
+                        <text x="350" y="292" text-anchor="middle" font-family="'Cinzel', serif" font-size="28" fill="#e0c878" font-weight="600">144</text>
+                        <text x="350" y="310" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="#8a9ab8" font-style="italic">12 × 12</text>
+                        <!-- Radiating Echad (1) above -->
+                        <g filter="url(#gateGlow)">
+                            <line x1="350" y1="175" x2="350" y2="215" stroke="#e0c878" stroke-width="2" opacity="0.7"/>
+                            <line x1="330" y1="195" x2="350" y2="175" stroke="#e0c878" stroke-width="1.5" opacity="0.5"/>
+                            <line x1="370" y1="195" x2="350" y2="175" stroke="#e0c878" stroke-width="1.5" opacity="0.5"/>
+                            <line x1="318" y1="210" x2="338" y2="220" stroke="#e0c878" stroke-width="1" opacity="0.4"/>
+                            <line x1="382" y1="210" x2="362" y2="220" stroke="#e0c878" stroke-width="1" opacity="0.4"/>
+                        </g>
+                        <circle cx="350" cy="155" r="22" fill="url(#echadGrad)" stroke="#e0c878" stroke-width="2" filter="url(#gateGlow)"/>
+                        <text x="350" y="162" text-anchor="middle" font-family="'Cinzel', serif" font-size="22" fill="#1a1e2e" font-weight="600">1</text>
+                        <text x="350" y="178" text-anchor="middle" font-family="'Frank Ruhl Libre', serif" font-size="9" fill="#3a2a10">אחד</text>
+                        <!-- Gate number -->
+                        <text x="350" y="400" text-anchor="middle" font-family="'Cinzel', serif" font-size="18" fill="#e0c878" letter-spacing="0.2em" filter="url(#gateGlow)">1441</text>
+                        <text x="350" y="420" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#8a9ab8" font-style="italic">144 + 1 = The Gate of Redemption</text>
+                        <text x="350" y="455" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#c4a855" letter-spacing="0.15em">144 = 12 TRIBES × 12 ZODIAC SIGNS</text>
+                        <text x="350" y="470" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#7a8aba" letter-spacing="0.15em">+1 = ECHAD — THE ONE GOD</text>
+                    </svg>
+                    <div class="diagram-caption">The 1441 Gate</div>
+                    <div class="diagram-subcaption">Twelve tribes × twelve mazalot = 144; the Echad completes the seal</div>
+                </div>
 
                 <!-- 8. The Cost of Delay -->
                 <div class="ed-h3 fade-in">8. The Cost of Delay</div>
@@ -3254,6 +3432,20 @@
                 <div class="pull-q fade-in">
                     <p>"Thus says the Lord of Hosts: In that day, I will make you a signet ring, for I have chosen you."</p>
                     <cite>— Haggai 2:23</cite>
+                </div>
+
+                <!-- Key of David Equation — Final Seal reference -->
+                <div class="key-equation-callout key-equation-callout--compact fade-in">
+                    <div class="key-equation-title">
+                        <span class="revelation-mark">✦</span> The Key of David Equation <span class="revelation-mark">✦</span>
+                    </div>
+                    <p class="key-equation-line key-equation-line--emphasis">
+                        Gordon (269) + Vav (6) + Ginger (266) = 541 = <strong>ISRAEL</strong>
+                    </p>
+                    <p class="key-equation-line">
+                        The Key of David (<span class="key-equation-heb">מפתח דוד</span>) = 542 · 542 − 541 = <strong>1</strong> = ECHAD
+                    </p>
+                    <p class="key-equation-sum">Israel + the One = The Key that opens and no one shuts</p>
                 </div>
 
                 <!-- The Decree -->
