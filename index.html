@@ -346,6 +346,28 @@
             transition: all .3s var(--ease-out-expo);
             border-left: 3px solid transparent;
         }
+        .nav-item > span:last-child {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            gap: .5rem;
+        }
+        .nav-item-count {
+            font-family: 'Crimson Pro', serif;
+            font-style: normal;
+            font-size: .72rem;
+            letter-spacing: .02em;
+            color: var(--stone-light);
+            opacity: .7;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .nav-item.active .nav-item-count,
+        .nav-item:hover .nav-item-count {
+            color: var(--gold-light);
+            opacity: .9;
+        }
         .nav-item:hover {
             color: var(--ink);
             background: var(--gold-glow);
@@ -436,7 +458,7 @@
         .back-to-top {
             position: fixed;
             bottom: 5.75rem;
-            right: 1.5rem;
+            right: 2rem;
             z-index: 1000;
             width: 44px;
             height: 44px;
@@ -1005,6 +1027,27 @@
         .diagram-svg rect,
         .diagram-svg text {
             vector-effect: non-scaling-stroke;
+        }
+        /* Interactive node hover states — invites contemplative dwelling on a single term */
+        .diagram-svg .node-group {
+            cursor: pointer;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+        .diagram-svg .node-group circle,
+        .diagram-svg .node-group rect {
+            transition: stroke-width 0.4s var(--ease-out-expo), filter 0.4s var(--ease-out-expo), opacity 0.4s var(--ease-out-expo);
+        }
+        .diagram-svg .node-group text {
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+        .diagram-svg .node-group:hover circle,
+        .diagram-svg .node-group:hover rect {
+            stroke-width: 2.6;
+            opacity: 1;
+            filter: drop-shadow(0 0 6px currentColor);
+        }
+        .diagram-svg:has(.node-group:hover) .node-group:not(:hover) {
+            opacity: 0.45;
         }
         .diagram-caption {
             font-family: 'Crimson Pro', serif;
@@ -1621,7 +1664,7 @@
                 min-width: 180px;
             }
             .back-to-top {
-                right: 1.5rem;
+                right: 2rem;
                 bottom: 5rem;
             }
             .footer-links {
@@ -1677,7 +1720,7 @@
                 width: 40px;
                 height: 40px;
                 bottom: 4.5rem;
-                right: 1rem;
+                right: 1.0625rem;
             }
             .scripture-panel {
                 padding: 20px;
@@ -1783,7 +1826,7 @@
 
     <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- NAVIGATION COMPASS — UPDATED WITH FIVE GNOSTICISM PAGES -->
+    <!-- NAVIGATION COMPASS -->
     <div class="nav-compass">
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -1796,21 +1839,13 @@
             <a href="#cartographies" class="nav-item" data-section="cartographies"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Six Cartographies</span></a>
             <a href="#pullquote" class="nav-item" data-section="pullquote"><span class="nav-item-icon"><svg class="icon-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 4-2 6-4 7zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 4-2 6-4 7z"/></svg></span><span>Contemplation</span></a>
             <div class="nav-divider"></div>
-            <div class="nav-section-title">Cartographies</div>
-            <a href="advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta · 5 Pages</span></a>
-            <a href="messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth · 7 Pages</span></a>
-            <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Kabbalah · 7 Pages</span></a>
-            <div class="nav-divider"></div>
-            <div class="nav-section-title">Gnosticism · 5 Pages</div>
-            <a href="gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>I · The Source</span></a>
-            <a href="gnosticism/gnosticism-the_demiurge.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-squared-dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>II · The Demiurge</span></a>
-            <a href="gnosticism/gnosticism-the_divine_spark.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>III · The Divine Spark</span></a>
-            <a href="gnosticism/gnosticism_the_bridal_chamber.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span>IV · The Bridal Chamber</span></a>
-            <a href="gnosticism/gnosticism-syzygy-nymphon.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>V · Syzygy Theology</span></a>
-            <div class="nav-divider"></div>
-            <div class="nav-section-title">Other Cartographies</div>
-            <a href="taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Taoism · 4 Pages</span></a>
-            <a href="quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Quantum Mechanics · 4 Pages</span></a>
+            <div class="nav-section-title">The Six Cartographies</div>
+            <a href="advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>I · Advaita Vedanta <em class="nav-item-count">5 Pages</em></span></a>
+            <a href="messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>II · Jesus of Nazareth <em class="nav-item-count">7 Pages</em></span></a>
+            <a href="kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>III · Kabbalah <em class="nav-item-count">7 Pages</em></span></a>
+            <a href="gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>IV · Gnosticism <em class="nav-item-count">5 Pages</em></span></a>
+            <a href="taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>V · Taoism</span></a>
+            <a href="quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>VI · Quantum Mechanics</span></a>
         </div>
     </div>
 
@@ -1892,7 +1927,7 @@
 
                 <p class="fade-in stagger-2">Nisargadatta Maharaj reminds us: <em>&ldquo;Give up all questions except one: &lsquo;Who am I?&rsquo; After all, the only fact you are sure of is that you are. The &lsquo;I am&rsquo; is certain. The &lsquo;I am this&rsquo; is not.&rdquo;</em></p>
 
-                <p class="fade-in stagger-3">And from the quantum realm, physicist John Wheeler—who coined the term &ldquo;black hole&rdquo; and developed the &ldquo;participatory universe&rdquo; hypothesis—observed: <em>&ldquo;No phenomenon is a real phenomenon until it is an observed phenomenon.&rdquo;</em> Schrödinger, steeped in Vedantic texts, wrote that the apparent multiplicity of selves is &ldquo;only an illusion.&rdquo; David Bohm, after dialogues with Jiddu Krishnamurti, proposed the &ldquo;implicate order&rdquo;—a holographic universe where every part contains the whole, echoing the ancient wisdom of the <em>vākyavṛtti</em>.</p>
+                <p class="fade-in stagger-3">And from the quantum realm, physicist John Wheeler—who coined the term &ldquo;black hole&rdquo; and developed the &ldquo;participatory universe&rdquo; hypothesis—observed: <em>&ldquo;No phenomenon is a real phenomenon until it is an observed phenomenon.&rdquo;</em> Schrödinger, steeped in Vedantic texts, wrote that the apparent multiplicity of selves is &ldquo;only an illusion.&rdquo; David Bohm, after dialogues with Jiddu Krishnamurti, proposed the &ldquo;implicate order&rdquo;—a holographic universe where every part enfolds the whole, a structure long anticipated by the Vedantic teaching that Brahman is undivided (<em>akhaṇḍa</em>) and wholly present in every part rather than assembled from them, as the Bhagavad Gītā counsels: <em>yaḥ sarvatra samaṁ paśyati</em>, &ldquo;who sees the same reality everywhere.&rdquo;</p>
 
                 <div class="scripture-panels scripture-panels-spaced fade-in stagger-4">
                     <div class="scripture-panel">
@@ -1964,30 +1999,35 @@
                     <ellipse cx="300" cy="280" rx="100" ry="30" fill="url(#violetGrad1)" opacity="0.2"/>
 
                     <!-- BRAHMAN -->
-                    <rect x="160" y="25" width="280" height="52" rx="26" fill="url(#goldGradLight1)" stroke="url(#goldGrad1)" stroke-width="1.8" filter="url(#glow1)"/>
-                    <text x="300" y="55" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="16" font-weight="500" letter-spacing="0.15em">BRAHMAN</text>
-                    <text x="300" y="78" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="9" letter-spacing="0.08em">The Absolute · Pure Consciousness</text>
+                    <g class="node-group" style="color:#d4af37" tabindex="0" role="img" aria-label="Brahman: the Absolute, pure consciousness">
+                        <rect x="160" y="25" width="280" height="52" rx="26" fill="url(#goldGradLight1)" stroke="url(#goldGrad1)" stroke-width="1.8" filter="url(#glow1)"/>
+                        <text x="300" y="52" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="16" font-weight="500" letter-spacing="0.15em">BRAHMAN</text>
+                        <text x="300" y="70" text-anchor="middle" fill="var(--ink2)" font-family="'Crimson Pro',serif" font-size="9" letter-spacing="0.06em" opacity="0.95">The Absolute · Pure Consciousness</text>
+                    </g>
 
                     <!-- Connection line Brahman → Ātman -->
                     <line x1="300" y1="90" x2="300" y2="130" stroke="#d4af37" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.5"/>
-                    <text x="312" y="113" fill="#b8960c" font-family="'Crimson Pro',serif" font-size="10" font-style="italic" opacity="0.7">=</text>
 
                     <!-- MĀYĀ label along the line -->
-                    <rect x="230" y="105" width="80" height="18" rx="9" fill="var(--bg)" stroke="#7c8ea0" stroke-width="0.8" opacity="0.7"/>
-                    <text x="270" y="118" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.12em">MĀYĀ</text>
+                    <rect x="260" y="105" width="80" height="18" rx="9" fill="var(--bg)" stroke="#7c8ea0" stroke-width="0.8" opacity="0.7"/>
+                    <text x="300" y="118" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.12em">MĀYĀ</text>
 
                     <!-- ĀTMAN -->
-                    <rect x="175" y="145" width="250" height="48" rx="24" fill="url(#goldGradLight1)" stroke="url(#goldGrad1)" stroke-width="1.8" filter="url(#glow1)"/>
-                    <text x="300" y="172" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="16" font-weight="500" letter-spacing="0.15em">ĀTMAN</text>
-                    <text x="300" y="193" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="9" letter-spacing="0.08em">The Individual Self</text>
+                    <g class="node-group" style="color:#d4af37" tabindex="0" role="img" aria-label="Ātman: the individual self">
+                        <rect x="175" y="145" width="250" height="48" rx="24" fill="url(#goldGradLight1)" stroke="url(#goldGrad1)" stroke-width="1.8" filter="url(#glow1)"/>
+                        <text x="300" y="169" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="16" font-weight="500" letter-spacing="0.15em">ĀTMAN</text>
+                        <text x="300" y="187" text-anchor="middle" fill="var(--ink2)" font-family="'Crimson Pro',serif" font-size="9" letter-spacing="0.06em" opacity="0.95">The Individual Self</text>
+                    </g>
 
                     <!-- Connection line Ātman → Jīva -->
                     <line x1="300" y1="205" x2="300" y2="240" stroke="#7c8ea0" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
 
                     <!-- JĪVA -->
-                    <rect x="200" y="252" width="200" height="42" rx="21" fill="url(#violetGrad1)" stroke="#7c8ea0" stroke-width="1.2" opacity="0.7"/>
-                    <text x="300" y="275" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="14" letter-spacing="0.12em">JĪVA</text>
-                    <text x="300" y="293" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="8" letter-spacing="0.05em" opacity="0.7">Body · Mind · Ego</text>
+                    <g class="node-group" style="color:#7c8ea0" tabindex="0" role="img" aria-label="Jīva: body, mind, and ego">
+                        <rect x="200" y="252" width="200" height="42" rx="21" fill="url(#violetGrad1)" stroke="#7c8ea0" stroke-width="1.2" opacity="0.7"/>
+                        <text x="300" y="272" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="14" letter-spacing="0.12em">JĪVA</text>
+                        <text x="300" y="287" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="8" letter-spacing="0.05em" opacity="0.75">Body · Mind · Ego</text>
+                    </g>
 
                     <!-- Side labels: Paramārthika & Vyāvahārika -->
                     <text x="60" y="145" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="9" letter-spacing="0.12em" opacity="0.7">PARAMĀRTHIKA</text>
@@ -2014,7 +2054,7 @@
             <!-- Diagram 2: Six Paths Convergence — UPGRADED -->
             <div class="diagram-container fade-in stagger-3">
                 <div class="diagram-title">II. Six Paths to the Absolute</div>
-                <svg class="diagram-svg" viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg" width="600" height="440">
+                <svg class="diagram-svg" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" width="600" height="480">
                     <defs>
                         <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
@@ -2030,15 +2070,15 @@
                             <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                         </filter>
                     </defs>
-                    <rect width="600" height="440" fill="transparent"/>
-
-                    <!-- Central glow behind Absolute -->
+                    <rect width="600" height="480" fill="transparent"/>
                     <circle cx="300" cy="55" r="80" fill="url(#centerGlow2)"/>
 
                     <!-- THE ABSOLUTE — centered at top -->
-                    <rect x="195" y="18" width="210" height="50" rx="25" fill="url(#centerGlow2)" stroke="url(#goldGrad2)" stroke-width="2" filter="url(#glow2)"/>
-                    <text x="300" y="42" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="13" font-weight="500" letter-spacing="0.12em">THE ABSOLUTE</text>
-                    <text x="300" y="60" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7.5" letter-spacing="0.06em">Brahman · Ein Sof · Tao · Wavefunction</text>
+                    <g class="node-group" style="color:#d4af37" tabindex="0" role="img" aria-label="The Absolute: Brahman, Ein Sof, Tao, Wavefunction">
+                        <rect x="195" y="18" width="210" height="50" rx="25" fill="url(#centerGlow2)" stroke="url(#goldGrad2)" stroke-width="2" filter="url(#glow2)"/>
+                        <text x="300" y="42" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="13" font-weight="500" letter-spacing="0.12em">THE ABSOLUTE</text>
+                        <text x="300" y="60" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7.5" letter-spacing="0.06em">Brahman · Ein Sof · Tao · Wavefunction</text>
+                    </g>
 
                     <!-- Decorative rings around Absolute -->
                     <circle cx="300" cy="55" r="70" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.15"/>
@@ -2046,42 +2086,55 @@
 
                     <!-- Path 1: Advaita Vedanta (left) -->
                     <path d="M 120 365 Q 190 230 270 105" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.7"/>
-                    <circle cx="120" cy="365" r="34" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" filter="url(#glow2)"/>
-                    <text x="120" y="357" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">ADVAITA</text>
-                    <text x="120" y="373" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7" letter-spacing="0.04em">Vedanta</text>
+                    <g class="node-group" style="color:#d4af37" tabindex="0" role="img" aria-label="Advaita Vedanta">
+                        <circle cx="120" cy="365" r="34" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" filter="url(#glow2)"/>
+                        <text x="120" y="357" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">ADVAITA</text>
+                        <text x="120" y="373" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7" letter-spacing="0.04em">Vedanta</text>
+                    </g>
 
                     <!-- Path 2: Messiah (right) -->
                     <path d="M 480 365 Q 410 230 330 105" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.7"/>
-                    <circle cx="480" cy="365" r="34" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" filter="url(#glow2)"/>
-                    <text x="480" y="357" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">MESSIAH</text>
-                    <text x="480" y="373" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7" letter-spacing="0.04em">Gospel · Vedanta</text>
+                    <g class="node-group" style="color:#d4af37" tabindex="0" role="img" aria-label="Jesus of Nazareth: Gospel and Vedanta">
+                        <circle cx="480" cy="365" r="34" fill="none" stroke="#d4af37" stroke-width="1.8" opacity="0.8" filter="url(#glow2)"/>
+                        <text x="480" y="357" text-anchor="middle" fill="#d4af37" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">MESSIAH</text>
+                        <text x="480" y="373" text-anchor="middle" fill="#8a9ab0" font-family="'Crimson Pro',serif" font-size="7" letter-spacing="0.04em">Gospel · Vedanta</text>
+                    </g>
 
                     <!-- Path 3: Kabbalah (left-center) -->
                     <path d="M 180 385 Q 220 240 285 110" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.5"/>
-                    <circle cx="180" cy="385" r="30" fill="none" stroke="#7c8ea0" stroke-width="1.4" opacity="0.6"/>
-                    <text x="180" y="378" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">KABBALAH</text>
-                    <text x="180" y="393" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Tree of Life</text>
+                    <g class="node-group" style="color:#7c8ea0" tabindex="0" role="img" aria-label="Kabbalah: the Tree of Life">
+                        <circle cx="180" cy="385" r="30" fill="none" stroke="#7c8ea0" stroke-width="1.4" opacity="0.6"/>
+                        <text x="180" y="378" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">KABBALAH</text>
+                        <text x="180" y="393" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Tree of Life</text>
+                    </g>
 
                     <!-- Path 4: Taoism (right-center) -->
                     <path d="M 420 385 Q 380 240 315 110" stroke="#7c8ea0" stroke-width="1.5" fill="none" opacity="0.5"/>
-                    <circle cx="420" cy="385" r="30" fill="none" stroke="#7c8ea0" stroke-width="1.4" opacity="0.6"/>
-                    <text x="420" y="378" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">TAOISM</text>
-                    <text x="420" y="393" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">The Unnamed Way</text>
+                    <g class="node-group" style="color:#7c8ea0" tabindex="0" role="img" aria-label="Taoism: the Unnamed Way">
+                        <circle cx="420" cy="385" r="30" fill="none" stroke="#7c8ea0" stroke-width="1.4" opacity="0.6"/>
+                        <text x="420" y="378" text-anchor="middle" fill="#7c8ea0" font-family="'Cinzel',serif" font-size="8" letter-spacing="0.08em">TAOISM</text>
+                        <text x="420" y="393" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">The Unnamed Way</text>
+                    </g>
 
                     <!-- Path 5: Gnosticism (center-left) -->
                     <path d="M 255 400 Q 275 260 295 115" stroke="#b87333" stroke-width="1.5" fill="none" opacity="0.45"/>
-                    <circle cx="255" cy="400" r="30" fill="none" stroke="#b87333" stroke-width="1.4" opacity="0.55"/>
-                    <text x="255" y="393" text-anchor="middle" fill="#b87333" font-family="'Cinzel',serif" font-size="7.5" letter-spacing="0.06em">GNOSTICISM</text>
-                    <text x="255" y="408" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Unknown Father · Syzygy</text>
+                    <g class="node-group" style="color:#b87333" tabindex="0" role="img" aria-label="Gnosticism: the Unknown Father and Syzygy">
+                        <circle cx="255" cy="400" r="34" fill="none" stroke="#b87333" stroke-width="1.4" opacity="0.55"/>
+                        <text x="255" y="392" text-anchor="middle" fill="#b87333" font-family="'Cinzel',serif" font-size="7" letter-spacing="0.03em">GNOSTICISM</text>
+                        <text x="255" y="403" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6" opacity="0.65">Unknown Father</text>
+                        <text x="255" y="412" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6" opacity="0.65">· Syzygy</text>
+                    </g>
 
                     <!-- Path 6: Quantum (center-right) -->
                     <path d="M 345 400 Q 325 260 305 115" stroke="#4a90d9" stroke-width="1.5" fill="none" opacity="0.45"/>
-                    <circle cx="345" cy="400" r="30" fill="none" stroke="#4a90d9" stroke-width="1.4" opacity="0.55"/>
-                    <text x="345" y="393" text-anchor="middle" fill="#4a90d9" font-family="'Cinzel',serif" font-size="7.5" letter-spacing="0.06em">QUANTUM</text>
-                    <text x="345" y="408" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.6">Implicate Order</text>
+                    <g class="node-group" style="color:#4a90d9" tabindex="0" role="img" aria-label="Quantum Mechanics: the Implicate Order">
+                        <circle cx="345" cy="400" r="34" fill="none" stroke="#4a90d9" stroke-width="1.4" opacity="0.55"/>
+                        <text x="345" y="395" text-anchor="middle" fill="#4a90d9" font-family="'Cinzel',serif" font-size="7.5" letter-spacing="0.05em">QUANTUM</text>
+                        <text x="345" y="410" text-anchor="middle" fill="#7c8ea0" font-family="'Crimson Pro',serif" font-size="6.5" opacity="0.65">Implicate Order</text>
+                    </g>
 
                     <!-- Bottom label -->
-                    <text x="300" y="435" text-anchor="middle" fill="#7c8ea0" font-family="'Cormorant Garamond',serif" font-size="9" font-style="italic" opacity="0.5">Different paths, one mountain</text>
+                    <text x="300" y="463" text-anchor="middle" fill="#7c8ea0" font-family="'Cormorant Garamond',serif" font-size="9" font-style="italic" opacity="0.5">Different paths, one mountain</text>
 
                     <!-- Small decorative dots at path origins -->
                     <circle cx="240" cy="88" r="2" fill="#d4af37" opacity="0.3"/>
@@ -2224,7 +2277,7 @@
             <a href="quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">Updated July 15, 2026</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
