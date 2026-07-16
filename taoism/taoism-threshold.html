@@ -605,6 +605,7 @@
             position: relative;
             opacity: 1;
             z-index: 3;
+            border-radius: 50%;
             animation: hero-rise 1.1s .6s forwards, emblem-pulse 5s ease-in-out infinite, ouroboros-breathe 8s ease-in-out infinite;
         }
         .hero-emblem svg {
@@ -614,7 +615,7 @@
             animation: ouroboros-glow 4s ease-in-out infinite, yinYangFloat 5s ease-in-out infinite;
         }
         .hero-emblem .yy-spin {
-            transform-origin: 100px 100px;
+            transform-origin: 50% 50%;
             animation: yinYangSpin 90s linear infinite;
         }
         .hero-emblem .yy-qi {
@@ -1015,9 +1016,9 @@
         .stage-body>p {
             font-family: 'Crimson Pro', serif;
             font-size: 1.05rem;
-            color: var(--stone);
-            line-height: 1.88;
-            margin-bottom: 1.5rem;
+            color: var(--ink2);
+            line-height: 1.9;
+            margin-bottom: 1.65rem;
         }
         .stage-body>p strong {
             color: var(--ink);
@@ -1043,6 +1044,54 @@
             opacity: 0.1;
             max-width: 740px;
             margin: 0 auto;
+        }
+        .stage-body ol {
+            list-style: none;
+            counter-reset: taolist;
+            margin: 0 0 1.75rem;
+            padding: 0;
+        }
+        .stage-body ol>li {
+            counter-increment: taolist;
+            position: relative;
+            padding: 0.1rem 0 0 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--ink2);
+        }
+        .stage-body ol>li::before {
+            content: counter(taolist);
+            position: absolute;
+            left: 0;
+            top: 0.05em;
+            width: 1.9rem;
+            height: 1.9rem;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            opacity: 0.8;
+        }
+        .stage-body ol>li strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        .stage-body ol>li .li-quote {
+            display: block;
+            margin-top: 0.45rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.95em;
+            color: var(--stone-light);
+            opacity: 0.85;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border-strong);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1079,8 +1128,8 @@
            DIAGRAM CARDS
            ═══════════════════════════════════════════════════════════════ */
         .diagram-container {
-            margin: 2.5rem 0;
-            padding: 2rem 2rem 1.75rem;
+            margin: 3rem 0;
+            padding: 2.25rem 2rem 1.75rem;
             background: var(--surface);
             border: 1px solid var(--border-strong);
             border-radius: var(--radius-lg);
@@ -1601,7 +1650,7 @@
             font-family: 'IM Fell English', serif;
             font-style: italic;
             font-size: 1.05rem;
-            color: var(--ink);
+            color: var(--ink2);
             line-height: 1.7;
             text-align: center;
         }
@@ -2019,6 +2068,18 @@
     ═══════════════════════════════════════════════════════════════ -->
     <header class="hero" id="hero">
         <p class="hero-eyemark">I</p>
+        <div class="hero-emblem" aria-hidden="true">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <g class="yy-spin">
+                    <circle cx="50" cy="50" r="49" fill="var(--ink)"/>
+                    <path d="M50,1 A49,49 0 0,1 50,99 A24.5,24.5 0 0,1 50,50 A24.5,24.5 0 0,0 50,1 Z" fill="var(--gold-light)"/>
+                    <circle cx="50" cy="25.5" r="6.5" fill="var(--gold-light)"/>
+                    <circle cx="50" cy="74.5" r="6.5" fill="var(--ink)"/>
+                </g>
+                <circle cx="50" cy="50" r="49" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.45"/>
+                <circle class="yy-qi" cx="50" cy="50" r="48" fill="none" stroke="var(--gold-light)" stroke-width="2.5" opacity="0.2"/>
+            </svg>
+        </div>
         <p class="hero-label">Apophatic Threshold · The Tao Before All Names</p>
         <h1 class="hero-title">The Unnamed Way</h1>
         <p class="hero-epithet">Beyond Being and Non-Being · The Source of Ten Thousand Things</p>
@@ -2092,19 +2153,19 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>T</strong>he Tao Te Ching opens with a declaration that shatters all conceptual grasping. <strong>The Tao that can be spoken is not the eternal Tao.</strong> This is not a puzzle or poetic flourish. It is a precise philosophical instrument — the same apophatic (<em>via negativa</em>) method found in Pseudo-Dionysius' <em>Mystical Theology</em>, in the Upani&#7779;ads' <span class="chinese-term" title="Not this, not this — the method of negation in Advaita">neti-neti</span>, and in <em>The Cloud of Unknowing</em>'s instruction to abandon all images and concepts of God.</p>
+                <p><strong>T</strong>he Tao Te Ching opens with a declaration that shatters all conceptual grasping: <strong>the Tao that can be spoken is not the eternal Tao.</strong> This is no riddle or poetic flourish, but a precise philosophical instrument — the same apophatic (<em>via negativa</em>) method found in Pseudo-Dionysius' <em>Mystical Theology</em>, in the Upani&#7779;ads' <span class="chinese-term" title="Not this, not this — the method of negation in Advaita">neti-neti</span>, and in <em>The Cloud of Unknowing</em>'s instruction to abandon all images and concepts of God.</p>
 
-                <p class="fade-in stagger-1">Lao Tzu does not say the Tao is <em>unknowable</em> in a skeptical sense. He says the Tao is <em>unnameable</em> — beyond language and logic, yet immediately present as the ground of all experience. The first chapter is the <strong>hermeneutic key</strong> to the entire tradition: any attempt to fix the Tao in words or doctrines betrays its living reality.</p>
+                <p class="fade-in stagger-1">Lao Tzu does not call the Tao <em>unknowable</em> in a skeptical sense, but <em>unnameable</em> — beyond language and logic, yet immediately present as the ground of all experience. The first chapter is the <strong>hermeneutic key</strong> to the entire tradition: any attempt to fix the Tao in words or doctrines betrays its living reality.</p>
 
-                <p class="fade-in stagger-2">In this, Lao Tzu anticipates the Christian apophatic tradition by over five centuries. Pseudo-Dionysius (c. 500 CE) writes: &ldquo;We pray to enter the darkness beyond light, and without seeing and without knowing, to see and to know that which is beyond all vision and all knowledge.&rdquo; The <em>Cloud of Unknowing</em> (14th century) instructs the seeker to &ldquo;lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him.&rdquo; The Tao Te Ching's first chapter is the same instruction, delivered in the 6th century BCE: abandon the named, and rest in the nameless.</p>
+                <p class="fade-in stagger-2">Lao Tzu thus anticipates the Christian apophatic tradition by over five centuries. Pseudo-Dionysius (c. 500 CE) writes of praying &ldquo;to enter the darkness beyond light, and without seeing and without knowing, to see and to know that which is beyond all vision and all knowledge.&rdquo; The <em>Cloud of Unknowing</em> (14th century) instructs the seeker to &ldquo;lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him.&rdquo; The Tao Te Ching's first chapter delivers the same instruction nearly two millennia earlier: abandon the named, and rest in the nameless.</p>
 
                 <!-- DIAGRAM 1: The Three-Stage Hierarchy -->
                 <div class="diagram-container fade-in stagger-1">
                     <div class="diagram-title">The Three-Stage Hierarchy of the Tao</div>
-                    <svg class="diagram-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="diagram-svg" viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="taoGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.15"/>
+                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.16"/>
                                 <stop offset="100%" stop-color="var(--gold-deep)" stop-opacity="0.04"/>
                             </linearGradient>
                             <linearGradient id="taoStroke1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -2113,54 +2174,50 @@
                                 <stop offset="100%" stop-color="var(--gold-light)"/>
                             </linearGradient>
                             <linearGradient id="wuGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--jade-light)" stop-opacity="0.12"/>
+                                <stop offset="0%" stop-color="var(--jade-light)" stop-opacity="0.13"/>
                                 <stop offset="100%" stop-color="var(--jade-deep)" stop-opacity="0.04"/>
                             </linearGradient>
                             <linearGradient id="youGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="var(--stone)" stop-opacity="0.10"/>
+                                <stop offset="0%" stop-color="var(--stone-light)" stop-opacity="0.11"/>
                                 <stop offset="100%" stop-color="var(--bg)" stop-opacity="0.03"/>
                             </linearGradient>
-                            <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="2" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
                         </defs>
-                        <rect width="800" height="600" fill="var(--bg, #0a0c0e)" rx="12" opacity="0.95"/>
-                        <!-- Level 3: Tao Itself -->
-                        <ellipse cx="400" cy="60" rx="160" ry="38" fill="url(#taoGrad1)" stroke="url(#taoStroke1)" stroke-width="1.5" opacity="1.0"/>
-                        <text x="400" y="55" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="14" letter-spacing="0.18em">THE TAO ITSELF</text>
-                        <text x="400" y="74" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.85">Beyond Being &amp; Non-Being · The Eternal Unnameable</text>
-                        <line x1="400" y1="100" x2="400" y2="125" stroke="var(--gold)" stroke-width="1.0" opacity="0.6" stroke-dasharray="5,4"/>
-                        <polygon points="400,133 394,123 406,123" fill="var(--gold)" opacity="0.6"/>
-                        <text x="430" y="118" text-anchor="start" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.12em" opacity="0.5">EMANATION</text>
+                        <rect width="800" height="460" fill="var(--bg, #0a0c0e)" rx="12" opacity="0.95"/>
 
-                        <!-- Level 2: Nameless Mystery (Wú) -->
-                        <ellipse cx="400" cy="185" rx="200" ry="45" fill="url(#wuGrad1)" stroke="var(--jade-light)" stroke-width="1.2" opacity="0.9"/>
-                        <text x="400" y="178" text-anchor="middle" fill="var(--jade-light)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.14em">THE NAMELESS MYSTERY · WÚ</text>
-                        <text x="400" y="198" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.8">Non-Being · The Subtle Essence · The Origin of Heaven and Earth</text>
-                        <line x1="400" y1="235" x2="400" y2="260" stroke="var(--jade)" stroke-width="0.9" opacity="0.5" stroke-dasharray="5,4"/>
-                        <polygon points="400,268 394,258 406,258" fill="var(--jade)" opacity="0.5"/>
-                        <text x="430" y="250" text-anchor="start" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.12em" opacity="0.45">MANIFESTATION</text>
+                        <!-- Return arc, drawn first so it sits behind the three levels -->
+                        <path d="M 645 305 Q 705 180 645 55" fill="none" stroke="var(--gold)" stroke-width="1.1" opacity="0.35" stroke-dasharray="6,5"/>
+                        <polygon points="640,63 647,53 653,63" fill="var(--gold)" opacity="0.4"/>
+                        <text x="722" y="176" text-anchor="middle" fill="var(--stone-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.16em" opacity="0.6" transform="rotate(-14, 722, 176)">RETURN</text>
+                        <text x="722" y="191" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5" transform="rotate(-14, 722, 191)">via wú wéi</text>
 
-                        <!-- Level 1: Named World (Yǒu) -->
-                        <ellipse cx="400" cy="320" rx="240" ry="50" fill="url(#youGrad1)" stroke="var(--stone)" stroke-width="1.0" opacity="0.8"/>
-                        <text x="400" y="312" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.12em">THE NAMED WORLD · YǑU</text>
-                        <text x="400" y="333" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.75">Being · The Ten Thousand Things · The Mother of All Manifestation</text>
+                        <!-- Level 3: The Tao Itself -->
+                        <ellipse cx="380" cy="58" rx="155" ry="36" fill="url(#taoGrad1)" stroke="url(#taoStroke1)" stroke-width="1.5"/>
+                        <text x="380" y="53" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="14" letter-spacing="0.17em">THE TAO ITSELF</text>
+                        <text x="380" y="72" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.85">Beyond Being &amp; Non-Being · The Eternal Unnameable</text>
 
-                        <!-- Side annotation: Return arrow -->
-                        <path d="M 660 320 Q 720 200 660 60" fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.4" stroke-dasharray="6,5"/>
-                        <polygon points="655,68 662,58 668,68" fill="var(--gold)" opacity="0.4"/>
-                        <text x="740" y="190" text-anchor="middle" fill="var(--stone-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.18em" opacity="0.6" transform="rotate(-16, 740, 190)">RETURN</text>
-                        <text x="740" y="205" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5" transform="rotate(-16, 740, 205)">via Wú Wéi</text>
+                        <line x1="380" y1="94" x2="380" y2="122" stroke="var(--gold)" stroke-width="1" opacity="0.55" stroke-dasharray="5,4"/>
+                        <polygon points="380,130 374,120 386,120" fill="var(--gold)" opacity="0.55"/>
+                        <text x="404" y="112" text-anchor="start" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.5">EMANATION</text>
 
-                        <!-- Bottom annotation -->
-                        <text x="400" y="430" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">&ldquo;These two are the same.&rdquo;</text>
-                        <text x="400" y="450" text-anchor="middle" fill="var(--gold-deep)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.2em" opacity="0.5">TAO TE CHING · CHAPTER 1</text>
+                        <!-- Level 2: The Nameless Mystery (Wú) -->
+                        <ellipse cx="380" cy="185" rx="195" ry="44" fill="url(#wuGrad1)" stroke="var(--jade-light)" stroke-width="1.2"/>
+                        <text x="380" y="178" text-anchor="middle" fill="var(--jade-light)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.13em">THE NAMELESS MYSTERY · WÚ</text>
+                        <text x="380" y="198" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.82">Non-Being · The Subtle Essence · Origin of Heaven and Earth</text>
 
-                        <!-- Small note: Two facets, not stages -->
-                        <ellipse cx="400" cy="530" rx="300" ry="45" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.15" stroke-dasharray="3,6"/>
-                        <text x="400" y="525" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.15em" opacity="0.6">WÚ AND YǑU ARE TWO FACETS OF THE SAME REALITY</text>
-                        <text x="400" y="542" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.5">&ldquo;Darkness within darkness — the gateway to all understanding.&rdquo;</text>
+                        <line x1="380" y1="229" x2="380" y2="257" stroke="var(--jade)" stroke-width="0.9" opacity="0.5" stroke-dasharray="5,4"/>
+                        <polygon points="380,265 374,255 386,255" fill="var(--jade)" opacity="0.5"/>
+                        <text x="404" y="247" text-anchor="start" fill="var(--stone)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.45">MANIFESTATION</text>
+
+                        <!-- Level 1: The Named World (Yǒu) -->
+                        <ellipse cx="380" cy="317" rx="235" ry="49" fill="url(#youGrad1)" stroke="var(--stone-light)" stroke-width="1"/>
+                        <text x="380" y="309" text-anchor="middle" fill="var(--stone-light)" font-family="Cinzel, serif" font-size="13" letter-spacing="0.11em">THE NAMED WORLD · YǑU</text>
+                        <text x="380" y="330" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.78">Being · The Ten Thousand Things · Mother of All Manifestation</text>
+
+                        <!-- Base note -->
+                        <line x1="180" y1="392" x2="580" y2="392" stroke="var(--gold)" stroke-width="0.5" opacity="0.18"/>
+                        <text x="380" y="416" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.14em" opacity="0.65">WÚ AND YǑU ARE TWO FACETS OF ONE REALITY</text>
+                        <text x="380" y="435" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9.5" font-style="italic" opacity="0.6">&ldquo;These two are the same — darkness within darkness, the gateway to all understanding.&rdquo;</text>
+                        <text x="380" y="452" text-anchor="middle" fill="var(--gold-deep)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.18em" opacity="0.5">TAO TE CHING · CHAPTER 1</text>
                     </svg>
                     <p class="diagram-caption">The Tao descends from the unnameable source through Wú (Non-Being) into Yǒu (Being) — yet these are two facets of the same reality, not separate stages. The path of return is the movement of wú wéi.</p>
                 </div>
@@ -2231,12 +2288,12 @@
 
                 <!-- WHAT THE TAO IS NOT — REFORMATTED as ordered list with bold headers -->
                 <ol class="fade-in stagger-1">
-                    <li class="stagger-1"><strong>A deity or divine being</strong> (&ldquo;It is older than God&rdquo;)</li>
-                    <li class="stagger-1"><strong>A state of consciousness</strong> (consciousness is one of the &ldquo;ten thousand things&rdquo; that arise from it)</li>
-                    <li class="stagger-2"><strong>The witness or observer</strong> (the witness is still a mode of perception)</li>
-                    <li class="stagger-2"><strong>An experience</strong> (all experiences are transient)</li>
-                    <li class="stagger-3"><strong>A void or emptiness</strong> (&ldquo;empty yet infinitely capable; the more you use it, the more it produces&rdquo;)</li>
-                    <li class="stagger-3"><strong>Something to be attained</strong> (&ldquo;always present,&rdquo; &ldquo;hidden but always present&rdquo;)</li>
+                    <li class="stagger-1"><strong>A deity or divine being</strong><span class="li-quote">&ldquo;It is older than God.&rdquo;</span></li>
+                    <li class="stagger-1"><strong>A state of consciousness</strong><span class="li-quote">Consciousness is one of the &ldquo;ten thousand things&rdquo; that arise from it.</span></li>
+                    <li class="stagger-2"><strong>The witness or observer</strong><span class="li-quote">The witness is still a mode of perception.</span></li>
+                    <li class="stagger-2"><strong>An experience</strong><span class="li-quote">All experiences are transient.</span></li>
+                    <li class="stagger-3"><strong>A void or emptiness</strong><span class="li-quote">&ldquo;Empty yet infinitely capable; the more you use it, the more it produces.&rdquo;</span></li>
+                    <li class="stagger-3"><strong>Something to be attained</strong><span class="li-quote">&ldquo;Always present,&rdquo; &ldquo;hidden but always present.&rdquo;</span></li>
                 </ol>
 
                 <div class="scripture-panels fade-in stagger-2">
