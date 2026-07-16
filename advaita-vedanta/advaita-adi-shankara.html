@@ -1030,7 +1030,7 @@
         .ed-section-intro {
             font-family: 'Crimson Pro', serif;
             font-size: 1.02rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.72;
             max-width: 580px;
             margin-bottom: 2.5rem;
@@ -1322,7 +1322,7 @@
         .stage-body>p {
             font-family: 'Crimson Pro', serif;
             font-size: 1.05rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.88;
             margin-bottom: 1.5rem;
         }
@@ -1961,7 +1961,7 @@
         .diagram-caption {
             font-family: 'Crimson Pro', serif;
             font-size: 0.85rem;
-            color: var(--stone);
+            color: var(--ink2);
             margin-top: 0.75rem;
             font-style: italic;
             text-align: center;
@@ -2012,7 +2012,7 @@
         }
         .pramana-desc {
             font-size: 0.92rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.6;
         }
         .pramana-item.shabda-highlight {
@@ -2123,7 +2123,7 @@
         .sacred-card-translation {
             font-family: 'Crimson Pro', serif;
             font-size: 1rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.7;
             margin-bottom: 1rem;
         }
@@ -2188,7 +2188,7 @@
         }
         .works-desc {
             font-size: 0.92rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.6;
             margin-top: 0.3rem;
         }
@@ -2252,7 +2252,7 @@
         .lin-entry p {
             font-family: 'Crimson Pro', serif;
             font-size: 1rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.75;
             max-width: 580px;
         }
@@ -2325,7 +2325,7 @@
         .matha-card .desc {
             font-family: 'Crimson Pro', serif;
             font-size: 0.85rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.6;
             margin-top: 0.25rem;
         }
@@ -2377,7 +2377,7 @@
         .comp-table td {
             padding: 1rem 1.25rem;
             border-bottom: 1px solid var(--border-subtle);
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.65;
             vertical-align: top;
         }
@@ -2450,7 +2450,7 @@
         .resonance-box p {
             font-family: 'Crimson Pro', serif;
             font-size: 0.98rem;
-            color: var(--stone);
+            color: var(--ink2);
             line-height: 1.8;
             margin: 0;
         }
@@ -3002,6 +3002,249 @@
                 transform: none !important;
             }
         }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PRACTICE SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .practice-section {
+            padding: 80px 32px 100px;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+        .practice-steps {
+            margin-top: 3rem;
+        }
+        .prac-step {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 2rem;
+            padding: 2.25rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            align-items: start;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .prac-step:last-child {
+            border-bottom: none;
+        }
+        .prac-step:hover {
+            padding-left: 0.5rem;
+        }
+        .prac-n {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            opacity: 0.18;
+            line-height: 1;
+            font-style: italic;
+            text-align: right;
+            padding-top: 0.1rem;
+            transition: opacity 0.3s ease;
+        }
+        .prac-step:hover .prac-n {
+            opacity: 0.4;
+        }
+        .prac-content h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.22rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .prac-content h5 .deva-label {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.85rem;
+            color: var(--stone-light);
+            font-weight: 300;
+            opacity: 0.6;
+        }
+        .prac-content .prac-quote {
+            font-family: 'IM Fell English', serif;
+            font-size: 1.02rem;
+            font-style: italic;
+            color: var(--ink2);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+            border-left: 2px solid var(--gold);
+            background: rgba(181, 130, 42, 0.02);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 0.75rem 1.25rem;
+        }
+        [data-theme="dark"] .prac-content .prac-quote {
+            background: rgba(212, 175, 55, 0.02);
+        }
+        .prac-content .prac-quote strong {
+            color: var(--gold);
+            font-weight: 400;
+        }
+        .prac-content .prac-src {
+            font-family: 'Cinzel', serif;
+            font-size: 0.52rem;
+            letter-spacing: 0.2em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        .prac-content .prac-note {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.95rem;
+            color: var(--ink2);
+            line-height: 1.75;
+            margin-top: 0.75rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           GLOSSARY
+           ═══════════════════════════════════════════════════════════════ */
+        .gloss-search-wrap {
+            position: relative;
+            max-width: 340px;
+            margin: 2.5rem auto 2.5rem;
+        }
+        .gloss-search {
+            width: 100%;
+            padding: 0.75rem 2.75rem 0.75rem 2.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border-medium);
+            border-radius: 100px;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1rem;
+            color: var(--ink);
+            outline: none;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+        .gloss-search:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .gloss-search-ico {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--stone);
+            font-size: 0.88rem;
+            pointer-events: none;
+        }
+        .gloss-clear {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--stone);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.78rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .gloss-clear.vis {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .gloss-clear:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .gloss-no-results {
+            text-align: center;
+            color: var(--stone);
+            font-style: italic;
+            padding: 2rem;
+            display: none;
+        }
+        .gloss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1px;
+            background: var(--border-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+        .gloss-entry {
+            background: var(--surface);
+            padding: 1.75rem 1.5rem;
+            transition: background 0.3s;
+            cursor: default;
+        }
+        .gloss-entry:hover {
+            background: var(--surface2);
+        }
+        .gloss-term {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.3rem;
+        }
+        .gloss-term-deva {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 0.95rem;
+            color: var(--stone-light);
+            opacity: 0.72;
+        }
+        .gloss-cat {
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.28em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+        .gloss-def {
+            font-size: 0.88rem;
+            color: var(--ink2);
+            line-height: 1.65;
+        }
+        @media (max-width: 768px) {
+            .prac-step {
+                grid-template-columns: 44px 1fr;
+                gap: 1.25rem;
+            }
+            .prac-n {
+                font-size: 2.5rem;
+            }
+            .gloss-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .prac-step {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                padding: 1.5rem 0;
+            }
+            .prac-n {
+                text-align: left;
+                font-size: 2rem;
+                opacity: 0.3;
+            }
+            .prac-content .prac-quote {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+        .continue-link { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; transition: all 0.3s ease; }
+        .continue-link:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
     </style>
 </head>
 <body>
@@ -3022,7 +3265,7 @@
             <a href="#nirguna-saguna" class="nav-item" data-section="nirguna-saguna"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Nirguna &amp; Saguna</span></a>
             <a href="#mahavakyas" class="nav-item" data-section="mahavakyas"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span><span>Four Mahavakyas</span></a>
             <a href="#lineage" class="nav-item" data-section="lineage"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg></span><span>Lineage · Ashtavakra</span></a>
-            <a href="#practice" class="nav-item" data-section="practice"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Sadhana Chatushtaya</span></a>
+            <a href="#sadhana-chatushtaya" class="nav-item" data-section="sadhana-chatushtaya"><span class="nav-item-icon"><svg class="icon-om" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12"></path><path d="M8 12h8"></path><path d="M9 9l6 6"></path><path d="M15 9l-6 6"></path></svg></span><span>Sadhana Chatushtaya</span></a>
             <a href="#jnana-yoga" class="nav-item" data-section="jnana-yoga"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span>Path of Jñāna Yoga</span></a>
             <a href="#mathas" class="nav-item" data-section="mathas"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 6h12l-2 12H8z"/></svg></span><span>Four Monasteries</span></a>
             <a href="#works" class="nav-item" data-section="works"><span class="nav-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span><span>Key Works</span></a>
@@ -3137,7 +3380,7 @@
                 <span class="toc-b-title">Lineage — Ashtavakra &amp; the Living Voice</span>
                 <span class="toc-b-skt">अष्टावक्र</span>
             </a>
-            <a href="#practice" class="toc-book-item">
+            <a href="#sadhana-chatushtaya" class="toc-book-item">
                 <span class="toc-b-num">VI</span>
                 <span class="toc-b-title">Practice — Sādhana Chatuṣṭaya</span>
                 <span class="toc-b-skt">साधन चतुष्टय</span>
@@ -3549,7 +3792,7 @@
         <hr class="stage-sep"/>
 
         <!-- SECTION 6: SADHANA CHATUSHTAYA (PREMIUM VISUAL DIAGRAM) -->
-        <section class="stage-section" id="practice">
+        <section class="stage-section" id="sadhana-chatushtaya">
             <div class="stage-wm" aria-hidden="true">साधन</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
@@ -3770,7 +4013,7 @@
                     </div>
                 </div>
 
-                <p style="text-align:center; color:var(--stone); font-style:italic; margin-top:1.5rem; font-size:0.95rem;">These works form the bedrock of classical Advaita Vedanta, studied and revered to this day.</p>
+                <p style="text-align:center; color:var(--ink2); font-style:italic; margin-top:1.5rem; font-size:0.95rem;">These works form the bedrock of classical Advaita Vedanta, studied and revered to this day.</p>
             </div>
         </section>
 
@@ -3834,6 +4077,163 @@
                 <p>Despite their differences, all these traditions share a common goal: the cessation of suffering and the realisation of the highest good. For Shankara, that good is the direct, immediate knowledge of one's identity with Brahman — a knowledge that is not merely intellectual but transformative, liberating the mind from the illusion of separation.</p>
             </div>
         </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+    PRACTICE SECTION — the fourfold qualifications and threefold discipline
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="practice-section" id="practice">
+        <div class="ed-section-label">Sadhana · साधना</div>
+        <h2 class="ed-section-h2">How to Practice</h2>
+        <p class="ed-section-intro">Shankara's path of jñāna yoga is not casual inquiry. It is a structured discipline built on inner readiness and a threefold method of hearing, reflecting, and dwelling upon the teaching.</p>
+
+        <div class="practice-steps">
+            <div class="prac-step">
+                <div class="prac-n">I</div>
+                <div class="prac-content">
+                    <h5>Discriminate the Eternal from the Transient <span class="deva-label">विवेक</span></h5>
+                    <div class="prac-quote">
+                        "The wise discriminate between the eternal and the non-eternal — this discrimination, viveka, is the first requirement of the seeker."
+                        <span class="prac-src">— Adi Shankara, Vivekachudamani</span>
+                    </div>
+                    <p class="prac-note">Before any technique, cultivate the habit of distinguishing what does not change (Brahman) from what constantly changes (body, mind, world). This is not a one-time insight but a discipline practiced continuously.</p>
+                </div>
+            </div>
+
+            <div class="prac-step">
+                <div class="prac-n">II</div>
+                <div class="prac-content">
+                    <h5>Cultivate Dispassion <span class="deva-label">वैराग्य</span></h5>
+                    <div class="prac-quote">
+                        "Vairāgya is the absence of longing for any object of enjoyment, from that seen in this world to that heard of in the scriptures."
+                        <span class="prac-src">— Adi Shankara, Vivekachudamani</span>
+                    </div>
+                    <p class="prac-note">Dispassion is not suppression or aversion. It is the natural loosening of grip on outcomes that follows from clearly seeing their impermanence.</p>
+                </div>
+            </div>
+
+            <div class="prac-step">
+                <div class="prac-n">III</div>
+                <div class="prac-content">
+                    <h5>Develop the Sixfold Treasure <span class="deva-label">षट्सम्पत्ति</span></h5>
+                    <div class="prac-quote">
+                        "Śama, dama, uparati, titikṣā, śraddhā, samādhāna — these six qualities of the disciplined mind are the wealth of the seeker."
+                        <span class="prac-src">— Adi Shankara, Tattva Bodha</span>
+                    </div>
+                    <p class="prac-note">Calmness of mind, control of the senses, withdrawal from distraction, endurance, faith in the teaching and teacher, and one-pointed concentration — together these six form the ground on which inquiry can stand steadily.</p>
+                </div>
+            </div>
+
+            <div class="prac-step">
+                <div class="prac-n">IV</div>
+                <div class="prac-content">
+                    <h5>Long for Liberation <span class="deva-label">मुमुक्षुत्व</span></h5>
+                    <div class="prac-quote">
+                        "The intense desire for liberation, mumukṣutva, is the fourth and final qualification — without it, the other three remain inert."
+                        <span class="prac-src">— Adi Shankara, Vivekachudamani</span>
+                    </div>
+                    <p class="prac-note">This is not casual curiosity about philosophy. It is the seriousness of someone whose house is on fire — an urgency that makes the other qualifications come alive as practice rather than theory.</p>
+                </div>
+            </div>
+
+            <div class="prac-step">
+                <div class="prac-n">V</div>
+                <div class="prac-content">
+                    <h5>Hear the Teaching <span class="deva-label">श्रवण</span></h5>
+                    <div class="prac-quote">
+                        "Śravaṇa is the sustained hearing of the Upanishadic texts from a qualified teacher, with the sole purpose of ascertaining that Brahman is the only reality."
+                        <span class="prac-src">— Adi Shankara, Brahma Sutra Bhashya</span>
+                    </div>
+                    <p class="prac-note">This is the first of the three-step method proper. The seeker studies the mahāvākyas and the Upanishads directly under guidance, rather than relying on secondhand summary or private speculation.</p>
+                </div>
+            </div>
+
+            <div class="prac-step">
+                <div class="prac-n">VI</div>
+                <div class="prac-content">
+                    <h5>Reflect and Dwell <span class="deva-label">मनन · निदिध्यासन</span></h5>
+                    <div class="prac-quote">
+                        "Manana removes doubt through reasoning; nididhyāsana is sustained meditation on the ascertained truth until it becomes one's own direct experience."
+                        <span class="prac-src">— Adi Shankara, Brahma Sutra Bhashya</span>
+                    </div>
+                    <p class="prac-note">Hearing alone rarely dissolves a lifetime of habitual identification with the body-mind. Reflection removes intellectual doubt; sustained dwelling on the truth allows it to move from concept to direct recognition.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-q" style="margin-top:3rem">
+            <p>"Brahman is the only reality; the world is appearance; the individual self is not different from Brahman. This is the whole of the teaching, in one verse."</p>
+            <cite>— Adi Shankara</cite>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+    KEY TERMS GLOSSARY
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="content-section" id="glossary">
+        <div class="ed-section-label">Śabdakośa · शब्दकोश</div>
+        <h2 class="ed-section-h2">Key Terms</h2>
+        <p class="ed-section-intro">Sanskrit and technical terms used throughout Shankara's teaching.</p>
+
+        <div class="gloss-search-wrap">
+            <span class="gloss-search-ico"><svg class="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms…" autocomplete="off" />
+            <button class="gloss-clear" id="glossClear" aria-label="Clear"><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <p class="gloss-no-results" id="glossNoResults">No matching terms found.</p>
+
+        <div class="gloss-grid" id="glossGrid">
+            <div class="gloss-entry" data-terms="brahman absolute reality consciousness ground">
+                <div class="gloss-term">Brahman <span class="gloss-term-deva">ब्रह्मन्</span></div>
+                <span class="gloss-cat">The Absolute</span>
+                <p class="gloss-def">The one, non-dual reality underlying all existence. Attributeless (nirguṇa) in its ultimate nature, though spoken of with attributes (saguṇa) for the sake of devotion and instruction.</p>
+            </div>
+            <div class="gloss-entry" data-terms="maya illusion power appearance superimposition">
+                <div class="gloss-term">Māyā <span class="gloss-term-deva">माया</span></div>
+                <span class="gloss-cat">The Veiling Power</span>
+                <p class="gloss-def">The inexplicable power by which the one Brahman appears as the manifold world. Neither fully real nor fully unreal — it vanishes upon the dawn of right knowledge.</p>
+            </div>
+            <div class="gloss-entry" data-terms="adhyasa superimposition error misidentification">
+                <div class="gloss-term">Adhyāsa <span class="gloss-term-deva">अध्यास</span></div>
+                <span class="gloss-cat">Superimposition</span>
+                <p class="gloss-def">The root error Shankara identifies at the opening of his Brahma Sutra commentary: mistaking one thing for another, as when a rope is mistaken for a snake — here, mistaking the body-mind for the Self.</p>
+            </div>
+            <div class="gloss-entry" data-terms="mithya dependent appearance neither real nor unreal">
+                <div class="gloss-term">Mithyā <span class="gloss-term-deva">मिथ्या</span></div>
+                <span class="gloss-cat">Dependent Reality</span>
+                <p class="gloss-def">The technical status of the world in Advaita: not non-existent like a hare's horn, but not independently real either — real only in dependence upon Brahman, as a wave depends on water.</p>
+            </div>
+            <div class="gloss-entry" data-terms="pramana valid knowledge means of knowing">
+                <div class="gloss-term">Pramāṇa <span class="gloss-term-deva">प्रमाण</span></div>
+                <span class="gloss-cat">Valid Knowledge</span>
+                <p class="gloss-def">A means of valid knowledge. Shankara accepts six: perception, inference, verbal testimony, comparison, postulation, and non-apprehension — with scripture (śabda) as the sole authority for knowledge of Brahman.</p>
+            </div>
+            <div class="gloss-entry" data-terms="nirguna saguna brahman with without attributes">
+                <div class="gloss-term">Nirguṇa / Saguṇa <span class="gloss-term-deva">निर्गुण / सगुण</span></div>
+                <span class="gloss-cat">Two Descriptions</span>
+                <p class="gloss-def">Brahman described without attributes (nirguṇa) — the ultimate, philosophical truth — and Brahman described with attributes as a personal God (saguṇa) — a provisional aid for devotion and worship.</p>
+            </div>
+            <div class="gloss-entry" data-terms="jnana yoga knowledge path discrimination">
+                <div class="gloss-term">Jñāna Yoga <span class="gloss-term-deva">ज्ञान योग</span></div>
+                <span class="gloss-cat">The Path</span>
+                <p class="gloss-def">The path of knowledge: discriminating the real from the unreal until the identity of self and Brahman is directly recognized, not merely believed.</p>
+            </div>
+            <div class="gloss-entry" data-terms="mahavakya great saying tat tvam asi">
+                <div class="gloss-term">Mahāvākya <span class="gloss-term-deva">महावाक्य</span></div>
+                <span class="gloss-cat">Great Sayings</span>
+                <p class="gloss-def">One of the four great Upanishadic statements — such as <em>tat tvam asi</em>, "that thou art" — that directly point to the identity of the individual self and Brahman.</p>
+            </div>
+            <div class="gloss-entry" data-terms="adhikari qualified seeker fitness readiness">
+                <div class="gloss-term">Adhikārī <span class="gloss-term-deva">अधिकारी</span></div>
+                <span class="gloss-cat">The Qualified Seeker</span>
+                <p class="gloss-def">One who possesses the fourfold qualifications — discrimination, dispassion, the sixfold treasure, and longing for liberation — and is therefore fit to receive the teaching of Vedanta from a teacher.</p>
+            </div>
+            <div class="gloss-entry" data-terms="sravana manana nididhyasana hearing reflecting dwelling">
+                <div class="gloss-term">Śravaṇa · Manana · Nididhyāsana <span class="gloss-term-deva">श्रवण मनन निदिध्यासन</span></div>
+                <span class="gloss-cat">The Threefold Method</span>
+                <p class="gloss-def">Hearing the teaching from a qualified teacher, reflecting on it to remove doubt, and dwelling upon it in sustained meditation until it becomes direct, immediate recognition.</p>
+            </div>
+        </div>
+    </section>
 
     </div><!-- .stages-wrap -->
 
@@ -3959,6 +4359,36 @@
             }
             window.addEventListener('scroll', updateActiveNav, { passive: true });
             updateActiveNav();
+
+            /* GLOSSARY SEARCH */
+            const searchInput = document.getElementById('glossSearch');
+            const clearBtn = document.getElementById('glossClear');
+            const glossItems = document.querySelectorAll('#glossGrid .gloss-entry');
+            const noResults = document.getElementById('glossNoResults');
+
+            function norm(s) { return s.toLowerCase().replace(/[āàáâ]/g, 'a').replace(/[īìíî]/g, 'i').replace(/[ūùúû]/g,
+                    'u').replace(/[śṣ]/g, 's').replace(/[ṭ]/g, 't').replace(/[ḍ]/g, 'd').replace(/[ṇ]/g, 'n')
+                .replace(/[ṁṃ]/g, 'm').replace(/[ḥ]/g, 'h').replace(/ñ/g, 'n'); }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const q = norm(searchInput.value.trim());
+                    if (clearBtn) clearBtn.classList.toggle('vis', searchInput.value.length > 0);
+                    let count = 0;
+                    glossItems.forEach(item => {
+                        const text = norm(item.textContent + ' ' + (item.dataset.terms || ''));
+                        const show = !q || text.includes(q);
+                        item.style.display = show ? '' : 'none';
+                        if (show) count++;
+                    });
+                    if (noResults) noResults.style.display = count === 0 ? 'block' : 'none';
+                });
+                if (clearBtn) clearBtn.addEventListener('click', () => {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                    searchInput.focus();
+                });
+            }
 
             /* CURSOR GLOW */
             const cursorGlow = document.getElementById('cursorGlow');
