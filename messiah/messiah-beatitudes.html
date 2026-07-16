@@ -737,6 +737,31 @@
             z-index: 3;
             animation: hero-rise 1.1s 2.2s forwards;
         }
+        .hero-quote-secondary {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+            color: var(--stone);
+            max-width: 580px;
+            margin: 0 auto .5rem;
+            line-height: 1.8;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 2.4s forwards;
+        }
+        .hero-quote-secondary-attr {
+            font-family: 'Cinzel', serif;
+            font-size: .48rem;
+            letter-spacing: .3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            opacity: 0;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 2.6s forwards;
+        }
         .hero-dates {
             font-family: 'Cormorant Garamond', serif;
             font-size: .85rem;
@@ -745,7 +770,7 @@
             opacity: 0;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 2.4s forwards;
+            animation: hero-rise 1.1s 2.8s forwards;
         }
         .hero-scroll-cue {
             position: absolute;
@@ -759,7 +784,7 @@
             opacity: 0;
             cursor: pointer;
             z-index: 3;
-            animation: hero-rise 1.1s 2.8s forwards;
+            animation: hero-rise 1.1s 3s forwards;
         }
         .hero-scroll-cue:hover {
             transform: translateX(-50%) translateY(4px);
@@ -1027,10 +1052,37 @@
             color: var(--gold-light);
             font-weight: 400;
             transition: all 0.3s var(--ease-smooth);
+            position: relative;
         }
         .greek-term:hover {
             color: var(--gold);
             border-bottom-color: var(--gold-deep);
+        }
+        .greek-term::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%) scale(0.95);
+            background: var(--surface3);
+            color: var(--ink2);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s var(--ease-out-expo);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            z-index: 100;
+            letter-spacing: 0.02em;
+        }
+        .greek-term:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
         }
         [data-theme="light"] .greek-term {
             border-bottom-color: var(--copper);
@@ -1298,15 +1350,6 @@
             position: relative;
             box-shadow: 0 4px 16px rgba(201, 168, 76, 0.08);
         }
-        .resonance-callout::before {
-            content: ''; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 16px 16px;
-            display: block;
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
-            opacity: 0.8;
-            text-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
-        }
         .resonance-callout p {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -1337,22 +1380,28 @@
             position: relative;
             box-shadow: 0 4px 16px rgba(124, 111, 174, 0.10);
         }
-        .tension-box::before {
-            content: ''; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 16px 16px;
-            position: absolute;
-            top: -10px;
-            left: 14px;
-            font-size: 1rem;
+        .tension-box .tension-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
             color: var(--copper-light);
-            background: var(--bg);
-            padding: 0 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
         .tension-box p {
-            font-family: 'IM Fell English', serif;
-            font-style: italic;
-            color: var(--ink);
-            line-height: 1.7;
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.98rem;
+            color: var(--ink2);
+            line-height: 1.8;
             margin: 0 !important;
+        }
+        .tension-box .tension-em {
+            color: var(--ink);
+            font-weight: 400;
+        }
+        [data-theme="light"] .tension-box {
+            background: rgba(90, 80, 128, 0.06);
+            border-left-color: var(--copper);
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1519,15 +1568,16 @@
             transform: scaleX(1);
         }
         .section-separator::after {
-            content: ''; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 16px 16px;
+            content: '';
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            color: var(--gold);
-            font-size: 0.72rem;
-            background: var(--bg);
-            padding: 0 6px;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: translate(-50%, -50%) rotate(45deg);
+            opacity: 0.6;
         }
 
         @media (pointer: fine) {
@@ -1588,6 +1638,8 @@
             .footer-links { gap: 1rem; font-size: 0.7rem; }
             .diagram-container { padding: 1rem; margin: 1.5rem 0; }
             .pull-q { padding: 0.5rem 0 0.5rem 1.25rem; }
+            .tension-box { padding: 1rem 1rem; margin: 1.5rem 0; }
+            .tension-box p { font-size: 0.92rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -1615,31 +1667,31 @@
         </button>
         <div class="nav-menu" id="navMenu">
             <div class="nav-section-title">This Page</div>
-            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>Overview</span></a>
-            <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon"><svg class="icon-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></span><span>Table of Contents</span></a>
-            <a href="#beatitudes" class="nav-item" data-section="beatitudes"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>The Beatitudes as Jnana Yoga</span></a>
-            <a href="#lords-prayer" class="nav-item" data-section="lords-prayer"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>The Lord's Prayer as Mantra</span></a>
-            <a href="#daily-practice" class="nav-item" data-section="daily-practice"><span class="nav-item-icon"><svg class="icon-seedling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22V10M12 12c0-3 3-5 7-5M12 14c0-3-3-5-7-5"/></svg></span><span>Daily Practice</span></a>
-            <a href="#perfection" class="nav-item" data-section="perfection"><span class="nav-item-icon">⊙</span><span>Be Perfect</span></a>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon">⊙</span><span>Overview</span></a>
+            <a href="#toc" class="nav-item" data-section="toc"><span class="nav-item-icon">◈</span><span>Table of Contents</span></a>
+            <a href="#beatitudes" class="nav-item" data-section="beatitudes"><span class="nav-item-icon">◉</span><span>The Four Qualifications</span></a>
+            <a href="#beatitudes-continued" class="nav-item" data-section="beatitudes-continued"><span class="nav-item-icon">✦</span><span>The Eightfold Heart</span></a>
+            <a href="#lords-prayer" class="nav-item" data-section="lords-prayer"><span class="nav-item-icon">ॐ</span><span>The Lord's Prayer</span></a>
+            <a href="#daily-practice" class="nav-item" data-section="daily-practice"><span class="nav-item-icon">⬡</span><span>Daily Practice</span></a>
+            <a href="#perfection" class="nav-item" data-section="perfection"><span class="nav-item-icon">◆</span><span>Be Perfect</span></a>
+            <a href="#friction" class="nav-item" data-section="friction"><span class="nav-item-icon">⚡</span><span>The Friction</span></a>
             <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Jesus of Nazareth</div>
-            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>I · The Hermeneutic Key</span></a>
-            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>II · Three Bridges</span></a>
-            <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
-            <a href="messiah-beatitudes.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-seedling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22V10M12 12c0-3 3-5 7-5M12 14c0-3-3-5-7-5"/></svg></span><span>IV · The Beatitudes as Jnana Yoga</span></a>
-            <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
-            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span>VI · The Gospel of Thomas</span></a>
-            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>VII · The Incarnation as Avatar</span></a>
+            <div class="nav-section-title">Jesus of Nazareth</div>
+            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">◈</span><span>I · The Hermeneutic Key</span></a>
+            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">✦</span><span>II · Three Bridges</span></a>
+            <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>III · The Cloud of Unknowing</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item active"><span class="nav-item-icon">◉</span><span>IV · The Beatitudes</span></a>
+            <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">◆</span><span>V · Tat Tvam Asi</span></a>
+            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon">📜</span><span>VI · The Gospel of Thomas</span></a>
+            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon">◇</span><span>VII · The Incarnation as Avatar</span></a>
             <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · The Cartographies</span></a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-star-david" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2.5l5.5 9.5H6.5z"/><path d="M12 21.5L6.5 12h11z"/></svg></span><span>Kabbalah</span></a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Gnosticism</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Taoism · The Unnamed Way</span></a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Quantum Mechanics</span></a><div class="nav-divider"></div>
-            
+            <div class="nav-section-title">Other Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>Advaita Vedanta</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
         </div>
     </div>
 
@@ -1693,11 +1745,11 @@
     <section class="toc-section" id="toc">
         <div class="ed-section-label">Contents · ΠΕΡΙΕΧΟΜΕΝΑ</div>
         <h2 class="ed-section-h2">The Beatitudes as a Map of Awakening</h2>
-        <p class="ed-section-intro">The Sermon on the Mount as a practical guide to ego-dissolution, the Lord's Prayer as mantra, and the path of daily realization.</p>
+        <p class="ed-section-intro">The Sermon on the Mount as a practical guide to ego-dissolution, the Lord's Prayer as mantra, and the path of daily realization — read through the lens of Christianity's native contemplative grammar and Advaita Vedanta's hermeneutics.</p>
         <nav class="toc-book" aria-label="Page contents">
             <a href="#beatitudes" class="toc-book-item">
                 <span class="toc-b-num">I</span>
-                <span class="toc-b-title">The Beatitudes — The Four Qualifications</span>
+                <span class="toc-b-title">The Four Qualifications — Sadhana-Chatushtaya</span>
                 <span class="toc-b-skt">Μακαρισμοί</span>
             </a>
             <a href="#beatitudes-continued" class="toc-book-item">
@@ -1716,7 +1768,7 @@
                 <span class="toc-b-skt">Ἐν τῷ νῦν</span>
             </a>
             <a href="#perfection" class="toc-book-item">
-                <span class="toc-b-num"><svg class="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <span class="toc-b-num">V</span>
                 <span class="toc-b-title">Be Perfect — The Vedantic Declaration</span>
                 <span class="toc-b-skt">Τέλειος</span>
             </a>
@@ -1724,114 +1776,185 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    PULLQUOTE BANNER
-    ═══════════════════════════════════════════════════════════════ -->
-    <div class="pq-section">
-        <div class="pq-glow" aria-hidden="true"></div>
-        <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">&ldquo;Our Father in heaven, hallowed be your name. Your kingdom come. Your will be done, on earth as it is in heaven.&rdquo;</p>
-        <p class="pq-attr">&mdash; Matthew 6:9&ndash;10 · <span class="greek-term" title="Aramaic: Abun d-bashmayya — 'Our Father who art in heaven'">Abun d-bashmayya</span></p>
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════
-    STAGES WRAP
+    PRELUDE: THE WAY OF THE HEART
     ═══════════════════════════════════════════════════════════════ -->
     <div class="stages-wrap">
 
-        <!-- SECTION 1: THE BEATITUDES AS SADHANA-CHATUSHTAYA -->
+        <section class="stage-section" id="prelude">
+            <div class="stage-wm" aria-hidden="true">ΚΑΡΔΙΑ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">Prelude</span>
+                    <span class="stage-skt">The Way of the Heart</span>
+                    <span class="stage-deva-title">Θέωσις</span>
+                </div>
+                <h2 class="stage-h2">The Way of the Heart</h2>
+                <span class="stage-subtitle-label">Theosis · The Beatitudes as the Conditions for Divinization</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>T</strong>his page recovers Christianity's native practical mysticism — the Beatitudes as the <em>conditions for deification</em> — not a foreign philosophy imported from the East. The Greek Fathers — <strong>Athanasius</strong>, <strong>Gregory of Nyssa</strong>, <strong>Maximus Confessor</strong>, and <strong>Gregory Palamas</strong> — already articulated the path of <span class="greek-term" data-tooltip="Deification; participation in the divine nature without becoming God's essence">θέωσις</span> (<em>theosis</em>) as the goal of the Christian life. The Beatitudes are not moral imperatives to be achieved; they are <strong>descriptions of the heart</strong> that is being deified.</p>
+
+                <p class="fade-in stagger-1">The <span class="greek-term" data-tooltip="The four-fold spiritual discipline; the qualifications for Jnana Yoga">sādhana-catuṣṭaya</span> of Advaita Vedanta and the Beatitudes are parallel maps of the same territory. Both describe the necessary inner conditions for recognition/realization — not achievements that earn it, but the <strong>purification of the lens</strong> through which the Self is seen. The Beatitudes are not a ladder to be climbed but a <strong>spiral</strong> to be deepened, each "blessed" unfolding the previous.</p>
+
+                <p class="fade-in stagger-2"><strong>Gregory of Nyssa</strong> names the soul's movement into God <span class="greek-term" data-tooltip="Perpetual expansion; the soul's unending growth into divine infinity">ἐπέκτασις</span> (<em>epektasis</em>) — not a terminal arrival but a perpetual expansion into the infinite. The Beatitudes are not a static state but a spiral of ever-deepening recognition. Advaita's <span class="greek-term" data-tooltip="Liberation; release from the cycle of birth and death">mokṣa</span> is often portrayed as terminal — the end of seeking. Christianity's theosis is seeking without end, because God is inexhaustible. This is not a minor difference; it is the difference between a destination and a pilgrimage that never ends.</p>
+
+                <div class="tension-box fade-in">
+                    <div class="tension-label">Tension · Epektasis vs. Moksha</div>
+                    <p><span class="tension-em">Gregory of Nyssa's epektasis — the soul's perpetual expansion into the infinite — is not a static state but an endless journey.</span> The Beatitudes are not a ladder to be climbed and left behind; they are a spiral that deepens without end. Advaita's moksha is often described as the end of seeking, the dissolution of the seeker. Christianity's theosis is seeking without end, because God is inexhaustible. The "poor in spirit" do not become rich; they become <em>poorer</em>, more empty, more capable of receiving the infinite. The spiral has no final turn.</p>
+                </div>
+
+                <div class="resonance-callout fade-in">
+                    <p>The Beatitudes are not a ladder. They are a spiral — each blessing deepens the previous, and together they form the shape of the deified heart.</p>
+                    <p class="attribution">&mdash; The Beatitudes as Theosis</p>
+                </div>
+
+                <!-- DIAGRAM: The Beatitudes as Theosis Spiral -->
+                <div class="diagram-container fade-in">
+                    <div class="diagram-title">The Beatitudes as Theosis — The Spiral of Deification</div>
+                    <svg class="diagram-svg" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="spiralTheosis" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
+                            </radialGradient>
+                            <filter id="spTheosis" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="700" height="500" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+                        <!-- Spiral path -->
+                        <path d="M 350 430 Q 180 400 180 280 Q 180 160 350 160 Q 520 160 520 280 Q 520 340 400 340 Q 300 340 300 260 Q 300 220 350 220 Q 400 220 400 280 Q 400 300 370 300" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.5" stroke-dasharray="6,4"/>
+                        <!-- 8 stations -->
+                        <circle cx="350" cy="440" r="30" fill="url(#spiralTheosis)" stroke="var(--gold)" stroke-width="1.2" opacity="0.9"/>
+                        <text x="350" y="436" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">Poor in spirit</text>
+                        <text x="350" y="450" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Viveka</text>
+                        <circle cx="200" cy="320" r="30" fill="url(#spiralTheosis)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="200" y="316" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">Those who mourn</text>
+                        <text x="200" y="330" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Vairagya</text>
+                        <circle cx="350" cy="200" r="30" fill="url(#spiralTheosis)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="350" y="196" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">The meek</text>
+                        <text x="350" y="210" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Shama/Dama</text>
+                        <circle cx="500" cy="320" r="30" fill="url(#spiralTheosis)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="500" y="316" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">Hunger for righteousness</text>
+                        <text x="500" y="330" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Mumukshutva</text>
+                        <circle cx="260" cy="280" r="30" fill="url(#spiralTheosis)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="260" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">The merciful</text>
+                        <text x="260" y="290" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Karuna</text>
+                        <circle cx="350" cy="300" r="30" fill="url(#spiralTheosis)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="350" y="296" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">Pure in heart</text>
+                        <text x="350" y="310" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Shuddha</text>
+                        <circle cx="440" cy="280" r="30" fill="url(#spiralTheosis)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="440" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">Peacemakers</text>
+                        <text x="440" y="290" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Shanti</text>
+                        <circle cx="350" cy="120" r="30" fill="url(#spiralTheosis)" stroke="var(--gold)" stroke-width="1.5" opacity="0.95" filter="url(#spTheosis)"/>
+                        <text x="350" y="116" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.08em">The persecuted</text>
+                        <text x="350" y="130" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic">Sthita-prajna</text>
+                        <text x="350" y="485" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The spiral of the Beatitudes · Each deepens the previous · Center: "Be perfect"</text>
+                    </svg>
+                    <p class="diagram-caption">The Beatitudes form a spiral, not a ladder. Each blessing deepens the previous, and together they trace the shape of the deified heart. The center is the recognition of the Self.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- SECTION 1: THE FOUR QUALIFICATIONS -->
         <section class="stage-section" id="beatitudes">
             <div class="stage-wm" aria-hidden="true">ΜΑΚΑΡΙΣΜΟΙ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
                     <span class="stage-n">Chapter I</span>
-                    <span class="stage-skt">The Beatitudes</span>
-                    <span class="stage-deva-title">Μακαρισμοί</span>
+                    <span class="stage-skt">The Four Qualifications</span>
+                    <span class="stage-deva-title">Sādhana-Catuṣṭaya</span>
                 </div>
-                <h2 class="stage-h2">The Four Qualifications for Realization</h2>
-                <span class="stage-subtitle-label">The Beatitudes as Sadhana-Chatushtaya</span>
+                <h2 class="stage-h2">The Four Qualifications</h2>
+                <span class="stage-subtitle-label">Viveka · Vairagya · Śama/Dama · Mumukṣutva</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>J</strong>esus begins the Sermon on the Mount not with doctrine but with a series of declarations: <span class="greek-term" title="Blessed, fortunate, deeply content">ṭūḇayhōn</span> &mdash; &ldquo;Blessed,&rdquo; &ldquo;fortunate,&rdquo; &ldquo;deeply content.&rdquo; In Greek, <span class="greek-term" title="Blessed; the state of inner contentment and spiritual well-being">μακάριοι</span> (<em>makarioi</em>) &mdash; not the shallow happiness of circumstances, but the profound contentment of the soul that knows its true nature. The Beatitudes are not moral imperatives to be achieved. They are <strong>descriptions of the awakened heart</strong> &mdash; the spontaneous qualities of one who has already recognized the Self.</p>
+                <p><strong>J</strong>esus begins the Sermon on the Mount with the Beatitudes — declarations of what it means to be <span class="greek-term" data-tooltip="Blessed; the state of inner contentment and spiritual well-being">μακάριοι</span> (<em>makarioi</em>). In the Greek Fathers, this is not a moral achievement but a description of the <em>deified heart</em> — the soul that is being transformed into the likeness of God. The Beatitudes map precisely onto the four qualifications of Jnana Yoga, the <span class="greek-term" data-tooltip="The four-fold spiritual discipline">sādhana-catuṣṭaya</span>, which are not achievements but <strong>purifications of the lens</strong> through which the Self is recognized.</p>
 
-                <p class="fade-in stagger-1">In Advaita Vedanta, the path of knowledge (<span class="greek-term" title="The yoga of knowledge; the path of direct realization">jñāna-yoga</span>) requires four preparatory qualifications, known as <span class="greek-term" title="The four-fold spiritual discipline; the qualifications for Jnana Yoga">sādhana-catuṣṭaya</span>. These are not moral achievements that earn liberation, but the <strong>necessary conditions</strong> for recognition to occur. The Beatitudes map precisely onto these four qualifications:</p>
-
-                <!-- DIAGRAM: The Beatitudes as Sadhana-Chatushtaya -->
-                <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">The Beatitudes as the Four Qualifications</div>
-                    <svg class="diagram-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+                <!-- DIAGRAM: The Four Qualifications as Lotus -->
+                <div class="diagram-container fade-in">
+                    <div class="diagram-title">The Four Qualifications — The Beatitudes as Sādhana-Catuṣṭaya</div>
+                    <svg class="diagram-svg" viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="qualGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="var(--violet-light)" stop-opacity="0.15"/>
+                            <linearGradient id="lotusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.15"/>
                                 <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
                             </linearGradient>
-                            <filter id="qGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="lotusGlow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="2" result="blur"/>
                                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
                         </defs>
-                        <rect width="700" height="420" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
-                        <!-- Center: Jnana -->
-                        <circle cx="350" cy="210" r="50" fill="url(#qualGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0"/>
-                        <circle cx="350" cy="210" r="42" fill="none" stroke="var(--gold)" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,5"/>
-                        <text x="350" y="205" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">JÑĀNA</text>
-                        <text x="350" y="220" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.8">Knowledge</text>
-                        <!-- Top: Viveka -->
-                        <ellipse cx="350" cy="70" rx="140" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
-                        <text x="350" y="62" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">VIVEKA</text>
-                        <text x="350" y="78" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Discrimination · The Real vs. The Unreal</text>
-                        <text x="350" y="92" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are the poor in spirit"</text>
-                        <line x1="350" y1="115" x2="350" y2="160" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
-                        <polygon points="350,168 344,158 356,158" fill="var(--violet)" opacity="0.6"/>
-                        <!-- Left: Vairagya -->
-                        <ellipse cx="120" cy="210" rx="110" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
-                        <text x="120" y="202" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">VAIRĀGYA</text>
-                        <text x="120" y="218" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Dispassion · Detachment</text>
-                        <text x="120" y="232" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are those who mourn"</text>
-                        <line x1="230" y1="210" x2="300" y2="210" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
-                        <polygon points="300,210 292,206 292,214" fill="var(--violet)" opacity="0.6"/>
-                        <!-- Right: Shama/Dama -->
-                        <ellipse cx="580" cy="210" rx="110" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
-                        <text x="580" y="202" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">ŚAMA / DAMA</text>
-                        <text x="580" y="218" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Control of Mind &amp; Senses</text>
-                        <text x="580" y="232" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are the meek"</text>
-                        <line x1="400" y1="210" x2="470" y2="210" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
-                        <polygon points="470,210 462,206 462,214" fill="var(--violet)" opacity="0.6"/>
-                        <!-- Bottom: Mumukshutva -->
-                        <ellipse cx="350" cy="350" rx="140" ry="45" fill="url(#qualGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.9"/>
-                        <text x="350" y="342" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">MUMUKṢUTVA</text>
-                        <text x="350" y="358" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Yearning for Liberation</text>
-                        <text x="350" y="372" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="8" opacity="0.7">"Blessed are those who hunger for righteousness"</text>
-                        <line x1="350" y1="260" x2="350" y2="305" stroke="var(--violet)" stroke-width="1" opacity="0.6" stroke-dasharray="3,4"/>
-                        <polygon points="350,305 344,295 356,295" fill="var(--violet)" opacity="0.6"/>
-                        <text x="350" y="410" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic" opacity="0.7">&ldquo;Be perfect, therefore, as your heavenly Father is perfect.&rdquo;</text>
+                        <rect width="700" height="440" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+                        <!-- Center -->
+                        <circle cx="350" cy="220" r="45" fill="url(#lotusGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0" filter="url(#lotusGlow)"/>
+                        <text x="350" y="215" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">JNANA</text>
+                        <text x="350" y="230" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Knowledge</text>
+                        <!-- Petals -->
+                        <ellipse cx="350" cy="70" rx="130" ry="40" fill="url(#lotusGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="350" y="62" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">VIVEKA</text>
+                        <text x="350" y="78" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Discrimination</text>
+                        <text x="350" y="90" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" opacity="0.7">"Poor in spirit"</text>
+                        <ellipse cx="130" cy="220" rx="110" ry="40" fill="url(#lotusGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="130" y="212" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">VAIRAGYA</text>
+                        <text x="130" y="228" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Dispassion</text>
+                        <text x="130" y="240" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" opacity="0.7">"Those who mourn"</text>
+                        <ellipse cx="570" cy="220" rx="110" ry="40" fill="url(#lotusGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="570" y="212" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">SAMA/DAMA</text>
+                        <text x="570" y="228" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Self-control</text>
+                        <text x="570" y="240" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" opacity="0.7">"The meek"</text>
+                        <ellipse cx="350" cy="370" rx="130" ry="40" fill="url(#lotusGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
+                        <text x="350" y="362" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.12em">MUMUKSUTVA</text>
+                        <text x="350" y="378" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="8" font-style="italic">Yearning for Liberation</text>
+                        <text x="350" y="390" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="7" opacity="0.7">"Hunger for righteousness"</text>
+                        <!-- Lines from petals to center -->
+                        <line x1="350" y1="110" x2="350" y2="175" stroke="var(--violet)" stroke-width="1" opacity="0.4" stroke-dasharray="3,4"/>
+                        <line x1="240" y1="220" x2="305" y2="220" stroke="var(--violet)" stroke-width="1" opacity="0.4" stroke-dasharray="3,4"/>
+                        <line x1="460" y1="220" x2="395" y2="220" stroke="var(--violet)" stroke-width="1" opacity="0.4" stroke-dasharray="3,4"/>
+                        <line x1="350" y1="330" x2="350" y2="265" stroke="var(--violet)" stroke-width="1" opacity="0.4" stroke-dasharray="3,4"/>
+                        <text x="350" y="430" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The four petals of the heart · Each is a purification of the lens of perception</text>
                     </svg>
-                    <p class="diagram-caption">The Beatitudes map precisely onto the four qualifications of Jnana Yoga: Discrimination (Viveka), Dispassion (Vairagya), Self-control (Śama/Dama), and Yearning for Liberation (Mumukṣutva).</p>
+                    <p class="diagram-caption">The four qualifications of Jnana Yoga — Viveka, Vairagya, Śama/Dama, Mumukṣutva — map directly onto the first four Beatitudes. Each is a purification of the lens, not a moral achievement.</p>
                 </div>
 
-                <p class="fade-in stagger-2">The Beatitudes are not arbitrary. They are the <strong>graduated stages of ego-dissolution</strong>, each building on the previous, each preparing the heart for the next. They are the <span class="greek-term" title="The way; the path of spiritual practice">ὁδός</span> (<em>hodos</em>) &mdash; the Way that leads to the recognition of the Self.</p>
+                <p class="fade-in"><strong>1. Viveka — Discrimination.</strong> <span class="greek-term" data-tooltip="Poor in spirit; the emptying of spiritual pride">πτωχοὶ τῷ πνεύματι</span> (<em>ptōkhoi tō pneumati</em>). The Greek <em>ptōkhoi</em> does not mean economic poverty but the <strong>emptying of spiritual pride</strong> — the recognition that one possesses nothing of one's own. This is <span class="greek-term" data-tooltip="Self-emptying; the descent of Christ and the path of the soul">κένωσις</span> (<em>kenōsis</em>), the self-emptying that Philippians 2:7 describes as Christ's own method. The poor in spirit are those who have seen through the ego's claim to be the center, who recognize that all that is real comes from the One.</p>
 
-                <div class="scripture-panels fade-in stagger-1">
+                <p class="fade-in stagger-1"><strong>2. Vairagya — Dispassion.</strong> <span class="greek-term" data-tooltip="Those who mourn; those who have seen through the world's promises">οἱ πενθοῦντες</span> (<em>hoi penthountes</em>). The mourners are not those who grieve loss but those who have <strong>seen through the world's promises</strong> and weep for its illusion. This is the grief of recognition — the pain of seeing what one has clung to as unreal. In the Greek Fathers, this is <span class="greek-term" data-tooltip="Freedom from passion; the state of inner tranquility">ἀπάθεια</span> (<em>apatheia</em>), the freedom from passion that Evagrius Ponticus names as the condition for knowledge of God.</p>
+
+                <p class="fade-in stagger-2"><strong>3. Śama/Dama — Self-control.</strong> <span class="greek-term" data-tooltip="Meek; the taming of reactive violence">οἱ πρᾳεῖς</span> (<em>hoi praeis</em>). <em>Praotes</em> — meekness — is not weakness but the <strong>taming of reactive violence</strong>, the pacification of the ego's territorial claims. This is the fruit of <span class="greek-term" data-tooltip="Sense withdrawal; the inward-turning of the mind">pratyāhāra</span>, the inward-turning that calms the senses and stills the mind. Maximus Confessor speaks of the "natural wills" harmonized in deification — the will of the creature aligned with the will of the Creator.</p>
+
+                <p class="fade-in stagger-3"><strong>4. Mumukṣutva — Yearning for Liberation.</strong> <span class="greek-term" data-tooltip="Those who hunger and thirst for righteousness">οἱ πεινῶντες καὶ διψῶντες τὴν δικαιοσύνην</span> (<em>hoi peinōntes kai dipsōntes tēn dikaiosynēn</em>). <span class="greek-term" data-tooltip="Righteousness; the right ordering of the soul toward God">Δικαιοσύνη</span> (<em>dikaiosynē</em>) is not moral rectitude but the <strong>"right ordering" of the soul toward God</strong>. The hunger is the soul's <span class="greek-term" data-tooltip="Eros; the longing for the infinite">ἔρως</span> for the infinite, the longing that Gregory of Nyssa says has no satiation because God is limitless.</p>
+
+                <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:3 · Poor in Spirit</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are the poor in spirit, for theirs is the kingdom of heaven.&rdquo;</p>
-                        <p class="scripture-panel-ref">VIVEKA · Discrimination</p>
+                        <p class="scripture-panel-ref">VIVEKA · Kenosis</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:4 · Those Who Mourn</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are those who mourn, for they shall be comforted.&rdquo;</p>
-                        <p class="scripture-panel-ref">VAIRĀGYA · Dispassion</p>
+                        <p class="scripture-panel-ref">VAIRĀGYA · Apatheia</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:5 · The Meek</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are the meek, for they shall inherit the earth.&rdquo;</p>
-                        <p class="scripture-panel-ref">ŚAMA/DAMA · Self-control</p>
+                        <p class="scripture-panel-ref">ŚAMA/DAMA · Pratyāhāra</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:6 · Those Who Hunger</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are those who hunger and thirst for righteousness, for they shall be filled.&rdquo;</p>
-                        <p class="scripture-panel-ref">MUMUKṢUTVA · Yearning for Liberation</p>
+                        <p class="scripture-panel-ref">MUMUKṢUTVA · Eros for the Infinite</p>
                     </div>
+                </div>
+
+                <div class="resonance-callout fade-in">
+                    <p>The Beatitudes are not Advaita in disguise. They are the native Christian path of purification (<em>katharsis</em>) and illumination (<em>theoria</em>) that leads to union (<em>theosis</em>). The Greek Fathers already mapped this territory.</p>
                 </div>
             </div>
         </section>
@@ -1848,76 +1971,26 @@
                     <span class="stage-deva-title">Ὁδός</span>
                 </div>
                 <h2 class="stage-h2">From Purification to Vision</h2>
-                <span class="stage-subtitle-label">The Beatitudes as a Journey of Awakening</span>
+                <span class="stage-subtitle-label">Karuna · Shuddha · Shanti · Sthita-Prajna</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>T</strong>he first four Beatitudes establish the <span class="greek-term" title="The foundation; the preparation for spiritual life">θεμέλιον</span> (<em>themelion</em>) &mdash; the foundation. The next four describe the <strong>fruit</strong> of that foundation: the spontaneous qualities of the awakened heart.</p>
+                <p><strong>T</strong>he first four Beatitudes establish the foundation — the purification of the heart. The next four describe the <strong>fruit</strong> of that foundation: the spontaneous qualities of the deified heart. They are not achievements but <strong>outpourings</strong> — the natural expression of one who has recognized the Self.</p>
 
-                <p class="fade-in stagger-1"><span class="greek-term" title="Blessed are the merciful, for they shall obtain mercy">ṭūḇayhōn lə-rahamē</span> &mdash; &ldquo;Blessed are the merciful, for they shall obtain mercy&rdquo; (Matt 5:7). This is <span class="greek-term" title="Compassion; the spontaneous empathy of the awakened heart">karuṇā</span> &mdash; compassion that arises naturally when the sense of separate self dissolves. The merciful heart does not calculate; it responds instinctively to suffering because it recognizes the Self in all.</p>
+                <p class="fade-in stagger-1"><strong>5. Karuna — Compassion.</strong> <span class="greek-term" data-tooltip="Merciful; the spontaneous response of the heart that sees no other">οἱ ἐλεήμονες</span> (<em>hoi eleēmones</em>). <em>Eleēmōn</em> — merciful — is not calculated kindness but the <strong>spontaneous response of the heart that sees no other</strong>. This is the fruit of <em>viveka</em>: when the self is seen through, the other is recognized as the same Self. The merciful heart does not calculate; it responds instinctively to suffering because it recognizes the Self in all.</p>
 
-                <p class="fade-in stagger-2"><span class="greek-term" title="Blessed are the pure in heart, for they shall see God">ṭūḇayhōn lə-dakkīn bə-lebbōn</span> &mdash; &ldquo;Blessed are the pure in heart, for they shall see God&rdquo; (Matt 5:8). <span class="greek-term" title="Purity; the single-minded focus that reveals the divine">καθαρός</span> (<em>katharos</em>) means not moral purity in the conventional sense, but the <strong>single eye</strong> of non-dual awareness. The pure heart is the heart that sees no separation, no other. It is the heart that has been &ldquo;straightened&rdquo; by the path, no longer twisted by desire.</p>
+                <p class="fade-in stagger-2"><strong>6. Shuddha — Purity.</strong> <span class="greek-term" data-tooltip="Pure in heart; the single eye of non-dual awareness">οἱ καθαροὶ τῇ καρδίᾳ</span> (<em>hoi katharoi tē kardia</em>). <span class="greek-term" data-tooltip="Pure; single-pointed; undivided">Καθαρός</span> (<em>katharos</em>) is the <strong>"single eye" of non-dual awareness</strong>. The pure heart sees God because it sees no separation. This is <span class="greek-term" data-tooltip="Contemplative vision; the perception of God through pure intellect">θεωρία</span> (<em>theoria</em>) — contemplative vision — in the Greek tradition.</p>
 
-                <p class="fade-in stagger-3"><span class="greek-term" title="Blessed are the peacemakers, for they shall be called sons of God">ṭūḇayhōn lə-ʻāḇḏay šəlām</span> &mdash; &ldquo;Blessed are the peacemakers, for they shall be called sons of God&rdquo; (Matt 5:9). <span class="greek-term" title="Peace; the inner tranquility of the realized soul">εἰρήνη</span> (<em>eirēnē</em>) is the natural expression of the Self. The peacemaker does not impose peace; the peacemaker <em>is</em> peace. The very presence of the awakened one brings calm, dissolves conflict, reveals unity.</p>
+                <p class="fade-in stagger-3"><strong>7. Shanti — Peace.</strong> <span class="greek-term" data-tooltip="Peacemakers; those in whom conflict has dissolved">οἱ εἰρηνοποιοί</span> (<em>hoi eirēnopoioi</em>). <em>Eirēnopoios</em> — peacemaker — is not a diplomat but the <strong>presence of one in whom conflict has dissolved</strong>. The peacemaker does not make peace; the peacemaker <em>is</em> peace. This is <span class="greek-term" data-tooltip="Theosis manifesting as social reality; the presence of peace">theosis</span> manifesting as social reality, the peace that passes understanding.</p>
 
-                <p class="fade-in stagger-4"><span class="greek-term" title="Blessed are those who are persecuted for righteousness' sake">ṭūḇayhōn lə-ʻannāyā</span> &mdash; &ldquo;Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven&rdquo; (Matt 5:10). This is the final paradox: the awakened life will be resisted by the world of illusion. The ego recoils from the dissolution that the awakened one embodies. Yet the awakened one remains untouched, already standing in the kingdom. This is <span class="greek-term" title="The state of being established in the Self; the ground of unshakeable peace">sthita-prajñā</span> &mdash; the one who is established in wisdom, unmoved by praise or blame.</p>
+                <p class="fade-in stagger-4"><strong>8. Sthita-Prajna — Established in Wisdom.</strong> <span class="greek-term" data-tooltip="Those persecuted for righteousness' sake; the final paradox">οἱ δεδιωγμένοι ἕνεκεν δικαιοσύνης</span> (<em>hoi dediōgmenoi heneken dikaiosynēs</em>). The final paradox: the awakened life is <strong>resisted by the world of illusion</strong>. The ego recoils from the dissolution that the awakened one embodies. This is the "fool for Christ" (1 Cor 4:10), the one who has died to the world's valuation. This is <span class="greek-term" data-tooltip="Martyria; witness through suffering">μαρτυρία</span> (<em>martyria</em>) — witness through suffering.</p>
 
-                <!-- DIAGRAM: The Eightfold Spiral -->
-                <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">The Eightfold Spiral of the Heart</div>
-                    <svg class="diagram-svg" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <radialGradient id="spiralGrad" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.3"/>
-                                <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
-                            </radialGradient>
-                            <filter id="spGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feGaussianBlur stdDeviation="2" result="blur"/>
-                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                            </filter>
-                        </defs>
-                        <rect width="700" height="500" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
-                        <!-- Spiral path -->
-                        <path d="M 350 400 Q 200 400 200 300 Q 200 200 350 200 Q 500 200 500 300 Q 500 350 400 350 Q 300 350 300 280 Q 300 250 350 250 Q 400 250 400 300" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.4" stroke-dasharray="6,4"/>
-                        <!-- 8 stations -->
-                        <!-- 1: Poor in spirit -->
-                        <circle cx="350" cy="430" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.9"/>
-                        <text x="350" y="426" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">VIVEKA</text>
-                        <text x="350" y="438" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Poor in spirit</text>
-                        <!-- 2: Mourn -->
-                        <circle cx="200" cy="330" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
-                        <text x="200" y="326" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">VAIRĀGYA</text>
-                        <text x="200" y="338" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Those who mourn</text>
-                        <!-- 3: Meek -->
-                        <circle cx="350" cy="220" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
-                        <text x="350" y="216" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">ŚAMA/DAMA</text>
-                        <text x="350" y="228" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">The meek</text>
-                        <!-- 4: Hunger -->
-                        <circle cx="500" cy="330" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.2" opacity="0.85"/>
-                        <text x="500" y="326" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">MUMUKṢUTVA</text>
-                        <text x="500" y="338" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Hunger for righteousness</text>
-                        <!-- 5: Merciful -->
-                        <circle cx="260" cy="280" r="35" fill="url(#spiralGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
-                        <text x="260" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">KARUṆĀ</text>
-                        <text x="260" y="288" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">The merciful</text>
-                        <!-- 6: Pure in heart -->
-                        <circle cx="350" cy="300" r="35" fill="url(#spiralGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
-                        <text x="350" y="296" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">ŚUDDHA</text>
-                        <text x="350" y="308" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Pure in heart</text>
-                        <!-- 7: Peacemakers -->
-                        <circle cx="440" cy="280" r="35" fill="url(#spiralGrad)" stroke="var(--violet-light)" stroke-width="1.2" opacity="0.85"/>
-                        <text x="440" y="276" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">ŚĀNTI</text>
-                        <text x="440" y="288" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Peacemakers</text>
-                        <!-- 8: Persecuted -->
-                        <circle cx="350" cy="120" r="35" fill="url(#spiralGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="0.95" filter="url(#spGlow)"/>
-                        <text x="350" y="116" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.08em">STHITA</text>
-                        <text x="350" y="128" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">The persecuted</text>
-                        <text x="350" y="480" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The spiral of awakening · Each Beatitude deepens the previous</text>
-                    </svg>
-                    <p class="diagram-caption">The Beatitudes form an eightfold spiral, each deepening the previous. The first four establish the foundation; the next four are the spontaneous fruit of that foundation. The spiral culminates in the recognition of the Self.</p>
+                <div class="tension-box fade-in">
+                    <div class="tension-label">Tension · The Communal Dimension</div>
+                    <p><span class="tension-em">The Beatitudes are spoken to a crowd (Matt 5:1), not an individual seeker.</span> Christianity's path is <em>ecclesial</em> — within the body of Christ — while Advaita's path is often solitary. The "poor in spirit" are poor together; the "merciful" show mercy to each other. Theosis is not private realization but participation in a communal body. The "Our Father" is spoken in community; its "us" is the body of Christ. This is not individual realization but collective deification.</p>
                 </div>
 
-                <div class="scripture-panels fade-in stagger-2">
+                <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:7 · The Merciful</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are the merciful, for they shall obtain mercy.&rdquo;</p>
@@ -1926,17 +1999,17 @@
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:8 · The Pure in Heart</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are the pure in heart, for they shall see God.&rdquo;</p>
-                        <p class="scripture-panel-ref">ŚUDDHA · Purity · The Single Eye</p>
+                        <p class="scripture-panel-ref">ŚUDDHA · Theoria</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:9 · The Peacemakers</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are the peacemakers, for they shall be called sons of God.&rdquo;</p>
-                        <p class="scripture-panel-ref">ŚĀNTI · Peace as Presence</p>
+                        <p class="scripture-panel-ref">ŚĀNTI · Theosis as Presence</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:10 · The Persecuted</div>
                         <p class="scripture-panel-text">&ldquo;Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven.&rdquo;</p>
-                        <p class="scripture-panel-ref">STHITA-PRAJÑĀ · Established in Wisdom</p>
+                        <p class="scripture-panel-ref">STHITA-PRAJÑA · Martyria</p>
                     </div>
                 </div>
             </div>
@@ -1958,60 +2031,92 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>W</strong>hen Jesus' disciples ask how to pray, he gives them what has become known as the Lord's Prayer (<span class="greek-term" title="The prayer of the Lord; the Our Father">Πάτερ ἡμῶν</span>). In the Vedantic reading, this is not a petition to an external deity. It is a <span class="greek-term" title="A sacred utterance or meditative formula; a tool for focusing the mind">mantra</span> &mdash; a formula designed to align the consciousness with the highest truth.</p>
+                <p><strong>W</strong>hen Jesus' disciples ask how to pray, he gives them the Lord's Prayer (<span class="greek-term" data-tooltip="The prayer of the Lord; the Our Father">Πάτερ ἡμῶν</span>). In the Vedantic reading, this is not a petition to an external deity. It is a <span class="greek-term" data-tooltip="A sacred utterance or meditative formula; a tool for focusing the mind">mantra</span> — a formula designed to align the consciousness with the highest truth. Yet the Greek Fathers already understood prayer as <span class="greek-term" data-tooltip="Contemplative seeing; theoria">θεωρία</span> — not petition but the lifting of the mind to God.</p>
 
-                <p class="fade-in stagger-1"><span class="greek-term" title="Our Father who art in heaven">'Avvūn də-ḇa-šəmayyā</span> &mdash; &ldquo;Our Father who art in heaven.&rdquo; This is not a geographical location. <span class="greek-term" title="Heaven; the realm of the divine; the transcendent dimension">οὐρανός</span> (<em>ouranos</em>) is the realm of pure consciousness, the <span class="greek-term" title="The space of consciousness; the inner expanse of awareness">cid-ākāśa</span>. The Father is the Absolute, and the &ldquo;heaven&rdquo; in which he dwells is the very ground of your own awareness. The prayer begins by <strong>invoking the ground of being</strong> from which all manifest forms arise.</p>
+                <p class="fade-in stagger-1"><span class="greek-term" data-tooltip="Our Father who art in heaven; Aramaic transliteration">'Avvūn də-ḇa-šəmayyā</span> — &ldquo;Our Father who art in heaven.&rdquo; This is not a geographical location. <span class="greek-term" data-tooltip="Heaven; the realm of the divine; the transcendent dimension">οὐρανός</span> (<em>ouranos</em>) is the realm of pure consciousness, the <span class="greek-term" data-tooltip="The space of consciousness; the inner expanse of awareness">cid-ākāśa</span>. The Father is the Absolute; "heaven" is the very ground of awareness itself.</p>
 
-                <p class="fade-in stagger-2"><span class="greek-term" title="Hallowed be thy name">yiṯqaddaš šəmāḵ</span> &mdash; &ldquo;Hallowed be thy name.&rdquo; This is the recognition that the Absolute cannot be named, yet all names refer to it. The name is hallowed not by worship but by <strong>recognition</strong> &mdash; the acknowledgment that every name is a veil, and every veil points to the nameless.</p>
+                <p class="fade-in stagger-2"><span class="greek-term" data-tooltip="Hallowed be thy name; Aramaic transliteration">yiṯqaddaš šəmāḵ</span> — &ldquo;Hallowed be thy name.&rdquo; The name is hallowed by <strong>recognition</strong>, not worship. Every name is a veil; every veil points to the nameless. This is apophatic theology in practice.</p>
 
-                <p class="fade-in stagger-3"><span class="greek-term" title="Thy kingdom come">tēṯē malkūṯāḵ</span> &mdash; &ldquo;Thy kingdom come.&rdquo; The kingdom is not a future event. It is the present reality of pure consciousness, obscured by the ego's identification with form. This line is the <strong>invocation of recognition</strong>: &ldquo;May the kingdom that is already here be recognized as here.&rdquo;</p>
+                <p class="fade-in stagger-3"><span class="greek-term" data-tooltip="Thy kingdom come; Aramaic transliteration">tēṯē malkūṯāḵ</span> — &ldquo;Thy kingdom come.&rdquo; The kingdom is not future; it is the present reality obscured by ego-identification. This is the <strong>invocation of recognition</strong>: "May the kingdom that is already here be recognized as here."</p>
 
-                <p class="fade-in stagger-4"><span class="greek-term" title="Thy will be done, on earth as it is in heaven">nēhṯē ṣəḇyānāḵ, 'aykannā də-ḇa-šəmayyā 'ap bə-'ar'ā</span> &mdash; &ldquo;Thy will be done, on earth as it is in heaven.&rdquo; This is the complete surrender of the ego to the Self. The &ldquo;earth&rdquo; is the realm of manifestation, the body-mind; the &ldquo;heaven&rdquo; is the Absolute. The prayer asks that these two become one &mdash; that the body-mind become transparent to the Self, that <span class="greek-term" title="The will of God; the divine purpose">θέλημα</span> (<em>thelēma</em>) become the single motive of life.</p>
+                <p class="fade-in stagger-4"><span class="greek-term" data-tooltip="Thy will be done, on earth as it is in heaven; Aramaic transliteration">nēhṯē ṣəḇyānāḵ, 'aykannā də-ḇa-šəmayyā 'ap bə-'ar'ā</span> — &ldquo;Thy will be done, on earth as it is in heaven.&rdquo; The "earth" is the body-mind; "heaven" is the Absolute. The prayer asks for their unity — that the body-mind become transparent to the Self. This is <span class="greek-term" data-tooltip="Theosis; the human will united to the divine will">theosis</span>: the human will united to the divine will.</p>
 
-                <div class="pull-q fade-in">
-                    <p>&ldquo;The Lord's Prayer is the japa of the Kingdom. It is not asking for something you lack; it is affirming what you already are.&rdquo;</p>
-                    <cite>&mdash; Jesus of Nazareth</cite>
+                <p class="fade-in stagger-5"><span class="greek-term" data-tooltip="Give us this day our daily bread; Aramaic transliteration">hab lan laḥmā də-sūnqānān yōmānā</span> — &ldquo;Give us this day our daily bread.&rdquo; The "daily bread" is not material sustenance but the <span class="greek-term" data-tooltip="Prana; the life-force; the daily renewal of consciousness">prāṇa</span> of recognition, the daily renewal of consciousness that sustains the awakened life.</p>
+
+                <p class="fade-in stagger-6"><span class="greek-term" data-tooltip="Forgive us our debts, as we forgive our debtors; Aramaic transliteration">šəḇoq lan ḥōḇēn</span> — &ldquo;Forgive us our debts, as we forgive our debtors.&rdquo; Forgiveness is the <strong>dissolution of the ego's accounting</strong>. The ego keeps ledgers; the Self forgives spontaneously because it recognizes no debt.</p>
+
+                <p class="fade-in stagger-7"><span class="greek-term" data-tooltip="Lead us not into temptation, but deliver us from evil; Aramaic transliteration">lə'ā tə'ellan lə-nisyōnā</span> — &ldquo;Lead us not into temptation, but deliver us from evil.&rdquo; Temptation is the ego's return, the gravitational pull of identification. "Evil" is not moral wickedness but the <strong>illusion of separation itself</strong> — the root of all suffering.</p>
+
+                <div class="tension-box fade-in">
+                    <div class="tension-label">Tension · "Our Father" vs. "My Father"</div>
+                    <p><span class="tension-em">Christianity's "we" vs. Advaita's "I."</span> The Lord's Prayer is ecclesial — spoken in community, its "us" is the body of Christ. This is not individual realization but collective deification. Advaita's "I am Brahman" is solitary; Christianity's "Our Father" is communal. Theosis is not the dissolution of relationship but its transfiguration. The Father remains the Father; the Son remains the Son; the Spirit remains the Spirit — even as the community is drawn into the divine life.</p>
                 </div>
 
                 <!-- DIAGRAM: The Lord's Prayer as Mantra -->
-                <div class="diagram-container fade-in stagger-1">
-                    <div class="diagram-title">The Lord's Prayer · The Sevenfold Mantra</div>
-                    <svg class="diagram-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+                <div class="diagram-container fade-in">
+                    <div class="diagram-title">The Lord's Prayer — The Sevenfold Mantra of the Kingdom</div>
+                    <svg class="diagram-svg" viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <linearGradient id="mantraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="mantraGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.15"/>
                                 <stop offset="100%" stop-color="var(--violet-deep)" stop-opacity="0.05"/>
                             </linearGradient>
-                            <filter id="mGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <filter id="mGlow2" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="2" result="blur"/>
                                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                             </filter>
                         </defs>
-                        <rect width="700" height="420" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
-                        <!-- Center -->
-                        <circle cx="350" cy="210" r="45" fill="url(#mantraGrad)" stroke="var(--gold)" stroke-width="1.5" opacity="1.0" filter="url(#mGlow)"/>
-                        <text x="350" y="206" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="9" letter-spacing="0.1em">JAPA</text>
-                        <text x="350" y="220" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Mantra</text>
-                        <!-- Petals -->
-                        <g transform="translate(350,210)">
-                            <text x="-80" y="-80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">'Avvūn</text>
-                            <text x="0" y="-95" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Our Father</text>
-                            <text x="80" y="-80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Yitqaddaš</text>
-                            <text x="95" y="-60" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Hallowed be thy name</text>
-                            <text x="80" y="80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Tētē</text>
-                            <text x="95" y="60" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Thy kingdom come</text>
-                            <text x="0" y="95" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Nēhtē</text>
-                            <text x="0" y="110" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Thy will be done</text>
-                            <text x="-80" y="80" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Lahmā</text>
-                            <text x="-95" y="60" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Daily bread</text>
-                            <text x="-95" y="-40" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">Hōb lan</text>
-                            <text x="-95" y="-25" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Forgive us</text>
-                            <text x="40" y="-40" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="7" letter-spacing="0.1em" opacity="0.6">La tētnan</text>
-                            <text x="40" y="-25" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="6" font-style="italic" opacity="0.5">Lead us not</text>
+                        <rect width="700" height="480" fill="var(--bg, #0a0e1a)" rx="12" opacity="0.95"/>
+                        <!-- Column of 7 -->
+                        <g>
+                            <rect x="280" y="20" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1" opacity="0.85"/>
+                            <text x="350" y="40" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">'Avvūn də-ḇa-šəmayyā</text>
+                            <text x="350" y="56" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Our Father in heaven</text>
                         </g>
-                        <text x="350" y="390" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The seven petitions of the Lord's Prayer as a sacred formula of recognition</text>
+                        <g>
+                            <rect x="280" y="80" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1" opacity="0.85"/>
+                            <text x="350" y="100" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">Yiṯqaddaš šəmāḵ</text>
+                            <text x="350" y="116" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Hallowed be thy name</text>
+                        </g>
+                        <g>
+                            <rect x="280" y="140" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1" opacity="0.85"/>
+                            <text x="350" y="160" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">Tēṯē malkūṯāḵ</text>
+                            <text x="350" y="176" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Thy kingdom come</text>
+                        </g>
+                        <g>
+                            <rect x="280" y="200" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1" opacity="0.85"/>
+                            <text x="350" y="220" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">Nēhṯē ṣəḇyānāḵ</text>
+                            <text x="350" y="236" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Thy will be done</text>
+                        </g>
+                        <g>
+                            <rect x="280" y="260" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1" opacity="0.85"/>
+                            <text x="350" y="280" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">Hab lan laḥmā</text>
+                            <text x="350" y="296" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Daily bread</text>
+                        </g>
+                        <g>
+                            <rect x="280" y="320" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1" opacity="0.85"/>
+                            <text x="350" y="340" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">Šəḇoq lan ḥōḇēn</text>
+                            <text x="350" y="356" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Forgive us our debts</text>
+                        </g>
+                        <g>
+                            <rect x="280" y="380" width="140" height="52" rx="8" fill="url(#mantraGrad2)" stroke="var(--gold)" stroke-width="1.5" opacity="0.95" filter="url(#mGlow2)"/>
+                            <text x="350" y="400" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">Lə'ā tə'ellan</text>
+                            <text x="350" y="416" text-anchor="middle" fill="var(--stone-light)" font-family="Crimson Pro, serif" font-size="7" font-style="italic">Deliver us from evil</text>
+                        </g>
+                        <!-- connecting line -->
+                        <line x1="350" y1="72" x2="350" y2="80" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                        <line x1="350" y1="132" x2="350" y2="140" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                        <line x1="350" y1="192" x2="350" y2="200" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                        <line x1="350" y1="252" x2="350" y2="260" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                        <line x1="350" y1="312" x2="350" y2="320" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                        <line x1="350" y1="372" x2="350" y2="380" stroke="var(--gold)" stroke-width="1" opacity="0.3"/>
+                        <text x="350" y="465" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic" opacity="0.7">The seven petitions of the Lord's Prayer as a sacred formula of recognition</text>
                     </svg>
                     <p class="diagram-caption">The Lord's Prayer is a sevenfold mantra: each petition aligns the seeker with a different aspect of non-dual recognition. It is not a request to an external God but a reorientation of consciousness.</p>
+                </div>
+
+                <div class="resonance-callout fade-in">
+                    <p>Evagrius: "If you are a theologian, you will pray truly; and if you pray truly, you are a theologian." The Lord's Prayer is the summary of the whole Gospel, the rule of prayer, the perfect prayer.</p>
                 </div>
             </div>
         </section>
@@ -2032,40 +2137,41 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>T</strong>he Sermon on the Mount is not a collection of abstract ideals. It is a practical manual for living in the recognition of the Self. Each teaching is a direct application of non-dual awareness to the circumstances of daily life.</p>
+                <p><strong>T</strong>he Sermon on the Mount is not a collection of abstract ideals. It is a practical manual for living in the recognition of the Self — what the Greek Fathers called <span class="greek-term" data-tooltip="The practice of the virtues; the active life of virtue">πρακτική</span> (<em>praktikē</em>), the active life of virtue that prepares the soul for contemplation. Each teaching is a direct application of non-dual awareness to the circumstances of daily life.</p>
 
-                <p class="fade-in stagger-1"><span class="greek-term" title="Do not resist an evil person; but if anyone strikes you on the right cheek, turn to him the other also">lā təqūmūn lə-bīšā</span> &mdash; &ldquo;Do not resist an evil person. But if anyone strikes you on the right cheek, turn to him the other also&rdquo; (Matt 5:39). This is not passivity in the face of injustice. It is the complete dissolution of the ego's defensive posture. The one who has recognized the Self no longer needs to protect a separate self. The &ldquo;other cheek&rdquo; is the recognition that there is no &ldquo;other&rdquo; &mdash; only the Self playing all roles.</p>
+                <p class="fade-in stagger-1"><span class="greek-term" data-tooltip="Do not resist an evil person; turn the other cheek; Aramaic transliteration">lā təqūmūn lə-bīšā</span> — &ldquo;Do not resist an evil person. But if anyone strikes you on the right cheek, turn to him the other also&rdquo; (Matt 5:39). This is not passivity in the face of injustice. It is the <strong>complete dissolution of the ego's defensive posture</strong>. The one who has recognized the Self no longer needs to protect a separate self. The "other cheek" is the recognition that there is no "other" — only the Self playing all roles. <span class="greek-term" data-tooltip="Non-harm; the natural fruit of non-dual recognition">Ahimsa</span> as the natural fruit of non-dual recognition.</p>
 
-                <p class="fade-in stagger-2"><span class="greek-term" title="Give to everyone who asks of you, and from him who takes away your goods do not ask them back">lə-šā'ēl lāḵ tēn</span> &mdash; &ldquo;Give to everyone who asks of you&rdquo; (Matt 5:42). In the Vedantic framework, this is <span class="greek-term" title="Generosity; giving as a natural expression of non-duality">dāna</span> &mdash; generosity that flows from the recognition that all is the Self. When you give to another, you are giving to yourself. When you refuse, you are refusing yourself.</p>
+                <p class="fade-in stagger-2"><span class="greek-term" data-tooltip="Give to everyone who asks of you; Aramaic transliteration">lə-šā'ēl lāḵ tēn</span> — &ldquo;Give to everyone who asks of you&rdquo; (Matt 5:42). In the Vedantic framework, this is <span class="greek-term" data-tooltip="Generosity; giving as a natural expression of non-duality">dāna</span> — generosity that flows from the recognition that all is the Self. When you give to another, you are giving to yourself.</p>
 
-                <p class="fade-in stagger-3"><span class="greek-term" title="Do not be anxious about tomorrow, for tomorrow will be anxious for itself">lā təḥšənūn lə-maḥar</span> &mdash; &ldquo;Do not be anxious about tomorrow&rdquo; (Matt 6:34). Anxiety is the ego's projection into a future that does not exist. The awakened one abides in the present, the only moment that is real. This is <span class="greek-term" title="The practice of abiding in the present; the removal of past and future conditioning">nididhyāsana</span> &mdash; the continuous resting in the Self, free from the ego's temporal projections.</p>
+                <p class="fade-in stagger-3"><span class="greek-term" data-tooltip="Do not be anxious about tomorrow; Aramaic transliteration">lā təḥšənūn lə-maḥar</span> — &ldquo;Do not be anxious about tomorrow&rdquo; (Matt 6:34). Anxiety is the ego's projection into a future that does not exist. The awakened one abides in the present. This is <span class="greek-term" data-tooltip="Continuous resting in the Self; the removal of past and future conditioning">nididhyāsana</span> — the continuous resting in the Self, free from the ego's temporal projections.</p>
 
-                <p class="fade-in stagger-4">Jesus says: <em>&ldquo;Consider the lilies of the field, how they grow: they neither toil nor spin; yet I tell you, even Solomon in all his glory was not arrayed like one of these&rdquo;</em> (Matt 6:28-29). The lily does not strive to be beautiful. It is beautiful by nature. The awakened one does not strive to be the Self. It is the Self by nature. The teaching is <span class="greek-term" title="Non-action; effortlessness; the natural state of the Self">nishkāma-karma</span> &mdash; action without attachment to results, action that flows from the Self rather than toward it.</p>
+                <p class="fade-in stagger-4"><span class="greek-term" data-tooltip="Consider the lilies of the field; Aramaic transliteration">'eštəḥallū l-šōšannē də-ḥaqqəlā</span> — &ldquo;Consider the lilies of the field, how they grow: they neither toil nor spin&rdquo; (Matt 6:28-29). The lily does not strive to be beautiful; it is beautiful by nature. The awakened one does not strive to be the Self. This is <span class="greek-term" data-tooltip="Action without attachment to results; action that flows from the Self">niṣkāma-karma</span> — action without attachment to results, action that flows from the Self rather than toward it.</p>
 
-                <div class="tension-box fade-in stagger-1">
-                    <p>The teaching &ldquo;love your enemies&rdquo; (Matt 5:44) is the most radical application of non-duality. The enemy is the shadow of the ego, the projection of what you refuse to see in yourself. To love the enemy is to see through the projection and recognize the Self in all. This is <span class="greek-term" title="The vision of non-difference; seeing the Self in all beings">sama-darśana</span> &mdash; the equal vision of the enlightened one.</p>
+                <div class="tension-box fade-in">
+                    <div class="tension-label">Tension · "Love Your Enemies" — The Political Dimension</div>
+                    <p><span class="tension-em">"Turn the other cheek" is not private spirituality; it is a public act of non-violent resistance in an occupied land.</span> The "right cheek" strike is a backhand — an insult from a superior. Turning the other cheek demands the striker use an open hand, recognizing the victim's equality. This is Walter Wink's "third way" — neither submission nor violence, but creative resistance. The Beatitudes are not escape from the world but transformation of it. Theosis is not for the monastery alone; it is for the polis, the city, the empire. Liberation theology: the "poor in spirit" are the materially poor, the oppressed, those on whom empire grinds. The Beatitudes are revolutionary, not escapist.</p>
                 </div>
 
-                <div class="scripture-panels fade-in stagger-2">
+                <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:39 · Turn the Other Cheek</div>
                         <p class="scripture-panel-text">&ldquo;If anyone strikes you on the right cheek, turn to him the other also.&rdquo;</p>
-                        <p class="scripture-panel-ref">The dissolution of ego-defensiveness</p>
+                        <p class="scripture-panel-ref">The dissolution of ego-defensiveness · Ahimsa</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 6:34 · Do Not Be Anxious</div>
                         <p class="scripture-panel-text">&ldquo;Do not be anxious about tomorrow, for tomorrow will be anxious for itself.&rdquo;</p>
-                        <p class="scripture-panel-ref">Abiding in the present · Nididhyāsana</p>
+                        <p class="scripture-panel-ref">Nididhyāsana · Abiding in the present</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:44 · Love Your Enemies</div>
                         <p class="scripture-panel-text">&ldquo;Love your enemies and pray for those who persecute you.&rdquo;</p>
-                        <p class="scripture-panel-ref">Sama-darśana · Equal vision</p>
+                        <p class="scripture-panel-ref">Sama-darśana · Equal vision · The political dimension</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 6:28 · The Lilies of the Field</div>
                         <p class="scripture-panel-text">&ldquo;Consider the lilies of the field, how they grow: they neither toil nor spin.&rdquo;</p>
-                        <p class="scripture-panel-ref">Nishkāma-karma · Effortless action</p>
+                        <p class="scripture-panel-ref">Niṣkāma-karma · Effortless action</p>
                     </div>
                 </div>
             </div>
@@ -2083,43 +2189,94 @@
                     <span class="stage-deva-title">Τέλειος</span>
                 </div>
                 <h2 class="stage-h2">The Vedantic Declaration</h2>
-                <span class="stage-subtitle-label">"Be perfect, therefore, as your heavenly Father is perfect"</span>
+                <span class="stage-subtitle-label">"Be perfect, therefore, as your heavenly Father is perfect."</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>J</strong>esus concludes the first section of the Sermon on the Mount with a command that has confused and burdened Christians for two millennia: <span class="greek-term" title="Be perfect; be complete; be whole">ἔσεσθε οὖν ὑμεῖς τέλειοι</span> &mdash; &ldquo;Be perfect, therefore, as your heavenly Father is perfect&rdquo; (Matt 5:48).</p>
+                <p><strong>J</strong>esus concludes the first section of the Sermon on the Mount with a command that has confused and burdened Christians for two millennia: <span class="greek-term" data-tooltip="Be perfect; be complete; be whole; mature">ἔσεσθε οὖν ὑμεῖς τέλειοι</span> — &ldquo;Be perfect, therefore, as your heavenly Father is perfect&rdquo; (Matt 5:48).</p>
 
-                <p class="fade-in stagger-1">This is not a demand for moral perfectionism. The Greek word <span class="greek-term" title="Complete, whole, mature; perfect in the sense of being fully realized">τέλειος</span> (<em>teleios</em>) does not mean &ldquo;without fault.&rdquo; It means &ldquo;complete,&rdquo; &ldquo;whole,&rdquo; &ldquo;mature,&rdquo; &ldquo;having reached its end&rdquo; (from <em>telos</em>, &ldquo;end,&rdquo; &ldquo;purpose&rdquo;). In the Vedantic reading, this is the <strong>Mahāvākya</strong> of the Sermon on the Mount:</p>
+                <p class="fade-in"><span class="greek-term" data-tooltip="Complete, whole, mature; having reached its end; not without fault">Τέλειος</span> (<em>teleios</em>) does not mean "without fault." It means <strong>"complete," "whole," "mature," "having reached its end"</strong> (from <em>telos</em>, "end," "purpose"). In the Greek Fathers, this is <span class="greek-term" data-tooltip="Deification; participation in the divine nature">θέωσις</span> — participation in the divine nature (2 Peter 1:4). It is not moral perfectionism but deification.</p>
 
-                <div class="resonance-callout fade-in stagger-1">
-                    <p>&ldquo;Be whole. Be complete. Be what you already are. The Father is not a separate being to be imitated; the Father is the Self that you are.&rdquo;</p>
-                    <p class="attribution">&mdash; Jesus of Nazareth</p>
+                <p class="fade-in stagger-1"><strong>Athanasius</strong>: <em>"God became man so that man might become god."</em> <strong>Gregory of Nyssa</strong>: <em>"The soul, as it advances, grows and ascends through its participation in the divine — not by arriving at a limit, but by always expanding into the infinite."</em> <strong>Maximus Confessor</strong>: <em>"The logoi of all things are contained in the Logos."</em> <strong>Palamas</strong>: <em>"We participate in God's energies without becoming God's essence."</em></p>
+
+                <div class="tension-box fade-in">
+                    <div class="tension-label">Tension · Theosis vs. Moksha</div>
+                    <p><span class="tension-em">Theosis is not "becoming God" in the sense of identity (Advaita's Aham Brahmasmi) but "participation in the divine nature" while remaining creature.</span> The Greek distinction between <span class="greek-term" data-tooltip="Essence; the unknowable core of God">οὐσία</span> (<em>ousia</em>) and <span class="greek-term" data-tooltip="Energies; the uncreated divine operations in which we participate">ἐνέργεια</span> (<em>energeia</em>) — from Palamas — means we participate in God's energies (the uncreated light) without becoming God's essence. This is the bridge between Advaita's absorption and Christianity's communion. Theosis preserves relationship; moksha dissolves it. The "already and not yet" — you are deified AND you are becoming deified. This is not Advaita's terminal moksha but Christianity's eschatological tension.</p>
                 </div>
 
-                <p class="fade-in stagger-2">In Advaita, perfection is not an achievement but a <strong>recognition</strong>. You are already the Self, already whole, already complete. The command &ldquo;Be perfect&rdquo; is an invitation to recognize what you have never ceased to be. It is the same teaching as the Upanishadic <span class="greek-term" title="You are That; the supreme identity of Atman and Brahman">Tat Tvam Asi</span> &mdash; &ldquo;That Thou Art.&rdquo;</p>
+                <p class="fade-in stagger-2">"Be perfect" as the <span class="greek-term" data-tooltip="The great saying; the supreme identity">Mahāvākya</span> of the Sermon on the Mount — not a command to achieve but an <strong>invitation to recognize what you already are</strong>. <strong>Ramana Maharshi</strong>: "You are already perfect." <strong>Nisargadatta Maharaj</strong>: "The only fact you are sure of is that you are. The 'I am' is certain. The 'I am this' is not."</p>
 
-                <p class="fade-in stagger-3">The Father is <span class="greek-term" title="Complete, whole, lacking nothing">τέλειος</span> not because he is morally impeccable, but because he is <strong>complete</strong>. The Father lacks nothing. The Father is the fullness of being. The command to be perfect is the command to recognize that you too are the fullness of being. The apparent lack is the illusion of separation. The apparent imperfection is the veil of <span class="greek-term" title="The cosmic illusion; the power that veils reality and projects multiplicity">māyā</span>.</p>
+                <p class="fade-in stagger-3">But Christianity adds: <strong>you are perfect AND you are being perfected.</strong> Theosis is both realized and awaited. The "already and not yet" — you are deified AND you are becoming deified. This is not Advaita's terminal <span class="greek-term" data-tooltip="Liberation">mokṣa</span> but Christianity's eschatological tension. The Beatitudes stand as the Sermon on the Mount — Jesus's manifesto for a new kind of humanity, spoken to the poor, the mourners, the meek, the hungry. They are not a spiritual ladder for the privileged. They are a revolution.</p>
 
-                <p class="fade-in stagger-4">This is the same teaching that Ramana Maharshi gave to his disciples: &ldquo;You are already perfect. The only thing that is imperfect is the idea that you are imperfect.&rdquo; It is the same teaching that Nisargadatta Maharaj distilled: &ldquo;Give up all questions except one: 'Who am I?' After all, the only fact you are sure of is that you are. The 'I am' is certain. The 'I am this' is not.&rdquo;</p>
-
-                <p class="fade-in stagger-5">The Sermon on the Mount, read through the lens of Vedanta, is not a list of impossible moral demands. It is a <strong>graduated path of recognition</strong>, from the first stirring of discrimination (&ldquo;poor in spirit&rdquo;) through the purification of the heart (&ldquo;pure in heart&rdquo;) to the final recognition of the Self (&ldquo;Be perfect&rdquo;). It is the <span class="greek-term" title="The way; the path of spiritual practice">ὁδός</span> &mdash; the Way that leads to the realization that there is no way, no journey, no destination. You are already there.</p>
-
-                <div class="scripture-panels fade-in stagger-1">
+                <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
                         <div class="scripture-panel-label">Matthew 5:48 · The Mahāvākya</div>
                         <p class="scripture-panel-text">&ldquo;Be perfect, therefore, as your heavenly Father is perfect.&rdquo;</p>
                         <p class="scripture-panel-ref">Ἔσεσθε οὖν ὑμεῖς τέλειοι</p>
                     </div>
                     <div class="scripture-panel">
-                        <div class="scripture-panel-label">Chandogya Upanishad 6.8.7</div>
-                        <p class="scripture-panel-text">&ldquo;Tat Tvam Asi — That thou art.&rdquo;</p>
-                        <p class="scripture-panel-ref">The Supreme Identity</p>
+                        <div class="scripture-panel-label">2 Peter 1:4 · Partakers of the Divine Nature</div>
+                        <p class="scripture-panel-text">&ldquo;You may become partakers of the divine nature.&rdquo;</p>
+                        <p class="scripture-panel-ref">Theosis · Θέωσις</p>
                     </div>
                 </div>
 
-                <div class="pull-q fade-in">
-                    <p>&ldquo;The pure heart sees no separation. The pure heart sees only the Self.&rdquo;</p>
-                    <cite>&mdash; The Beatitudes as Jnana Yoga</cite>
+                <div class="resonance-callout fade-in">
+                    <p>You are already perfect. The only thing that is imperfect is the idea that you are imperfect. Yet you are also being perfected — for the infinite is inexhaustible, and your participation in it has no end.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="stage-sep"/>
+
+        <!-- POSTLUDE: THE FRICTION -->
+        <section class="stage-section" id="friction">
+            <div class="stage-wm" aria-hidden="true">ΤΡΙΒΗ</div>
+            <div class="stage-header">
+                <div class="stage-eyeline">
+                    <span class="stage-n">The Friction</span>
+                    <span class="stage-skt">What Resists the Map</span>
+                    <span class="stage-deva-title">Boundary Conditions · Where the Map Folds</span>
+                </div>
+                <h2 class="stage-h2">What Resists the Map</h2>
+                <span class="stage-subtitle-label">Six Irreducible Tensions</span>
+                <span class="stage-rule"></span>
+            </div>
+            <div class="stage-body">
+                <p><strong>T</strong>o read the Beatitudes as Jnana Yoga is permissible. To claim this is all they are would be reduction. The Beatitudes stand as the Sermon on the Mount — Jesus's manifesto for a new kind of humanity, spoken to the poor, the mourners, the meek, the hungry. They are not a spiritual ladder for the privileged. They are a revolution. The following are boundary conditions — places where the map must fold.</p>
+
+                <div class="tension-box fade-in">
+                    <div class="tension-label">1. The Trinity as Relational Ontology</div>
+                    <p><span class="tension-em">Perichoresis vs. Nirguna.</span> The Christian God is three persons in mutual indwelling — a dance of love that is the very structure of reality. Advaita's <span class="greek-term" data-tooltip="The attributeless absolute; Brahman without qualities">nirguṇa Brahman</span> is attributeless, relationless. Theosis preserves relationship; moksha dissolves it.</p>
+                </div>
+
+                <div class="tension-box fade-in stagger-1">
+                    <div class="tension-label">2. Creation Ex Nihilo vs. Maya</div>
+                    <p><span class="tension-em">The world is real, good, and distinct from God.</span> Creation is not a superimposition on Brahman but a free act of divine love. The body is not merely <span class="greek-term" data-tooltip="A limiting adjunct; a temporary identification">upādhi</span> but beloved. Theosis transforms the world; moksha transcends it.</p>
+                </div>
+
+                <div class="tension-box fade-in stagger-2">
+                    <div class="tension-label">3. The Scandal of Particularity</div>
+                    <p><span class="tension-em">The infinite in THIS body, THIS time, THIS crucified Jew under Tiberius.</span> The Beatitudes are spoken to THIS crowd in THIS occupied land. Theosis is incarnational; moksha is often disembodied. The scandal of particularity is not an accident; it is the shape of the gospel.</p>
+                </div>
+
+                <div class="tension-box fade-in stagger-3">
+                    <div class="tension-label">4. Vicarious Suffering and Solidarity</div>
+                    <p><span class="tension-em">The cross as entering another's pain, not only dissolving one's own ego.</span> The Beatitudes' "persecuted" are real martyrs, not metaphors. Theosis is <span class="greek-term" data-tooltip="Witness through suffering">μαρτυρία</span> — witness through suffering — not the dissolution of the sufferer.</p>
+                </div>
+
+                <div class="tension-box fade-in stagger-4">
+                    <div class="tension-label">5. Unchosen Suffering — The Holocaust Test</div>
+                    <p><span class="tension-em">Theodicy; Advaita's "maya" as morally intolerable.</span> The "poor in spirit" who are gassed are not poor by choice. Christianity insists on the irreducible value of the suffering person; the Beatitudes are spoken TO them, not ABOUT them as spiritual achievers. The cross is God's entry into the world's deepest pain, not God's dismissal of it.</p>
+                </div>
+
+                <div class="tension-box fade-in stagger-5">
+                    <div class="tension-label">6. The Resurrection as Bodily and Communal</div>
+                    <p><span class="tension-em">No equivalent in Advaita; the Beatitudes' "reward in heaven" is not escape from the body but its transformation.</span> Theosis is somatic; moksha is often understood as liberation FROM the body. The empty tomb and the fish-eating body are not metaphors. The resurrection is the redemption of time and flesh.</p>
+                </div>
+
+                <div class="resonance-callout fade-in">
+                    <p>These differences are boundary conditions — places where the map must fold. To read the Beatitudes as Jnana Yoga is permissible. To claim this is all they are would be reduction. The Beatitudes stand as the Sermon on the Mount — Jesus's manifesto for a new kind of humanity, spoken to the poor, the mourners, the meek, the hungry. They are not a spiritual ladder for the privileged. They are a revolution.</p>
                 </div>
             </div>
         </section>
@@ -2131,10 +2288,9 @@
     ═══════════════════════════════════════════════════════════════ -->
     <div class="pq-section">
         <div class="pq-glow" aria-hidden="true"></div>
-        <div class="pullquote">
-            <p class="pq-text">The Beatitudes are the practical path to the non-dual recognition. From the first stirring of discrimination to the final recognition of the Self, the Sermon on the Mount is a complete map of awakening.</p>
-            <p class="pq-attr"><a href="messiah-silence.html" class="continue-link">&larr; Return to The Cloud of Unknowing</a> <span class="pq-sep">·</span> <a href="messiah-mirror.html" class="continue-link">Continue to Tat Tvam Asi &rarr;</a></p>
-        </div>
+        <span class="pq-mark" aria-hidden="true">"</span>
+        <p class="pq-text">The Beatitudes are the practical path to the non-dual recognition. From the first stirring of discrimination to the final recognition of the Self, the Sermon on the Mount is a complete map of awakening — read through the lens of Christianity's native contemplative grammar.</p>
+        <p class="pq-attr"><a href="messiah-silence.html" class="continue-link">&larr; Return to The Cloud of Unknowing</a> <span class="pq-sep">·</span> <a href="messiah-mirror.html" class="continue-link">Continue to Theosis &rarr;</a></p>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -2142,19 +2298,19 @@
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-silence.html" class="chapter-link">III · The Cloud of Unknowing</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-beatitudes.html" class="chapter-link active">IV · The Beatitudes</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
-        <a href="messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-mirror.html" class="chapter-link">V · Theosis</a>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-gospel-thomas.html" class="chapter-link">VI · The Gospel of Thomas</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-avatar.html" class="chapter-link">VII · The Incarnation as Avatar</a>
     </div>
 
@@ -2175,7 +2331,7 @@
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">Last updated: July 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
@@ -2231,7 +2387,7 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
             }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.fade-in, .section-separator').forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-in, .section-separator, .tension-box').forEach(el => observer.observe(el));
 
             /* TEXT REVEAL */
             const textObserver = new IntersectionObserver((entries) => {

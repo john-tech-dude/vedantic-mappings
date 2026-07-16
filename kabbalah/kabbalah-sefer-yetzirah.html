@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <style>
         /* ═══════════════════════════════════════════════════════
-           TOKENS — Dark Kabbalistic Theme (from Sha'ar HaGilgulim)
+           TOKENS — Dark Kabbalistic Theme
            ═══════════════════════════════════════════════════════ */
         :root {
             --bg: #0a0c14;
@@ -49,7 +49,7 @@
             --surface: #ffffff;
             --surface2: #f5f7fa;
             --ink: #1a1e2e;
-            --ink2: #3a4058;
+            --ink2: #2a2e3e;
             --stone: #5a6080;
             --stone-light: #7a80a0;
             --gold: #8a7030;
@@ -123,136 +123,33 @@
            KEYFRAMES
            ═══════════════════════════════════════════════════════ */
         @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInLeft {
-            0% {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        @keyframes fadeInRight {
-            0% {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            0% { opacity: 0; transform: translateY(24px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         @keyframes scrollBounce {
-            0%,
-            100% {
-                opacity: 1;
-                transform: scaleY(1);
-            }
-            50% {
-                opacity: 0.3;
-                transform: scaleY(0.5);
-            }
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.3; transform: scaleY(0.5); }
         }
         @keyframes breathe {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.04);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
         }
         @keyframes rippleOut {
-            0% {
-                opacity: 0.5;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(5);
-            }
+            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(5); }
         }
         @keyframes lineReveal {
-            from {
-                transform: scaleX(0);
-            }
-            to {
-                transform: scaleX(1);
-            }
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
         }
         @keyframes diamondReveal {
-            from {
-                opacity: 0;
-                transform: rotate(45deg) scale(0);
-            }
-            to {
-                opacity: 1;
-                transform: rotate(45deg) scale(1);
-            }
+            from { opacity: 0; transform: rotate(45deg) scale(0); }
+            to { opacity: 1; transform: rotate(45deg) scale(1); }
         }
         @keyframes ambientDrift {
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-                opacity: 0.35;
-            }
-            33% {
-                transform: translate(3%, -2%) scale(1.03);
-                opacity: 0.55;
-            }
-            66% {
-                transform: translate(-2%, 3%) scale(0.97);
-                opacity: 0.25;
-            }
-        }
-        @keyframes pathGlow {
-            0%,
-            100% {
-                stroke-opacity: 0.2;
-                filter: drop-shadow(0 0 2px var(--gold-glow));
-            }
-            50% {
-                stroke-opacity: 0.8;
-                filter: drop-shadow(0 0 12px var(--sun-glow));
-            }
-        }
-        @keyframes sefirahPulse {
-            0%,
-            100% {
-                filter: drop-shadow(0 0 2px var(--gold-glow));
-            }
-            50% {
-                filter: drop-shadow(0 0 20px var(--sun-glow));
-                transform: scale(1.05);
-            }
-        }
-        @keyframes diagramFloat {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-6px);
-            }
-        }
-        @keyframes tzimtzumPulse {
-            0%, 100% { r: 28; opacity: 0.6; }
-            50% { r: 32; opacity: 0.9; }
-        }
-        @keyframes vesselBreak {
-            0%, 100% { transform: translate(0,0) rotate(0deg); opacity: 0.7; }
-            25% { transform: translate(2px,-1px) rotate(1deg); }
-            75% { transform: translate(-1px,2px) rotate(-1deg); }
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.35; }
+            33% { transform: translate(3%, -2%) scale(1.03); opacity: 0.55; }
+            66% { transform: translate(-2%, 3%) scale(0.97); opacity: 0.25; }
         }
         @keyframes letterGlow {
             0%, 100% { opacity: 0.6; }
@@ -488,12 +385,8 @@
             pointer-events: none;
             animation: rippleOut 10s ease-out infinite;
         }
-        .hero-ripple:nth-child(2) {
-            animation-delay: 3.5s;
-        }
-        .hero-ripple:nth-child(3) {
-            animation-delay: 7s;
-        }
+        .hero-ripple:nth-child(2) { animation-delay: 3.5s; }
+        .hero-ripple:nth-child(3) { animation-delay: 7s; }
 
         .hero-eyemark {
             font-family: 'Cinzel', serif;
@@ -648,10 +541,14 @@
             animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
             cursor: pointer;
             z-index: 2;
-            transition: transform 0.3s var(--ease-out-expo);
+            transition: transform 0.3s var(--ease-out-expo), opacity 0.4s ease;
         }
         .hero-scroll-cue:hover {
             transform: translateX(-50%) translateY(4px);
+        }
+        .hero-scroll-cue.hidden {
+            opacity: 0 !important;
+            pointer-events: none;
         }
         .hero-scroll-cue span {
             font-family: 'Cinzel', serif;
@@ -665,6 +562,7 @@
             height: 32px;
             background: linear-gradient(180deg, var(--indigo-light), transparent);
             animation: scrollBounce 2.5s ease-in-out infinite;
+            pointer-events: none;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -759,7 +657,7 @@
            STAGE SECTIONS
            ═══════════════════════════════════════════════════════ */
         .stages-wrap {
-            background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 20%, var(--bg) 80%, var(--bg2) 100%);
+            background: var(--bg);
         }
         .stage-section {
             padding: 80px 24px;
@@ -1053,60 +951,52 @@
         }
 
         /* ═══════════════════════════════════════════════════════
-           DOCTRINE TABLE
+           DETAILS / DISCLOSURE
            ═══════════════════════════════════════════════════════ */
-        .doctrine-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2.5rem 0;
-            position: relative;
-            z-index: 1;
-            font-size: 0.92rem;
-        }
-        .doctrine-table th {
-            font-family: 'Cinzel', serif;
-            font-size: 0.52rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--gold-deep);
-            padding: 0.85rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-strong);
-            background: var(--bg2);
-        }
-        [data-theme="dark"] .doctrine-table th {
-            color: var(--gold);
-            background: var(--surface);
-        }
-        .doctrine-table td {
-            padding: 0.9rem 1rem;
-            border-bottom: 1px solid var(--border-subtle);
-            color: var(--stone);
-            vertical-align: top;
-            line-height: 1.6;
-        }
-        .doctrine-table td:first-child {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
-            color: var(--ink);
-            font-weight: 500;
-            white-space: nowrap;
-        }
-        .doctrine-table td .td-heb {
-            display: block;
-            font-family: 'Frank Ruhl Libre', serif;
-            font-size: 1rem;
-            color: var(--gold);
-            opacity: 0.7;
-            direction: rtl;
-            line-height: 1.3;
-            margin-top: 0.15rem;
-        }
-        .doctrine-table tr:last-child td {
-            border-bottom: none;
-        }
-        .doctrine-table tr:hover td {
+        details {
+            margin: 2rem 0;
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-sm);
             background: var(--surface2);
+            overflow: hidden;
+        }
+        summary {
+            padding: 1rem 1.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: background 0.3s;
+        }
+        summary:hover {
+            background: var(--gold-glow);
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::before {
+            content: '▸';
+            font-size: 0.8rem;
+            transition: transform 0.3s var(--ease-out-expo);
+            display: inline-block;
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        details[open] summary {
+            border-bottom: 1px solid var(--border-medium);
+        }
+        .details-inner {
+            padding: 1.25rem 1.5rem;
+            font-size: 0.95rem;
+            color: var(--stone);
+            line-height: 1.7;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1176,6 +1066,15 @@
             padding: 90px 24px;
             max-width: 900px;
             margin: 0 auto;
+        }
+        .toc-meta {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            color: var(--stone);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
         }
         .toc-book {
             margin-top: 3rem;
@@ -1266,7 +1165,6 @@
             border-radius: var(--radius-lg);
             padding: 2rem;
             overflow: hidden;
-            animation: diagramFloat 8s ease-in-out infinite;
         }
         .diagram-container::before {
             content: '';
@@ -1364,7 +1262,8 @@
             font-size: 0.85rem;
             color: var(--stone);
             line-height: 1.5;
-            width: 280px;
+            width: min(280px, calc(100vw - 2rem));
+            max-width: calc(100vw - 2rem);
             white-space: normal;
             opacity: 0;
             visibility: hidden;
@@ -1388,112 +1287,23 @@
             visibility: visible;
             transform: translateX(-50%) scale(1);
         }
-        @media (pointer: coarse) {
-            .hotspot-tooltip {
-                width: 260px;
-                left: auto;
-                right: -20px;
-                transform: scale(0.96);
-            }
-            .hotspot:hover .hotspot-tooltip,
-            .hotspot.active .hotspot-tooltip {
-                transform: scale(1);
-            }
-        }
         @media (max-width: 768px) {
             .hotspot-tooltip {
-                width: 240px;
                 left: auto;
                 right: -20px;
                 transform: scale(0.96);
+                width: min(260px, calc(100vw - 2rem));
             }
             .hotspot:hover .hotspot-tooltip,
             .hotspot.active .hotspot-tooltip {
                 transform: scale(1);
             }
         }
-
-        /* ═══════════════════════════════════════════════════════
-           INTERACTIVE SEFIROT
-           ═══════════════════════════════════════════════════════ */
-        .sefirah-group {
-            cursor: pointer;
-            transition: all 0.3s var(--ease-smooth);
-        }
-        .sefirah-group:hover circle:first-child {
-            filter: drop-shadow(0 0 12px var(--sun-glow));
-        }
-        .sefirah-group:hover text {
-            fill: var(--gold-light) !important;
-        }
-        .sefirah-tooltip {
-            position: fixed;
-            background: var(--surface2);
-            border: 1px solid var(--border-strong);
-            border-radius: var(--radius-md);
-            padding: 1.25rem 1.5rem;
-            width: 300px;
-            max-width: 90vw;
-            opacity: 0;
-            visibility: hidden;
-            transform: translate(-50%, -20px) scale(0.96);
-            transition: all 0.35s var(--ease-out-expo);
-            z-index: 10000;
-            box-shadow: 0 16px 48px rgba(0,0,0,0.7);
-            pointer-events: none;
-        }
-        .sefirah-tooltip.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -20px) scale(1);
-        }
-        .sefirah-tooltip-title {
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.4rem;
-        }
-        .sefirah-tooltip-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--ink);
-            margin-bottom: 0.15rem;
-        }
-        .sefirah-tooltip-hebrew {
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            color: var(--gold-light);
-            margin-bottom: 0.6rem;
-            letter-spacing: 0.1em;
-        }
-        .sefirah-tooltip-desc {
-            font-family: 'Crimson Pro', serif;
-            font-size: 0.88rem;
-            color: var(--stone);
-            line-height: 1.55;
-        }
-        .sefirah-tooltip-number {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--gold);
-            color: var(--bg);
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        @media (max-width: 480px) {
+            .hotspot-tooltip {
+                right: -10px;
+                width: calc(100vw - 2rem);
+            }
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1803,42 +1613,121 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .sefirah-tooltip {
-                width: 260px;
-                padding: 1rem;
-            }
         }
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
             *::after {
-                animation: none !important;
-                transition: none !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
             .fade-in {
                 opacity: 1 !important;
                 transform: none !important;
             }
-            .diagram-container {
+            .hero-ripple,
+            .hero::after,
+            .pq-glow,
+            .diagram-section::before {
+                animation: none !important;
+                opacity: 0.3 !important;
+            }
+            .scroll-line {
                 animation: none !important;
             }
-            .hero-emblem {
-                animation: none !important;
-                opacity: 1 !important;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           PRINT
+           ═══════════════════════════════════════════════════════ */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+                line-height: 1.5;
             }
+            body::before {
+                display: none;
+            }
+            .nav-compass,
+            .theme-toggle,
+            .back-to-top,
+            .hero-ripples,
+            .hero-scroll-cue,
+            .hero::after,
+            .pq-glow,
+            .diagram-section::before {
+                display: none !important;
+            }
+            .hero {
+                min-height: auto;
+                padding: 2rem;
+                background: white !important;
+                page-break-after: avoid;
+            }
+            [data-theme="dark"] .hero-title,
+            [data-theme="dark"] .stage-h2,
             .hero-title,
-            .hero-subtitle,
-            .hero-eyemark,
-            .hero-divider,
-            .hero-heb-display,
-            .hero-quote,
-            .hero-attr,
-            .hero-scroll-cue {
-                animation: none !important;
-                opacity: 1 !important;
+            .stage-h2 {
+                color: #1a1e2e !important;
+                text-shadow: none !important;
             }
-            .hero-ripple {
-                animation: none !important;
+            .diagram-container {
+                break-inside: avoid;
+                border: 1px solid #ccc;
+                background: #f5f5f5 !important;
+                page-break-inside: avoid;
+            }
+            .stage-section,
+            .pq-section,
+            .toc-section {
+                padding: 1.5rem 0;
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: none;
+                color: black !important;
+            }
+            a[href^="#"]::after {
+                content: "";
+            }
+            .scripture-panels {
+                border: 1px solid #ccc;
+            }
+            .scripture-panel {
+                background: #f9f9f9 !important;
+            }
+            .term-card {
+                break-inside: avoid;
+                border: 1px solid #ddd;
+            }
+            .stage-wm,
+            .pq-mark {
+                display: none;
+            }
+            .pull-q {
+                border-left: 3px solid #666;
+                background: #f5f5f5 !important;
+            }
+            details {
+                border: 1px solid #ccc;
+            }
+            summary {
+                color: #333 !important;
+            }
+            .ed-note {
+                background: #f5f5f5 !important;
+                border: 1px solid #ccc;
+            }
+            .footer {
+                background: white !important;
+                border-top: 2px solid #ccc;
+            }
+            .footer-emblem-outer,
+            .footer-emblem-inner {
+                border-color: #666 !important;
             }
         }
     </style>
@@ -1863,23 +1752,6 @@
             <a href="#tree" class="nav-item" data-section="tree">The Tree of Life <span class="nav-heb">עץ חיים</span></a>
             <a href="#comparative" class="nav-item" data-section="comparative">Comparative Hermeneutic</a>
             <a href="#glossary" class="nav-item" data-section="glossary">Glossary of Terms</a>
-            <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Kabbalah Series</div>
-            <a href="kabbalah-sefer-yetzirah.html" class="nav-item active">I · The Book of Creation</a>
-            <a href="kabbalah-zohar.html" class="nav-item">II · The Zohar</a>
-            <a href="kabbalah-luria.html" class="nav-item">III · Isaac Luria</a>
-            <a href="kabbalah-the-ramchal.html" class="nav-item">IV · The Ramchal</a>
-            <a href="kabbalah-mystical-union.html" class="nav-item">V · Mystical Union</a>
-            <a href="kabbalah_zivug_haneshamot.html" class="nav-item">VI · Zivug HaNeshamot</a>
-            <a href="kabbalah_shaar_hagilgulim.html" class="nav-item">VII · Sha'ar HaGilgulim</a><div class="nav-divider"></div>
-                        <div class="nav-section-title">Vedantic Mappings</div>
-            <a href="../index.html" class="nav-item"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item">Jesus of Nazareth</a>
-            <a href="kabbalah-sefer-yetzirah.html" class="nav-item">Kabbalah</a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item">Gnosticism</a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item">Taoism · The Unnamed Way</a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item">Quantum Mechanics</a>
         </div>
     </div>
 
@@ -1902,10 +1774,9 @@
 
         <p class="hero-eyemark">Sefer Yetzirah · ספר יצירה · The Book of Creation</p>
 
-        <!-- EMBLEM: 32 Paths / Tree of Life motif -->
         <div class="hero-emblem" role="img" aria-labelledby="emblemTitle">
             <title id="emblemTitle">The 32 Paths of Wisdom — Ten Sefirot and Twenty-Two Letters</title>
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img">
                 <defs>
                     <filter id="tzGlow" x="-50%" y="-50%" width="200%" height="200%">
                         <feGaussianBlur stdDeviation="6" result="blur"/>
@@ -1942,7 +1813,6 @@
                     <line x1="32" y1="168" x2="40" y2="160"/>
                     <line x1="168" y1="32" x2="160" y2="40"/>
                 </g>
-                <!-- Inner triangle hint -->
                 <g stroke="#c4a855" stroke-width="0.4" opacity="0.15" fill="none">
                     <polygon points="100,25 30,160 170,160"/>
                     <polygon points="100,45 55,150 145,150"/>
@@ -1976,7 +1846,7 @@
     <div class="pq-section" id="intro">
         <div class="pq-glow" aria-hidden="true"></div>
         <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">"With thirty-two wondrous paths of wisdom Yah engraved and created His world. He created His universe with three books: with text, with number, and with communication."</p>
+        <p class="pq-text">"He created His universe with three books: with text, with number, and with communication."</p>
         <p class="pq-attr">— Sefer Yetzirah, Chapter 1</p>
     </div>
 
@@ -1988,6 +1858,7 @@
         <div class="ed-section-label">Contents · תוכן העניינים</div>
         <h2 class="ed-h2">The Architecture of Creation</h2>
         <p class="ed-intro">A verified account of the Sefer Yetzirah's teaching on the thirty-two paths of wisdom — the ten sefirot and the twenty-two Hebrew letters as the structure of all reality.</p>
+        <p class="toc-meta">Reading time · Approx. 18 minutes</p>
         <nav class="toc-book" aria-label="Article contents">
             <a href="#threshold" class="toc-item"><span class="toc-b-num">I</span><span class="toc-b-title">The Threshold of Creation — Text, Number, Communication</span><span class="toc-b-heb">פתיחה</span></a>
             <a href="#sefirot" class="toc-item"><span class="toc-b-num">II</span><span class="toc-b-title">The Ten Sefirot — The Dimensions of the Universe</span><span class="toc-b-heb">עשר ספירות</span></a>
@@ -2018,18 +1889,13 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>The <em>Sefer Yetzirah</em> — the <strong>Book of Creation</strong> — is the earliest extant Jewish mystical text, composed sometime between the 2nd and 6th centuries CE. It is not a narrative or a philosophical treatise in the conventional sense. It is a <strong>cosmogonic manual</strong>: a precise description of how the Infinite (<span class="hotspot">Ein Sof<span class="hotspot-tooltip"><strong>Ein Sof</strong> The Infinite or Endless in Kabbalah — the transcendent, unknowable aspect of God that is beyond all description and comprehension.</span></span>) created the finite world through the instrumentality of language, number, and geometry.</p>
+                <p>The <em>Sefer Yetzirah</em> — the <strong>Book of Creation</strong> — is the earliest extant Jewish mystical text, composed sometime between the 2nd and 6th centuries CE. It is not a narrative. It is not a philosophical treatise in the conventional sense. It is a <strong>cosmogonic manual</strong>: a precise description of how the Infinite (<span class="hotspot">Ein Sof<span class="hotspot-tooltip"><strong>Ein Sof</strong> The Infinite or Endless in Kabbalah — the transcendent, unknowable aspect of God that is beyond all description and comprehension.</span></span>) created the finite world through language, number, and geometry.</p>
 
-                <p>Where the Tao Te Ching begins with the unspeakable, the Sefer Yetzirah begins with the <em>mechanism</em> of speech itself. "With thirty-two wondrous paths of wisdom Yah engraved and created His world." These thirty-two paths are the <strong>ten sefirot</strong> (divine emanations) and the <strong>twenty-two Hebrew letters</strong> (<span class="hotspot">otiyot<span class="hotspot-tooltip"><strong>Otiyot</strong> The twenty-two letters of the Hebrew alphabet, which according to Sefer Yetzirah are the building blocks of creation itself.</span></span>). Together they form the complete architecture of creation — the scaffolding upon which all reality hangs.</p>
+                <p>Where the Tao Te Ching begins with the unspeakable, the Sefer Yetzirah begins with the <em>mechanism</em> of speech itself. Thirty-two paths — the <strong>ten sefirot</strong> and the <strong>twenty-two Hebrew letters</strong> (<span class="hotspot">otiyot<span class="hotspot-tooltip"><strong>Otiyot</strong> The twenty-two letters of the Hebrew alphabet, which according to Sefer Yetzirah are the building blocks of creation itself.</span></span>) — form the complete architecture of creation. The scaffolding upon which all reality hangs.</p>
 
                 <p>In this, the Sefer Yetzirah anticipates the entire Kabbalistic tradition. The Zohar will expand these hints into a vast mythology. Isaac Luria will revolutionize them with the doctrine of divine contraction and cosmic repair. The Baal Shem Tov will make them the living breath of Eastern European Jewry. But all of it begins here, in this brief, cryptic text that reads like a mathematical poem.</p>
 
-                <p>According to the final chapter of the Sefer Yetzirah, the teachings were revealed to the <strong>patriarch Abraham</strong>, who deduced the 32 paths through contemplation, and God made a covenant with him. This traditional attribution, while not historically verifiable, establishes the text's place in the Jewish mystical canon as the first revealed mystical work.</p>
-
-                <div class="pull-q fade-in">
-                    <p>"With thirty-two wondrous paths of wisdom Yah, the Lord of Hosts, the God of Israel, the Living God, and God Almighty, engraved and created His world. He created His universe with three books: with text, with number, and with communication."</p>
-                    <cite>— Sefer Yetzirah, Chapter 1</cite>
-                </div>
+                <p>The text itself claims these teachings were revealed to the <strong>patriarch Abraham</strong>, who deduced the 32 paths through contemplation, and that God made a covenant with him. While modern scholarship does not verify this attribution, the tradition establishes the text's place in the Jewish mystical canon as the first revealed mystical work — a manual of creation revealed to the father of monotheism.</p>
 
                 <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
@@ -2070,7 +1936,7 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>The Sefer Yetzirah defines the ten sefirot in a way that is <strong>fundamentally different</strong> from later Kabbalistic systems. In this text, the sefirot are not psychological or divine attributes — they are the <strong>dimensions of the universe itself</strong>. The text describes them as:</p>
+                <p>The Sefer Yetzirah defines the ten sefirot in a way that is <strong>fundamentally different</strong> from later Kabbalistic systems. In this text, the sefirot are not psychological or divine attributes. They are the <strong>dimensions of the universe itself</strong>.</p>
 
                 <div class="ed-note fade-in">
                     <span class="ni">◆</span>
@@ -2079,8 +1945,9 @@
 
                 <p>The text declares: "Ten sefirot of nothingness — their measure is ten, yet they have no end." They are the fundamental coordinates of existence:</p>
 
-                <div class="diagram-container" style="max-width: 600px; animation: none;">
-                    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" aria-label="The Ten Sefirot of Sefer Yetzirah — Dimensions of the Universe">
+                <div class="diagram-container" style="max-width: 600px;">
+                    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Ten Sefirot of Sefer Yetzirah — Dimensions of the Universe">
+                        <title>The Ten Sefirot — Dimensions of the Universe</title>
                         <defs>
                             <filter id="seGlow" x="-30%" y="-30%" width="160%" height="160%">
                                 <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -2107,7 +1974,6 @@
                         <rect x="20" y="20" width="560" height="460" rx="16" fill="var(--surface)" opacity="0.3"/>
                         <circle cx="300" cy="250" r="200" fill="url(#seBg)"/>
 
-                        <!-- Center: Spirit of the Living God -->
                         <g transform="translate(300,160)">
                             <circle r="36" fill="url(#seSpirit)" opacity="0.9" filter="url(#seGlow)"/>
                             <circle r="28" fill="none" stroke="#e0c878" stroke-width="0.8" opacity="0.5"/>
@@ -2115,7 +1981,6 @@
                             <text y="16" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#5a4a20" font-style="italic">1</text>
                         </g>
 
-                        <!-- Air -->
                         <g transform="translate(300,250)">
                             <circle r="30" fill="url(#seAir)" opacity="0.9" filter="url(#seGlow)"/>
                             <circle r="22" fill="none" stroke="#d0d8e8" stroke-width="0.8" opacity="0.5"/>
@@ -2123,7 +1988,6 @@
                             <text y="16" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#5a5a6a" font-style="italic">2</text>
                         </g>
 
-                        <!-- Water -->
                         <g transform="translate(220,320)">
                             <circle r="30" fill="url(#seWater)" opacity="0.9" filter="url(#seGlow)"/>
                             <circle r="22" fill="none" stroke="#6a9ad5" stroke-width="0.8" opacity="0.5"/>
@@ -2131,7 +1995,6 @@
                             <text y="16" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#8ab0d0" font-style="italic">3</text>
                         </g>
 
-                        <!-- Fire -->
                         <g transform="translate(380,320)">
                             <circle r="30" fill="url(#seFire)" opacity="0.9" filter="url(#seGlow)"/>
                             <circle r="22" fill="none" stroke="#e0b060" stroke-width="0.8" opacity="0.5"/>
@@ -2139,53 +2002,44 @@
                             <text y="16" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#7a5a30" font-style="italic">4</text>
                         </g>
 
-                        <!-- Six Directions -->
                         <g stroke="#5a6a9a" stroke-width="1.2" opacity="0.3" fill="none" stroke-linecap="round">
-                            <!-- Up -->
                             <line x1="300" y1="130" x2="300" y2="100"/>
                             <circle cx="300" cy="95" r="22" fill="var(--surface)" stroke="#7a8aba" stroke-width="1.5" opacity="0.85" filter="url(#seGlow)"/>
                             <text x="300" y="100" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#7a8aba" font-weight="600">UP</text>
                             <text x="300" y="112" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">5</text>
 
-                            <!-- Down -->
                             <line x1="300" y1="380" x2="300" y2="410"/>
                             <circle cx="300" cy="415" r="22" fill="var(--surface)" stroke="#7a8aba" stroke-width="1.5" opacity="0.85" filter="url(#seGlow)"/>
                             <text x="300" y="420" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#7a8aba" font-weight="600">DOWN</text>
                             <text x="300" y="432" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">6</text>
 
-                            <!-- East -->
                             <line x1="220" y1="250" x2="190" y2="250"/>
                             <circle cx="185" cy="250" r="22" fill="var(--surface)" stroke="#7a8aba" stroke-width="1.5" opacity="0.85" filter="url(#seGlow)"/>
                             <text x="185" y="255" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#7a8aba" font-weight="600">EAST</text>
                             <text x="185" y="267" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">7</text>
 
-                            <!-- West -->
                             <line x1="380" y1="250" x2="410" y2="250"/>
                             <circle cx="415" cy="250" r="22" fill="var(--surface)" stroke="#7a8aba" stroke-width="1.5" opacity="0.85" filter="url(#seGlow)"/>
                             <text x="415" y="255" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#7a8aba" font-weight="600">WEST</text>
                             <text x="415" y="267" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">8</text>
 
-                            <!-- North -->
                             <line x1="240" y1="280" x2="210" y2="295"/>
                             <circle cx="205" cy="298" r="22" fill="var(--surface)" stroke="#7a8aba" stroke-width="1.5" opacity="0.85" filter="url(#seGlow)"/>
                             <text x="205" y="303" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#7a8aba" font-weight="600">NORTH</text>
                             <text x="205" y="315" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">9</text>
 
-                            <!-- South -->
                             <line x1="360" y1="280" x2="390" y2="295"/>
                             <circle cx="395" cy="298" r="22" fill="var(--surface)" stroke="#7a8aba" stroke-width="1.5" opacity="0.85" filter="url(#seGlow)"/>
                             <text x="395" y="303" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#7a8aba" font-weight="600">SOUTH</text>
                             <text x="395" y="315" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">10</text>
                         </g>
 
-                        <!-- Connecting lines from center -->
                         <g stroke="#c4a855" stroke-width="0.8" opacity="0.15" stroke-dasharray="4,4">
                             <line x1="300" y1="196" x2="300" y2="220"/>
                             <line x1="300" y1="280" x2="240" y2="290"/>
                             <line x1="300" y1="280" x2="360" y2="290"/>
                         </g>
 
-                        <!-- Labels -->
                         <text x="300" y="60" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="#c4a855" letter-spacing="0.3em" opacity="0.7">THE TEN DIMENSIONS</text>
                         <text x="300" y="478" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#8a9ab8" font-style="italic">"Their measure is ten, yet they have no end"</text>
                     </svg>
@@ -2243,9 +2097,9 @@
             <div class="stage-body">
                 <p>If the sefirot are the dimensions of the universe, the Hebrew letters are the <strong>energy</strong> that fills them. The Sefer Yetzirah divides the twenty-two letters into three groups:</p>
 
-                <!-- LETTERS DIAGRAM -->
                 <div class="diagram-container" style="max-width: 720px;">
-                    <svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" aria-label="The Three Groups of Hebrew Letters">
+                    <svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Three Groups of Hebrew Letters">
+                        <title>The Three Families of Hebrew Letters</title>
                         <defs>
                             <filter id="letGlow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -2262,7 +2116,6 @@
                             </linearGradient>
                         </defs>
 
-                        <!-- Three Mothers -->
                         <g transform="translate(120,120)">
                             <rect x="-100" y="-70" width="200" height="140" rx="14" fill="url(#letMothers)" opacity="0.85" filter="url(#letGlow)"/>
                             <rect x="-100" y="-70" width="200" height="140" rx="14" fill="none" stroke="#e0c878" stroke-width="1" opacity="0.4"/>
@@ -2272,7 +2125,6 @@
                             <text y="38" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#7a6a30">Air · Water · Fire</text>
                         </g>
 
-                        <!-- Seven Doubles -->
                         <g transform="translate(360,120)">
                             <rect x="-100" y="-70" width="200" height="140" rx="14" fill="url(#letDoubles)" opacity="0.85" filter="url(#letGlow)"/>
                             <rect x="-100" y="-70" width="200" height="140" rx="14" fill="none" stroke="#7a8aba" stroke-width="1" opacity="0.4"/>
@@ -2282,7 +2134,6 @@
                             <text y="38" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="#8a9ab8">Planets · Days · Orifices</text>
                         </g>
 
-                        <!-- Twelve Simples -->
                         <g transform="translate(600,120)">
                             <rect x="-100" y="-70" width="200" height="140" rx="14" fill="url(#letSimples)" opacity="0.85" filter="url(#letGlow)"/>
                             <rect x="-100" y="-70" width="200" height="140" rx="14" fill="none" stroke="#9a8a7a" stroke-width="1" opacity="0.4"/>
@@ -2292,21 +2143,18 @@
                             <text y="38" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="#a09080">Zodiac · Months · Limbs</text>
                         </g>
 
-                        <!-- Connecting lines -->
                         <g stroke="#5a6a9a" stroke-width="0.5" opacity="0.15">
                             <line x1="120" y1="190" x2="120" y2="280"/>
                             <line x1="360" y1="190" x2="360" y2="280"/>
                             <line x1="600" y1="190" x2="600" y2="280"/>
                         </g>
 
-                        <!-- Bottom summary -->
                         <g transform="translate(360,320)">
                             <rect x="-180" y="-30" width="360" height="60" rx="10" fill="var(--surface)" opacity="0.9" stroke="#c4a855" stroke-width="0.5"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="#c4a855" letter-spacing="0.15em">3 + 7 + 12 = 22 LETTERS</text>
                             <text y="15" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#8a9ab8" font-style="italic">"He engraved them, He hewed them out, He weighed them, He permuted them, and He combined them"</text>
                         </g>
 
-                        <!-- Decorative elements -->
                         <g fill="#c4a855" opacity="0.1">
                             <circle cx="120" cy="400" r="40"/>
                             <circle cx="360" cy="400" r="40"/>
@@ -2325,7 +2173,7 @@
 
                 <p><strong>The Twelve Simples (the remaining letters)</strong> — Corresponding to the twelve signs of the zodiac, the twelve months, and the twelve principal limbs of the body. They are the simple, unambiguous forces that structure time and space.</p>
 
-                <p>The text teaches that by combining these letters in meditation, the sage can "know the future and understand the secrets of creation." This is not mere numerology. It is the recognition that <strong>language is not a description of reality but its fabric</strong> — the same insight that Wittgenstein would articulate two millennia later, and that quantum physics now hints at with its emphasis on information as the fundamental substrate of the universe.</p>
+                <p>The text teaches that by combining these letters in meditation, the sage can "know the future and understand the secrets of creation." This is not mere numerology. It is the recognition that <strong>language is not a description of reality but its fabric</strong> — the same insight that Wittgenstein would articulate two millennia later, and that information theory now treats as foundational: that the universe may be, at its root, a structure of information rather than merely matter in motion.</p>
 
                 <div class="pull-q fade-in">
                     <p>"Twenty-two letters are the foundation. He engraved them, He hewed them out, He weighed them, He permuted them, and He combined them. And He created with them the whole creation and all that was ever to be created."</p>
@@ -2353,9 +2201,9 @@
             <div class="stage-body">
                 <p>The three mother letters — <span class="hotspot">Aleph<span class="hotspot-tooltip"><strong>Aleph</strong> The first letter of the Hebrew alphabet; silent, representing the breath before sound is formed.</span></span> (א), <span class="hotspot">Mem<span class="hotspot-tooltip"><strong>Mem</strong> The thirteenth letter of the Hebrew alphabet; the sound of water, of closing and containment.</span></span> (מ), and <span class="hotspot">Shin<span class="hotspot-tooltip"><strong>Shin</strong> The twenty-first letter of the Hebrew alphabet; the sound of fire, of hissing and transformation.</span></span> (ש) — are the most powerful symbols in the Sefer Yetzirah. They correspond to the three elements from which all matter is composed: air, water, and fire. Earth is not a separate element but the combination of the three.</p>
 
-                <!-- THREE MOTHERS DIAGRAM -->
                 <div class="diagram-container" style="max-width: 600px;">
-                    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" aria-label="The Three Mother Letters — Aleph, Mem, Shin">
+                    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Three Mother Letters — Aleph, Mem, Shin">
+                        <title>The Three Mother Letters — Aleph, Mem, Shin</title>
                         <defs>
                             <filter id="tmGlow" x="-30%" y="-30%" width="160%" height="160%">
                                 <feGaussianBlur stdDeviation="5" result="blur"/>
@@ -2376,17 +2224,14 @@
                             </radialGradient>
                         </defs>
 
-                        <!-- Triangle formation -->
                         <g stroke="#5a6a9a" stroke-width="0.5" opacity="0.15" fill="none">
                             <line x1="300" y1="80" x2="120" y2="380"/>
                             <line x1="120" y1="380" x2="480" y2="380"/>
                             <line x1="480" y1="380" x2="300" y2="80"/>
                         </g>
 
-                        <!-- Center glow -->
                         <circle cx="300" cy="240" r="100" fill="url(#tmCenter)"/>
 
-                        <!-- Aleph (Air) — Top -->
                         <g transform="translate(300,120)">
                             <circle r="45" fill="url(#tmAir)" opacity="0.9" filter="url(#tmGlow)"/>
                             <circle r="45" fill="none" stroke="#d0d0d0" stroke-width="1.5" opacity="0.5"/>
@@ -2395,7 +2240,6 @@
                             <text y="34" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#7a7a7a" font-style="italic">Air · Breath</text>
                         </g>
 
-                        <!-- Mem (Water) — Bottom Left -->
                         <g transform="translate(150,380)">
                             <circle r="45" fill="url(#tmWater)" opacity="0.9" filter="url(#tmGlow)"/>
                             <circle r="45" fill="none" stroke="#6a9ad5" stroke-width="1.5" opacity="0.5"/>
@@ -2404,7 +2248,6 @@
                             <text y="34" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#90b0d0" font-style="italic">Water · Womb</text>
                         </g>
 
-                        <!-- Shin (Fire) — Bottom Right -->
                         <g transform="translate(450,380)">
                             <circle r="45" fill="url(#tmFire)" opacity="0.9" filter="url(#tmGlow)"/>
                             <circle r="45" fill="none" stroke="#e0c878" stroke-width="1.5" opacity="0.5"/>
@@ -2413,27 +2256,24 @@
                             <text y="34" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#7a6a30" font-style="italic">Fire · Spirit</text>
                         </g>
 
-                        <!-- Center: Earth (combination) -->
                         <g transform="translate(300,260)">
                             <circle r="30" fill="var(--surface)" opacity="0.95" stroke="#c4a855" stroke-width="1" filter="url(#tmGlow)"/>
                             <text y="4" text-anchor="middle" font-family="'Cinzel', serif" font-size="9" fill="#c4a855" letter-spacing="0.15em">EARTH</text>
                         </g>
 
-                        <!-- Connecting animated lines -->
-                        <g stroke="#c4a855" stroke-width="0.8" opacity="0.2" fill="none" stroke-dasharray="4,4" style="animation: pathGlow 3s ease-in-out infinite;">
+                        <g stroke="#c4a855" stroke-width="0.8" opacity="0.2" fill="none" stroke-dasharray="4,4">
                             <line x1="300" y1="165" x2="180" y2="335"/>
                             <line x1="180" y1="335" x2="420" y2="335"/>
                             <line x1="420" y1="335" x2="300" y2="165"/>
                         </g>
 
-                        <!-- Labels -->
                         <text x="300" y="470" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="11" fill="#8a9ab8" font-style="italic">"A great secret, hidden and concealed"</text>
                     </svg>
                     <div class="diagram-caption">The Three Mothers — Imahot</div>
                     <div class="diagram-subcaption">Aleph mediates between Mem and Shin; from their union, Earth arises — the solid world where all three elements meet</div>
                 </div>
 
-                <p>Aleph is the breath, the silent letter, the opening of the mouth before sound is formed. It is the space between words, the pause between heartbeats, the void that makes form possible. In this, Aleph is the Kabbalistic equivalent of the Tao — the emptiness that is infinitely capable.</p>
+                <p>Aleph is breath. Silence. The opening of the mouth before sound betrays it. It is the space between words, the pause between heartbeats, the void that makes form possible. In this, Aleph is the Kabbalistic equivalent of the Tao — the emptiness that is infinitely capable.</p>
 
                 <p>Mem is water, the closing of the lips, the descent into form, the womb that receives and contains. It is the letter of the mother, of the ocean, of the unconscious depth from which all things emerge.</p>
 
@@ -2469,9 +2309,9 @@
 
                 <p>Every single letter corresponds to a specific astrological sign or planet (Space), a month or season (Time), and a human organ or limb (Soul). The text declares: "He made the letter Aleph king over the breath, and He bound a crown to it, and He combined one with another, and with them He created the air in the world, the breath of the year, and the chest in the soul." This triadic structure is repeated for every letter.</p>
 
-                <!-- OLAM SHANAH NEFESH DIAGRAM -->
                 <div class="diagram-container" style="max-width: 720px;">
-                    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" aria-label="Olam, Shanah, Nefesh — Space, Time, Soul Matrix">
+                    <svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Olam, Shanah, Nefesh — Space, Time, Soul Matrix">
+                        <title>Olam, Shanah, Nefesh — The Three Matrices</title>
                         <defs>
                             <filter id="osnGlow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -2495,7 +2335,6 @@
                         <rect x="20" y="20" width="680" height="420" rx="16" fill="var(--surface)" opacity="0.3"/>
                         <circle cx="360" cy="230" r="180" fill="url(#osnBg)"/>
 
-                        <!-- Space (Olam) — Left -->
                         <g transform="translate(160,180)">
                             <rect x="-90" y="-50" width="180" height="100" rx="12" fill="url(#osnSpace)" opacity="0.85" filter="url(#osnGlow)"/>
                             <rect x="-90" y="-50" width="180" height="100" rx="12" fill="none" stroke="#7a8aba" stroke-width="1" opacity="0.4"/>
@@ -2505,7 +2344,6 @@
                             <text y="34" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#6a7a9a" font-style="italic">The Cosmic Matrix</text>
                         </g>
 
-                        <!-- Time (Shanah) — Center -->
                         <g transform="translate(360,180)">
                             <rect x="-90" y="-50" width="180" height="100" rx="12" fill="url(#osnTime)" opacity="0.85" filter="url(#osnGlow)"/>
                             <rect x="-90" y="-50" width="180" height="100" rx="12" fill="none" stroke="#9aabcc" stroke-width="1" opacity="0.4"/>
@@ -2515,7 +2353,6 @@
                             <text y="34" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#7a8aba" font-style="italic">The Temporal Matrix</text>
                         </g>
 
-                        <!-- Soul (Nefesh) — Right -->
                         <g transform="translate(560,180)">
                             <rect x="-90" y="-50" width="180" height="100" rx="12" fill="url(#osnSoul)" opacity="0.85" filter="url(#osnGlow)"/>
                             <rect x="-90" y="-50" width="180" height="100" rx="12" fill="none" stroke="#e0c878" stroke-width="1" opacity="0.4"/>
@@ -2525,26 +2362,22 @@
                             <text y="34" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="7" fill="#5a4a20" font-style="italic">The Human Matrix</text>
                         </g>
 
-                        <!-- Connecting lines -->
                         <g stroke="#c4a855" stroke-width="1.2" opacity="0.25" fill="none" stroke-linecap="round">
                             <line x1="250" y1="230" x2="270" y2="230"/>
                             <line x1="450" y1="230" x2="470" y2="230"/>
                         </g>
 
-                        <!-- Decorative arrows -->
                         <g fill="#c4a855" opacity="0.4">
                             <polygon points="270,227 280,230 270,233"/>
                             <polygon points="450,227 440,230 450,233"/>
                         </g>
 
-                        <!-- Bottom: The Triad -->
                         <g transform="translate(360,360)">
                             <rect x="-200" y="-30" width="400" height="60" rx="10" fill="var(--surface)" stroke="#c4a855" stroke-width="1" opacity="0.85" filter="url(#osnGlow)"/>
                             <text y="-5" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="#c4a855" letter-spacing="0.15em">THE THREE MATRICES</text>
                             <text y="15" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="9" fill="#8a9ab8" font-style="italic">"He made the letter Aleph king over the breath, and with it He created the air in the world, the breath of the year, and the chest in the soul"</text>
                         </g>
 
-                        <!-- Corner ornaments -->
                         <g stroke="#c4a855" stroke-width="0.6" opacity="0.25" fill="none">
                             <path d="M15,15 L25,15 L25,25"/>
                             <path d="M705,15 L695,15 L695,25"/>
@@ -2590,18 +2423,23 @@
 
                 <p>The Sefer Yetzirah describes how God paired the 22 letters into <strong>231 unique two-letter combinations</strong>, called the "Gates" (<em>Rla"v She'arim</em>). The text declares: "He made the twenty-two letters as a foundation. He engraved them, He hewed them out, He weighed them, and He combined them in pairs — and from them He formed everything that was formed and everything that will ever be formed."</p>
 
-                <p>The number 231 is the sum of all possible two-letter combinations of 22 letters: (22 × 21) / 2 = 231. These 231 Gates are the roots of all possible Hebrew words — and therefore the roots of all possible matter and meaning. The text teaches that every word, every name, every thing that exists has its origin in one of these 231 combinations.</p>
+                <details>
+                    <summary>The Mathematics of the 231 Gates</summary>
+                    <div class="details-inner">
+                        <p>The number 231 is the sum of all possible two-letter combinations of 22 letters, calculated as <em>n(n-1)/2</em>:</p>
+                        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); text-align: center; margin: 1rem 0;">(22 × 21) / 2 = 231</p>
+                        <p>These 231 Gates are the roots of all possible Hebrew words — and therefore the roots of all possible matter and meaning. The text teaches that every word, every name, every thing that exists has its origin in one of these 231 combinations. This combinatorial view of creation anticipates the insight that all of reality can be generated from a finite set of elements combined in infinite ways — the same principle that underlies information theory and molecular biology.</p>
+                    </div>
+                </details>
 
                 <div class="pull-q fade-in">
                     <p>"He combined them, and He weighed them, and He exchanged them — Aleph with all, and all with Aleph; Bet with all, and all with Bet. And He formed from them the entire creation, and all that was ever to be created."</p>
                     <cite>— Sefer Yetzirah, Chapter 2</cite>
                 </div>
 
-                <p>This combinatorial view of creation is remarkably modern. It anticipates the insight that all of reality can be generated from a finite set of elements combined in infinite ways — the same insight that underlies information theory, molecular biology, and the computational universe. For the Sefer Yetzirah, the alphabet is the <em>software</em> of creation, and the 231 Gates are the <em>root codes</em> from which all things are generated.</p>
-
                 <div class="ed-h3 fade-in">The Three Rulers — Teli, Galgal, Lev</div>
 
-                <p>Chapter 6 of the Sefer Yetzirah introduces a unique cosmological hierarchy that rules over Space, Time, and the Soul:</p>
+                <p>Chapter 6 of the Sefer Yetzirah introduces a unique cosmological hierarchy that rules over the three matrices of reality — Space, Time, and Soul:</p>
 
                 <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
@@ -2632,7 +2470,7 @@
                     </div>
                 </div>
 
-                <p>This threefold hierarchy is the Sefer Yetzirah's equivalent of the ancient tripartite division of reality: the heavenly realm (Teli), the temporal realm (Galgal), and the human realm (Lev). Each ruler governs its domain, and together they form a unified system with the Holy One as the King above all kings.</p>
+                <p>This threefold hierarchy is the Sefer Yetzirah's equivalent of the ancient tripartite division of reality: the heavenly realm (Teli), the temporal realm (Galgal), and the human realm (Lev). Each ruler governs its domain, and together they form a unified system with the Holy One as the King above all kings. Thus, the Three Rulers are the governing intelligences of the three matrices — Teli over Olam (Space), Galgal over Shanah (Time), and Lev over Nefesh (Soul).</p>
 
                 <p>The text also teaches that the Teli, Galgal, and Heart are "set one against the other" — they are in dynamic tension, each limiting and balancing the others. This is the cosmic equilibrium that sustains creation. When the Teli turns, the seasons change; when the Galgal turns, time passes; when the Heart turns, the soul moves.</p>
 
@@ -2662,9 +2500,9 @@
             <div class="stage-body">
                 <p>The Sefer Yetzirah and the tradition that follows it describe the sefirot through three primary metaphors, each revealing a different dimension of their reality:</p>
 
-                <!-- THREE METAPHORS DIAGRAM -->
                 <div class="diagram-container" style="max-width: 720px;">
-                    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" aria-label="Three Metaphors — Tree, Body, Palace">
+                    <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three Metaphors — Tree, Body, Palace">
+                        <title>Three Metaphors of the Sefirot</title>
                         <defs>
                             <filter id="metaGlow" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -2681,11 +2519,9 @@
                             </linearGradient>
                         </defs>
 
-                        <!-- Tree -->
                         <g transform="translate(140,200)">
                             <rect x="-90" y="-80" width="180" height="160" rx="14" fill="url(#metaTree)" opacity="0.85" filter="url(#metaGlow)"/>
                             <rect x="-90" y="-80" width="180" height="160" rx="14" fill="none" stroke="#70c070" stroke-width="1" opacity="0.4"/>
-                            <!-- Tree icon -->
                             <g transform="translate(0,-20)">
                                 <line x1="0" y1="30" x2="0" y2="-10" stroke="#e8ecf4" stroke-width="2" opacity="0.6"/>
                                 <line x1="0" y1="0" x2="-20" y2="-20" stroke="#e8ecf4" stroke-width="1.5" opacity="0.4"/>
@@ -2701,11 +2537,9 @@
                             <text y="68" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="#70b070">Structure · Growth · Roots</text>
                         </g>
 
-                        <!-- Body -->
                         <g transform="translate(360,200)">
                             <rect x="-90" y="-80" width="180" height="160" rx="14" fill="url(#metaBody)" opacity="0.85" filter="url(#metaGlow)"/>
                             <rect x="-90" y="-80" width="180" height="160" rx="14" fill="none" stroke="#e0c878" stroke-width="1" opacity="0.4"/>
-                            <!-- Body icon -->
                             <g transform="translate(0,-20)">
                                 <circle cx="0" cy="-25" r="8" fill="none" stroke="#1a1e2e" stroke-width="1.5" opacity="0.6"/>
                                 <line x1="0" y1="-17" x2="0" y2="15" stroke="#1a1e2e" stroke-width="1.5" opacity="0.6"/>
@@ -2719,11 +2553,9 @@
                             <text y="68" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="#7a6a30">Life · Form · Image</text>
                         </g>
 
-                        <!-- Palace -->
                         <g transform="translate(580,200)">
                             <rect x="-90" y="-80" width="180" height="160" rx="14" fill="url(#metaPalace)" opacity="0.85" filter="url(#metaGlow)"/>
                             <rect x="-90" y="-80" width="180" height="160" rx="14" fill="none" stroke="#7a8aba" stroke-width="1" opacity="0.4"/>
-                            <!-- Palace icon -->
                             <g transform="translate(0,-20)">
                                 <rect x="-20" y="-10" width="40" height="35" fill="none" stroke="#e8ecf4" stroke-width="1.5" opacity="0.6"/>
                                 <polygon points="-25,-10 0,-25 25,-10" fill="none" stroke="#e8ecf4" stroke-width="1.5" opacity="0.6"/>
@@ -2734,13 +2566,11 @@
                             <text y="68" text-anchor="middle" font-family="'Crimson Pro', serif" font-size="8" fill="#8a9ab8">Journey · Chamber · Throne</text>
                         </g>
 
-                        <!-- Center connecting hub -->
                         <g transform="translate(360,340)">
                             <circle r="25" fill="var(--surface)" opacity="0.95" stroke="#c4a855" stroke-width="1" filter="url(#metaGlow)"/>
                             <text y="4" text-anchor="middle" font-family="'Cinzel', serif" font-size="8" fill="#c4a855" letter-spacing="0.15em">SEFIROT</text>
                         </g>
 
-                        <!-- Connecting lines -->
                         <g stroke="#c4a855" stroke-width="0.6" opacity="0.15" fill="none">
                             <line x1="140" y1="280" x2="335" y2="340"/>
                             <line x1="580" y1="280" x2="385" y2="340"/>
@@ -2790,6 +2620,8 @@
 
                 <p>In Advaita Vedanta, the world is <em>maya</em> — illusion, the superimposition of name and form upon the formless Brahman. The Sefer Yetzirah would agree, but with a crucial difference: the names and forms are not merely illusory. They are the <strong>intentional self-expression</strong> of the Infinite. The letters are not obstacles to the divine; they are the divine's way of making itself knowable. As the Zohar will later say: "God looked into the Torah and created the world." The Torah — the text, the letters — is not subsequent to creation. It is <em>prior</em> to it.</p>
 
+                <p>Consider, too, the Stoic doctrine of the <em>Logos spermatikos</em> — the seed-word or generative reason distributed throughout the cosmos. For the Stoics, this Logos is a single rational principle fragmenting into the multiplicity of nature. The Sefer Yetzirah offers a striking parallel but with a different architecture: not one seed-word but twenty-two seed-letters, not a single rational fire but a combinatorial field of 231 gates. Where the Stoic cosmos is a body animated by one breath, the Kabbalistic cosmos is a text generated by the permutation of an alphabet. The Stoic seeks to align his reason with the universal Logos; the Kabbalist seeks to align his breath with the divine letters.</p>
+
                 <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
                         <div class="scripture-heb">סֵפֶר יְצִירָה</div>
@@ -2807,7 +2639,7 @@
 
                 <div class="ed-note fade-in">
                     <span class="ni">◆</span>
-                    <p><strong>Logos and Letter.</strong> The Christian Word is a person; the Kabbalistic letter is a building block. The Logos speaks once; the letters permute forever. The Tao is the silence before speech; the Hebrew alphabet is the first articulation of that silence.</p>
+                    <p><strong>Logos and Letter.</strong> The Christian Word is a person; the Kabbalistic letter is a building block. The Logos speaks once; the letters permute forever. The Tao is the silence before speech; the Hebrew alphabet is the first articulation of that silence. The Stoic <em>Logos spermatikos</em> is a single fire; the Sefer Yetzirah's letters are a field of combinatorial possibility.</p>
                 </div>
             </div>
         </section>
@@ -2852,7 +2684,7 @@
                         <div class="term-heb-display">תְּלִי · גַּלְגַּל · לֵב</div>
                         <div class="term-name">Teli, Galgal, Lev</div>
                         <span class="term-cat">Three Rulers</span>
-                        <p class="term-def">The cosmological hierarchy: Teli (the Dragon/Axis) rules the universe; Galgal (the Sphere/Wheel) rules time; Lev (the Heart) rules the soul. The Holy One rules over all three.</p>
+                        <p class="term-def">The cosmological hierarchy: Teli (the Dragon/Axis) rules Space; Galgal (the Sphere/Wheel) rules Time; Lev (the Heart) rules the Soul. The Holy One rules over all three.</p>
                     </div>
                     <div class="term-card">
                         <div class="term-heb-display">שְׁעָרִים</div>
@@ -2876,7 +2708,7 @@
                         <div class="term-heb-display">בְּלִימָה</div>
                         <div class="term-name">Belimah</div>
                         <span class="term-cat">Nothingness</span>
-                        <p class="term-def">The term used in the Sefer Yetzirah to describe the sefirot's origin. "Ten sefirot of nothingness" — the point where the unmanifest becomes manifest. Distinct from the later term Ein Sof.</p>
+                        <p class="term-def">The threshold where nothingness learns to count to one. "Ten sefirot of nothingness" — the point where the unmanifest becomes manifest. Distinct from the later term Ein Sof.</p>
                     </div>
                 </div>
             </div>
@@ -2892,11 +2724,6 @@
             <h3 class="concluding-title">Synthesis</h3>
             <p class="concluding-quote">"With thirty-two wondrous paths of wisdom Yah, the Lord of Hosts, the God of Israel, the Living God, and God Almighty, engraved and created His world. He created His universe with three books: with text, with number, and with communication."</p>
             <p class="concluding-attribution">— Sefer Yetzirah, Chapter 1:1</p>
-            <div class="concluding-nav">
-                <a href="../index.html">← RETURN TO HOME</a>
-                <span class="nav-sep">·</span>
-                <a href="kabbalah-zohar.html">CONTINUE TO THE ZOHAR →</a>
-            </div>
         </div>
     </div>
 
@@ -2904,42 +2731,44 @@
     CHAPTER NAV
     ═══════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
-        <a href="../index.html" class="chapter-link"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
+        <a href="#hero" class="chapter-link">Home</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah-sefer-yetzirah.html" class="chapter-link active">I · The Book of Creation</a>
+        <a href="#threshold" class="chapter-link">I · Threshold</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah-zohar.html" class="chapter-link">II · The Zohar</a>
+        <a href="#sefirot" class="chapter-link">II · Sefirot</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah-luria.html" class="chapter-link">III · Isaac Luria</a>
+        <a href="#letters" class="chapter-link">III · Letters</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah-the-ramchal.html" class="chapter-link">IV · The Ramchal</a>
+        <a href="#mothers" class="chapter-link">IV · Mothers</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah-mystical-union.html" class="chapter-link">V · Mystical Union</a>
+        <a href="#matrix" class="chapter-link">V · Matrix</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah_zivug_haneshamot.html" class="chapter-link">VI · Zivug HaNeshamot</a>
+        <a href="#gates" class="chapter-link">VI · Gates</a>
         <span class="chapter-sep">·</span>
-        <a href="kabbalah_shaar_hagilgulim.html" class="chapter-link">VII · Sha'ar HaGilgulim</a>
+        <a href="#tree" class="chapter-link">VII · Tree</a>
+        <span class="chapter-sep">·</span>
+        <a href="#comparative" class="chapter-link">VIII · Compare</a>
+        <span class="chapter-sep">·</span>
+        <a href="#glossary" class="chapter-link">IX · Glossary</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════ -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-emblem"><div class="footer-emblem-outer"></div><div class="footer-emblem-inner"></div></div>
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
-            <a href="../index.html"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
-            <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
-            <a href="../taoism/taoism-threshold.html">Taoism</a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
+            <a href="#hero">Home</a>
+            <a href="#threshold">Threshold</a>
+            <a href="#sefirot">Sefirot</a>
+            <a href="#letters">Letters</a>
+            <a href="#glossary">Glossary</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
-        <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
+        <div class="footer-copyright">Last updated: 1 July 2026 · Six cartographies</div>
+        <div class="footer-copyright">A non-dual resource · © 2026</div>
     </footer>
 
     <script>
@@ -2983,17 +2812,26 @@
                     if (toc) toc.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
                 heroScroll.addEventListener('keydown', e => {
-                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault();
-                        heroScroll.click(); }
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); heroScroll.click(); }
                 });
+            }
+
+            /* HIDE SCROLL CUE WHEN SCROLLED PAST HERO */
+            const hero = document.getElementById('hero');
+            if (hero && heroScroll) {
+                const heroObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        heroScroll.classList.toggle('hidden', !entry.isIntersecting);
+                    });
+                }, { threshold: 0.1 });
+                heroObserver.observe(hero);
             }
 
             /* SMOOTH SCROLL for anchor links */
             document.querySelectorAll('a[href^="#"]').forEach(a => {
                 a.addEventListener('click', function(e) {
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) { e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
                 });
             });
 
@@ -3023,192 +2861,20 @@
                 document.querySelectorAll('.section-separator').forEach(el => el.classList.add('visible'));
             }, 600);
 
-            /* HOTSPOT TOOLTIP touch fallback */
+            /* HOTSPOT TOOLTIP — simplified, robust toggle */
             document.querySelectorAll('.hotspot').forEach(el => {
-                el.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    this.classList.toggle('active');
+                el.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const isActive = el.classList.contains('active');
+                    document.querySelectorAll('.hotspot.active').forEach(h => h.classList.remove('active'));
+                    if (!isActive) el.classList.add('active');
                 });
             });
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', e => {
                 if (!e.target.closest('.hotspot')) {
                     document.querySelectorAll('.hotspot.active').forEach(el => el.classList.remove('active'));
                 }
             });
-
-            // ============================================
-            // SEFIROT TOOLTIP SYSTEM — FIXED POSITIONING
-            // ============================================
-            const sefirahData = {
-                keter: {
-                    number: '1',
-                    title: 'The Crown',
-                    name: 'Keter',
-                    hebrew: 'כתר',
-                    desc: 'The primordial will, the first stirring of the Infinite toward creation. It is the point before the point, the intention before the act. Keter is so close to Ein Sof that it is sometimes called "the nothing that is something."'
-                },
-                chokhmah: {
-                    number: '2',
-                    title: 'Wisdom',
-                    name: 'Chokhmah',
-                    hebrew: 'חכמה',
-                    desc: 'The flash of insight, the primordial point of light that emerges from the darkness of Keter. The "father" principle, the seed of all knowing. Chokhmah is the undifferentiated flash before thought becomes structured.'
-                },
-                binah: {
-                    number: '3',
-                    title: 'Understanding',
-                    name: 'Binah',
-                    hebrew: 'בינה',
-                    desc: 'The "mother" principle, the womb that receives the flash of Chokhmah and gives it form, structure, and duration. Binah is the palace, the palace of the King, the container that makes the flash sustainable.'
-                },
-                chesed: {
-                    number: '4',
-                    title: 'Loving-kindness',
-                    name: 'Chesed',
-                    hebrew: 'חסד',
-                    desc: 'The expansive force, the outflowing of divine generosity that seeks to give without limit. The right hand of the divine, the arm that reaches out to create and sustain.'
-                },
-                gevurah: {
-                    number: '5',
-                    title: 'Severity / Strength',
-                    name: 'Gevurah',
-                    hebrew: 'גבורה',
-                    desc: 'The contractive force, the boundary that says "enough," the discipline that prevents the infinite outpouring from dissipating into chaos. The left hand, the judgment that gives form its integrity.'
-                },
-                tiferet: {
-                    number: '6',
-                    title: 'Beauty / Harmony',
-                    name: 'Tiferet',
-                    hebrew: 'תפארת',
-                    desc: 'The heart of the Tree, the balance point where Chesed and Gevurah meet in perfect proportion. The sun at the center, the radiance that makes the whole structure visible and desirable.'
-                },
-                netzach: {
-                    number: '7',
-                    title: 'Victory / Endurance',
-                    name: 'Netzach',
-                    hebrew: 'נצח',
-                    desc: 'The force of persistence, the divine quality that sustains creation through time. The right leg, the pillar of mercy extended into action.'
-                },
-                hod: {
-                    number: '8',
-                    title: 'Splendor / Glory',
-                    name: 'Hod',
-                    hebrew: 'הוד',
-                    desc: 'The force of submission, the divine quality that yields and reflects. The left leg, the pillar of severity extended into receptivity. Hod is the splendor that does not claim its own light but reflects the greater light.'
-                },
-                yesod: {
-                    number: '9',
-                    title: 'Foundation',
-                    name: 'Yesod',
-                    hebrew: 'יסוד',
-                    desc: 'The channel through which all the upper sefirot flow into the final vessel. The covenant, the point of transmission where the entire Tree concentrates its energy before delivering it to the world.'
-                },
-                malkhut: {
-                    number: '10',
-                    title: 'Kingdom',
-                    name: 'Malkhut',
-                    hebrew: 'מלכות',
-                    desc: 'The final sefirah, the world itself, the Shekhinah, the divine presence as it dwells in matter and time. The bride, the earth, the Sabbath, the point at which the Infinite finally touches the finite and makes it holy.'
-                }
-            };
-
-            const tooltip = document.createElement('div');
-            tooltip.className = 'sefirah-tooltip';
-            tooltip.id = 'sefirahTooltip';
-            tooltip.innerHTML = `
-                <div class="sefirah-tooltip-number" id="tooltipNumber">1</div>
-                <div class="sefirah-tooltip-title" id="tooltipTitle">The Crown</div>
-                <div class="sefirah-tooltip-name" id="tooltipName">Keter</div>
-                <div class="sefirah-tooltip-hebrew" id="tooltipHebrew">כתר</div>
-                <div class="sefirah-tooltip-desc" id="tooltipDesc">The primordial will, the first stirring of the Infinite toward creation.</div>
-            `;
-            document.body.appendChild(tooltip);
-
-            let activeSefirah = null;
-            let hideTimeout = null;
-
-            function positionTooltip(sefirah) {
-                const rect = sefirah.getBoundingClientRect();
-                const tooltipWidth = 300;
-                const tooltipHeight = tooltip.offsetHeight || 200;
-
-                let top = rect.bottom + 12;
-                let left = rect.left + rect.width / 2;
-
-                if (top + tooltipHeight > window.innerHeight - 16) {
-                    top = rect.top - tooltipHeight - 12;
-                }
-
-                if (left - tooltipWidth / 2 < 16) {
-                    left = tooltipWidth / 2 + 16;
-                }
-                if (left + tooltipWidth / 2 > window.innerWidth - 16) {
-                    left = window.innerWidth - tooltipWidth / 2 - 16;
-                }
-                if (top < 16) {
-                    top = 16;
-                }
-
-                tooltip.style.left = left + 'px';
-                tooltip.style.top = top + 'px';
-                tooltip.style.transform = 'translate(-50%, 0)';
-            }
-
-            function showTooltip(sefirah) {
-                const key = sefirah.dataset.sefirah;
-                const data = sefirahData[key];
-                if (!data) return;
-
-                document.getElementById('tooltipNumber').textContent = data.number;
-                document.getElementById('tooltipTitle').textContent = data.title;
-                document.getElementById('tooltipName').textContent = data.name;
-                document.getElementById('tooltipHebrew').textContent = data.hebrew;
-                document.getElementById('tooltipDesc').textContent = data.desc;
-
-                activeSefirah = sefirah;
-                tooltip.classList.add('active');
-                positionTooltip(sefirah);
-            }
-
-            function hideTooltip() {
-                tooltip.classList.remove('active');
-                activeSefirah = null;
-            }
-
-            const sefirot = document.querySelectorAll('.sefirah-group');
-            sefirot.forEach(s => {
-                s.addEventListener('mouseenter', () => {
-                    if (hideTimeout) {
-                        clearTimeout(hideTimeout);
-                        hideTimeout = null;
-                    }
-                    showTooltip(s);
-                });
-                s.addEventListener('mouseleave', () => {
-                    hideTimeout = setTimeout(hideTooltip, 200);
-                });
-                s.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (activeSefirah === s) {
-                        hideTooltip();
-                    } else {
-                        showTooltip(s);
-                    }
-                });
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.sefirah-group') && !e.target.closest('.sefirah-tooltip')) {
-                    hideTooltip();
-                }
-            });
-
-            window.addEventListener('resize', () => {
-                if (activeSefirah) positionTooltip(activeSefirah);
-            });
-            window.addEventListener('scroll', () => {
-                if (activeSefirah) positionTooltip(activeSefirah);
-            }, { passive: true });
 
         })();
     </script>

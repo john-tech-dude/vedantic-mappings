@@ -29,6 +29,9 @@
             --indigo: #5a6a9a;
             --indigo-light: #7a8aba;
             --indigo-glow: rgba(90, 106, 154, 0.12);
+            --violet: #7a6aaa;
+            --violet-light: #9a8aca;
+            --violet-glow: rgba(122, 106, 170, 0.15);
             --border: rgba(255, 255, 255, 0.05);
             --border-strong: rgba(255, 255, 255, 0.10);
             --border-subtle: rgba(255, 255, 255, 0.025);
@@ -57,6 +60,8 @@
             --gold-deep: #6a5820;
             --indigo: #5a6a9a;
             --indigo-light: #7a8aba;
+            --violet: #6a5a9a;
+            --violet-light: #8a7aba;
             --border: rgba(0, 0, 0, 0.06);
             --border-strong: rgba(0, 0, 0, 0.10);
             --border-subtle: rgba(0, 0, 0, 0.025);
@@ -112,6 +117,25 @@
         }
 
         /* ═══════════════════════════════════════════════════════
+           CURSOR GLOW (pointer:fine only)
+           ═══════════════════════════════════════════════════════ */
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--indigo-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        @media (pointer: fine) {
+            .cursor-glow { opacity: 1; }
+        }
+
+        /* ═══════════════════════════════════════════════════════
            KEYFRAMES
            ═══════════════════════════════════════════════════════ */
         @keyframes fadeInUp {
@@ -146,6 +170,10 @@
         @keyframes diagramFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-6px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(196, 168, 85, 0.15); }
+            50% { box-shadow: 0 0 0 8px rgba(196, 168, 85, 0); }
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -284,6 +312,7 @@
         }
         .hero-content .hero-eyemark,
         .hero-content .hero-title,
+        .hero-content .hero-subtitle,
         .hero-content .hero-quote,
         .hero-content .hero-quote-attr,
         .hero-content .hero-divider {
@@ -352,7 +381,7 @@
             animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
             position: relative; z-index: 2; opacity: 0;
         }
-        .hero-attr {
+        .hero-quote-attr {
             font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.35em;
             color: var(--stone); text-transform: uppercase;
             animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
@@ -450,6 +479,81 @@
         [data-theme="dark"] .pull-q p { color: var(--ink); }
 
         /* ═══════════════════════════════════════════════════════
+           TENSION BOXES
+           ═══════════════════════════════════════════════════════ */
+        .tension-box {
+            margin: 2.5rem 0;
+            border: 1px solid var(--border-strong);
+            border-left: 3px solid var(--violet);
+            background: linear-gradient(135deg, rgba(122, 106, 170, 0.06) 0%, var(--surface2) 100%);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.75rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .tension-box::before {
+            content: 'TENSION';
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.4em;
+            color: var(--violet-light);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.75rem;
+            opacity: 0.7;
+        }
+        .tension-box p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.95rem;
+            color: var(--stone);
+            line-height: 1.72;
+            margin-bottom: 0.75rem;
+        }
+        .tension-box p:last-child { margin-bottom: 0; }
+        .tension-box strong { color: var(--ink); font-weight: 500; }
+        .tension-box em { color: var(--ink2); font-style: italic; }
+
+        /* ═══════════════════════════════════════════════════════
+           RESONANCE CALLOUTS
+           ═══════════════════════════════════════════════════════ */
+        .resonance-callout {
+            margin: 2.5rem 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.75rem 2rem;
+            background: var(--surface);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .resonance-callout::before {
+            content: '◈';
+            font-size: 1.2rem;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.75rem;
+            opacity: 0.5;
+        }
+        .resonance-callout p {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--ink);
+            line-height: 1.65;
+            margin: 0;
+        }
+        .resonance-callout cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            font-style: normal;
+        }
+
+        /* ═══════════════════════════════════════════════════════
            OPENING BANNER
            ═══════════════════════════════════════════════════════ */
         .pq-section {
@@ -523,7 +627,7 @@
         .toc-b-heb { font-family: 'Frank Ruhl Libre', serif; font-size: 0.95rem; color: var(--stone-light); text-align: right; direction: rtl; white-space: nowrap; }
 
         /* ═══════════════════════════════════════════════════════
-           HOTSPOT TOOLTIP
+           HOTSPOT TOOLTIP (Premium)
            ═══════════════════════════════════════════════════════ */
         .hotspot { position: relative; cursor: help; border-bottom: 1px dotted var(--gold); transition: border-color 0.3s var(--ease-smooth); color: var(--gold-light); }
         .hotspot:hover { border-bottom-color: var(--gold-deep); }
@@ -540,13 +644,31 @@
         }
         .hotspot-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: var(--surface2) transparent transparent transparent; }
         .hotspot:hover .hotspot-tooltip, .hotspot.active .hotspot-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) scale(1); }
+        .tooltip-close {
+            display: none;
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--stone);
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
         @media (pointer: coarse) {
             .hotspot-tooltip { width: 260px; left: auto; right: -20px; transform: scale(0.96); }
             .hotspot:hover .hotspot-tooltip, .hotspot.active .hotspot-tooltip { transform: scale(1); }
+            .tooltip-close { display: block; }
         }
         @media (max-width: 768px) {
             .hotspot-tooltip { width: 240px; left: auto; right: -20px; transform: scale(0.96); }
             .hotspot:hover .hotspot-tooltip, .hotspot.active .hotspot-tooltip { transform: scale(1); }
+            .tooltip-close { display: block; }
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -616,6 +738,8 @@
             .footer-links { gap: 1.5rem; flex-direction: column; align-items: center; }
             .chapter-nav { gap: 0.5rem; font-size: 0.55rem; line-height: 2; }
             .nh-panel { padding: 1rem 1.2rem; }
+            .tension-box { padding: 1.25rem 1.5rem; }
+            .resonance-callout { padding: 1.25rem 1.5rem; }
         }
         @media (max-width: 480px) {
             body { font-size: 16px; }
@@ -630,6 +754,7 @@
             .footer { padding: 3rem 1.5rem 2rem; }
             .footer-links { gap: 1rem; flex-direction: column; align-items: center; }
             .chapter-nav { gap: 0.4rem; font-size: 0.5rem; line-height: 2.2; }
+            .tension-box { padding: 1rem 1.2rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -639,10 +764,14 @@
             .hero-title, .hero-subtitle, .hero-eyemark, .hero-divider,
             .hero-heb-display, .hero-quote, .hero-attr, .hero-scroll-cue { animation: none !important; opacity: 1 !important; }
             .hero-ripple { animation: none !important; }
+            .cursor-glow { display: none !important; }
         }
     </style>
 </head>
 <body>
+
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
     <!-- NAV COMPASS -->
     <div class="nav-compass">
@@ -653,9 +782,9 @@
             <div class="nav-section-title">This Article</div>
             <a href="#hero" class="nav-item active" data-section="hero">Overview</a>
             <a href="#toc" class="nav-item" data-section="toc">Contents</a>
-            <a href="#prologue" class="nav-item" data-section="prologue">Prologue</a>
+            <a href="#prelude" class="nav-item" data-section="prelude">Prelude</a>
             <a href="#forgetting" class="nav-item" data-section="forgetting">I · Forgetting</a>
-            <a href="#logion18" class="nav-item" data-section="logion18">II · Logion 18</a>
+            <a href="#logion18" class="nav-item" data-section="logion18">II · Beginning &amp; End</a>
             <a href="#threewords" class="nav-item" data-section="threewords">III · Three Words</a>
             <a href="#ontology" class="nav-item" data-section="ontology">IV · Living &amp; Dead</a>
             <a href="#solitary" class="nav-item" data-section="solitary">V · Solitary</a>
@@ -663,11 +792,9 @@
             <a href="#movement" class="nav-item" data-section="movement">VII · Movement</a>
             <a href="#end" class="nav-item" data-section="end">VIII · End</a>
             <a href="#meaning" class="nav-item" data-section="meaning">IX · Meaning</a>
+            <a href="#nhtable" class="nav-item" data-section="nhtable">X · Parallels</a>
             <div class="nav-divider"></div>
-            <div class="nav-section-title">Nag Hammadi Parallels</div>
-            <a href="#nhtable" class="nav-item" data-section="nhtable">Summary Table</a>
-            <div class="nav-divider"></div>
-                        <div class="nav-section-title">Jesus of Nazareth</div>
+            <div class="nav-section-title">Jesus of Nazareth</div>
             <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>I · The Hermeneutic Key</span></a>
             <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>II · Three Bridges</span></a>
             <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
@@ -676,7 +803,7 @@
             <a href="messiah-gospel-thomas.html" class="nav-item active"><span class="nav-item-icon"><svg class="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span>VI · The Gospel of Thomas</span></a>
             <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>VII · The Incarnation as Avatar</span></a>
             <div class="nav-divider"></div>
-                        <div class="nav-section-title">Other Cartographies</div>
+            <div class="nav-section-title">Other Cartographies</div>
             <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · The Cartographies</span></a>
             <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta</span></a>
             <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth</span></a>
@@ -716,6 +843,7 @@
         <div class="hero-content">
             <p class="hero-eyemark">Jesus of Nazareth</p>
             <h1 class="hero-title">The Gospel of Thomas</h1>
+            <p class="hero-subtitle">The Native Non-Dual Witness · A Working Manual for Recognition</p>
             <div class="hero-divider" aria-hidden="true">
                 <div class="hero-divider-line"></div>
                 <div class="hero-divider-diamond"></div>
@@ -745,28 +873,28 @@
         <h2 class="ed-h2">The Interior Logic of the Sayings</h2>
         <p class="ed-intro">A reading of the Gospel of Thomas as what it actually is: not a historical curiosity but a working manual for recognizing what you already are. Logia 1, 2, 3, 5, 11, 13, 18, 22, 24, 28, 29, 42, 49, 50, 56, 70, 75, 77, 82, 97, 98, and 114 are read in sequence, alongside parallel passages from the Nag Hammadi Library — the <em>Gospel of Truth</em>, the <em>Gospel of Philip</em>, the <em>Trimorphic Protennoia</em>, the <em>Book of Thomas the Contender</em>, the <em>Apocryphon of John</em>, and the <em>Hymn of the Pearl</em>.</p>
         <nav class="toc-book" aria-label="Article contents">
-            <a href="#prologue" class="toc-item"><span class="toc-b-num">I</span><span class="toc-b-title">Prologue</span><span class="toc-b-heb">ⲡⲣⲟⲗⲟⲅⲟⲥ</span></a>
-            <a href="#forgetting" class="toc-item"><span class="toc-b-num">II</span><span class="toc-b-title">The Structure of Forgetting</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲅ · ⲉ · ⲛⲅ</span></a>
-            <a href="#logion18" class="toc-item"><span class="toc-b-num">III</span><span class="toc-b-title">The Beginning and the End</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲏ · ⲙⲃ · ⲕⲑ</span></a>
-            <a href="#threewords" class="toc-item"><span class="toc-b-num">IV</span><span class="toc-b-title">The Three Words</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲅ · ⲕⲏ</span></a>
-            <a href="#ontology" class="toc-item"><span class="toc-b-num">V</span><span class="toc-b-title">The Living and the Dead</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲁ · ⲟ</span></a>
-            <a href="#solitary" class="toc-item"><span class="toc-b-num">VI</span><span class="toc-b-title">The Solitary and the Bridal Chamber</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲕⲃ · ⲙⲑ · ⲟⲉ</span></a>
-            <a href="#light" class="toc-item"><span class="toc-b-num">VII</span><span class="toc-b-title">The Light That Is Above Them All</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲕⲇ · ⲟⲍ</span></a>
-            <a href="#movement" class="toc-item"><span class="toc-b-num">VIII</span><span class="toc-b-title">Movement and Repose</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲛ · ⲥⲍ · ⲥⲏ</span></a>
-            <a href="#end" class="toc-item"><span class="toc-b-num">IX</span><span class="toc-b-title">The End: Making the Male into a Living Spirit</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲣⲓⲇ</span></a>
-            <a href="#meaning" class="toc-item"><span class="toc-b-num">X</span><span class="toc-b-title">The Meaning That Is Not Tasted</span><span class="toc-b-heb">ⲡⲉ ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ</span></a>
-            <a href="#nhtable" class="toc-item"><span class="toc-b-num">XI</span><span class="toc-b-title">Nag Hammadi Parallels · Summary</span><span class="toc-b-heb">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</span></a>
+            <a href="#prelude" class="toc-item"><span class="toc-b-num">0</span><span class="toc-b-title">Prelude · How to Read This Text</span><span class="toc-b-heb">ⲡⲣⲟⲗⲟⲅⲟⲥ</span></a>
+            <a href="#forgetting" class="toc-item"><span class="toc-b-num">I</span><span class="toc-b-title">The Structure of Forgetting</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲅ · ⲉ · ⲛⲅ</span></a>
+            <a href="#logion18" class="toc-item"><span class="toc-b-num">II</span><span class="toc-b-title">The Beginning and the End</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲏ · ⲙⲃ · ⲕⲑ</span></a>
+            <a href="#threewords" class="toc-item"><span class="toc-b-num">III</span><span class="toc-b-title">The Three Words</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲅ · ⲕⲏ</span></a>
+            <a href="#ontology" class="toc-item"><span class="toc-b-num">IV</span><span class="toc-b-title">The Living and the Dead</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲁ · ⲟ</span></a>
+            <a href="#solitary" class="toc-item"><span class="toc-b-num">V</span><span class="toc-b-title">The Solitary and the Bridal Chamber</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲕⲃ · ⲙⲑ · ⲟⲉ</span></a>
+            <a href="#light" class="toc-item"><span class="toc-b-num">VI</span><span class="toc-b-title">The Light That Is Above Them All</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲕⲇ · ⲟⲍ</span></a>
+            <a href="#movement" class="toc-item"><span class="toc-b-num">VII</span><span class="toc-b-title">Movement and Repose</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲛ · ⲥⲍ · ⲥⲏ</span></a>
+            <a href="#end" class="toc-item"><span class="toc-b-num">VIII</span><span class="toc-b-title">The End: Making the Male into a Living Spirit</span><span class="toc-b-heb">ⲗⲟⲅⲓⲟⲛ ⲣⲓⲇ</span></a>
+            <a href="#meaning" class="toc-item"><span class="toc-b-num">IX</span><span class="toc-b-title">The Meaning That Is Not Tasted</span><span class="toc-b-heb">ⲡⲉ ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ</span></a>
+            <a href="#nhtable" class="toc-item"><span class="toc-b-num">X</span><span class="toc-b-title">Nag Hammadi Parallels · Summary</span><span class="toc-b-heb">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</span></a>
         </nav>
     </section>
 
     <div class="stages-wrap">
 
-        <!-- ═══ PROLOGUE ═══ -->
-        <section class="stage-section" id="prologue">
+        <!-- ═══ PRELUDE ═══ -->
+        <section class="stage-section" id="prelude">
             <div class="stage-wm" aria-hidden="true">ⲡⲣⲟⲗⲟⲅⲟⲥ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">Prologue</span>
+                    <span class="stage-n">Prelude</span>
                     <span class="stage-heb-eye">ⲡⲣⲟⲗⲟⲅⲟⲥ</span>
                 </div>
                 <h2 class="stage-h2">How to Read This Text</h2>
@@ -774,25 +902,71 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>The Gospel of Thomas opens with a strange promise — a promise of not tasting death for those who find the meaning of its sayings. This isn't a puzzle with a hidden answer. The meaning isn't behind the words, waiting to be extracted. The saying works on you, not the other way around — if you let it, something in how you see shifts, and that shift is what the promise points to.</p>
+                <p>The Gospel of Thomas opens with a strange promise — a promise of not tasting death for those who find the meaning of its sayings. This isn't a puzzle with a hidden answer. The meaning isn&rsquo;t behind the words, waiting to be extracted. The saying works on you, not the other way around — if you let it, something in how you see shifts, and that shift is what the promise points to.</p>
 
-                <p>That's why Thomas has no story. Stories are about time: beginning, middle, end. Thomas works differently. Each saying is a short circuit — a flash that shows you what was always there, but you weren't looking right. The paradox, when there is one, lives in the reader. The saying is just clear.</p>
+                <p>That&rsquo;s why Thomas has no story. Stories are about time: beginning, middle, end. Thomas works differently. Each saying is a short circuit — a flash that shows you what was always there, but you weren&rsquo;t looking right. The paradox, when there is one, lives in the reader. The saying is just clear.</p>
 
-                <p>Logion 2 maps the territory from the beginning: <em>"Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the all."</em> The sequence is exact — find, trouble, astonishment, reign. Not the smooth progress of accumulating knowledge but the shock of recognition. You find something and it troubles you because it undoes what you thought you were. The astonishment that follows isn't wonder at something new; it's the dislocation of seeing clearly for the first time.</p>
+                <p>Logion 2 maps the territory from the beginning: <em>&ldquo;Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the all.&rdquo;</em> The sequence is exact — find, trouble, astonishment, reign. Not the smooth progress of accumulating knowledge but the shock of recognition. You find something and it troubles you because it undoes what you thought you were. The astonishment that follows isn&rsquo;t wonder at something new; it&rsquo;s the dislocation of seeing clearly for the first time.</p>
 
-                <p>This kind of reading — letting a text undo your usual way of thinking — has an old name: <span class="hotspot">anamnesis<span class="hotspot-tooltip"><strong>Anamnesis</strong> Remembering what the soul already knows. The Platonic and Gnostic traditions held that true knowledge is not acquired but recovered — recognized, not learned.</span></span>, remembering what you already know but have forgotten. The <em>Gospel of Truth</em> says it plainly: forgetfulness existed because they did not know the Father, and once they come to know him, forgetfulness will cease. Thomas is saying the same thing differently. Knowledge here isn't acquisition. It's recovery.</p>
+                <p>This kind of reading — letting a text undo your usual way of thinking — has an old name: <span class="hotspot">anamnesis<span class="hotspot-tooltip"><strong>Anamnesis</strong> Remembering what the soul already knows. The Platonic and Gnostic traditions held that true knowledge is not acquired but recovered — recognized, not learned.<button class="tooltip-close" aria-label="Close tooltip">×</button></span></span>, remembering what you already know but have forgotten. The <em>Gospel of Truth</em> says it plainly: forgetfulness existed because they did not know the Father, and once they come to know him, forgetfulness will cease. Thomas is saying the same thing differently. Knowledge here isn&rsquo;t acquisition. It&rsquo;s recovery.</p>
 
                 <div class="pull-q fade-in">
-                    <p>"The All sought him from whom it had come forth. You see, the All had been inside of him, that illimitable, inconceivable one, who is better than every thought."</p>
+                    <p>&ldquo;The All sought him from whom it had come forth. You see, the All had been inside of him, that illimitable, inconceivable one, who is better than every thought.&rdquo;</p>
                     <cite>— Gospel of Truth · Nag Hammadi Codex I</cite>
+                </div>
+
+                <p>But we must be honest about what Thomas is and is not. The text we have is a Coptic translation of a Greek original, likely compiled in second-century Syria. It may be dependent on the Synoptic Gospels, independent of them, or both — the synoptic-like sayings (Logia 8, 9, 20, 26, 33, 36, 47, 54, 55, 57, 63, 65, 76, 96, 107) and the unique sayings (Logia 1, 2, 13, 22, 29, 42, 49, 50, 56, 60, 61, 83, 84) suggest a complex relationship. This page does not claim Thomas is &ldquo;earlier&rdquo; or &ldquo;more authentic&rdquo; than the canonical Gospels. It is differently directed — toward recognition rather than narrative, toward the solitary rather than the communal, toward the present rather than the eschatological.</p>
+
+                <p>Thomas&rsquo;s world-denial, celibacy, and asceticism reflect the <span class="hotspot">encratite<span class="hotspot-tooltip"><strong>Encratism</strong> A rigorist early Christian movement that practiced strict asceticism, celibacy, and world-renunciation, viewing the material world as corrupted.<button class="tooltip-close" aria-label="Close tooltip">×</button></span></span> movement — a rigorist Christianity that saw the material world as corrupt. This is not identical to Advaita&rsquo;s <em>maya</em>-ontology. Advaita sees the world as superimposition on Brahman; encratism sees it as fallen, corrupted by the demiurge. Thomas&rsquo;s &ldquo;the world is a corpse&rdquo; (Logion 56) is not Shankara&rsquo;s &ldquo;Brahman alone is real&rdquo;; it is closer to Gnostic dualism. The page uses Thomas as a lens to read the canonical Gospels, not as a replacement for them.</p>
+
+                <div class="diagram-container fade-in">
+                    <svg viewBox="0 0 700 320" aria-labelledby="diagramTitle">
+                        <title id="diagramTitle">Thomas and the Canonical Gospels</title>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:var(--indigo);stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:var(--gold);stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Center source -->
+                        <circle cx="350" cy="160" r="50" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.4"/>
+                        <text x="350" y="155" text-anchor="middle" fill="var(--gold)" font-family="Cinzel, serif" font-size="11" letter-spacing="0.15em">JESUS</text>
+                        <text x="350" y="172" text-anchor="middle" fill="var(--stone)" font-family="Cinzel, serif" font-size="8" letter-spacing="0.1em">TRADITION</text>
+                        
+                        <!-- Lines to three branches -->
+                        <line x1="350" y1="110" x2="350" y2="60" stroke="var(--indigo)" stroke-width="1" opacity="0.4"/>
+                        <line x1="390" y1="130" x2="580" y2="80" stroke="var(--indigo)" stroke-width="1" opacity="0.4"/>
+                        <line x1="310" y1="130" x2="120" y2="80" stroke="var(--indigo)" stroke-width="1" opacity="0.4"/>
+                        
+                        <!-- Thomas -->
+                        <rect x="80" y="40" width="140" height="50" rx="6" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1" opacity="0.6"/>
+                        <text x="150" y="62" text-anchor="middle" fill="var(--gold-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em">THOMAS</text>
+                        <text x="150" y="78" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Sayings · Recognition</text>
+                        
+                        <!-- Synoptics -->
+                        <rect x="280" y="10" width="140" height="50" rx="6" fill="var(--surface2)" stroke="var(--indigo)" stroke-width="1" opacity="0.6"/>
+                        <text x="350" y="32" text-anchor="middle" fill="var(--indigo-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em">SYNOPTICS</text>
+                        <text x="350" y="48" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Narrative · Kingdom</text>
+                        
+                        <!-- John -->
+                        <rect x="480" y="40" width="140" height="50" rx="6" fill="var(--surface2)" stroke="var(--violet)" stroke-width="1" opacity="0.6"/>
+                        <text x="550" y="62" text-anchor="middle" fill="var(--violet-light)" font-family="Cinzel, serif" font-size="10" letter-spacing="0.1em">JOHN</text>
+                        <text x="550" y="78" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Theological · Logos</text>
+                        
+                        <!-- Bottom note -->
+                        <text x="350" y="280" text-anchor="middle" fill="var(--stone)" font-family="Crimson Pro, serif" font-size="10" font-style="italic">Three directions from a common source, not a hierarchy of authenticity</text>
+                        <line x1="200" y1="265" x2="500" y2="265" stroke="var(--border)" stroke-width="0.5" opacity="0.5"/>
+                    </svg>
+                    <div class="diagram-caption">Thomas and the Canonical Gospels</div>
+                    <div class="diagram-subcaption">A sayings-collection, narrative Gospels, and theological Gospel — divergent paths, not competitive claims</div>
                 </div>
 
                 <div class="scripture-panels fade-in">
                     <div class="scripture-panel">
                         <div class="scripture-heb">ⲡⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ ⲙ̄ⲡⲉ ⲑⲱⲙⲁⲥ</div>
                         <div class="scripture-label">Gospel of Thomas · Logion 1</div>
-                        <p class="scripture-text">"Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the All."</p>
-                        <p class="scripture-ref">— Gospel of Thomas · Logion 2</p>
+                        <p class="scripture-text">&ldquo;These are the secret sayings which the living Jesus spoke and which Didymos Judas Thomas wrote down. And he said: Whoever finds the meaning of these sayings will not taste death.&rdquo;</p>
+                        <p class="scripture-ref">— Blatz Translation</p>
                     </div>
                     <div class="scripture-panel">
                         <div class="scripture-heb">ⲑⲱⲙⲁⲥ</div>
@@ -819,22 +993,27 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 3:</strong> <em>"If your leaders say to you, 'Look, the Kingdom is in the sky,' then the birds of the sky will precede you. If they say to you, 'It is in the sea,' then the fish will precede you. Rather, the Kingdom is inside you and outside you."</em></p>
+                <p><strong>Logion 3:</strong> <em>&ldquo;If your leaders say to you, &lsquo;Look, the Kingdom is in the sky,&rsquo; then the birds of the sky will precede you. If they say to you, &lsquo;It is in the sea,&rsquo; then the fish will precede you. Rather, the Kingdom is inside you and outside you.&rdquo;</em></p>
 
-                <p>The leaders aren't wrong because they've got the wrong location. They're wrong because they think location matters at all. The Kingdom isn't somewhere else. It's how you see.</p>
+                <p>The leaders aren&rsquo;t wrong because they&rsquo;ve got the wrong location. They&rsquo;re wrong because they think location matters at all. The Kingdom isn&rsquo;t somewhere else. It&rsquo;s how you see.</p>
 
-                <p>Thomas then adds something that sounds simple but isn't: <em>"When you know yourselves, then you will be known, and you will know that you are the sons of the living Father. But if you do not know yourselves, then you are impoverished — and you are poverty itself!"</em></p>
+                <p>Thomas then adds something that sounds simple but isn&rsquo;t: <em>&ldquo;When you know yourselves, then you will be known, and you will know that you are the sons of the living Father. But if you do not know yourselves, then you are impoverished — and you are poverty itself!&rdquo;</em></p>
 
-                <p>The self you need to know isn't your personality, your history, your memory of who you've been. It's the awareness in which all of that appears. To not know this is to mistake yourself for the seeker — the one who lacks, the one still searching. But the searching is the lack. Stop, and you see what was never missing.</p>
+                <p>The self you need to know isn&rsquo;t your personality, your history, your memory of who you&rsquo;ve been. It&rsquo;s the awareness in which all of that appears. To not know this is to mistake yourself for the seeker — the one who lacks, the one still searching. But the searching is the lack. Stop, and you see what was never missing.</p>
 
-                <p>Logion 5 closes the same argument from the outside in: <em>"Know what is in front of your face, and what is hidden from you will be disclosed. For there is nothing hidden that will not become manifest."</em> The hidden and the apparent are not two different things. The apparent world, looked at clearly enough, opens onto what's always been there. This is why Thomas doesn't require retreat from the world — the world itself is the teaching, if you're looking at it right.</p>
+                <p>Logion 5 closes the same argument from the outside in: <em>&ldquo;Know what is in front of your face, and what is hidden from you will be disclosed. For there is nothing hidden that will not become manifest.&rdquo;</em> The hidden and the apparent are not two different things. The apparent world, looked at clearly enough, opens onto what&rsquo;s always been there. This is why Thomas doesn&rsquo;t require retreat from the world — the world itself is the teaching, if you&rsquo;re looking at it right.</p>
 
-                <p>Logion 56 goes further: <em>"Whoever has come to know the world has found a corpse, and whoever has found a corpse, of him the world is not worthy."</em> Knowing the world as it truly is — impermanent, constructed, a temporary arrangement of appearances — doesn't make you despise it. It frees you from being owned by it. The corpse isn't an insult; it's a fact. What's built will come apart. Knowing this is not pessimism. It's the beginning of seeing.</p>
+                <p>Logion 56 goes further: <em>&ldquo;Whoever has come to know the world has found a corpse, and whoever has found a corpse, of him the world is not worthy.&rdquo;</em> Knowing the world as it truly is — impermanent, constructed, a temporary arrangement of appearances — doesn&rsquo;t make you despise it. It frees you from being owned by it. The corpse isn&rsquo;t an insult; it&rsquo;s a fact. What&rsquo;s built will come apart. Knowing this is not pessimism. It&rsquo;s the beginning of seeing.</p>
 
-                <p>The <em>Apocryphon of John</em> tells the same story mythically: the divine spark is trapped in matter, asleep, waiting to wake up. Thomas cuts out the myth and goes straight to the instruction: <em>know yourselves</em>. The poverty he names is the same ignorance the Apocryphon narrates as the fall of Sophia — one text tells a story about it, the other just says: stop.</p>
+                <p>The <em>Apocryphon of John</em> tells the same story mythically: the divine spark is trapped in matter, asleep, waiting to wake up. Thomas cuts out the myth and goes straight to the instruction: <em>know yourselves</em>. But the mythological background matters. Thomas&rsquo;s &ldquo;corpse&rdquo; is not Advaita&rsquo;s <em>maya</em>; it is Gnostic <em>hyle</em> — matter as the prison of spirit. Thomas&rsquo;s ontology is dualistic (spirit vs. matter) in a way Advaita is not (Brahman alone is real, nothing else exists to be dualistic with).</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Advaita:</strong> The &ldquo;inside you and outside you&rdquo; of Logion 3 is not Advaita&rsquo;s &ldquo;all is Brahman.&rdquo; It is the Gnostic &ldquo;the divine spark is within the material prison.&rdquo; The direction of recognition is <em>inward</em> — finding what is hidden — not <em>outward</em> — seeing all as One. Advaita dissolves the boundary between inside and outside; Thomas preserves it as a map of the journey. The <em>Apocryphon of John</em>&rsquo;s myth of the spark trapped in matter is the unstated backdrop of Thomas&rsquo;s instruction. Without it, &ldquo;know yourselves&rdquo; becomes generic self-help. With it, it becomes the recovery of a divine identity buried under flesh.</p>
+                    <p>Shankara&rsquo;s <em>Brahmasutrabhasya</em> 1.1.2: <em>&ldquo;Brahman is that from which the origin of this world proceeds.&rdquo;</em> For Shankara, the world is superimposition (<em>adhyasa</em>) on Brahman, like rope mistaken for snake. For Thomas, the world is a corpse — not a mistake of perception but a prison of substance. The practical result may look similar (detachment from the world), but the ontology is radically different. Thomas wants to escape the world; Advaita wants to see through it.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"For he who has not known himself has known nothing, but he who has known himself has at the same time already achieved knowledge about the depth of the all."</p>
+                    <p>&ldquo;For he who has not known himself has known nothing, but he who has known himself has at the same time already achieved knowledge about the depth of the all.&rdquo;</p>
                     <cite>— Book of Thomas the Contender · Nag Hammadi Codex II</cite>
                 </div>
             </div>
@@ -850,35 +1029,40 @@
                     <span class="stage-n">II</span>
                     <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲓⲏ</span>
                 </div>
-                <h2 class="stage-h2">Logion 18: The Beginning and the End</h2>
+                <h2 class="stage-h2">The Beginning and the End</h2>
                 <span class="stage-subtitle">Logia 18, 29, 42 — The disciples want to know what happens later. Jesus redirects them to now.</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
 
-                <p><strong>Logion 18:</strong> <em>The disciples said to Jesus: "Tell us how our end will be." Jesus said: "Since you have discovered the beginning, why do you seek the end? For where the beginning is, there will the end be. Blessed is he who shall stand at the beginning, and he shall know the end, and shall not taste death."</em></p>
+                <p><strong>Logion 18:</strong> <em>The disciples said to Jesus: &ldquo;Tell us how our end will be.&rdquo; Jesus said: &ldquo;Since you have discovered the beginning, why do you seek the end? For where the beginning is, there will the end be. Blessed is he who shall stand at the beginning, and he shall know the end, and shall not taste death.&rdquo;</em></p>
 
-                <p>The disciples are thinking in time. They want to know what happens later. Jesus points them back to what's here. The "beginning" isn't a past event — it's the present moment of awareness, the ground from which everything arises. Stand there, rest in it, and you don't need to know the end. The end is just the beginning seen from another angle.</p>
+                <p>The disciples are thinking in time. They want to know what happens later. Jesus points them back to what&rsquo;s here. The &ldquo;beginning&rdquo; isn&rsquo;t a past event — it&rsquo;s the present moment of awareness, the ground from which everything arises. Stand there, rest in it, and you don&rsquo;t need to know the end. The end is just the beginning seen from another angle.</p>
 
-                <p>The <em>Trimorphic Protennoia</em> opens with the same claim spoken in the first person: <em>"I am Protennoia, the Thought that dwells in the Light. I am the movement that dwells in the All."</em> The First Thought — the beginning — is also what holds everything in place. What Thomas says as a riddle, Protennoia says as autobiography.</p>
+                <p>The <em>Trimorphic Protennoia</em> opens with the same claim spoken in the first person: <em>&ldquo;I am Protennoia, the Thought that dwells in the Light. I am the movement that dwells in the All.&rdquo;</em> The First Thought — the beginning — is also what holds everything in place. What Thomas says as a riddle, Protennoia says as autobiography. But Protennoia&rsquo;s first-person divine speech is utterly foreign to Thomas&rsquo;s third-person sayings. Thomas&rsquo;s anonymity is deliberate and powerful, but it is also unstable. Without the anchor of a named speaker, the sayings float free of any institutional authority.</p>
 
-                <p>Logion 42 is the shortest saying in the Gospel, and one of the sharpest: <em>"Become passers-by."</em> Two words. Don't settle in time. Don't install yourself in any moment as though it's where you live. The soul in the Hymn of the Pearl settles in Egypt, eats its food, and forgets the mission entirely. To be a passer-by is to stay awake to the fact that you're in motion — that the beginning is always here, and the end is never the end.</p>
+                <p>Logion 42 is the shortest saying in the Gospel, and one of the sharpest: <em>&ldquo;Become passers-by.&rdquo;</em> Two words. Don&rsquo;t settle in time. Don&rsquo;t install yourself in any moment as though it&rsquo;s where you live. The soul in the <em>Hymn of the Pearl</em> settles in Egypt, eats its food, and forgets the mission entirely. To be a passer-by is to stay awake to the fact that you&rsquo;re in motion — that the beginning is always here, and the end is never the end.</p>
 
-                <p>Logion 29 pushes this further, and strangely: <em>"If the flesh came into being because of spirit, it is a wonder. But if spirit came into being because of the body, it is a wonder of wonders. Indeed, I am amazed at how this great wealth has made its home in this poverty."</em> The body is poverty. The spirit is great wealth. And yet here they are together — the astonishing fact of consciousness inhabiting matter, spirit taking up residence in flesh. Thomas doesn't resolve the strangeness. He just names it. The wonder is that this arrangement exists at all.</p>
+                <p>Logion 29 pushes this further, and strangely: <em>&ldquo;If the flesh came into being because of spirit, it is a wonder. But if spirit came into being because of the body, it is a wonder of wonders. Indeed, I am amazed at how this great wealth has made its home in this poverty.&rdquo;</em> The body is poverty. The spirit is great wealth. And yet here they are together — the astonishing fact of consciousness inhabiting matter, spirit taking up residence in flesh. Thomas doesn&rsquo;t resolve the strangeness. He just names it. The wonder is that this arrangement exists at all.</p>
 
-                <p>The <em>Hymn of the Pearl</em>, embedded in the Acts of Thomas, narrates the soul's descent, forgetting, and return home. It's the long version of this logion: the soul goes out from the beginning, forgets where it came from, and must remember. But Thomas short-circuits the journey. The Pearl was never lost. You just forgot you were holding it.</p>
+                <p>The <em>Hymn of the Pearl</em>, embedded in the Acts of Thomas, narrates the soul&rsquo;s descent, forgetting, and return home. It&rsquo;s the long version of this logion: the soul goes out from the beginning, forgets where it came from, and must remember. But Thomas short-circuits the journey. The Pearl was never lost. You just forgot you were holding it. Yet this &ldquo;short circuit&rdquo; only works if you already know the longer story. It is not a replacement for mythology but a radicalization of it — the final stage where the map is seen to be the territory.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and the Myth:</strong> Thomas&rsquo;s &ldquo;short circuit&rdquo; presupposes the longer Gnostic narrative of descent and return. The <em>Hymn of the Pearl</em> gives the full myth: the prince descends, forgets, remembers, and returns. Thomas&rsquo;s &ldquo;become passers-by&rdquo; is the instruction given to one who already knows the myth. Without the <em>Hymn</em>&rsquo;s narrative structure, Thomas&rsquo;s brevity risks becoming mere abstraction. The page honors both: the myth&rsquo;s richness and Thomas&rsquo;s radical concision.</p>
+                    <p>Similarly, the <em>Trimorphic Protennoia</em>&rsquo;s first-person divine speech (&ldquo;I am the Thought that dwells in the Light&rdquo;) is formally different from Thomas&rsquo;s third-person sayings. Protennoia reveals herself; Thomas instructs anonymously. This difference matters: Protennoia belongs to a revelatory genre (like John&rsquo;s Revelation), while Thomas belongs to a wisdom genre (like Proverbs or the <em>Dhammapada</em>). To read Thomas as revelation is to impose a genre it does not claim.</p>
+                </div>
 
                 <div class="scripture-panels fade-in" style="grid-template-columns:1fr;">
                     <div class="scripture-panel">
                         <div class="scripture-heb">ⲗⲟⲅⲓⲟⲛ ⲓⲏ</div>
                         <div class="scripture-label">Logion 18 — Blatz Translation</div>
-                        <p class="scripture-text">"Since you have discovered the beginning, why do you seek the end? For where the beginning is, there will the end be. Blessed is he who shall stand at the beginning, and he shall know the end, and shall not taste death."</p>
+                        <p class="scripture-text">&ldquo;Since you have discovered the beginning, why do you seek the end? For where the beginning is, there will the end be. Blessed is he who shall stand at the beginning, and he shall know the end, and shall not taste death.&rdquo;</p>
                         <p class="scripture-ref">— Gospel of Thomas</p>
                     </div>
                 </div>
 
                 <div class="pull-q fade-in">
-                    <p>"I am Protennoia, the Thought that dwells in the Light. I am the movement that dwells in the All, she in whom the All takes its stand, the first-born among those who came to be, she who exists before the All."</p>
+                    <p>&ldquo;I am Protennoia, the Thought that dwells in the Light. I am the movement that dwells in the All, she in whom the All takes its stand, the first-born among those who came to be, she who exists before the All.&rdquo;</p>
                     <cite>— Trimorphic Protennoia · Nag Hammadi Codex XIII</cite>
                 </div>
             </div>
@@ -899,18 +1083,23 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 13:</strong> <em>Jesus said to his disciples, "Compare me to someone and tell me whom I am like." Simon Peter said to him, "You are like a righteous angel." Matthew said to him, "You are like a wise philosopher." Thomas said to him, "Master, my mouth is wholly incapable of saying whom you are like."</em></p>
+                <p><strong>Logion 13:</strong> <em>Jesus said to his disciples, &ldquo;Compare me to someone and tell me whom I am like.&rdquo; Simon Peter said to him, &ldquo;You are like a righteous angel.&rdquo; Matthew said to him, &ldquo;You are like a wise philosopher.&rdquo; Thomas said to him, &ldquo;Master, my mouth is wholly incapable of saying whom you are like.&rdquo;</em></p>
 
-                <p><em>Jesus said, "I am not your master. Because you have drunk, you have become intoxicated from the bubbling spring which I have measured out." And he took him and withdrew and told him three things. When Thomas returned to his companions, they asked him, "What did Jesus say to you?" Thomas said to them, "If I tell you one of the things which he told me, you will pick up stones and throw them at me; a fire will come out of the stones and burn you up."</em></p>
+                <p><em>Jesus said, &ldquo;I am not your master. Because you have drunk, you have become intoxicated from the bubbling spring which I have measured out.&rdquo; And he took him and withdrew and told him three things. When Thomas returned to his companions, they asked him, &ldquo;What did Jesus say to you?&rdquo; Thomas said to them, &ldquo;If I tell you one of the things which he told me, you will pick up stones and throw them at me; a fire will come out of the stones and burn you up.&rdquo;</em></p>
 
-                <p>Peter and Matthew try to fit Jesus into categories they already understand — an angel, a philosopher. Thomas doesn't. He's drunk from the spring and can no longer speak in ordinary terms. His silence isn't ignorance. It's what happens after the usual frameworks break down.</p>
+                <p>Peter and Matthew try to fit Jesus into categories they already understand — an angel, a philosopher. Thomas doesn&rsquo;t. He&rsquo;s drunk from the spring and can no longer speak in ordinary terms. His silence isn&rsquo;t ignorance. It&rsquo;s what happens after the usual frameworks break down.</p>
 
-                <p>We never learn what the three words were. That's the point. They aren't information. The <em>Book of Thomas the Contender</em> expands on this moment: Jesus tells Thomas directly, <em>"Since it has been said that you are my twin and true companion, examine yourself, and learn who you are."</em> The three words can't be reported because they're the act of self-knowledge itself — and that can't be handed over. It can only be undergone.</p>
+                <p>We never learn what the three words were. That&rsquo;s the point. They aren&rsquo;t information. The <em>Book of Thomas the Contender</em> expands on this moment: Jesus tells Thomas directly, <em>&ldquo;Since it has been said that you are my twin and true companion, examine yourself, and learn who you are.&rdquo;</em> The three words can&rsquo;t be reported because they&rsquo;re the act of self-knowledge itself — and that can&rsquo;t be handed over. It can only be undergone. The Contender&rsquo;s elaboration and Thomas&rsquo;s silence are both true: the Contender gives the method, Thomas gives the result. The page honors both.</p>
 
-                <p>Logion 28 gives this the weight of grief: <em>"I stood in the midst of the world, and I appeared to them in flesh. I found all of them drunk; I found none of them thirsty. And my soul ached for the children of humanity, because they are blind in their hearts and do not see. For they came into the world empty, and they also seek to leave the world empty."</em> The unspoken three words and the grief of Logion 28 are the same moment seen differently. Thomas received something he can't transmit. The world is full of people who never asked. The one who has drunk from the spring stands among those who don't know they're thirsty.</p>
+                <p>Logion 28 gives this the weight of grief: <em>&ldquo;I stood in the midst of the world, and I appeared to them in flesh. I found all of them drunk; I found none of them thirsty. And my soul ached for the children of humanity, because they are blind in their hearts and do not see. For they came into the world empty, and they also seek to leave the world empty.&rdquo;</em> The unspoken three words and the grief of Logion 28 are the same moment seen differently. Thomas received something he can&rsquo;t transmit. The world is full of people who never asked. The one who has drunk from the spring stands among those who don&rsquo;t know they&rsquo;re thirsty.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Advaita:</strong> The &ldquo;spring&rdquo; metaphor in Logion 13 is participatory — Thomas drinks from a source outside himself, measured out by Jesus. In Advaita, there is no &ldquo;spring&rdquo; outside the Self; the Self is the only water. Nisargadatta Maharaj: <em>&ldquo;The only thing you know for sure is: &lsquo;here and now I am.&rsquo; Find out what is this &lsquo;I am.&rsquo;&rdquo;</em> Thomas&rsquo;s metaphor is relational (disciple and master, drinker and spring); Advaita&rsquo;s is non-relational (the Self alone is). The <em>Book of Thomas the Contender</em>&rsquo;s lengthy dialogue expands the moment into instruction; Thomas&rsquo;s brevity preserves the shock. Both are needed: the Contender for the beginner, Thomas for the one who is ready.</p>
+                    <p>The &ldquo;intoxication&rdquo; metaphor also carries Gnostic sacramental resonance. In the <em>Gospel of Philip</em>, the &ldquo;spring&rdquo; is the bridal chamber, the waters of baptism, or the pleroma itself. Thomas&rsquo;s participatory language (drinking from a source) is closer to Christian sacramentality than to Advaita&rsquo;s identity-language (being the source). This is not a flaw in Thomas; it is a different anthropology. Thomas&rsquo;s human is the one who receives; Advaita&rsquo;s human is the one who recognizes he was never other than the whole.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"Since it has been said that you are my twin and true companion, examine yourself, and learn who you are, in what way you exist, and how you will come to be. It is not fitting that you be ignorant of yourself."</p>
+                    <p>&ldquo;Since it has been said that you are my twin and true companion, examine yourself, and learn who you are, in what way you exist, and how you will come to be. It is not fitting that you be ignorant of yourself.&rdquo;</p>
                     <cite>— Book of Thomas the Contender · Nag Hammadi Codex II</cite>
                 </div>
             </div>
@@ -931,16 +1120,21 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 11:</strong> <em>"This heaven will pass away, and the heaven above it will pass away. And the dead are not alive, and the living will not die. In the days when you consumed what was dead, you made it alive. When you are in the light, what will you do? On the day when you were one, you became two. But when you become two, what will you do?"</em></p>
+                <p><strong>Logion 11:</strong> <em>&ldquo;This heaven will pass away, and the heaven above it will pass away. And the dead are not alive, and the living will not die. In the days when you consumed what was dead, you made it alive. When you are in the light, what will you do? On the day when you were one, you became two. But when you become two, what will you do?&rdquo;</em></p>
 
-                <p>The reversal here isn't rhetorical. The "dead" are people who are fully alive in the biological sense but are asleep to what they are. The "living" aren't the resurrected — they're the awake. This isn't a future state you earn. It's a present recognition you either have or don't.</p>
+                <p>The reversal here isn&rsquo;t rhetorical. The &ldquo;dead&rdquo; are people who are fully alive in the biological sense but are asleep to what they are. The &ldquo;living&rdquo; aren&rsquo;t the resurrected — they&rsquo;re the awake. This isn&rsquo;t a future state you earn. It&rsquo;s a present recognition you either have or don&rsquo;t.</p>
 
-                <p>Logion 70 names the consequence directly: <em>"If you bring forth what is within you, what you bring forth will save you. If you do not bring forth what is within you, what you do not bring forth will destroy you."</em> The living and the dead of Logion 11 aren't two kinds of people. They're two possible states of the same person. The difference between them is whether what's inside has been brought out. Not performance — recognition. The failure to bring it forth isn't moral failure; it's the continued ignorance that Logion 3 calls poverty.</p>
+                <p>Logion 70 names the consequence directly: <em>&ldquo;If you bring forth what is within you, what you bring forth will save you. If you do not bring forth what is within you, what you do not bring forth will destroy you.&rdquo;</em> The living and the dead of Logion 11 aren&rsquo;t two kinds of people. They&rsquo;re two possible states of the same person. The difference between them is whether what&rsquo;s inside has been brought out. Not performance — recognition. The failure to bring it forth isn&rsquo;t moral failure; it&rsquo;s the continued ignorance that Logion 3 calls poverty.</p>
 
-                <p>The <em>Gospel of Philip</em> draws the same line: those asleep in the world are buried in it. To eat what is dead and make it alive is the gnostic reversal — transforming the material through perception rather than ritual. Thomas doesn't need the sacrament. The saying does the work.</p>
+                <p>The <em>Gospel of Philip</em> draws the same line: those asleep in the world are buried in it. To eat what is dead and make it alive is the gnostic reversal — transforming the material through perception rather than ritual. But Philip&rsquo;s sacramentalism (baptism, chrism, eucharist, bridal chamber) is foreign to Thomas. Thomas has no sacraments; it has only sayings. Thomas is more radical than Philip, but also more isolated. Without sacrament or community, Thomas risks becoming pure individualism — a spirituality for the solitary reader alone.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Advaita:</strong> The &ldquo;bring forth what is within you&rdquo; of Logion 70 is not Advaita&rsquo;s &ldquo;you are already That.&rdquo; It is the Gnostic &ldquo;the divine spark must be awakened, drawn out, made conscious.&rdquo; There is work to do — not ritual work, but the work of recognition. Thomas&rsquo;s seeker must &ldquo;find,&rdquo; &ldquo;become troubled,&rdquo; &ldquo;be astonished,&rdquo; &ldquo;rule over the all.&rdquo; This is a path, however short. Advaita&rsquo;s <em>sahaja</em> (natural state) has no equivalent in Thomas; for Shankara, the Self is never lost, never hidden, never needing to be brought forth. The <em>Mandukya Upanishad</em> 7: <em>&ldquo;The Self is inwardly awake, outwardly awake.&rdquo;</em> For Advaita, the shift is purely epistemic; for Thomas, it is also ontological — the spark must be activated, not merely seen.</p>
+                    <p>The <em>Gospel of Philip</em>&rsquo;s sacramental framework (baptism as resurrection, chrism as restoration, eucharist as thanksgiving, bridal chamber as perfection) offers a communal path that Thomas lacks. Philip&rsquo;s Church is the bridal chamber; Thomas&rsquo;s bridal chamber is entered by the solitary alone. Christianity historically sided with Philip — and for good reason. A religion of solitaries does not build hospitals, feed the poor, or bury the dead. Thomas&rsquo;s radicalism is its strength and its danger.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"Those who are asleep in the world are buried in it."</p>
+                    <p>&ldquo;Those who are asleep in the world are buried in it.&rdquo;</p>
                     <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
                 </div>
             </div>
@@ -961,16 +1155,21 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 49:</strong> <em>"Blessed are the solitary and elect, for you will find the Kingdom. For you are from it, and to it you will return."</em></p>
+                <p><strong>Logion 49:</strong> <em>&ldquo;Blessed are the solitary and elect, for you will find the Kingdom. For you are from it, and to it you will return.&rdquo;</em></p>
 
-                <p><strong>Logion 75:</strong> <em>"Many are standing at the door, but it is the solitary who will enter the bridal chamber."</em></p>
+                <p><strong>Logion 75:</strong> <em>&ldquo;Many are standing at the door, but it is the solitary who will enter the bridal chamber.&rdquo;</em></p>
 
-                <p>Logion 22 is the most explicit description of what the <span class="hotspot">monachos<span class="hotspot-tooltip"><strong>Monachos</strong> The solitary, the single one — not the hermit who lives apart, but the one who has made the two into one.</span></span> actually is. Jesus sees infants being suckled and says: these little ones are like those who enter the Kingdom. The disciples ask whether they too shall enter as little ones. He says: <em>"When you make the two one, and when you make the inside like the outside and the outside like the inside, and the above like the below, and when you make the male and the female one and the same, so that the male not be male nor the female female; and when you fashion eyes in the place of an eye, and a hand in the place of a hand, and a foot in the place of a foot, and a likeness in the place of a likeness; then will you enter the Kingdom."</em></p>
+                <p>Logion 22 is the most explicit description of what the <span class="hotspot">monachos<span class="hotspot-tooltip"><strong>Monachos</strong> The solitary, the single one — not the hermit who lives apart, but the one who has made the two into one.<button class="tooltip-close" aria-label="Close tooltip">×</button></span></span> actually is. Jesus sees infants being suckled and says: these little ones are like those who enter the Kingdom. The disciples ask whether they too shall enter as little ones. He says: <em>&ldquo;When you make the two one, and when you make the inside like the outside and the outside like the inside, and the above like the below, and when you make the male and the female one and the same, so that the male not be male nor the female female; and when you fashion eyes in the place of an eye, and a hand in the place of a hand, and a foot in the place of a foot, and a likeness in the place of a likeness; then will you enter the Kingdom.&rdquo;</em></p>
 
-                <p>This is Thomas's most complete anatomy of the single one. Every division listed — inside/outside, above/below, male/female, image/original — is a version of the same division. To enter the Kingdom isn't to cross a threshold. It's to be the one in whom all these divisions have ceased. The bridal chamber in the <em>Gospel of Philip</em> is the space of that resolution: hidden, interior, the Holy in the Holy. Philip calls it a sacrament. Thomas just says: many stand at the door, but only the solitary enters. The crowd outside is still waiting for something to happen. The solitary already knows there's no door.</p>
+                <p>This is Thomas&rsquo;s most complete anatomy of the single one. Every division listed — inside/outside, above/below, male/female, image/original — is a version of the same division. To enter the Kingdom isn&rsquo;t to cross a threshold. It&rsquo;s to be the one in whom all these divisions have ceased. The bridal chamber in the <em>Gospel of Philip</em> is the space of that resolution: hidden, interior, the Holy in the Holy. Philip calls it a sacrament. Thomas just says: many stand at the door, but only the solitary enters. The crowd outside is still waiting for something to happen. The solitary already knows there&rsquo;s no door.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Gender:</strong> Read mystically, &ldquo;male&rdquo; names the mode of being self-luminous, turned inward; &ldquo;female&rdquo; names the mode of seeking outward, waiting to be filled. But this reading, while traditional in mystical exegesis, can function as erasure of actual women. The <em>Gospel of Philip</em>&rsquo;s myth — &ldquo;death entered when Eve was separated&rdquo; — preserves the feminine as necessary; Thomas&rsquo;s &ldquo;making the male into a living spirit&rdquo; (Logion 114) has been read as androcentric. The &ldquo;solitary&rdquo; who transcends gender risks being a male universal — the generic &ldquo;he&rdquo; who is actually particular.</p>
+                    <p>Christianity&rsquo;s insistence on the particularity of the Incarnation — God became <em>this</em> man, not a generic human — guards against this abstraction. The historical Jesus was male, Jewish, and poor. Thomas&rsquo;s &ldquo;solitary&rdquo; is none of these things. It is a pure consciousness without body, without history, without particularity. This is its power and its limitation. The canonical Gospels&rsquo; Jesus eats, weeps, gets angry, and dies. Thomas&rsquo;s Jesus speaks in riddles and vanishes. Which is more real? The page does not choose. It holds both.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"The mysteries of truth are revealed, though in type and image. The bridal chamber, however, remains hidden. It is the Holy in the Holy."</p>
+                    <p>&ldquo;The mysteries of truth are revealed, though in type and image. The bridal chamber, however, remains hidden. It is the Holy in the Holy.&rdquo;</p>
                     <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
                 </div>
             </div>
@@ -991,14 +1190,19 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 77:</strong> <em>"It is I who am the light which is above them all. It is I who am the all. From me did the all come forth, and unto me did the all extend. Split a piece of wood, and I am there. Lift up the stone, and you will find me there."</em></p>
+                <p><strong>Logion 77:</strong> <em>&ldquo;It is I who am the light which is above them all. It is I who am the all. From me did the all come forth, and unto me did the all extend. Split a piece of wood, and I am there. Lift up the stone, and you will find me there.&rdquo;</em></p>
 
-                <p>This is probably the most radical saying in the Gospel. The "I" speaking isn't a person — it's awareness itself, the ground in which wood and stone and the one lifting the stone all appear. God isn't hiding in objects. The objects are arising within the same consciousness that's reading this sentence.</p>
+                <p>This is probably the most radical saying in the Gospel. The &ldquo;I&rdquo; speaking isn&rsquo;t a person — it&rsquo;s awareness itself, the ground in which wood and stone and the one lifting the stone all appear. God isn&rsquo;t hiding in objects. The objects are arising within the same consciousness that&rsquo;s reading this sentence.</p>
 
-                <p>Logion 24 makes the same point from inside the human being: <em>"There is light within a man of light, and he lights up the whole world. If he does not shine, he is in darkness."</em> The light of Logion 77 that is in the wood and the stone is the same light that a person of light carries. The saying doesn't say the light comes from outside and fills him. It says the light is <em>within</em> him — and that its absence is darkness, not some external punishment but the simple failure to shine. The <em>Trimorphic Protennoia</em> says it from the inside: <em>"I move in every creature."</em> Not behind them. Not above them. In them, as the movement itself. Thomas makes the same claim in two lines about carpentry and again in two lines about a man who either shines or doesn't.</p>
+                <p>Logion 24 makes the same point from inside the human being: <em>&ldquo;There is light within a man of light, and he lights up the whole world. If he does not shine, he is in darkness.&rdquo;</em> The light of Logion 77 that is in the wood and the stone is the same light that a person of light carries. The saying doesn&rsquo;t say the light comes from outside and fills him. It says the light is <em>within</em> him — and that its absence is darkness, not some external punishment but the simple failure to shine. The <em>Trimorphic Protennoia</em> says it from the inside: <em>&ldquo;I move in every creature.&rdquo;</em> Not behind them. Not above them. In them, as the movement itself. Thomas makes the same claim in two lines about carpentry and again in two lines about a man who either shines or doesn&rsquo;t.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and the Upanishads:</strong> The &ldquo;split a piece of wood&rdquo; saying is often compared to the Upanishadic <em>Tat Tvam Asi</em> — the divine in all things. But the Upanishads say &ldquo;That thou art&rdquo;; Thomas says &ldquo;I am there.&rdquo; The direction is reversed: the Upanishads point the seeker to the divine; Thomas has the divine speak directly. This is the difference between instruction (Advaita) and revelation (Gnosticism). The <em>Chandogya Upanishad</em> 6.8.7: <em>&ldquo;This finest essence — this whole world has that as its Self. That is Reality. That is the Self. That thou art, Svetaketu.&rdquo;</em> The teacher points; the student recognizes. In Thomas, the &ldquo;I&rdquo; speaks without a teacher, without a student, without a context. This ambiguity is deliberate and powerful, but it is also unstable. Without the anchor of a speaker, the &ldquo;I&rdquo; risks becoming solipsism — the reader&rsquo;s own mind speaking back to itself.</p>
+                    <p>The <em>Trimorphic Protennoia</em>&rsquo;s &ldquo;I&rdquo; is the divine feminine first thought; Thomas&rsquo;s &ldquo;I&rdquo; is anonymous, unattributed. It could be Jesus, could be the reader, could be awareness itself. This triple possibility is the genius of the saying. But it is also a hermeneutical risk: without the Church&rsquo;s interpretive tradition, Thomas&rsquo;s &ldquo;I&rdquo; becomes a mirror. You see in it what you bring to it. The non-dual reader sees non-duality; the dualist sees a God outside the world. Thomas permits both readings, which is why it was buried and why it survives.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"I am invisible within the Thought of the Invisible One. I am revealed in the immeasurable, ineffable things. I am incomprehensible, dwelling in the incomprehensible. I move in every creature."</p>
+                    <p>&ldquo;I am invisible within the Thought of the Invisible One. I am revealed in the immeasurable, ineffable things. I am incomprehensible, dwelling in the incomprehensible. I move in every creature.&rdquo;</p>
                     <cite>— Trimorphic Protennoia · Nag Hammadi Codex XIII</cite>
                 </div>
             </div>
@@ -1019,16 +1223,21 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 50:</strong> <em>"If they say to you, 'Where did you come from?' say to them, 'We have come from the light, the place where the light came into being on its own accord and established itself and became manifest through their image.' If they say to you, 'Is it you?' say, 'We are its children, we are the elect of the living Father.' If they ask you, 'What is the sign of your Father in you?' say to them, 'It is movement and repose.'"</em></p>
+                <p><strong>Logion 50:</strong> <em>&ldquo;If they say to you, &lsquo;Where did you come from?&rsquo; say to them, &lsquo;We have come from the light, the place where the light came into being on its own accord and established itself and became manifest through their image.&rsquo; If they say to you, &lsquo;Is it you?&rsquo; say, &lsquo;We are its children, we are the elect of the living Father.&rsquo; If they ask you, &lsquo;What is the sign of your Father in you?&rsquo; say to them, &lsquo;It is movement and repose.&rsquo;&rdquo;</em></p>
 
-                <p>The sign of the Father isn't a belief or a mark. It's a quality of life that's hard to describe but recognizable: fully active, fully still. Not the stillness of withdrawal, and not the movement of restlessness. The <em>Trimorphic Protennoia</em> embodies exactly this — she is movement in the All, and the All takes its stand in her. The two aren't opposites. They're the same thing seen from two directions. The elect aren't people who hold a correct doctrine. They're people who live in both at once.</p>
+                <p>The sign of the Father isn&rsquo;t a belief or a mark. It&rsquo;s a quality of life that&rsquo;s hard to describe but recognizable: fully active, fully still. Not the stillness of withdrawal, and not the movement of restlessness. The <em>Trimorphic Protennoia</em> embodies exactly this — she is movement in the All, and the All takes its stand in her. The two aren&rsquo;t opposites. They&rsquo;re the same thing seen from two directions. The elect aren&rsquo;t people who hold a correct doctrine. They&rsquo;re people who live in both at once.</p>
 
-                <p>Thomas doesn't always argue directly. Sometimes it just shows you a scene. Logion 97: <em>"The Kingdom of the Father is like a woman who was carrying a jar full of meal. While she was walking on the road, still some distance from home, the handle of the jar broke and the meal emptied out behind her on the road. She did not know it; she had not noticed a problem. When she reached her house, she set the jar down and found it empty."</em> No explanation. The meal is gone before she knows it's going. The Kingdom — or its loss — can happen without announcement. The jar arrives home empty. She had been carrying something the whole way.</p>
+                <p>Thomas doesn&rsquo;t always argue directly. Sometimes it just shows you a scene. Logion 97: <em>&ldquo;The Kingdom of the Father is like a woman who was carrying a jar full of meal. While she was walking on the road, still some distance from home, the handle of the jar broke and the meal emptied out behind her on the road. She did not know it; she had not noticed a problem. When she reached her house, she set the jar down and found it empty.&rdquo;</em> No explanation. The meal is gone before she knows it&rsquo;s going. The Kingdom — or its loss — can happen without announcement. The jar arrives home empty. She had been carrying something the whole way.</p>
 
-                <p>Logion 98 is its pair: <em>"The Kingdom of the Father is like a man who wanted to kill a powerful man. In his house, he drew his sword and stuck it into the wall in order to find out whether his hand could carry through. Then he slew the powerful man."</em> Two parables, one after the other — loss without awareness, victory through preparation. Thomas offers no key. The reader holds both images and works out what they share: that the Kingdom requires something. Either you've been emptied without knowing it, or you've practiced until you're ready. There's no middle option where it just happens.</p>
+                <p>Logion 98 is its pair: <em>&ldquo;The Kingdom of the Father is like a man who wanted to kill a powerful man. In his house, he drew his sword and stuck it into the wall in order to find out whether his hand could carry through. Then he slew the powerful man.&rdquo;</em> Two parables, one after the other — loss without awareness, victory through preparation. Thomas offers no key. The reader holds both images and works out what they share: that the Kingdom requires something. Either you&rsquo;ve been emptied without knowing it, or you&rsquo;ve practiced until you&rsquo;re ready. There&rsquo;s no middle option where it just happens.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Universalism:</strong> The <em>Gospel of Truth</em> says: &ldquo;Those whose name he knew in advance were called at the end.&rdquo; The elect in Thomas are not those who perform correctly but those who recognize. But recognition in Gnosticism is often predetermined — the divine spark is already present in the elect, absent in the others. This is not Advaita&rsquo;s universal Brahman; it is elitist by structure. Thomas&rsquo;s &ldquo;solitary and elect&rdquo; (Logion 49) sounds universal (&ldquo;you are from it, and to it you will return&rdquo;) but functions selectively (&ldquo;many are standing at the door&rdquo;). Is the Kingdom available to all, or only to those who recognize?</p>
+                    <p>Advaita says all ARE the Self, whether they know it or not. The <em>Mandukya Upanishad</em> says the fourth state (<em>turiya</em>) underlies all three states of waking, dreaming, and sleeping — it is not achieved but recognized as always present. Thomas says only the solitary enter. The &ldquo;many&rdquo; at the door are not told they will eventually enter; they are simply outside. This is a structural elitism that Advaita avoids by denying the reality of the many. If all is Brahman, there are no outsiders. Thomas&rsquo;s dualism (spirit vs. matter, elect vs. many) makes exclusion possible in a way Advaita&rsquo;s non-dualism does not.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"He who remains ignorant until the end is a creature of forgetfulness and will perish with it. Those whose name he knew in advance were called at the end, so that one who has knowledge is one whose name the Father has pronounced."</p>
+                    <p>&ldquo;He who remains ignorant until the end is a creature of forgetfulness and will perish with it. Those whose name he knew in advance were called at the end, so that one who has knowledge is one whose name the Father has pronounced.&rdquo;</p>
                     <cite>— Gospel of Truth · Nag Hammadi Codex I</cite>
                 </div>
             </div>
@@ -1045,18 +1254,25 @@
                     <span class="stage-heb-eye">ⲗⲟⲅⲓⲟⲛ ⲣⲓⲇ</span>
                 </div>
                 <h2 class="stage-h2">The End: Making the Male into a Living Spirit</h2>
-                <span class="stage-subtitle">Logion 114 — The final saying, read mystically</span>
+                <span class="stage-subtitle">Logion 114 — The final saying, read mystically and honestly</span>
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p><strong>Logion 114:</strong> <em>Simon Peter said to them, "Let Mary leave us, for women are not worthy of life." Jesus said, "Look, I will draw her in so as to make her male, so that she too may become a living male spirit, similar to you. For every woman who makes herself male will enter the Kingdom of heaven."</em></p>
+                <p><strong>Logion 114:</strong> <em>Simon Peter said to them, &ldquo;Let Mary leave us, for women are not worthy of life.&rdquo; Jesus said, &ldquo;Look, I will draw her in so as to make her male, so that she too may become a living male spirit, similar to you. For every woman who makes herself male will enter the Kingdom of heaven.&rdquo;</em></p>
 
-                <p>Read as social commentary, this is uncomfortable. Read as the Gospel is asking to be read, "male" and "female" aren't about gender. Female here names the mode of seeking outward — waiting to be filled from outside. Male names the mode of being self-luminous, not because of sex but because of attention: turned inward, recognizing the source rather than searching for it. Mary isn't being elevated to male status. She's being drawn inward — and in that movement, the category collapses.</p>
+                <p>Read as social commentary, this is uncomfortable. Read as the Gospel is asking to be read, &ldquo;male&rdquo; and &ldquo;female&rdquo; aren&rsquo;t about gender. Female here names the mode of seeking outward — waiting to be filled from outside. Male names the mode of being self-luminous, not because of sex but because of attention: turned inward, recognizing the source rather than searching for it. Mary isn&rsquo;t being elevated to male status. She&rsquo;s being drawn inward — and in that movement, the category collapses.</p>
 
-                <p>Philip says it through the myth of Adam and Eve: death entered when Eve was separated. It will end when they reunite. Thomas says the same thing through Mary. The last saying in the Gospel is about undoing the first separation — returning to the unity that was there before the two became two.</p>
+                <p>But we must also read the text as it stands. Peter&rsquo;s dismissal of Mary — &ldquo;women are not worthy of life&rdquo; — is not Thomas&rsquo;s voice, but it is not therefore erased. Jesus&rsquo;s response has been read as progressive (elevating Mary) and as androcentric (making her male). The page holds both readings without collapsing them. The <em>Gospel of Philip</em> says it through the myth of Adam and Eve: death entered when Eve was separated. It will end when they reunite. Thomas says the same thing through Mary. The last saying in the Gospel is about undoing the first separation — returning to the unity that was there before the two became two.</p>
+
+                <p>Yet the canonical Gospels end with resurrection and commission; Thomas ends with gender transformation. What kind of community can be built on Thomas&rsquo;s &ldquo;solitary&rdquo;? Christianity built itself on the Twelve, the Eucharist, the resurrection appearances. Thomas built nothing — it was buried in the sand for sixteen hundred years. Is this a failure or a fidelity? The page asks the question without answering it. Perhaps a spirituality that builds nothing is the only spirituality that builds nothing to defend. Perhaps it is simply incomplete.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Community:</strong> The canonical Gospels end with the risen Christ sending his disciples to the nations. Thomas ends with a solitary woman being made male. The contrast is stark. Christianity&rsquo;s historical success is inseparable from its communal structures: the Twelve, the Eucharist, the episcopate, the canon. Thomas&rsquo;s radical individualism offers no institutions, no rituals, no continuity. It is a Gospel for the reader alone, in the silence of the cell or the desert.</p>
+                    <p>This is both its purity and its poverty. The <em>Gospel of Philip</em> preserves the feminine as necessary to the myth; Thomas&rsquo;s &ldquo;make her male&rdquo; risks erasing the feminine entirely. Christianity&rsquo;s doctrine of the Incarnation — God became <em>this</em> particular man, with <em>this</em> particular body — guards against the abstraction that Thomas&rsquo;s &ldquo;solitary&rdquo; threatens to become. The solitary without a body, without a gender, without a history: is this liberation or annihilation? The page leaves the question open, because Thomas leaves it open.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"When Eve was still in Adam death did not exist. When she was separated from him death came into being. If he enters again and attains his former self, death will be no more."</p>
+                    <p>&ldquo;When Eve was still in Adam death did not exist. When she was separated from him death came into being. If he enters again and attains his former self, death will be no more.&rdquo;</p>
                     <cite>— Gospel of Philip · Nag Hammadi Codex II</cite>
                 </div>
             </div>
@@ -1077,18 +1293,24 @@
                 <span class="stage-rule"></span>
             </div>
             <div class="stage-body">
-                <p>Back to the opening: <em>"Whoever finds the meaning of these sayings will not taste death."</em></p>
+                <p>Back to the opening: <em>&ldquo;Whoever finds the meaning of these sayings will not taste death.&rdquo;</em></p>
 
-                <p>The "meaning" isn't a doctrine you adopt. It's a recognition — the moment you see that the self doing the reading and the self being described are the same one. That the seeker and the sought are not two things. That the Kingdom was never somewhere else. "Not taste death" doesn't mean the body lives forever. It means the one who was afraid of dying is seen through. There's no one there to lose.</p>
+                <p>The &ldquo;meaning&rdquo; isn&rsquo;t a doctrine you adopt. It&rsquo;s a recognition — the moment you see that the self doing the reading and the self being described are the same one. That the seeker and the sought are not two things. That the Kingdom was never somewhere else. &ldquo;Not taste death&rdquo; doesn&rsquo;t mean the body lives forever. It means the one who was afraid of dying is seen through. There&rsquo;s no one there to lose.</p>
 
-                <p>Thomas doesn't promise life after death. It promises that death loses its sting when you see clearly what you are. The bitterness of death is the bitterness of separation — the two believing they were always separate. When they recognize they were always one, the bitterness goes. Not because something changes, but because you finally see what was always true.</p>
+                <p>Thomas doesn&rsquo;t promise life after death. It promises that death loses its sting when you see clearly what you are. The bitterness of death is the bitterness of separation — the two believing they were always separate. When they recognize they were always one, the bitterness goes. Not because something changes, but because you finally see what was always true.</p>
 
-                <p>Logion 82 cuts through the accumulated abstraction with a single line: <em>"He who is near me is near the fire, and he who is far from me is far from the Kingdom."</em> The fire and the Kingdom are the same thing. To be near the source is to be near what burns. Recognition isn't a comfortable arrival. It's proximity to something that doesn't leave you as it found you. This is why Logion 2's seeker becomes troubled before becoming astonished — the fire comes first.</p>
+                <p>Logion 82 cuts through the accumulated abstraction with a single line: <em>&ldquo;He who is near me is near the fire, and he who is far from me is far from the Kingdom.&rdquo;</em> The fire and the Kingdom are the same thing. To be near the source is to be near what burns. Recognition isn&rsquo;t a comfortable arrival. It&rsquo;s proximity to something that doesn&rsquo;t leave you as it found you. This is why Logion 2&rsquo;s seeker becomes troubled before becoming astonished — the fire comes first.</p>
 
-                <p>The <em>Gospel of Truth</em> arrives at the same place: <em>"The All had been inside of him, that illimitable, inconceivable one."</em> There was never a gap. Forgetfulness made it feel like one. Thomas and Truth are the same instruction, phrased two different ways.</p>
+                <p>The <em>Gospel of Truth</em> arrives at the same place: <em>&ldquo;The All had been inside of him, that illimitable, inconceivable one.&rdquo;</em> There was never a gap. Forgetfulness made it feel like one. Thomas and Truth are the same instruction, phrased two different ways.</p>
+
+                <div class="tension-box fade-in">
+                    <p><strong>Thomas and Christianity:</strong> The &ldquo;not taste death&rdquo; of Logion 1 is not Christianity&rsquo;s resurrection. Thomas promises that the solitary will not taste death because there is no one to die. Christianity promises that death itself will be destroyed — &ldquo;Death is swallowed up in victory&rdquo; (1 Cor 15:54). These are not the same promise. Thomas&rsquo;s is individual realization; Christianity&rsquo;s is cosmic transformation. Thomas&rsquo;s is now; Christianity&rsquo;s is then.</p>
+                    <p>The canonical Gospels narrate Jesus&rsquo;s death and resurrection as the pivot of history. Thomas has no passion, no resurrection, no atonement. The historical Jesus of Mark&rsquo;s Gospel cries out on the cross and dies. The Jesus of Thomas speaks logia and vanishes into light. Which is more true? The page does not choose. It reads Thomas as a lens — a sharp, uncomfortable, necessary lens — through which to see the canonical Gospels anew. The solitary and the communal, the saying and the story, the recognition and the resurrection: these are not enemies. They are the two hands of the same body, and the body is still breathing.</p>
+                    <p>Whether they converge in the same silence — that is the question the page leaves open.</p>
+                </div>
 
                 <div class="pull-q fade-in">
-                    <p>"What exists in him is knowledge, which was revealed so that forgetfulness might be destroyed and that they might know the Father. Since forgetfulness existed because they did not know the Father, if they then come to know the Father, from that moment on forgetfulness will cease to exist."</p>
+                    <p>&ldquo;What exists in him is knowledge, which was revealed so that forgetfulness might be destroyed and that they might know the Father. Since forgetfulness existed because they did not know the Father, if they then come to know the Father, from that moment on forgetfulness will cease to exist.&rdquo;</p>
                     <cite>— Gospel of Truth · Nag Hammadi Codex I</cite>
                 </div>
 
@@ -1103,7 +1325,7 @@
             <div class="stage-wm" aria-hidden="true">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</div>
             <div class="stage-header">
                 <div class="stage-eyeline">
-                    <span class="stage-n">XI</span>
+                    <span class="stage-n">X</span>
                     <span class="stage-heb-eye">ⲛⲁⲅ ϩⲁⲙⲙⲁⲇⲓ</span>
                 </div>
                 <h2 class="stage-h2">Nag Hammadi Parallels · Summary</h2>
@@ -1157,6 +1379,12 @@
                     </table>
                 </div>
                 <p style="font-size:0.9rem;color:var(--stone);text-align:center;margin-top:0.5rem;">Discovered at Nag Hammadi, Egypt in 1945. Coptic translations of earlier Greek originals, most dating to the second and third centuries.</p>
+
+                <div class="resonance-callout fade-in">
+                    <p>Thomas was buried in the sand at Nag Hammadi for sixteen centuries. It survived because someone hid it from those who would destroy it. The same instinct that buried Thomas built the Church. The page does not choose between them. It reads Thomas as a lens — a sharp, uncomfortable, necessary lens — through which to see the canonical Gospels anew. The solitary and the communal, the saying and the story, the recognition and the resurrection: these are not enemies. They are the two hands of the same body, and the body is still breathing.</p>
+                </div>
+
+                <p>Thomas is not &ldquo;the real Jesus&rdquo; against the canonical distortion. It is one voice in a chorus — the voice that says &ldquo;know yourselves&rdquo; while John says &ldquo;believe in me,&rdquo; Mark says &ldquo;the Kingdom is at hand,&rdquo; and Paul says &ldquo;we are the body of Christ.&rdquo; Thomas&rsquo;s value is not authenticity but difference. It shows what Christianity could have been — and, in the solitary reader, still can be.</p>
             </div>
         </section>
 
@@ -1166,9 +1394,9 @@
     <div class="concluding-section">
         <div class="concluding-section-inner">
             <h3 class="concluding-title">Synthesis</h3>
-            <p class="concluding-quote">"Whoever finds the meaning of these sayings will not taste death." Not because the body survives. Because the one who was afraid of dying is seen through — and what remains doesn't need the promise anymore.</p>
+            <p class="concluding-quote">&ldquo;Whoever finds the meaning of these sayings will not taste death.&rdquo; Not because the body survives. Because the one who was afraid of dying is seen through — and what remains doesn&rsquo;t need the promise anymore.</p>
             <div class="concluding-nav">
-                <a href="messiah-mirror.html">← RETURN TO TAT TVAM ASI</a>
+                <a href="messiah-mirror.html">← RETURN TO THEOSIS</a>
                 <span class="nav-sep">·</span>
                 <a href="messiah-avatar.html">CONTINUE TO THE INCARNATION AS AVATAR →</a>
             </div>
@@ -1189,7 +1417,7 @@
         <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-beatitudes.html" class="chapter-link">IV · The Beatitudes</a>
         <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
-        <a href="messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
+        <a href="messiah-mirror.html" class="chapter-link">V · Theosis/a>
         <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
         <a href="messiah-gospel-thomas.html" class="chapter-link active">VI · The Gospel of Thomas</a>
         <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
@@ -1210,14 +1438,33 @@
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
-        <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-credit">This is a living document. The map is revised as the territory deepens.</div>
+        <div class="footer-copyright">Last updated: July 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
     <script>
         (function() {
             'use strict';
+
+            /* CURSOR GLOW */
+            const cursorGlow = document.getElementById('cursorGlow');
+            if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+                let mouseX = 0, mouseY = 0;
+                let glowX = 0, glowY = 0;
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+                function animateGlow() {
+                    glowX += (mouseX - glowX) * 0.1;
+                    glowY += (mouseY - glowY) * 0.1;
+                    cursorGlow.style.left = glowX + 'px';
+                    cursorGlow.style.top = glowY + 'px';
+                    requestAnimationFrame(animateGlow);
+                }
+                animateGlow();
+            }
 
             /* THEME */
             const html = document.documentElement;
@@ -1293,11 +1540,22 @@
                 document.querySelectorAll('.section-separator').forEach(el => el.classList.add('visible'));
             }, 600);
 
-            /* HOTSPOT TOOLTIP touch fallback */
+            /* HOTSPOT TOOLTIP */
             document.querySelectorAll('.hotspot').forEach(el => {
                 el.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    this.classList.toggle('active');
+                    if (window.matchMedia('(pointer: coarse)').matches) {
+                        e.preventDefault();
+                        document.querySelectorAll('.hotspot.active').forEach(h => {
+                            if (h !== this) h.classList.remove('active');
+                        });
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+            document.querySelectorAll('.tooltip-close').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.closest('.hotspot').classList.remove('active');
                 });
             });
             document.addEventListener('click', function(e) {

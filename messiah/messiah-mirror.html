@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jesus of Nazareth — Tat Tvam Asi: The Supreme Identity, Crucifixion as ego-death, Resurrection as Self-revelation, and Agape as the substance of being." />
-    <title>Jesus of Nazareth — Tat Tvam Asi</title>
+    <meta name="description" content="Jesus of Nazareth — Theosis: God became man so that man might become god. The native Christian non-dualism in conversation with Advaita Vedanta." />
+    <title>Jesus of Nazareth — Theosis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
@@ -1392,9 +1392,6 @@
             color: var(--gold-light);
             border-bottom-color: var(--gold-light);
         }
-        .pq-attr-nav {
-            margin-top: 0.5rem;
-        }
         .pq-sep {
             color: var(--border-strong);
             opacity: 0.5;
@@ -1441,7 +1438,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           TENSION BOX (Comparative Table)
+           TENSION BOX
            ═══════════════════════════════════════════════════════════════ */
         .tension-box {
             margin: 2rem 0;
@@ -1477,47 +1474,9 @@
             color: var(--stone);
             margin: 0 !important;
         }
-        .comparative-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: transparent;
-            font-size: 0.78rem;
-        }
-        .comparative-table thead tr {
-            border-bottom: 2px solid var(--gold);
-        }
-        .comparative-table th {
-            padding: 10px 8px;
-            text-align: left;
-            font-family: 'Cinzel', serif;
-            font-size: 0.55rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold-light);
-            font-weight: 500;
-            background: rgba(201, 168, 76, 0.06);
-        }
-        .comparative-table td {
-            padding: 8px 8px;
-            color: var(--stone-light);
-            line-height: 1.5;
-            font-size: 0.78rem;
-        }
-        .comparative-table tbody tr {
-            border-bottom: 1px solid var(--border-subtle);
-            transition: background 0.3s ease;
-        }
-        .comparative-table tbody tr:last-child {
-            border-bottom: none;
-        }
-        .comparative-table tbody tr:hover {
-            background: rgba(124, 111, 174, 0.08);
-        }
-        .comparative-table-wrapper {
-            overflow-x: auto;
-            margin-top: 0.5rem;
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-sm);
+        .tension-box .tension-em {
+            color: var(--ink);
+            font-weight: 400;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1584,33 +1543,6 @@
         .chapter-link.active {
             color: var(--gold);
             font-weight: 500;
-        }
-
-        /* ═══════════════════════════════════════════════════════════════
-           NUMBERED LIST
-           ═══════════════════════════════════════════════════════════════ */
-        .hierarchy-list {
-            margin: 1.5rem 0;
-            padding-left: 1.5rem;
-            color: var(--stone);
-            list-style-type: none;
-            counter-reset: item;
-        }
-        .hierarchy-list li {
-            padding: 0.85rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-            position: relative;
-            padding-left: 2rem;
-            counter-increment: item;
-        }
-        .hierarchy-list li::before {
-            content: counter(item) ".";
-            position: absolute;
-            left: 0;
-            font-weight: 600;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -1885,14 +1817,6 @@
             .diagram-title {
                 font-size: 0.55rem;
             }
-            .comparative-table {
-                font-size: 0.7rem;
-            }
-            .comparative-table th,
-            .comparative-table td {
-                padding: 6px 4px;
-                font-size: 0.65rem;
-            }
         }
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -1942,30 +1866,31 @@
         </button>
         <div class="nav-menu" id="navMenu">
             <div class="nav-section-title">This Page</div>
-            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>Overview</span></a>
-            <a href="#section9" class="nav-item" data-section="section9"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Crucifixion as Ego-Death</span></a>
-            <a href="#tat-tvam-asi" class="nav-item" data-section="tat-tvam-asi"><span class="nav-item-icon">⊙</span><span>Tat Tvam Asi</span></a>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon">⊙</span><span>Overview</span></a>
+            <a href="#prelude" class="nav-item" data-section="prelude"><span class="nav-item-icon">◈</span><span>The Native Term</span></a>
+            <a href="#kenosis" class="nav-item" data-section="kenosis"><span class="nav-item-icon">⬡</span><span>Kenotic Path</span></a>
+            <a href="#theosis-declaration" class="nav-item" data-section="theosis-declaration"><span class="nav-item-icon">✦</span><span>The Great Declaration</span></a>
             <a href="#agape" class="nav-item" data-section="agape"><span class="nav-item-icon"><svg class="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span>Love as Being</span></a>
+            <a href="#friction" class="nav-item" data-section="friction"><span class="nav-item-icon">⚡</span><span>The Friction</span></a>
             <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Jesus of Nazareth</div>
-            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>I · The Hermeneutic Key</span></a>
-            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>II · Three Bridges</span></a>
-            <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
-            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-seedling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22V10M12 12c0-3 3-5 7-5M12 14c0-3-3-5-7-5"/></svg></span><span>IV · The Beatitudes as Jnana Yoga</span></a>
-            <a href="messiah-mirror.html" class="nav-item active"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
-            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span>VI · The Gospel of Thomas</span></a>
-            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>VII · The Incarnation as Avatar</span></a>
+            <div class="nav-section-title">Jesus of Nazareth</div>
+            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">◈</span><span>I · The Hermeneutic Key</span></a>
+            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">✦</span><span>II · Three Bridges</span></a>
+            <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>III · The Cloud of Unknowing</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon">◉</span><span>IV · The Beatitudes</span></a>
+            <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">◆</span><span>V · Tat Tvam Asi</span></a>
+            <a href="messiah-theosis.html" class="nav-item active"><span class="nav-item-icon">✦</span><span>VI · Theosis</span></a>
+            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon">📜</span><span>VII · The Gospel of Thomas</span></a>
+            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon">◇</span><span>VIII · The Incarnation as Avatar</span></a>
             <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · The Cartographies</span></a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-star-david" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2.5l5.5 9.5H6.5z"/><path d="M12 21.5L6.5 12h11z"/></svg></span><span>Kabbalah</span></a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Gnosticism</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Taoism · The Unnamed Way</span></a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Quantum Mechanics</span></a><div class="nav-divider"></div>
-            
-            </div>
+            <div class="nav-section-title">Other Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>Advaita Vedanta</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
+        </div>
     </div>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -1997,271 +1922,281 @@
 
         <div class="hero-content">
             <p class="hero-eyemark">Jesus of Nazareth</p>
-            <h1 class="hero-title">Tat Tvam Asi</h1>
+            <h1 class="hero-title">Theosis</h1>
             <div class="hero-divider" aria-hidden="true">
                 <div class="hero-divider-line"></div>
                 <div class="hero-divider-diamond"></div>
                 <div class="hero-divider-line"></div>
             </div>
-            <p class="hero-quote">&ldquo;In the beginning was the Word, and the Word was with God, and the Word was God.&rdquo;</p>
-            <p class="hero-quote-attr">&mdash; John 1:1</p>
+            <p class="hero-quote">&ldquo;I said, you are gods, sons of the Most High, all of you.&rdquo;</p>
+            <p class="hero-quote-attr">&mdash; Psalm 82:6 / John 10:34</p>
         </div>
-        <div class="hero-scroll-cue" onclick="document.getElementById('section9').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
+        <div class="hero-scroll-cue" onclick="document.getElementById('prelude').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
             <span>Enter</span>
             <div class="scroll-line" aria-hidden="true"></div>
         </div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    SECTION: CRUCIFIXION / RESURRECTION / ASCENSION
+    PRELUDE: THE NATIVE TERM
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="stage-section" id="section9">
-        <div class="stage-wm" aria-hidden="true">ΣΤΑΥΡΟΣ</div>
+    <section class="stage-section" id="prelude">
+        <div class="stage-wm" aria-hidden="true">ΘΕΩΣΙΣ</div>
         <div class="stage-header">
             <div class="stage-eyeline">
-                <span class="stage-n">Aspect IX</span>
-                <span class="stage-skt">Crucifixion as Ego-Death</span>
-                <span class="stage-deva-title">Resurrection as Self-Revelation</span>
+                <span class="stage-n">Prelude</span>
+                <span class="stage-skt">The Native Term</span>
+                <span class="stage-deva-title">Deification · Participation</span>
             </div>
-            <h2 class="stage-h2">Crucifixion · Resurrection · Ascension</h2>
-            <span class="stage-subtitle-label">The Threefold Dissolution · Tat Tvam Asi</span>
+            <h2 class="stage-h2">The Native Term</h2>
+            <span class="stage-subtitle-label">Θέωσις · God Became Man That Man Might Become God</span>
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>C</strong>rucifixion is the death of the ego through surrender or inquiry. It is not a historical execution but the universal spiritual process by which the false self is dismantled. The nails are not iron spikes but the piercing questions of self-inquiry: <em>Who am I?</em> The crown of thorns is the ego's own thoughts — the <span class="sanskrit-term" data-tooltip="Mental modifications or thought-waves">vrittis</span> that prick and torment the mind. The spear in the side is the final penetration of the heart, the dissolution of even the subtlest sense of personal existence.</p>
+            <p><strong>T</strong>his page replaces the previous "Tat Tvam Asi" because <em>theosis</em> is the proper Christian term for what other traditions call liberation, enlightenment, or realization. But it is not a translation. It is a <strong>different vision</strong> that overlaps with Advaita at many points and diverges at the deepest ones. This page is an exploration of both convergence and divergence — not a harmonization.</p>
 
-            <p class="fade-in">The cry <em>"My God, my God, why have you forsaken me?"</em><a class="biblical-ref" data-reference="Matthew 27:46" data-tooltip="Matthew 27:46">[1]</a> is the darkest moment of <em>ego-death</em> — the <span class="sanskrit-term" data-tooltip="Not this, not this — the method of negating all that is not the Self">neti neti</span> carried to its absolute limit. Even the sense of divine presence vanishes. The <span class="sanskrit-term" data-tooltip="One who has realized the Self; a wise or enlightened person">jnani</span> stands alone in the Absolute, beyond God and soul, beyond consciousness itself. This is the "dark night of the soul" that John of the Cross described — but it is darker than any night, for even the concept of "soul" has been surrendered. There is no one left to experience the dark.</p>
+            <p class="fade-in"><strong>Athanasius</strong>, in <em>De Incarnatione</em> (c. 318 CE), gives the classic formula: <em>"He became man that we might become god."</em> This is not a metaphor. It is the theological engine of the Christian East — the conviction that the incarnation is not merely a rescue mission but the inauguration of a new kind of existence: <strong>humanity deified</strong>.</p>
 
-            <!-- DIAGRAM: The Three Days in the Tomb -->
-            <div class="diagram-container fade-in">
-                <div class="diagram-title">The Three Days · Three States to Turiya</div>
-                <svg class="diagram-svg" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#c9a84c" stop-opacity="1" />
-                            <stop offset="100%" stop-color="#a08030" stop-opacity="1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                        </filter>
-                    </defs>
-                    <rect x="30" y="80" width="140" height="180" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
-                    <text x="100" y="110" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="2">DAY I</text>
-                    <text x="100" y="135" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="13" font-style="italic">Jagrat</text>
-                    <text x="100" y="155" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="11">Waking State</text>
-                    <text x="100" y="195" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="12">The Crucifixion</text>
-                    <text x="100" y="215" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="10">Ego's apparent death</text>
-                    <circle cx="100" cy="170" r="4" fill="#c9a84c" opacity="0.6"/>
-                    <line x1="180" y1="170" x2="220" y2="170" stroke="#c9a84c" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
-                    <polygon points="220,170 212,166 212,174" fill="#c9a84c" opacity="0.4"/>
-                    <rect x="230" y="80" width="140" height="180" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
-                    <text x="300" y="110" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="2">DAY II</text>
-                    <text x="300" y="135" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="13" font-style="italic">Svapna</text>
-                    <text x="300" y="155" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="11">Dream State</text>
-                    <text x="300" y="195" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="12">The Tomb</text>
-                    <text x="300" y="215" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="10">Vasanas flicker in darkness</text>
-                    <circle cx="300" cy="170" r="4" fill="#c9a84c" opacity="0.4"/>
-                    <line x1="380" y1="170" x2="420" y2="170" stroke="#c9a84c" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
-                    <polygon points="420,170 412,166 412,174" fill="#c9a84c" opacity="0.4"/>
-                    <rect x="430" y="80" width="140" height="180" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
-                    <text x="500" y="110" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="2">DAY III</text>
-                    <text x="500" y="135" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="13" font-style="italic">Sushupti</text>
-                    <text x="500" y="155" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="11">Deep Sleep</text>
-                    <text x="500" y="195" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="12">The Void</text>
-                    <text x="500" y="215" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="10">All identification ceases</text>
-                    <circle cx="500" cy="170" r="4" fill="#c9a84c" opacity="0.2"/>
-                    <line x1="500" y1="80" x2="500" y2="50" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
-                    <polygon points="500,50 496,58 504,58" fill="#c9a84c" opacity="0.6"/>
-                    <ellipse cx="500" cy="30" rx="70" ry="18" fill="url(#goldGrad)" opacity="0.15" filter="url(#glow)"/>
-                    <text x="500" y="35" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="12" letter-spacing="3" font-weight="500">TURIYA</text>
-                    <text x="500" y="48" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="10" font-style="italic">The Resurrection</text>
-                    <line x1="100" y1="80" x2="100" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
-                    <line x1="100" y1="50" x2="430" y2="30" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
-                    <line x1="300" y1="80" x2="300" y2="50" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
-                    <line x1="300" y1="50" x2="430" y2="30" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
-                    <text x="350" y="290" text-anchor="middle" fill="#5a6a88" font-family="Cinzel, serif" font-size="9" letter-spacing="2" opacity="0.6">THE FOURTH STATE · THE SILENT SUBSTRATUM</text>
-                </svg>
-                <p class="diagram-caption">The three days between crucifixion and resurrection map onto the three states of consciousness that must be transcended before turiya — the silent Self — is realized.</p>
-            </div>
+            <p class="fade-in stagger-1"><strong>Gregory of Nyssa</strong> names the soul's movement into God <span class="sanskrit-term" data-tooltip="Perpetual expansion; the soul's unending growth into divine infinity">epektasis</span> — not a terminal arrival but a <strong>perpetual expansion</strong> into the infinite. There is no terminal state, only endless growth. The Beatitudes are not a ladder to be climbed and left behind; they are a spiral that deepens without end.</p>
 
-            <p class="fade-in stagger-1">And then — <strong>resurrection is the revelation of the true Self (Atman/Brahman), the "Son of God"</strong> — eternal, undivided. What remains when the ego dies? Not nothing, but the <em>everything</em> that was always already the case. The "Son of God" is not a person who returns from death but the recognition that the Self was never born and never dies. The empty tomb is the symbol of the body's transparency to the eternal. The resurrection appearances are <span class="sanskrit-term" data-tooltip="The cosmic power of illusion; the power that veils reality and projects multiplicity">maya</span> continuing to instruct the disciples — the play of consciousness teaching itself to itself through form.</p>
+            <p class="fade-in stagger-2"><strong>Maximus Confessor</strong> teaches that the <span class="sanskrit-term" data-tooltip="The divine principles or intentions of all things; contained in the Logos">logoi</span> of all things are contained in the Logos. Deification is the <strong>realization of the divine intention</strong> in every creature — the fulfillment of what each thing was made to be. This is not escape from creation but its transfiguration.</p>
 
-            <p class="fade-in stagger-2">The Ascension is not a bodily levitation into the sky but the final dissolution of the subtle body (<span class="sanskrit-term" data-tooltip="The subtle body; the inner vehicle of mind, intellect, and vital energies">sukshma-sarira</span>) and causal body (<span class="sanskrit-term" data-tooltip="The causal body; the seed-state of individuality">karana-sarira</span>) into the Absolute. The "cloud" that receives Jesus is the <span class="sanskrit-term" data-tooltip="The unmanifest; that which has not yet manifested">avyakta</span>, the unmanifest, the unqualified Brahman beyond all form. The disciples "looking intently up into the sky"<a class="biblical-ref" data-reference="Acts 1:10" data-tooltip="Acts 1:10">[2]</a> represent the mind still seeking the Self in some realm or dimension — but the Self is not in the sky, nor on earth, nor anywhere. The two men in white who appear and ask, "Why do you stand here looking into the sky?" are the teaching itself: <strong>stop looking elsewhere. The Self you seek is the very awareness that is looking.</strong></p>
+            <p class="fade-in stagger-3"><strong>Gregory Palamas</strong> articulates the metaphysical architecture that makes theosis possible without absorption: the distinction between divine <span class="sanskrit-term" data-tooltip="Essence; the unknowable core of God">ousia</span> (essence) and <span class="sanskrit-term" data-tooltip="Energies; the uncreated divine operations in which we participate">energeiai</span> (energies). We participate in God's energies — the uncreated light of Tabor — without becoming God's essence. This is the <strong>bridge between Advaita's absorption and Christianity's communion</strong>.</p>
+
+            <p class="fade-in stagger-4"><strong>Meister Eckhart</strong>: <em>"The eye with which I see God is the same eye with which God sees me."</em> Theosis as the dissolution of the boundary between seer and seen — while preserving both. The eye remains an eye; the seeing remains seeing. But they are one.</p>
 
             <div class="resonance-callout fade-in">
-                <div class="label">Hermeneutical Note</div>
-                <p>This Advaitic reading of the Passion and Resurrection is a <strong>hermeneutical lens</strong>, not a claim about historical events. The Christian tradition maintains the resurrection as a <strong>transformation of the body</strong> — something Advaita has no category for — and as the vindication of Jesus's person and mission by the Father. The Advaitic reading illuminates the <em>interior dimension</em> of these events: the death of the ego and the revelation of the Self that was never absent. These are complementary, not contradictory, perspectives. The Christian mystic and the Vedantin are looking at the same mountain from different valleys.</p>
+                <div class="label">The Shift</div>
+                <p>This page moves from the hermeneutical and apophatic into the declarative heart of the matter: the identity of the human person with the divine. But this is <em>not</em> Advaita's "Tat Tvam Asi" imposed on Christianity. It is Christianity's native <em>theosis</em> — participation rather than absorption, communion rather than dissolution, endless growth rather than terminal realization.</p>
             </div>
 
-            <p class="fade-in">Gaudapada's <span class="sanskrit-term" data-tooltip="The doctrine of non-creation">ajata vada</span> (the doctrine of non-creation) states that from the highest standpoint, the world and the <span class="sanskrit-term" data-tooltip="The individual soul">jiva</span> never arose at all. The Self was never born and therefore never dies. The resurrection, read through this lens, reveals that what is eternal in Jesus — the Atman — was never touched by death. The crucifixion was the death of the ego; the resurrection was the recognition that the Self was never absent. This is why Jesus says <em>"I am the resurrection and the life"</em><a class="biblical-ref" data-reference="John 11:25" data-tooltip="John 11:25">[3]</a> — not "I will be resurrected" but "I <em>am</em> resurrection" — the eternal present tense of the Self, beyond birth and death.</p>
-
-            <p class="fade-in stagger-1">The resurrection appearances have a peculiar quality: Jesus is not immediately recognized. Mary Magdalene thinks he is the gardener<a class="biblical-ref" data-reference="John 20:15" data-tooltip="John 20:15">[4]</a>. The disciples on the road to Emmaus walk with him for hours without recognizing him<a class="biblical-ref" data-reference="Luke 24:16" data-tooltip="Luke 24:16">[5]</a>. This is because the Self cannot be recognized by the mind that seeks a form. The Self is formless; it can only be recognized as one's own being. When Mary hears her name spoken, she recognizes — not a person, but the Self that calls to itself. When the disciples break bread with the stranger, they recognize — not a body, but the presence that pervades all forms. The recognition of the Self is always a recognition <em>from</em> the Self; it cannot be achieved by the ego.</p>
+            <!-- DIAGRAM: Theosis vs. Moksha — Two Mountains? -->
+            <div class="diagram-container fade-in">
+                <div class="diagram-title">Theosis vs. Moksha — Two Mountains, One Sky</div>
+                <svg class="diagram-svg" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="mountain1" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" stop-color="#4a4080" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.1" />
+                        </linearGradient>
+                        <linearGradient id="mountain2" x1="100%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#4a4080" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="100,320 300,120 500,320" fill="url(#mountain1)" stroke="#c9a84c" stroke-width="0.5" opacity="0.8"/>
+                    <polygon points="350,320 500,140 650,320" fill="url(#mountain2)" stroke="#c9a84c" stroke-width="0.5" opacity="0.8"/>
+                    <circle cx="300" cy="120" r="8" fill="#e0c46e" opacity="0.9"/>
+                    <text x="300" y="105" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="1">MOKSHA</text>
+                    <text x="300" y="145" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Identity · Absorption</text>
+                    <circle cx="500" cy="140" r="8" fill="#e0c46e" opacity="0.9"/>
+                    <text x="500" y="125" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="1">THEOSIS</text>
+                    <text x="500" y="165" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Participation · Communion</text>
+                    <path d="M 300 120 Q 400 60 500 140" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.4" stroke-dasharray="4,3"/>
+                    <text x="400" y="55" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="8" letter-spacing="1" opacity="0.6">SILENCE</text>
+                    <path d="M 100 320 Q 200 310 350 320" stroke="#4a4080" stroke-width="1" fill="none" opacity="0.3"/>
+                    <path d="M 650 320 Q 550 310 350 320" stroke="#4a4080" stroke-width="1" fill="none" opacity="0.3"/>
+                    <text x="350" y="350" text-anchor="middle" fill="#5a6a88" font-family="Cinzel, serif" font-size="8" letter-spacing="1" opacity="0.5">DIFFERENT SUMMITS · SAME SKY</text>
+                </svg>
+                <p class="diagram-caption">Theosis and moksha approach the same silence from different valleys. They share the sky but not the path. Theosis preserves relationship; moksha dissolves it. These are not errors to be corrected — they are two ways of standing before the mystery.</p>
+            </div>
 
             <div class="scripture-panels fade-in">
                 <div class="scripture-panel">
-                    <div class="scripture-panel-label">Mahavakya</div>
-                    <p class="scripture-panel-text">Ayam Atma Brahma</p>
-                    <p class="scripture-panel-ref">"This Self is Brahman" — Mandukya Upanishad 1.2</p>
+                    <div class="scripture-panel-label">Athanasius</div>
+                    <p class="scripture-panel-text">"He became man that we might become god."</p>
+                    <p class="scripture-panel-ref">— De Incarnatione, c. 318 CE</p>
                 </div>
                 <div class="scripture-panel">
-                    <div class="scripture-panel-label">Gospel Parallel</div>
-                    <p class="scripture-panel-text">I and the Father are one</p>
-                    <p class="scripture-panel-ref">— John 10:30</p>
+                    <div class="scripture-panel-label">Gregory of Nyssa</div>
+                    <p class="scripture-panel-text">"The soul grows and ascends through its participation in the divine — not by arriving at a limit, but by always expanding into the infinite."</p>
+                    <p class="scripture-panel-ref">— Life of Moses, c. 390 CE</p>
                 </div>
             </div>
-
-            <blockquote class="fade-in">
-                <p>"I am the resurrection and the life. He who believes in me, though he may die, he shall live."</p>
-                <cite>— John 11:25</cite>
-            </blockquote>
-            <blockquote class="fade-in stagger-1">
-                <p>"The Self is never born, nor does it die. Having no origin, it is eternal, primeval, ancient. It is not slain when the body is slain."</p>
-                <cite>— Bhagavad Gita 2.20</cite>
-            </blockquote>
+            <div class="scripture-panels fade-in stagger-1">
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">Maximus Confessor</div>
+                    <p class="scripture-panel-text">"The logoi of all things are contained in the Logos. Deification is the realization of the divine intention in every creature."</p>
+                    <p class="scripture-panel-ref">— Centuries on Theology, c. 650 CE</p>
+                </div>
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">Meister Eckhart</div>
+                    <p class="scripture-panel-text">"The eye with which I see God is the same eye with which God sees me."</p>
+                    <p class="scripture-panel-ref">— Sermon 12, c. 1300 CE</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <div class="chapter-transition fade-in">
         <div class="chapter-transition-line"></div>
-        <div class="chapter-transition-icon">⊙</div>
+        <div class="chapter-transition-icon">⬡</div>
         <div class="chapter-transition-line"></div>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    SECTION: TAT TVAM ASI
+    SECTION: CRUCIFIXION AS EGO-DEATH — THE KENOTIC PATH
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="stage-section" id="tat-tvam-asi">
-        <div class="stage-wm" aria-hidden="true">तत् त्वम् असि</div>
+    <section class="stage-section" id="kenosis">
+        <div class="stage-wm" aria-hidden="true">ΚΕΝΩΣΙΣ</div>
         <div class="stage-header">
             <div class="stage-eyeline">
-                <span class="stage-n">The Great Declaration</span>
-                <span class="stage-skt">Tat Tvam Asi — That Thou Art</span>
-                <span class="stage-deva-title">Love as the Substance of Being</span>
+                <span class="stage-n">The Kenotic Path</span>
+                <span class="stage-skt">Crucifixion as Ego-Death</span>
+                <span class="stage-deva-title">The Descent of the Absolute</span>
             </div>
-            <h2 class="stage-h2">Tat Tvam Asi</h2>
-            <span class="stage-subtitle-label">The Supreme Identity · That Thou Art</span>
+            <h2 class="stage-h2">Crucifixion · Resurrection · Ascension</h2>
+            <span class="stage-subtitle-label">The Threefold Movement of Theosis</span>
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>T</strong>he entire mystical Vedanta of Jesus is summed up in his great prayer for the disciples: <em>"That they all may be one; as you, Father, are in me, and I in you, that they also may be one in us... I in them, and you in me — that they may be made perfect in one"</em><a class="biblical-ref" data-reference="John 17:21-23" data-tooltip="John 17:21-23">[6]</a>. This is the ultimate vision of <span class="sanskrit-term" data-tooltip="Non-duality; the philosophical position that reality is one without a second">Advaita</span>: not a unity of separate souls standing side by side, but the absolute non-difference of <span class="sanskrit-term" data-tooltip="The innermost Self; the essential consciousness">Atman</span> and <span class="sanskrit-term" data-tooltip="The ultimate reality; the absolute ground of existence">Brahman</span>, where the illusion of many is extinguished in the One without a second.</p>
+            <p><strong>C</strong>rucifixion is the death of the ego — the dissolution of <span class="sanskrit-term" data-tooltip="The ego; the false sense of a separate self">ahamkara</span>. The nails are the piercing questions of self-inquiry; the crown of thorns is the ego's own thoughts; the spear is the final penetration of the heart. The cry <em>"My God, my God, why have you forsaken me?"</em><a class="biblical-ref" data-reference="Matthew 27:46" data-tooltip="Matthew 27:46">[1]</a> is <span class="sanskrit-term" data-tooltip="Not this, not this — the method of negating all that is not the Self">neti-neti</span> carried to its absolute limit. Even the sense of divine presence vanishes.</p>
 
-            <p class="fade-in">Jesus the <span class="sanskrit-term" data-tooltip="One who has realized the Self; a wise or enlightened person">jnani</span> stands as a mirror. He does not ask for worship of his person; he points to the Self. His final message is a profound <span class="sanskrit-term" data-tooltip="A great saying or proclamation of truth">mahavakya</span>: What I AM, you are. The Kingdom is already attained, the Father is already your own Self. "Be still, and know."<a class="biblical-ref" data-reference="Psalm 46:10" data-tooltip="Psalm 46:10">[7]</a></p>
+            <p class="fade-in">But theosis adds what Advaita cannot: the cross as <strong>vicarious suffering</strong>, as solidarity with the victim, as God entering into another's pain. The crucifixion is not only <em>my</em> ego dying; it is <span class="sanskrit-term" data-tooltip="The act of self-emptying; the descent of God into human condition">kenosis</span> — the Absolute emptying itself into the ego's condition. The direction is reversed. In Advaita, I dissolve into Brahman. In theosis, Brahman descends into my dissolution. These are not the same movement.</p>
 
-            <!-- DIAGRAM: The Three-Stage Hierarchy -->
-            <div class="diagram-container fade-in">
-                <div class="diagram-title">The Three-Stage Hierarchy of Consciousness</div>
-                <svg class="diagram-svg" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#c9a84c" stop-opacity="1" />
-                            <stop offset="100%" stop-color="#a08030" stop-opacity="1" />
-                        </linearGradient>
-                        <linearGradient id="fadeUp" x1="0%" y1="100%" x2="0%" y2="0%">
-                            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.1" />
-                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.4" />
-                        </linearGradient>
-                        <filter id="glow2">
-                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                        </filter>
-                    </defs>
-                    <ellipse cx="350" cy="60" rx="180" ry="35" fill="url(#goldGrad2)" opacity="0.12" filter="url(#glow2)"/>
-                    <text x="350" y="55" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="13" letter-spacing="3" font-weight="500">THE DIVINE GROUND</text>
-                    <text x="350" y="75" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="11" font-style="italic">Abba · The Absolute · Ousia</text>
-                    <line x1="350" y1="100" x2="350" y2="130" stroke="#c9a84c" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
-                    <polygon points="350,130 346,122 354,122" fill="#c9a84c" opacity="0.4"/>
-                    <rect x="200" y="140" width="300" height="70" rx="8" fill="none" stroke="url(#goldGrad2)" stroke-width="1" opacity="0.5"/>
-                    <text x="350" y="165" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="12" letter-spacing="2">CHRIST CONSCIOUSNESS</text>
-                    <text x="350" y="185" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="11" font-style="italic">Logos · Son · The Bridge</text>
-                    <text x="350" y="200" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="10">"I and the Father are one"</text>
-                    <line x1="350" y1="215" x2="350" y2="245" stroke="#c9a84c" stroke-width="1" opacity="0.4" stroke-dasharray="4,3"/>
-                    <polygon points="350,245 346,237 354,237" fill="#c9a84c" opacity="0.4"/>
-                    <rect x="220" y="255" width="260" height="70" rx="8" fill="none" stroke="url(#goldGrad2)" stroke-width="1" opacity="0.3"/>
-                    <text x="350" y="280" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="12" letter-spacing="2">INDIVIDUAL SELF</text>
-                    <text x="350" y="300" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="11" font-style="italic">Psyche · Ego · The Separate Person</text>
-                    <text x="350" y="315" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="10">"Who do people say that I am?"</text>
-                    <path d="M 580 60 Q 620 200 580 315" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="5,4"/>
-                    <polygon points="580,315 576,307 584,307" fill="#c9a84c" opacity="0.3"/>
-                    <text x="640" y="190" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="10" letter-spacing="1" opacity="0.5" transform="rotate(90, 640, 190)">KENOSIS</text>
-                    <text x="350" y="370" text-anchor="middle" fill="#5a6a88" font-family="Cinzel, serif" font-size="9" letter-spacing="2" opacity="0.5">THE PATH IS DESCENT, NOT ASCENT</text>
-                </svg>
-                <p class="diagram-caption">Jesus's teaching reveals a hierarchy of consciousness — but the path to the Absolute is not ascent through the levels, but radical self-emptying (kenosis) that dissolves the separate self entirely.</p>
+            <!-- TENSION BOX: Kenosis vs. Dissolution -->
+            <div class="tension-box fade-in">
+                <h4>Kenosis vs. Dissolution</h4>
+                <p><span class="tension-em">In Advaita, I dissolve into Brahman. In theosis, Brahman descends into my dissolution.</span> These are not the same movement. The cross is not my ego's achievement; it is God's gift. The resurrection is not my realization; it is God's vindication of this particular body, this particular history, this particular Jesus of Nazareth. The empty tomb is not maya's transparency; it is the promise that matter itself will be transfigured. The resurrection appearances — Jesus eating fish, showing wounds, being touched — insist that the body is real, beloved, and will be redeemed.</p>
             </div>
 
-            <p class="fade-in">When read through the lens of the mystical tradition rather than institutional dogma, the teaching of Jesus reveals a clear hierarchy of consciousness:</p>
+            <p class="fade-in stagger-1"><strong>Resurrection is the vindication of this particular body, this particular history.</strong> The empty tomb is not a symbol of the Self's immortality; it is the promise that <em>this</em> flesh, <em>this</em> history, <em>this</em> person will be raised. The resurrection appearances — Jesus eating fish, showing wounds, being touched — are not "maya continuing to instruct"; they are the insistence that the body is real, beloved, and will be redeemed. This is the scandal of the incarnation: not that the Self is immortal, but that <em>this</em> body — wounded, broken, mortal — is raised to eternal life.</p>
 
-            <ol class="hierarchy-list">
-                <li class="fade-in">
-                    <strong>The Individual Self (Psyche)</strong> — The person who identifies with body, mind, social role, and separateness. "Who do people say that I am?" (Mark 8:27). This is the level of ordinary existence, the ego-bound life, the "old self" that must "die daily" (1 Cor 15:31).
-                </li>
-                <li class="fade-in stagger-1">
-                    <strong>The Christ Consciousness (Logos / Son)</strong> — The realization that "I and the Father are one" (John 10:30). Here, the separate self dissolves into union with the divine source. As the Gospel of John frames it: "The Father is in me, and I in the Father" (John 10:38). This is the level of mystical union, where one no longer acts from personal will but from divine will — "I only do what the Father shows me" (John 5:19).
-                </li>
-                <li class="fade-in stagger-2">
-                    <strong>The Divine Ground (Abba / The Absolute)</strong> — The ultimate reality that is the source of the Father-Son relationship, yet transcends even the names "Father" and "Son." This is the apophatic God — the God beyond God, the "darkness beyond understanding" of Pseudo-Dionysius, the "ground of being" of Meister Eckhart. In Orthodox theology, this is the divine <em>ousia</em> (essence) that remains forever unknowable, while the <em>energeiai</em> (energies) are what we can participate in.
-                </li>
-            </ol>
+            <p class="fade-in stagger-2"><strong>Ascension is not the dissolution of subtle and causal bodies into the Absolute</strong>; it is the pledge of return. <em>"This same Jesus, who has been taken from you into heaven, will come back in the same way you have seen him go"</em><a class="biblical-ref" data-reference="Acts 1:11" data-tooltip="Acts 1:11">[2]</a>. Theosis is <strong>eschatological</strong>; moksha is not. The journey is not one of departure but of return. The "cloud" that receives Jesus is not the unmanifest; it is the presence of the Father, and it is from this presence that Jesus will come again. The disciples "looking intently up into the sky" are not seeking the Self in some realm; they are waiting for the One who will return.</p>
 
-            <p class="fade-in">What makes Jesus's teaching unique is that the path to the Absolute is not ascent but descent — not self-realization but self-emptying. The Greek term <em>kenosis</em> (emptying) from Philippians 2:7 captures this: "He emptied himself, taking the form of a slave."</p>
-
-            <p class="fade-in stagger-1">This is not a diminishment of divinity but a radical paradox: the Absolute expresses itself by voluntarily laying aside the very attributes that define it. As the Church Fathers understood, Christ "was greater than himself and less than himself simultaneously" — the infinite taking on finitude, the eternal entering time, the unconditioned accepting conditions.</p>
-
-            <!-- DIAGRAM: The Kenotic Trajectory -->
+            <!-- DIAGRAM: The Threefold Movement -->
             <div class="diagram-container fade-in">
-                <div class="diagram-title">The Kenotic Trajectory · The Path of Self-Emptying</div>
-                <svg class="diagram-svg" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+                <div class="diagram-title">The Threefold Movement of Theosis</div>
+                <svg class="diagram-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="pathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <linearGradient id="threeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.6" />
-                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.1" />
+                            <stop offset="50%" stop-color="#e0c46e" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.6" />
                         </linearGradient>
                     </defs>
-                    <path d="M 100 40 Q 200 80 250 120 Q 320 170 380 200 Q 450 240 550 260" stroke="url(#pathGrad)" stroke-width="2" fill="none" opacity="0.6"/>
-                    <polygon points="550,260 542,252 542,260" fill="#c9a84c" opacity="0.6" transform="rotate(25, 550, 260)"/>
-                    <circle cx="100" cy="40" r="5" fill="#c9a84c" opacity="0.8"/>
-                    <text x="100" y="25" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="10" letter-spacing="1">BIRTH</text>
-                    <text x="100" y="60" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">The Word becomes flesh</text>
-                    <circle cx="250" cy="120" r="5" fill="#c9a84c" opacity="0.6"/>
-                    <text x="250" y="105" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="10" letter-spacing="1">BAPTISM</text>
-                    <text x="250" y="140" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">"He must increase, I must decrease"</text>
-                    <circle cx="380" cy="200" r="5" fill="#c9a84c" opacity="0.4"/>
-                    <text x="380" y="185" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="10" letter-spacing="1">TEMPTATION</text>
-                    <text x="380" y="220" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Refusing power for personal gain</text>
-                    <circle cx="480" cy="240" r="5" fill="#c9a84c" opacity="0.3"/>
-                    <text x="480" y="225" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="10" letter-spacing="1">GETHSEMANE</text>
-                    <text x="480" y="260" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">"Not my will, but yours be done"</text>
-                    <circle cx="550" cy="260" r="6" fill="#c9a84c" opacity="0.9"/>
-                    <text x="550" y="245" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">THE CROSS</text>
-                    <text x="550" y="280" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">The ultimate kenosis</text>
-                    <text x="620" y="150" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="10" letter-spacing="2" opacity="0.4" transform="rotate(90, 620, 150)">DESCENT INTO FULLNESS</text>
+                    <circle cx="150" cy="150" r="55" fill="var(--surface)" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+                    <text x="150" y="140" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="12" letter-spacing="1">CRUCIFIXION</text>
+                    <text x="150" y="160" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="10" font-style="italic">Kenosis</text>
+                    <text x="150" y="175" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="8">The descent</text>
+                    <circle cx="350" cy="150" r="55" fill="var(--surface)" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+                    <text x="350" y="140" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="12" letter-spacing="1">RESURRECTION</text>
+                    <text x="350" y="160" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="10" font-style="italic">Anastasis</text>
+                    <text x="350" y="175" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="8">The vindication</text>
+                    <circle cx="550" cy="150" r="55" fill="var(--surface)" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+                    <text x="550" y="140" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="12" letter-spacing="1">ASCENSION</text>
+                    <text x="550" y="160" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="10" font-style="italic">Theosis</text>
+                    <text x="550" y="175" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="8">The pledge of return</text>
+                    <path d="M 205 150 L 295 150" stroke="url(#threeGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <path d="M 405 150 L 495 150" stroke="url(#threeGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <text x="350" y="250" text-anchor="middle" fill="#5a6a88" font-family="Cinzel, serif" font-size="8" letter-spacing="1" opacity="0.5">DESCENT · VINDICATION · PLEDGE</text>
                 </svg>
-                <p class="diagram-caption">Jesus's life traces a trajectory of ever-deepening self-emptying — from the Incarnation through the Cross, each station represents a further surrender of the separate self.</p>
+                <p class="diagram-caption">Theosis is a threefold movement: descent (kenosis), vindication (resurrection), and pledge (ascension). Unlike moksha's terminal realization, theosis is eschatological — a journey that ends in return, not departure.</p>
             </div>
-
-            <p class="fade-in">Jesus's own life embodies this trajectory: <strong>Birth in poverty</strong> — the Word becomes flesh not in a palace but a stable, emptying itself of heavenly glory. <strong>Baptism</strong> — "He must increase, I must decrease" (John 3:30) — the surrender of John the Baptist prefigures the greater surrender of Christ. <strong>Temptation in the wilderness</strong> — refusing to use divine power for personal gain, choosing hunger over miraculous bread. <strong>Gethsemane</strong> — "Not my will, but yours be done" (Luke 22:42) — the complete surrender of personal will. <strong>The Cross</strong> — the ultimate kenosis: "My God, my God, why have you forsaken me?" (Mark 15:34) — even the sense of divine presence is emptied.</p>
 
             <div class="scripture-panels fade-in">
                 <div class="scripture-panel">
-                    <div class="scripture-panel-label">Mahavakya</div>
-                    <p class="scripture-panel-text">Tat Tvam Asi</p>
-                    <p class="scripture-panel-ref">"That Thou Art" — Chandogya Upanishad 6.8.7</p>
+                    <div class="scripture-panel-label">Philippians 2:7</div>
+                    <p class="scripture-panel-text">"He emptied himself, taking the form of a slave."</p>
+                    <p class="scripture-panel-ref">Kenosis · The Descent</p>
                 </div>
                 <div class="scripture-panel">
-                    <div class="scripture-panel-label">Gospel Parallel</div>
-                    <p class="scripture-panel-text">I in them, and you in me</p>
-                    <p class="scripture-panel-ref">— John 17:23</p>
+                    <div class="scripture-panel-label">Acts 1:11</div>
+                    <p class="scripture-panel-text">"This same Jesus will come back in the same way you have seen him go."</p>
+                    <p class="scripture-panel-ref">The Pledge of Return</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <blockquote class="fade-in">
-                <p>"That they all may be one; as you, Father, are in me, and I in you, that they also may be one in us."</p>
-                <cite>— John 17:21</cite>
-            </blockquote>
-            <blockquote class="fade-in stagger-1">
-                <p>"Tat tvam asi — That thou art."</p>
-                <cite>— Chandogya Upanishad 6.8.7</cite>
-            </blockquote>
+    <div class="chapter-transition fade-in">
+        <div class="chapter-transition-line"></div>
+        <div class="chapter-transition-icon">✦</div>
+        <div class="chapter-transition-line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+    SECTION: THE GREAT DECLARATION — THEOSIS AS PARTICIPATION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="stage-section" id="theosis-declaration">
+        <div class="stage-wm" aria-hidden="true">ΠΕΡΙΧΩΡΗΣΙΣ</div>
+        <div class="stage-header">
+            <div class="stage-eyeline">
+                <span class="stage-n">The Great Declaration</span>
+                <span class="stage-skt">Theosis as Participation</span>
+                <span class="stage-deva-title">Perichoresis · The Trinitarian Dance</span>
+            </div>
+            <h2 class="stage-h2">The Great Declaration</h2>
+            <span class="stage-subtitle-label">"That they may be one as we are one."</span>
+            <span class="stage-rule"></span>
+        </div>
+        <div class="stage-body">
+            <p><strong>J</strong>esus prays in John 17:21-23<sup><a class="biblical-ref" data-reference="John 17:21-23" data-tooltip="John 17:21-23">[3]</a></sup>: <em>"That they all may be one; as you, Father, are in me, and I in you, that they also may be one in us... I in them, and you in me — that they may be made perfect in one."</em></p>
+
+            <p class="fade-in">This is <em>not</em> Tat Tvam Asi. Tat Tvam Asi is identity: "Thou art That." Theosis is <strong>participation</strong>: "That dwells in thee, and thou in That, and the twain are one yet remain twain." This is <span class="sanskrit-term" data-tooltip="Mutual indwelling; the Trinitarian dance that preserves distinction within unity">perichoresis</span> — the mutual indwelling of Father, Son, and Spirit — and the human person is drawn into this dance without being dissolved.</p>
+
+            <p class="fade-in stagger-1"><strong>The Greek Fathers on this distinction</strong>: Gregory of Nyssa teaches that the soul becomes what it contemplates, but it never becomes God's essence. It participates in the <em>energeiai</em> (energies), not the <em>ousia</em> (essence). Palamas articulates the distinction: the uncreated light of Tabor is the energies, accessible to the creature, while the essence remains forever beyond. This is the metaphysical ground that makes theosis possible — and it is absent from Advaita, where there is no distinction between essence and manifestation.</p>
+
+            <!-- TENSION BOX: Identity vs. Participation -->
+            <div class="tension-box fade-in">
+                <h4>Identity vs. Participation</h4>
+                <p><span class="tension-em">"I and the Father are one" (John 10:30) — but in the same chapter, Jesus quotes Psalm 82:6: "I said, you are gods."</span> Theosis is not the privilege of Jesus alone; it is the vocation of every human person. But it is <em>vocation</em>, not <em>recognition</em>. It is called, not realized. It is gift, not discovery. This is the difference between a birthright and an inheritance — one is given, the other is received. Theosis is <em>participation</em> in the divine nature (2 Peter 1:4), not identity with it. The creature remains creature even as it becomes god by grace.</p>
+            </div>
+
+            <p class="fade-in stagger-2"><strong>Paul's "in Christ" formula</strong> — the most frequent phrase in his letters — is not "I am Christ" (identity) but "in Christ" (participation). Galatians 2:20<sup><a class="biblical-ref" data-reference="Galatians 2:20" data-tooltip="Galatians 2:20">[4]</a></sup>: <em>"I have been crucified with Christ; it is no longer I who live, but Christ lives in me."</em> This is theosis as substitution and indwelling, not dissolution. The "I" remains — but it is Christ's "I" living it. This is utterly foreign to Advaita, where the "I" must die entirely.</p>
+
+            <!-- DIAGRAM: Essence and Energies -->
+            <div class="diagram-container fade-in">
+                <div class="diagram-title">Essence and Energies — The Palamite Architecture</div>
+                <svg class="diagram-svg" viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="essenceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.6" />
+                        </linearGradient>
+                        <linearGradient id="energyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#e0c46e" stop-opacity="0.4" />
+                            <stop offset="100%" stop-color="#e0c46e" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="350" cy="90" r="70" fill="var(--surface)" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
+                    <text x="350" y="80" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="11" letter-spacing="1">OUSIA</text>
+                    <text x="350" y="98" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Essence</text>
+                    <text x="350" y="112" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="8">Unknowable · Inaccessible</text>
+                    <circle cx="350" cy="90" r="50" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3" stroke-dasharray="4,3"/>
+                    <circle cx="350" cy="90" r="30" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="2,3"/>
+                    <path d="M 350 160 L 350 190" stroke="#c9a84c" stroke-width="1.5" opacity="0.6" stroke-dasharray="4,3"/>
+                    <polygon points="350,195 346,187 354,187" fill="#c9a84c" opacity="0.6"/>
+                    <rect x="230" y="205" width="240" height="70" rx="8" fill="var(--surface)" stroke="#e0c46e" stroke-width="1.5" opacity="0.85"/>
+                    <text x="350" y="230" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="11" letter-spacing="1">ENERGEIAI</text>
+                    <text x="350" y="248" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Energies · Uncreated Light</text>
+                    <text x="350" y="262" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="8">Participable · Transformative</text>
+                    <path d="M 350 275 L 350 300" stroke="#e0c46e" stroke-width="1.5" opacity="0.6"/>
+                    <polygon points="350,305 346,297 354,297" fill="#e0c46e" opacity="0.6"/>
+                    <circle cx="350" cy="320" r="12" fill="var(--surface)" stroke="#8a9ab0" stroke-width="1" opacity="0.6"/>
+                    <text x="350" y="324" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="6" letter-spacing="0.5">US</text>
+                    <text x="420" y="240" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="8" font-style="italic" transform="rotate(90,420,240)" opacity="0.5">PARTICIPATION</text>
+                </svg>
+                <p class="diagram-caption">The Palamite distinction between essence (ousia) and energies (energeiai) makes theosis possible without absorption. We participate in God's energies — the uncreated light — without becoming God's essence. This is the metaphysical ground that Advaita lacks.</p>
+            </div>
+
+            <div class="resonance-callout fade-in">
+                <div class="label">Theosis is Not Tat Tvam Asi</div>
+                <p>It is something else. Theosis preserves what Advaita dissolves: relationship, particularity, embodiment, and eschatological hope. The Father remains Father; the Son remains Son; the Spirit remains Spirit. And the human person — drawn into this dance — remains a person even as it becomes god by grace.</p>
+            </div>
+
+            <div class="scripture-panels fade-in">
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">John 17:21</div>
+                    <p class="scripture-panel-text">"That they all may be one; as you, Father, are in me, and I in you."</p>
+                    <p class="scripture-panel-ref">Perichoresis · Mutual Indwelling</p>
+                </div>
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">2 Peter 1:4</div>
+                    <p class="scripture-panel-text">"You may become partakers of the divine nature."</p>
+                    <p class="scripture-panel-ref">Theosis · Participation</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2272,48 +2207,72 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    SECTION: AGAPE — LOVE AS BEING
+    SECTION: LOVE AS BEING — AGAPE AS THE SUBSTANCE OF THEOSIS
     ═══════════════════════════════════════════════════════════════ -->
     <section class="stage-section" id="agape">
         <div class="stage-wm" aria-hidden="true">ΑΓΑΠΗ</div>
         <div class="stage-header">
             <div class="stage-eyeline">
                 <span class="stage-n">Love as Being</span>
-                <span class="stage-skt">Agape · The Substance of Being</span>
-                <span class="stage-deva-title">Prema · The Essence of Brahman</span>
+                <span class="stage-skt">Agape · The Substance of Theosis</span>
+                <span class="stage-deva-title">Love as the Mode of Deification</span>
             </div>
-            <h2 class="stage-h2">Love as the Substance of Being</h2>
-            <span class="stage-subtitle-label">Agape · Prema · The Self's Natural Expression</span>
+            <h2 class="stage-h2">Love as the Substance of Theosis</h2>
+            <span class="stage-subtitle-label">Agape · Not Knowledge but Love</span>
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>T</strong>he ultimate identity (<em>tat tvam asi</em>) is not a cold philosophical abstraction. It is love (<em>agape</em>). In the Christian tradition, the love that flows between Father and Son is the Holy Spirit — the very substance of divine life. This corresponds to the Vedantic understanding that the <span class="sanskrit-term" data-tooltip="The divine power of love; the essence of being">prema</span> (love) that pervades the universe is the very <em>rasa</em> (essence) of Brahman. The recognition of non-duality is not the end of love but the beginning of true love — love no longer contaminated by the ego's demand for something in return.</p>
+            <p><strong>I</strong>n Advaita, <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jnana</span> (knowledge) is the supreme path. In theosis, <span class="sanskrit-term" data-tooltip="Unconditional love; the divine love that is the substance of God's life">agape</span> is the supreme path. The human person becomes god <em>by loving</em>, not by knowing. This is the fundamental difference between the two traditions.</p>
 
-            <p class="fade-in">When Jesus says <em>"Love one another as I have loved you"</em><a class="biblical-ref" data-reference="John 15:12" data-tooltip="John 15:12">[8]</a>, he is pointing to the love that flows from the Self, not the love that flows from the ego. Egoic love is always transactional: it gives in order to receive. Self-love (<em>atma-prema</em>) is unconditional because the Self is complete in itself. It needs nothing. When the ego dissolves, what remains is the natural, spontaneous love that is the very substance of being. This is the <span class="sanskrit-term" data-tooltip="The divine play; the spontaneous activity of Brahman">lila</span> of the universe — not a mechanical process but a love-song sung by existence to itself.</p>
+            <p class="fade-in"><strong>For Advaita, love is maya</strong> — a beautiful illusion that must be transcended. The love between creatures is a projection of the non-dual Self, a play of consciousness that ultimately must be seen through. For theosis, <strong>love is the very life of God</strong> — the energy that deifies, the power that transforms, the essence that sustains. The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is <em>loved into being</em>.</p>
 
-            <p class="fade-in stagger-1">The cross is the final act of love — the surrender of the ego for the sake of the Self. The resurrection is the revelation that this love was never absent; it was the very ground of the crucifixion itself. The One who dies and the One who rises are the same Self, playing all roles for the sake of its own delight. This is the supreme <span class="sanskrit-term" data-tooltip="The great saying or proclamation of truth">mahavakya</span> of Jesus: <em>Tat Tvam Asi — That Thou Art.</em> Not "you are like God" or "you will become God" but <em>you are God</em>, have always been, will always be. The game of separation was a divine play; the recognition of unity is the return home.</p>
-
+            <!-- TENSION BOX: Jnana vs. Agape -->
             <div class="tension-box fade-in">
-                <h4>Comparative Table · The Deepest Level Across Traditions</h4>
-                <div class="comparative-table-wrapper">
-                    <table class="comparative-table">
-                        <thead>
-                            <tr>
-                                <th>Aspect</th>
-                                <th>Nisargadatta's Absolute</th>
-                                <th>Jesus's Divine Ground</th>
-                                <th>Ramana's Self</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Nature of deepest reality</td><td>Beyond consciousness, prior to "I am"</td><td>Beyond essence, known only through energies</td><td>Beyond creation itself, no world ever appeared</td></tr>
-                            <tr><td>Path</td><td>Abiding in "I am," then dissolving it</td><td>Kenosis — self-emptying love through the cross</td><td>Self-inquiry — "Who am I?" tracing the "I" to its source</td></tr>
-                            <tr><td>The self</td><td>Dissolves into pure awareness</td><td>Dies and rises as Christ-life</td><td>Never existed — only the Self is</td></tr>
-                            <tr><td>Relationship to world</td><td>Temporary modulation of the Absolute</td><td>Loved into being and redeemed through incarnation</td><td>Never created — Ajata Vada</td></tr>
-                            <tr><td>Final state</td><td>"I am dead already"</td><td>"It is finished"</td><td>Sahaja Samadhi — the natural state</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h4>Jnana vs. Agape</h4>
+                <p><span class="tension-em">"If I have all knowledge but have not love, I am nothing" (1 Cor 13:2).</span> For Advaita, jnana (knowledge) is the supreme path; for theosis, agape (love) is the supreme path. The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is loved into being. The human person becomes god <em>by loving</em>, not by knowing. This is the deepest divergence between the two traditions — and the most beautiful.</p>
+            </div>
+
+            <p class="fade-in stagger-1"><em>"Love one another as I have loved you"</em><a class="biblical-ref" data-reference="John 15:12" data-tooltip="John 15:12">[5]</a>. This is not a command to imitate Jesus's love from a distance. It is an <strong>invitation to participate in the love that is the substance of divine life</strong>. The love with which Jesus loves is the love of the Father for the Son, the love that is the Holy Spirit. To love "as I have loved" is to be drawn into the Trinitarian perichoresis — to become a participant in the divine life itself.</p>
+
+            <p class="fade-in stagger-2">The cross is the final act of love — not the Self's play with itself, but the <strong>Lover entering into the beloved's condition</strong>, dying the beloved's death, rising as the beloved's hope. This is solidarity, not solipsism. The cross is God's solidarity with the victim, not the dissolution of the victim's pain into illusion. The resurrection is the promise that suffering will be healed, not transcended.</p>
+
+            <!-- DIAGRAM: Two Visions of Love -->
+            <div class="diagram-container fade-in">
+                <div class="diagram-title">Two Visions of Love — Advaita and Theosis</div>
+                <svg class="diagram-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="river1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#4a4080" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.5" />
+                        </linearGradient>
+                        <linearGradient id="river2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#e0c46e" stop-opacity="0.5" />
+                        </linearGradient>
+                    </defs>
+                    <text x="175" y="30" text-anchor="middle" fill="#8a9ab0" font-family="Cinzel, serif" font-size="11" letter-spacing="1">ADVAITA</text>
+                    <text x="525" y="30" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="11" letter-spacing="1">THEOSIS</text>
+                    <path d="M 50 60 Q 175 120 300 60" stroke="url(#river1)" stroke-width="2" fill="none" opacity="0.6"/>
+                    <text x="175" y="120" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Brahman → maya</text>
+                    <text x="175" y="140" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Love as illusion</text>
+                    <text x="175" y="160" text-anchor="middle" fill="#5a6a88" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Dissolution → silence</text>
+                    <path d="M 400 60 Q 525 120 650 60" stroke="url(#river2)" stroke-width="2" fill="none" opacity="0.6"/>
+                    <text x="525" y="120" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Trinity → creation</text>
+                    <text x="525" y="140" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Love as reality</text>
+                    <text x="525" y="160" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Deification → communion</text>
+                    <circle cx="175" cy="220" r="25" fill="var(--surface)" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+                    <text x="175" y="224" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="8" letter-spacing="0.5">SILENCE</text>
+                    <circle cx="525" cy="220" r="25" fill="var(--surface)" stroke="#e0c46e" stroke-width="1" opacity="0.5"/>
+                    <text x="525" y="224" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="8" letter-spacing="0.5">SILENCE</text>
+                    <path d="M 200 220 L 500 220" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="4,4"/>
+                    <text x="350" y="250" text-anchor="middle" fill="#5a6a88" font-family="Cinzel, serif" font-size="8" letter-spacing="1" opacity="0.4">TWO RIVERS · ONE OCEAN</text>
+                </svg>
+                <p class="diagram-caption">Advaita and theosis flow toward the same silence, but they carry different waters. Advaita dissolves love into knowledge; theosis transforms knowledge into love. The silence of theosis is not empty — it is full of the love that spoke the world, died on the cross, and rises still.</p>
+            </div>
+
+            <div class="resonance-callout fade-in">
+                <div class="label">Love as the Mode of Deification</div>
+                <p>The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is loved into being. The human person becomes god <em>by loving</em>, not by knowing. This is the deepest divergence between the two traditions — and the most beautiful.</p>
             </div>
 
             <blockquote class="fade-in">
@@ -2321,13 +2280,75 @@
                 <cite>— John 15:12</cite>
             </blockquote>
             <blockquote class="fade-in stagger-1">
-                <p>"The essence of all beings is love. The entire universe is made of love."</p>
-                <cite>— Sri Nisargadatta Maharaj · I Am That</cite>
+                <p>"If I have all knowledge but have not love, I am nothing."</p>
+                <cite>— 1 Corinthians 13:2</cite>
             </blockquote>
+        </div>
+    </section>
+
+    <div class="chapter-transition fade-in">
+        <div class="chapter-transition-line"></div>
+        <div class="chapter-transition-icon">⚡</div>
+        <div class="chapter-transition-line"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+    POSTLUDE: THE FRICTION — WHAT RESISTS THE MAP
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="stage-section" id="friction">
+        <div class="stage-wm" aria-hidden="true">ΤΡΙΒΗ</div>
+        <div class="stage-header">
+            <div class="stage-eyeline">
+                <span class="stage-n">The Friction</span>
+                <span class="stage-skt">What Resists the Map</span>
+                <span class="stage-deva-title">Boundary Conditions</span>
+            </div>
+            <h2 class="stage-h2">What Resists the Map</h2>
+            <span class="stage-subtitle-label">Six Tensions Between Theosis and Moksha</span>
+            <span class="stage-rule"></span>
+        </div>
+        <div class="stage-body">
+            <p><strong>T</strong>hese differences are not errors to be corrected. They are <strong>two ways of standing before the mystery</strong>. Advaita dissolves the questioner into the question. Theosis transforms the questioner through the question. Both arrive at silence. But the silence of theosis is not empty; it is full — full of the love that spoke the world, died on the cross, and rises still in every heart that opens to it. Theosis is not Tat Tvam Asi. It is something else. Whether it is something more — that is for the silence to decide.</p>
+
+            <!-- Tension 1: Terminal vs. Endless -->
+            <div class="tension-box fade-in">
+                <h4>1. Terminal vs. Endless</h4>
+                <p><span class="tension-em">Moksha as terminal realization; theosis as epektasis — perpetual growth into the infinite.</span> Gregory of Nyssa's <em>epektasis</em> means the soul never arrives; it is always being drawn deeper into the divine darkness. Moksha is the end of seeking; theosis is seeking without end. One is a destination; the other is a pilgrimage that never ends.</p>
+            </div>
+
+            <!-- Tension 2: Absorption vs. Participation -->
+            <div class="tension-box fade-in stagger-1">
+                <h4>2. Absorption vs. Participation</h4>
+                <p><span class="tension-em">Aham Brahmasmi as identity; theosis as perichoresis — mutual indwelling preserving distinction.</span> In Advaita, the jiva dissolves into Brahman. In theosis, the creature participates in the divine nature while remaining creature. The "I" is not annihilated but transformed, not dissolved but deified.</p>
+            </div>
+
+            <!-- Tension 3: Dissolution vs. Transformation -->
+            <div class="tension-box fade-in stagger-2">
+                <h4>3. Dissolution vs. Transformation</h4>
+                <p><span class="tension-em">Moksha as liberation FROM the world; theosis as transfiguration OF the world.</span> The resurrection of the body, the new earth, the eschatological kingdom — these are not metaphors. Theosis redeems matter; moksha transcends it. One escapes the wheel; the other dances on it.</p>
+            </div>
+
+            <!-- Tension 4: Solitary vs. Ecclesial -->
+            <div class="tension-box fade-in stagger-3">
+                <h4>4. Solitary vs. Ecclesial</h4>
+                <p><span class="tension-em">Moksha as individual realization; theosis as communion in the body of Christ.</span> The Church is not a school for individual enlightenment; it is the organism of deification, the body in which theosis happens. "Our Father" — not "My Father." Theosis is communal.</p>
+            </div>
+
+            <!-- Tension 5: Jnana vs. Agape -->
+            <div class="tension-box fade-in stagger-4">
+                <h4>5. Jnana vs. Agape</h4>
+                <p><span class="tension-em">Knowledge as supreme path in Advaita; love as supreme path in theosis.</span> "If I have all knowledge but have not love, I am nothing" (1 Cor 13:2). The human person becomes god <em>by loving</em>, not by knowing. This is the deepest divergence — and the most beautiful.</p>
+            </div>
+
+            <!-- Tension 6: Unchosen Suffering — The Holocaust Test -->
+            <div class="tension-box fade-in stagger-5">
+                <h4>6. Unchosen Suffering — The Holocaust Test</h4>
+                <p><span class="tension-em">Theodicy; Advaita's "maya" as morally intolerable.</span> Christianity's answer — God enters INTO the suffering, does not explain it away. The cross is God's solidarity with the victim, not the dissolution of the victim's pain into illusion. The resurrection is the promise that suffering will be healed, not transcended. This is the difference between a philosophy of escape and a faith of solidarity.</p>
+            </div>
 
             <div class="resonance-callout fade-in">
-                <div class="label">The Supreme Declaration</div>
-                <p>Tat Tvam Asi — That Thou Art. Not "you are like God" or "you will become God" but <em>you are God</em>, have always been, will always be. The game of separation was a divine play; the recognition of unity is the return home.</p>
+                <div class="label">The Friction as the Deepest Teaching</div>
+                <p>These differences are not errors to be corrected. They are two ways of standing before the mystery. Advaita dissolves the questioner into the question. Theosis transforms the questioner through the question. Both arrive at silence. But the silence of theosis is not empty; it is full — full of the love that spoke the world, died on the cross, and rises still in every heart that opens to it. Theosis is not Tat Tvam Asi. It is something else. Whether it is something more — that is for the silence to decide.</p>
             </div>
         </div>
     </section>
@@ -2338,9 +2359,9 @@
     <div class="pq-section">
         <div class="pq-glow" aria-hidden="true"></div>
         <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">&ldquo;The eye through which I see God is the same eye through which God sees me; my eye and God's eye are one eye, one seeing, one knowing, one loving.&rdquo;</p>
+        <p class="pq-text">&ldquo;The eye with which I see God is the same eye with which God sees me; my eye and God's eye are one eye, one seeing, one knowing, one loving.&rdquo;</p>
         <p class="pq-attr">&mdash; Meister Eckhart</p>
-        <p class="pq-attr pq-attr-nav"><a href="messiah-beatitudes.html" class="continue-link">&larr; Return to The Beatitudes</a> <span class="pq-sep">·</span> <a href="messiah-gospel-thomas.html" class="continue-link">Continue to The Gospel of Thomas &rarr;</a></p>
+        <p class="pq-attr pq-attr-nav"><a href="messiah-mirror.html" class="continue-link">&larr; Return to Tat Tvam Asi</a> <span class="pq-sep">·</span> <a href="messiah-gospel-thomas.html" class="continue-link">Continue to The Gospel of Thomas &rarr;</a></p>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -2348,40 +2369,42 @@
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-silence.html" class="chapter-link">III · The Cloud of Unknowing</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-beatitudes.html" class="chapter-link">IV · The Beatitudes</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
-        <a href="messiah-mirror.html" class="chapter-link active">V · Tat Tvam Asi</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
-        <a href="messiah-gospel-thomas.html" class="chapter-link">VI · The Gospel of Thomas</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
-        <a href="messiah-avatar.html" class="chapter-link">VII · The Incarnation as Avatar</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-mirror.html" class="chapter-link">V · Theosis</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-theosis.html" class="chapter-link active">VI · Theosis</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-gospel-thomas.html" class="chapter-link">VII · The Gospel of Thomas</a>
+        <span class="chapter-sep">✦</span>
+        <a href="messiah-avatar.html" class="chapter-link">VIII · The Incarnation as Avatar</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-emblem"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M12 2v20M8 8h8"/></svg></div>
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
         <div class="footer-links">
             <a href="../index.html"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
             <a href="../advaita-vedanta/vedanta-living-tradition.html">Advaita Vedanta</a>
-            <a href="../messiah/messiah-threshold.html">Jesus of Nazareth</a>
+            <a href="messiah-threshold.html">Jesus of Nazareth</a>
             <a href="../kabbalah/kabbalah-sefer-yetzirah.html">Kabbalah</a>
             <a href="../gnosticism/gnosticism-unknown-father.html">Gnosticism</a>
             <a href="../taoism/taoism-threshold.html">Taoism</a>
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">Last updated: July 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
@@ -2450,8 +2473,8 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
             }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.fade-in, .section-separator, .chapter-transition').forEach(el => observer.observe(
-                el));
+            document.querySelectorAll('.fade-in, .section-separator, .chapter-transition, .tension-box').forEach(el =>
+                observer.observe(el));
 
             /* TEXT REVEAL */
             const textObserver = new IntersectionObserver((entries) => {

@@ -642,89 +642,11 @@
      HERO
      ===================================================== -->
 <header class="hero" id="hero">
-  <div class="hero-mountain"></div>
-  <div class="mandala-ring"></div><div class="mandala-ring"></div>
-  <div class="mandala-ring"></div><div class="mandala-ring"></div>
-  <div class="hero-ripple"></div><div class="hero-ripple"></div><div class="hero-ripple"></div>
-
-  <p class="hero-eyemark">The Uncarved Block</p>
-
-  <div class="hero-emblem">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="yyGlow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="5" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-        <radialGradient id="yangGrad" cx="60%" cy="30%" r="55%">
-          <stop offset="0%" stop-color="#e6c86e" stop-opacity="0.14"/>
-          <stop offset="60%" stop-color="#d4af37" stop-opacity="0.06"/>
-          <stop offset="100%" stop-color="#b8960c" stop-opacity="0.02"/>
-        </radialGradient>
-        <radialGradient id="yinGrad" cx="40%" cy="70%" r="55%">
-          <stop offset="0%" stop-color="#b8960c" stop-opacity="0.10"/>
-          <stop offset="60%" stop-color="#d4af37" stop-opacity="0.04"/>
-          <stop offset="100%" stop-color="#b8960c" stop-opacity="0.01"/>
-        </radialGradient>
-        <linearGradient id="yyStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#b8960c" stop-opacity="0.85"/>
-          <stop offset="50%" stop-color="#d4af37" stop-opacity="0.65"/>
-          <stop offset="100%" stop-color="#e6c86e" stop-opacity="0.45"/>
-        </linearGradient>
-      </defs>
-
-      <circle cx="100" cy="100" r="97" fill="none" stroke="url(#yyStroke)" stroke-width="0.4" opacity="0.25"/>
-
-      <g stroke="#d4af37" stroke-width="1" opacity="0.18" stroke-linecap="round">
-        <line x1="100" y1="1" x2="100" y2="8"/>
-        <line x1="100" y1="199" x2="100" y2="192"/>
-        <line x1="1" y1="100" x2="8" y2="100"/>
-        <line x1="199" y1="100" x2="192" y2="100"/>
-      </g>
-
-      <circle cx="100" cy="100" r="90" fill="none" stroke="#d4af37" stroke-width="0.7" opacity="0.45"/>
-      <circle cx="100" cy="100" r="84" fill="none" stroke="#d4af37" stroke-width="0.3" opacity="0.2"/>
-
-      <g class="yy-spin">
-        <path d="M 100,10 A 90,90 0 0,1 100,190 A 45,45 0 0,0 100,100 A 45,45 0 0,1 100,10 Z"
-              fill="url(#yangGrad)" stroke="#d4af37" stroke-width="0.8" opacity="0.65"/>
-        <path d="M 100,10 A 45,45 0 0,0 100,100 A 45,45 0 0,1 100,190 A 90,90 0 0,0 100,10 Z"
-              fill="url(#yinGrad)" stroke="#d4af37" stroke-width="0.8" opacity="0.65"/>
-        <circle cx="100" cy="145" r="11" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.4"/>
-        <circle cx="100" cy="145" r="4.5" fill="#d4af37" opacity="0.35" filter="url(#yyGlow)"/>
-        <circle cx="100" cy="55" r="11" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.4"/>
-        <circle cx="100" cy="55" r="4.5" fill="#e6c86e" opacity="0.45" filter="url(#yyGlow)"/>
-      </g>
-
-      <circle cx="100" cy="100" r="3.5" fill="#e6c86e" opacity="0.5" filter="url(#yyGlow)"/>
-      <circle cx="100" cy="100" r="1.5" fill="#fff" opacity="0.3"/>
-
-      <g class="yy-qi" stroke="#d4af37" stroke-width="0.35" fill="none" stroke-linecap="round">
-        <path d="M100,2 Q138,45 100,100 Q62,155 100,198"/>
-        <path d="M2,100 Q45,62 100,100 Q155,138 198,100"/>
-      </g>
-
-      <circle cx="100" cy="100" r="20" fill="none" stroke="#d4af37" stroke-width="0.25" opacity="0.1"/>
-    </svg>
-  </div>
-
+  <p class="hero-eyemark">II</p>
   <h1 class="hero-title">The Uncarved Block</h1>
   <p class="hero-subtitle">Practice · Virtue · Simplicity</p>
   <p class="hero-quote">&ldquo;The sage embraces the uncarved block. He does not show off, therefore he shines. He does not assert, therefore he is acknowledged.&rdquo;</p>
   <p class="hero-quote-attr">&mdash; Lao Tzu, Tao Te Ching, Chapter 22</p>
-
-  <div class="hero-divider">
-    <div class="hero-divider-line"></div>
-    <div class="hero-divider-diamond"></div>
-    <div class="hero-divider-line"></div>
-  </div>
-
-  <div class="hero-scroll-cue" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
-    <span>Enter</span><div class="scroll-line"></div>
-  </div>
 </header>
 
 <!-- =====================================================

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jesus of Nazareth — Apophatic theology, the Word as primordial 'I AM', the Transfiguration, and Jnana Yoga. The silence beyond all concepts." />
-    <title>Jesus of Nazareth — The Cloud of Unknowing</title>
+    <meta name="description" content="Jesus of Nazareth — The Cloud of Unknowing. Christian apophatic theology in conversation with Advaita Vedanta's Neti-Neti, Nisargadatta's 'I Am,' and the luminous darkness of Pseudo-Dionysius, John of the Cross, and Meister Eckhart." />
+    <title>Jesus of Nazareth · The Cloud of Unknowing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
         /* ═══════════════════════════════════════════════════════════════
            TOKENS — Deep Indigo / Violet / Gold (aligned with Jesus of Nazareth)
@@ -614,7 +614,7 @@
             flex-direction: column;
             align-items: center;
             gap: 2rem;
-            max-width: 36rem;
+            max-width: 40rem;
             width: 100%;
             padding: 0 1.5rem;
         }
@@ -746,10 +746,35 @@
             color: var(--stone-light);
             text-transform: uppercase;
             opacity: 0;
-            margin-bottom: 3.5rem;
+            margin-bottom: 1.5rem;
             position: relative;
             z-index: 3;
             animation: hero-rise 1.1s 2.2s forwards;
+        }
+        .hero-quote-secondary {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+            color: var(--stone);
+            max-width: 580px;
+            margin: 0 auto .5rem;
+            line-height: 1.8;
+            opacity: 0;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 2.4s forwards;
+        }
+        .hero-quote-secondary-attr {
+            font-family: 'Cinzel', serif;
+            font-size: .48rem;
+            letter-spacing: .3em;
+            color: var(--stone-light);
+            text-transform: uppercase;
+            opacity: 0;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 3;
+            animation: hero-rise 1.1s 2.6s forwards;
         }
         .hero-dates {
             font-family: 'Cormorant Garamond', serif;
@@ -759,7 +784,7 @@
             opacity: 0;
             position: relative;
             z-index: 3;
-            animation: hero-rise 1.1s 2.4s forwards;
+            animation: hero-rise 1.1s 2.8s forwards;
         }
         .hero-scroll-cue {
             position: absolute;
@@ -773,7 +798,7 @@
             opacity: 0;
             cursor: pointer;
             z-index: 3;
-            animation: hero-rise 1.1s 2.8s forwards;
+            animation: hero-rise 1.1s 3s forwards;
         }
         .hero-scroll-cue:hover {
             transform: translateX(-50%) translateY(4px);
@@ -998,6 +1023,58 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           TENSION BOX
+           ═══════════════════════════════════════════════════════════════ */
+        .tension-box {
+            margin: 2.5rem 0;
+            padding: 1.75rem 2rem;
+            background: rgba(124, 111, 174, 0.06);
+            border-left: 3px solid var(--copper);
+            border-radius: var(--radius-md);
+            position: relative;
+            transition: background 0.6s var(--ease-smooth), border-color 0.6s var(--ease-smooth);
+        }
+        .tension-box::before {
+            content: '⚡';
+            position: absolute;
+            top: -0.6rem;
+            left: 0.75rem;
+            font-size: 1.1rem;
+            color: var(--copper);
+            background: var(--bg);
+            padding: 0 0.4rem;
+        }
+        .tension-box .tension-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            color: var(--copper-light);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .tension-box p {
+            font-family: 'Crimson Pro', serif;
+            font-size: 0.98rem;
+            color: var(--ink2);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+        .tension-box p:last-child {
+            margin-bottom: 0;
+        }
+        .tension-box .tension-em {
+            color: var(--ink);
+            font-weight: 400;
+        }
+        [data-theme="light"] .tension-box {
+            background: rgba(90, 80, 128, 0.06);
+            border-left-color: var(--copper);
+        }
+        [data-theme="light"] .tension-box::before {
+            background: var(--bg2);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            TOOLTIP (Sanskrit / Biblical terms)
            ═══════════════════════════════════════════════════════════════ */
         .sanskrit-term,
@@ -1010,6 +1087,7 @@
             transition: all 0.3s var(--ease-smooth);
             background: linear-gradient(transparent 60%, rgba(240, 192, 64, 0.12) 100%);
             padding: 0 0.1em;
+            position: relative;
         }
         .sanskrit-term:hover,
         .biblical-ref:hover {
@@ -1072,7 +1150,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
-           DIAGRAM CARDS (Premium Styling)
+           DIAGRAM CARDS
            ═══════════════════════════════════════════════════════════════ */
         .diagram-container {
             margin: 2.5rem 0;
@@ -1423,15 +1501,6 @@
             position: relative;
             box-shadow: 0 4px 16px rgba(201, 168, 76, 0.08);
         }
-        .resonance-callout::before {
-            content: ''; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 16px 16px;
-            display: block;
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
-            opacity: 0.8;
-            text-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
-        }
         .resonance-callout .label {
             font-family: 'Cinzel', serif;
             font-size: 0.6rem;
@@ -1644,15 +1713,16 @@
             transform: scaleX(1);
         }
         .section-separator::after {
-            content: ''; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: 16px 16px;
+            content: '';
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            color: var(--gold);
-            font-size: 0.72rem;
-            background: var(--bg);
-            padding: 0 6px;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: translate(-50%, -50%) rotate(45deg);
+            opacity: 0.6;
         }
 
         .cursor-glow {
@@ -1705,26 +1775,20 @@
                 font-size: 0.55rem;
                 line-height: 2;
             }
-            .toc-book-item {
-                grid-template-columns: 38px 1fr;
-            }
-            .toc-b-skt {
-                display: none;
-            }
             .stage-section {
                 padding: 80px 24px;
             }
             .ed-wrap {
                 padding: 0 24px;
             }
+            .tension-box {
+                padding: 1.25rem 1.25rem;
+            }
         }
         @media (max-width: 480px) {
             body {
                 font-size: 16px;
                 line-height: 1.72;
-            }
-            .content-section {
-                padding: 48px 16px;
             }
             .hero {
                 padding: 4rem 1rem 5rem;
@@ -1764,9 +1828,6 @@
             .scripture-panel {
                 padding: 20px;
             }
-            .pullquote-section {
-                padding: 3rem 1rem;
-            }
             .chapter-nav {
                 gap: 0.4rem;
                 font-size: 0.5rem;
@@ -1792,6 +1853,13 @@
             }
             .diagram-title {
                 font-size: 0.55rem;
+            }
+            .tension-box {
+                padding: 1rem 1rem;
+                margin: 1.5rem 0;
+            }
+            .tension-box p {
+                font-size: 0.92rem;
             }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -1842,33 +1910,32 @@
         </button>
         <div class="nav-menu" id="navMenu">
             <div class="nav-section-title">This Page</div>
-            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>Overview</span></a>
-            <a href="#apophatic-intro" class="nav-item" data-section="apophatic-intro"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>The Apophatic Path</span></a>
-            <a href="#essay-word" class="nav-item" data-section="essay-word"><span class="nav-item-icon">◉</span><span>The Word and Primordial I Am</span></a>
-            <a href="#essay-transfiguration" class="nav-item" data-section="essay-transfiguration"><span class="nav-item-icon"><svg class="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5z" opacity="0.6"/></svg></span><span>The Transfiguration</span></a>
-            <a href="#apophatic-climax" class="nav-item" data-section="apophatic-climax"><span class="nav-item-icon"><svg class="icon-moonphase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg></span><span>The Cry of Dereliction</span></a>
-            <a href="#essay-jnana" class="nav-item" data-section="essay-jnana"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>Jnana Yoga</span></a>
+            <a href="#hero" class="nav-item active" data-section="hero"><span class="nav-item-icon">⊙</span><span>Overview</span></a>
+            <a href="#prelude" class="nav-item" data-section="prelude"><span class="nav-item-icon">◈</span><span>The Way of Negation</span></a>
+            <a href="#essay-word" class="nav-item" data-section="essay-word"><span class="nav-item-icon">◉</span><span>The Word · I AM</span></a>
+            <a href="#essay-transfiguration" class="nav-item" data-section="essay-transfiguration"><span class="nav-item-icon">✦</span><span>The Transfiguration</span></a>
+            <a href="#essay-dereliction" class="nav-item" data-section="essay-dereliction"><span class="nav-item-icon">⬡</span><span>The Cry of Dereliction</span></a>
+            <a href="#essay-jnana" class="nav-item" data-section="essay-jnana"><span class="nav-item-icon">ॐ</span><span>Jnana Yoga</span></a>
             <a href="#closing" class="nav-item" data-section="closing"><span class="nav-item-icon">◆</span><span>Closing Reflection</span></a>
+            <a href="#friction" class="nav-item" data-section="friction"><span class="nav-item-icon">⚡</span><span>The Friction</span></a>
             <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Jesus of Nazareth</div>
-            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span><span>I · The Hermeneutic Key</span></a>
-            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>II · Three Bridges</span></a>
-            <a href="messiah-silence.html" class="nav-item active"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
-            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-seedling" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22V10M12 12c0-3 3-5 7-5M12 14c0-3-3-5-7-5"/></svg></span><span>IV · The Beatitudes as Jnana Yoga</span></a>
-            <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">⊙</span><span>V · Tat Tvam Asi</span></a>
-            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span>VI · The Gospel of Thomas</span></a>
-            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-dharma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/></svg></span><span>VII · The Incarnation as Avatar</span></a>
+            <div class="nav-section-title">Jesus of Nazareth</div>
+            <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">◈</span><span>I · The Hermeneutic Key</span></a>
+            <a href="messiah-parables.html" class="nav-item"><span class="nav-item-icon">✦</span><span>II · Three Bridges</span></a>
+            <a href="messiah-silence.html" class="nav-item active"><span class="nav-item-icon">⊙</span><span>III · The Cloud of Unknowing</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>IV · The Beatitudes</span></a>
+            <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">◉</span><span>V · Tat Tvam Asi</span></a>
+            <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon">📜</span><span>VI · Gospel of Thomas</span></a>
+            <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon">◇</span><span>VII · Incarnation as Avatar</span></a>
             <div class="nav-divider"></div>
-                                    <div class="nav-section-title">Other Cartographies</div>
-            <a href="../index.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Home · The Cartographies</span></a>
-            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-om" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s-8-4.5-8-11.5C4 6.5 8 2 12 2s8 4.5 8 8.5c0 7-8 11.5-8 11.5Z"/><path d="M12 22s-4-3-4-8.5C8 10 10 6 12 6s4 4 4 7.5c0 5.5-4 8.5-4 8.5Z"/><path d="M12 22c1.5 0 3-1 4-2.5M12 22c-1.5 0-3-1-4-2.5"/></svg></span><span>Advaita Vedanta</span></a>
-            <a href="../messiah/messiah-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v20M8 8h8"/></svg></span><span>Jesus of Nazareth</span></a>
-            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-star-david" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2.5l5.5 9.5H6.5z"/><path d="M12 21.5L6.5 12h11z"/></svg></span><span>Kabbalah</span></a>
-            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M2.7 10.3a2.4 2.4 0 0 0 0 3.4l7.6 7.6a2.4 2.4 0 0 0 3.4 0l7.6-7.6a2.4 2.4 0 0 0 0-3.4L13.7 2.7a2.4 2.4 0 0 0-3.4 0z"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Gnosticism</span></a>
-            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-yinyang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 2a5 5 0 0 0 0 10 5 5 0 0 1 0 10"/><circle cx="12" cy="7" r="1.5" fill="currentColor"/><circle cx="12" cy="17" r="1.5" fill="none" stroke="currentColor" stroke-width="1"/></svg></span><span>Taoism · The Unnamed Way</span></a>
-            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon"><svg class="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(45 12 12)"/><ellipse cx="12" cy="12" rx="3" ry="10" transform="rotate(-45 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><span>Quantum Mechanics</span></a><div class="nav-divider"></div>
-            
-            </div>
+            <div class="nav-section-title">Other Cartographies</div>
+            <a href="../index.html" class="nav-item"><span class="nav-item-icon">⌂</span><span>Home · The Cartographies</span></a>
+            <a href="../advaita-vedanta/vedanta-living-tradition.html" class="nav-item"><span class="nav-item-icon">ॐ</span><span>Advaita Vedanta</span></a>
+            <a href="../kabbalah/kabbalah-sefer-yetzirah.html" class="nav-item"><span class="nav-item-icon">✡</span><span>Kabbalah</span></a>
+            <a href="../gnosticism/gnosticism-unknown-father.html" class="nav-item"><span class="nav-item-icon">◈</span><span>Gnosticism</span></a>
+            <a href="../taoism/taoism-threshold.html" class="nav-item"><span class="nav-item-icon">☯</span><span>Taoism</span></a>
+            <a href="../quantum_mechanics/quantum-unmeasured.html" class="nav-item"><span class="nav-item-icon">⚛</span><span>Quantum Mechanics</span></a>
+        </div>
     </div>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -1907,42 +1974,46 @@
                 <div class="hero-divider-line"></div>
             </div>
             <p class="hero-quote">&ldquo;In the darkness of the cloud of unknowing, one finds the place where God dwells beyond all knowing.&rdquo;</p>
-            <p class="hero-quote-attr">&mdash; The Cloud of Unknowing</p>
+            <p class="hero-quote-attr">&mdash; The Cloud of Unknowing (c. 1370 CE)</p>
+            <p class="hero-quote-secondary">&ldquo;We pray to enter the darkness beyond light, and without seeing and without knowing, to see and to know that which is beyond all vision and all knowledge.&rdquo;</p>
+            <p class="hero-quote-secondary-attr">&mdash; Pseudo-Dionysius · Mystical Theology (c. 500 CE)</p>
         </div>
-        <div class="hero-scroll-cue" onclick="document.getElementById('apophatic-intro').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
+        <div class="hero-scroll-cue" onclick="document.getElementById('prelude').scrollIntoView({behavior:'smooth'})" tabindex="0" role="button">
             <span>Enter</span>
             <div class="scroll-line" aria-hidden="true"></div>
         </div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    INTRODUCTION: THE APOPHATIC PATH
+    PRELUDE: THE WAY OF NEGATION
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="stage-section" id="apophatic-intro">
+    <section class="stage-section" id="prelude">
         <div class="stage-wm" aria-hidden="true">ΑΠΟΦΑΣΙΣ</div>
         <div class="stage-header">
             <div class="stage-eyeline">
-                <span class="stage-n">Preamble</span>
+                <span class="stage-n">Prelude</span>
                 <span class="stage-skt">The Way of Negation</span>
                 <span class="stage-deva-title">Christian Apophatic Theology &amp; Advaita Vedanta</span>
             </div>
             <h2 class="stage-h2">The Way of Negation</h2>
-            <span class="stage-subtitle-label">Via Negativa · Neti Neti</span>
+            <span class="stage-subtitle-label">Via Negativa · Neti Neti · The Luminous Darkness</span>
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>I</strong>n the deepest stratum of Christian mysticism lies an unexpected convergence: <strong>apophatic theology</strong> (Greek <em>apophasis</em>—negation), which insists that the divine exceeds every name, concept, and attribute. This is not agnosticism. It is the recognition that the finite mind cannot compass the Infinite.</p>
+            <p><strong>T</strong>his page is not an Advaitic reading imposed on Christianity. It is a recovery of Christianity's native apophatic grammar — the <em>via negativa</em> — brought into rigorous conversation with Advaita Vedanta's <span class="sanskrit-term" data-tooltip="Not this, not this; the negation of all that is not the Self">Neti-Neti</span>, Nisargadatta Maharaj's teaching on the primordial <em>"I Am,"</em> and the anonymous 14th-century author of <em>The Cloud of Unknowing</em>. We use Advaita as a hermeneutical lens to illuminate structures Christian mystics already articulated: Pseudo-Dionysius, John of the Cross, Meister Eckhart, Gregory of Nyssa, and the Cloud-author himself.</p>
 
-            <p class="fade-in"><strong>Pseudo-Dionysius the Areopagite</strong>, writing in the 6th century, speaks of the divine as <em>"a darkness beyond light"</em>—a luminous unknowing that transcends all affirmation. His reader must ascend beyond thought itself, stripping away every concept like a ladder kicked away once the summit is reached.</p>
+            <p class="fade-in"><strong>Pseudo-Dionysius the Areopagite</strong> (c. 500 CE) writes of the divine as <em>"a darkness beyond light"</em> — a luminous unknowing that transcends all affirmation. The reader must ascend beyond thought itself, stripping away every concept like a ladder kicked away once the summit is reached. This is not imported from the East; it is native to the Christian mystical tradition. Dionysius's <em>Mystical Theology</em> is the foundational text of Christian apophaticism.</p>
 
-            <p class="fade-in stagger-1">This is precisely the method of <strong>Advaita Vedanta's</strong> <span class="sanskrit-term" data-tooltip="Not this, not this; the negation of all that is not the Self">Neti-Neti</span> (<em>"not this, not this"</em>). The Upanishads declare the Absolute through systematic negation: it is not this mind, not this body, not this world. Where Pseudo-Dionysius writes of the darkness beyond light, the <span class="sanskrit-term" data-tooltip="The ultimate reality; the absolute ground of all existence">Brahman</span> of the Upanishads is revealed through the negation of everything objectifiable.</p>
+            <p class="fade-in stagger-1">The anonymous 14th-century author of <em>The Cloud of Unknowing</em> makes this explicit: <em>"Lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him."</em> The distinction is radical. The seeker must abandon the God of concepts and enter into naked longing for the Absolute itself—beyond all images, all words, all thought. <strong>Meister Eckhart</strong> (c. 1320) echoes: <em>"The eye with which I see God is the same eye with which God sees me."</em></p>
 
-            <p class="fade-in stagger-2">The anonymous 14th-century author of <em>The Cloud of Unknowing</em> makes this explicit: <em>"Lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him."</em> The distinction is radical. The seeker must abandon the God of concepts and enter into naked longing for the Absolute itself—beyond all images, all words, all thought.</p>
+            <p class="fade-in stagger-2"><strong>Gregory of Nyssa</strong> (c. 390 CE), in his <em>Life of Moses</em>, describes the soul's ascent as a perpetual expansion into the infinite darkness of God — <span class="sanskrit-term" data-tooltip="Perpetual expansion; the soul's unending growth into divine infinity">epektasis</span>. The soul never arrives; it is always being drawn deeper into the incomprehensible. This is strikingly parallel to Advaita's recognition that the Absolute is <em>neti neti</em> — not this, not that — yet Gregory maintains the relational structure of the soul's longing, while Advaita dissolves the soul entirely.</p>
+
+            <p class="fade-in stagger-3"><strong>John of the Cross</strong> (c. 1580) names the final purification the <em>"dark night of the spirit"</em> — where even the sense of divine presence is stripped away, leaving only the naked fire of love. In Advaita terms, this is the burning of the last <span class="sanskrit-term" data-tooltip="Latent tendency; subliminal impression of separation">vasana</span>: the subtle expectation that the Absolute owes the seeker a comforting presence.</p>
 
             <!-- DIAGRAM: The Apophatic Ladder -->
             <div class="diagram-container fade-in">
-                <div class="diagram-title">The Apophatic Ladder</div>
-                <svg class="diagram-svg" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+                <div class="diagram-title">The Apophatic Ladder · Via Negativa &amp; Neti-Neti</div>
+                <svg class="diagram-svg" viewBox="0 0 700 440" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="ladderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.3" />
@@ -1957,34 +2028,38 @@
                     <line x1="200" y1="80" x2="500" y2="80" stroke="var(--gold)" stroke-width="1.5" opacity="0.6"/>
                     <circle cx="350" cy="80" r="28" fill="var(--bg)" stroke="var(--gold)" stroke-width="1.5" filter="url(#glow)"/>
                     <text x="350" y="85" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-light)">THE SELF</text>
-                    <text x="260" y="75" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Spirit · Pneuma</text>
-                    <text x="440" y="75" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Atman · Brahman</text>
+                    <text x="240" y="75" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Spirit · Pneuma</text>
+                    <text x="460" y="75" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Atman · Brahman</text>
                     <line x1="200" y1="140" x2="500" y2="140" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
-                    <text x="260" y="135" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Ego · Self-will</text>
-                    <text x="440" y="135" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Ahamkara</text>
+                    <text x="240" y="135" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Ego · Self-will</text>
+                    <text x="460" y="135" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Ahamkara</text>
                     <text x="350" y="155" text-anchor="middle" font-family="Cinzel" font-size="9" fill="var(--gold-dim)" letter-spacing="2">NETI NETI</text>
                     <line x1="200" y1="200" x2="500" y2="200" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
-                    <text x="260" y="195" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Intellect · Reason</text>
-                    <text x="440" y="195" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Buddhi · Vijnanamaya</text>
+                    <text x="240" y="195" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Intellect · Reason</text>
+                    <text x="460" y="195" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Buddhi · Vijnanamaya</text>
                     <line x1="200" y1="260" x2="500" y2="260" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
-                    <text x="260" y="255" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Mind · Emotion</text>
-                    <text x="440" y="255" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Manas · Manomaya</text>
+                    <text x="240" y="255" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Mind · Emotion</text>
+                    <text x="460" y="255" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Manas · Manomaya</text>
                     <line x1="200" y1="320" x2="500" y2="320" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
-                    <text x="260" y="315" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Body · Flesh</text>
-                    <text x="440" y="315" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Annamaya Kosha</text>
+                    <text x="240" y="315" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Body · Flesh</text>
+                    <text x="460" y="315" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Annamaya Kosha</text>
                     <path d="M 350 320 L 350 290" stroke="var(--gold-deep)" stroke-width="1.5" fill="none" opacity="0.5"/>
                     <path d="M 350 260 L 350 230" stroke="var(--gold-deep)" stroke-width="1.5" fill="none" opacity="0.5"/>
                     <path d="M 350 200 L 350 170" stroke="var(--gold-deep)" stroke-width="1.5" fill="none" opacity="0.5"/>
                     <path d="M 350 140 L 350 110" stroke="var(--gold-deep)" stroke-width="1.5" fill="none" opacity="0.5"/>
-                    <text x="120" y="200" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-dim)" letter-spacing="3" transform="rotate(-90 120,200)">VIA NEGATIVA</text>
-                    <text x="580" y="200" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-dim)" letter-spacing="3" transform="rotate(90 580,200)">NETI NETI</text>
-                    <ellipse cx="350" cy="370" rx="80" ry="20" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" opacity="0.6"/>
-                    <text x="350" y="375" text-anchor="middle" font-family="IM Fell English" font-size="11" fill="var(--stone-light)" font-style="italic">The Cloud of Unknowing</text>
+                    <text x="100" y="200" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-dim)" letter-spacing="3" transform="rotate(-90 100,200)">VIA NEGATIVA</text>
+                    <text x="600" y="200" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-dim)" letter-spacing="3" transform="rotate(90 600,200)">NETI NETI</text>
+                    <ellipse cx="350" cy="380" rx="90" ry="22" fill="var(--surface2)" stroke="var(--border)" stroke-width="1" opacity="0.6"/>
+                    <text x="350" y="385" text-anchor="middle" font-family="IM Fell English" font-size="11" fill="var(--stone-light)" font-style="italic">The Cloud of Unknowing</text>
                 </svg>
-                <p class="diagram-caption">The apophatic path strips away each sheath of identity until only the Self remains—nameless, formless, beyond all knowing.</p>
+                <p class="diagram-caption">The apophatic path strips away each sheath of identity — body, mind, intellect, ego — until only the Self remains. The Cloud of Unknowing and Neti-Neti run in parallel, though they diverge at the final threshold.</p>
             </div>
 
-            <p class="fade-in">This section traces the final passage of the Gospel narrative through the lens of apophatic realization: from the primordial <strong>"I AM"</strong> (the first emergence of consciousness) through the transfiguration of the body into light, to the knowledge that dissolves the knower, and finally to the silence where even the distinction between seeker and sought evaporates.</p>
+            <!-- TENSION BOX: The Lover and the Beloved -->
+            <div class="tension-box fade-in">
+                <div class="tension-label">Tension · The Lover and the Beloved</div>
+                <p><span class="tension-em">The Christian apophatic path retains a <em>someone</em> who ascends, who loves, who is transformed.</span> The Cloud of Unknowing speaks of <em>"naked longing"</em> — but longing requires a lover and a beloved. Pseudo-Dionysius writes of the soul's ascent to God, not its dissolution into God. Advaita's Neti-Neti dissolves the ascender entirely: there is no one to ascend, no one to be dissolved. The <span class="sanskrit-term" data-tooltip="The individual soul; the separate sense of 'I'">jiva</span> is an illusion from the start. This is not a minor distinction; it is the difference between a love affair and a homecoming.</p>
+            </div>
 
             <div class="scripture-panels fade-in">
                 <div class="scripture-panel">
@@ -1995,7 +2070,20 @@
                 <div class="scripture-panel">
                     <div class="scripture-panel-label">Meister Eckhart</div>
                     <p class="scripture-panel-text">"The eye with which I see God is the same eye with which God sees me."</p>
-                    <p class="scripture-panel-ref">— Meister Eckhart, Sermon 12 (c. 1300 CE)</p>
+                    <p class="scripture-panel-ref">— Sermon 12, c. 1300 CE</p>
+                </div>
+            </div>
+
+            <div class="scripture-panels fade-in stagger-1">
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">Gregory of Nyssa</div>
+                    <p class="scripture-panel-text">"The soul, as it advances, grows and ascends through its participation in the divine — not by arriving at a limit, but by always expanding into the infinite."</p>
+                    <p class="scripture-panel-ref">— Life of Moses, c. 390 CE</p>
+                </div>
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">John of the Cross</div>
+                    <p class="scripture-panel-text">"One dark night, fired with love's urgent longings — ah, the sheer grace! — I went out unseen, my house being now all stilled."</p>
+                    <p class="scripture-panel-ref">— Dark Night of the Soul, c. 1578 CE</p>
                 </div>
             </div>
         </div>
@@ -2008,7 +2096,7 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    ESSAY: THE WORD AND THE PRIMORDIAL I AM
+    ESSAY: THE WORD AS PRIMORDIAL I AM
     ═══════════════════════════════════════════════════════════════ -->
     <section class="stage-section" id="essay-word">
         <div class="stage-wm" aria-hidden="true">ΛΟΓΟΣ</div>
@@ -2016,7 +2104,7 @@
             <div class="stage-eyeline">
                 <span class="stage-n">The Word as Primordial I AM</span>
                 <span class="stage-skt">The First Word</span>
-                <span class="stage-deva-title">The Logos · The First Expression of the Absolute</span>
+                <span class="stage-deva-title">Logos · Shabda Brahman · The First Expression</span>
             </div>
             <h2 class="stage-h2">The First Word</h2>
             <span class="stage-subtitle-label">Logos · Shabda Brahman · The First Thought</span>
@@ -2025,14 +2113,22 @@
         <div class="stage-body">
             <p><strong>J</strong>ohn opens his Gospel with a cosmological thunderclap: <em>"In the beginning was the Word (Logos), and the Word was with God, and the Word was God"</em><a class="biblical-ref" data-reference="John 1:1" data-tooltip="John 1:1 — In the beginning was the Word">[1]</a>. This is not poetic flourish. It is a precise metaphysical declaration of the relationship between the Absolute and its first expression in manifestation.</p>
 
-            <p class="fade-in">The Logos is the creative principle through which all things come into being. It is the Divine Utterance—the first sound, the first vibration, the <span class="sanskrit-term" data-tooltip="The primordial sound; the eternal resonance of the Absolute">Shabda Brahman</span> of Vedanta. Before creation, there is only the unmanifest Absolute. The moment of creation is the moment of the first sound, the first thought, the first <em>"I AM."</em></p>
+            <p class="fade-in">The Logos is the creative principle through which all things come into being. It is the Divine Utterance — the first sound, the first vibration, the <span class="sanskrit-term" data-tooltip="The primordial sound; the eternal resonance of the Absolute">Shabda Brahman</span> of Vedanta. Before creation, there is only the unmanifest Absolute. The moment of creation is the moment of the first sound, the first thought, the first <em>"I AM."</em></p>
 
-            <p class="fade-in stagger-1"><strong>Sri Nisargadatta Maharaj</strong>, the great contemporary Advaita sage, teaches this explicitly: <em>"The 'I am' is the first expression of the Absolute, the first thought, the first word."</em> The primordial sense of being—the simple, irreducible "I exist"—is the first ripple of consciousness arising from the silent, attributeless Absolute (<span class="sanskrit-term" data-tooltip="Beyond Brahman; the absolute beyond even the concept of Brahman">Parabrahman</span>).</p>
+            <p class="fade-in stagger-1"><strong>Sri Nisargadatta Maharaj</strong>, the great contemporary Advaita sage, teaches this explicitly: <em>"The 'I am' is the first expression of the Absolute, the first thought, the first word."</em> The primordial sense of being — the simple, irreducible "I exist" — is the first ripple of consciousness arising from the silent, attributeless Absolute (<span class="sanskrit-term" data-tooltip="Beyond Brahman; the absolute beyond even the concept of Brahman">Parabrahman</span>).</p>
 
-            <!-- DIAGRAM: The I AM as Bridge -->
+            <!-- TENSION BOX: Logos vs. Shabda Brahman -->
+            <div class="tension-box fade-in">
+                <div class="tension-label">Tension · Logos and Shabda Brahman</div>
+                <p><span class="tension-em">The Johannine Logos is not merely Shabda Brahman.</span> In Philo of Alexandria, the Logos is the mediating principle between the transcendent God and creation; in John, it is <em>incarnate</em> — the divine reason that <em>becomes flesh</em> (John 1:14). Advaita's Shabda Brahman is the vibration of consciousness, <em>impersonal</em>, a subtle energy that never becomes a person. The Logos is the personal divine reason, the <em>Word</em> that is both with God and is God, and that enters history in a particular body, at a particular time, for a particular people. The covenantal context of Israel — the God who keeps promises, who delivers a people, who speaks through prophets — is inseparable from the Johannine Logos. Shabda Brahman has no covenant; it has only resonance.</p>
+            </div>
+
+            <p class="fade-in">When Jesus declares, <em>"Before Abraham was, I AM"</em><a class="biblical-ref" data-reference="John 8:58" data-tooltip="John 8:58 — Before Abraham was, I am">[2]</a>, he is not boasting of personal longevity. He is speaking as the eternal Logos — the timeless "I AM" that precedes all creation, all history, all becoming. Abraham came into being in time; the "I AM" never did. It is eternal, self-luminous, and self-evident. Yet this is not merely abstract Being: it is the God of Israel, the One who revealed the divine name to Moses at the burning bush (<em>"I AM WHO I AM"</em> — Exodus 3:14), now speaking through the mouth of a Galilean Jew. The universal is inseparable from the particular.</p>
+
+            <!-- DIAGRAM: The Primordial I AM -->
             <div class="diagram-container fade-in">
                 <div class="diagram-title">The Primordial I AM</div>
-                <svg class="diagram-svg" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+                <svg class="diagram-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="bridgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stop-color="var(--gold-deep)" stop-opacity="0.2" />
@@ -2044,36 +2140,30 @@
                             <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
                         </filter>
                     </defs>
-                    <circle cx="120" cy="140" r="70" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
-                    <text x="120" y="125" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-light)" letter-spacing="2">THE ABSOLUTE</text>
-                    <text x="120" y="145" text-anchor="middle" font-family="Crimson Pro" font-size="11" fill="var(--stone)" font-style="italic">Parabrahman</text>
-                    <text x="120" y="160" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)">Beyond Being</text>
-                    <circle cx="580" cy="140" r="70" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
-                    <text x="580" y="125" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-light)" letter-spacing="2">MANIFESTATION</text>
-                    <text x="580" y="145" text-anchor="middle" font-family="Crimson Pro" font-size="11" fill="var(--stone)" font-style="italic">Saguna Brahman</text>
-                    <text x="580" y="160" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)">With Attributes</text>
-                    <path d="M 190 140 Q 350 80 510 140" stroke="url(#bridgeGrad)" stroke-width="3" fill="none" filter="url(#softGlow)"/>
-                    <path d="M 190 140 Q 350 200 510 140" stroke="url(#bridgeGrad)" stroke-width="3" fill="none" filter="url(#softGlow)"/>
-                    <circle cx="350" cy="140" r="45" fill="var(--bg)" stroke="var(--gold)" stroke-width="2" filter="url(#softGlow)"/>
-                    <text x="350" y="135" text-anchor="middle" font-family="Cinzel" font-size="14" fill="var(--gold-light)" font-weight="600">I AM</text>
-                    <text x="350" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)">The First Word</text>
-                    <text x="260" y="110" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)" font-style="italic">Logos</text>
-                    <text x="440" y="110" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)" font-style="italic">Shabda</text>
-                    <line x1="120" y1="210" x2="120" y2="240" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="3,3"/>
-                    <text x="120" y="255" text-anchor="middle" font-family="Cinzel" font-size="9" fill="var(--gold-dim)">SILENCE</text>
-                    <line x1="580" y1="210" x2="580" y2="240" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="3,3"/>
-                    <text x="580" y="255" text-anchor="middle" font-family="Cinzel" font-size="9" fill="var(--gold-dim)">CREATION</text>
+                    <circle cx="130" cy="150" r="70" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
+                    <text x="130" y="135" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-light)" letter-spacing="2">THE ABSOLUTE</text>
+                    <text x="130" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Parabrahman</text>
+                    <text x="130" y="170" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">Beyond Being</text>
+                    <circle cx="570" cy="150" r="70" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1" opacity="0.5"/>
+                    <text x="570" y="135" text-anchor="middle" font-family="Cinzel" font-size="10" fill="var(--gold-light)" letter-spacing="2">MANIFESTATION</text>
+                    <text x="570" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Saguna Brahman</text>
+                    <text x="570" y="170" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">With Attributes</text>
+                    <path d="M 200 150 Q 350 80 500 150" stroke="url(#bridgeGrad)" stroke-width="3" fill="none" filter="url(#softGlow)"/>
+                    <path d="M 200 150 Q 350 220 500 150" stroke="url(#bridgeGrad)" stroke-width="3" fill="none" filter="url(#softGlow)"/>
+                    <circle cx="350" cy="150" r="45" fill="var(--bg)" stroke="var(--gold)" stroke-width="2" filter="url(#softGlow)"/>
+                    <text x="350" y="145" text-anchor="middle" font-family="Cinzel" font-size="13" fill="var(--gold-light)" font-weight="600">I AM</text>
+                    <text x="350" y="165" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)">The First Word</text>
+                    <text x="270" y="115" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)" font-style="italic">Logos</text>
+                    <text x="430" y="115" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)" font-style="italic">Shabda</text>
+                    <text x="350" y="215" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)" font-style="italic">"Before Abraham was, I AM" — John 8:58</text>
+                    <text x="350" y="235" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">Exodus 3:14 · "I AM WHO I AM"</text>
                 </svg>
-                <p class="diagram-caption">The "I AM" stands at the threshold between the unmanifest Absolute and the manifest universe—the bridge across which all creation flows.</p>
+                <p class="diagram-caption">The "I AM" stands at the threshold between the unmanifest Absolute and the manifest universe — the bridge across which all creation flows. In the Jewish tradition, this is the covenantal name, not merely abstract Being.</p>
             </div>
-
-            <p class="fade-in">When Jesus declares, <em>"Before Abraham was, I AM"</em><a class="biblical-ref" data-reference="John 8:58" data-tooltip="John 8:58 — Before Abraham was, I am">[2]</a>, he is not boasting of personal longevity. He is speaking as the eternal Logos—the timeless "I AM" that precedes all creation, all history, all becoming. Abraham came into being in time; the "I AM" never did. It is eternal, self-luminous, and self-evident.</p>
-
-            <p class="fade-in stagger-2">Thus, the Gospel of John and the teaching of Nisargadatta converge at the primordial truth: <strong>The Logos is the "I AM," and the "I AM" is the first word of the Absolute</strong>. To awaken to the "I AM" is to stand at the threshold between the unmanifest and the manifest, between silence and the first sound. It is the gateway through which one enters into ultimate realization.</p>
 
             <div class="resonance-callout fade-in">
                 <div class="label">Cross-Tradition Resonance</div>
-                <p>John's <em>Logos</em>, Vedanta's <em>Shabda Brahman</em>, and Nisargadatta's <em>"I AM"</em> all name the same threshold: the first vibration of consciousness emerging from silence, the primordial articulation of Being itself.</p>
+                <p>John's <em>Logos</em>, Vedanta's <em>Shabda Brahman</em>, and Nisargadatta's <em>"I AM"</em> all name the same threshold: the first vibration of consciousness emerging from silence, the primordial articulation of Being itself. Yet the Logos enters history as a person; Shabda Brahman remains impersonal resonance.</p>
             </div>
 
             <blockquote class="fade-in">
@@ -2098,7 +2188,7 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    ESSAY: THE TRANSFIGURATION
+    ESSAY: THE TRANSFIGURATION — THE BODY OF LIGHT
     ═══════════════════════════════════════════════════════════════ -->
     <section class="stage-section" id="essay-transfiguration">
         <div class="stage-wm" aria-hidden="true">ΜΕΤΑΜΟΡΦΩΣΙΣ</div>
@@ -2113,14 +2203,18 @@
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>T</strong>he Transfiguration<a class="biblical-ref" data-reference="Matthew 17:1-8" data-tooltip="Matthew 17:1-8 — The Transfiguration of Jesus">[3]</a> is the unveiling of what lies beneath the gross body: <em>"His face shone like the sun, and his garments became white as light"</em><a class="biblical-ref" data-reference="Matthew 17:2" data-tooltip="Matthew 17:2 — His face shone like the sun">[4]</a>. In Vedantic terms, this is the revelation of the <span class="sanskrit-term" data-tooltip="The subtle body; the vehicle of mind, intellect, and prana">Sukshma Sharira</span>—the luminous inner body, purified and saturated with <span class="sanskrit-term" data-tooltip="Purity, harmony, luminosity; the sattvic quality">sattva</span>.</p>
+            <p><strong>T</strong>he Transfiguration<a class="biblical-ref" data-reference="Matthew 17:1-8" data-tooltip="Matthew 17:1-8 — The Transfiguration of Jesus">[3]</a> is the unveiling of what lies beneath the gross body: <em>"His face shone like the sun, and his garments became white as light"</em><a class="biblical-ref" data-reference="Matthew 17:2" data-tooltip="Matthew 17:2 — His face shone like the sun">[4]</a>. In Vedantic terms, this is the revelation of the <span class="sanskrit-term" data-tooltip="The subtle body; the vehicle of mind, intellect, and prana">Sukshma Sharira</span> — the luminous inner body, purified and saturated with <span class="sanskrit-term" data-tooltip="Purity, harmony, luminosity; the sattvic quality">sattva</span>.</p>
 
-            <p class="fade-in">The presence of Moses and Elijah is not incidental. Moses represents the <span class="sanskrit-term" data-tooltip="The law; cosmic order; the path of duty">dharma</span> (law and teachings); Elijah represents <span class="sanskrit-term" data-tooltip="The yoga of devotion; love and surrender">bhakti</span> (devotion and longing). When they appear alongside the transfigured Jesus, it is to show that both the path of duty and the path of love converge in the direct realization of the luminous Self. Yet when the disciples "lifted up their eyes and saw no one but Jesus only," it signals that all paths ultimately dissolve into the non-dual reality. The guides disappear; only the Self remains.</p>
+            <p class="fade-in"><strong>Gregory of Nyssa</strong> reads the Transfiguration as the revelation of the soul's true nature: the light is not an external glory but the body's inherent reality, now unveiled. <em>"The soul, as it advances, grows and ascends through its participation in the divine — not by arriving at a limit, but by always expanding into the infinite."</em> The light is not an escape from flesh but the body's true nature revealed. The Transfiguration is glory <em>in</em> flesh, not despite it.</p>
 
-            <!-- DIAGRAM: The Three Bodies & Transfiguration -->
+            <p class="fade-in stagger-1">Moses and Elijah appear alongside Jesus. In the Vedantic map, Moses represents the <span class="sanskrit-term" data-tooltip="The law; cosmic order; the path of duty">dharma</span> (law and teachings) — the path of action and righteousness; Elijah represents <span class="sanskrit-term" data-tooltip="The yoga of devotion; love and surrender">bhakti</span> (devotion and longing) — the path of love and prophetic fire. Jesus, in this schema, embodies <span class="sanskrit-term" data-tooltip="The yoga of knowledge; direct realization">jnana</span> — the direct knowledge of the Self. All three paths converge and dissolve. <em>"They saw no one but Jesus only"</em> (Matt 17:8): the guides disappear; only the Self remains.</p>
+
+            <p class="fade-in stagger-2"><strong>The feminine mediator</strong> — Sophia/Wisdom (Proverbs 8) — is the hidden fourth presence, the co-creator who <em>"was beside him, like a master worker"</em> (Prov 8:30). In the Eastern Christian tradition, Mary as Theotokos (God-bearer) represents the human nature capable of receiving the infinite. This maps onto <span class="sanskrit-term" data-tooltip="The dynamic power; the feminine principle of manifestation">Shakti</span> as the dynamic power that makes static Shiva knowable. The Transfiguration is not only a revelation of the Son; it is a revelation of the <em>relation</em> — the loving interplay between the divine and the human, the masculine and the feminine, the transcendent and the immanent.</p>
+
+            <!-- DIAGRAM: The Three Bodies + Sophia/Shakti -->
             <div class="diagram-container fade-in">
                 <div class="diagram-title">The Three Bodies and the Gospel Narrative</div>
-                <svg class="diagram-svg" viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg">
+                <svg class="diagram-svg" viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="bodyGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.15" />
@@ -2152,50 +2246,43 @@
                     <text x="420" y="128" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">Bhakti</text>
                     <line x1="350" y1="125" x2="350" y2="155" stroke="var(--gold-deep)" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
                     <polygon points="350,160 345,152 355,152" fill="var(--gold-deep)" opacity="0.5"/>
-                    <ellipse cx="350" cy="200" rx="160" ry="55" fill="url(#bodyGrad2)" stroke="var(--gold)" stroke-width="1.5" filter="url(#bodyGlow)"/>
-                    <text x="350" y="190" text-anchor="middle" font-family="Cinzel" font-size="12" fill="var(--gold-light)" letter-spacing="2">SUBTLE BODY</text>
-                    <text x="350" y="208" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)" font-style="italic">Sukshma Sharira · The Luminous</text>
-                    <text x="350" y="222" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">"His face shone like the sun"</text>
-                    <line x1="200" y1="200" x2="160" y2="180" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
-                    <line x1="200" y1="200" x2="160" y2="200" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
-                    <line x1="200" y1="200" x2="160" y2="220" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
-                    <line x1="500" y1="200" x2="540" y2="180" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
-                    <line x1="500" y1="200" x2="540" y2="200" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
-                    <line x1="500" y1="200" x2="540" y2="220" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
-                    <line x1="350" y1="255" x2="350" y2="285" stroke="var(--gold-deep)" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-                    <polygon points="350,290 345,282 355,282" fill="var(--gold-deep)" opacity="0.5"/>
-                    <ellipse cx="350" cy="330" rx="180" ry="60" fill="url(#bodyGrad1)" stroke="var(--gold)" stroke-width="1" opacity="0.6"/>
-                    <text x="350" y="320" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-dim)" letter-spacing="2">GROSS BODY</text>
-                    <text x="350" y="338" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Sthula Sharira · The Historical</text>
-                    <text x="350" y="352" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">The earthly Jesus of Nazareth</text>
-                    <path d="M 550 330 Q 570 265 550 200" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="5,4" opacity="0.4"/>
-                    <text x="575" y="270" text-anchor="start" font-family="Cinzel" font-size="9" fill="var(--gold-dim)" transform="rotate(-15 575,270)">TRANFIGURATION</text>
-                    <text x="350" y="420" text-anchor="middle" font-family="IM Fell English" font-size="11" fill="var(--stone-light)" font-style="italic">"They saw no one but Jesus only" — Matthew 17:8</text>
-                    <text x="350" y="438" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)">All three bodies dissolve into the Self</text>
+                    <ellipse cx="350" cy="210" rx="160" ry="55" fill="url(#bodyGrad2)" stroke="var(--gold)" stroke-width="1.5" filter="url(#bodyGlow)"/>
+                    <text x="350" y="200" text-anchor="middle" font-family="Cinzel" font-size="12" fill="var(--gold-light)" letter-spacing="2">SUBTLE BODY</text>
+                    <text x="350" y="218" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone-light)" font-style="italic">Sukshma Sharira · The Luminous</text>
+                    <text x="350" y="232" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">"His face shone like the sun"</text>
+                    <text x="350" y="246" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--gold-dim)" font-style="italic">Sophia · The Divine Wisdom</text>
+                    <line x1="200" y1="210" x2="160" y2="190" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
+                    <line x1="200" y1="210" x2="160" y2="210" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
+                    <line x1="200" y1="210" x2="160" y2="230" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
+                    <line x1="500" y1="210" x2="540" y2="190" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
+                    <line x1="500" y1="210" x2="540" y2="210" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
+                    <line x1="500" y1="210" x2="540" y2="230" stroke="var(--gold-light)" stroke-width="1" opacity="0.3"/>
+                    <line x1="350" y1="265" x2="350" y2="295" stroke="var(--gold-deep)" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+                    <polygon points="350,300 345,292 355,292" fill="var(--gold-deep)" opacity="0.5"/>
+                    <ellipse cx="350" cy="350" rx="180" ry="60" fill="url(#bodyGrad1)" stroke="var(--gold)" stroke-width="1" opacity="0.6"/>
+                    <text x="350" y="340" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-dim)" letter-spacing="2">GROSS BODY</text>
+                    <text x="350" y="358" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Sthula Sharira · The Historical</text>
+                    <text x="350" y="372" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">The earthly Jesus of Nazareth</text>
+                    <path d="M 550 350 Q 570 280 550 210" stroke="var(--gold)" stroke-width="1.5" fill="none" stroke-dasharray="5,4" opacity="0.4"/>
+                    <text x="575" y="285" text-anchor="start" font-family="Cinzel" font-size="9" fill="var(--gold-dim)" transform="rotate(-15 575,285)">TRANSFIGURATION</text>
+                    <text x="350" y="440" text-anchor="middle" font-family="IM Fell English" font-size="11" fill="var(--stone-light)" font-style="italic">"They saw no one but Jesus only" — Matthew 17:8</text>
+                    <text x="350" y="460" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)">All three bodies dissolve into the Self · Sophia/Shakti the animating current</text>
                 </svg>
-                <p class="diagram-caption">The Transfiguration reveals the subtle body of light hidden within the gross form. Moses (Dharma) and Elijah (Bhakti) represent the causal archetypes that too must vanish, leaving only the non-dual Self.</p>
+                <p class="diagram-caption">The Transfiguration reveals the subtle body of light hidden within the gross form. Moses (Dharma) and Elijah (Bhakti) represent the causal archetypes that too must vanish. Sophia/Shakti is the animating current flowing through all three.</p>
             </div>
 
-            <h3 class="ed-h3">The Complete Vedantic Map of Liberation</h3>
-            <p class="fade-in">The Transfiguration enacts, in visible form, the complete Vedantic map of liberation: the gross body (the historical Jesus) becomes transparent to reveal the subtle body of light (the transfigured form), which in turn points beyond itself to the causal body (Moses and Elijah, representing the archetypal structures of consciousness), and finally all three dissolve, leaving only the pure, unqualified Self — <em>"Jesus only."</em></p>
-
-            <p class="fade-in stagger-1">Jesus consistently employs paradox to shatter the conceptual mind. His teaching method is not explanation but disruption. The parables are designed to force the listener into a state of not-knowing, from which the truth can arise spontaneously. This is the <span class="sanskrit-term" data-tooltip="Spiritual instruction; teaching designed to awaken rather than inform">upadesha</span> of the guru: not information but transformation.</p>
-
-            <p class="fade-in stagger-2"><em>"Whoever finds their life will lose it, and whoever loses their life for my sake will find it"</em><a class="biblical-ref" data-reference="Matthew 10:39" data-tooltip="Matthew 10:39 — Whoever finds their life will lose it">[5]</a>. The clinging to the individual self (<span class="sanskrit-term" data-tooltip="The individual soul; the separate sense of 'I'">jiva</span>) is the root of bondage; its complete surrender reveals the universal Self. This is <span class="sanskrit-term" data-tooltip="Dispassion; desirelessness; detachment from worldly attachments">vairagya</span>—not renunciation of the world, but the surrender of the false claim to individuality.</p>
-
-            <p class="fade-in"><em>"If your eye is single, your whole body will be full of light"</em><a class="biblical-ref" data-reference="Matthew 6:22" data-tooltip="Matthew 6:22 — If your eye is single">[6]</a>. The "single eye" is the eye of non-dual awareness, the <span class="sanskrit-term" data-tooltip="The wisdom eye; the eye of transcendent knowledge">jnana-chakshu</span>. When consciousness withdraws from duality and rests in <span class="sanskrit-term" data-tooltip="One-pointedness; the concentration of the mind on a single object or principle">ekagrata</span> (one-pointed focus), the entire body-mind is flooded with the light of the Self.</p>
+            <div class="resonance-callout fade-in">
+                <div class="label">The Anti-Docetic Johannine Context</div>
+                <p>The light is not an escape from flesh but the body's true nature revealed. The Transfiguration is glory <em>in</em> flesh, not despite it. Gregory of Nyssa: the soul expands into infinity as it approaches the divine darkness. The body is not discarded; it is transfigured.</p>
+            </div>
 
             <blockquote class="fade-in">
                 <p>"His face shone like the sun, and His clothes became as white as the light."</p>
                 <cite>— Matthew 17:2</cite>
             </blockquote>
             <blockquote class="fade-in stagger-1">
-                <p>"Whoever finds their life will lose it, and whoever loses their life for my sake will find it."</p>
-                <cite>— Matthew 10:39</cite>
-            </blockquote>
-            <blockquote class="fade-in stagger-2">
-                <p>"If your eye is single, your whole body will be full of light."</p>
-                <cite>— Matthew 6:22</cite>
+                <p>"The soul, as it advances, grows and ascends through its participation in the divine — not by arriving at a limit, but by always expanding into the infinite."</p>
+                <cite>— Gregory of Nyssa · Life of Moses</cite>
             </blockquote>
         </div>
     </section>
@@ -2207,17 +2294,17 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    APOPHATIC CLIMAX: THE CRY OF DERELICTION
+    ESSAY: THE CRY OF DERELICTION — THE DARK NIGHT
     ═══════════════════════════════════════════════════════════════ -->
-    <section class="stage-section" id="apophatic-climax">
+    <section class="stage-section" id="essay-dereliction">
         <div class="stage-wm" aria-hidden="true">ΣΚΟΤΟΣ</div>
         <div class="stage-header">
             <div class="stage-eyeline">
-                <span class="stage-n">The Dark Night of the Gospel</span>
+                <span class="stage-n">The Cry of Dereliction</span>
                 <span class="stage-skt">"My God, Why Have You Forsaken Me?"</span>
                 <span class="stage-deva-title">Mark 15:34 · The Collapse of All Concepts</span>
             </div>
-            <h2 class="stage-h2">The Cry of Dereliction</h2>
+            <h2 class="stage-h2">The Dark Night</h2>
             <span class="stage-subtitle-label">The Final Neti Neti · The Dark Night of the Spirit</span>
             <span class="stage-rule"></span>
         </div>
@@ -2226,10 +2313,12 @@
 
             <p class="fade-in">In Advaita terms, this is the final burning of the last <span class="sanskrit-term" data-tooltip="Latent tendency; subliminal impression of separation">vāsana</span>: the subtle expectation that the Absolute owes the seeker a comforting presence. The cross becomes the ultimate <em>neti-neti</em>. Not this presence, not this absence — only the silent witness that was never abandoned because it never had a separate self to abandon.</p>
 
-            <!-- DIAGRAM: The Dark Night as Final Neti Neti -->
+            <p class="fade-in stagger-1"><strong>John of the Cross</strong> distinguishes between the <em>"dark night of the senses"</em> (purification of attachments) and the <em>"dark night of the spirit"</em> (purification of spiritual consolations). Advaita has no equivalent distinction — all is <span class="sanskrit-term" data-tooltip="The cosmic illusion; the superimposition of the unreal upon the real">maya</span>. Christianity insists that the dark night is <em>love's</em> work, not merely ignorance's dissolution. The cry of dereliction is not a philosophical statement; it is the voice of one who loves and is loved, even in the felt absence of the beloved.</p>
+
+            <!-- DIAGRAM: The Apophatic Crucible -->
             <div class="diagram-container fade-in">
-                <div class="diagram-title">The Apophatic Crucible</div>
-                <svg class="diagram-svg" viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+                <div class="diagram-title">The Apophatic Crucible · The Dark Night</div>
+                <svg class="diagram-svg" viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <radialGradient id="crucibleGrad" cx="50%" cy="50%" r="50%">
                             <stop offset="0%" stop-color="var(--gold-light)" stop-opacity="0.1" />
@@ -2241,46 +2330,50 @@
                             <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
                         </filter>
                     </defs>
-                    <circle cx="350" cy="170" r="100" fill="url(#crucibleGrad)" stroke="var(--gold)" stroke-width="1" opacity="0.6" filter="url(#crucibleGlow)"/>
-                    <text x="350" y="165" text-anchor="middle" font-family="IM Fell English" font-size="13" fill="var(--ink2)" font-style="italic">The Cloud of</text>
-                    <text x="350" y="185" text-anchor="middle" font-family="IM Fell English" font-size="13" fill="var(--ink2)" font-style="italic">Unknowing</text>
-                    <circle cx="200" cy="100" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-                    <text x="200" y="95" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not the Father</text>
-                    <text x="200" y="108" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as comforter</text>
-                    <line x1="230" y1="115" x2="280" y2="140" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
-                    <circle cx="500" cy="100" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-                    <text x="500" y="95" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not Love</text>
-                    <text x="500" y="108" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as feeling</text>
-                    <line x1="470" y1="115" x2="420" y2="140" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
-                    <circle cx="150" cy="220" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-                    <text x="150" y="215" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not Presence</text>
-                    <text x="150" y="228" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as experience</text>
-                    <line x1="180" y1="205" x2="280" y2="180" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
-                    <circle cx="550" cy="220" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-                    <text x="550" y="215" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not Absence</text>
-                    <text x="550" y="228" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as void</text>
-                    <line x1="520" y1="205" x2="420" y2="180" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
-                    <circle cx="350" cy="60" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-                    <text x="350" y="55" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not the Self</text>
-                    <text x="350" y="68" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as concept</text>
-                    <line x1="350" y1="95" x2="350" y2="120" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
-                    <circle cx="350" cy="280" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
-                    <text x="350" y="275" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not the Cross</text>
-                    <text x="350" y="288" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as symbol</text>
-                    <line x1="350" y1="245" x2="350" y2="220" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
-                    <circle cx="350" cy="170" r="4" fill="var(--gold-light)" filter="url(#crucibleGlow)"/>
-                    <text x="350" y="245" text-anchor="middle" font-family="Cinzel" font-size="8" fill="var(--gold-dim)" letter-spacing="2">THE WITNESS</text>
+                    <circle cx="350" cy="180" r="100" fill="url(#crucibleGrad)" stroke="var(--gold)" stroke-width="1" opacity="0.6" filter="url(#crucibleGlow)"/>
+                    <text x="350" y="175" text-anchor="middle" font-family="IM Fell English" font-size="13" fill="var(--ink2)" font-style="italic">The Cloud of</text>
+                    <text x="350" y="195" text-anchor="middle" font-family="IM Fell English" font-size="13" fill="var(--ink2)" font-style="italic">Unknowing</text>
+                    <circle cx="200" cy="110" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                    <text x="200" y="105" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not the Father</text>
+                    <text x="200" y="118" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as comforter</text>
+                    <line x1="230" y1="125" x2="280" y2="150" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
+                    <circle cx="500" cy="110" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                    <text x="500" y="105" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not Love</text>
+                    <text x="500" y="118" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as feeling</text>
+                    <line x1="470" y1="125" x2="420" y2="150" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
+                    <circle cx="150" cy="230" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                    <text x="150" y="225" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not Presence</text>
+                    <text x="150" y="238" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as experience</text>
+                    <line x1="180" y1="215" x2="280" y2="190" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
+                    <circle cx="550" cy="230" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                    <text x="550" y="225" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not Absence</text>
+                    <text x="550" y="238" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as void</text>
+                    <line x1="520" y1="215" x2="420" y2="190" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
+                    <circle cx="350" cy="70" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                    <text x="350" y="65" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not the Self</text>
+                    <text x="350" y="78" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as concept</text>
+                    <line x1="350" y1="105" x2="350" y2="130" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
+                    <circle cx="350" cy="290" r="35" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="1"/>
+                    <text x="350" y="285" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)">Not the Cross</text>
+                    <text x="350" y="298" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--stone-light)">as symbol</text>
+                    <line x1="350" y1="255" x2="350" y2="230" stroke="var(--gold-deep)" stroke-width="1" opacity="0.4"/>
+                    <circle cx="350" cy="180" r="4" fill="var(--gold-light)" filter="url(#crucibleGlow)"/>
+                    <text x="350" y="255" text-anchor="middle" font-family="Cinzel" font-size="8" fill="var(--gold-dim)" letter-spacing="2">THE WITNESS</text>
                 </svg>
-                <p class="diagram-caption">The cry of dereliction strips away every concept of God—Father, Love, Presence, Absence, even the Self—until only the naked witness remains, never abandoned because never separate.</p>
+                <p class="diagram-caption">The cry of dereliction strips away every concept of God — Father, Love, Presence, Absence, even the Self — until only the naked witness remains.</p>
             </div>
 
-            <p class="fade-in">Christian mystics from John of the Cross to Mother Teresa have recognised this as the highest stage of the <em>via negativa</em> — the "dark night of the spirit" where even the sense of divine relationship is stripped away. What remains is not despair but the naked <strong>"I AM"</strong> that endures the loss of all objects, including the object "God."</p>
+            <!-- TENSION BOX: Unchosen Suffering -->
+            <div class="tension-box fade-in">
+                <div class="tension-label">Tension · Unchosen Suffering — The Holocaust Test</div>
+                <p><span class="tension-em">The mystic's dark night is chosen. The child's gas chamber is not.</span> Christianity insists on the irreducible value of the suffering person; Advaita can only call it <span class="sanskrit-term" data-tooltip="Illusion; the cosmic superimposition">maya</span>. The cry of dereliction is not only Jesus's spiritual achievement; it is the voice of every abandoned child, every tortured victim. If this is <em>neti-neti</em>, then neti-neti is obscene. The Christian apophatic tradition must hold the tension: the dark night is a purification of love, not a dismissal of suffering. The cross is not a philosophical statement about the unreality of the world; it is the entry of God into the world's deepest pain.</p>
+            </div>
 
-            <p class="fade-in stagger-1">John of the Cross describes this darkness as <em>"the passage into the living flame of love — where the soul cries out not from separation, but from the birth pangs of union beyond all names."</em> The apparent forsakenness is actually the final dissolution of the last veil: the belief in a God "out there" who might abandon the soul. When even this is surrendered, what remains is the non-dual truth: there was never a soul to be abandoned, never a God who could leave. Only the One, playing at being two.</p>
+            <p class="fade-in">Christian mystics from John of the Cross to Mother Teresa have recognised this as the highest stage of the <em>via negativa</em> — the "dark night of the spirit" where even the sense of divine relationship is stripped away. What remains is not despair but the naked <strong>"I AM"</strong> that endures the loss of all objects, including the object "God." Yet for Christianity, this endurance is not the dissolution of the self but the purification of love: the soul cries out not from separation, but from the birth pangs of union beyond all names.</p>
 
             <div class="resonance-callout fade-in">
                 <div class="label">The Final Neti Neti</div>
-                <p>The cross is the ultimate negation: not this theology, not this devotion, not this presence, not this absence. What survives the total collapse of every spiritual concept is not faith but <em>recognition</em>—the simple knowing that one was never the seeker, and God was never the sought.</p>
+                <p>The cross is the ultimate negation: not this theology, not this devotion, not this presence, not this absence. What survives the total collapse of every spiritual concept is not faith but <em>recognition</em> — the simple knowing that one was never the seeker, and God was never the sought. Yet for Christianity, this recognition is inseparable from the person of Jesus, the one who cried out and was heard.</p>
             </div>
 
             <blockquote class="fade-in">
@@ -2297,7 +2390,7 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    ESSAY: JNANA YOGA
+    ESSAY: JNANA YOGA AND LIBERATION
     ═══════════════════════════════════════════════════════════════ -->
     <section class="stage-section" id="essay-jnana">
         <div class="stage-wm" aria-hidden="true">ज्ञान</div>
@@ -2312,11 +2405,13 @@
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong><em>"Y</em>ou shall know the truth, and the truth shall make you free"</strong><a class="biblical-ref" data-reference="John 8:32" data-tooltip="John 8:32 — You shall know the truth">[7]</a>—this is the distillation of <span class="sanskrit-term" data-tooltip="The yoga of knowledge; the path of direct realization">jnana yoga</span>. Freedom (<span class="sanskrit-term" data-tooltip="Liberation; release from the cycle of birth and death">moksha</span>) is not earned through works alone; it is the direct result of <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jnana</span> itself. The "truth" here is <span class="sanskrit-term" data-tooltip="Truth; that which remains unchanging; Brahman">Satya</span>—a synonym for Brahman, the ultimate reality.</p>
+            <p><strong><em>"Y</em>ou shall know the truth, and the truth shall make you free"</strong><a class="biblical-ref" data-reference="John 8:32" data-tooltip="John 8:32 — You shall know the truth">[5]</a> — this is the distillation of <span class="sanskrit-term" data-tooltip="The yoga of knowledge; the path of direct realization">jnana yoga</span>. Freedom (<span class="sanskrit-term" data-tooltip="Liberation; release from the cycle of birth and death">moksha</span>) is not earned through works alone; it is the direct result of <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jnana</span> itself. The "truth" here is <span class="sanskrit-term" data-tooltip="Truth; that which remains unchanging; Brahman">Satya</span> — a synonym for Brahman, the ultimate reality.</p>
 
-            <p class="fade-in"><em>"I am the way, the truth, and the life. No one comes to the Father except through Me"</em><a class="biblical-ref" data-reference="John 14:6" data-tooltip="John 14:6 — I am the way, the truth, and the life">[8]</a>. This is the voice of the <span class="sanskrit-term" data-tooltip="The true guru; the perfected teacher who embodies the teaching">sadguru</span>—the spiritual master whose nature is the Self itself. The guru is not a separate person imparting information; the guru is the direct revelation of one's own true nature. Connection to this presence is the sole source of spiritual vitality.</p>
+            <p class="fade-in"><em>"I am the way, the truth, and the life. No one comes to the Father except through Me"</em><a class="biblical-ref" data-reference="John 14:6" data-tooltip="John 14:6 — I am the way, the truth, and the life">[6]</a>. This is the voice of the <span class="sanskrit-term" data-tooltip="The true guru; the perfected teacher who embodies the teaching">sadguru</span> — the spiritual master whose nature is the Self itself. The guru is not a separate person imparting information; the guru is the direct revelation of one's own true nature. Connection to this presence is the sole source of spiritual vitality.</p>
 
-            <h3 class="ed-h3">The Conditions for Realization</h3>
+            <p class="fade-in stagger-1"><strong>Paul's <em>"in Christ"</em></strong> — participatory mysticism — is not <em>"I am That"</em> but <em>"That and I are one while remaining two."</em> Galatians 2:20 (<em>"I have been crucified with Christ; it is no longer I who live, but Christ lives in me"</em>) is the bridge between Advaita's absorption and Christianity's communion. The "I" is not annihilated but transformed: the old self dies, and a new self rises — not separate from Christ, but distinct in relation.</p>
+
+            <h3 class="ed-h3">The Beatitudes as Sadhana-Chatushtaya</h3>
             <p class="fade-in">Not all are ready for jnana. The Sermon on the Mount maps the four prerequisites for a seeker (<span class="sanskrit-term" data-tooltip="The four qualifications of a spiritual aspirant">sadhana-chatushtaya</span>):</p>
 
             <!-- DIAGRAM: The Four Qualifications -->
@@ -2346,7 +2441,7 @@
                     <g transform="translate(350, 280)">
                         <ellipse cx="0" cy="0" rx="90" ry="50" fill="url(#qualGrad)" stroke="var(--gold)" stroke-width="1" opacity="0.7"/>
                         <text x="0" y="-12" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-light)" letter-spacing="2">SHAMA / DAMA</text>
-                        <text x="0" y="5" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Control of Mind & Senses</text>
+                        <text x="0" y="5" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Control of Mind &amp; Senses</text>
                         <text x="0" y="20" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">"Blessed are the meek"</text>
                         <text x="0" y="32" text-anchor="middle" font-family="Crimson Pro" font-size="8" fill="var(--gold-dim)">Matthew 5:5</text>
                     </g>
@@ -2368,13 +2463,56 @@
                 <p class="diagram-caption">The Beatitudes of the Sermon on the Mount correspond precisely to the four classical qualifications (sadhana-chatushtaya) required for the path of knowledge in Advaita Vedanta.</p>
             </div>
 
-            <p class="fade-in">Why does Jesus speak in parables? <em>"The knowledge of the secrets of the kingdom has been given to you, but not to them"</em><a class="biblical-ref" data-reference="Matthew 13:11" data-tooltip="Matthew 13:11 — The knowledge of the secrets">[9]</a>. This is not elitism—it is recognition of <span class="sanskrit-term" data-tooltip="The fitness or qualification of the student for spiritual teaching">adhikari-bheda</span> (the variation in qualifications among students). The truth cannot be communicated to the unprepared mind. The parable serves as a filter: those ready for awakening will penetrate it; those not ready will take it as mere story. This is the wisdom of <span class="sanskrit-term" data-tooltip="The guru; the spiritual teacher who adapts teaching to the capacity of the student">guru-tattva</span>—the principle of the teacher who knows what medicine the patient requires.</p>
+            <!-- SCRIPTURE PANEL: Tat Tvam Asi vs. En Christo -->
+            <div class="scripture-panels fade-in">
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">Tat Tvam Asi · Identity</div>
+                    <p class="scripture-panel-text">"That art Thou. The Self is one, though it appears as many. The knower of Brahman becomes Brahman."</p>
+                    <p class="scripture-panel-ref">— Chāndogya Upanishad 6.8.7 · Bṛhadāraṇyaka Upanishad 1.4.10</p>
+                </div>
+                <div class="scripture-panel">
+                    <div class="scripture-panel-label">En Christo · Participation</div>
+                    <p class="scripture-panel-text">"I have been crucified with Christ; it is no longer I who live, but Christ lives in me. The life I now live in the flesh I live by faith in the Son of God."</p>
+                    <p class="scripture-panel-ref">— Galatians 2:20</p>
+                </div>
+            </div>
 
-            <p class="fade-in stagger-1"><em>"Unless you change and become like little children, you will never enter the kingdom of heaven"</em><a class="biblical-ref" data-reference="Matthew 18:3" data-tooltip="Matthew 18:3 — Become like little children">[10]</a>. The child is free from the accumulated <span class="sanskrit-term" data-tooltip="Latent tendencies; subliminal impressions from past actions">vasanas</span> and <span class="sanskrit-term" data-tooltip="Impressions; mental and emotional conditioning from the past">samskaras</span> (conditioning patterns) of the adult mind. To become like a child is to return to the primordial innocence of the Self—prior to the ego's construction, prior to identification with history. It is not regression but restoration: the recovery of the original face before the parents were born.</p>
+            <p class="fade-in">Why does Jesus speak in parables? <em>"The knowledge of the secrets of the kingdom has been given to you, but not to them"</em><a class="biblical-ref" data-reference="Matthew 13:11" data-tooltip="Matthew 13:11 — The knowledge of the secrets">[7]</a>. This is not elitism — it is recognition of <span class="sanskrit-term" data-tooltip="The fitness or qualification of the student for spiritual teaching">adhikari-bheda</span> (the variation in qualifications among students). The truth cannot be communicated to the unprepared mind. The parable serves as a filter: those ready for awakening will penetrate it; those not ready will take it as mere story. This is the wisdom of <span class="sanskrit-term" data-tooltip="The guru; the spiritual teacher who adapts teaching to the capacity of the student">guru-tattva</span> — the principle of the teacher who knows what medicine the patient requires.</p>
+
+            <p class="fade-in stagger-1"><em>"Unless you change and become like little children, you will never enter the kingdom of heaven"</em><a class="biblical-ref" data-reference="Matthew 18:3" data-tooltip="Matthew 18:3 — Become like little children">[8]</a>. The child is free from the accumulated <span class="sanskrit-term" data-tooltip="Latent tendencies; subliminal impressions from past actions">vasanas</span> and <span class="sanskrit-term" data-tooltip="Impressions; mental and emotional conditioning from the past">samskaras</span> (conditioning patterns) of the adult mind. To become like a child is to return to the primordial innocence of the Self — prior to the ego's construction, prior to identification with history. It is not regression but restoration: the recovery of the original face before the parents were born.</p>
+
+            <p class="fade-in stagger-2"><strong>The Elijah theophany</strong> (1 Kings 19:11-12) — wind, earthquake, fire, then <em>sheer silence</em> — is the apophatic method embedded in the Hebrew Bible itself. The divine is not in the grand manifestations but in the silence that follows. This is the <em>via negativa</em> before Dionysius, before the Cloud-author, before Eckhart. It is native to the tradition.</p>
 
             <div class="resonance-callout fade-in">
-                <div class="label">The Filter of Parables</div>
-                <p>Jesus' parables function as <em>upadesha</em>—not information but transformation. They bypass the rational mind and strike directly at the conditioning (<em>samskaras</em>) that prevents recognition of the Self.</p>
+                <div class="label">Theosis · Native Christian Non-Dualism</div>
+                <p>Athanasius: <em>"God became man so that man might become god."</em> Gregory of Nyssa: the soul's <em>epektasis</em> (perpetual expansion into infinity). Maximus Confessor: the <em>logoi</em> of all things contained in the Logos. Palamas: the essence/energies distinction. This is not imported Advaita; it is Christianity's own contemplative grammar. Theosis retains relational structure — the creature is not annihilated but deified, remaining distinct even as it participates fully in the divine.</p>
+            </div>
+
+            <!-- DIAGRAM: Theosis and Advaita -->
+            <div class="diagram-container fade-in">
+                <div class="diagram-title">Theosis and Advaita — Two Languages, One Silence?</div>
+                <svg class="diagram-svg" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="theosisGlow">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <ellipse cx="175" cy="130" rx="140" ry="75" fill="var(--surface2)" stroke="var(--violet)" stroke-width="1.5" opacity="0.6"/>
+                    <text x="175" y="115" text-anchor="middle" font-family="Cinzel" font-size="12" fill="var(--violet-light)" letter-spacing="2">THEOSIS</text>
+                    <text x="175" y="135" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Christian Deification</text>
+                    <text x="175" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">Relational · Participatory</text>
+                    <ellipse cx="525" cy="130" rx="140" ry="75" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1.5" opacity="0.6"/>
+                    <text x="525" y="115" text-anchor="middle" font-family="Cinzel" font-size="12" fill="var(--gold-light)" letter-spacing="2">ADVAITA</text>
+                    <text x="525" y="135" text-anchor="middle" font-family="Crimson Pro" font-size="10" fill="var(--stone)" font-style="italic">Non-Dual Realization</text>
+                    <text x="525" y="155" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone-light)">Absolute Identity</text>
+                    <path d="M 315 130 Q 350 80 385 130" stroke="var(--gold)" stroke-width="2" fill="none" filter="url(#theosisGlow)" opacity="0.6"/>
+                    <path d="M 315 130 Q 350 180 385 130" stroke="var(--violet)" stroke-width="2" fill="none" filter="url(#theosisGlow)" opacity="0.6"/>
+                    <text x="350" y="100" text-anchor="middle" font-family="Cinzel" font-size="8" fill="var(--gold-dim)" letter-spacing="1">CONVERGENCE</text>
+                    <text x="350" y="165" text-anchor="middle" font-family="Cinzel" font-size="8" fill="var(--violet-dim)" letter-spacing="1">DIVERGENCE</text>
+                    <text x="350" y="210" text-anchor="middle" font-family="Crimson Pro" font-size="9" fill="var(--stone)" font-style="italic">Both point beyond concepts; one retains relation, the other dissolves it</text>
+                </svg>
+                <p class="diagram-caption">Theosis and Advaita converge in pointing beyond concepts, yet diverge at the final threshold: one retains relational structure, the other dissolves it completely.</p>
             </div>
 
             <blockquote class="fade-in">
@@ -2385,11 +2523,15 @@
                 <p>"I am the way, the truth, and the life. No one comes to the Father except through Me."</p>
                 <cite>— John 14:6</cite>
             </blockquote>
+            <blockquote class="fade-in stagger-2">
+                <p>"God became man so that man might become god."</p>
+                <cite>— Athanasius · On the Incarnation (c. 318 CE)</cite>
+            </blockquote>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════
-    FINAL APOPHATIC MEDITATION
+    PULLQUOTE: Theophany of Silence
     ═══════════════════════════════════════════════════════════════ -->
     <div class="pq-section fade-in">
         <div class="pq-glow" aria-hidden="true"></div>
@@ -2414,25 +2556,96 @@
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>T</strong>hus the apophatic path leads not to nihilism but to infinite plenitude. The cloud of unknowing, the dark night of the soul, the <em>neti neti</em> of the Upanishads—all point to the same liberating recognition: the true Self is not an object to be grasped but the eternal subject that can never be objectified. It is the witness of all experience, untouched by any experience.</p>
+            <p><strong>T</strong>hus the apophatic path leads not to nihilism but to infinite plenitude. The cloud of unknowing, the dark night of the soul, the <em>neti neti</em> of the Upanishads — all point to the same liberating recognition: the true Self is not an object to be grasped but the eternal subject that can never be objectified. It is the witness of all experience, untouched by any experience.</p>
 
-            <p class="fade-in">When every concept is exhausted, when every word has failed, what remains is not emptiness—it is the very awareness that was always already the case. This is <span class="sanskrit-term" data-tooltip="The natural state; the ever-present reality recognized in realization">sahaja</span> (the natural state), neither sought nor found, but simply recognized. Like a man who searches frantically for his glasses while wearing them upon his nose, the seeker discovers that what was sought was never absent—only overlooked.</p>
+            <p class="fade-in">When every concept is exhausted, when every word has failed, what remains is not emptiness — it is the very awareness that was always already the case. This is <span class="sanskrit-term" data-tooltip="The natural state; the ever-present reality recognized in realization">sahaja</span> (the natural state), neither sought nor found, but simply recognized. Like a man who searches frantically for his glasses while wearing them upon his nose, the seeker discovers that what was sought was never absent — only overlooked.</p>
 
-            <p class="fade-in stagger-1">The Gospel narrative, read through this apophatic lens, is the journey of the soul from the primordial "I AM" through the transfiguration of the body, to the final knowledge that shatters all distinction between knower and known. The cloud of unknowing is not a destination—it is the passage itself, the dying into truth that is simultaneously a birth into life eternal.</p>
+            <!-- TENSION BOX: Already but Not Yet -->
+            <div class="tension-box fade-in">
+                <div class="tension-label">Tension · Already but Not Yet</div>
+                <p><span class="tension-em">Christianity insists on the <em>eschatological</em> tension.</span> The Cloud is not the final destination; it is the passage. The Kingdom is both recognized <em>now</em> AND awaited <em>in hope</em>. Advaita has no eschatology; Christianity insists time is real and will be healed. The Cloud dissolves when the sun rises — but Christianity believes the sun is not only present; it is <em>coming</em>. The resurrection is not (only) realized consciousness; it is promise. This is not a minor difference: it is the difference between a homecoming and a pilgrimage.</p>
+            </div>
+
+            <p class="fade-in stagger-1">The Gospel narrative, read through this apophatic lens, is the journey of the soul from the primordial "I AM" through the transfiguration of the body, to the final knowledge that shatters all distinction between knower and known. The cloud of unknowing is not a destination — it is the passage itself, the dying into truth that is simultaneously a birth into life eternal. Yet for Christianity, this passage is always <em>toward</em> Someone, not merely <em>into</em> something. The cloud is not the sky; it is the passage through which one sees that the sky was never hidden.</p>
 
             <div class="resonance-callout fade-in">
                 <div class="label">The Recognition</div>
-                <p>What is discovered at the end of the apophatic path was never lost at the beginning. The cloud of unknowing dissolves not by being penetrated, but by the recognition that one has always been standing in clear sunlight—mistaking the cloud for the sky.</p>
+                <p>What is discovered at the end of the apophatic path was never lost at the beginning. The cloud of unknowing dissolves not by being penetrated, but by the recognition that one has always been standing in clear sunlight — mistaking the cloud for the sky.</p>
             </div>
 
             <blockquote class="fade-in">
-                <p>"One dark night, fired with love's urgent longings—ah, the sheer grace! I went out unseen, my house being now all stilled."</p>
+                <p>"One dark night, fired with love's urgent longings — ah, the sheer grace! I went out unseen, my house being now all stilled."</p>
                 <cite>— John of the Cross · Dark Night of the Soul (c. 1578 CE)</cite>
             </blockquote>
             <blockquote class="fade-in stagger-1">
-                <p>"The Self is the witness. The witness is not the seer of the Self—it is the Self itself. There is no difference."</p>
+                <p>"The Self is the witness. The witness is not the seer of the Self — it is the Self itself. There is no difference."</p>
                 <cite>— Ramana Maharshi · Talks with Sri Ramana Maharshi</cite>
             </blockquote>
+            <blockquote class="fade-in stagger-2">
+                <p>"Lift up your heart to God with a humble stirring of love, and mean God himself, and not what you can conceive about him."</p>
+                <cite>— The Cloud of Unknowing (c. 1370 CE)</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+    THE FRICTION — WHAT RESISTS THE MAP
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="stage-section" id="friction">
+        <div class="stage-wm" aria-hidden="true">ΤΡΙΒΗ</div>
+        <div class="stage-header">
+            <div class="stage-eyeline">
+                <span class="stage-n">The Friction</span>
+                <span class="stage-skt">What Resists the Map</span>
+                <span class="stage-deva-title">Boundary Conditions · Where the Map Folds</span>
+            </div>
+            <h2 class="stage-h2">What Resists the Map</h2>
+            <span class="stage-subtitle-label">Boundary Conditions · Six Irreducible Differences</span>
+            <span class="stage-rule"></span>
+        </div>
+        <div class="stage-body">
+            <p><strong>T</strong>o read Jesus through the Cloud of Unknowing is permissible. To claim this is all he is would be reduction. The cloud is not the sky; it is the passage through which one sees that the sky was never hidden. The following are <strong>boundary conditions</strong> — places where the map must fold, where the conversation between Christian apophaticism and Advaita Vedanta reaches its limits. These are not minor distinctions; they are the very shape of the terrain.</p>
+
+            <!-- TENSION BOX 1: Trinity -->
+            <div class="tension-box fade-in">
+                <div class="tension-label">1. The Trinity as Relational Ontology</div>
+                <p><span class="tension-em">Perichoresis vs. Nirguna.</span> The Christian God is three persons in mutual indwelling — a dance of love that is the very structure of reality. Advaita's <span class="sanskrit-term" data-tooltip="The attributeless absolute; Brahman without qualities">nirguna Brahman</span> is attributeless, relationless, solitary. The Cloud of Unknowing speaks of union with God, but for Christianity, union does not dissolve the persons; it perfects them. The lover and the beloved remain distinct even as they become one.</p>
+            </div>
+
+            <!-- TENSION BOX 2: Creation Ex Nihilo -->
+            <div class="tension-box fade-in stagger-1">
+                <div class="tension-label">2. Creation Ex Nihilo vs. Maya</div>
+                <p><span class="tension-em">The world is real, good, and distinct from God.</span> For Christianity, creation is not a superimposition on Brahman; it is a free act of divine love, brought into being from nothing. The world is not illusion; it is beloved. Advaita's <span class="sanskrit-term" data-tooltip="The cosmic illusion; the superimposition of the unreal upon the real">maya</span> is the veil of ignorance that must be pierced. Christianity's creation is the theater of redemption that will be healed, not escaped.</p>
+            </div>
+
+            <!-- TENSION BOX 3: The Scandal of Particularity -->
+            <div class="tension-box fade-in stagger-2">
+                <div class="tension-label">3. The Scandal of Particularity</div>
+                <p><span class="tension-em">Infinite in THIS body, THIS time, THIS crucified Jew.</span> Advaita's universal upadhi (limiting adjunct) is a temporary identification; Christianity's incarnation is an eternal event. The Word became flesh — not a universal principle but a particular person, born of a particular woman, in a particular time, under a particular empire. This is not a matter of interpretation; it is the scandal that defines the tradition.</p>
+            </div>
+
+            <!-- TENSION BOX 4: Vicarious Suffering -->
+            <div class="tension-box fade-in stagger-3">
+                <div class="tension-label">4. Vicarious Suffering and Solidarity</div>
+                <p><span class="tension-em">The cross is entering another's pain, not only dissolving one's own ego.</span> Advaita's dissolution of the self is interior, personal. Christianity's atonement is interpersonal, cosmic. Jesus suffers not to dissolve his own ego but to enter the suffering of every human being, to bear the weight of the world's sin and sorrow. This is not self-realization; it is self-gift.</p>
+            </div>
+
+            <!-- TENSION BOX 5: Unchosen Suffering — The Holocaust Test -->
+            <div class="tension-box fade-in stagger-4">
+                <div class="tension-label">5. Unchosen Suffering — The Holocaust Test</div>
+                <p><span class="tension-em">Theodicy; Advaita's "maya" as morally intolerable.</span> The mystic's dark night is chosen; the child's gas chamber is not. Christianity insists on the irreducible value of the suffering person; Advaita can only call it <span class="sanskrit-term" data-tooltip="Illusion; the cosmic superimposition">maya</span>. If suffering is ultimately unreal, then the cry of the tortured is meaningless. Christianity refuses this conclusion. The cross is God's entry into the world's deepest pain, not God's dismissal of it.</p>
+            </div>
+
+            <!-- TENSION BOX 6: The Resurrection -->
+            <div class="tension-box fade-in stagger-5">
+                <div class="tension-label">6. The Resurrection as Bodily and Communal</div>
+                <p><span class="tension-em">No equivalent in Advaita; redemption of time and flesh.</span> The empty tomb and the fish-eating body are not metaphors. Christianity insists on the resurrection of the body — not the dissolution of the self into the Absolute, but the redemption of the body into new life. This is not an Eastern concept; it is the distinctive hope of Israel, fulfilled in Christ. Advaita has no resurrection; it has only the realization that death was never real. Christianity says death is real, and it has been overcome.</p>
+            </div>
+
+            <div class="resonance-callout fade-in">
+                <div class="label">The Map Folds</div>
+                <p>These differences are boundary conditions — places where the map must fold. To read Jesus through the Cloud of Unknowing is permissible. To claim this is all he is would be reduction. The cloud is not the sky; it is the passage through which one sees that the sky was never hidden. The Christian apophatic tradition is not a subset of Advaita; it is a distinctive grammar of love, relation, and hope. The conversation between them is not a synthesis but a dialogue — two languages, one silence, each bearing witness to what the other cannot say.</p>
+            </div>
         </div>
     </section>
 
@@ -2442,7 +2655,7 @@
     <div class="pq-section">
         <div class="pq-glow" aria-hidden="true"></div>
         <span class="pq-mark" aria-hidden="true">"</span>
-        <p class="pq-text">The Cloud of Unknowing teaches that the path to God is through unknowing — the same apophatic approach found in Advaita's neti-neti and Taoism's ineffability.</p>
+        <p class="pq-text">The Cloud of Unknowing teaches that the path to God is through unknowing — the same apophatic approach found in Advaita's neti-neti and Taoism's ineffability. Yet the Cloud is not the sky; it is the passage through which one sees that the sky was never hidden.</p>
         <p class="pq-attr"><a href="messiah-parables.html" class="continue-link">&larr; Return to Three Bridges</a> <span class="pq-sep">·</span> <a href="messiah-beatitudes.html" class="continue-link">Continue to The Beatitudes &rarr;</a></p>
     </div>
 
@@ -2451,26 +2664,26 @@
     ═══════════════════════════════════════════════════════════════ -->
     <div class="chapter-nav">
         <a href="../index.html" class="chapter-link"><svg class="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-threshold.html" class="chapter-link">I · The Hermeneutic Key</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-parables.html" class="chapter-link">II · Three Bridges</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-silence.html" class="chapter-link active">III · The Cloud of Unknowing</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-beatitudes.html" class="chapter-link">IV · The Beatitudes</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-mirror.html" class="chapter-link">V · Tat Tvam Asi</a>
-          <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-gospel-thomas.html" class="chapter-link">VI · The Gospel of Thomas</a>
-        <span class="chapter-sep"><svg class="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/></svg></span>
+        <span class="chapter-sep">✦</span>
         <a href="messiah-avatar.html" class="chapter-link">VII · The Incarnation as Avatar</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
     FOOTER
     ═══════════════════════════════════════════════════════════════ -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-emblem"><svg class="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M12 2v20M8 8h8"/></svg></div>
         <div class="footer-name">The Cartographies</div>
         <div class="footer-tagline">Six Paths to the Absolute</div>
@@ -2484,7 +2697,7 @@
             <a href="../quantum_mechanics/quantum-unmeasured.html">Quantum Mechanics</a>
         </div>
         <div class="footer-credit">Researched and composed</div>
-        <div class="footer-copyright">Last updated: 25 June 2026 · Six cartographies</div>
+        <div class="footer-copyright">Last updated: July 2026 · Six cartographies</div>
         <div class="footer-copyright">A non-dual resource by J.M.Q. · © 2026</div>
     </footer>
 
@@ -2553,8 +2766,8 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
             }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.fade-in, .section-separator, .chapter-transition').forEach(el => observer.observe(
-                el));
+            document.querySelectorAll('.fade-in, .section-separator, .chapter-transition, .tension-box').forEach(el =>
+                observer.observe(el));
 
             /* TEXT REVEAL */
             const textObserver = new IntersectionObserver((entries) => {
