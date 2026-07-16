@@ -453,7 +453,8 @@
         .back-to-top {
             position: fixed;
             bottom: 5.75rem;
-            right: 1.5rem;
+            right: 1.75rem;
+            margin-right: 4px; /* (52px theme-toggle − 44px back-to-top) / 2, centers on the same vertical axis */
             z-index: 1000;
             width: 44px;
             height: 44px;
@@ -1710,7 +1711,7 @@
                 min-width: 180px;
             }
             .back-to-top {
-                right: 1.5rem;
+                right: 1.75rem; /* matches .theme-toggle's right offset, centered via inherited margin-right */
                 bottom: 5rem;
             }
             .footer-links {
@@ -1784,6 +1785,7 @@
                 height: 40px;
                 bottom: 4.5rem;
                 right: 1rem;
+                margin-right: 1px; /* (42px theme-toggle − 40px back-to-top) / 2, re-centers at this breakpoint */
             }
             .scripture-panel {
                 padding: 20px;
@@ -1987,7 +1989,7 @@
                     <polygon points="100,320 300,120 500,320" fill="url(#mountain1)" stroke="#c9a84c" stroke-width="0.5" opacity="0.8"/>
                     <polygon points="350,320 500,140 650,320" fill="url(#mountain2)" stroke="#c9a84c" stroke-width="0.5" opacity="0.8"/>
                     <circle cx="300" cy="120" r="8" fill="#e0c46e" opacity="0.9"/>
-                    <text x="300" y="105" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="1">MOKSHA</text>
+                    <text x="300" y="105" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="1">MOKṢA</text>
                     <text x="300" y="145" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="9" font-style="italic">Identity · Absorption</text>
                     <circle cx="500" cy="140" r="8" fill="#e0c46e" opacity="0.9"/>
                     <text x="500" y="125" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="9" letter-spacing="1">THEOSIS</text>
@@ -2050,7 +2052,7 @@
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>C</strong>rucifixion is the death of the ego — the dissolution of <span class="sanskrit-term" data-tooltip="The ego; the false sense of a separate self">ahamkara</span>. The nails are the piercing questions of self-inquiry; the crown of thorns is the ego's own thoughts; the spear is the final penetration of the heart. The cry <em>"My God, my God, why have you forsaken me?"</em><a class="biblical-ref" data-reference="Matthew 27:46" data-tooltip="Matthew 27:46">[1]</a> is <span class="sanskrit-term" data-tooltip="Not this, not this — the method of negating all that is not the Self">neti-neti</span> carried to its absolute limit. Even the sense of divine presence vanishes.</p>
+            <p><strong>C</strong>rucifixion is the death of the ego — the dissolution of <span class="sanskrit-term" data-tooltip="The ego; the false sense of a separate self">ahaṃkāra</span>. The nails are the piercing questions of self-inquiry; the crown of thorns is the ego's own thoughts; the spear is the final penetration of the heart. The cry <em>"My God, my God, why have you forsaken me?"</em><a class="biblical-ref" data-reference="Matthew 27:46" data-tooltip="Matthew 27:46">[1]</a> is <span class="sanskrit-term" data-tooltip="Not this, not this — the method of negating all that is not the Self">neti-neti</span> carried to its absolute limit. Even the sense of divine presence vanishes.</p>
 
             <p class="fade-in">But theosis adds what Advaita cannot: the cross as <strong>vicarious suffering</strong>, as solidarity with the victim, as God entering into another's pain. The crucifixion is not only <em>my</em> ego dying; it is <span class="sanskrit-term" data-tooltip="The act of self-emptying; the descent of God into human condition">kenosis</span> — the Absolute emptying itself into the ego's condition. The direction is reversed. In Advaita, I dissolve into Brahman. In theosis, Brahman descends into my dissolution. These are not the same movement.</p>
 
@@ -2222,14 +2224,14 @@
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong>I</strong>n Advaita, <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jnana</span> (knowledge) is the supreme path. In theosis, <span class="sanskrit-term" data-tooltip="Unconditional love; the divine love that is the substance of God's life">agape</span> is the supreme path. The human person becomes god <em>by loving</em>, not by knowing. This is the fundamental difference between the two traditions.</p>
+            <p><strong>I</strong>n Advaita, <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jñāna</span> (knowledge) is the supreme path. In theosis, <span class="sanskrit-term" data-tooltip="Unconditional love; the divine love that is the substance of God's life">agape</span> is the supreme path. The human person becomes god <em>by loving</em>, not by knowing. This is the fundamental difference between the two traditions.</p>
 
-            <p class="fade-in"><strong>For Advaita, love is maya</strong> — a beautiful illusion that must be transcended. The love between creatures is a projection of the non-dual Self, a play of consciousness that ultimately must be seen through. For theosis, <strong>love is the very life of God</strong> — the energy that deifies, the power that transforms, the essence that sustains. The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is <em>loved into being</em>.</p>
+            <p class="fade-in"><strong>For Advaita, love is māyā</strong> — a beautiful illusion that must be transcended. The love between creatures is a projection of the non-dual Self, a play of consciousness that ultimately must be seen through. For theosis, <strong>love is the very life of God</strong> — the energy that deifies, the power that transforms, the essence that sustains. The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is <em>loved into being</em>.</p>
 
-            <!-- TENSION BOX: Jnana vs. Agape -->
+            <!-- TENSION BOX: Jñāna vs. Agape -->
             <div class="tension-box fade-in">
-                <h4>Jnana vs. Agape</h4>
-                <p><span class="tension-em">"If I have all knowledge but have not love, I am nothing" (1 Cor 13:2).</span> For Advaita, jnana (knowledge) is the supreme path; for theosis, agape (love) is the supreme path. The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is loved into being. The human person becomes god <em>by loving</em>, not by knowing. This is the deepest divergence between the two traditions — and the most beautiful.</p>
+                <h4>Jñāna vs. Agape</h4>
+                <p><span class="tension-em">"If I have all knowledge but have not love, I am nothing" (1 Cor 13:2).</span> For Advaita, jñāna (knowledge) is the supreme path; for theosis, agape (love) is the supreme path. The cross is not knowledge; it is love. The resurrection is not insight; it is love's victory over death. Theosis is not realized; it is loved into being. The human person becomes god <em>by loving</em>, not by knowing. This is the deepest divergence between the two traditions — and the most beautiful.</p>
             </div>
 
             <p class="fade-in stagger-1"><em>"Love one another as I have loved you"</em><a class="biblical-ref" data-reference="John 15:12" data-tooltip="John 15:12">[5]</a>. This is not a command to imitate Jesus's love from a distance. It is an <strong>invitation to participate in the love that is the substance of divine life</strong>. The love with which Jesus loves is the love of the Father for the Son, the love that is the Holy Spirit. To love "as I have loved" is to be drawn into the Trinitarian perichoresis — to become a participant in the divine life itself.</p>
@@ -2334,16 +2336,16 @@
                 <p><span class="tension-em">Moksha as individual realization; theosis as communion in the body of Christ.</span> The Church is not a school for individual enlightenment; it is the organism of deification, the body in which theosis happens. "Our Father" — not "My Father." Theosis is communal.</p>
             </div>
 
-            <!-- Tension 5: Jnana vs. Agape -->
+            <!-- Tension 5: Jñāna vs. Agape -->
             <div class="tension-box fade-in stagger-4">
-                <h4>5. Jnana vs. Agape</h4>
+                <h4>5. Jñāna vs. Agape</h4>
                 <p><span class="tension-em">Knowledge as supreme path in Advaita; love as supreme path in theosis.</span> "If I have all knowledge but have not love, I am nothing" (1 Cor 13:2). The human person becomes god <em>by loving</em>, not by knowing. This is the deepest divergence — and the most beautiful.</p>
             </div>
 
             <!-- Tension 6: Unchosen Suffering — The Holocaust Test -->
             <div class="tension-box fade-in stagger-5">
                 <h4>6. Unchosen Suffering — The Holocaust Test</h4>
-                <p><span class="tension-em">Theodicy; Advaita's "maya" as morally intolerable.</span> Christianity's answer — God enters INTO the suffering, does not explain it away. The cross is God's solidarity with the victim, not the dissolution of the victim's pain into illusion. The resurrection is the promise that suffering will be healed, not transcended. This is the difference between a philosophy of escape and a faith of solidarity.</p>
+                <p><span class="tension-em">Theodicy; Advaita's <em>māyā</em> as morally intolerable.</span> Christianity's answer — God enters INTO the suffering, does not explain it away. The cross is God's solidarity with the victim, not the dissolution of the victim's pain into illusion. The resurrection is the promise that suffering will be healed, not transcended. This is the difference between a philosophy of escape and a faith of solidarity.</p>
             </div>
 
             <div class="resonance-callout fade-in">

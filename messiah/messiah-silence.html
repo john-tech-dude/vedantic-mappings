@@ -453,7 +453,8 @@
         .back-to-top {
             position: fixed;
             bottom: 5.75rem;
-            right: 1.5rem;
+            right: 1.75rem;
+            margin-right: 4px; /* (52px theme-toggle − 44px back-to-top) / 2, centers on the same vertical axis */
             z-index: 1000;
             width: 44px;
             height: 44px;
@@ -1750,7 +1751,7 @@
                 min-width: 180px;
             }
             .back-to-top {
-                right: 1.5rem;
+                right: 1.75rem; /* matches .theme-toggle's right offset, centered via inherited margin-right */
                 bottom: 5rem;
             }
             .footer-links {
@@ -1824,6 +1825,7 @@
                 height: 40px;
                 bottom: 4.5rem;
                 right: 1rem;
+                margin-right: 1px; /* (42px theme-toggle − 40px back-to-top) / 2, re-centers at this breakpoint */
             }
             .scripture-panel {
                 padding: 20px;
@@ -1915,7 +1917,7 @@
             <a href="#essay-word" class="nav-item" data-section="essay-word"><span class="nav-item-icon">◉</span><span>The Word · I AM</span></a>
             <a href="#essay-transfiguration" class="nav-item" data-section="essay-transfiguration"><span class="nav-item-icon">✦</span><span>The Transfiguration</span></a>
             <a href="#essay-dereliction" class="nav-item" data-section="essay-dereliction"><span class="nav-item-icon">⬡</span><span>The Cry of Dereliction</span></a>
-            <a href="#essay-jnana" class="nav-item" data-section="essay-jnana"><span class="nav-item-icon">ॐ</span><span>Jnana Yoga</span></a>
+            <a href="#essay-jnana" class="nav-item" data-section="essay-jnana"><span class="nav-item-icon">ॐ</span><span>Jñāna Yoga</span></a>
             <a href="#closing" class="nav-item" data-section="closing"><span class="nav-item-icon">◆</span><span>Closing Reflection</span></a>
             <a href="#friction" class="nav-item" data-section="friction"><span class="nav-item-icon">⚡</span><span>The Friction</span></a>
             <div class="nav-divider"></div>
@@ -2029,14 +2031,14 @@
                     <circle cx="350" cy="80" r="28" fill="var(--bg)" stroke="var(--gold)" stroke-width="1.5" filter="url(#glow)"/>
                     <text x="350" y="85" text-anchor="middle" font-family="Cinzel" font-size="11" fill="var(--gold-light)">THE SELF</text>
                     <text x="240" y="75" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Spirit · Pneuma</text>
-                    <text x="460" y="75" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Atman · Brahman</text>
+                    <text x="460" y="75" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone-light)" font-style="italic">Ātman · Brahman</text>
                     <line x1="200" y1="140" x2="500" y2="140" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
                     <text x="240" y="135" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Ego · Self-will</text>
                     <text x="460" y="135" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Ahamkara</text>
                     <text x="350" y="155" text-anchor="middle" font-family="Cinzel" font-size="9" fill="var(--gold-dim)" letter-spacing="2">NETI NETI</text>
                     <line x1="200" y1="200" x2="500" y2="200" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
                     <text x="240" y="195" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Intellect · Reason</text>
-                    <text x="460" y="195" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Buddhi · Vijnanamaya</text>
+                    <text x="460" y="195" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Buddhi · Vijñānamaya</text>
                     <line x1="200" y1="260" x2="500" y2="260" stroke="var(--gold)" stroke-width="1" opacity="0.4"/>
                     <text x="240" y="255" text-anchor="end" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Mind · Emotion</text>
                     <text x="460" y="255" text-anchor="start" font-family="Crimson Pro" font-size="12" fill="var(--stone)">Manas · Manomaya</text>
@@ -2207,7 +2209,7 @@
 
             <p class="fade-in"><strong>Gregory of Nyssa</strong> reads the Transfiguration as the revelation of the soul's true nature: the light is not an external glory but the body's inherent reality, now unveiled. <em>"The soul, as it advances, grows and ascends through its participation in the divine — not by arriving at a limit, but by always expanding into the infinite."</em> The light is not an escape from flesh but the body's true nature revealed. The Transfiguration is glory <em>in</em> flesh, not despite it.</p>
 
-            <p class="fade-in stagger-1">Moses and Elijah appear alongside Jesus. In the Vedantic map, Moses represents the <span class="sanskrit-term" data-tooltip="The law; cosmic order; the path of duty">dharma</span> (law and teachings) — the path of action and righteousness; Elijah represents <span class="sanskrit-term" data-tooltip="The yoga of devotion; love and surrender">bhakti</span> (devotion and longing) — the path of love and prophetic fire. Jesus, in this schema, embodies <span class="sanskrit-term" data-tooltip="The yoga of knowledge; direct realization">jnana</span> — the direct knowledge of the Self. All three paths converge and dissolve. <em>"They saw no one but Jesus only"</em> (Matt 17:8): the guides disappear; only the Self remains.</p>
+            <p class="fade-in stagger-1">Moses and Elijah appear alongside Jesus. In the Vedantic map, Moses represents the <span class="sanskrit-term" data-tooltip="The law; cosmic order; the path of duty">dharma</span> (law and teachings) — the path of action and righteousness; Elijah represents <span class="sanskrit-term" data-tooltip="The yoga of devotion; love and surrender">bhakti</span> (devotion and longing) — the path of love and prophetic fire. Jesus, in this schema, embodies <span class="sanskrit-term" data-tooltip="The yoga of knowledge; direct realization">jñāna</span> — the direct knowledge of the Self. All three paths converge and dissolve. <em>"They saw no one but Jesus only"</em> (Matt 17:8): the guides disappear; only the Self remains.</p>
 
             <p class="fade-in stagger-2"><strong>The feminine mediator</strong> — Sophia/Wisdom (Proverbs 8) — is the hidden fourth presence, the co-creator who <em>"was beside him, like a master worker"</em> (Prov 8:30). In the Eastern Christian tradition, Mary as Theotokos (God-bearer) represents the human nature capable of receiving the infinite. This maps onto <span class="sanskrit-term" data-tooltip="The dynamic power; the feminine principle of manifestation">Shakti</span> as the dynamic power that makes static Shiva knowable. The Transfiguration is not only a revelation of the Son; it is a revelation of the <em>relation</em> — the loving interplay between the divine and the human, the masculine and the feminine, the transcendent and the immanent.</p>
 
@@ -2313,7 +2315,7 @@
 
             <p class="fade-in">In Advaita terms, this is the final burning of the last <span class="sanskrit-term" data-tooltip="Latent tendency; subliminal impression of separation">vāsana</span>: the subtle expectation that the Absolute owes the seeker a comforting presence. The cross becomes the ultimate <em>neti-neti</em>. Not this presence, not this absence — only the silent witness that was never abandoned because it never had a separate self to abandon.</p>
 
-            <p class="fade-in stagger-1"><strong>John of the Cross</strong> distinguishes between the <em>"dark night of the senses"</em> (purification of attachments) and the <em>"dark night of the spirit"</em> (purification of spiritual consolations). Advaita has no equivalent distinction — all is <span class="sanskrit-term" data-tooltip="The cosmic illusion; the superimposition of the unreal upon the real">maya</span>. Christianity insists that the dark night is <em>love's</em> work, not merely ignorance's dissolution. The cry of dereliction is not a philosophical statement; it is the voice of one who loves and is loved, even in the felt absence of the beloved.</p>
+            <p class="fade-in stagger-1"><strong>John of the Cross</strong> distinguishes between the <em>"dark night of the senses"</em> (purification of attachments) and the <em>"dark night of the spirit"</em> (purification of spiritual consolations). Advaita has no equivalent distinction — all is <span class="sanskrit-term" data-tooltip="The cosmic illusion; the superimposition of the unreal upon the real">māyā</span>. Christianity insists that the dark night is <em>love's</em> work, not merely ignorance's dissolution. The cry of dereliction is not a philosophical statement; it is the voice of one who loves and is loved, even in the felt absence of the beloved.</p>
 
             <!-- DIAGRAM: The Apophatic Crucible -->
             <div class="diagram-container fade-in">
@@ -2366,7 +2368,7 @@
             <!-- TENSION BOX: Unchosen Suffering -->
             <div class="tension-box fade-in">
                 <div class="tension-label">Tension · Unchosen Suffering — The Holocaust Test</div>
-                <p><span class="tension-em">The mystic's dark night is chosen. The child's gas chamber is not.</span> Christianity insists on the irreducible value of the suffering person; Advaita can only call it <span class="sanskrit-term" data-tooltip="Illusion; the cosmic superimposition">maya</span>. The cry of dereliction is not only Jesus's spiritual achievement; it is the voice of every abandoned child, every tortured victim. If this is <em>neti-neti</em>, then neti-neti is obscene. The Christian apophatic tradition must hold the tension: the dark night is a purification of love, not a dismissal of suffering. The cross is not a philosophical statement about the unreality of the world; it is the entry of God into the world's deepest pain.</p>
+                <p><span class="tension-em">The mystic's dark night is chosen. The child's gas chamber is not.</span> Christianity insists on the irreducible value of the suffering person; Advaita can only call it <span class="sanskrit-term" data-tooltip="Illusion; the cosmic superimposition">māyā</span>. The cry of dereliction is not only Jesus's spiritual achievement; it is the voice of every abandoned child, every tortured victim. If this is <em>neti-neti</em>, then neti-neti is obscene. The Christian apophatic tradition must hold the tension: the dark night is a purification of love, not a dismissal of suffering. The cross is not a philosophical statement about the unreality of the world; it is the entry of God into the world's deepest pain.</p>
             </div>
 
             <p class="fade-in">Christian mystics from John of the Cross to Mother Teresa have recognised this as the highest stage of the <em>via negativa</em> — the "dark night of the spirit" where even the sense of divine relationship is stripped away. What remains is not despair but the naked <strong>"I AM"</strong> that endures the loss of all objects, including the object "God." Yet for Christianity, this endurance is not the dissolution of the self but the purification of love: the soul cries out not from separation, but from the birth pangs of union beyond all names.</p>
@@ -2396,23 +2398,23 @@
         <div class="stage-wm" aria-hidden="true">ज्ञान</div>
         <div class="stage-header">
             <div class="stage-eyeline">
-                <span class="stage-n">Jnana Yoga and Liberation</span>
+                <span class="stage-n">Jñāna Yoga and Liberation</span>
                 <span class="stage-skt">The Path of Knowledge</span>
                 <span class="stage-deva-title">The Truth That Frees · The Four Qualifications</span>
             </div>
             <h2 class="stage-h2">The Path of Knowledge</h2>
-            <span class="stage-subtitle-label">Jnana Yoga · The Beatitudes as Sadhana-Chatushtaya</span>
+            <span class="stage-subtitle-label">Jñāna Yoga · The Beatitudes as Sādhana-Catuṣṭaya</span>
             <span class="stage-rule"></span>
         </div>
         <div class="stage-body">
-            <p><strong><em>"Y</em>ou shall know the truth, and the truth shall make you free"</strong><a class="biblical-ref" data-reference="John 8:32" data-tooltip="John 8:32 — You shall know the truth">[5]</a> — this is the distillation of <span class="sanskrit-term" data-tooltip="The yoga of knowledge; the path of direct realization">jnana yoga</span>. Freedom (<span class="sanskrit-term" data-tooltip="Liberation; release from the cycle of birth and death">moksha</span>) is not earned through works alone; it is the direct result of <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jnana</span> itself. The "truth" here is <span class="sanskrit-term" data-tooltip="Truth; that which remains unchanging; Brahman">Satya</span> — a synonym for Brahman, the ultimate reality.</p>
+            <p><strong><em>"Y</em>ou shall know the truth, and the truth shall make you free"</strong><a class="biblical-ref" data-reference="John 8:32" data-tooltip="John 8:32 — You shall know the truth">[5]</a> — this is the distillation of <span class="sanskrit-term" data-tooltip="The yoga of knowledge; the path of direct realization">jñāna yoga</span>. Freedom (<span class="sanskrit-term" data-tooltip="Liberation; release from the cycle of birth and death">moksha</span>) is not earned through works alone; it is the direct result of <span class="sanskrit-term" data-tooltip="Knowledge; immediate, intuitive wisdom of the Self">jñāna</span> itself. The "truth" here is <span class="sanskrit-term" data-tooltip="Truth; that which remains unchanging; Brahman">Satya</span> — a synonym for Brahman, the ultimate reality.</p>
 
             <p class="fade-in"><em>"I am the way, the truth, and the life. No one comes to the Father except through Me"</em><a class="biblical-ref" data-reference="John 14:6" data-tooltip="John 14:6 — I am the way, the truth, and the life">[6]</a>. This is the voice of the <span class="sanskrit-term" data-tooltip="The true guru; the perfected teacher who embodies the teaching">sadguru</span> — the spiritual master whose nature is the Self itself. The guru is not a separate person imparting information; the guru is the direct revelation of one's own true nature. Connection to this presence is the sole source of spiritual vitality.</p>
 
             <p class="fade-in stagger-1"><strong>Paul's <em>"in Christ"</em></strong> — participatory mysticism — is not <em>"I am That"</em> but <em>"That and I are one while remaining two."</em> Galatians 2:20 (<em>"I have been crucified with Christ; it is no longer I who live, but Christ lives in me"</em>) is the bridge between Advaita's absorption and Christianity's communion. The "I" is not annihilated but transformed: the old self dies, and a new self rises — not separate from Christ, but distinct in relation.</p>
 
             <h3 class="ed-h3">The Beatitudes as Sadhana-Chatushtaya</h3>
-            <p class="fade-in">Not all are ready for jnana. The Sermon on the Mount maps the four prerequisites for a seeker (<span class="sanskrit-term" data-tooltip="The four qualifications of a spiritual aspirant">sadhana-chatushtaya</span>):</p>
+            <p class="fade-in">Not all are ready for jñāna. The Sermon on the Mount maps the four prerequisites for a seeker (<span class="sanskrit-term" data-tooltip="The four qualifications of a spiritual aspirant">sādhana-catuṣṭaya</span>):</p>
 
             <!-- DIAGRAM: The Four Qualifications -->
             <div class="diagram-container fade-in">
@@ -2615,7 +2617,7 @@
             <!-- TENSION BOX 2: Creation Ex Nihilo -->
             <div class="tension-box fade-in stagger-1">
                 <div class="tension-label">2. Creation Ex Nihilo vs. Maya</div>
-                <p><span class="tension-em">The world is real, good, and distinct from God.</span> For Christianity, creation is not a superimposition on Brahman; it is a free act of divine love, brought into being from nothing. The world is not illusion; it is beloved. Advaita's <span class="sanskrit-term" data-tooltip="The cosmic illusion; the superimposition of the unreal upon the real">maya</span> is the veil of ignorance that must be pierced. Christianity's creation is the theater of redemption that will be healed, not escaped.</p>
+                <p><span class="tension-em">The world is real, good, and distinct from God.</span> For Christianity, creation is not a superimposition on Brahman; it is a free act of divine love, brought into being from nothing. The world is not illusion; it is beloved. Advaita's <span class="sanskrit-term" data-tooltip="The cosmic illusion; the superimposition of the unreal upon the real">māyā</span> is the veil of ignorance that must be pierced. Christianity's creation is the theater of redemption that will be healed, not escaped.</p>
             </div>
 
             <!-- TENSION BOX 3: The Scandal of Particularity -->
@@ -2633,7 +2635,7 @@
             <!-- TENSION BOX 5: Unchosen Suffering — The Holocaust Test -->
             <div class="tension-box fade-in stagger-4">
                 <div class="tension-label">5. Unchosen Suffering — The Holocaust Test</div>
-                <p><span class="tension-em">Theodicy; Advaita's "maya" as morally intolerable.</span> The mystic's dark night is chosen; the child's gas chamber is not. Christianity insists on the irreducible value of the suffering person; Advaita can only call it <span class="sanskrit-term" data-tooltip="Illusion; the cosmic superimposition">maya</span>. If suffering is ultimately unreal, then the cry of the tortured is meaningless. Christianity refuses this conclusion. The cross is God's entry into the world's deepest pain, not God's dismissal of it.</p>
+                <p><span class="tension-em">Theodicy; Advaita's "maya" as morally intolerable.</span> The mystic's dark night is chosen; the child's gas chamber is not. Christianity insists on the irreducible value of the suffering person; Advaita can only call it <span class="sanskrit-term" data-tooltip="Illusion; the cosmic superimposition">māyā</span>. If suffering is ultimately unreal, then the cry of the tortured is meaningless. Christianity refuses this conclusion. The cross is God's entry into the world's deepest pain, not God's dismissal of it.</p>
             </div>
 
             <!-- TENSION BOX 6: The Resurrection -->

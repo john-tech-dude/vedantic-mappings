@@ -593,7 +593,7 @@
         .back-to-top {
             position: fixed;
             bottom: 5.75rem;
-            right: 1.5rem;
+            right: 2rem;
             z-index: 1000;
             width: 44px;
             height: 44px;
@@ -1533,7 +1533,7 @@
             top: 50%;
             left: 50%;
             width: 2px;
-            height: 100px;
+            height: 27%;
             transform-origin: center center;
             background: linear-gradient(180deg, var(--gold), transparent);
             opacity: 0.3;
@@ -1541,27 +1541,27 @@
             z-index: 1;
             animation: rayPulse 3s ease-in-out infinite;
         }
-        .diagram-pramana .ray:nth-child(2) {
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-        .diagram-pramana .ray:nth-child(3) {
-            transform: translate(-50%, -50%) rotate(60deg);
-            animation-delay: 0.5s;
-        }
-        .diagram-pramana .ray:nth-child(4) {
-            transform: translate(-50%, -50%) rotate(120deg);
-            animation-delay: 1s;
-        }
         .diagram-pramana .ray:nth-child(5) {
-            transform: translate(-50%, -50%) rotate(180deg);
-            animation-delay: 1.5s;
+            transform: translate(-50%, -50%) rotate(0deg) translateY(-85%);
         }
         .diagram-pramana .ray:nth-child(6) {
-            transform: translate(-50%, -50%) rotate(240deg);
-            animation-delay: 2s;
+            transform: translate(-50%, -50%) rotate(60deg) translateY(-85%);
+            animation-delay: 0.5s;
         }
         .diagram-pramana .ray:nth-child(7) {
-            transform: translate(-50%, -50%) rotate(300deg);
+            transform: translate(-50%, -50%) rotate(120deg) translateY(-85%);
+            animation-delay: 1s;
+        }
+        .diagram-pramana .ray:nth-child(8) {
+            transform: translate(-50%, -50%) rotate(180deg) translateY(-85%);
+            animation-delay: 1.5s;
+        }
+        .diagram-pramana .ray:nth-child(9) {
+            transform: translate(-50%, -50%) rotate(240deg) translateY(-85%);
+            animation-delay: 2s;
+        }
+        .diagram-pramana .ray:nth-child(10) {
+            transform: translate(-50%, -50%) rotate(300deg) translateY(-85%);
             animation-delay: 2.5s;
         }
 
@@ -3210,12 +3210,12 @@
                     </div>
 
                     <!-- Rays -->
-                    <div class="ray" style="transform:translate(-50%,-50%) rotate(0deg) translateY(-120px);height:140px;"></div>
-                    <div class="ray" style="transform:translate(-50%,-50%) rotate(60deg) translateY(-120px);height:140px;"></div>
-                    <div class="ray" style="transform:translate(-50%,-50%) rotate(120deg) translateY(-120px);height:140px;"></div>
-                    <div class="ray" style="transform:translate(-50%,-50%) rotate(180deg) translateY(-120px);height:140px;"></div>
-                    <div class="ray" style="transform:translate(-50%,-50%) rotate(240deg) translateY(-120px);height:140px;"></div>
-                    <div class="ray" style="transform:translate(-50%,-50%) rotate(300deg) translateY(-120px);height:140px;"></div>
+                    <div class="ray"></div>
+                    <div class="ray"></div>
+                    <div class="ray"></div>
+                    <div class="ray"></div>
+                    <div class="ray"></div>
+                    <div class="ray"></div>
 
                     <!-- Nodes -->
                     <div class="pnode" style="top:4%;left:50%;transform:translateX(-50%);">
@@ -3636,8 +3636,8 @@
                 <p>These three stages are not strictly sequential; they interweave and support each other. As reflection deepens, meditation arises; as meditation matures, the teaching is heard with greater clarity. Ultimately, they culminate in <em>aparokṣānubhūti</em> — direct, immediate realisation of Brahman.</p>
 
                 <div class="pull-q">
-                    <p>"The mind becomes purified by the practice of these virtues, and then the truth of the Upaniṣads shines forth like a lamp in a windless place."</p>
-                    <cite>— Vivekachūḍāmaṇi 18</cite>
+                    <p>"Hearing alone does not remove the deep-rooted notion 'I am the doer, I am the enjoyer' — it must be followed by reasoning and steady, one-pointed reflection until the truth of one's identity with Brahman is directly realized."</p>
+                    <cite>— Adapted from the teaching of the Upadeśa Sāhasrī</cite>
                 </div>
             </div>
         </section>
@@ -3664,14 +3664,14 @@
                     <div class="matha-card">
                         <div class="direction">South</div>
                         <div class="name">Śṛṅgerī</div>
-                        <div class="veda">Sāma Veda</div>
+                        <div class="veda">Yajur Veda</div>
                         <div class="desc">The first matha, established on the banks of the Tunga River in Karnataka. The seat of the first Śaṅkarācārya.</div>
                         <div class="location">Karnataka, India</div>
                     </div>
                     <div class="matha-card">
                         <div class="direction">West</div>
                         <div class="name">Dvārakā</div>
-                        <div class="veda">Yajur Veda</div>
+                        <div class="veda">Sāma Veda</div>
                         <div class="desc">Located in Gujarat, at the ancient city of Dvārakā, associated with Lord Krishna. Guards the western threshold of India.</div>
                         <div class="location">Gujarat, India</div>
                     </div>

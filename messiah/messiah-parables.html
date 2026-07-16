@@ -299,7 +299,8 @@
         .back-to-top {
             position: fixed;
             bottom: 5.75rem;
-            right: 1.5rem;
+            right: 1.75rem;
+            margin-right: 4px; /* (52px theme-toggle − 44px back-to-top) / 2, centers on the same vertical axis */
             z-index: 1000;
             width: 44px;
             height: 44px;
@@ -1176,7 +1177,7 @@
            ═══════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
             .nav-menu { min-width: 180px; }
-            .back-to-top { right: 1.5rem; bottom: 5rem; }
+            .back-to-top { right: 1.75rem; bottom: 5rem; } /* matches .theme-toggle's right offset, centered via inherited margin-right */
             .footer-links { gap: 1.5rem; }
             .scripture-panels { grid-template-columns: 1fr; }
             .scripture-panel:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
@@ -1194,7 +1195,7 @@
             .nav-menu { min-width: 160px; border-radius: var(--radius-sm); }
             .nav-item { padding: 0.5rem 1rem; font-size: 0.82rem; }
             .theme-toggle { width: 42px; height: 42px; bottom: 1rem; right: 1rem; }
-            .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; }
+            .back-to-top { width: 40px; height: 40px; bottom: 4.5rem; right: 1rem; margin-right: 1px; } /* (42px theme-toggle − 40px back-to-top) / 2 */
             .scripture-panel { padding: 20px; }
             .pullquote-section { padding: 3rem 1rem; }
             .chapter-nav { gap: 0.4rem; font-size: 0.5rem; line-height: 2.2; }
@@ -1241,7 +1242,7 @@
             <a href="messiah-threshold.html" class="nav-item"><span class="nav-item-icon">◉</span><span>I · The Hermeneutic Key</span></a>
             <a href="messiah-parables.html" class="nav-item active"><span class="nav-item-icon">◉</span><span>II · Three Bridges</span></a>
             <a href="messiah-silence.html" class="nav-item"><span class="nav-item-icon">◉</span><span>III · The Cloud of Unknowing</span></a>
-            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon">◉</span><span>IV · The Beatitudes as Jnana Yoga</span></a>
+            <a href="messiah-beatitudes.html" class="nav-item"><span class="nav-item-icon">◉</span><span>IV · The Beatitudes as Jñāna Yoga</span></a>
             <a href="messiah-mirror.html" class="nav-item"><span class="nav-item-icon">◉</span><span>V · Tat Tvam Asi</span></a>
             <a href="messiah-gospel-thomas.html" class="nav-item"><span class="nav-item-icon">◉</span><span>VI · The Gospel of Thomas</span></a>
             <a href="messiah-avatar.html" class="nav-item"><span class="nav-item-icon">◉</span><span>VII · The Incarnation as Avatar</span></a>
@@ -1340,7 +1341,7 @@
                     <text x="250" y="205" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="10" letter-spacing="2" font-weight="500">ĀTMAN</text>
                     <text x="250" y="220" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="10" letter-spacing="2" font-weight="500">SELF</text>
                     <ellipse cx="250" cy="65" rx="90" ry="30" fill="none" stroke="url(#goldGradPrelude)" stroke-width="1" opacity="0.5"/>
-                    <text x="250" y="60" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">JNĀNA</text>
+                    <text x="250" y="60" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">JÑĀNA</text>
                     <text x="250" y="76" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="10" font-style="italic">Jesus · I AM · The Kingdom</text>
                     <ellipse cx="115" cy="300" rx="90" ry="30" fill="none" stroke="url(#goldGradPrelude)" stroke-width="1" opacity="0.5"/>
                     <text x="115" y="295" text-anchor="middle" fill="#c9a84c" font-family="Cinzel, serif" font-size="11" letter-spacing="2" font-weight="500">KARMA</text>
@@ -1359,7 +1360,7 @@
                     <line x1="360" y1="270" x2="290" y2="230" stroke="#c9a84c" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,3"/>
                     <text x="250" y="380" text-anchor="middle" fill="#5a6a88" font-family="Cinzel, serif" font-size="9" letter-spacing="2" opacity="0.5">SOPHIA · ŚAKTI · THE ANIMATING CURRENT BENEATH ALL THREE</text>
                 </svg>
-                <p class="diagram-caption">The three paths—Karma (Moses/Law), Bhakti (Elijah/Prophets), and Jnāna (Jesus/I AM)—converge on the Self. Beneath all three flows Sophia-Śakti, the dynamic wisdom that makes the static ground knowable.</p>
+                <p class="diagram-caption">The three paths—Karma (Moses/Law), Bhakti (Elijah/Prophets), and Jñāna (Jesus/I AM)—converge on the Self. Beneath all three flows Sophia-Śakti, the dynamic wisdom that makes the static ground knowable.</p>
             </div>
 
             <p class="fade-in">The Gospel itself presents Jesus as the fulfillment of the Law (<span class="biblical-ref" data-reference="Matthew 5:17" data-title="Matthew 5:17">[B]</span>) and the one whom the prophets foresaw. In Vedāntic terms, he is the <em>jñāna-mārga</em>—the path of direct knowledge—into which the paths of action and devotion are sublated, not abolished. <em>"I am the way, the truth, and the life"</em><span class="biblical-ref" data-reference="John 14:6" data-title="John 14:6">[C]</span> is not exclusivism but ontology: the I AM (<span class="sanskrit-term" data-reference="The great saying 'Thou art That'; the identity of individual and universal Self">Tat tvam asi</span>) is the sole reality.</p>
@@ -1470,7 +1471,7 @@
 
                     <!-- Center: The Self -->
                     <circle cx="300" cy="300" r="38" fill="none" stroke="url(#crossGold)" stroke-width="2" opacity="0.6" filter="url(#crossGlow)"/>
-                    <circle cx="300" cy="300" r="28" fill="var(--bg)" stroke="url(#crossGold)" stroke-width="1" opacity="0.8" filter="url(#crossGlowSoft)"/>
+                    <circle cx="300" cy="300" r="28" fill="var(--surface)" stroke="url(#crossGold)" stroke-width="1" opacity="0.45" filter="url(#crossGlowSoft)"/>
                     <circle cx="300" cy="300" r="16" fill="url(#crossGold)" opacity="0.15" filter="url(#crossGlow)"/>
                     <text x="300" y="296" text-anchor="middle" fill="#e0c46e" font-family="Cinzel, serif" font-size="13" letter-spacing="1.5" font-weight="600" filter="url(#crossGlowSoft)">SELF</text>
                     <text x="300" y="312" text-anchor="middle" fill="#8a9ab0" font-family="Crimson Pro, serif" font-size="8" font-style="italic" opacity="0.7">Ātman</text>
@@ -1540,7 +1541,7 @@
 
             <div class="tension-box fade-in">
                 <h4>The Unbearable Question</h4>
-                <p>If all is One, the Holocaust is a ripple in the dream of consciousness. If the person is irreducible, the Holocaust is an absolute evil that God weeps over. Advaita's "maya" answer is morally intolerable to Christianity, which insists that the suffering of the least one is registered in the heart of the Father. This is not a problem to be solved but a wound to be held. The map must fold here.</p>
+                <p>If all is One, the Holocaust is a ripple in the dream of consciousness. If the person is irreducible, the Holocaust is an absolute evil that God weeps over. Advaita's <em>māyā</em> answer is morally intolerable to Christianity, which insists that the suffering of the least one is registered in the heart of the Father. This is not a problem to be solved but a wound to be held. The map must fold here.</p>
             </div>
 
             <blockquote class="fade-in">
@@ -1984,7 +1985,7 @@
 
             <div class="tension-box fade-in stagger-4">
                 <h4>5. Unchosen Suffering — The Holocaust Test</h4>
-                <p>If all is One, the Holocaust is a ripple in the dream of consciousness. If the person is irreducible, the Holocaust is an absolute evil that God weeps over. Advaita's "maya" answer is morally intolerable to Christianity, which insists that the suffering of the least one is registered in the heart of the Father. This is not a problem to be solved but a wound to be held. The map must fold here.</p>
+                <p>If all is One, the Holocaust is a ripple in the dream of consciousness. If the person is irreducible, the Holocaust is an absolute evil that God weeps over. Advaita's <em>māyā</em> answer is morally intolerable to Christianity, which insists that the suffering of the least one is registered in the heart of the Father. This is not a problem to be solved but a wound to be held. The map must fold here.</p>
             </div>
 
             <div class="tension-box fade-in stagger-5">
